@@ -1,0 +1,22 @@
+//
+//  UIButton.swift
+//  Abbel-Cars
+//
+//  Created by a on 24/08/2020.
+//  Copyright © 2020 Mian Faizan Nasir. All rights reserved.
+//
+
+import UIKit
+
+extension UIButton
+{
+    func applyGradient(colors: [CGColor])
+    {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = colors
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0, y: 1)
+        gradientLayer.frame = self.bounds
+        self.layer.insertSublayer(gradientLayer, at: 0)
+    }
+}
