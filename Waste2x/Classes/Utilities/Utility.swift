@@ -249,4 +249,37 @@ struct NetworkingConnection {
         }
         return ""
     }
+    
+    
+    class func isTextFieldHasText(textField: UITextField) -> Bool {
+        if textField.hasText
+        {
+            return !isBlankString(text: textField.text!)
+        }
+        return false
+    }
+        
+    class func isBlankString(text: String) -> Bool {
+        let trimmed = text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        return trimmed.isEmpty
+    }
+    
+    class func isConnectedToNetwork() -> Bool {
+        
+        let bConnected : Bool?
+        let manager = NetworkReachabilityManager(host: "www.apple.com")
+        if (manager?.isReachable)!
+        {
+            manager?.listener = { status in
+                print("Network Status Changed: \(status)")
+            }
+            bConnected = true
+        }
+        else {
+            print("Network Status offline")
+            bConnected = false
+        }
+        manager?.startListening()
+        return bConnected!
+    }
 }

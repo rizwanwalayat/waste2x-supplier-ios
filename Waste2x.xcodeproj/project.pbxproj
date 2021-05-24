@@ -12,12 +12,9 @@
 		00434540254823FE009A6166 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043453C254823FE009A6166 /* ApiClient.swift */; };
 		00434541254823FE009A6166 /* ApiClientHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043453D254823FE009A6166 /* ApiClientHandler.swift */; };
 		00434544254825AE009A6166 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00434543254825AE009A6166 /* DataManager.swift */; };
-		00434549254828F6009A6166 /* DoneeSignup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00434548254828F6009A6166 /* DoneeSignup.swift */; };
 		0043454D2548302A009A6166 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043454A2548302A009A6166 /* User.swift */; };
 		0043454E2548302A009A6166 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043454B2548302A009A6166 /* Users.swift */; };
 		0043454F2548302A009A6166 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043454C2548302A009A6166 /* UserData.swift */; };
-		0057BF75252F3276005E23E0 /* CodeVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057BF73252F3276005E23E0 /* CodeVerificationViewController.swift */; };
-		0057BF76252F3276005E23E0 /* CodeVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0057BF74252F3276005E23E0 /* CodeVerificationViewController.xib */; };
 		0067A2BC25274C0900CECA8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A2BB25274C0900CECA8C /* AppDelegate.swift */; };
 		0067A2C825274C0B00CECA8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0067A2C625274C0B00CECA8C /* LaunchScreen.storyboard */; };
 		0067A2D525274CAC00CECA8C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A2D325274CAC00CECA8C /* LoginViewController.swift */; };
@@ -54,15 +51,16 @@
 		0067A322252AFC9E00CECA8C /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A314252AFC9E00CECA8C /* UIImage.swift */; };
 		0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A315252AFC9E00CECA8C /* UILabel.swift */; };
 		0067A324252AFC9E00CECA8C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A316252AFC9E00CECA8C /* UIFont.swift */; };
-		0067A328252AFDC900CECA8C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A326252AFDC900CECA8C /* SignUpViewController.swift */; };
-		0067A329252AFDC900CECA8C /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0067A327252AFDC900CECA8C /* SignUpViewController.xib */; };
 		0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0067A33A252B91BA00CECA8C /* Assets.xcassets */; };
-		0082AB1A25306A980004392A /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0082AB1825306A980004392A /* ForgotPasswordViewController.swift */; };
-		0082AB1B25306A980004392A /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0082AB1925306A980004392A /* ForgotPasswordViewController.xib */; };
+		0428F1BF265B8EC5007C51EE /* LoginCodeVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1BD265B8EC5007C51EE /* LoginCodeVerificationViewController.swift */; };
+		0428F1C0265B8EC5007C51EE /* LoginCodeVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0428F1BE265B8EC5007C51EE /* LoginCodeVerificationViewController.xib */; };
+		0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C1265BC124007C51EE /* UIColorExtensions.swift */; };
+		0428F1C6265BC9EC007C51EE /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C5265BC9EC007C51EE /* UINavigationController.swift */; };
+		0428F1C8265BD9AE007C51EE /* CodeVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C7265BD9AE007C51EE /* CodeVerificationViewModel.swift */; };
+		0428F1CD265BECB5007C51EE /* LoginInputEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1CB265BECB5007C51EE /* LoginInputEmailViewController.swift */; };
+		0428F1CE265BECB5007C51EE /* LoginInputEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0428F1CC265BECB5007C51EE /* LoginInputEmailViewController.xib */; };
 		116E22BE25678AE100F09AD9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 116E22BD25678AE100F09AD9 /* GoogleService-Info.plist */; };
 		1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC85265688EB00147EB8 /* BaseViewController.swift */; };
-		1875BC8D265690A300147EB8 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC8B265690A300147EB8 /* ContainerViewController.swift */; };
-		1875BC8E265690A300147EB8 /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1875BC8C265690A300147EB8 /* ContainerViewController.xib */; };
 		1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */; };
 		7EE8C32E64938164D4010348 /* Pods_Waste2x.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B929385FCC22CE667AFF2F3 /* Pods_Waste2x.framework */; };
 /* End PBXBuildFile section */
@@ -73,12 +71,9 @@
 		0043453C254823FE009A6166 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		0043453D254823FE009A6166 /* ApiClientHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClientHandler.swift; sourceTree = "<group>"; };
 		00434543254825AE009A6166 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		00434548254828F6009A6166 /* DoneeSignup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneeSignup.swift; sourceTree = "<group>"; };
 		0043454A2548302A009A6166 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0043454B2548302A009A6166 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		0043454C2548302A009A6166 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		0057BF73252F3276005E23E0 /* CodeVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeVerificationViewController.swift; sourceTree = "<group>"; };
-		0057BF74252F3276005E23E0 /* CodeVerificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CodeVerificationViewController.xib; sourceTree = "<group>"; };
 		0067A2B825274C0900CECA8C /* Waste2x.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waste2x.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0067A2BB25274C0900CECA8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0067A2C725274C0B00CECA8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -117,15 +112,16 @@
 		0067A314252AFC9E00CECA8C /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		0067A315252AFC9E00CECA8C /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		0067A316252AFC9E00CECA8C /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
-		0067A326252AFDC900CECA8C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		0067A327252AFDC900CECA8C /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		0067A33A252B91BA00CECA8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0082AB1825306A980004392A /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
-		0082AB1925306A980004392A /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		0428F1BD265B8EC5007C51EE /* LoginCodeVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCodeVerificationViewController.swift; sourceTree = "<group>"; };
+		0428F1BE265B8EC5007C51EE /* LoginCodeVerificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginCodeVerificationViewController.xib; sourceTree = "<group>"; };
+		0428F1C1265BC124007C51EE /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		0428F1C5265BC9EC007C51EE /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		0428F1C7265BD9AE007C51EE /* CodeVerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVerificationViewModel.swift; sourceTree = "<group>"; };
+		0428F1CB265BECB5007C51EE /* LoginInputEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInputEmailViewController.swift; sourceTree = "<group>"; };
+		0428F1CC265BECB5007C51EE /* LoginInputEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginInputEmailViewController.xib; sourceTree = "<group>"; };
 		116E22BD25678AE100F09AD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1875BC85265688EB00147EB8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		1875BC8B265690A300147EB8 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerViewController.swift; path = ../../../../../ContainerView/ContainerView/ContainerView/ContainerViewController.swift; sourceTree = "<group>"; };
-		1875BC8C265690A300147EB8 /* ContainerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContainerViewController.xib; path = ../../../../../ContainerView/ContainerView/ContainerView/ContainerViewController.xib; sourceTree = "<group>"; };
 		1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		3B929385FCC22CE667AFF2F3 /* Pods_Waste2x.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Waste2x.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		487A45C5B808F30CEEB9EF52 /* Pods-Waste2x.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waste2x.release.xcconfig"; path = "Target Support Files/Pods-Waste2x/Pods-Waste2x.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,23 +146,6 @@
 				00434543254825AE009A6166 /* DataManager.swift */,
 			);
 			path = "Data Manager";
-			sourceTree = "<group>";
-		};
-		00434545254826ED009A6166 /* Donee SignUp */ = {
-			isa = PBXGroup;
-			children = (
-				00434548254828F6009A6166 /* DoneeSignup.swift */,
-			);
-			path = "Donee SignUp";
-			sourceTree = "<group>";
-		};
-		0057BF72252F3202005E23E0 /* Code Verification */ = {
-			isa = PBXGroup;
-			children = (
-				0057BF73252F3276005E23E0 /* CodeVerificationViewController.swift */,
-				0057BF74252F3276005E23E0 /* CodeVerificationViewController.xib */,
-			);
-			path = "Code Verification";
 			sourceTree = "<group>";
 		};
 		0067A2AF25274C0900CECA8C = {
@@ -203,7 +182,6 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				00434545254826ED009A6166 /* Donee SignUp */,
 				0067A307252AFBAF00CECA8C /* Login */,
 			);
 			path = Models;
@@ -212,7 +190,6 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1875BC842656889900147EB8 /* Home */,
 				0067A2DE2527549400CECA8C /* Onboarding */,
 			);
 			path = Controllers;
@@ -241,9 +218,9 @@
 		0067A2DE2527549400CECA8C /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				0428F1CA265BEC76007C51EE /* Login-InputEmail */,
+				0428F1BC265B8019007C51EE /* Login-CodeVerification */,
 				0067A2DF2527549C00CECA8C /* Login */,
-				0067A325252AFDAD00CECA8C /* SignUp */,
-				0082AB1725306A6A0004392A /* Forgot Password */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -354,27 +331,10 @@
 				0067A30E252AFC9E00CECA8C /* UITextField.swift */,
 				0067A312252AFC9E00CECA8C /* UIView.swift */,
 				0067A311252AFC9E00CECA8C /* UIViewController.swift */,
+				0428F1C1265BC124007C51EE /* UIColorExtensions.swift */,
+				0428F1C5265BC9EC007C51EE /* UINavigationController.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		0067A325252AFDAD00CECA8C /* SignUp */ = {
-			isa = PBXGroup;
-			children = (
-				0067A326252AFDC900CECA8C /* SignUpViewController.swift */,
-				0067A327252AFDC900CECA8C /* SignUpViewController.xib */,
-				0057BF72252F3202005E23E0 /* Code Verification */,
-			);
-			path = SignUp;
-			sourceTree = "<group>";
-		};
-		0082AB1725306A6A0004392A /* Forgot Password */ = {
-			isa = PBXGroup;
-			children = (
-				0082AB1825306A980004392A /* ForgotPasswordViewController.swift */,
-				0082AB1925306A980004392A /* ForgotPasswordViewController.xib */,
-			);
-			path = "Forgot Password";
 			sourceTree = "<group>";
 		};
 		00B01EA9252E0F4000BF0637 /* BaseClasses */ = {
@@ -386,13 +346,31 @@
 			path = BaseClasses;
 			sourceTree = "<group>";
 		};
-		1875BC842656889900147EB8 /* Home */ = {
+		0428F1BC265B8019007C51EE /* Login-CodeVerification */ = {
 			isa = PBXGroup;
 			children = (
-				1875BC8B265690A300147EB8 /* ContainerViewController.swift */,
-				1875BC8C265690A300147EB8 /* ContainerViewController.xib */,
+				0428F1C9265BD9B5007C51EE /* ViewModel */,
+				0428F1BD265B8EC5007C51EE /* LoginCodeVerificationViewController.swift */,
+				0428F1BE265B8EC5007C51EE /* LoginCodeVerificationViewController.xib */,
 			);
-			path = Home;
+			path = "Login-CodeVerification";
+			sourceTree = "<group>";
+		};
+		0428F1C9265BD9B5007C51EE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0428F1C7265BD9AE007C51EE /* CodeVerificationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0428F1CA265BEC76007C51EE /* Login-InputEmail */ = {
+			isa = PBXGroup;
+			children = (
+				0428F1CB265BECB5007C51EE /* LoginInputEmailViewController.swift */,
+				0428F1CC265BECB5007C51EE /* LoginInputEmailViewController.xib */,
+			);
+			path = "Login-InputEmail";
 			sourceTree = "<group>";
 		};
 		8492EB8B64134913AA029EFA /* Pods */ = {
@@ -477,13 +455,10 @@
 				116E22BE25678AE100F09AD9 /* GoogleService-Info.plist in Resources */,
 				0067A2FC252AEE0300CECA8C /* Lato-LightItalic.ttf in Resources */,
 				0067A2FD252AEE0300CECA8C /* Lato-Medium.ttf in Resources */,
-				1875BC8E265690A300147EB8 /* ContainerViewController.xib in Resources */,
+				0428F1C0265B8EC5007C51EE /* LoginCodeVerificationViewController.xib in Resources */,
 				0067A2F7252AEE0300CECA8C /* OFL.txt in Resources */,
 				0067A2F8252AEE0300CECA8C /* Lato-Italic.ttf in Resources */,
 				0067A301252AEE0300CECA8C /* Lato-ThinItalic.ttf in Resources */,
-				0067A329252AFDC900CECA8C /* SignUpViewController.xib in Resources */,
-				0057BF76252F3276005E23E0 /* CodeVerificationViewController.xib in Resources */,
-				0082AB1B25306A980004392A /* ForgotPasswordViewController.xib in Resources */,
 				0067A2FA252AEE0300CECA8C /* Lato-Semibold.ttf in Resources */,
 				0067A2F6252AEE0300CECA8C /* Lato-Light.ttf in Resources */,
 				0067A300252AEE0300CECA8C /* Lato-Regular.ttf in Resources */,
@@ -494,6 +469,7 @@
 				0067A2D625274CAC00CECA8C /* LoginViewController.xib in Resources */,
 				0067A2F9252AEE0300CECA8C /* Lato-Bold.ttf in Resources */,
 				0067A2FE252AEE0300CECA8C /* Lato-BoldItalic.ttf in Resources */,
+				0428F1CE265BECB5007C51EE /* LoginInputEmailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,16 +539,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0067A328252AFDC900CECA8C /* SignUpViewController.swift in Sources */,
 				0067A2DD252753D100CECA8C /* APIService.swift in Sources */,
 				0067A31B252AFC9E00CECA8C /* TimeInterval.swift in Sources */,
 				0067A318252AFC9E00CECA8C /* UIDevice.swift in Sources */,
 				0067A2D525274CAC00CECA8C /* LoginViewController.swift in Sources */,
 				0043454F2548302A009A6166 /* UserData.swift in Sources */,
 				0067A2E32529D2CD00CECA8C /* Utility.swift in Sources */,
+				0428F1C6265BC9EC007C51EE /* UINavigationController.swift in Sources */,
+				0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */,
 				1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */,
 				0043454D2548302A009A6166 /* User.swift in Sources */,
-				00434549254828F6009A6166 /* DoneeSignup.swift in Sources */,
+				0428F1CD265BECB5007C51EE /* LoginInputEmailViewController.swift in Sources */,
 				00434540254823FE009A6166 /* ApiClient.swift in Sources */,
 				0043453E254823FE009A6166 /* TSAPIClient.swift in Sources */,
 				0067A31E252AFC9E00CECA8C /* UIButton.swift in Sources */,
@@ -582,22 +559,21 @@
 				0067A2E62529D52B00CECA8C /* Constants.swift in Sources */,
 				0067A317252AFC9E00CECA8C /* UITableView.swift in Sources */,
 				0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */,
-				0057BF75252F3276005E23E0 /* CodeVerificationViewController.swift in Sources */,
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,
 				0067A2D825274CE400CECA8C /* LoginViewModel.swift in Sources */,
 				0067A321252AFC9E00CECA8C /* String.swift in Sources */,
 				0067A31A252AFC9E00CECA8C /* UICollectionView.swift in Sources */,
 				0067A320252AFC9E00CECA8C /* UIView.swift in Sources */,
 				0067A31D252AFC9E00CECA8C /* UISlider.swift in Sources */,
-				0082AB1A25306A980004392A /* ForgotPasswordViewController.swift in Sources */,
 				00434544254825AE009A6166 /* DataManager.swift in Sources */,
 				00434541254823FE009A6166 /* ApiClientHandler.swift in Sources */,
+				0428F1C8265BD9AE007C51EE /* CodeVerificationViewModel.swift in Sources */,
 				0067A324252AFC9E00CECA8C /* UIFont.swift in Sources */,
 				0067A322252AFC9E00CECA8C /* UIImage.swift in Sources */,
 				0043454E2548302A009A6166 /* Users.swift in Sources */,
 				0043453F254823FE009A6166 /* ApiResponseHandler.swift in Sources */,
 				0067A31F252AFC9E00CECA8C /* UIViewController.swift in Sources */,
-				1875BC8D265690A300147EB8 /* ContainerViewController.swift in Sources */,
+				0428F1BF265B8EC5007C51EE /* LoginCodeVerificationViewController.swift in Sources */,
 				0067A2DA25274CF800CECA8C /* Login1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
