@@ -17,6 +17,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Waste2x" customModuleProvider="target">
             <connections>
                 <outlet property="enterYourPhoneLabel" destination="FKd-k8-BJB" id="9O5-J0-Jij"/>
+                <outlet property="nextButton" destination="Ls1-Bi-pNd" id="GEf-o6-asd"/>
                 <outlet property="phoneNoTextfield" destination="jft-uV-ElE" id="EWh-k5-Ori"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="weWillSendYouLabel" destination="4fG-1r-sjk" id="8jc-CR-qZl"/>
@@ -33,8 +34,10 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VOp-9X-Yba">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKd-k8-BJB">
-                                    <rect key="frame" x="30" y="117" width="260.5" height="29"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKd-k8-BJB">
+                                    <rect key="frame" x="30" y="88" width="150.5" height="57.5"/>
+                                    <string key="text">Enter your 
+phone number</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                     <color key="textColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -51,13 +54,13 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will send you confirmation code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fG-1r-sjk">
-                                    <rect key="frame" x="30" y="163" width="243.5" height="17"/>
+                                    <rect key="frame" x="30" y="162.5" width="243.5" height="17"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                     <color key="textColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEo-I0-gDL">
-                                    <rect key="frame" x="25" y="228" width="364" height="58"/>
+                                    <rect key="frame" x="25" y="227.5" width="364" height="58"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Phone-icon" translatesAutoresizingMaskIntoConstraints="NO" id="cf8-Ou-EdP">
                                             <rect key="frame" x="18" y="19" width="20" height="20"/>
@@ -122,7 +125,7 @@
                                 <constraint firstAttribute="bottom" secondItem="Ls1-Bi-pNd" secondAttribute="bottom" constant="25" id="VQq-KC-Xzh"/>
                                 <constraint firstAttribute="trailing" secondItem="qEo-I0-gDL" secondAttribute="trailing" constant="25" id="cJp-dI-mBm"/>
                                 <constraint firstItem="qEo-I0-gDL" firstAttribute="leading" secondItem="VOp-9X-Yba" secondAttribute="leading" constant="25" id="hjV-L9-6bj"/>
-                                <constraint firstItem="FKd-k8-BJB" firstAttribute="top" secondItem="VOp-9X-Yba" secondAttribute="top" constant="117" id="mgb-PX-Iul"/>
+                                <constraint firstItem="FKd-k8-BJB" firstAttribute="top" secondItem="VOp-9X-Yba" secondAttribute="top" constant="88" id="mgb-PX-Iul"/>
                                 <constraint firstItem="4fG-1r-sjk" firstAttribute="leading" secondItem="FKd-k8-BJB" secondAttribute="leading" id="pZY-LN-XNT"/>
                                 <constraint firstItem="FKd-k8-BJB" firstAttribute="leading" secondItem="VOp-9X-Yba" secondAttribute="leading" constant="30" id="pkQ-hw-BZc"/>
                                 <constraint firstItem="4fG-1r-sjk" firstAttribute="top" secondItem="FKd-k8-BJB" secondAttribute="bottom" constant="17" id="wxs-gu-O0Y"/>

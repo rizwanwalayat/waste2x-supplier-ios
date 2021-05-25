@@ -14,6 +14,7 @@
                 <outlet property="enterCodeSendsToYourPhoneLabel" destination="o03-Ub-vqg" id="dh7-va-a0T"/>
                 <outlet property="firstTextField" destination="IxS-zi-hqL" id="3sl-ub-g67"/>
                 <outlet property="fourthTextField" destination="u7I-fk-Ui6" id="vW8-WF-mZl"/>
+                <outlet property="nextButton" destination="L9Z-ld-sId" id="TYP-Gi-dlx"/>
                 <outlet property="resendCodeButton" destination="S3i-ID-8Ko" id="vns-bY-l5Z"/>
                 <outlet property="secondTextField" destination="0Sv-KX-6bx" id="nEm-uY-Z9K"/>
                 <outlet property="securityCodeView" destination="FGu-7e-Y2w" id="IK9-Pi-tgK"/>
@@ -44,8 +45,10 @@
                                         <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="NMu-1n-QDK"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter code sent to your phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o03-Ub-vqg">
-                                    <rect key="frame" x="30" y="117" width="308.5" height="29"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o03-Ub-vqg">
+                                    <rect key="frame" x="30" y="92" width="161.5" height="57.5"/>
+                                    <string key="text">Enter code sent
+to your phone</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                     <color key="textColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -62,13 +65,13 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will send you confirmation code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVb-5p-YR1">
-                                    <rect key="frame" x="30" y="163" width="243.5" height="17"/>
+                                    <rect key="frame" x="30" y="166.5" width="243.5" height="17"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                     <color key="textColor" red="0.69803921570000005" green="0.69803921570000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGu-7e-Y2w">
-                                    <rect key="frame" x="25" y="228" width="364" height="99"/>
+                                    <rect key="frame" x="25" y="231.5" width="364" height="99"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FnJ-lS-Bfh">
                                             <rect key="frame" x="10" y="20" width="344" height="59"/>
@@ -267,10 +270,10 @@
                                 <constraint firstItem="rVb-5p-YR1" firstAttribute="top" secondItem="o03-Ub-vqg" secondAttribute="bottom" constant="17" id="HfZ-PX-Fem"/>
                                 <constraint firstItem="0sJ-AK-aKI" firstAttribute="leading" secondItem="53F-LU-tHu" secondAttribute="leading" constant="25" id="Neo-CT-hDg"/>
                                 <constraint firstAttribute="bottom" secondItem="L9Z-ld-sId" secondAttribute="bottom" constant="25" id="Q46-r2-GzS"/>
+                                <constraint firstItem="o03-Ub-vqg" firstAttribute="top" secondItem="0sJ-AK-aKI" secondAttribute="bottom" constant="42" id="SAH-P3-g96"/>
                                 <constraint firstItem="FGu-7e-Y2w" firstAttribute="top" secondItem="rVb-5p-YR1" secondAttribute="bottom" constant="48" id="VXI-KX-jIv"/>
                                 <constraint firstItem="FGu-7e-Y2w" firstAttribute="centerX" secondItem="53F-LU-tHu" secondAttribute="centerX" id="a7h-hE-2Ai"/>
                                 <constraint firstItem="0sJ-AK-aKI" firstAttribute="top" secondItem="53F-LU-tHu" secondAttribute="top" constant="28" id="bEZ-8a-F1q"/>
-                                <constraint firstItem="o03-Ub-vqg" firstAttribute="top" secondItem="53F-LU-tHu" secondAttribute="top" constant="117" id="hUA-1m-ZoO"/>
                                 <constraint firstItem="FGu-7e-Y2w" firstAttribute="leading" secondItem="53F-LU-tHu" secondAttribute="leading" constant="25" id="jph-S6-lqU"/>
                                 <constraint firstItem="rVb-5p-YR1" firstAttribute="leading" secondItem="o03-Ub-vqg" secondAttribute="leading" id="q1B-EI-YMS"/>
                                 <constraint firstAttribute="bottom" secondItem="L9Z-ld-sId" secondAttribute="bottom" constant="25" id="qu0-qj-1aB"/>

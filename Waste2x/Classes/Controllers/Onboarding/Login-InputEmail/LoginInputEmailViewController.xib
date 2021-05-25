@@ -16,6 +16,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginInputEmailViewController" customModule="Waste2x" customModuleProvider="target">
             <connections>
+                <outlet property="emailAddressTextField" destination="H8w-qr-Zhp" id="NgR-Wm-Zwq"/>
+                <outlet property="enterYourEmailLabel" destination="yCC-gY-yhu" id="F5k-rA-gpP"/>
+                <outlet property="nextButton" destination="FRx-a7-CHn" id="NN1-Sp-kkq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,8 +33,21 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gs7-Cl-TQH">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCC-gY-yhu">
-                                    <rect key="frame" x="30" y="117" width="260.5" height="29"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nl9-rV-M6t">
+                                    <rect key="frame" x="25" y="28" width="22" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="nl9-rV-M6t" secondAttribute="height" multiplier="1:1" id="ocf-3j-lIh"/>
+                                        <constraint firstAttribute="height" constant="22" id="wii-EO-32o"/>
+                                    </constraints>
+                                    <state key="normal" image="arrow-back"/>
+                                    <connections>
+                                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="g01-UA-B9d"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCC-gY-yhu">
+                                    <rect key="frame" x="30" y="92" width="143" height="57.5"/>
+                                    <string key="text">Enter your 
+email address</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                     <color key="textColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -47,14 +63,14 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will send you confirmation code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElS-7D-mOb">
-                                    <rect key="frame" x="30" y="163" width="243.5" height="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElS-7D-mOb">
+                                    <rect key="frame" x="30" y="166.5" width="0.0" height="0.0"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                     <color key="textColor" red="0.69803921570000005" green="0.69803921570000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cj-uk-JEc">
-                                    <rect key="frame" x="25" y="228" width="364" height="58"/>
+                                    <rect key="frame" x="25" y="214.5" width="364" height="58"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Phone-icon" translatesAutoresizingMaskIntoConstraints="NO" id="oQ2-FD-HOY">
                                             <rect key="frame" x="18" y="19" width="20" height="20"/>
@@ -63,11 +79,14 @@
                                                 <constraint firstAttribute="width" constant="20" id="moq-OV-jb9"/>
                                             </constraints>
                                         </imageView>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="+62 812 345 678" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H8w-qr-Zhp">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="hello@alterises.co" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H8w-qr-Zhp">
                                             <rect key="frame" x="48" y="14" width="306" height="30"/>
                                             <color key="textColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="18"/>
                                             <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="JkG-2J-eQI"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -105,16 +124,21 @@
                                             <real key="value" value="32"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="nextButtonPressed:" destination="-1" eventType="touchUpInside" id="fkE-SO-LJ4"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
+                                <constraint firstItem="nl9-rV-M6t" firstAttribute="leading" secondItem="Gs7-Cl-TQH" secondAttribute="leading" constant="25" id="0bf-Pf-KAD"/>
                                 <constraint firstItem="yCC-gY-yhu" firstAttribute="leading" secondItem="Gs7-Cl-TQH" secondAttribute="leading" constant="30" id="6RA-ka-SHx"/>
+                                <constraint firstItem="yCC-gY-yhu" firstAttribute="top" secondItem="nl9-rV-M6t" secondAttribute="bottom" constant="42" id="93g-g4-bOj"/>
                                 <constraint firstItem="7cj-uk-JEc" firstAttribute="leading" secondItem="Gs7-Cl-TQH" secondAttribute="leading" constant="25" id="9lt-JO-mnh"/>
                                 <constraint firstAttribute="trailing" secondItem="7cj-uk-JEc" secondAttribute="trailing" constant="25" id="Mnq-ff-pZ7"/>
                                 <constraint firstAttribute="bottom" secondItem="FRx-a7-CHn" secondAttribute="bottom" constant="25" id="RJW-kj-H8Z"/>
                                 <constraint firstItem="ElS-7D-mOb" firstAttribute="top" secondItem="yCC-gY-yhu" secondAttribute="bottom" constant="17" id="VVg-8Z-bQP"/>
-                                <constraint firstItem="yCC-gY-yhu" firstAttribute="top" secondItem="Gs7-Cl-TQH" secondAttribute="top" constant="117" id="lv5-zf-DHL"/>
+                                <constraint firstItem="nl9-rV-M6t" firstAttribute="top" secondItem="Gs7-Cl-TQH" secondAttribute="top" constant="28" id="oTt-TY-Ln6"/>
                                 <constraint firstItem="FRx-a7-CHn" firstAttribute="trailing" secondItem="7cj-uk-JEc" secondAttribute="trailing" id="rXY-SJ-2yY"/>
                                 <constraint firstItem="ElS-7D-mOb" firstAttribute="leading" secondItem="yCC-gY-yhu" secondAttribute="leading" id="soI-RH-9iZ"/>
                                 <constraint firstItem="7cj-uk-JEc" firstAttribute="top" secondItem="ElS-7D-mOb" secondAttribute="bottom" constant="48" id="yIi-Ns-0YP"/>
@@ -144,6 +168,7 @@
     </objects>
     <resources>
         <image name="Phone-icon" width="20" height="20"/>
+        <image name="arrow-back" width="10.5" height="18.5"/>
         <image name="arrow-right" width="10" height="18"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

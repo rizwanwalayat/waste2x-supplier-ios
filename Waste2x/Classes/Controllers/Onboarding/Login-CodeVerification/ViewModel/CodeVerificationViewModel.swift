@@ -11,6 +11,22 @@ import UIKit
 
 extension LoginCodeVerificationViewController
 {
+    
+    func setAttributedTextInLable(phoneNo :String)
+    {
+        let loginWithfont       = UIFont(name: "", size: 14) ?? UIFont.systemFont(ofSize: 14)
+        let activityAttribute   = [ NSAttributedString.Key.font: loginWithfont, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: "B3B2B2")]
+        let nameAttrString      = NSMutableAttributedString(string: "We sent you an code on: ", attributes: activityAttribute)
+        
+        let nameFont            = UIFont(name: "", size: 14) ?? UIFont.systemFont(ofSize: 14)
+        let nameAttribute       = [ NSAttributedString.Key.font: nameFont, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: "000000")]
+        let activityAttrString  = NSAttributedString(string: phoneNo, attributes: nameAttribute)
+        
+        nameAttrString.append(activityAttrString)
+        
+        sendsConfirmationCodeLabel.attributedText = nameAttrString
+    }
+    
     func adjustTextInPut (textfieldTag:Int, newText:String) -> Bool {
         
         let currentField    = getTextFieldWithTag(textfieldTag)
@@ -28,7 +44,8 @@ extension LoginCodeVerificationViewController
                     nextField.text = newText
                     nextField.background = nil
                     
-                    if nextField.tag == 6 {
+                    if nextField.tag == 4 {
+                        nextButton.makeEnable(value: true)
                         nextField .resignFirstResponder()
                         self.nextButtonCalled()
                     }
@@ -43,6 +60,7 @@ extension LoginCodeVerificationViewController
         }
         else {
             //currentField.background = #imageLiteral(resourceName: "dash-line")
+            nextButton.makeEnable(value: false)
             currentField.text = ""
             if(textfieldTag != 1) {
                 currentField .isUserInteractionEnabled = false
@@ -55,6 +73,7 @@ extension LoginCodeVerificationViewController
                 previewField.becomeFirstResponder()
                 return false
             }
+            
         }
         
         return true

@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var enterYourPhoneLabel  : UILabel!
     @IBOutlet weak var weWillSendYouLabel   : UILabel!
     @IBOutlet weak var phoneNoTextfield     : UITextField!
+    @IBOutlet weak var nextButton           : UIButton!
     
     //MARK:- Variables
    
@@ -31,6 +32,7 @@ class LoginViewController: UIViewController {
     //MARK: - SetupView
     func setupView() {
         
+        nextButton.makeEnable(value: false)
     }
     
     
@@ -54,6 +56,15 @@ extension LoginViewController : UITextFieldDelegate {
         if textField.text?.count == 0
         {
             textField.text = "+"
+        }
+        
+        if textField.text!.count > 0
+        {
+            nextButton.makeEnable(value: true)
+        }
+        else
+        {
+            nextButton.makeEnable(value: false)
         }
         return true
     }

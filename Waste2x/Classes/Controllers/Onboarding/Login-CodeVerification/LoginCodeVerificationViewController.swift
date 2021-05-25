@@ -20,6 +20,7 @@ class LoginCodeVerificationViewController: UIViewController {
     @IBOutlet weak var fourthTextField                  : UITextField!
     @IBOutlet weak var resendCodeButton                 : UIButton!
     @IBOutlet weak var securityCodeView                 : UIView!
+    @IBOutlet weak var nextButton                       : UIButton!
     
     
     //MARK: - Variables
@@ -32,31 +33,23 @@ class LoginCodeVerificationViewController: UIViewController {
         super.viewDidLoad()
 
         setAttributedTextInLable(phoneNo: enteredPhoneNumber)
+        nextButton.makeEnable(value: false)
     }
 
 
-    func setAttributedTextInLable(phoneNo :String)
-    {
-        let loginWithfont       = UIFont(name: "", size: 14) ?? UIFont.systemFont(ofSize: 14)
-        let activityAttribute   = [ NSAttributedString.Key.font: loginWithfont, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: "B3B2B2")]
-        let nameAttrString      = NSMutableAttributedString(string: "We sent you an code on: ", attributes: activityAttribute)
-        
-        let nameFont            = UIFont(name: "", size: 14) ?? UIFont.systemFont(ofSize: 14)
-        let nameAttribute       = [ NSAttributedString.Key.font: nameFont, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: "000000")]
-        let activityAttrString  = NSAttributedString(string: phoneNo, attributes: nameAttribute)
-        
-        nameAttrString.append(activityAttrString)
-        
-        sendsConfirmationCodeLabel.attributedText = nameAttrString
-    }
-
+    //MARK: - Actions
     
     @IBAction func backButtonPressed(_ sender: Any) {
         
         self.navigationController?.popViewController(animated: true)
     }
+    
     @IBAction func nextButtonPressed(_ sender: Any) {
+        
+        let codeVerificationVC = LoginInputEmailViewController(nibName: "LoginInputEmailViewController", bundle: nil)
+        self.navigationController?.pushViewController(codeVerificationVC, animated: true)
     }
+    
     @IBAction func resendCodeButtonPressed(_ sender: Any) {
     }
     

@@ -59,6 +59,8 @@
 		0428F1C8265BD9AE007C51EE /* CodeVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C7265BD9AE007C51EE /* CodeVerificationViewModel.swift */; };
 		0428F1CD265BECB5007C51EE /* LoginInputEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1CB265BECB5007C51EE /* LoginInputEmailViewController.swift */; };
 		0428F1CE265BECB5007C51EE /* LoginInputEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0428F1CC265BECB5007C51EE /* LoginInputEmailViewController.xib */; };
+		04969274265CFCB10081E875 /* WasteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04969272265CFCB10081E875 /* WasteDetailViewController.swift */; };
+		04969275265CFCB10081E875 /* WasteDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04969273265CFCB10081E875 /* WasteDetailViewController.xib */; };
 		116E22BE25678AE100F09AD9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 116E22BD25678AE100F09AD9 /* GoogleService-Info.plist */; };
 		1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC85265688EB00147EB8 /* BaseViewController.swift */; };
 		1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */; };
@@ -120,6 +122,8 @@
 		0428F1C7265BD9AE007C51EE /* CodeVerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVerificationViewModel.swift; sourceTree = "<group>"; };
 		0428F1CB265BECB5007C51EE /* LoginInputEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInputEmailViewController.swift; sourceTree = "<group>"; };
 		0428F1CC265BECB5007C51EE /* LoginInputEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginInputEmailViewController.xib; sourceTree = "<group>"; };
+		04969272265CFCB10081E875 /* WasteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDetailViewController.swift; sourceTree = "<group>"; };
+		04969273265CFCB10081E875 /* WasteDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteDetailViewController.xib; sourceTree = "<group>"; };
 		116E22BD25678AE100F09AD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1875BC85265688EB00147EB8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				04969271265CFC900081E875 /* WasteDetail */,
 				0067A2DE2527549400CECA8C /* Onboarding */,
 			);
 			path = Controllers;
@@ -373,6 +378,15 @@
 			path = "Login-InputEmail";
 			sourceTree = "<group>";
 		};
+		04969271265CFC900081E875 /* WasteDetail */ = {
+			isa = PBXGroup;
+			children = (
+				04969272265CFCB10081E875 /* WasteDetailViewController.swift */,
+				04969273265CFCB10081E875 /* WasteDetailViewController.xib */,
+			);
+			path = WasteDetail;
+			sourceTree = "<group>";
+		};
 		8492EB8B64134913AA029EFA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -463,6 +477,7 @@
 				0067A2F6252AEE0300CECA8C /* Lato-Light.ttf in Resources */,
 				0067A300252AEE0300CECA8C /* Lato-Regular.ttf in Resources */,
 				0067A2F5252AEE0300CECA8C /* Lato-BlackItalic.ttf in Resources */,
+				04969275265CFCB10081E875 /* WasteDetailViewController.xib in Resources */,
 				0067A2C825274C0B00CECA8C /* LaunchScreen.storyboard in Resources */,
 				0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */,
 				0067A2FB252AEE0300CECA8C /* Lato-Thin.ttf in Resources */,
@@ -557,6 +572,7 @@
 				0067A2BC25274C0900CECA8C /* AppDelegate.swift in Sources */,
 				1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */,
 				0067A2E62529D52B00CECA8C /* Constants.swift in Sources */,
+				04969274265CFCB10081E875 /* WasteDetailViewController.swift in Sources */,
 				0067A317252AFC9E00CECA8C /* UITableView.swift in Sources */,
 				0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */,
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,

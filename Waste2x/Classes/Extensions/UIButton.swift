@@ -19,4 +19,9 @@ extension UIButton
         gradientLayer.frame = self.bounds
         self.layer.insertSublayer(gradientLayer, at: 0)
     }
+    
+    func makeEnable(value : Bool)
+    {
+        self.isEnabled = value
+    }
 }

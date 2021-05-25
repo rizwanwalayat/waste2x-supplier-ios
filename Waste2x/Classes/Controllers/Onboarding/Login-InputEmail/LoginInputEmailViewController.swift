@@ -10,21 +10,46 @@ import UIKit
 
 class LoginInputEmailViewController: UIViewController {
 
+    // MARK: - Outlets
+    
+    @IBOutlet weak var enterYourEmailLabel: UILabel!
+    @IBOutlet weak var emailAddressTextField: UITextField!
+    @IBOutlet weak var nextButton: UIButton!
+    
+    // MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        nextButton.makeEnable(value: false)
     }
 
 
-    /*
-    // MARK: - Navigation
+    // MARK: - Actions
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func nextButtonPressed(_ sender: Any) {
     }
-    */
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+}
 
+//MARK: - TextField Delegate Methods
+
+extension LoginInputEmailViewController: UITextFieldDelegate
+{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if Utility.isValidEmail(emailStr: textField.text ?? "") {
+            nextButton.makeEnable(value: true)
+        }
+        else
+        {
+            nextButton.makeEnable(value: false)
+        }
+        
+        return true
+    }
 }
