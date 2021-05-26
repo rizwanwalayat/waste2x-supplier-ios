@@ -12,6 +12,8 @@ import ObjectMapper
 import Firebase
 import netfox
 import FirebaseMessaging
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -26,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 30
         registerForPushNotification()
         Utility.loginRootViewController()
+        
+        GMSServices.provideAPIKey(googleAPIKey)
+        GMSPlacesClient.provideAPIKey(googleAPIKey)
         return true
     }
     
@@ -38,7 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             center.delegate = self
             center.requestAuthorization(options:  [.sound, .alert, .badge]) { (granted, error) in
                 if error == nil{
-                    
                     DispatchQueue.main.async {
                         UIApplication.shared.registerForRemoteNotifications()
                         

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginInputEmailViewController: UIViewController {
+class LoginInputEmailViewController: BaseViewController {
 
     // MARK: - Outlets
     
@@ -28,6 +28,9 @@ class LoginInputEmailViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func nextButtonPressed(_ sender: Any) {
+        
+        let codeVerificationVC = WasteDetailViewController(nibName: "WasteDetailViewController", bundle: nil)
+        self.navigationController?.pushViewController(codeVerificationVC, animated: true)
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {

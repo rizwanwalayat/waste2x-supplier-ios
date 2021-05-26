@@ -16,9 +16,6 @@ target 'Waste2x' do
   pod 'Firebase/Messaging'
   pod 'SDWebImage', '~> 5.0'
   pod 'netfox'
- #pod 'Stripe', '19.0.1'
- #pod 'KeychainSwift', '~> 19.0'
- #pod 'StripeTerminal', '1.4.0'
- #pod 'PayPal-iOS-SDK'
- #pod 'Braintree'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
 end

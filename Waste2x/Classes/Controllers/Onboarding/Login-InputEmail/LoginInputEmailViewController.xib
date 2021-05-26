@@ -9,8 +9,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Lato-Medium.ttf">
-            <string>Lato-Medium</string>
+        <array key="Inter-Medium.ttf">
+            <string>Inter-Medium</string>
+        </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
         </array>
     </customFonts>
     <objects>
@@ -45,10 +51,10 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCC-gY-yhu">
-                                    <rect key="frame" x="30" y="92" width="143" height="57.5"/>
+                                    <rect key="frame" x="30" y="92" width="175" height="67.5"/>
                                     <string key="text">Enter your 
 email address</string>
-                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="24"/>
                                     <color key="textColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                     <userDefinedRuntimeAttributes>
@@ -63,14 +69,14 @@ email address</string>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElS-7D-mOb">
-                                    <rect key="frame" x="30" y="166.5" width="0.0" height="0.0"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElS-7D-mOb">
+                                    <rect key="frame" x="30" y="176.5" width="354" height="0.0"/>
+                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                     <color key="textColor" red="0.69803921570000005" green="0.69803921570000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cj-uk-JEc">
-                                    <rect key="frame" x="25" y="214.5" width="364" height="58"/>
+                                    <rect key="frame" x="25" y="224.5" width="364" height="58"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Phone-icon" translatesAutoresizingMaskIntoConstraints="NO" id="oQ2-FD-HOY">
                                             <rect key="frame" x="18" y="19" width="20" height="20"/>
@@ -82,7 +88,7 @@ email address</string>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="hello@alterises.co" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H8w-qr-Zhp">
                                             <rect key="frame" x="48" y="14" width="306" height="30"/>
                                             <color key="textColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="18"/>
+                                            <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="18"/>
                                             <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                             <connections>
                                                 <outlet property="delegate" destination="-1" id="JkG-2J-eQI"/>
@@ -138,6 +144,7 @@ email address</string>
                                 <constraint firstAttribute="trailing" secondItem="7cj-uk-JEc" secondAttribute="trailing" constant="25" id="Mnq-ff-pZ7"/>
                                 <constraint firstAttribute="bottom" secondItem="FRx-a7-CHn" secondAttribute="bottom" constant="25" id="RJW-kj-H8Z"/>
                                 <constraint firstItem="ElS-7D-mOb" firstAttribute="top" secondItem="yCC-gY-yhu" secondAttribute="bottom" constant="17" id="VVg-8Z-bQP"/>
+                                <constraint firstAttribute="trailing" secondItem="ElS-7D-mOb" secondAttribute="trailing" constant="30" id="eDg-EN-RAz"/>
                                 <constraint firstItem="nl9-rV-M6t" firstAttribute="top" secondItem="Gs7-Cl-TQH" secondAttribute="top" constant="28" id="oTt-TY-Ln6"/>
                                 <constraint firstItem="FRx-a7-CHn" firstAttribute="trailing" secondItem="7cj-uk-JEc" secondAttribute="trailing" id="rXY-SJ-2yY"/>
                                 <constraint firstItem="ElS-7D-mOb" firstAttribute="leading" secondItem="yCC-gY-yhu" secondAttribute="leading" id="soI-RH-9iZ"/>

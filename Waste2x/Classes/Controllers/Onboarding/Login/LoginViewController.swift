@@ -10,7 +10,7 @@ import UIKit
 import MaterialComponents
 import LocalAuthentication
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
     
     //MARK:- IBOutlets
     @IBOutlet weak var enterYourPhoneLabel  : UILabel!

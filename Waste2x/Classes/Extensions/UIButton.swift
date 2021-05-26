@@ -23,5 +23,11 @@ extension UIButton
     func makeEnable(value : Bool)
     {
         self.isEnabled = value
+        if value {
+            self.alpha = 1
+        } else {
+            self.alpha = 0.5
+        }
+        
     }
 }

@@ -15,4 +15,9 @@ class BaseViewController: UIViewController {
         
     }
 
+    /**************************************************/
+    
+    @objc func imageSelectedFromGalleryOrCamera(selectedImage:UIImage){
+        
+    }
 }

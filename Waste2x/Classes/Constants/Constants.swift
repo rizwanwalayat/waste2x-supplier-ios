@@ -17,7 +17,7 @@ var backOnRetryTapped = false
 var notificationButton = false
 var tapValidate = false
 var tapToCancel = false
-
+var googleAPIKey = "AIzaSyBp9ntlNiyAFvV8qxdXrBvBAOz_xasmvS0"
 var apiRequestObject: [String: String] = [:]
 
 enum PaymentMethod {

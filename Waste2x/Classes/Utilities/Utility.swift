@@ -28,8 +28,8 @@ struct NetworkingConnection {
     }
     
     class func loginRootViewController () {
-        let loginViewController = LoginViewController()
-        let navigationController = UINavigationController()
+        let loginViewController = CurrentWasteViewController()
+        let navigationController = BaseNavigationViewController()
         navigationController.viewControllers = [loginViewController]
         navigationController.navigationBar.isHidden = true
         kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)

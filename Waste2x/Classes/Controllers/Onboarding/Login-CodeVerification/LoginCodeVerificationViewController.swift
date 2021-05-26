@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginCodeVerificationViewController: UIViewController {
+class LoginCodeVerificationViewController: BaseViewController {
 
     //MARK:- IBOutlets
     
@@ -34,8 +34,8 @@ class LoginCodeVerificationViewController: UIViewController {
 
         setAttributedTextInLable(phoneNo: enteredPhoneNumber)
         nextButton.makeEnable(value: false)
+        firstTextField.becomeFirstResponder()
     }
-
 
     //MARK: - Actions
     
