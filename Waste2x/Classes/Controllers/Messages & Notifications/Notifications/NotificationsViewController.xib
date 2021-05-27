@@ -8,9 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CurrentWasteViewController" customModule="Waste2x" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationsViewController" customModule="Waste2x" customModuleProvider="target">
             <connections>
-                <outlet property="currentWasteTableview" destination="zRc-1y-yDc" id="gEV-0C-Z4D"/>
+                <outlet property="notificationsTableview" destination="dWW-NK-aB1" id="SKe-oA-txf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,38 +19,38 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQ2-cA-Gdd">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWG-nN-ocd">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zRc-1y-yDc">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dWW-NK-aB1">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <inset key="scrollIndicatorInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                            <inset key="scrollIndicatorInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <outlet property="dataSource" destination="-1" id="2sC-8l-FXc"/>
-                                <outlet property="delegate" destination="-1" id="vTd-jo-hjA"/>
+                                <outlet property="dataSource" destination="-1" id="NMN-GK-zvf"/>
+                                <outlet property="delegate" destination="-1" id="aEi-Bh-K5g"/>
                             </connections>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="zRc-1y-yDc" secondAttribute="trailing" id="TbI-8q-tID"/>
-                        <constraint firstAttribute="bottom" secondItem="zRc-1y-yDc" secondAttribute="bottom" id="YZs-zJ-0q7"/>
-                        <constraint firstItem="zRc-1y-yDc" firstAttribute="leading" secondItem="AQ2-cA-Gdd" secondAttribute="leading" id="el6-Ly-wPF"/>
-                        <constraint firstItem="zRc-1y-yDc" firstAttribute="top" secondItem="AQ2-cA-Gdd" secondAttribute="top" id="u7V-WT-SPs"/>
+                        <constraint firstAttribute="trailing" secondItem="dWW-NK-aB1" secondAttribute="trailing" id="V2q-30-kzF"/>
+                        <constraint firstAttribute="bottom" secondItem="dWW-NK-aB1" secondAttribute="bottom" id="Yoi-Md-SUo"/>
+                        <constraint firstItem="dWW-NK-aB1" firstAttribute="leading" secondItem="dWG-nN-ocd" secondAttribute="leading" id="gTv-b5-fXZ"/>
+                        <constraint firstItem="dWW-NK-aB1" firstAttribute="top" secondItem="dWG-nN-ocd" secondAttribute="top" id="x9s-ZC-Q21"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AQ2-cA-Gdd" secondAttribute="trailing" id="kDg-aO-xBd"/>
-                <constraint firstItem="AQ2-cA-Gdd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nRs-QE-eIa"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="AQ2-cA-Gdd" secondAttribute="bottom" id="nta-Fb-kQP"/>
-                <constraint firstItem="AQ2-cA-Gdd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vpH-3p-4ka"/>
+                <constraint firstItem="dWG-nN-ocd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9ec-2S-mCO"/>
+                <constraint firstItem="dWG-nN-ocd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="AMl-fG-892"/>
+                <constraint firstAttribute="trailing" secondItem="dWG-nN-ocd" secondAttribute="trailing" id="mCY-Qf-veD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dWG-nN-ocd" secondAttribute="bottom" id="tGA-fN-UL5"/>
             </constraints>
-            <point key="canvasLocation" x="91" y="88"/>
+            <point key="canvasLocation" x="96" y="71"/>
         </view>
     </objects>
 </document>

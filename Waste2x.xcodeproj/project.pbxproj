@@ -56,6 +56,10 @@
 		048C09FA265E64D0003E301F /* CurrentWasteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048C09F8265E64D0003E301F /* CurrentWasteTableViewCell.xib */; };
 		04969274265CFCB10081E875 /* WasteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04969272265CFCB10081E875 /* WasteDetailViewController.swift */; };
 		04969275265CFCB10081E875 /* WasteDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04969273265CFCB10081E875 /* WasteDetailViewController.xib */; };
+		04A4563D265F839C00D2BCF0 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4563B265F839C00D2BCF0 /* NotificationsViewController.swift */; };
+		04A4563E265F839C00D2BCF0 /* NotificationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A4563C265F839C00D2BCF0 /* NotificationsViewController.xib */; };
+		04A45642265F8B4500D2BCF0 /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A45640265F8B4500D2BCF0 /* NotificationsTableViewCell.swift */; };
+		04A45643265F8B4500D2BCF0 /* NotificationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A45641265F8B4500D2BCF0 /* NotificationsTableViewCell.xib */; };
 		04B20E8C265D36EA0081E7C0 /* WasteDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B20E8B265D36EA0081E7C0 /* WasteDetailViewModel.swift */; };
 		04B20E90265D39B10081E7C0 /* NewWasteSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B20E8E265D39B10081E7C0 /* NewWasteSizeViewController.swift */; };
 		04B20E91265D39B10081E7C0 /* NewWasteSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B20E8F265D39B10081E7C0 /* NewWasteSizeViewController.xib */; };
@@ -148,6 +152,10 @@
 		048C09F8265E64D0003E301F /* CurrentWasteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentWasteTableViewCell.xib; sourceTree = "<group>"; };
 		04969272265CFCB10081E875 /* WasteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDetailViewController.swift; sourceTree = "<group>"; };
 		04969273265CFCB10081E875 /* WasteDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteDetailViewController.xib; sourceTree = "<group>"; };
+		04A4563B265F839C00D2BCF0 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		04A4563C265F839C00D2BCF0 /* NotificationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsViewController.xib; sourceTree = "<group>"; };
+		04A45640265F8B4500D2BCF0 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
+		04A45641265F8B4500D2BCF0 /* NotificationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsTableViewCell.xib; sourceTree = "<group>"; };
 		04B20E8B265D36EA0081E7C0 /* WasteDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDetailViewModel.swift; sourceTree = "<group>"; };
 		04B20E8E265D39B10081E7C0 /* NewWasteSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWasteSizeViewController.swift; sourceTree = "<group>"; };
 		04B20E8F265D39B10081E7C0 /* NewWasteSizeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewWasteSizeViewController.xib; sourceTree = "<group>"; };
@@ -252,6 +260,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				04A45639265F835F00D2BCF0 /* Messages & Notifications */,
 				04E3D69A265D29330058528D /* Waste */,
 				0067A2DE2527549400CECA8C /* Onboarding */,
 			);
@@ -498,6 +507,33 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		04A45639265F835F00D2BCF0 /* Messages & Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				04A4563A265F837D00D2BCF0 /* Notifications */,
+			);
+			path = "Messages & Notifications";
+			sourceTree = "<group>";
+		};
+		04A4563A265F837D00D2BCF0 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				04A4563B265F839C00D2BCF0 /* NotificationsViewController.swift */,
+				04A4563C265F839C00D2BCF0 /* NotificationsViewController.xib */,
+				04A4563F265F883D00D2BCF0 /* CustomViews */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		04A4563F265F883D00D2BCF0 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				04A45640265F8B4500D2BCF0 /* NotificationsTableViewCell.swift */,
+				04A45641265F8B4500D2BCF0 /* NotificationsTableViewCell.xib */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		04B20E8A265D36BE0081E7C0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -628,6 +664,7 @@
 				048C09EB265E3135003E301F /* WasteDetailLocationViewController.xib in Resources */,
 				04E3D680265D19ED0058528D /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				04E3D678265D19ED0058528D /* Poppins-ExtraLightItalic.ttf in Resources */,
+				04A45643265F8B4500D2BCF0 /* NotificationsTableViewCell.xib in Resources */,
 				048C09FA265E64D0003E301F /* CurrentWasteTableViewCell.xib in Resources */,
 				04E3D693265D1B330058528D /* Inter-Black.ttf in Resources */,
 				04E3D698265D1B3B0058528D /* Inter-VariableFont_slnt,wght.ttf in Resources */,
@@ -646,6 +683,7 @@
 				04E3D673265D19ED0058528D /* Poppins-Medium.ttf in Resources */,
 				04E3D675265D19ED0058528D /* Poppins-SemiBold.ttf in Resources */,
 				04E3D691265D1B330058528D /* Inter-Regular.ttf in Resources */,
+				04A4563E265F839C00D2BCF0 /* NotificationsViewController.xib in Resources */,
 				04E3D683265D19ED0058528D /* OFL.txt in Resources */,
 				116E22BE25678AE100F09AD9 /* GoogleService-Info.plist in Resources */,
 				04E3D677265D19ED0058528D /* Poppins-Bold.ttf in Resources */,
@@ -769,6 +807,7 @@
 				048C09F9265E64D0003E301F /* CurrentWasteTableViewCell.swift in Sources */,
 				0043453E254823FE009A6166 /* TSAPIClient.swift in Sources */,
 				04B20E90265D39B10081E7C0 /* NewWasteSizeViewController.swift in Sources */,
+				04A4563D265F839C00D2BCF0 /* NotificationsViewController.swift in Sources */,
 				0067A31E252AFC9E00CECA8C /* UIButton.swift in Sources */,
 				048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */,
 				0067A31C252AFC9E00CECA8C /* UITextField.swift in Sources */,
@@ -783,6 +822,7 @@
 				048C09EA265E3135003E301F /* WasteDetailLocationViewController.swift in Sources */,
 				0067A2D825274CE400CECA8C /* LoginViewModel.swift in Sources */,
 				0067A321252AFC9E00CECA8C /* String.swift in Sources */,
+				04A45642265F8B4500D2BCF0 /* NotificationsTableViewCell.swift in Sources */,
 				0067A31A252AFC9E00CECA8C /* UICollectionView.swift in Sources */,
 				0067A320252AFC9E00CECA8C /* UIView.swift in Sources */,
 				0067A31D252AFC9E00CECA8C /* UISlider.swift in Sources */,

@@ -19,7 +19,8 @@ class CurrentWasteTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        mainHolderView.dropShadow(color: UIColor(hexString: "969696", alpha: 1), opacity: 0.15, offSet: CGSize(width: -1, height: 1), radius: 3, scale: true)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

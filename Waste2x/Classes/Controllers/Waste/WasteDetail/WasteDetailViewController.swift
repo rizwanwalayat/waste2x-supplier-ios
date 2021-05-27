@@ -38,6 +38,7 @@ class WasteDetailViewController: BaseViewController {
     
     fileprivate func setupviews()
     {
+        detailHolderview.dropShadow(color: UIColor(hexString: "969696", alpha: 1), opacity: 0.15, offSet: CGSize(width: -1, height: 1), radius: 3, scale: true)
         collectionviewImages.register(UINib(nibName: "WasteImageDetailCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WasteImageDetailCollectionViewCell")
     }
     // MARK: - Action

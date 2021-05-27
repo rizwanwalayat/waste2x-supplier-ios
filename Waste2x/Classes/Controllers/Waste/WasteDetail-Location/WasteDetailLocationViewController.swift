@@ -22,19 +22,21 @@ class WasteDetailLocationViewController: BaseViewController {
     @IBOutlet weak var searchTextField      : UITextField!
     @IBOutlet weak var searchIcon           : UIImageView!
     @IBOutlet weak var nextButton           : UIButton!
-    
+    @IBOutlet weak var placeTableview       : UITableView!
+    @IBOutlet weak var consttableviewHeight : NSLayoutConstraint!
     
     // MARK: - Declarations
     
     var locationManager             : CLLocationManager!
     var currentLocation             : CLLocation?
-    var placesClient                : GMSPlacesClient!
+    private var placesClient        : GMSPlacesClient!
     var preciseLocationZoomLevel    : Float = 15.0
     var approximateLocationZoomLevel: Float = 10.0
     var likelyPlaces                : [GMSPlace] = []
     var selectedPlace               : GMSPlace?
     var marker                      : GMSMarker?
     var delegate                    : WasteDetailLocationViewControllerDelegate?
+    
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -72,3 +74,29 @@ class WasteDetailLocationViewController: BaseViewController {
     
 }
 
+
+extension WasteDetailLocationViewController: UITextFieldDelegate
+{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        let placeFields: GMSPlaceField = [.name, .formattedAddress]
+        placesClient.findPlaceLikelihoodsFromCurrentLocation(withPlaceFields: placeFields) { [weak self] (placeLikelihoods, error) in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            guard error == nil else {
+                print("Current place error: \(error?.localizedDescription ?? "")")
+                return
+            }
+            
+            guard let place = placeLikelihoods?.first?.place else {
+                strongSelf.nameLabel.text = "No current place"
+                strongSelf.addressLabel.text = ""
+                return
+            }
+        }
+
+        return true
+    }
+}
