@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationsViewController" customModule="Waste2x" customModuleProvider="target">
+            <connections>
+                <outlet property="notificationsTableview" destination="dWW-NK-aB1" id="SKe-oA-txf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWG-nN-ocd">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dWW-NK-aB1">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="scrollIndicatorInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                            <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="NMN-GK-zvf"/>
+                                <outlet property="delegate" destination="-1" id="aEi-Bh-K5g"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="dWW-NK-aB1" secondAttribute="trailing" id="V2q-30-kzF"/>
+                        <constraint firstAttribute="bottom" secondItem="dWW-NK-aB1" secondAttribute="bottom" id="Yoi-Md-SUo"/>
+                        <constraint firstItem="dWW-NK-aB1" firstAttribute="leading" secondItem="dWG-nN-ocd" secondAttribute="leading" id="gTv-b5-fXZ"/>
+                        <constraint firstItem="dWW-NK-aB1" firstAttribute="top" secondItem="dWG-nN-ocd" secondAttribute="top" id="x9s-ZC-Q21"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dWG-nN-ocd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9ec-2S-mCO"/>
+                <constraint firstItem="dWG-nN-ocd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="AMl-fG-892"/>
+                <constraint firstAttribute="trailing" secondItem="dWG-nN-ocd" secondAttribute="trailing" id="mCY-Qf-veD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dWG-nN-ocd" secondAttribute="bottom" id="tGA-fN-UL5"/>
+            </constraints>
+            <point key="canvasLocation" x="96" y="71"/>
+        </view>
+    </objects>
+</document>
