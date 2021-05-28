@@ -22,8 +22,7 @@ class WasteDetailLocationViewController: BaseViewController {
     @IBOutlet weak var searchTextField      : UITextField!
     @IBOutlet weak var searchIcon           : UIImageView!
     @IBOutlet weak var nextButton           : UIButton!
-    @IBOutlet weak var placeTableview       : UITableView!
-    @IBOutlet weak var consttableviewHeight : NSLayoutConstraint!
+    @IBOutlet weak var titleLabel           : UILabel!
     
     // MARK: - Declarations
     
@@ -57,6 +56,8 @@ class WasteDetailLocationViewController: BaseViewController {
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.isMyLocationEnabled = true
         mapView.delegate = self
+        
+        mapView.roundCorners(uiViewCorners: .top, radius: 32)
     }
 
     @IBAction func nextButtonTapped(_ sender: Any) {
@@ -72,31 +73,39 @@ class WasteDetailLocationViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func backButtonPressed(_ sender: Any) {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 
 extension WasteDetailLocationViewController: UITextFieldDelegate
 {
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        
-//        let placeFields: GMSPlaceField = [.name, .formattedAddress]
-//        placesClient.findPlaceLikelihoodsFromCurrentLocation(withPlaceFields: placeFields) { [weak self] (placeLikelihoods, error) in
-//            guard let strongSelf = self else {
-//                return
-//            }
-//            
-//            guard error == nil else {
-//                print("Current place error: \(error?.localizedDescription ?? "")")
-//                return
-//            }
-//            
-//            guard let place = placeLikelihoods?.first?.place else {
-////                strongSelf.nameLabel.text = "No current place"
-////                strongSelf.addressLabel.text = ""
-//                return
-//            }
-//        }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+//        let autocompleteController = GMSAutocompleteViewController()
+//            autocompleteController.delegate = self
 //
-//        return true
-//    }
+//            // Specify the place data types to return.
+//            let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) | UInt(GMSPlaceField.placeID.rawValue))
+//            autocompleteController.placeFields = fields
+//
+//            // Specify a filter.
+//            let filter = GMSAutocompleteFilter()
+//            filter.type = .address
+//            autocompleteController.autocompleteFilter = filter
+//
+//            // Display the autocomplete view controller.
+//            present(autocompleteController, animated: true, completion: nil)
+        let dropDownVC = CustomDropDownViewController(nibName: "CustomDropDownViewController", bundle: nil)
+        dropDownVC.modalPresentationStyle   = .overFullScreen
+        dropDownVC.frameAdjustment = searchbarHolderView.bounds
+        dropDownVC.searchText = textField.text ?? ""
+        self.present(dropDownVC, animated: false, completion: nil)
+        
+        return true
+    }
 }
+

@@ -11,6 +11,8 @@ import UIKit
 class NotificationsViewController: BaseViewController {
 
     // MARK: - Outlets
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var mainHolderView: UIView!
     @IBOutlet weak var notificationsTableview : UITableView!
     
     
@@ -21,7 +23,16 @@ class NotificationsViewController: BaseViewController {
         notificationsTableview.register(UINib(nibName: "NotificationsTableViewCell", bundle: nil), forCellReuseIdentifier: "NotificationsTableViewCell")
         notificationsTableview.rowHeight = UITableView.automaticDimension
         notificationsTableview.estimatedRowHeight = UITableView.automaticDimension
+        
+        mainHolderView.roundCorners(uiViewCorners: .top, radius: 32)
     }
+    
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
 }
 
 extension NotificationsViewController : UITableViewDelegate, UITableViewDataSource
