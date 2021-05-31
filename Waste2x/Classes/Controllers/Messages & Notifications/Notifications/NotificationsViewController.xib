@@ -7,10 +7,17 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationsViewController" customModule="Waste2x" customModuleProvider="target">
             <connections>
+                <outlet property="mainHolderView" destination="dWG-nN-ocd" id="Mk8-31-2ZM"/>
                 <outlet property="notificationsTableview" destination="dWW-NK-aB1" id="SKe-oA-txf"/>
+                <outlet property="titleLabel" destination="XZV-WQ-ova" id="rI7-CY-tlv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,11 +26,52 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="koi-GF-cd0">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="101.5"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADS-S7-M9L">
+                            <rect key="frame" x="0.0" y="44" width="414" height="57.5"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAI-rU-VBn">
+                                    <rect key="frame" x="30" y="18" width="22" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="mAI-rU-VBn" secondAttribute="height" multiplier="1:1" id="BA7-pZ-Fsu"/>
+                                        <constraint firstAttribute="height" constant="22" id="VfA-q6-BzH"/>
+                                    </constraints>
+                                    <state key="normal" image="Arrow Left"/>
+                                    <connections>
+                                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="GM9-gc-1Fk"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Curent Waste" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZV-WQ-ova">
+                                    <rect key="frame" x="144" y="16" width="126" height="25.5"/>
+                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="XZV-WQ-ova" firstAttribute="top" secondItem="ADS-S7-M9L" secondAttribute="top" constant="16" id="48N-zY-ZId"/>
+                                <constraint firstItem="XZV-WQ-ova" firstAttribute="centerX" secondItem="ADS-S7-M9L" secondAttribute="centerX" id="621-FU-CaU"/>
+                                <constraint firstItem="mAI-rU-VBn" firstAttribute="leading" secondItem="ADS-S7-M9L" secondAttribute="leading" constant="30" id="Wyi-CS-QCp"/>
+                                <constraint firstAttribute="bottom" secondItem="XZV-WQ-ova" secondAttribute="bottom" constant="16" id="dGf-17-5tj"/>
+                                <constraint firstItem="mAI-rU-VBn" firstAttribute="centerY" secondItem="XZV-WQ-ova" secondAttribute="centerY" id="z97-TO-hsb"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.45882352939999999" green="0.58039215690000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ADS-S7-M9L" secondAttribute="trailing" id="erv-x6-F9m"/>
+                        <constraint firstAttribute="bottom" secondItem="ADS-S7-M9L" secondAttribute="bottom" id="iq1-i4-MAY"/>
+                        <constraint firstItem="ADS-S7-M9L" firstAttribute="leading" secondItem="koi-GF-cd0" secondAttribute="leading" id="ubJ-Tz-6zF"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWG-nN-ocd">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dWW-NK-aB1">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <rect key="frame" x="0.0" y="28" width="414" height="766.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="scrollIndicatorInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -33,24 +81,31 @@
                             </connections>
                         </tableView>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="dWW-NK-aB1" secondAttribute="trailing" id="V2q-30-kzF"/>
                         <constraint firstAttribute="bottom" secondItem="dWW-NK-aB1" secondAttribute="bottom" id="Yoi-Md-SUo"/>
                         <constraint firstItem="dWW-NK-aB1" firstAttribute="leading" secondItem="dWG-nN-ocd" secondAttribute="leading" id="gTv-b5-fXZ"/>
-                        <constraint firstItem="dWW-NK-aB1" firstAttribute="top" secondItem="dWG-nN-ocd" secondAttribute="top" id="x9s-ZC-Q21"/>
+                        <constraint firstItem="dWW-NK-aB1" firstAttribute="top" secondItem="dWG-nN-ocd" secondAttribute="top" constant="28" id="x9s-ZC-Q21"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.45882352939999999" green="0.58039215690000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="dWG-nN-ocd" firstAttribute="top" secondItem="koi-GF-cd0" secondAttribute="bottom" id="0KT-jT-kW4"/>
                 <constraint firstItem="dWG-nN-ocd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9ec-2S-mCO"/>
-                <constraint firstItem="dWG-nN-ocd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="AMl-fG-892"/>
+                <constraint firstItem="koi-GF-cd0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BAp-Ji-kXu"/>
+                <constraint firstItem="koi-GF-cd0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="CnQ-ki-Lpo"/>
+                <constraint firstItem="koi-GF-cd0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KS7-eU-eaE"/>
+                <constraint firstItem="ADS-S7-M9L" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="RES-So-6sU"/>
                 <constraint firstAttribute="trailing" secondItem="dWG-nN-ocd" secondAttribute="trailing" id="mCY-Qf-veD"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dWG-nN-ocd" secondAttribute="bottom" id="tGA-fN-UL5"/>
+                <constraint firstAttribute="bottom" secondItem="dWG-nN-ocd" secondAttribute="bottom" id="tGA-fN-UL5"/>
             </constraints>
             <point key="canvasLocation" x="96" y="71"/>
         </view>
     </objects>
+    <resources>
+        <image name="Arrow Left" width="10" height="18"/>
+    </resources>
 </document>

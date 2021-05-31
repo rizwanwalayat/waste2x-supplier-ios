@@ -13,7 +13,8 @@ class CurrentWasteViewController: BaseViewController {
     
     // MARK: - Outlet
     @IBOutlet weak var currentWasteTableview : UITableView!
-    
+    @IBOutlet weak var backgroundHolderview: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +22,14 @@ class CurrentWasteViewController: BaseViewController {
         currentWasteTableview.register(UINib(nibName: "CurrentWasteTableViewCell", bundle: nil), forCellReuseIdentifier: "CurrentWasteTableViewCell")
         currentWasteTableview.rowHeight = UITableView.automaticDimension
         currentWasteTableview.estimatedRowHeight = UITableView.automaticDimension
+        
+        backgroundHolderview.roundCorners(uiViewCorners: .top, radius: 32)
     }
 
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 

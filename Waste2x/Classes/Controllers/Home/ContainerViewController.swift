@@ -6,89 +6,124 @@
 //
 
 import UIKit
+var globalObjectContainer : ContainerViewController?
+
 class ContainerViewController: BaseViewController {
     
     //MARK: - Outlets
-    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var tabsView: UIView!
-    @IBOutlet weak var communitiesButton: UIButton!
+    @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var tabbarViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var listingsButton: UIButton!
+    @IBOutlet weak var messagesButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var faqButton: UIButton!
     @IBOutlet weak var newsButton: UIButton!
-    @IBOutlet weak var notificationsButton: UIButton!
-    @IBOutlet weak var moreButton: UIButton!
-    @IBOutlet weak var communitiesLabel: UILabel!
-    @IBOutlet weak var listingsLabel: UILabel!
-    @IBOutlet weak var newsLabel: UILabel!
-    @IBOutlet weak var notificationsLabel: UILabel!
-    @IBOutlet weak var moreLabel: UILabel!
+    @IBOutlet weak var homeHoverView: UIView!
+    @IBOutlet weak var messagesHoverView: UIView!
+    @IBOutlet weak var faqHoverView: UIView!
+    @IBOutlet weak var newsHoverView: UIView!
+    
+    var nav = BaseNavigationViewController()
+
     
     //MARK: - Variables
     override func viewDidLoad() {
         super .viewDidLoad()
-        activeViewController = CommunitiesViewController()
+        globalObjectContainer = self
+        messagesHoverView.isHidden = true
+        faqHoverView.isHidden = true
+        newsHoverView.isHidden = true
+        homeButton.isSelected = true
+        homeHoverView.isHidden = false
+        nav.viewControllers = [HomeViewController()]
+        activeViewController = self.nav
         
     }
     
     
     //MARK: - Actions
     
-    @IBAction func didTapCommunities(_ sender: Any) {
-        activeViewController = CommunitiesViewController()
-
-        buttonSelect(button: communitiesButton)
-        buttonDeselect(button: listingsButton)
+    @IBAction func didTapHome(_ sender: Any) {
+        nav.viewControllers = [HomeViewController()]
+        activeViewController = self.nav
+        messagesHoverView.isHidden = true
+        faqHoverView.isHidden = true
+        newsHoverView.isHidden = true
+        homeHoverView.isHidden = false
+        buttonSelect(button: homeButton)
+        buttonDeselect(button: messagesButton)
+        buttonDeselect(button: addButton)
+        buttonDeselect(button: faqButton)
         buttonDeselect(button: newsButton)
-        buttonDeselect(button: notificationsButton)
-        buttonDeselect(button: moreButton)
     }
     
-    @IBAction func didTapListings(_ sender: Any) {
-        activeViewController = ListingsViewController()
-//        tabbarViewHeight.constant = 0
-        buttonSelect(button: listingsButton)
-        buttonDeselect(button: communitiesButton)
+    @IBAction func didTapMessages(_ sender: Any) {
+        nav.viewControllers = [ContactViewController()]
+        activeViewController = self.nav
+        messagesHoverView.isHidden = false
+        faqHoverView.isHidden = true
+        newsHoverView.isHidden = true
+        homeHoverView.isHidden = true
+        buttonSelect(button: messagesButton)
+        buttonDeselect(button: homeButton)
+        buttonDeselect(button: addButton)
+        buttonDeselect(button: faqButton)
         buttonDeselect(button: newsButton)
-        buttonDeselect(button: notificationsButton)
-        buttonDeselect(button: moreButton)
+        
+    }
+    @IBAction func didTapAddWaste(_ sender: Any) {
+        nav.viewControllers = [AddMoreViewController()]
+        activeViewController = self.nav
+        messagesHoverView.isHidden = true
+        faqHoverView.isHidden = true
+        newsHoverView.isHidden = true
+        homeHoverView.isHidden = true
+        buttonSelect(button: addButton)
+        buttonDeselect(button: messagesButton)
+        buttonDeselect(button: homeButton)
+        buttonDeselect(button: faqButton)
+        buttonDeselect(button: newsButton)
+    }
+    
+    @IBAction func didTapFaq(_ sender: Any) {
+        messagesHoverView.isHidden = true
+        faqHoverView.isHidden = false
+        newsHoverView.isHidden = true
+        homeHoverView.isHidden = true
+        nav.viewControllers = [FaqViewController()]
+        activeViewController = self.nav
+        buttonSelect(button: faqButton)
+        buttonDeselect(button: messagesButton)
+        buttonDeselect(button: addButton)
+        buttonDeselect(button: homeButton)
+        buttonDeselect(button: newsButton)
         
     }
     
     @IBAction func didTapNews(_ sender: Any) {
-        activeViewController = NewsViewController()
-        
-        buttonSelect(button: newsButton)
-        buttonDeselect(button: listingsButton)
-        buttonDeselect(button: communitiesButton)
-        buttonDeselect(button: notificationsButton)
-        buttonDeselect(button: moreButton)
-    }
-    
-    @IBAction func didNotifications(_ sender: Any) {
-        activeViewController = NotificationsViewController()
-        buttonSelect(button: notificationsButton)
-        buttonDeselect(button: listingsButton)
+        nav.viewControllers = [NewsViewController()]
+        activeViewController = self.nav
+        messagesHoverView.isHidden = true
+        faqHoverView.isHidden = true
+        newsHoverView.isHidden = false
+        homeHoverView.isHidden = true
+        buttonSelect(button: addButton)
+        buttonDeselect(button: messagesButton)
+        buttonDeselect(button: homeButton)
+        buttonDeselect(button: faqButton)
         buttonDeselect(button: newsButton)
-        buttonDeselect(button: communitiesButton)
-        buttonDeselect(button: moreButton)
-        
-    }
-    
-    @IBAction func didTapMore(_ sender: Any) {
-        activeViewController = MoreViewController()
-        buttonSelect(button: moreButton)
-        buttonDeselect(button: listingsButton)
-        buttonDeselect(button: newsButton)
-        buttonDeselect(button: notificationsButton)
-        buttonDeselect(button: communitiesButton)
     }
     
     
     //MARK: - Override Functions
     override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
         tabsView.layer.cornerRadius = 15
         tabsView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         tabsView.layer.masksToBounds = true
+        self.navigationController?.navigationBar.isHidden = true
+        
     }
     
     
@@ -98,25 +133,26 @@ class ContainerViewController: BaseViewController {
     }
     func buttonSelect(button:UIButton){
         button.isSelected = true
-        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).cgColor
-        button.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 1
-        button.layer.borderWidth = 1
-        button.layer.borderColor = .init(red: 0, green: 0, blue: 0, alpha: 0.25)
-        button.layer.masksToBounds = false
-        button.layer.cornerRadius = 4.0
+        
+//        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).cgColor
+//        button.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
+//        button.layer.shadowOpacity = 1.0
+//        button.layer.shadowRadius = 1
+//        button.layer.borderWidth = 1
+//        button.layer.borderColor = .init(red: 0, green: 0, blue: 0, alpha: 0.25)
+//        button.layer.masksToBounds = false
+//        button.layer.cornerRadius = 4.0
     }
     func buttonDeselect(button:UIButton){
         button.isSelected = false
-        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0).cgColor
-        button.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        button.layer.shadowOpacity = 0.0
-        button.layer.shadowRadius = 0
-        button.layer.borderWidth = 0
-        button.layer.borderColor = .none
-        button.layer.masksToBounds = true
-        button.layer.cornerRadius = 0.0
+//        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0).cgColor
+//        button.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+//        button.layer.shadowOpacity = 0.0
+//        button.layer.shadowRadius = 0
+//        button.layer.borderWidth = 0
+//        button.layer.borderColor = .none
+//        button.layer.masksToBounds = true
+//        button.layer.cornerRadius = 0.0
     }
     
     //MARK: - Private Functions
@@ -144,8 +180,8 @@ class ContainerViewController: BaseViewController {
                 // call before adding child view controller's view as subview
                 addChild(activeVC)
 
-                activeVC.view.frame = contentView.bounds
-                contentView.addSubview(activeVC.view)
+                activeVC.view.frame = containerView.bounds
+                containerView.addSubview(activeVC.view)
 
                 // call before adding child view controller's view as subview
                 activeVC.didMove(toParent: self)
