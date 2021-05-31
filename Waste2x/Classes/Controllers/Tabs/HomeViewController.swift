@@ -183,6 +183,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 1 {
+            tableViewHeight.constant = 400
             let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
             supplierCell = cell
             cell.selectionStyle = .none
@@ -220,7 +221,6 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         
         let indexPath = wasteTypeCollectionView.indexPath(for: cell ?? UICollectionViewCell())
         if let index = indexPath{
-//            self.pendingCollection = ((supplierCell?.pendingCollectionCheck) != nil)
                 supplierCell?.config(index: index.row)
         }
     }

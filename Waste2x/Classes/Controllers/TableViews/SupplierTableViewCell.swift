@@ -28,12 +28,7 @@ class SupplierTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func config(index:Int){
-//        if pendingCollectionCheck {
-//            self.imgView.image = UIImage(named: "pending")
-//        }
-//        else{
             self.imgView.image = images[index]
-//        }
     }
     func pendingCOllectionConfig(){
         self.imgView.image = UIImage(named: "pending")
