@@ -145,7 +145,7 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == weatherCollectionView {
-            return CGSize(width: weatherCollectionView.frame.width/6, height: weatherCollectionView.frame.height)
+            return CGSize(width: weatherCollectionView.frame.width/6, height: 65)
         }
         else{
             return CGSize(width: (wasteTypeCollectionView.bounds.width - 80), height: wasteTypeCollectionView.bounds.height)

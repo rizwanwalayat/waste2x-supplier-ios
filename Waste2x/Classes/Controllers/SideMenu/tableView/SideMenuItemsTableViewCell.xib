@@ -18,41 +18,38 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jA5-Vw-gcL">
-                        <rect key="frame" x="2" y="10" width="387" height="83"/>
+                        <rect key="frame" x="15" y="10" width="361" height="83"/>
                         <color key="backgroundColor" red="0.76862745099999996" green="0.82352941180000006" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="5"/>
+                                <real key="value" value="15"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Payment Icons" translatesAutoresizingMaskIntoConstraints="NO" id="amR-oP-2cO">
-                        <rect key="frame" x="20" y="35.5" width="32" height="32"/>
+                        <rect key="frame" x="40" y="35.5" width="32" height="32"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="32" id="N9X-9O-WqW"/>
                             <constraint firstAttribute="width" constant="32" id="Rjt-1J-cCk"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9a-xW-Qca">
-                        <rect key="frame" x="67" y="31.5" width="314" height="40"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="40" id="MeW-d9-ds7"/>
-                        </constraints>
+                        <rect key="frame" x="87" y="41.5" width="289" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="jA5-Vw-gcL" secondAttribute="trailing" constant="2" id="6Re-Q2-Gjh"/>
+                    <constraint firstAttribute="trailing" secondItem="jA5-Vw-gcL" secondAttribute="trailing" constant="15" id="6Re-Q2-Gjh"/>
+                    <constraint firstItem="W9a-xW-Qca" firstAttribute="trailing" secondItem="jA5-Vw-gcL" secondAttribute="trailing" id="Din-Fi-URW"/>
                     <constraint firstItem="amR-oP-2cO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="GUd-pr-NoZ"/>
                     <constraint firstAttribute="bottom" secondItem="jA5-Vw-gcL" secondAttribute="bottom" constant="10" id="HyH-On-Tsw"/>
-                    <constraint firstItem="amR-oP-2cO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ZJ1-da-OQG"/>
                     <constraint firstItem="W9a-xW-Qca" firstAttribute="leading" secondItem="amR-oP-2cO" secondAttribute="trailing" constant="15" id="bmj-vm-4Xv"/>
                     <constraint firstItem="jA5-Vw-gcL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="evY-c8-NQ5"/>
                     <constraint firstItem="W9a-xW-Qca" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ipZ-ld-l80"/>
-                    <constraint firstItem="jA5-Vw-gcL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="lRQ-qj-qii"/>
-                    <constraint firstAttribute="trailing" secondItem="W9a-xW-Qca" secondAttribute="trailing" constant="10" id="pSa-ip-WOL"/>
+                    <constraint firstItem="jA5-Vw-gcL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="lRQ-qj-qii"/>
+                    <constraint firstItem="amR-oP-2cO" firstAttribute="leading" secondItem="jA5-Vw-gcL" secondAttribute="leading" constant="25" id="oU2-7n-Zyb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
