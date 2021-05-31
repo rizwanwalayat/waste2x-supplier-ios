@@ -7,10 +7,17 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CurrentWasteViewController" customModule="Waste2x" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundHolderview" destination="AQ2-cA-Gdd" id="sn2-YZ-nis"/>
                 <outlet property="currentWasteTableview" destination="zRc-1y-yDc" id="gEV-0C-Z4D"/>
+                <outlet property="titleLabel" destination="9ch-g4-oa9" id="Kad-iI-qMu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,11 +26,52 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3g-ZN-Fqb">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="103.5"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1SB-Gh-iwk">
+                            <rect key="frame" x="0.0" y="46" width="414" height="57.5"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwY-zL-CUE">
+                                    <rect key="frame" x="30" y="18" width="22" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="22" id="XG6-bP-7rB"/>
+                                        <constraint firstAttribute="width" secondItem="bwY-zL-CUE" secondAttribute="height" multiplier="1:1" id="bea-ya-MzJ"/>
+                                    </constraints>
+                                    <state key="normal" image="Arrow Left"/>
+                                    <connections>
+                                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="EFE-4z-P5o"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Curent Waste" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ch-g4-oa9">
+                                    <rect key="frame" x="144" y="16" width="126" height="25.5"/>
+                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="9ch-g4-oa9" secondAttribute="bottom" constant="16" id="Gbs-BJ-sJG"/>
+                                <constraint firstItem="bwY-zL-CUE" firstAttribute="leading" secondItem="1SB-Gh-iwk" secondAttribute="leading" constant="30" id="cKt-5W-iy8"/>
+                                <constraint firstItem="9ch-g4-oa9" firstAttribute="centerX" secondItem="1SB-Gh-iwk" secondAttribute="centerX" id="dx6-w1-t8x"/>
+                                <constraint firstItem="9ch-g4-oa9" firstAttribute="top" secondItem="1SB-Gh-iwk" secondAttribute="top" constant="16" id="fb5-RZ-U05"/>
+                                <constraint firstItem="bwY-zL-CUE" firstAttribute="centerY" secondItem="9ch-g4-oa9" secondAttribute="centerY" id="vzK-c7-d7y"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.45882352939999999" green="0.58039215690000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="1SB-Gh-iwk" secondAttribute="bottom" id="79R-NY-DtB"/>
+                        <constraint firstAttribute="trailing" secondItem="1SB-Gh-iwk" secondAttribute="trailing" id="muH-Ne-W4R"/>
+                        <constraint firstItem="1SB-Gh-iwk" firstAttribute="leading" secondItem="y3g-ZN-Fqb" secondAttribute="leading" id="vRk-Xb-fdp"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQ2-cA-Gdd">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="103.5" width="414" height="792.5"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zRc-1y-yDc">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <rect key="frame" x="0.0" y="40" width="414" height="752.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="scrollIndicatorInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -33,24 +81,31 @@
                             </connections>
                         </tableView>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="zRc-1y-yDc" secondAttribute="trailing" id="TbI-8q-tID"/>
                         <constraint firstAttribute="bottom" secondItem="zRc-1y-yDc" secondAttribute="bottom" id="YZs-zJ-0q7"/>
                         <constraint firstItem="zRc-1y-yDc" firstAttribute="leading" secondItem="AQ2-cA-Gdd" secondAttribute="leading" id="el6-Ly-wPF"/>
-                        <constraint firstItem="zRc-1y-yDc" firstAttribute="top" secondItem="AQ2-cA-Gdd" secondAttribute="top" id="u7V-WT-SPs"/>
+                        <constraint firstItem="zRc-1y-yDc" firstAttribute="top" secondItem="AQ2-cA-Gdd" secondAttribute="top" constant="40" id="u7V-WT-SPs"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.45882352939999999" green="0.58039215690000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="AQ2-cA-Gdd" firstAttribute="top" secondItem="y3g-ZN-Fqb" secondAttribute="bottom" id="EOu-vJ-me6"/>
+                <constraint firstItem="1SB-Gh-iwk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="2" id="Vye-Xb-5wP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AQ2-cA-Gdd" secondAttribute="trailing" id="kDg-aO-xBd"/>
-                <constraint firstItem="AQ2-cA-Gdd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nRs-QE-eIa"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="AQ2-cA-Gdd" secondAttribute="bottom" id="nta-Fb-kQP"/>
+                <constraint firstItem="y3g-ZN-Fqb" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="n3h-1N-t4j"/>
+                <constraint firstAttribute="bottom" secondItem="AQ2-cA-Gdd" secondAttribute="bottom" id="nta-Fb-kQP"/>
+                <constraint firstItem="y3g-ZN-Fqb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pAZ-2o-NpX"/>
                 <constraint firstItem="AQ2-cA-Gdd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vpH-3p-4ka"/>
+                <constraint firstItem="y3g-ZN-Fqb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vxF-Tv-jDL"/>
             </constraints>
             <point key="canvasLocation" x="91" y="88"/>
         </view>
     </objects>
+    <resources>
+        <image name="Arrow Left" width="10" height="18"/>
+    </resources>
 </document>

@@ -222,7 +222,7 @@ United States of America</string>
                                                 <constraint firstItem="iUh-rb-iQe" firstAttribute="leading" secondItem="N2e-EE-Hqi" secondAttribute="leading" id="r3c-Ta-3y3"/>
                                             </constraints>
                                         </view>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wUj-Dp-H01">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wUj-Dp-H01">
                                             <rect key="frame" x="7" y="343" width="340" height="145"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>

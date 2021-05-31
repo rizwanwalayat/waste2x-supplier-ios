@@ -9,7 +9,7 @@
 import UIKit
 import NVActivityIndicatorView
 import Alamofire
-
+import SlideMenuControllerSwift
 
 struct NetworkingConnection {
   static let sharedInstance = NetworkReachabilityManager()!
@@ -28,22 +28,19 @@ struct NetworkingConnection {
     }
     
     class func loginRootViewController () {
-        let loginViewController = CurrentWasteViewController()
+        let loginViewController = LoginViewController()
         let navigationController = BaseNavigationViewController()
-        navigationController.viewControllers = [loginViewController]
-        navigationController.navigationBar.isHidden = true
+                navigationController.viewControllers = [loginViewController]
+        let mainSacreen = LoginViewController()
         kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)
         kApplicationWindow?.rootViewController = navigationController
         kApplicationWindow?.makeKeyAndVisible()
     }
     
     class func setupHomeAsRootViewController () {
-        let loginViewController = LoginViewController()
-        let navigationController = UINavigationController()
-        navigationController.viewControllers = [loginViewController]
-        navigationController.navigationBar.isHidden = true
+        let slideMenuController = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
         kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)
-        kApplicationWindow?.rootViewController = navigationController
+        kApplicationWindow?.rootViewController = slideMenuController
         kApplicationWindow?.makeKeyAndVisible()
     }
 

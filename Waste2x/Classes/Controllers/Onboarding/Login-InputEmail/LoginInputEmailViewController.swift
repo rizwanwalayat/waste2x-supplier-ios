@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 
 class LoginInputEmailViewController: BaseViewController {
 
@@ -28,9 +29,9 @@ class LoginInputEmailViewController: BaseViewController {
     // MARK: - Actions
 
     @IBAction func nextButtonPressed(_ sender: Any) {
-        
-        let codeVerificationVC = WasteDetailViewController(nibName: "WasteDetailViewController", bundle: nil)
-        self.navigationController?.pushViewController(codeVerificationVC, animated: true)
+        let slider = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
+//        let codeVerificationVC = ContainerViewController(nibName: "ContainerViewController", bundle: nil)
+        self.navigationController?.pushViewController(slider, animated: true)
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {

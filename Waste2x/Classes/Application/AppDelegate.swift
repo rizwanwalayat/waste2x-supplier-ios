@@ -21,12 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        NFX.sharedInstance().start()
-        FirebaseApp.configure()
+//        NFX.sharedInstance().start()
+//        FirebaseApp.configure()
 
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 30
-        registerForPushNotification()
+//        registerForPushNotification()
         Utility.loginRootViewController()
         
         GMSServices.provideAPIKey(googleAPIKey)
