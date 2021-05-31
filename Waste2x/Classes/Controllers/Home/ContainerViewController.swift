@@ -14,7 +14,6 @@ class ContainerViewController: BaseViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var tabsView: UIView!
     @IBOutlet weak var homeButton: UIButton!
-    @IBOutlet weak var tabbarViewHeight: NSLayoutConstraint!
     @IBOutlet weak var messagesButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var faqButton: UIButton!

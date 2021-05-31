@@ -17,7 +17,6 @@ class AddMoreViewController: BaseViewController {
     
 
     @IBAction func actionBack(_ sender: Any) {
-        globalObjectContainer?.tabbarViewHeight.constant = 100
         navigationController?.popViewController(animated: true)
     }
 }

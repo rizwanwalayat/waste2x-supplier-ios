@@ -24,7 +24,7 @@ class HomeViewController: BaseViewController {
     //MARK: - Variables
     var notification:Bool = true
     var email:String = "Haid3rawan@icloud.com"
-    var pendingCollection:Bool = true
+    var pendingCollection:Bool = false
     var timer: Timer?
     var count = Int()
     var selecetedIndex = 0
@@ -36,11 +36,9 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         indicatorMarker.numberOfPages = images.count
         count = images.count-1
-//        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(slideToNext), userInfo: nil, repeats: true)
         collectionDataSourceDelegate(outlet: weatherCollectionView)
         collectionDataSourceDelegate(outlet: wasteTypeCollectionView)
         tableDataSourceDelegate(outlet: tableView)
-        
         weatherCollectionView.backgroundColor = .clear
         self.progressPointsLabel.text = "\(Int(progressBar.progress*100))/100"
         welcomeLabel.text = email
@@ -145,7 +143,7 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == weatherCollectionView {
-            return CGSize(width: weatherCollectionView.frame.width/6, height: weatherCollectionView.frame.height)
+            return CGSize(width: weatherCollectionView.frame.width/6, height: 65)
         }
         else{
             return CGSize(width: (wasteTypeCollectionView.bounds.width - 80), height: wasteTypeCollectionView.bounds.height)
@@ -192,6 +190,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         }
         
         else if pendingCollection == true {
+            tableViewHeight.constant = 400
             let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
             cell.selectionStyle = .none
             cell.pendingCOllectionConfig()
@@ -199,6 +198,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         }
         
         else {
+            tableViewHeight.constant = 200
             let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
             cell.selectionStyle = .none
             supplierCell = cell

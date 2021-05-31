@@ -20,7 +20,6 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     }
     func config()
     {
-//        self.mainView.backgroundColor = .none
     }
 
 }

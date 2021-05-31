@@ -75,6 +75,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="xbU-7N-e8k" firstAttribute="top" secondItem="h5S-zG-Xty" secondAttribute="bottom" constant="2" id="9WW-R7-V5G"/>
+                                                <constraint firstAttribute="bottom" secondItem="xbU-7N-e8k" secondAttribute="bottom" constant="2" id="f1Z-f6-Qyh"/>
                                                 <constraint firstAttribute="bottom" secondItem="h5S-zG-Xty" secondAttribute="bottom" constant="10" id="uB4-Bf-avs"/>
                                                 <constraint firstAttribute="trailing" secondItem="h5S-zG-Xty" secondAttribute="trailing" id="uia-yc-dsi"/>
                                                 <constraint firstItem="h5S-zG-Xty" firstAttribute="leading" secondItem="OE0-Fw-Mdi" secondAttribute="leading" constant="10" id="wTS-KE-uf8"/>
@@ -118,6 +119,7 @@
                                                 <constraint firstItem="wUO-ig-Wr6" firstAttribute="top" secondItem="JLn-8R-Sno" secondAttribute="bottom" constant="2" id="Nr6-XJ-gl6"/>
                                                 <constraint firstItem="JLn-8R-Sno" firstAttribute="top" secondItem="WaO-a1-Cla" secondAttribute="top" constant="20" id="QCW-rK-iK5"/>
                                                 <constraint firstItem="wUO-ig-Wr6" firstAttribute="centerX" secondItem="JLn-8R-Sno" secondAttribute="centerX" id="TyZ-h6-h9d"/>
+                                                <constraint firstAttribute="bottom" secondItem="wUO-ig-Wr6" secondAttribute="bottom" constant="2" id="aXA-oQ-hop"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yup-fS-7SC">
@@ -177,6 +179,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="qqa-8y-hy7" firstAttribute="centerX" secondItem="ea3-c1-xgx" secondAttribute="centerX" id="0Ev-Kl-8ei"/>
+                                                <constraint firstAttribute="bottom" secondItem="qqa-8y-hy7" secondAttribute="bottom" constant="2" id="2tP-l1-r6o"/>
                                                 <constraint firstAttribute="trailing" secondItem="ea3-c1-xgx" secondAttribute="trailing" id="IGe-dN-7j1"/>
                                                 <constraint firstAttribute="bottom" secondItem="ea3-c1-xgx" secondAttribute="bottom" constant="10" id="LkK-Km-xvV"/>
                                                 <constraint firstItem="qqa-8y-hy7" firstAttribute="top" secondItem="ea3-c1-xgx" secondAttribute="bottom" constant="2" id="STM-j3-5Ko"/>
@@ -220,6 +223,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="OHf-ho-s9p" secondAttribute="trailing" constant="10" id="Bi7-r1-Jcu"/>
                                                 <constraint firstItem="YGo-yL-04r" firstAttribute="top" secondItem="OHf-ho-s9p" secondAttribute="bottom" constant="2" id="Eo0-oH-eFC"/>
                                                 <constraint firstItem="OHf-ho-s9p" firstAttribute="leading" secondItem="G47-AZ-je7" secondAttribute="leading" id="Hgk-wK-Xxd"/>
+                                                <constraint firstAttribute="bottom" secondItem="YGo-yL-04r" secondAttribute="bottom" constant="2" id="R4c-h4-EGF"/>
                                                 <constraint firstItem="OHf-ho-s9p" firstAttribute="top" secondItem="G47-AZ-je7" secondAttribute="top" constant="20" id="rBa-lO-IpF"/>
                                             </constraints>
                                         </view>
@@ -245,6 +249,7 @@
                         <constraint firstItem="pY5-NT-Fgg" firstAttribute="leading" secondItem="LbU-WF-VKW" secondAttribute="leading" id="5Ra-cK-Fah"/>
                         <constraint firstItem="pY5-NT-Fgg" firstAttribute="top" secondItem="LbU-WF-VKW" secondAttribute="top" id="TWJ-8A-921"/>
                         <constraint firstAttribute="trailing" secondItem="pY5-NT-Fgg" secondAttribute="trailing" id="byv-9D-2jh"/>
+                        <constraint firstAttribute="height" constant="100" id="o8L-0A-1ms"/>
                         <constraint firstAttribute="bottom" secondItem="pY5-NT-Fgg" secondAttribute="bottom" id="oo1-IT-ZN6"/>
                     </constraints>
                 </view>
@@ -253,13 +258,11 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="wBQ-tC-3ef" secondAttribute="bottom" id="ESU-Uy-LHs"/>
-                <constraint firstItem="LbU-WF-VKW" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.111607" id="GwG-ze-eXF"/>
                 <constraint firstAttribute="trailing" secondItem="LbU-WF-VKW" secondAttribute="trailing" id="MgR-Dh-Q8c"/>
                 <constraint firstAttribute="bottom" secondItem="LbU-WF-VKW" secondAttribute="bottom" id="Tg7-dD-94W"/>
                 <constraint firstItem="LbU-WF-VKW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Xr6-dP-5Vb"/>
                 <constraint firstItem="wBQ-tC-3ef" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ebZ-g7-6ci"/>
                 <constraint firstItem="wBQ-tC-3ef" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="j7m-O4-s0p"/>
-                <constraint firstItem="pY5-NT-Fgg" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.111607" id="l9Z-Da-2mq"/>
                 <constraint firstItem="wBQ-tC-3ef" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zTh-5R-1sL"/>
             </constraints>
             <point key="canvasLocation" x="-30.434782608695656" y="79.6875"/>
