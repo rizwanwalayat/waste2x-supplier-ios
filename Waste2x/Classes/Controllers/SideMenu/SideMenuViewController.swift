@@ -22,6 +22,7 @@ class SideMenuViewController: BaseViewController {
     @IBOutlet weak var headerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -62,7 +63,8 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
         self.selectionIndex = indexPath.row
         switch indexPath.row {
         case 0:
-            print("Payment")
+            let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
+            navigationController?.pushViewController(vc, animated: true)
         case 1:
             print("sceduled")
         default:

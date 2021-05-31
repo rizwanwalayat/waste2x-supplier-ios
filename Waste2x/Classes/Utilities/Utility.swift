@@ -32,8 +32,10 @@ struct NetworkingConnection {
 //        let navigationController = BaseNavigationViewController()
 //                navigationController.viewControllers = [loginViewController]
         let slideMenuController = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
+        let nav = BaseNavigationViewController()
+        nav.viewControllers = [slideMenuController]
         kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)
-        kApplicationWindow?.rootViewController = slideMenuController
+        kApplicationWindow?.rootViewController = nav
         kApplicationWindow?.makeKeyAndVisible()
     }
     

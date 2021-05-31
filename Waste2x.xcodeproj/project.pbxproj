@@ -49,6 +49,8 @@
 		04C82E1A2664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C82E152664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift */; };
 		04C82E1B2664BCCB00D52947 /* WasteDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C82E162664BCCB00D52947 /* WasteDetailViewController.xib */; };
 		04C82E1C2664BCCB00D52947 /* WasteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C82E172664BCCB00D52947 /* WasteDetailViewController.swift */; };
+		180CD1AF2665048D0092168B /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CD1AD2665048D0092168B /* PaymentViewController.swift */; };
+		180CD1B02665048D0092168B /* PaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180CD1AE2665048D0092168B /* PaymentViewController.xib */; };
 		181025232657E33A00DEBF7D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181025212657E33A00DEBF7D /* ContainerViewController.swift */; };
 		181025242657E33A00DEBF7D /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181025222657E33A00DEBF7D /* ContainerViewController.xib */; };
 		181025282657E36500DEBF7D /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181025252657E36500DEBF7D /* Global.swift */; };
@@ -168,6 +170,8 @@
 		04C82E172664BCCB00D52947 /* WasteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasteDetailViewController.swift; sourceTree = "<group>"; };
 		04E3D69C265D298C0058528D /* WasteImageDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteImageDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		04E3D69D265D298C0058528D /* WasteImageDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteImageDetailCollectionViewCell.xib; sourceTree = "<group>"; };
+		180CD1AD2665048D0092168B /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		180CD1AE2665048D0092168B /* PaymentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentViewController.xib; sourceTree = "<group>"; };
 		181025212657E33A00DEBF7D /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		181025222657E33A00DEBF7D /* ContainerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
 		181025252657E36500DEBF7D /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -300,6 +304,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				180CD1AC2665045E0092168B /* Payments */,
 				04A45639265F835F00D2BCF0 /* Messages & Notifications */,
 				04E3D69A265D29330058528D /* Waste */,
 				0067A2DE2527549400CECA8C /* Onboarding */,
@@ -512,6 +517,15 @@
 				1893754C266127F800D55A33 /* WasteDetail-Location */,
 			);
 			path = Waste;
+			sourceTree = "<group>";
+		};
+		180CD1AC2665045E0092168B /* Payments */ = {
+			isa = PBXGroup;
+			children = (
+				180CD1AD2665048D0092168B /* PaymentViewController.swift */,
+				180CD1AE2665048D0092168B /* PaymentViewController.xib */,
+			);
+			path = Payments;
 			sourceTree = "<group>";
 		};
 		181025202657E31B00DEBF7D /* Home */ = {
@@ -821,6 +835,7 @@
 				18397E192660FF54003DE30C /* Poppins-ExtraLightItalic.ttf in Resources */,
 				181025242657E33A00DEBF7D /* ContainerViewController.xib in Resources */,
 				18C11A6D265F9D5F00BC022F /* ContactViewController.xib in Resources */,
+				180CD1B02665048D0092168B /* PaymentViewController.xib in Resources */,
 				0067A2C825274C0B00CECA8C /* LaunchScreen.storyboard in Resources */,
 				18397E242660FF54003DE30C /* Poppins-Black.ttf in Resources */,
 				18397E1C2660FF54003DE30C /* Poppins-Medium.ttf in Resources */,
@@ -934,6 +949,7 @@
 				0067A318252AFC9E00CECA8C /* UIDevice.swift in Sources */,
 				181025292657E36500DEBF7D /* GCD.swift in Sources */,
 				1810253A2657E48500DEBF7D /* AddMoreViewController.swift in Sources */,
+				180CD1AF2665048D0092168B /* PaymentViewController.swift in Sources */,
 				181025282657E36500DEBF7D /* Global.swift in Sources */,
 				18397DCD2660FD35003DE30C /* LoginViewModel.swift in Sources */,
 				0043454F2548302A009A6166 /* UserData.swift in Sources */,
