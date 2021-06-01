@@ -91,8 +91,14 @@
 		18506D81265D45EB00018707 /* SideMenuItemsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18506D7F265D45EB00018707 /* SideMenuItemsTableViewCell.xib */; };
 		1850CEF9265E5491001F5E92 /* SupplierTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850CEF7265E5491001F5E92 /* SupplierTableViewCell.swift */; };
 		1850CEFA265E5491001F5E92 /* SupplierTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1850CEF8265E5491001F5E92 /* SupplierTableViewCell.xib */; };
+		18666B2326666175005C1A78 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18666B2126666175005C1A78 /* VideoTableViewCell.swift */; };
+		18666B2426666175005C1A78 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18666B2226666175005C1A78 /* VideoTableViewCell.xib */; };
 		186CD718266610C600A1F30F /* CreatePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CD716266610C600A1F30F /* CreatePaymentViewController.swift */; };
 		186CD719266610C600A1F30F /* CreatePaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186CD717266610C600A1F30F /* CreatePaymentViewController.xib */; };
+		18719141266667420050FAAA /* AudioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871913F266667420050FAAA /* AudioTableViewCell.swift */; };
+		18719142266667420050FAAA /* AudioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18719140266667420050FAAA /* AudioTableViewCell.xib */; };
+		18719145266667550050FAAA /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18719143266667550050FAAA /* DetailTableViewCell.swift */; };
+		18719146266667550050FAAA /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18719144266667550050FAAA /* DetailTableViewCell.xib */; };
 		1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC85265688EB00147EB8 /* BaseViewController.swift */; };
 		1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */; };
 		18937548266127CB00D55A33 /* NotificationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18937544266127CB00D55A33 /* NotificationsTableViewCell.xib */; };
@@ -214,8 +220,14 @@
 		18506D7F265D45EB00018707 /* SideMenuItemsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuItemsTableViewCell.xib; sourceTree = "<group>"; };
 		1850CEF7265E5491001F5E92 /* SupplierTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierTableViewCell.swift; sourceTree = "<group>"; };
 		1850CEF8265E5491001F5E92 /* SupplierTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplierTableViewCell.xib; sourceTree = "<group>"; };
+		18666B2126666175005C1A78 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		18666B2226666175005C1A78 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
 		186CD716266610C600A1F30F /* CreatePaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePaymentViewController.swift; sourceTree = "<group>"; };
 		186CD717266610C600A1F30F /* CreatePaymentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePaymentViewController.xib; sourceTree = "<group>"; };
+		1871913F266667420050FAAA /* AudioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTableViewCell.swift; sourceTree = "<group>"; };
+		18719140266667420050FAAA /* AudioTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioTableViewCell.xib; sourceTree = "<group>"; };
+		18719143266667550050FAAA /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		18719144266667550050FAAA /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		1875BC85265688EB00147EB8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		18937544266127CB00D55A33 /* NotificationsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsTableViewCell.xib; sourceTree = "<group>"; };
@@ -308,6 +320,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				18666B1C26665EAF005C1A78 /* News */,
 				180CD1AC2665045E0092168B /* Payments */,
 				04A45639265F835F00D2BCF0 /* Messages & Notifications */,
 				04E3D69A265D29330058528D /* Waste */,
@@ -548,8 +561,6 @@
 			children = (
 				1810252D2657E48500DEBF7D /* AddMoreViewController.xib */,
 				181025302657E48500DEBF7D /* AddMoreViewController.swift */,
-				1810252E2657E48500DEBF7D /* NewsViewController.xib */,
-				181025332657E48500DEBF7D /* NewsViewController.swift */,
 				1810252F2657E48500DEBF7D /* MessagesViewController.xib */,
 				181025312657E48500DEBF7D /* MessagesViewController.swift */,
 				181025342657E48500DEBF7D /* FaqViewController.xib */,
@@ -631,6 +642,21 @@
 				18506D7F265D45EB00018707 /* SideMenuItemsTableViewCell.xib */,
 			);
 			path = tableView;
+			sourceTree = "<group>";
+		};
+		18666B1C26665EAF005C1A78 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				1810252E2657E48500DEBF7D /* NewsViewController.xib */,
+				181025332657E48500DEBF7D /* NewsViewController.swift */,
+				18666B2126666175005C1A78 /* VideoTableViewCell.swift */,
+				18666B2226666175005C1A78 /* VideoTableViewCell.xib */,
+				1871913F266667420050FAAA /* AudioTableViewCell.swift */,
+				18719140266667420050FAAA /* AudioTableViewCell.xib */,
+				18719143266667550050FAAA /* DetailTableViewCell.swift */,
+				18719144266667550050FAAA /* DetailTableViewCell.xib */,
+			);
+			path = News;
 			sourceTree = "<group>";
 		};
 		18937542266127CB00D55A33 /* Notifications */ = {
@@ -830,11 +856,13 @@
 				18397E1D2660FF54003DE30C /* Poppins-SemiBoldItalic.ttf in Resources */,
 				1893756F266127F800D55A33 /* CurrentWasteViewController.xib in Resources */,
 				1893756D266127F800D55A33 /* CurrentWasteTableViewCell.xib in Resources */,
+				18719142266667420050FAAA /* AudioTableViewCell.xib in Resources */,
 				18397E262660FF54003DE30C /* Poppins-SemiBold.ttf in Resources */,
 				1850CEFA265E5491001F5E92 /* SupplierTableViewCell.xib in Resources */,
 				181025392657E48500DEBF7D /* MessagesViewController.xib in Resources */,
 				04C82E192664BCCB00D52947 /* WasteImageDetailCollectionViewCell.xib in Resources */,
 				18A849D0265E411F008F77E8 /* WeatherCollectionViewCell.xib in Resources */,
+				18666B2426666175005C1A78 /* VideoTableViewCell.xib in Resources */,
 				18397E212660FF54003DE30C /* Poppins-Regular.ttf in Resources */,
 				189782FD265D35CF008FD5E3 /* SideMenuViewController.xib in Resources */,
 				1810253F2657E48500DEBF7D /* HomeViewController.xib in Resources */,
@@ -863,6 +891,7 @@
 				181025382657E48500DEBF7D /* NewsViewController.xib in Resources */,
 				18397E1B2660FF54003DE30C /* Poppins-Light.ttf in Resources */,
 				18397E1A2660FF54003DE30C /* Poppins-BoldItalic.ttf in Resources */,
+				18719146266667550050FAAA /* DetailTableViewCell.xib in Resources */,
 				18397E232660FF54003DE30C /* Poppins-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -958,7 +987,9 @@
 				1810253A2657E48500DEBF7D /* AddMoreViewController.swift in Sources */,
 				180CD1AF2665048D0092168B /* PaymentViewController.swift in Sources */,
 				181025282657E36500DEBF7D /* Global.swift in Sources */,
+				18719141266667420050FAAA /* AudioTableViewCell.swift in Sources */,
 				18397DCD2660FD35003DE30C /* LoginViewModel.swift in Sources */,
+				18666B2326666175005C1A78 /* VideoTableViewCell.swift in Sources */,
 				0043454F2548302A009A6166 /* UserData.swift in Sources */,
 				1810252A2657E36500DEBF7D /* Extentions.swift in Sources */,
 				1850CEF9265E5491001F5E92 /* SupplierTableViewCell.swift in Sources */,
@@ -979,6 +1010,7 @@
 				00434540254823FE009A6166 /* ApiClient.swift in Sources */,
 				0043453E254823FE009A6166 /* TSAPIClient.swift in Sources */,
 				0067A31E252AFC9E00CECA8C /* UIButton.swift in Sources */,
+				18719145266667550050FAAA /* DetailTableViewCell.swift in Sources */,
 				048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */,
 				0067A31C252AFC9E00CECA8C /* UITextField.swift in Sources */,
 				18506D80265D45EB00018707 /* SideMenuItemsTableViewCell.swift in Sources */,
