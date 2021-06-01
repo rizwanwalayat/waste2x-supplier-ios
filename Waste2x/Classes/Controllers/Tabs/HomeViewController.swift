@@ -20,11 +20,12 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var indicatorMarker: UIPageControl!
+    @IBOutlet weak var homeScrollview : UIScrollView!
     
     //MARK: - Variables
     var notification:Bool = true
     var email:String = "Haid3rawan@icloud.com"
-    var pendingCollection:Bool = false
+    var pendingCollection:Bool = true
     var timer: Timer?
     var count = Int()
     var selecetedIndex = 0
@@ -35,7 +36,8 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setAttributedTextInLable(emailAddress: "alterises@gmail.com")
+        setAttributedTextInLable(emailAddress: email)
+        self.indicatorMarker.currentPage = 0
         progressBar.transform = CGAffineTransform(scaleX: 1, y: 4)
         indicatorMarker.numberOfPages = images.count
         count = images.count-1
@@ -44,7 +46,6 @@ class HomeViewController: BaseViewController {
         tableDataSourceDelegate(outlet: tableView)
         weatherCollectionView.backgroundColor = .clear
         self.progressPointsLabel.text = "\(Int(progressBar.progress*100))/100"
-        welcomeLabel.text = email
         if notification {
             notificationMark.backgroundColor = UIColor.init(red: 196, green: 210, blue: 150, alpha: 1)
         }
@@ -54,6 +55,8 @@ class HomeViewController: BaseViewController {
         }
         
         wasteTypeCollectionView.contentInset  = .zero
+        pendingCollection ? (tableViewHeight.constant = 400) : (tableViewHeight.constant = 200)
+        self.view.layoutIfNeeded()
     }
 
     
@@ -101,7 +104,7 @@ class HomeViewController: BaseViewController {
     
     func setAttributedTextInLable(emailAddress :String)
     {
-        let boldfont       = UIFont(name: "Poppins-semiBold", size: 18) ?? UIFont.systemFont(ofSize: 18, weight: .semibold)
+        let boldfont       = UIFont(name: "Poppins-Bold", size: 18) ?? UIFont.systemFont(ofSize: 18, weight: .semibold)
         let activityAttribute   = [ NSAttributedString.Key.font: boldfont, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: "ffffff")]
         let nameAttrString      = NSMutableAttributedString(string: "Hello, ", attributes: activityAttribute)
         
@@ -169,13 +172,16 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
-        collectionView.deselectItem(at: indexPath, animated: true)
-        self.indicatorMarker.currentPage = indexPath.row
-        supplierCell?.config(index: indexPath.row)
-        if collectionView == wasteTypeCollectionView {
-            let wasteDetails = CurrentWasteViewController(nibName: "CurrentWasteViewController", bundle: nil)
-            self.navigationController?.pushViewController(wasteDetails, animated: true)
-            
+        
+        if collectionView != wasteTypeCollectionView{
+            collectionView.deselectItem(at: indexPath, animated: true)
+            self.indicatorMarker.currentPage = indexPath.row
+            supplierCell?.config(index: indexPath.row)
+            if collectionView == wasteTypeCollectionView {
+                let wasteDetails = CurrentWasteViewController(nibName: "CurrentWasteViewController", bundle: nil)
+                self.navigationController?.pushViewController(wasteDetails, animated: true)
+                
+            }
         }
     }
     
@@ -201,7 +207,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 1 {
-            tableViewHeight.constant = 400
+            //tableViewHeight.constant = 400
             let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
             supplierCell = cell
             cell.selectionStyle = .none
@@ -209,7 +215,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         }
         
         else if pendingCollection == true {
-            tableViewHeight.constant = 400
+            //tableViewHeight.constant = 400
             let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
             cell.selectionStyle = .none
             cell.pendingCOllectionConfig()
@@ -217,7 +223,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         }
         
         else {
-            tableViewHeight.constant = 200
+            //tableViewHeight.constant = homeScrollview.bounds.height * 0.341297//200 // 0.341297
             let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
             cell.selectionStyle = .none
             supplierCell = cell
@@ -236,10 +242,11 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
        let cell = wasteTypeCollectionView.visibleCells.first
-
+        
         let indexPath = wasteTypeCollectionView.indexPath(for: cell ?? UICollectionViewCell())
         if let index = indexPath{
-                supplierCell?.config(index: index.row)
+            supplierCell?.config(index: index.row)
+            self.indicatorMarker.currentPage = Int(scrollView.contentOffset.x + 100) / Int(scrollView.frame.width)
         }
     }
     
