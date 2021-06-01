@@ -34,6 +34,9 @@ class HomeViewController: BaseViewController {
     //MARK: - AppCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setAttributedTextInLable(emailAddress: "alterises@gmail.com")
+        progressBar.transform = CGAffineTransform(scaleX: 1, y: 4)
         indicatorMarker.numberOfPages = images.count
         count = images.count-1
         collectionDataSourceDelegate(outlet: weatherCollectionView)
@@ -95,6 +98,21 @@ class HomeViewController: BaseViewController {
         outlet.dataSource = self
         
     }
+    
+    func setAttributedTextInLable(emailAddress :String)
+    {
+        let boldfont       = UIFont(name: "Poppins-semiBold", size: 18) ?? UIFont.systemFont(ofSize: 18, weight: .semibold)
+        let activityAttribute   = [ NSAttributedString.Key.font: boldfont, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: "ffffff")]
+        let nameAttrString      = NSMutableAttributedString(string: "Hello, ", attributes: activityAttribute)
+        
+        let emailFont            = UIFont(name: "Poppins", size: 18) ?? UIFont.systemFont(ofSize: 18)
+        let nameAttribute       = [ NSAttributedString.Key.font: emailFont, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: "ffffff")]
+        let activityAttrString  = NSAttributedString(string: emailAddress, attributes: nameAttribute)
+        
+        nameAttrString.append(activityAttrString)
+        
+        welcomeLabel.attributedText = nameAttrString
+    }
 
     
     //MARK: - ActionButtons
@@ -143,10 +161,10 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == weatherCollectionView {
-            return CGSize(width: weatherCollectionView.frame.width/6, height: 65)
+            return CGSize(width: weatherCollectionView.frame.width/6, height: weatherCollectionView.frame.height)
         }
         else{
-            return CGSize(width: (wasteTypeCollectionView.bounds.width - 80), height: wasteTypeCollectionView.bounds.height)
+            return CGSize(width: (wasteTypeCollectionView.bounds.width - 100), height: wasteTypeCollectionView.bounds.height)
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -218,7 +236,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
        let cell = wasteTypeCollectionView.visibleCells.first
-        
+
         let indexPath = wasteTypeCollectionView.indexPath(for: cell ?? UICollectionViewCell())
         if let index = indexPath{
                 supplierCell?.config(index: index.row)
