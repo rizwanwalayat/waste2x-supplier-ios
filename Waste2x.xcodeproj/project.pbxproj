@@ -42,6 +42,7 @@
 		0428F1C6265BC9EC007C51EE /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C5265BC9EC007C51EE /* UINavigationController.swift */; };
 		0428F1CD265BECB5007C51EE /* LoginInputEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1CB265BECB5007C51EE /* LoginInputEmailViewController.swift */; };
 		0428F1CE265BECB5007C51EE /* LoginInputEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0428F1CC265BECB5007C51EE /* LoginInputEmailViewController.xib */; };
+		04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04629D2526664D86008A6A3A /* CustomProgressbar.swift */; };
 		048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C09E6265E2265003E301F /* ImagePickerVC.swift */; };
 		048C09F0265E5FDE003E301F /* CodeVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C7265BD9AE007C51EE /* CodeVerificationViewModel.swift */; };
 		04C82E182664BCCB00D52947 /* WasteDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C82E122664BCCB00D52947 /* WasteDetailViewModel.swift */; };
@@ -157,6 +158,7 @@
 		0428F1C7265BD9AE007C51EE /* CodeVerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVerificationViewModel.swift; sourceTree = "<group>"; };
 		0428F1CB265BECB5007C51EE /* LoginInputEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInputEmailViewController.swift; sourceTree = "<group>"; };
 		0428F1CC265BECB5007C51EE /* LoginInputEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginInputEmailViewController.xib; sourceTree = "<group>"; };
+		04629D2526664D86008A6A3A /* CustomProgressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressbar.swift; sourceTree = "<group>"; };
 		048C09E6265E2265003E301F /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		04969272265CFCB10081E875 /* WasteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDetailViewController.swift; sourceTree = "<group>"; };
 		04969273265CFCB10081E875 /* WasteDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteDetailViewController.xib; sourceTree = "<group>"; };
@@ -463,6 +465,7 @@
 			isa = PBXGroup;
 			children = (
 				048C09E6265E2265003E301F /* ImagePickerVC.swift */,
+				04629D2526664D86008A6A3A /* CustomProgressbar.swift */,
 			);
 			path = CommonClasses;
 			sourceTree = "<group>";
@@ -986,6 +989,7 @@
 				0067A322252AFC9E00CECA8C /* UIImage.swift in Sources */,
 				0043454E2548302A009A6166 /* Users.swift in Sources */,
 				0043453F254823FE009A6166 /* ApiResponseHandler.swift in Sources */,
+				04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */,
 				0067A31F252AFC9E00CECA8C /* UIViewController.swift in Sources */,
 				0428F1BF265B8EC5007C51EE /* LoginCodeVerificationViewController.swift in Sources */,
 				181025232657E33A00DEBF7D /* ContainerViewController.swift in Sources */,

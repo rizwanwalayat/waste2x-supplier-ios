@@ -14,11 +14,11 @@ extension LoginCodeVerificationViewController
     
     func setAttributedTextInLable(phoneNo :String)
     {
-        let loginWithfont       = UIFont(name: "", size: 14) ?? UIFont.systemFont(ofSize: 14)
+        let loginWithfont       = UIFont(name: "Poppins", size: 14) ?? UIFont.systemFont(ofSize: 14)
         let activityAttribute   = [ NSAttributedString.Key.font: loginWithfont, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: "B3B2B2")]
         let nameAttrString      = NSMutableAttributedString(string: "We sent you an code on: ", attributes: activityAttribute)
         
-        let nameFont            = UIFont(name: "", size: 14) ?? UIFont.systemFont(ofSize: 14)
+        let nameFont            = UIFont(name: "Poppins", size: 14) ?? UIFont.systemFont(ofSize: 14)
         let nameAttribute       = [ NSAttributedString.Key.font: nameFont, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: "000000")]
         let activityAttrString  = NSAttributedString(string: phoneNo, attributes: nameAttribute)
         

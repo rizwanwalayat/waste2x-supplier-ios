@@ -37,8 +37,8 @@ class SJCenterFlowLayout: UICollectionViewFlowLayout {
 //    }
     
     fileprivate var state = LayoutState(size: CGSize.zero, direction: .horizontal)
-    var spacingMode = SJCenterFlowLayoutSpacingMode.fixed(spacing: 0)
-    var animationMode = SJCenterFlowLayoutAnimation.scale(sideItemScale: 1.0, sideItemAlpha: 1.0, sideItemShift: 0.0)
+    var spacingMode = SJCenterFlowLayoutSpacingMode.fixed(spacing: 1)
+    var animationMode = SJCenterFlowLayoutAnimation.scale(sideItemScale: 0.8, sideItemAlpha: 0.8, sideItemShift: 0.8)
     fileprivate var pageWidth: CGFloat {
         switch self.scrollDirection {
         case .horizontal:
@@ -51,7 +51,7 @@ class SJCenterFlowLayout: UICollectionViewFlowLayout {
     /// Calculates the current centered page.
     var currentCenteredIndexPath: IndexPath? {
         guard let collectionView = self.collectionView else { return nil }
-        let currentCenteredPoint = CGPoint(x: collectionView.contentOffset.x + collectionView.bounds.width/2, y: collectionView.contentOffset.y + collectionView.bounds.height/2)
+        let currentCenteredPoint = CGPoint(x: collectionView.contentOffset.x + collectionView.bounds.width, y: collectionView.contentOffset.y + collectionView.bounds.height/2)
         return collectionView.indexPathForItem(at: currentCenteredPoint)
     }
     
@@ -151,7 +151,7 @@ private extension SJCenterFlowLayout {
         
         let yInset = (collectionSize.height - self.itemSize.height) / 2
         let xInset = (collectionSize.width - self.itemSize.width) / 2
-        self.sectionInset = UIEdgeInsets.init(top: yInset, left: xInset, bottom: yInset, right: xInset)
+        self.sectionInset = UIEdgeInsets.init(top: yInset, left: 30, bottom: yInset, right: 30)
         
         let side = isHorizontal ? self.itemSize.width : self.itemSize.height
         var scale: CGFloat = 1.0
