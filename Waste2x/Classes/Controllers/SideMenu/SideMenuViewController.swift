@@ -63,7 +63,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
         self.selectionIndex = indexPath.row
         switch indexPath.row {
         case 0:
-            let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
+            let vc = CreatePaymentViewController(nibName: "CreatePaymentViewController", bundle: nil)
             navigationController?.pushViewController(vc, animated: true)
         case 1:
             print("sceduled")

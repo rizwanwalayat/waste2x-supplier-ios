@@ -91,6 +91,8 @@
 		18506D81265D45EB00018707 /* SideMenuItemsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18506D7F265D45EB00018707 /* SideMenuItemsTableViewCell.xib */; };
 		1850CEF9265E5491001F5E92 /* SupplierTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850CEF7265E5491001F5E92 /* SupplierTableViewCell.swift */; };
 		1850CEFA265E5491001F5E92 /* SupplierTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1850CEF8265E5491001F5E92 /* SupplierTableViewCell.xib */; };
+		186CD718266610C600A1F30F /* CreatePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CD716266610C600A1F30F /* CreatePaymentViewController.swift */; };
+		186CD719266610C600A1F30F /* CreatePaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186CD717266610C600A1F30F /* CreatePaymentViewController.xib */; };
 		1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC85265688EB00147EB8 /* BaseViewController.swift */; };
 		1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */; };
 		18937548266127CB00D55A33 /* NotificationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18937544266127CB00D55A33 /* NotificationsTableViewCell.xib */; };
@@ -212,6 +214,8 @@
 		18506D7F265D45EB00018707 /* SideMenuItemsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuItemsTableViewCell.xib; sourceTree = "<group>"; };
 		1850CEF7265E5491001F5E92 /* SupplierTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierTableViewCell.swift; sourceTree = "<group>"; };
 		1850CEF8265E5491001F5E92 /* SupplierTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplierTableViewCell.xib; sourceTree = "<group>"; };
+		186CD716266610C600A1F30F /* CreatePaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePaymentViewController.swift; sourceTree = "<group>"; };
+		186CD717266610C600A1F30F /* CreatePaymentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePaymentViewController.xib; sourceTree = "<group>"; };
 		1875BC85265688EB00147EB8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		18937544266127CB00D55A33 /* NotificationsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsTableViewCell.xib; sourceTree = "<group>"; };
@@ -524,6 +528,8 @@
 			children = (
 				180CD1AD2665048D0092168B /* PaymentViewController.swift */,
 				180CD1AE2665048D0092168B /* PaymentViewController.xib */,
+				186CD716266610C600A1F30F /* CreatePaymentViewController.swift */,
+				186CD717266610C600A1F30F /* CreatePaymentViewController.xib */,
 			);
 			path = Payments;
 			sourceTree = "<group>";
@@ -813,6 +819,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18937563266127F800D55A33 /* WasteDetailLocationViewController.xib in Resources */,
+				186CD719266610C600A1F30F /* CreatePaymentViewController.xib in Resources */,
 				18397E272660FF54003DE30C /* Poppins-Italic.ttf in Resources */,
 				18937548266127CB00D55A33 /* NotificationsTableViewCell.xib in Resources */,
 				18397E172660FF54003DE30C /* Poppins-ExtraLight.ttf in Resources */,
@@ -978,6 +985,7 @@
 				0067A2BC25274C0900CECA8C /* AppDelegate.swift in Sources */,
 				181025402657E48500DEBF7D /* FaqViewController.swift in Sources */,
 				1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */,
+				186CD718266610C600A1F30F /* CreatePaymentViewController.swift in Sources */,
 				0067A2E62529D52B00CECA8C /* Constants.swift in Sources */,
 				0067A317252AFC9E00CECA8C /* UITableView.swift in Sources */,
 				18A849D7265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift in Sources */,
