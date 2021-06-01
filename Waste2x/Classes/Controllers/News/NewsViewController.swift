@@ -14,7 +14,6 @@ class NewsViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
-    
     //MARK: - enums
     enum cellType {
         case video
@@ -38,14 +37,21 @@ class NewsViewController: BaseViewController {
     
     
     //MARK: - Variables
-    var category = "video"
+    var category = cellType.video.rawValue
     var timer : Timer?
     override func viewDidLoad() {
         super.viewDidLoad()
         timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(slideToNext), userInfo: nil, repeats: true)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        self.tableView.layer.cornerRadius = 36
+        self.tableView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        self.tableView.layer.masksToBounds = true
+        
+    }
     @objc func slideToNext() {
-        self.category = "audio"
+        self.category = cellType.detail.rawValue
         tableView.reloadData()
     }
 
@@ -57,7 +63,7 @@ class NewsViewController: BaseViewController {
 //MARK: - Extentions
 extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if category == "video" || category == "audio" || category == "detail" {
+        if category == cellType.audio.rawValue || category == cellType.video.rawValue || category == cellType.detail.rawValue {
             return 3
         }
         else {
@@ -69,24 +75,25 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
         if category == cellType.video.rawValue {
             
             let cell = tableView.register(VideoTableViewCell.self, indexPath: indexPath)
-            cell.textLabel?.text = "Video"
+            cell.selectionStyle = .none
             return cell
         }
         if category == cellType.audio.rawValue {
             let cell = tableView.register(AudioTableViewCell.self, indexPath: indexPath)
-            cell.textLabel?.text = "Audio"
+            cell.selectionStyle = .none
             return cell
         }
         if category == cellType.detail.rawValue {
             let cell = tableView.register(DetailTableViewCell.self, indexPath: indexPath)
-            cell.textLabel?.text = "Description"
+            cell.selectionStyle = .none
             return cell
         }
         let cell = tableView.register(DetailTableViewCell.self, indexPath: indexPath)
+        cell.selectionStyle = .none
         cell.textLabel?.text = "Noting Found"
         return cell
     }
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if category == cellType.video.rawValue{
             return 300
         }
@@ -94,9 +101,8 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
             return 80
         }
         else {
-            return 50
+            return 125
         }
-        
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
