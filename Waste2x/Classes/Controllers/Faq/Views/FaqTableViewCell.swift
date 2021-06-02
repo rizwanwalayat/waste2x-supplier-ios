@@ -12,8 +12,14 @@ class FaqTableViewCell: UITableViewCell {
 
     @IBOutlet weak var bodyView: UIView!
     @IBOutlet weak var expandArrow: UIImageView!
+    @IBOutlet weak var answerLabel: UILabel!
+    @IBOutlet weak var questionLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.questionLabel.text = "How to earn points?"
+        self.answerLabel.text = """
+        You can earn point by completing the process  of supplying waste with these apps.
+        """
         // Initialization code
     }
 

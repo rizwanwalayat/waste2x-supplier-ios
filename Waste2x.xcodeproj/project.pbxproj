@@ -90,6 +90,12 @@
 		18397E262660FF54003DE30C /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18397E142660FF54003DE30C /* Poppins-SemiBold.ttf */; };
 		18397E272660FF54003DE30C /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18397E152660FF54003DE30C /* Poppins-Italic.ttf */; };
 		18397E282660FF54003DE30C /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18397E162660FF54003DE30C /* Poppins-MediumItalic.ttf */; };
+		184F51672667A46400F0328A /* PendingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F51652667A46400F0328A /* PendingCollectionViewController.swift */; };
+		184F51682667A46400F0328A /* PendingCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184F51662667A46400F0328A /* PendingCollectionViewController.xib */; };
+		184F516B2667A87500F0328A /* DetailPendingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F51692667A87500F0328A /* DetailPendingCollectionViewController.swift */; };
+		184F516C2667A87500F0328A /* DetailPendingCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184F516A2667A87500F0328A /* DetailPendingCollectionViewController.xib */; };
+		184F51702667AD9700F0328A /* PendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F516E2667AD9700F0328A /* PendingTableViewCell.swift */; };
+		184F51712667AD9700F0328A /* PendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184F516F2667AD9700F0328A /* PendingTableViewCell.xib */; };
 		18506D80265D45EB00018707 /* SideMenuItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18506D7E265D45EB00018707 /* SideMenuItemsTableViewCell.swift */; };
 		18506D81265D45EB00018707 /* SideMenuItemsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18506D7F265D45EB00018707 /* SideMenuItemsTableViewCell.xib */; };
 		1850CEF9265E5491001F5E92 /* SupplierTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850CEF7265E5491001F5E92 /* SupplierTableViewCell.swift */; };
@@ -222,6 +228,12 @@
 		18397E142660FF54003DE30C /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		18397E152660FF54003DE30C /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
 		18397E162660FF54003DE30C /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		184F51652667A46400F0328A /* PendingCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingCollectionViewController.swift; sourceTree = "<group>"; };
+		184F51662667A46400F0328A /* PendingCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PendingCollectionViewController.xib; sourceTree = "<group>"; };
+		184F51692667A87500F0328A /* DetailPendingCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPendingCollectionViewController.swift; sourceTree = "<group>"; };
+		184F516A2667A87500F0328A /* DetailPendingCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPendingCollectionViewController.xib; sourceTree = "<group>"; };
+		184F516E2667AD9700F0328A /* PendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingTableViewCell.swift; sourceTree = "<group>"; };
+		184F516F2667AD9700F0328A /* PendingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PendingTableViewCell.xib; sourceTree = "<group>"; };
 		18506D7E265D45EB00018707 /* SideMenuItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuItemsTableViewCell.swift; sourceTree = "<group>"; };
 		18506D7F265D45EB00018707 /* SideMenuItemsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuItemsTableViewCell.xib; sourceTree = "<group>"; };
 		1850CEF7265E5491001F5E92 /* SupplierTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierTableViewCell.swift; sourceTree = "<group>"; };
@@ -326,6 +338,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				184F51642667A42600F0328A /* Pending Collection */,
 				1801126D2667746D000C7102 /* Faq */,
 				18666B1C26665EAF005C1A78 /* News */,
 				180CD1AC2665045E0092168B /* Payments */,
@@ -673,6 +686,27 @@
 			path = Poppins;
 			sourceTree = "<group>";
 		};
+		184F51642667A42600F0328A /* Pending Collection */ = {
+			isa = PBXGroup;
+			children = (
+				184F516D2667AD6B00F0328A /* Views */,
+				184F51652667A46400F0328A /* PendingCollectionViewController.swift */,
+				184F51662667A46400F0328A /* PendingCollectionViewController.xib */,
+				184F51692667A87500F0328A /* DetailPendingCollectionViewController.swift */,
+				184F516A2667A87500F0328A /* DetailPendingCollectionViewController.xib */,
+			);
+			path = "Pending Collection";
+			sourceTree = "<group>";
+		};
+		184F516D2667AD6B00F0328A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				184F516E2667AD9700F0328A /* PendingTableViewCell.swift */,
+				184F516F2667AD9700F0328A /* PendingTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		18506D7D265D45CD00018707 /* tableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -889,6 +923,7 @@
 				18397E1D2660FF54003DE30C /* Poppins-SemiBoldItalic.ttf in Resources */,
 				1893756F266127F800D55A33 /* CurrentWasteViewController.xib in Resources */,
 				1893756D266127F800D55A33 /* CurrentWasteTableViewCell.xib in Resources */,
+				184F51682667A46400F0328A /* PendingCollectionViewController.xib in Resources */,
 				18719142266667420050FAAA /* AudioTableViewCell.xib in Resources */,
 				18397E262660FF54003DE30C /* Poppins-SemiBold.ttf in Resources */,
 				1850CEFA265E5491001F5E92 /* SupplierTableViewCell.xib in Resources */,
@@ -913,10 +948,12 @@
 				0428F1CE265BECB5007C51EE /* LoginInputEmailViewController.xib in Resources */,
 				18397E202660FF54003DE30C /* OFL.txt in Resources */,
 				18506D81265D45EB00018707 /* SideMenuItemsTableViewCell.xib in Resources */,
+				184F51712667AD9700F0328A /* PendingTableViewCell.xib in Resources */,
 				18011273266774E5000C7102 /* FaqTableViewCell.xib in Resources */,
 				18397E222660FF54003DE30C /* Poppins-LightItalic.ttf in Resources */,
 				18397E1E2660FF54003DE30C /* Poppins-ExtraBold.ttf in Resources */,
 				18937565266127F800D55A33 /* NewWasteSizeViewController.xib in Resources */,
+				184F516C2667A87500F0328A /* DetailPendingCollectionViewController.xib in Resources */,
 				18C11A71265FA49C00BC022F /* ContactTableViewCell.xib in Resources */,
 				04C82E1B2664BCCB00D52947 /* WasteDetailViewController.xib in Resources */,
 				18397DCE2660FD35003DE30C /* LoginViewController.xib in Resources */,
@@ -1018,6 +1055,7 @@
 				18A849CD265E37A7008F77E8 /* WeatherCollectionViewCell.swift in Sources */,
 				0067A318252AFC9E00CECA8C /* UIDevice.swift in Sources */,
 				181025292657E36500DEBF7D /* GCD.swift in Sources */,
+				184F51702667AD9700F0328A /* PendingTableViewCell.swift in Sources */,
 				1810253A2657E48500DEBF7D /* AddMoreViewController.swift in Sources */,
 				180CD1AF2665048D0092168B /* PaymentViewController.swift in Sources */,
 				181025282657E36500DEBF7D /* Global.swift in Sources */,
@@ -1045,6 +1083,7 @@
 				0043453E254823FE009A6166 /* TSAPIClient.swift in Sources */,
 				0067A31E252AFC9E00CECA8C /* UIButton.swift in Sources */,
 				18719145266667550050FAAA /* DetailTableViewCell.swift in Sources */,
+				184F51672667A46400F0328A /* PendingCollectionViewController.swift in Sources */,
 				048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */,
 				0067A31C252AFC9E00CECA8C /* UITextField.swift in Sources */,
 				18506D80265D45EB00018707 /* SideMenuItemsTableViewCell.swift in Sources */,
@@ -1079,6 +1118,7 @@
 				0043453F254823FE009A6166 /* ApiResponseHandler.swift in Sources */,
 				04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */,
 				0067A31F252AFC9E00CECA8C /* UIViewController.swift in Sources */,
+				184F516B2667A87500F0328A /* DetailPendingCollectionViewController.swift in Sources */,
 				0428F1BF265B8EC5007C51EE /* LoginCodeVerificationViewController.swift in Sources */,
 				181025232657E33A00DEBF7D /* ContainerViewController.swift in Sources */,
 				1893754B266127CB00D55A33 /* NotificationsViewController.swift in Sources */,

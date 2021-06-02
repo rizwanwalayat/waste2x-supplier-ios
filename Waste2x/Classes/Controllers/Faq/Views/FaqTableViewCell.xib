@@ -26,15 +26,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suU-Ey-tl7">
-                        <rect key="frame" x="30" y="21" width="391" height="248"/>
+                        <rect key="frame" x="30" y="11" width="391" height="258"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vfE-e8-3AY">
-                                <rect key="frame" x="18" y="16" width="355" height="232"/>
+                                <rect key="frame" x="18" y="16" width="355" height="242"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUd-Gm-vcf" userLabel="Headerview">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="212"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="222"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Your waste has been sold" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1j-0J-gIx">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="How do i select type of waste?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1j-0J-gIx">
                                                 <rect key="frame" x="0.0" y="0.0" width="329" height="20"/>
                                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="14"/>
                                                 <color key="textColor" red="0.0078431372550000003" green="0.015686274510000001" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,7 +58,7 @@
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcA-O6-dG5" userLabel="BodyView">
-                                        <rect key="frame" x="0.0" y="232" width="355" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="242" width="355" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35k-Z0-zpg">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="101"/>
@@ -104,14 +104,16 @@
                     <constraint firstAttribute="trailingMargin" secondItem="suU-Ey-tl7" secondAttribute="trailing" constant="10" id="LZk-s5-64B"/>
                     <constraint firstItem="suU-Ey-tl7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="P4V-w1-XoJ"/>
                     <constraint firstAttribute="bottomMargin" secondItem="suU-Ey-tl7" secondAttribute="bottom" constant="10" id="zDc-88-zaK"/>
-                    <constraint firstItem="suU-Ey-tl7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="zGY-Dh-v1D"/>
+                    <constraint firstItem="suU-Ey-tl7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="zGY-Dh-v1D"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="answerLabel" destination="35k-Z0-zpg" id="0Vy-LK-kUW"/>
                 <outlet property="bodyView" destination="KcA-O6-dG5" id="qqS-tJ-cgX"/>
                 <outlet property="expandArrow" destination="XXE-7X-XX4" id="Elf-Hj-Fci"/>
+                <outlet property="questionLabel" destination="a1j-0J-gIx" id="J0E-IE-Xb4"/>
             </connections>
             <point key="canvasLocation" x="-610.86956521739137" y="95.089285714285708"/>
         </tableViewCell>

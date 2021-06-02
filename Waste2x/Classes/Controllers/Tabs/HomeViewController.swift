@@ -181,7 +181,7 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
         
-        if collectionView != wasteTypeCollectionView{
+        if collectionView == wasteTypeCollectionView{
             collectionView.deselectItem(at: indexPath, animated: true)
             self.indicatorMarker.currentPage = indexPath.row
             supplierCell?.config(index: indexPath.row)
@@ -247,7 +247,13 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        if indexPath.section == 0{
+        if pendingCollection
+        {
+            let vc = PendingCollectionViewController(nibName: "PendingCollectionViewController", bundle: nil)
+            self.navigationController?.pushTo(controller: vc)
+        }
+        }
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
        let cell = wasteTypeCollectionView.visibleCells.first
