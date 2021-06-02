@@ -43,8 +43,17 @@
 		0428F1CD265BECB5007C51EE /* LoginInputEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1CB265BECB5007C51EE /* LoginInputEmailViewController.swift */; };
 		0428F1CE265BECB5007C51EE /* LoginInputEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0428F1CC265BECB5007C51EE /* LoginInputEmailViewController.xib */; };
 		04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04629D2526664D86008A6A3A /* CustomProgressbar.swift */; };
+		048582C02667BEC70077B42E /* ScheduleOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */; };
+		048582C12667BEC70077B42E /* ScheduleOptionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */; };
 		048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C09E6265E2265003E301F /* ImagePickerVC.swift */; };
 		048C09F0265E5FDE003E301F /* CodeVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C7265BD9AE007C51EE /* CodeVerificationViewModel.swift */; };
+		04C31D092667744400A1CF9C /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C31D072667744400A1CF9C /* ScheduleViewController.swift */; };
+		04C31D0A2667744400A1CF9C /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C31D082667744400A1CF9C /* ScheduleViewController.xib */; };
+		04C31D0E266777E900A1CF9C /* SchedulesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C31D0C266777E900A1CF9C /* SchedulesTableViewCell.swift */; };
+		04C31D0F266777E900A1CF9C /* SchedulesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C31D0D266777E900A1CF9C /* SchedulesTableViewCell.xib */; };
+		04C31D1226678E1800A1CF9C /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C31D1126678E1800A1CF9C /* ScheduleViewModel.swift */; };
+		04C31D1B2667BBE600A1CF9C /* ScheduleOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C31D192667BBE600A1CF9C /* ScheduleOptionsViewController.swift */; };
+		04C31D1C2667BBE600A1CF9C /* ScheduleOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C31D1A2667BBE600A1CF9C /* ScheduleOptionsViewController.xib */; };
 		04C82E182664BCCB00D52947 /* WasteDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C82E122664BCCB00D52947 /* WasteDetailViewModel.swift */; };
 		04C82E192664BCCB00D52947 /* WasteImageDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C82E142664BCCB00D52947 /* WasteImageDetailCollectionViewCell.xib */; };
 		04C82E1A2664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C82E152664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift */; };
@@ -169,10 +178,19 @@
 		0428F1CB265BECB5007C51EE /* LoginInputEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInputEmailViewController.swift; sourceTree = "<group>"; };
 		0428F1CC265BECB5007C51EE /* LoginInputEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginInputEmailViewController.xib; sourceTree = "<group>"; };
 		04629D2526664D86008A6A3A /* CustomProgressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressbar.swift; sourceTree = "<group>"; };
+		048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleOptionsTableViewCell.swift; sourceTree = "<group>"; };
+		048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleOptionsTableViewCell.xib; sourceTree = "<group>"; };
 		048C09E6265E2265003E301F /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		04969272265CFCB10081E875 /* WasteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDetailViewController.swift; sourceTree = "<group>"; };
 		04969273265CFCB10081E875 /* WasteDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteDetailViewController.xib; sourceTree = "<group>"; };
 		04B20E8B265D36EA0081E7C0 /* WasteDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDetailViewModel.swift; sourceTree = "<group>"; };
+		04C31D072667744400A1CF9C /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		04C31D082667744400A1CF9C /* ScheduleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleViewController.xib; sourceTree = "<group>"; };
+		04C31D0C266777E900A1CF9C /* SchedulesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesTableViewCell.swift; sourceTree = "<group>"; };
+		04C31D0D266777E900A1CF9C /* SchedulesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchedulesTableViewCell.xib; sourceTree = "<group>"; };
+		04C31D1126678E1800A1CF9C /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		04C31D192667BBE600A1CF9C /* ScheduleOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleOptionsViewController.swift; sourceTree = "<group>"; };
+		04C31D1A2667BBE600A1CF9C /* ScheduleOptionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleOptionsViewController.xib; sourceTree = "<group>"; };
 		04C82E122664BCCB00D52947 /* WasteDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasteDetailViewModel.swift; sourceTree = "<group>"; };
 		04C82E142664BCCB00D52947 /* WasteImageDetailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WasteImageDetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		04C82E152664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasteImageDetailCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -322,6 +340,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				04C31D062667731100A1CF9C /* Pickup-Schedule */,
 				18666B1C26665EAF005C1A78 /* News */,
 				180CD1AC2665045E0092168B /* Payments */,
 				04A45639265F835F00D2BCF0 /* Messages & Notifications */,
@@ -483,6 +502,15 @@
 			path = "Login-InputEmail";
 			sourceTree = "<group>";
 		};
+		048582BD2667BEAB0077B42E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */,
+				048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		048C09E5265E223E003E301F /* CommonClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,6 +526,53 @@
 				18937542266127CB00D55A33 /* Notifications */,
 			);
 			path = "Messages & Notifications";
+			sourceTree = "<group>";
+		};
+		04C31D062667731100A1CF9C /* Pickup-Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				04C31D072667744400A1CF9C /* ScheduleViewController.swift */,
+				04C31D082667744400A1CF9C /* ScheduleViewController.xib */,
+				04C31D1026678D6F00A1CF9C /* ViewModel */,
+				04C31D0B266777BF00A1CF9C /* CustomCells */,
+				04C31D172667BB3600A1CF9C /* CustomViews */,
+			);
+			path = "Pickup-Schedule";
+			sourceTree = "<group>";
+		};
+		04C31D0B266777BF00A1CF9C /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				04C31D0C266777E900A1CF9C /* SchedulesTableViewCell.swift */,
+				04C31D0D266777E900A1CF9C /* SchedulesTableViewCell.xib */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		04C31D1026678D6F00A1CF9C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04C31D1126678E1800A1CF9C /* ScheduleViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04C31D172667BB3600A1CF9C /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				04C31D182667BB4F00A1CF9C /* OptionsPopupView */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		04C31D182667BB4F00A1CF9C /* OptionsPopupView */ = {
+			isa = PBXGroup;
+			children = (
+				04C31D192667BBE600A1CF9C /* ScheduleOptionsViewController.swift */,
+				04C31D1A2667BBE600A1CF9C /* ScheduleOptionsViewController.xib */,
+				048582BD2667BEAB0077B42E /* Cells */,
+			);
+			path = OptionsPopupView;
 			sourceTree = "<group>";
 		};
 		04C82E102664BCCB00D52947 /* WasteDetail */ = {
@@ -851,6 +926,7 @@
 				186CD719266610C600A1F30F /* CreatePaymentViewController.xib in Resources */,
 				18397E272660FF54003DE30C /* Poppins-Italic.ttf in Resources */,
 				18937548266127CB00D55A33 /* NotificationsTableViewCell.xib in Resources */,
+				048582C12667BEC70077B42E /* ScheduleOptionsTableViewCell.xib in Resources */,
 				18397E172660FF54003DE30C /* Poppins-ExtraLight.ttf in Resources */,
 				0428F1C0265B8EC5007C51EE /* LoginCodeVerificationViewController.xib in Resources */,
 				18397E1F2660FF54003DE30C /* Poppins-BlackItalic.ttf in Resources */,
@@ -864,6 +940,7 @@
 				1850CEFA265E5491001F5E92 /* SupplierTableViewCell.xib in Resources */,
 				181025392657E48500DEBF7D /* MessagesViewController.xib in Resources */,
 				04C82E192664BCCB00D52947 /* WasteImageDetailCollectionViewCell.xib in Resources */,
+				04C31D0A2667744400A1CF9C /* ScheduleViewController.xib in Resources */,
 				18A849D0265E411F008F77E8 /* WeatherCollectionViewCell.xib in Resources */,
 				18666B2426666175005C1A78 /* VideoTableViewCell.xib in Resources */,
 				18397E212660FF54003DE30C /* Poppins-Regular.ttf in Resources */,
@@ -888,11 +965,13 @@
 				18937565266127F800D55A33 /* NewWasteSizeViewController.xib in Resources */,
 				18C11A71265FA49C00BC022F /* ContactTableViewCell.xib in Resources */,
 				04C82E1B2664BCCB00D52947 /* WasteDetailViewController.xib in Resources */,
+				04C31D0F266777E900A1CF9C /* SchedulesTableViewCell.xib in Resources */,
 				18397DCE2660FD35003DE30C /* LoginViewController.xib in Resources */,
 				18397E182660FF54003DE30C /* Poppins-ThinItalic.ttf in Resources */,
 				1810253E2657E48500DEBF7D /* FaqViewController.xib in Resources */,
 				181025382657E48500DEBF7D /* NewsViewController.xib in Resources */,
 				18397E1B2660FF54003DE30C /* Poppins-Light.ttf in Resources */,
+				04C31D1C2667BBE600A1CF9C /* ScheduleOptionsViewController.xib in Resources */,
 				18397E1A2660FF54003DE30C /* Poppins-BoldItalic.ttf in Resources */,
 				18719146266667550050FAAA /* DetailTableViewCell.xib in Resources */,
 				18397E232660FF54003DE30C /* Poppins-Bold.ttf in Resources */,
@@ -995,6 +1074,7 @@
 				18666B2326666175005C1A78 /* VideoTableViewCell.swift in Sources */,
 				0043454F2548302A009A6166 /* UserData.swift in Sources */,
 				1810252A2657E36500DEBF7D /* Extentions.swift in Sources */,
+				04C31D1226678E1800A1CF9C /* ScheduleViewModel.swift in Sources */,
 				1850CEF9265E5491001F5E92 /* SupplierTableViewCell.swift in Sources */,
 				0067A2E32529D2CD00CECA8C /* Utility.swift in Sources */,
 				0428F1C6265BC9EC007C51EE /* UINavigationController.swift in Sources */,
@@ -1014,6 +1094,7 @@
 				0043453E254823FE009A6166 /* TSAPIClient.swift in Sources */,
 				0067A31E252AFC9E00CECA8C /* UIButton.swift in Sources */,
 				18719145266667550050FAAA /* DetailTableViewCell.swift in Sources */,
+				04C31D092667744400A1CF9C /* ScheduleViewController.swift in Sources */,
 				048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */,
 				0067A31C252AFC9E00CECA8C /* UITextField.swift in Sources */,
 				18506D80265D45EB00018707 /* SideMenuItemsTableViewCell.swift in Sources */,
@@ -1036,11 +1117,13 @@
 				1810253B2657E48500DEBF7D /* MessagesViewController.swift in Sources */,
 				0067A31D252AFC9E00CECA8C /* UISlider.swift in Sources */,
 				04C82E1A2664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift in Sources */,
+				048582C02667BEC70077B42E /* ScheduleOptionsTableViewCell.swift in Sources */,
 				00434544254825AE009A6166 /* DataManager.swift in Sources */,
 				1810253D2657E48500DEBF7D /* NewsViewController.swift in Sources */,
 				18397DCF2660FD35003DE30C /* LoginViewController.swift in Sources */,
 				00434541254823FE009A6166 /* ApiClientHandler.swift in Sources */,
 				0067A324252AFC9E00CECA8C /* UIFont.swift in Sources */,
+				04C31D0E266777E900A1CF9C /* SchedulesTableViewCell.swift in Sources */,
 				18C11A70265FA49C00BC022F /* ContactTableViewCell.swift in Sources */,
 				0067A322252AFC9E00CECA8C /* UIImage.swift in Sources */,
 				0043454E2548302A009A6166 /* Users.swift in Sources */,
@@ -1050,6 +1133,7 @@
 				0428F1BF265B8EC5007C51EE /* LoginCodeVerificationViewController.swift in Sources */,
 				181025232657E33A00DEBF7D /* ContainerViewController.swift in Sources */,
 				1893754B266127CB00D55A33 /* NotificationsViewController.swift in Sources */,
+				04C31D1B2667BBE600A1CF9C /* ScheduleOptionsViewController.swift in Sources */,
 				189782FA265D3479008FD5E3 /* SideMenuViewController.swift in Sources */,
 				0067A2DA25274CF800CECA8C /* Login1.swift in Sources */,
 				04C82E1C2664BCCB00D52947 /* WasteDetailViewController.swift in Sources */,
@@ -1190,10 +1274,10 @@
 			baseConfigurationReference = 6CA379E75CD096547C9819CB /* Pods-Waste2x.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YBC6QZE5G7;
+				DEVELOPMENT_TEAM = 58BQNDK7NR;
 				INFOPLIST_FILE = Waste2x/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1202,7 +1286,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.phaedra.waste2x;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = DORODev;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1213,10 +1297,10 @@
 			baseConfigurationReference = 88E2EFD0CCE20FC7E1292953 /* Pods-Waste2x.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YBC6QZE5G7;
+				DEVELOPMENT_TEAM = 58BQNDK7NR;
 				INFOPLIST_FILE = Waste2x/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1225,7 +1309,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.phaedra.waste2x;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = DOROAdhoc;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

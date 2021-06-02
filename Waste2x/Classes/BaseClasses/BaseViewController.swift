@@ -10,9 +10,12 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    var headerViewHeight : CGFloat = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        headerViewHeight = UIScreen.main.bounds.height * 0.0926339
+        print("Bottom Const : \(headerViewHeight)\nscreen height : \(UIScreen.main.bounds.height)")
     }
 
     /**************************************************/
