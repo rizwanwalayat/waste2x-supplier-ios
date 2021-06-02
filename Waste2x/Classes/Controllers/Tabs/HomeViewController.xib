@@ -208,7 +208,6 @@
                         <constraint firstItem="HLQ-Ap-x2z" firstAttribute="top" secondItem="Qlk-z8-DES" secondAttribute="bottom" id="AES-NE-SO8"/>
                         <constraint firstAttribute="bottom" secondItem="HLQ-Ap-x2z" secondAttribute="bottom" constant="25" id="DJX-rt-T1D"/>
                         <constraint firstAttribute="trailing" secondItem="Qlk-z8-DES" secondAttribute="trailing" id="IIG-hl-JPH"/>
-                        <constraint firstItem="HLQ-Ap-x2z" firstAttribute="height" secondItem="9R3-FT-6xv" secondAttribute="height" multiplier="0.25" id="R3l-Vh-oIN"/>
                         <constraint firstAttribute="trailing" secondItem="HLQ-Ap-x2z" secondAttribute="trailing" constant="15" id="THX-ap-ZX0"/>
                         <constraint firstAttribute="bottom" secondItem="ETJ-og-lac" secondAttribute="bottom" id="VRN-Jx-HpF"/>
                         <constraint firstAttribute="trailing" secondItem="ETJ-og-lac" secondAttribute="trailing" id="avG-8a-ux0"/>
@@ -292,7 +291,6 @@
                         <constraint firstItem="eR6-Va-5fB" firstAttribute="top" secondItem="IAV-u5-OWe" secondAttribute="top" id="LT4-Mu-f9w"/>
                         <constraint firstItem="eR6-Va-5fB" firstAttribute="centerX" secondItem="IAV-u5-OWe" secondAttribute="centerX" id="bx7-QT-OBV"/>
                         <constraint firstAttribute="trailing" secondItem="eR6-Va-5fB" secondAttribute="trailing" id="jgy-Gl-DoH"/>
-                        <constraint firstItem="MAg-aS-k9i" firstAttribute="height" secondItem="IAV-u5-OWe" secondAttribute="height" multiplier="0.2" id="rma-0k-W7C"/>
                         <constraint firstAttribute="bottom" secondItem="eR6-Va-5fB" secondAttribute="bottom" constant="43" id="yOw-CN-Yha"/>
                     </constraints>
                 </scrollView>
@@ -302,6 +300,8 @@
             <constraints>
                 <constraint firstItem="IAV-u5-OWe" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="1Ff-dF-5vw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9R3-FT-6xv" secondAttribute="trailing" id="Du3-u5-F8q"/>
+                <constraint firstItem="MAg-aS-k9i" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.13058" id="GUX-aT-1gg"/>
+                <constraint firstItem="HLQ-Ap-x2z" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0864955" id="JaQ-6V-tVc"/>
                 <constraint firstItem="IAV-u5-OWe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Km2-ak-76h"/>
                 <constraint firstItem="59G-aC-CV2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="UTR-mg-MWN"/>
                 <constraint firstItem="IAV-u5-OWe" firstAttribute="top" secondItem="9R3-FT-6xv" secondAttribute="bottom" id="g1w-Dy-Fre"/>

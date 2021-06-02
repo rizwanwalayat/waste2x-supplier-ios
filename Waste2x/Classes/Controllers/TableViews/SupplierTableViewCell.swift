@@ -32,7 +32,7 @@ class SupplierTableViewCell: UITableViewCell {
     }
     func pendingCOllectionConfig(){
         self.imgView.image = UIImage(named: "pending")
-        self.imgHeight.constant = 100
+        self.imgHeight.constant = self.frame.height * 0.5//100
         self.imgEqualizerConstraint.constant = 0
         self.titleLabel.text = "Pending \nCollection"
         self.descriptionLabel.text = "You have pickup schdule\n time to be confirmed."

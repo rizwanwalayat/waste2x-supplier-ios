@@ -38,7 +38,8 @@ class HomeViewController: BaseViewController {
         
         setAttributedTextInLable(emailAddress: email)
         self.indicatorMarker.currentPage = 0
-        progressBar.transform = CGAffineTransform(scaleX: 1, y: 4)
+        let progressbarAdjustment = UIScreen.main.bounds.height / 222
+        progressBar.transform = CGAffineTransform(scaleX: 1, y: progressbarAdjustment)
         indicatorMarker.numberOfPages = images.count
         count = images.count-1
         collectionDataSourceDelegate(outlet: weatherCollectionView)
@@ -55,10 +56,17 @@ class HomeViewController: BaseViewController {
         }
         
         wasteTypeCollectionView.contentInset  = .zero
-        pendingCollection ? (tableViewHeight.constant = 400) : (tableViewHeight.constant = 200)
+        let heightAdjustment = UIScreen.main.bounds.height * 0.223214
+        let adjustment = UIScreen.main.bounds.height * 0.446428
+        pendingCollection ? (tableViewHeight.constant = adjustment) : (tableViewHeight.constant = heightAdjustment)
         self.view.layoutIfNeeded()
+        tableView.reloadData()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        weatherCollectionView.reloadData()
+    }
     
     //MARK: - Logic For Slider
     
@@ -164,7 +172,7 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == weatherCollectionView {
-            return CGSize(width: weatherCollectionView.frame.width/6, height: weatherCollectionView.frame.height)
+            return CGSize(width: (weatherCollectionView.frame.width )/6, height: weatherCollectionView.frame.height)
         }
         else{
             return CGSize(width: (wasteTypeCollectionView.bounds.width - 100), height: wasteTypeCollectionView.bounds.height)
@@ -227,13 +235,14 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
             let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
             cell.selectionStyle = .none
             supplierCell = cell
+            cell.imgHeight.constant = cell.frame.height * 0.7
             return cell
         }
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return pendingCollection ? (tableView.frame.height / 2) : tableView.frame.height
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
