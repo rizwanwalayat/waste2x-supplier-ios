@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FaqViewController" customModule="Waste2x" customModuleProvider="target">
             <connections>
@@ -18,12 +23,47 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header-Background" translatesAutoresizingMaskIntoConstraints="NO" id="1yx-SP-e1g">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="194"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctp-Sl-OEe">
+                    <rect key="frame" x="0.0" y="44" width="428" height="150"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIq-Z1-8Nb">
+                            <rect key="frame" x="20" y="16" width="153" height="118"/>
+                            <string key="text">Frequently 
+Asked Questions</string>
+                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="uIq-Z1-8Nb" firstAttribute="leading" secondItem="ctp-Sl-OEe" secondAttribute="leading" constant="20" symbolic="YES" id="MSG-B3-57s"/>
+                        <constraint firstAttribute="bottom" secondItem="uIq-Z1-8Nb" secondAttribute="bottom" constant="16" id="Wxu-y6-eTP"/>
+                        <constraint firstItem="uIq-Z1-8Nb" firstAttribute="top" secondItem="ctp-Sl-OEe" secondAttribute="top" constant="16" id="bYH-o9-OKl"/>
+                        <constraint firstAttribute="height" constant="150" id="n2n-QT-MqD"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="-84" y="104"/>
+            <constraints>
+                <constraint firstItem="1yx-SP-e1g" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ebe-5c-t7O"/>
+                <constraint firstItem="1yx-SP-e1g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JFd-uh-ogQ"/>
+                <constraint firstItem="ctp-Sl-OEe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Xo4-27-3Y9"/>
+                <constraint firstItem="1yx-SP-e1g" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iTj-N6-34E"/>
+                <constraint firstItem="ctp-Sl-OEe" firstAttribute="leading" secondItem="1yx-SP-e1g" secondAttribute="leading" id="kaj-kp-7Ab"/>
+                <constraint firstItem="ctp-Sl-OEe" firstAttribute="bottom" secondItem="1yx-SP-e1g" secondAttribute="bottom" id="mFD-XH-Fuq"/>
+                <constraint firstAttribute="trailing" secondItem="ctp-Sl-OEe" secondAttribute="trailing" constant="-14" id="mbq-na-k8D"/>
+            </constraints>
+            <point key="canvasLocation" x="-84.057971014492765" y="103.79464285714285"/>
         </view>
     </objects>
     <resources>
+        <image name="Header-Background" width="375" height="355"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
