@@ -50,6 +50,8 @@
 		04C82E1A2664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C82E152664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift */; };
 		04C82E1B2664BCCB00D52947 /* WasteDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C82E162664BCCB00D52947 /* WasteDetailViewController.xib */; };
 		04C82E1C2664BCCB00D52947 /* WasteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C82E172664BCCB00D52947 /* WasteDetailViewController.swift */; };
+		18011272266774E5000C7102 /* FaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18011270266774E5000C7102 /* FaqTableViewCell.swift */; };
+		18011273266774E5000C7102 /* FaqTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18011271266774E5000C7102 /* FaqTableViewCell.xib */; };
 		180CD1AF2665048D0092168B /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CD1AD2665048D0092168B /* PaymentViewController.swift */; };
 		180CD1B02665048D0092168B /* PaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180CD1AE2665048D0092168B /* PaymentViewController.xib */; };
 		181025232657E33A00DEBF7D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181025212657E33A00DEBF7D /* ContainerViewController.swift */; };
@@ -180,6 +182,8 @@
 		04C82E172664BCCB00D52947 /* WasteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasteDetailViewController.swift; sourceTree = "<group>"; };
 		04E3D69C265D298C0058528D /* WasteImageDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteImageDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		04E3D69D265D298C0058528D /* WasteImageDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteImageDetailCollectionViewCell.xib; sourceTree = "<group>"; };
+		18011270266774E5000C7102 /* FaqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
+		18011271266774E5000C7102 /* FaqTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaqTableViewCell.xib; sourceTree = "<group>"; };
 		180CD1AD2665048D0092168B /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		180CD1AE2665048D0092168B /* PaymentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentViewController.xib; sourceTree = "<group>"; };
 		181025212657E33A00DEBF7D /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
@@ -322,6 +326,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1801126D2667746D000C7102 /* Faq */,
 				18666B1C26665EAF005C1A78 /* News */,
 				180CD1AC2665045E0092168B /* Payments */,
 				04A45639265F835F00D2BCF0 /* Messages & Notifications */,
@@ -539,6 +544,38 @@
 			path = Waste;
 			sourceTree = "<group>";
 		};
+		1801126D2667746D000C7102 /* Faq */ = {
+			isa = PBXGroup;
+			children = (
+				1801126F266774A5000C7102 /* Views */,
+				181025342657E48500DEBF7D /* FaqViewController.xib */,
+				181025362657E48500DEBF7D /* FaqViewController.swift */,
+			);
+			path = Faq;
+			sourceTree = "<group>";
+		};
+		1801126E2667748F000C7102 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				18666B2126666175005C1A78 /* VideoTableViewCell.swift */,
+				18666B2226666175005C1A78 /* VideoTableViewCell.xib */,
+				1871913F266667420050FAAA /* AudioTableViewCell.swift */,
+				18719140266667420050FAAA /* AudioTableViewCell.xib */,
+				18719143266667550050FAAA /* DetailTableViewCell.swift */,
+				18719144266667550050FAAA /* DetailTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1801126F266774A5000C7102 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				18011270266774E5000C7102 /* FaqTableViewCell.swift */,
+				18011271266774E5000C7102 /* FaqTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		180CD1AC2665045E0092168B /* Payments */ = {
 			isa = PBXGroup;
 			children = (
@@ -566,8 +603,6 @@
 				181025302657E48500DEBF7D /* AddMoreViewController.swift */,
 				1810252F2657E48500DEBF7D /* MessagesViewController.xib */,
 				181025312657E48500DEBF7D /* MessagesViewController.swift */,
-				181025342657E48500DEBF7D /* FaqViewController.xib */,
-				181025362657E48500DEBF7D /* FaqViewController.swift */,
 				181025352657E48500DEBF7D /* HomeViewController.xib */,
 				181025322657E48500DEBF7D /* HomeViewController.swift */,
 			);
@@ -650,14 +685,9 @@
 		18666B1C26665EAF005C1A78 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				1801126E2667748F000C7102 /* Views */,
 				1810252E2657E48500DEBF7D /* NewsViewController.xib */,
 				181025332657E48500DEBF7D /* NewsViewController.swift */,
-				18666B2126666175005C1A78 /* VideoTableViewCell.swift */,
-				18666B2226666175005C1A78 /* VideoTableViewCell.xib */,
-				1871913F266667420050FAAA /* AudioTableViewCell.swift */,
-				18719140266667420050FAAA /* AudioTableViewCell.xib */,
-				18719143266667550050FAAA /* DetailTableViewCell.swift */,
-				18719144266667550050FAAA /* DetailTableViewCell.xib */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -883,6 +913,7 @@
 				0428F1CE265BECB5007C51EE /* LoginInputEmailViewController.xib in Resources */,
 				18397E202660FF54003DE30C /* OFL.txt in Resources */,
 				18506D81265D45EB00018707 /* SideMenuItemsTableViewCell.xib in Resources */,
+				18011273266774E5000C7102 /* FaqTableViewCell.xib in Resources */,
 				18397E222660FF54003DE30C /* Poppins-LightItalic.ttf in Resources */,
 				18397E1E2660FF54003DE30C /* Poppins-ExtraBold.ttf in Resources */,
 				18937565266127F800D55A33 /* NewWasteSizeViewController.xib in Resources */,
@@ -1030,6 +1061,7 @@
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,
 				048C09F0265E5FDE003E301F /* CodeVerificationViewModel.swift in Sources */,
 				0067A321252AFC9E00CECA8C /* String.swift in Sources */,
+				18011272266774E5000C7102 /* FaqTableViewCell.swift in Sources */,
 				0067A31A252AFC9E00CECA8C /* UICollectionView.swift in Sources */,
 				0067A320252AFC9E00CECA8C /* UIView.swift in Sources */,
 				18937549266127CB00D55A33 /* NotificationsTableViewCell.swift in Sources */,

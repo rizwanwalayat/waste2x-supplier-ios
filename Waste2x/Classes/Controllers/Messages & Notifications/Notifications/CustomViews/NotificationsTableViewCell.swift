@@ -67,9 +67,7 @@ class NotificationsTableViewCell: UITableViewCell {
     func expandCollapse() {
         self.bodyView.isHidden = !self.bodyView.isHidden
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
-            self.layoutIfNeeded()
-            
-        }, completion: { finished in
+            self.layoutIfNeeded()}, completion: { finished in
             if self.expandArrow.image == UIImage(named: "Down-Arrow")
             {
                 self.expandArrow.image = UIImage(named: "Right-arrow-gray")
