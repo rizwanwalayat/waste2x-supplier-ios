@@ -10,15 +10,18 @@ import UIKit
 
 class PendingTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var checkButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        checkButton.isSelected = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+    }
+    @IBAction func checkButtonAction(_ sender: Any) {
+        checkButton.isSelected = !checkButton.isSelected
     }
     func config()
     {
