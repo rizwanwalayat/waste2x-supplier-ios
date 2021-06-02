@@ -25,16 +25,16 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SIH-2q-cpm">
                         <rect key="frame" x="30" y="30" width="360" height="150"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O53-zn-xua">
-                                <rect key="frame" x="20" y="44" width="104.5" height="62"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="O53-zn-xua">
+                                <rect key="frame" x="20" y="23" width="104.5" height="62"/>
                                 <string key="text">Invite
 Suppliers</string>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQF-xg-tbF">
-                                <rect key="frame" x="20" y="111" width="80" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uQF-xg-tbF">
+                                <rect key="frame" x="20" y="90" width="80" height="19.5"/>
                                 <string key="text">To upload waste
 commodities as well</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
@@ -45,10 +45,11 @@ commodities as well</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="O53-zn-xua" firstAttribute="leading" secondItem="SIH-2q-cpm" secondAttribute="leading" constant="20" id="GTx-kn-QPg"/>
+                            <constraint firstItem="O53-zn-xua" firstAttribute="height" secondItem="SIH-2q-cpm" secondAttribute="height" multiplier="0.413333" id="LuJ-Zl-HcA"/>
+                            <constraint firstItem="O53-zn-xua" firstAttribute="top" secondItem="SIH-2q-cpm" secondAttribute="top" constant="23" id="W2O-fC-cyk"/>
+                            <constraint firstItem="uQF-xg-tbF" firstAttribute="height" secondItem="SIH-2q-cpm" secondAttribute="height" multiplier="0.13" id="Wd2-nA-Ua8"/>
                             <constraint firstItem="uQF-xg-tbF" firstAttribute="leading" secondItem="O53-zn-xua" secondAttribute="leading" id="cfK-Fw-On2"/>
                             <constraint firstItem="uQF-xg-tbF" firstAttribute="top" secondItem="O53-zn-xua" secondAttribute="bottom" constant="5" id="cr1-M5-kdu"/>
-                            <constraint firstItem="O53-zn-xua" firstAttribute="centerY" secondItem="SIH-2q-cpm" secondAttribute="centerY" id="fJz-de-VLU"/>
-                            <constraint firstAttribute="bottom" secondItem="uQF-xg-tbF" secondAttribute="bottom" constant="5" id="gEG-uB-NnV"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
@@ -72,10 +73,10 @@ commodities as well</string>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Garbage Man Illustration" translatesAutoresizingMaskIntoConstraints="NO" id="zBW-oT-j4N">
-                        <rect key="frame" x="260" y="-10" width="130" height="160"/>
+                        <rect key="frame" x="260" y="5" width="130" height="160"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="130" id="46u-Rq-XVj"/>
-                            <constraint firstAttribute="height" constant="160" id="vgs-yF-cAr"/>
+                            <constraint firstAttribute="width" constant="130" id="5BC-Ae-JGp"/>
+                            <constraint firstAttribute="height" constant="160" id="dhH-qz-Dus"/>
                         </constraints>
                     </imageView>
                 </subviews>
@@ -84,7 +85,7 @@ commodities as well</string>
                     <constraint firstAttribute="trailing" secondItem="SIH-2q-cpm" secondAttribute="trailing" constant="30" id="18s-dY-Kuk"/>
                     <constraint firstItem="SIH-2q-cpm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="LuD-zc-ZD4"/>
                     <constraint firstItem="SIH-2q-cpm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="NKZ-Gx-N8E"/>
-                    <constraint firstItem="zBW-oT-j4N" firstAttribute="centerY" secondItem="SIH-2q-cpm" secondAttribute="centerY" constant="-35" id="alV-8w-YUz"/>
+                    <constraint firstItem="zBW-oT-j4N" firstAttribute="centerY" secondItem="SIH-2q-cpm" secondAttribute="centerY" constant="-20" id="alV-8w-YUz"/>
                     <constraint firstAttribute="trailing" secondItem="zBW-oT-j4N" secondAttribute="trailing" constant="30" id="cWo-58-ZXr"/>
                     <constraint firstAttribute="bottom" secondItem="SIH-2q-cpm" secondAttribute="bottom" constant="20" id="ttB-FG-1in"/>
                 </constraints>
@@ -99,7 +100,7 @@ commodities as well</string>
             <connections>
                 <outlet property="descriptionLabel" destination="uQF-xg-tbF" id="6Qe-L8-J2k"/>
                 <outlet property="imgEqualizerConstraint" destination="alV-8w-YUz" id="dOA-Ek-l2B"/>
-                <outlet property="imgHeight" destination="vgs-yF-cAr" id="xSY-fm-0aT"/>
+                <outlet property="imgHeight" destination="dhH-qz-Dus" id="iSp-uv-qiH"/>
                 <outlet property="imgView" destination="zBW-oT-j4N" id="85a-p1-l29"/>
                 <outlet property="titleLabel" destination="O53-zn-xua" id="RHX-or-rGg"/>
             </connections>

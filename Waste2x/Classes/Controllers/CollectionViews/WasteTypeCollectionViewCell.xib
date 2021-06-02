@@ -24,8 +24,7 @@
                                 <rect key="frame" x="20" y="8" width="67" height="67"/>
                                 <color key="backgroundColor" red="0.76774638890000002" green="0.82328408959999999" blue="0.58523911240000004" alpha="0.32246459556731166" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="67" id="ksb-YX-c2a"/>
-                                    <constraint firstAttribute="height" constant="67" id="zwZ-FH-yx1"/>
+                                    <constraint firstAttribute="width" secondItem="H6M-jz-vt3" secondAttribute="height" multiplier="1:1" id="sfU-zI-lBb"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -60,6 +59,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Pmz-cd-53L" firstAttribute="centerY" secondItem="H6M-jz-vt3" secondAttribute="centerY" id="0Oq-Nw-QbJ"/>
+                            <constraint firstItem="H6M-jz-vt3" firstAttribute="height" secondItem="DYr-Df-1DZ" secondAttribute="height" multiplier="0.807229" id="674-23-96H"/>
                             <constraint firstItem="Pmz-cd-53L" firstAttribute="leading" secondItem="H6M-jz-vt3" secondAttribute="trailing" constant="20" id="NtI-yS-hiJ"/>
                             <constraint firstItem="H6M-jz-vt3" firstAttribute="centerY" secondItem="DYr-Df-1DZ" secondAttribute="centerY" id="ffM-D0-3y3"/>
                             <constraint firstItem="H6M-jz-vt3" firstAttribute="leading" secondItem="DYr-Df-1DZ" secondAttribute="leading" constant="20" id="phF-pX-1aI"/>

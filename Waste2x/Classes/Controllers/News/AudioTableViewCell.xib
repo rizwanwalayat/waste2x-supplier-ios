@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="73" id="KGk-i7-Jjw" customClass="AudioTableViewCell" customModule="Waste2x" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="366" height="73"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="366" height="73"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FIC-ma-YrW">
+                        <rect key="frame" x="0.0" y="0.0" width="366" height="73"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGE-UQ-BpB">
+                                <rect key="frame" x="20" y="25.5" width="15" height="22"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" image="play.fill" catalog="system"/>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iWH-bZ-L1s">
+                                <rect key="frame" x="55" y="34.5" width="291" height="4"/>
+                                <color key="tintColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iWH-bZ-L1s" firstAttribute="centerY" secondItem="rGE-UQ-BpB" secondAttribute="centerY" id="TFO-4G-nMR"/>
+                            <constraint firstItem="iWH-bZ-L1s" firstAttribute="leading" secondItem="rGE-UQ-BpB" secondAttribute="trailing" constant="20" id="j8u-de-fd8"/>
+                            <constraint firstItem="rGE-UQ-BpB" firstAttribute="leading" secondItem="FIC-ma-YrW" secondAttribute="leading" constant="20" id="qIK-zN-q4L"/>
+                            <constraint firstItem="rGE-UQ-BpB" firstAttribute="centerY" secondItem="FIC-ma-YrW" secondAttribute="centerY" id="tib-Th-rmZ"/>
+                            <constraint firstAttribute="trailing" secondItem="iWH-bZ-L1s" secondAttribute="trailing" constant="20" id="ywP-01-piI"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="FIC-ma-YrW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="6rg-vo-dvH"/>
+                    <constraint firstItem="FIC-ma-YrW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Qfi-1j-0AT"/>
+                    <constraint firstAttribute="bottom" secondItem="FIC-ma-YrW" secondAttribute="bottom" id="TII-4W-A4v"/>
+                    <constraint firstAttribute="trailing" secondItem="FIC-ma-YrW" secondAttribute="trailing" id="fO6-Kn-hNl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="15.942028985507248" y="72.65625"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
