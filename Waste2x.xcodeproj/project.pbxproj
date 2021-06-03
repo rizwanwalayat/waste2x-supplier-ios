@@ -1262,8 +1262,8 @@
 			baseConfigurationReference = 6CA379E75CD096547C9819CB /* Pods-Waste2x.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FUDLQH8LBU;
 				INFOPLIST_FILE = Waste2x/Info.plist;
@@ -1274,7 +1274,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.enmass.waste2x;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Waste2X supplier";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1285,8 +1285,8 @@
 			baseConfigurationReference = 88E2EFD0CCE20FC7E1292953 /* Pods-Waste2x.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FUDLQH8LBU;
 				INFOPLIST_FILE = Waste2x/Info.plist;
@@ -1297,7 +1297,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.enmass.waste2x;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Waste2X supplier";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
