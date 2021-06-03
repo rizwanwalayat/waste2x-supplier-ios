@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -34,20 +34,20 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9R3-FT-6xv" userLabel="headerHolderView">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="310"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="241.66666666666666"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" image="Header-Background" translatesAutoresizingMaskIntoConstraints="NO" id="ETJ-og-lac">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="310"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="241.66666666666666"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59G-aC-CV2" userLabel="ButtonHeaderview">
-                            <rect key="frame" x="0.0" y="52" width="414" height="46.5"/>
+                            <rect key="frame" x="0.0" y="8" width="414" height="36.333333333333336"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QpH-hj-0hj">
-                                    <rect key="frame" x="30" y="10.5" width="26" height="25.5"/>
+                                    <rect key="frame" x="30" y="7.9999999999999982" width="20" height="20.333333333333329"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="QpH-hj-0hj" secondAttribute="height" multiplier="1:1" id="HAz-2V-cQu"/>
                                     </constraints>
@@ -57,13 +57,13 @@
                                     </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="W2X Logo" translatesAutoresizingMaskIntoConstraints="NO" id="NNg-gm-X0B">
-                                    <rect key="frame" x="176" y="0.0" width="62" height="46.5"/>
+                                    <rect key="frame" x="183" y="0.0" width="48" height="36.333333333333336"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="NNg-gm-X0B" secondAttribute="height" multiplier="4:3" id="xbf-ng-Z8M"/>
                                     </constraints>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5Z-uf-GG3">
-                                    <rect key="frame" x="355" y="6.5" width="33" height="33.5"/>
+                                    <rect key="frame" x="362.33333333333331" y="5.3333333333333339" width="25.666666666666686" height="25.666666666666664"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="r5Z-uf-GG3" secondAttribute="height" multiplier="1:1" id="VLz-c7-cDN"/>
                                     </constraints>
@@ -73,7 +73,7 @@
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdn-zJ-hxw">
-                                    <rect key="frame" x="376" y="11.5" width="7" height="7"/>
+                                    <rect key="frame" x="376" y="10.333333333333332" width="7" height="7"/>
                                     <color key="backgroundColor" red="0.76862745098039209" green="0.82352941176470584" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="kdn-zJ-hxw" secondAttribute="height" multiplier="1:1" id="CZG-T5-yis"/>
@@ -102,7 +102,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydY-vu-3To" userLabel="LabelView">
-                            <rect key="frame" x="0.0" y="117.5" width="414" height="20.5"/>
+                            <rect key="frame" x="0.0" y="63.333333333333336" width="414" height="20.333333333333336"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Hello," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKY-xq-ZES">
                                     <rect key="frame" x="75" y="51" width="51.5" height="25.5"/>
@@ -112,7 +112,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHF-Hr-O3i">
-                                    <rect key="frame" x="30" y="0.0" width="354" height="20.5"/>
+                                    <rect key="frame" x="30" y="0.0" width="354" height="20.333333333333332"/>
                                     <attributedString key="attributedText">
                                         <fragment content="alterises@gmail.com">
                                             <attributes>
@@ -139,7 +139,7 @@
                             </variation>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qlk-z8-DES" userLabel="progressbarPointView">
-                            <rect key="frame" x="0.0" y="148" width="414" height="59.5"/>
+                            <rect key="frame" x="0.0" y="93.666666666666671" width="414" height="59.333333333333329"/>
                             <subviews>
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.59999999999999998" trackImage="progressbar-Bg" translatesAutoresizingMaskIntoConstraints="NO" id="0lV-ZR-g59">
                                     <rect key="frame" x="80" y="13" width="279" height="4"/>
@@ -153,16 +153,16 @@
                                     </constraints>
                                 </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="sxO-WX-nQ0">
-                                    <rect key="frame" x="277" y="25" width="82" height="14.5"/>
+                                    <rect key="frame" x="277.33333333333331" y="24.999999999999996" width="81.666666666666686" height="14.333333333333332"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" text="50/100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mM2-0H-XPb">
-                                            <rect key="frame" x="0.0" y="0.0" width="39.5" height="14.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="39.333333333333336" height="14.333333333333334"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ef0-6X-wQz">
-                                            <rect key="frame" x="43.5" y="0.0" width="38.5" height="14.5"/>
+                                            <rect key="frame" x="43.333333333333371" y="0.0" width="38.333333333333343" height="14.333333333333334"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -183,7 +183,7 @@
                             </constraints>
                         </view>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="HLQ-Ap-x2z">
-                            <rect key="frame" x="15" y="207.5" width="384" height="77.5"/>
+                            <rect key="frame" x="15" y="153" width="384" height="63.666666666666657"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <viewLayoutGuide key="contentLayoutGuide" id="9YT-NV-ZGA"/>
                             <viewLayoutGuide key="frameLayoutGuide" id="gdf-yv-S63"/>
@@ -222,13 +222,13 @@
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAV-u5-OWe">
-                    <rect key="frame" x="0.0" y="310" width="414" height="586"/>
+                    <rect key="frame" x="0.0" y="241.66666666666666" width="414" height="494.33333333333337"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eR6-Va-5fB">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="506.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="484.33333333333331"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kc3-On-fte">
-                                    <rect key="frame" x="30" y="25" width="108.5" height="21"/>
+                                    <rect key="frame" x="29.999999999999993" y="25.000000000000028" width="108.33333333333331" height="21"/>
                                     <string key="text">Current Waste
 
 </string>
@@ -237,14 +237,14 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJV-KS-rAk">
-                                    <rect key="frame" x="327" y="19" width="57" height="33"/>
+                                    <rect key="frame" x="327" y="19.000000000000028" width="57" height="33"/>
                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                     <state key="normal" title="View All">
                                         <color key="titleColor" red="0.43529411759999997" green="0.55294117649999996" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     </state>
                                 </button>
                                 <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="MAg-aS-k9i">
-                                    <rect key="frame" x="0.0" y="62" width="414" height="117"/>
+                                    <rect key="frame" x="0.0" y="62.000000000000028" width="414" height="96"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="fxT-fC-8sh" customClass="SJCenterFlowLayout" customModule="Waste2x" customModuleProvider="target">
                                         <size key="itemSize" width="128" height="128"/>
@@ -254,13 +254,13 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <pageControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="y16-Fi-04U">
-                                    <rect key="frame" x="146.5" y="189" width="121.5" height="27.5"/>
+                                    <rect key="frame" x="147" y="168.00000000000003" width="120.33333333333331" height="26.333333333333343"/>
                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="currentPageIndicatorTintColor" red="0.43137254899999999" green="0.54901960780000003" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </pageControl>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pka-2w-Hhg">
-                                    <rect key="frame" x="0.0" y="226.5" width="414" height="200"/>
+                                    <rect key="frame" x="0.0" y="204.33333333333337" width="414" height="200"/>
                                     <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="200" id="ggk-Ym-Ask"/>
@@ -314,11 +314,11 @@
     </objects>
     <resources>
         <image name="Header-Background" width="375" height="355"/>
-        <image name="Point Icon" width="30" height="30.5"/>
+        <image name="Point Icon" width="29.666666030883789" height="30.333333969116211"/>
         <image name="W2X Logo" width="95" height="43"/>
-        <image name="bell" width="22" height="30"/>
-        <image name="menu-left" width="32" height="22.5"/>
-        <image name="progressbar-Bg" width="243" height="19.5"/>
+        <image name="bell" width="21.333333969116211" height="29.333333969116211"/>
+        <image name="menu-left" width="32" height="22.333333969116211"/>
+        <image name="progressbar-Bg" width="243" height="19.333333969116211"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

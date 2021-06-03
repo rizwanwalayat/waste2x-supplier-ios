@@ -250,9 +250,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         if indexPath.section == 0{
         if pendingCollection
         {
-//            let vc = PendingCollectionViewController(nibName: "PendingCollectionViewController", bundle: nil)
-//            self.navigationController?.pushTo(controller: vc)
-            let vc = DetailPendingCollectionViewController(nibName: "DetailPendingCollectionViewController", bundle: nil)
+            let vc = PendingCollectionViewController(nibName: "PendingCollectionViewController", bundle: nil)
             self.navigationController?.pushTo(controller: vc)
         }
         }
