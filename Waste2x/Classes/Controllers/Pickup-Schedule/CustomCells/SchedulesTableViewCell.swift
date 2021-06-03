@@ -41,7 +41,7 @@ class SchedulesTableViewCell: UITableViewCell {
     }
     
     
-    func UIAdjustment(cellType : ScheduleType, _ isSelected: Bool)
+    func UIAdjustment(cellType : ScheduleType, _ isSelected: Bool, bodyLabelText : String?)
     {
         switch cellType {
         case .onePickup:
@@ -69,7 +69,7 @@ class SchedulesTableViewCell: UITableViewCell {
             self.titleLableHolderview.isHidden = false
             self.bodyRightImageview.isHidden = false
             self.checkboxImageView.isHidden = true
-            self.bodyTitleLabel.text = "Select Site"
+            self.bodyTitleLabel.text = (bodyLabelText != nil) ? bodyLabelText :"Select Site"
             self.titleLabel.text = "Site"
             self.bodyRightImageview.image = UIImage(named: "down Arrow gray")
             self.sepratorview.isHidden = true
@@ -80,7 +80,7 @@ class SchedulesTableViewCell: UITableViewCell {
             self.titleLableHolderview.isHidden = false
             self.bodyRightImageview.isHidden = false
             self.checkboxImageView.isHidden = true
-            self.bodyTitleLabel.text = "Select Date and Time"
+            self.bodyTitleLabel.text = (bodyLabelText != nil) ? bodyLabelText :"Select Date and Time"
             self.titleLabel.text = "Date & Time"
             self.bodyRightImageview.image = UIImage(named: "calendar-dates-gray")
             self.sepratorview.isHidden = true
@@ -91,7 +91,7 @@ class SchedulesTableViewCell: UITableViewCell {
             self.titleLableHolderview.isHidden = false
             self.bodyRightImageview.isHidden = false
             self.checkboxImageView.isHidden = true
-            self.bodyTitleLabel.text = "Select Location"
+            self.bodyTitleLabel.text = (bodyLabelText != nil) ? bodyLabelText :"Select Location"
             self.titleLabel.text = "Location"
             self.bodyRightImageview.image = UIImage(named: "location-pin")
             self.sepratorview.isHidden = true
@@ -103,7 +103,7 @@ class SchedulesTableViewCell: UITableViewCell {
             self.bodyRightImageview.isHidden = false
             self.checkboxImageView.isHidden = true
             self.bodyTitleLabel.text = "Select Frequency / Periodic"
-            self.titleLabel.text = "Frequency / Periodic"
+            self.titleLabel.text = (bodyLabelText != nil) ? bodyLabelText :"Frequency / Periodic"
             self.bodyRightImageview.image = UIImage(named: "down Arrow gray")
             self.sepratorview.isHidden = true
             setHighlightedView(isSelected)

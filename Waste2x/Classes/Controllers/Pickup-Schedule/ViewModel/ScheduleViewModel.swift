@@ -26,20 +26,24 @@ extension ScheduleViewController : UITableViewDelegate, UITableViewDataSource, S
         
         case 0:
             
-            cell.UIAdjustment(cellType: .onePickup, (selectionType == .onePickup) ? true : false)
+            cell.UIAdjustment(cellType: .onePickup, (selectionType == .onePickup) ? true : false, bodyLabelText: nil)
             
             
         case 1:
             
-            cell.UIAdjustment(cellType: .regularSchedule, (selectionType == .regular) ? true : false)
+            cell.UIAdjustment(cellType: .regularSchedule, (selectionType == .regular) ? true : false, bodyLabelText: nil)
             
             
         case 2:
             
-            (selectionType == .regular) ? (cell.UIAdjustment(cellType: .FrequencyAndPeriodic, false)) : (cell.UIAdjustment(cellType: .site, false))
+            let FrequencyAndPeriodicText = filedsData[.FrequencyAndPeriodic]
+            let siteText = filedsData[.site]
+            (selectionType == .regular) ? (cell.UIAdjustment(cellType: .FrequencyAndPeriodic, false, bodyLabelText: FrequencyAndPeriodicText)) : (cell.UIAdjustment(cellType: .site, false, bodyLabelText: siteText))
             
         case 3:
             
+            let FrequencyAndPeriodicText = filedsData[.FrequencyAndPeriodic]
+            let siteText = filedsData[.site]
             (selectionType == .regular) ? (cell.UIAdjustment(cellType: .site, false)) : (cell.UIAdjustment(cellType: .dateAndTime, false))
             
         default:
@@ -66,7 +70,7 @@ extension ScheduleViewController : UITableViewDelegate, UITableViewDataSource, S
             if let cell = tableview.cellForRow(at: indexPath) as? SchedulesTableViewCell
             {
                 showPopupViewHandlings(forSection: 2, alreadySelectedString: cell.bodyTitleLabel.text ?? "")
-                scheduledCell = cell
+                
             }
             
         case 3:
@@ -74,7 +78,7 @@ extension ScheduleViewController : UITableViewDelegate, UITableViewDataSource, S
             if let cell = tableview.cellForRow(at: indexPath) as? SchedulesTableViewCell
             {
                 showPopupViewHandlings(forSection: 3, alreadySelectedString: cell.bodyTitleLabel.text ?? "")
-                scheduledCell = cell
+                
             }
             
             
@@ -127,6 +131,5 @@ extension ScheduleViewController : UITableViewDelegate, UITableViewDataSource, S
     func didSelectOption(_ selectedOption: String) {
         
         print(selectedOption)
-        scheduledCell?.bodyTitleLabel.text = selectedOption
     }
 }

@@ -29,7 +29,7 @@ class ScheduleViewController: BaseViewController {
     // MARK: - Declarations
     
     var selectionType = SelectionType.none
-    var scheduledCell : SchedulesTableViewCell?
+    var filedsData    = [ScheduleType : String]()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
