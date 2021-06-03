@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Right Arrow.png",
+      "filename" : "Time Icon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Right Arrow@2x.png",
+      "filename" : "Time Icon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Right Arrow@3x.png",
+      "filename" : "Time Icon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
@@ -19,8 +19,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "template-rendering-intent" : "template"
   }
 }

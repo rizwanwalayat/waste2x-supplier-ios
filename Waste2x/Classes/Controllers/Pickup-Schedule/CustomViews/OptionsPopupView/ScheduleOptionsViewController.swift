@@ -10,6 +10,7 @@ import UIKit
 
 protocol ScheduleOptionsViewControllerDelegate {
     func didSelectOption(_ selectedOption : String)
+    func didDismiss()
 }
 class ScheduleOptionsViewController: BaseViewController {
 
@@ -100,6 +101,7 @@ class ScheduleOptionsViewController: BaseViewController {
     @IBAction func backgroundButton(_ sender: Any) {
         
         hidePopup()
+        delegate?.didDismiss()
     }
     
 }
