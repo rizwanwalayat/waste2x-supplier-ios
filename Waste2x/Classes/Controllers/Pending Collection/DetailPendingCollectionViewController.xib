@@ -103,7 +103,7 @@
     <resources>
         <image name="Arrow Left" width="10" height="18"/>
         <namedColor name="bgColor">
-            <color red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="0.92839040187810429" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="0.92799997329711914" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

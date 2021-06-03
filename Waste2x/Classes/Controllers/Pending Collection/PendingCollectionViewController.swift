@@ -11,7 +11,7 @@ import UIKit
 class PendingCollectionViewController: BaseViewController {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    var count = 3
+    var count = 5
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,7 +40,7 @@ extension PendingCollectionViewController : UITableViewDelegate,UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.register(PendingTableViewCell.self, indexPath: indexPath)
-        cell.selectionStyle = .none
+//        cell.selectionStyle = .none
         return cell
         
     }
@@ -49,6 +49,8 @@ extension PendingCollectionViewController : UITableViewDelegate,UITableViewDataS
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let vc = DetailPendingCollectionViewController(nibName: "DetailPendingCollectionViewController", bundle: nil)
+        self.navigationController?.pushTo(controller: vc)
     }
     
 }
