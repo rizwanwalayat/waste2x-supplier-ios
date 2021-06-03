@@ -110,6 +110,8 @@
 		18719146266667550050FAAA /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18719144266667550050FAAA /* DetailTableViewCell.xib */; };
 		1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC85265688EB00147EB8 /* BaseViewController.swift */; };
 		1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */; };
+		188B36D32668C95A0036B412 /* DetailPendingCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B36D12668C95A0036B412 /* DetailPendingCollectionTableViewCell.swift */; };
+		188B36D42668C95A0036B412 /* DetailPendingCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188B36D22668C95A0036B412 /* DetailPendingCollectionTableViewCell.xib */; };
 		18937548266127CB00D55A33 /* NotificationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18937544266127CB00D55A33 /* NotificationsTableViewCell.xib */; };
 		18937549266127CB00D55A33 /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18937545266127CB00D55A33 /* NotificationsTableViewCell.swift */; };
 		1893754A266127CB00D55A33 /* NotificationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18937546266127CB00D55A33 /* NotificationsViewController.xib */; };
@@ -248,6 +250,8 @@
 		18719144266667550050FAAA /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		1875BC85265688EB00147EB8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
+		188B36D12668C95A0036B412 /* DetailPendingCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPendingCollectionTableViewCell.swift; sourceTree = "<group>"; };
+		188B36D22668C95A0036B412 /* DetailPendingCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPendingCollectionTableViewCell.xib; sourceTree = "<group>"; };
 		18937544266127CB00D55A33 /* NotificationsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsTableViewCell.xib; sourceTree = "<group>"; };
 		18937545266127CB00D55A33 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
 		18937546266127CB00D55A33 /* NotificationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsViewController.xib; sourceTree = "<group>"; };
@@ -703,6 +707,8 @@
 			children = (
 				184F516E2667AD9700F0328A /* PendingTableViewCell.swift */,
 				184F516F2667AD9700F0328A /* PendingTableViewCell.xib */,
+				188B36D12668C95A0036B412 /* DetailPendingCollectionTableViewCell.swift */,
+				188B36D22668C95A0036B412 /* DetailPendingCollectionTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -921,6 +927,7 @@
 				18397E252660FF54003DE30C /* Poppins-Thin.ttf in Resources */,
 				181025372657E48500DEBF7D /* AddMoreViewController.xib in Resources */,
 				18397E1D2660FF54003DE30C /* Poppins-SemiBoldItalic.ttf in Resources */,
+				188B36D42668C95A0036B412 /* DetailPendingCollectionTableViewCell.xib in Resources */,
 				1893756F266127F800D55A33 /* CurrentWasteViewController.xib in Resources */,
 				1893756D266127F800D55A33 /* CurrentWasteTableViewCell.xib in Resources */,
 				184F51682667A46400F0328A /* PendingCollectionViewController.xib in Resources */,
@@ -1098,6 +1105,7 @@
 				18937566266127F800D55A33 /* NewWasteSizeViewController.swift in Sources */,
 				0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */,
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,
+				188B36D32668C95A0036B412 /* DetailPendingCollectionTableViewCell.swift in Sources */,
 				048C09F0265E5FDE003E301F /* CodeVerificationViewModel.swift in Sources */,
 				0067A321252AFC9E00CECA8C /* String.swift in Sources */,
 				18011272266774E5000C7102 /* FaqTableViewCell.swift in Sources */,

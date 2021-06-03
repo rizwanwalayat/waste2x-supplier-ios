@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,13 +28,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlS-Fn-hpy">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="101.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oqS-K1-6FG">
-                            <rect key="frame" x="0.0" y="44" width="414" height="57.5"/>
+                            <rect key="frame" x="0.0" y="44" width="414" height="53"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggg-u5-2JP">
-                                    <rect key="frame" x="30" y="18" width="22" height="22"/>
+                                    <rect key="frame" x="30" y="15.5" width="22" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="ggg-u5-2JP" secondAttribute="height" multiplier="1:1" id="1Ih-ny-U06"/>
                                         <constraint firstAttribute="height" constant="22" id="kz9-i9-qty"/>
@@ -44,7 +45,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pending Collections" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRt-W0-zlB">
-                                    <rect key="frame" x="116" y="16" width="182" height="25.5"/>
+                                    <rect key="frame" x="126.5" y="16" width="161.5" height="21"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -68,11 +69,11 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5AZ-B2-jks">
-                    <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
+                    <rect key="frame" x="0.0" y="97" width="414" height="799"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="au2-E6-m96">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="714.5"/>
-                            <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="719"/>
+                            <color key="backgroundColor" name="bgColor"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="mte-6U-KWb"/>
                                 <outlet property="delegate" destination="-1" id="xAS-TO-J7B"/>
@@ -105,6 +106,9 @@
     </objects>
     <resources>
         <image name="Arrow Left" width="10" height="18"/>
+        <namedColor name="bgColor">
+            <color red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="0.92839040187810429" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
