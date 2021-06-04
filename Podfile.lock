@@ -70,7 +70,6 @@ PODS:
     - GoogleUtilities/Environment (~> 7.0)
     - GoogleUtilities/Reachability (~> 7.0)
     - GoogleUtilities/UserDefaults (~> 7.0)
-  - FSCalendar (2.8.2)
   - GoogleAppMeasurement/AdIdSupport (7.11.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
     - GoogleUtilities/MethodSwizzler (~> 7.0)
@@ -124,13 +123,13 @@ PODS:
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
   - SlideMenuControllerSwift (4.0.0)
+  - StepIndicator (1.0.8)
 
 DEPENDENCIES:
   - Alamofire (~> 4.2)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Messaging
-  - FSCalendar
   - GoogleMaps
   - GooglePlaces
   - IQKeyboardManagerSwift
@@ -139,6 +138,7 @@ DEPENDENCIES:
   - ObjectMapper (~> 3.4)
   - SDWebImage (~> 5.0)
   - SlideMenuControllerSwift
+  - StepIndicator (~> 1.0.8)
 
 SPEC REPOS:
   trunk:
@@ -151,7 +151,6 @@ SPEC REPOS:
     - FirebaseInstallations
     - FirebaseInstanceID
     - FirebaseMessaging
-    - FSCalendar
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleMaps
@@ -166,6 +165,7 @@ SPEC REPOS:
     - PromisesObjC
     - SDWebImage
     - SlideMenuControllerSwift
+    - StepIndicator
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -177,7 +177,6 @@ SPEC CHECKSUMS:
   FirebaseInstallations: a58d4f72ec5861840b84df489f2668d970df558a
   FirebaseInstanceID: ad5135045a498d7775903efd39762d2cdfa1be27
   FirebaseMessaging: 163435fb6db065e3b6228f1e577b10ed2cc506d2
-  FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
   GoogleAppMeasurement: fd19169c3034975cb934e865e5667bfdce59df7f
   GoogleDataTransport: cd9db2180fcecd8da1b561aea31e3e56cf834aa7
   GoogleMaps: eb03e327edfd70b06de1e6e321653f73712df7ad
@@ -192,7 +191,8 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
+  StepIndicator: 748b293f671355b021253f82031ac002f153dc81
 
-PODFILE CHECKSUM: 9c68f0e294d5d5e1709c1d7b0fbe097044969439
+PODFILE CHECKSUM: b1bf45d46fb52b889c3cf72065ac269c41b2921a
 
 COCOAPODS: 1.10.1

@@ -17,4 +17,5 @@ target 'Waste2x' do
   pod 'GooglePlaces'
   pod 'SlideMenuControllerSwift'
   pod 'FSCalendar'
+  pod 'StepIndicator', '~> 1.0.8'
 end

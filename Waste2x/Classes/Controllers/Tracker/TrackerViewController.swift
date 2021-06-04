@@ -1,14 +1,14 @@
 //
-//  DetailPendingCollectionViewController.swift
+//  TrackerViewController.swift
 //  Waste2x
 //
-//  Created by HaiDer's Macbook Pro on 02/06/2021.
+//  Created by HaiDer's Macbook Pro on 04/06/2021.
 //  Copyright © 2021 codesrbit. All rights reserved.
 //
 
 import UIKit
 
-class DetailPendingCollectionViewController: BaseViewController {
+class TrackerViewController: BaseViewController {
 
     @IBOutlet weak var mainView: UIView!
     override func viewDidLoad() {
@@ -22,5 +22,7 @@ class DetailPendingCollectionViewController: BaseViewController {
         mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         mainView.layer.masksToBounds = true
         
+        
     }
+    
 }
