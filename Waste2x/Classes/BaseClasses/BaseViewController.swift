@@ -10,9 +10,12 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    var tabbarViewHeight : CGFloat = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tabbarViewHeight = UIScreen.main.bounds.height * 0.0926339
+        print("Bottom Const : \(tabbarViewHeight)\nscreen height : \(UIScreen.main.bounds.height)")
     }
 
     /**************************************************/

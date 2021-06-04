@@ -36,6 +36,7 @@
 		0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A315252AFC9E00CECA8C /* UILabel.swift */; };
 		0067A324252AFC9E00CECA8C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A316252AFC9E00CECA8C /* UIFont.swift */; };
 		0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0067A33A252B91BA00CECA8C /* Assets.xcassets */; };
+		041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041242AA266A05AE00EB1A3F /* DateExtenstion.swift */; };
 		0428F1BF265B8EC5007C51EE /* LoginCodeVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1BD265B8EC5007C51EE /* LoginCodeVerificationViewController.swift */; };
 		0428F1C0265B8EC5007C51EE /* LoginCodeVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0428F1BE265B8EC5007C51EE /* LoginCodeVerificationViewController.xib */; };
 		0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C1265BC124007C51EE /* UIColorExtensions.swift */; };
@@ -43,8 +44,20 @@
 		0428F1CD265BECB5007C51EE /* LoginInputEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1CB265BECB5007C51EE /* LoginInputEmailViewController.swift */; };
 		0428F1CE265BECB5007C51EE /* LoginInputEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0428F1CC265BECB5007C51EE /* LoginInputEmailViewController.xib */; };
 		04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04629D2526664D86008A6A3A /* CustomProgressbar.swift */; };
+		046528032668F694005F3FB0 /* CalenderPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046528012668F694005F3FB0 /* CalenderPopupViewController.swift */; };
+		046528042668F694005F3FB0 /* CalenderPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046528022668F694005F3FB0 /* CalenderPopupViewController.xib */; };
+		048582C02667BEC70077B42E /* ScheduleOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */; };
+		048582C12667BEC70077B42E /* ScheduleOptionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */; };
 		048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C09E6265E2265003E301F /* ImagePickerVC.swift */; };
 		048C09F0265E5FDE003E301F /* CodeVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C7265BD9AE007C51EE /* CodeVerificationViewModel.swift */; };
+		04BD2801266A2589008FC8B4 /* SchedulePlannedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD27FF266A2589008FC8B4 /* SchedulePlannedViewController.swift */; };
+		04BD2802266A2589008FC8B4 /* SchedulePlannedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BD2800266A2589008FC8B4 /* SchedulePlannedViewController.xib */; };
+		04C2361C2669224600A27B78 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2361B2669224600A27B78 /* Array.swift */; };
+		04C31D092667744400A1CF9C /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C31D072667744400A1CF9C /* ScheduleViewController.swift */; };
+		04C31D0A2667744400A1CF9C /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C31D082667744400A1CF9C /* ScheduleViewController.xib */; };
+		04C31D1226678E1800A1CF9C /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C31D1126678E1800A1CF9C /* ScheduleViewModel.swift */; };
+		04C31D1B2667BBE600A1CF9C /* ScheduleOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C31D192667BBE600A1CF9C /* ScheduleOptionsViewController.swift */; };
+		04C31D1C2667BBE600A1CF9C /* ScheduleOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C31D1A2667BBE600A1CF9C /* ScheduleOptionsViewController.xib */; };
 		04C82E182664BCCB00D52947 /* WasteDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C82E122664BCCB00D52947 /* WasteDetailViewModel.swift */; };
 		04C82E192664BCCB00D52947 /* WasteImageDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C82E142664BCCB00D52947 /* WasteImageDetailCollectionViewCell.xib */; };
 		04C82E1A2664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C82E152664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift */; };
@@ -171,6 +184,7 @@
 		0067A315252AFC9E00CECA8C /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		0067A316252AFC9E00CECA8C /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		0067A33A252B91BA00CECA8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		041242AA266A05AE00EB1A3F /* DateExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtenstion.swift; sourceTree = "<group>"; };
 		0428F1BD265B8EC5007C51EE /* LoginCodeVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCodeVerificationViewController.swift; sourceTree = "<group>"; };
 		0428F1BE265B8EC5007C51EE /* LoginCodeVerificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginCodeVerificationViewController.xib; sourceTree = "<group>"; };
 		0428F1C1265BC124007C51EE /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
@@ -179,10 +193,22 @@
 		0428F1CB265BECB5007C51EE /* LoginInputEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInputEmailViewController.swift; sourceTree = "<group>"; };
 		0428F1CC265BECB5007C51EE /* LoginInputEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginInputEmailViewController.xib; sourceTree = "<group>"; };
 		04629D2526664D86008A6A3A /* CustomProgressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressbar.swift; sourceTree = "<group>"; };
+		046528012668F694005F3FB0 /* CalenderPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderPopupViewController.swift; sourceTree = "<group>"; };
+		046528022668F694005F3FB0 /* CalenderPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalenderPopupViewController.xib; sourceTree = "<group>"; };
+		048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleOptionsTableViewCell.swift; sourceTree = "<group>"; };
+		048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleOptionsTableViewCell.xib; sourceTree = "<group>"; };
 		048C09E6265E2265003E301F /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		04969272265CFCB10081E875 /* WasteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDetailViewController.swift; sourceTree = "<group>"; };
 		04969273265CFCB10081E875 /* WasteDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteDetailViewController.xib; sourceTree = "<group>"; };
 		04B20E8B265D36EA0081E7C0 /* WasteDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDetailViewModel.swift; sourceTree = "<group>"; };
+		04BD27FF266A2589008FC8B4 /* SchedulePlannedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePlannedViewController.swift; sourceTree = "<group>"; };
+		04BD2800266A2589008FC8B4 /* SchedulePlannedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchedulePlannedViewController.xib; sourceTree = "<group>"; };
+		04C2361B2669224600A27B78 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		04C31D072667744400A1CF9C /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		04C31D082667744400A1CF9C /* ScheduleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleViewController.xib; sourceTree = "<group>"; };
+		04C31D1126678E1800A1CF9C /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		04C31D192667BBE600A1CF9C /* ScheduleOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleOptionsViewController.swift; sourceTree = "<group>"; };
+		04C31D1A2667BBE600A1CF9C /* ScheduleOptionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleOptionsViewController.xib; sourceTree = "<group>"; };
 		04C82E122664BCCB00D52947 /* WasteDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasteDetailViewModel.swift; sourceTree = "<group>"; };
 		04C82E142664BCCB00D52947 /* WasteImageDetailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WasteImageDetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		04C82E152664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasteImageDetailCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -343,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				18D1A363266A2B51009CAD26 /* Tracker */,
+				04C31D062667731100A1CF9C /* Pickup-Schedule */,
 				184F51642667A42600F0328A /* Pending Collection */,
 				1801126D2667746D000C7102 /* Faq */,
 				18666B1C26665EAF005C1A78 /* News */,
@@ -462,6 +489,8 @@
 				0067A311252AFC9E00CECA8C /* UIViewController.swift */,
 				0428F1C1265BC124007C51EE /* UIColorExtensions.swift */,
 				0428F1C5265BC9EC007C51EE /* UINavigationController.swift */,
+				04C2361B2669224600A27B78 /* Array.swift */,
+				041242AA266A05AE00EB1A3F /* DateExtenstion.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -477,6 +506,17 @@
 				1875BC85265688EB00147EB8 /* BaseViewController.swift */,
 			);
 			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+		041242AC266A16D500EB1A3F /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				04C31D072667744400A1CF9C /* ScheduleViewController.swift */,
+				04C31D082667744400A1CF9C /* ScheduleViewController.xib */,
+				04C31D1026678D6F00A1CF9C /* ViewModel */,
+				04C31D172667BB3600A1CF9C /* CustomViews */,
+			);
+			path = Schedule;
 			sourceTree = "<group>";
 		};
 		0428F1BC265B8019007C51EE /* Login-CodeVerification */ = {
@@ -506,6 +546,24 @@
 			path = "Login-InputEmail";
 			sourceTree = "<group>";
 		};
+		046528002668F671005F3FB0 /* CalenderPopupView */ = {
+			isa = PBXGroup;
+			children = (
+				046528012668F694005F3FB0 /* CalenderPopupViewController.swift */,
+				046528022668F694005F3FB0 /* CalenderPopupViewController.xib */,
+			);
+			path = CalenderPopupView;
+			sourceTree = "<group>";
+		};
+		048582BD2667BEAB0077B42E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */,
+				048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		048C09E5265E223E003E301F /* CommonClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,6 +579,51 @@
 				18937542266127CB00D55A33 /* Notifications */,
 			);
 			path = "Messages & Notifications";
+			sourceTree = "<group>";
+		};
+		04BD27FE266A2569008FC8B4 /* Schedule Planned */ = {
+			isa = PBXGroup;
+			children = (
+				04BD27FF266A2589008FC8B4 /* SchedulePlannedViewController.swift */,
+				04BD2800266A2589008FC8B4 /* SchedulePlannedViewController.xib */,
+			);
+			path = "Schedule Planned";
+			sourceTree = "<group>";
+		};
+		04C31D062667731100A1CF9C /* Pickup-Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				04BD27FE266A2569008FC8B4 /* Schedule Planned */,
+				041242AC266A16D500EB1A3F /* Schedule */,
+			);
+			path = "Pickup-Schedule";
+			sourceTree = "<group>";
+		};
+		04C31D1026678D6F00A1CF9C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04C31D1126678E1800A1CF9C /* ScheduleViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04C31D172667BB3600A1CF9C /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				046528002668F671005F3FB0 /* CalenderPopupView */,
+				04C31D182667BB4F00A1CF9C /* OptionsPopupView */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		04C31D182667BB4F00A1CF9C /* OptionsPopupView */ = {
+			isa = PBXGroup;
+			children = (
+				04C31D192667BBE600A1CF9C /* ScheduleOptionsViewController.swift */,
+				04C31D1A2667BBE600A1CF9C /* ScheduleOptionsViewController.xib */,
+				048582BD2667BEAB0077B42E /* Cells */,
+			);
+			path = OptionsPopupView;
 			sourceTree = "<group>";
 		};
 		04C82E102664BCCB00D52947 /* WasteDetail */ = {
@@ -929,6 +1032,7 @@
 				186CD719266610C600A1F30F /* CreatePaymentViewController.xib in Resources */,
 				18397E272660FF54003DE30C /* Poppins-Italic.ttf in Resources */,
 				18937548266127CB00D55A33 /* NotificationsTableViewCell.xib in Resources */,
+				048582C12667BEC70077B42E /* ScheduleOptionsTableViewCell.xib in Resources */,
 				18397E172660FF54003DE30C /* Poppins-ExtraLight.ttf in Resources */,
 				0428F1C0265B8EC5007C51EE /* LoginCodeVerificationViewController.xib in Resources */,
 				18397E1F2660FF54003DE30C /* Poppins-BlackItalic.ttf in Resources */,
@@ -945,10 +1049,13 @@
 				1850CEFA265E5491001F5E92 /* SupplierTableViewCell.xib in Resources */,
 				181025392657E48500DEBF7D /* MessagesViewController.xib in Resources */,
 				04C82E192664BCCB00D52947 /* WasteImageDetailCollectionViewCell.xib in Resources */,
+				04C31D0A2667744400A1CF9C /* ScheduleViewController.xib in Resources */,
 				18A849D0265E411F008F77E8 /* WeatherCollectionViewCell.xib in Resources */,
 				18666B2426666175005C1A78 /* VideoTableViewCell.xib in Resources */,
+				04BD2802266A2589008FC8B4 /* SchedulePlannedViewController.xib in Resources */,
 				18397E212660FF54003DE30C /* Poppins-Regular.ttf in Resources */,
 				189782FD265D35CF008FD5E3 /* SideMenuViewController.xib in Resources */,
+				046528042668F694005F3FB0 /* CalenderPopupViewController.xib in Resources */,
 				1810253F2657E48500DEBF7D /* HomeViewController.xib in Resources */,
 				18397E282660FF54003DE30C /* Poppins-MediumItalic.ttf in Resources */,
 				18397E192660FF54003DE30C /* Poppins-ExtraLightItalic.ttf in Resources */,
@@ -976,6 +1083,7 @@
 				1810253E2657E48500DEBF7D /* FaqViewController.xib in Resources */,
 				181025382657E48500DEBF7D /* NewsViewController.xib in Resources */,
 				18397E1B2660FF54003DE30C /* Poppins-Light.ttf in Resources */,
+				04C31D1C2667BBE600A1CF9C /* ScheduleOptionsViewController.xib in Resources */,
 				18397E1A2660FF54003DE30C /* Poppins-BoldItalic.ttf in Resources */,
 				18719146266667550050FAAA /* DetailTableViewCell.xib in Resources */,
 				18397E232660FF54003DE30C /* Poppins-Bold.ttf in Resources */,
@@ -1079,6 +1187,8 @@
 				18666B2326666175005C1A78 /* VideoTableViewCell.swift in Sources */,
 				0043454F2548302A009A6166 /* UserData.swift in Sources */,
 				1810252A2657E36500DEBF7D /* Extentions.swift in Sources */,
+				04C31D1226678E1800A1CF9C /* ScheduleViewModel.swift in Sources */,
+				04C2361C2669224600A27B78 /* Array.swift in Sources */,
 				1850CEF9265E5491001F5E92 /* SupplierTableViewCell.swift in Sources */,
 				0067A2E32529D2CD00CECA8C /* Utility.swift in Sources */,
 				0428F1C6265BC9EC007C51EE /* UINavigationController.swift in Sources */,
@@ -1099,6 +1209,7 @@
 				0043453E254823FE009A6166 /* TSAPIClient.swift in Sources */,
 				0067A31E252AFC9E00CECA8C /* UIButton.swift in Sources */,
 				18719145266667550050FAAA /* DetailTableViewCell.swift in Sources */,
+				04C31D092667744400A1CF9C /* ScheduleViewController.swift in Sources */,
 				184F51672667A46400F0328A /* PendingCollectionViewController.swift in Sources */,
 				048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */,
 				0067A31C252AFC9E00CECA8C /* UITextField.swift in Sources */,
@@ -1124,12 +1235,15 @@
 				1810253B2657E48500DEBF7D /* MessagesViewController.swift in Sources */,
 				0067A31D252AFC9E00CECA8C /* UISlider.swift in Sources */,
 				04C82E1A2664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift in Sources */,
+				048582C02667BEC70077B42E /* ScheduleOptionsTableViewCell.swift in Sources */,
+				041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */,
 				00434544254825AE009A6166 /* DataManager.swift in Sources */,
 				1810253D2657E48500DEBF7D /* NewsViewController.swift in Sources */,
 				18397DCF2660FD35003DE30C /* LoginViewController.swift in Sources */,
 				00434541254823FE009A6166 /* ApiClientHandler.swift in Sources */,
 				0067A324252AFC9E00CECA8C /* UIFont.swift in Sources */,
 				18C11A70265FA49C00BC022F /* ContactTableViewCell.swift in Sources */,
+				04BD2801266A2589008FC8B4 /* SchedulePlannedViewController.swift in Sources */,
 				0067A322252AFC9E00CECA8C /* UIImage.swift in Sources */,
 				0043454E2548302A009A6166 /* Users.swift in Sources */,
 				0043453F254823FE009A6166 /* ApiResponseHandler.swift in Sources */,
@@ -1138,6 +1252,8 @@
 				0428F1BF265B8EC5007C51EE /* LoginCodeVerificationViewController.swift in Sources */,
 				181025232657E33A00DEBF7D /* ContainerViewController.swift in Sources */,
 				1893754B266127CB00D55A33 /* NotificationsViewController.swift in Sources */,
+				04C31D1B2667BBE600A1CF9C /* ScheduleOptionsViewController.swift in Sources */,
+				046528032668F694005F3FB0 /* CalenderPopupViewController.swift in Sources */,
 				189782FA265D3479008FD5E3 /* SideMenuViewController.swift in Sources */,
 				0067A2DA25274CF800CECA8C /* Login1.swift in Sources */,
 				04C82E1C2664BCCB00D52947 /* WasteDetailViewController.swift in Sources */,

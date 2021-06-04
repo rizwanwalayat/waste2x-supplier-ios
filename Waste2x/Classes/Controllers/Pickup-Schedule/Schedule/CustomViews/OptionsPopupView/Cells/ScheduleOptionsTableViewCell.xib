@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="60" id="KGk-i7-Jjw" customClass="ScheduleOptionsTableViewCell" customModule="Waste2x" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="419" height="55"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="419" height="55"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQW-UY-O5Y">
+                        <rect key="frame" x="0.0" y="0.0" width="419" height="55"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ejy-p1-PXW">
+                                <rect key="frame" x="16" y="17.5" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ejy-p1-PXW" secondAttribute="height" multiplier="1:1" id="ytx-Qy-5aW"/>
+                                    <constraint firstAttribute="height" constant="20" id="zl9-uD-DCp"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Weekly" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uZ-YD-mRc">
+                                <rect key="frame" x="44" y="16" width="367" height="23"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                                <color key="textColor" red="0.62745098040000002" green="0.62352941179999999" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ejy-p1-PXW" firstAttribute="leading" secondItem="hQW-UY-O5Y" secondAttribute="leading" constant="16" id="FZl-wm-lgc"/>
+                            <constraint firstItem="Ejy-p1-PXW" firstAttribute="centerY" secondItem="hQW-UY-O5Y" secondAttribute="centerY" id="NGc-0y-qoz"/>
+                            <constraint firstAttribute="bottom" secondItem="8uZ-YD-mRc" secondAttribute="bottom" constant="16" id="cDi-cc-HKt"/>
+                            <constraint firstItem="8uZ-YD-mRc" firstAttribute="top" secondItem="hQW-UY-O5Y" secondAttribute="top" constant="16" id="iPT-gt-VkM"/>
+                            <constraint firstItem="8uZ-YD-mRc" firstAttribute="leading" secondItem="Ejy-p1-PXW" secondAttribute="trailing" constant="8" id="p31-wF-21q"/>
+                            <constraint firstAttribute="trailing" secondItem="8uZ-YD-mRc" secondAttribute="trailing" constant="8" id="uPm-Qp-ZWB"/>
+                            <constraint firstItem="8uZ-YD-mRc" firstAttribute="centerY" secondItem="Ejy-p1-PXW" secondAttribute="centerY" id="zVY-3y-nKn"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="2" height="4"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.050000000000000003" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hQW-UY-O5Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="0yt-un-bFG"/>
+                    <constraint firstAttribute="bottom" secondItem="hQW-UY-O5Y" secondAttribute="bottom" id="g6G-A3-8nR"/>
+                    <constraint firstItem="hQW-UY-O5Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="o9f-Pd-T4u"/>
+                    <constraint firstAttribute="trailing" secondItem="hQW-UY-O5Y" secondAttribute="trailing" id="uhE-NT-b8t"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="checkboxImageview" destination="Ejy-p1-PXW" id="LqX-DK-QGU"/>
+                <outlet property="mainHolderview" destination="hQW-UY-O5Y" id="WDj-ms-Xkz"/>
+                <outlet property="titleTextLable" destination="8uZ-YD-mRc" id="D3S-Gd-dIY"/>
+            </connections>
+            <point key="canvasLocation" x="198" y="77"/>
+        </tableViewCell>
+    </objects>
+</document>
