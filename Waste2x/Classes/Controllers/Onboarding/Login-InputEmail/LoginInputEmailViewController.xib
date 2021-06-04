@@ -89,7 +89,7 @@ email address</string>
                                             <rect key="frame" x="48" y="14" width="306" height="30"/>
                                             <color key="textColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="18"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             <connections>
                                                 <outlet property="delegate" destination="-1" id="JkG-2J-eQI"/>
                                             </connections>
