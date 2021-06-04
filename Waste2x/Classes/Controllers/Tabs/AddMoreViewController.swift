@@ -22,6 +22,8 @@ class AddMoreViewController: BaseViewController {
     }
 
     @IBAction func collaps(_ sender: Any) {
-        expandCollapse()
+//        expandCollapse()
+        let vc = TrackerViewController(nibName: "TrackerViewController", bundle: nil)
+        self.navigationController?.pushTo(controller: vc)
     }
 }

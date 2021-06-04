@@ -11,7 +11,8 @@ import UIKit
 class PendingCollectionViewController: BaseViewController {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    var count = 5
+    var count = 2
+    var confirm = true
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,9 +40,19 @@ extension PendingCollectionViewController : UITableViewDelegate,UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.register(PendingTableViewCell.self, indexPath: indexPath)
-//        cell.selectionStyle = .none
+        if confirm
+        {
+        let cell = tableView.register(ConfirmPendingTableViewCell.self, indexPath: indexPath)
+        self.confirm = false
         return cell
+            
+        }
+        else
+        {
+            let cell = tableView.register(UnconfirmPendingCollectionTableViewCell.self, indexPath: indexPath)
+            cell.selectionStyle = .none
+            return cell
+        }
         
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -49,8 +60,17 @@ extension PendingCollectionViewController : UITableViewDelegate,UITableViewDataS
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let vc = DetailPendingCollectionViewController(nibName: "DetailPendingCollectionViewController", bundle: nil)
-        self.navigationController?.pushTo(controller: vc)
+        if let confirmCell = tableView.cellForRow(at: indexPath) as? ConfirmPendingTableViewCell
+        {
+            confirmCell.expandCollapseView(index: indexPath.row)
+        }
+        if let UnConfirmcell = tableView.cellForRow(at: indexPath) as? UnconfirmPendingCollectionTableViewCell
+        {
+            UnConfirmcell.expandCollapseView(index: indexPath.row)
+        }
+        
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
     
 }

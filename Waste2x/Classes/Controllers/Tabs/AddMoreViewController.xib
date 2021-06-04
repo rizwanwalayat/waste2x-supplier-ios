@@ -70,8 +70,8 @@
                     </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FpQ-h4-iqr">
-                    <rect key="frame" x="184" y="554.5" width="46" height="30"/>
-                    <state key="normal" title="Button"/>
+                    <rect key="frame" x="162" y="554.5" width="90" height="30"/>
+                    <state key="normal" title="Track Screen"/>
                     <connections>
                         <action selector="collaps:" destination="-1" eventType="touchUpInside" id="awt-Xc-eFS"/>
                     </connections>

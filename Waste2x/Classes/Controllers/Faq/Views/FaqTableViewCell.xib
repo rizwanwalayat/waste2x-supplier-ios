@@ -31,7 +31,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vfE-e8-3AY">
                                 <rect key="frame" x="18" y="16" width="355" height="242"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUd-Gm-vcf" userLabel="Headerview">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aUd-Gm-vcf" userLabel="Headerview">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="222"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="How do i select type of waste?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1j-0J-gIx">
@@ -61,7 +61,7 @@
                                         <rect key="frame" x="0.0" y="242" width="355" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35k-Z0-zpg">
-                                                <rect key="frame" x="0.0" y="0.0" width="355" height="101"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="0.0"/>
                                                 <string key="text">EnMass Energy requested you to sell 10 Tons waste of commodity “Crop waste - Cotton” at price of $100.EnMass Energy requested you to sell 10 Tons waste of commodity “Crop waste - Cotton” at price of $100.EnMass Energy requested you to sell 10 Tons waste of commodity “Crop waste - Cotton” at price of $100.</string>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                 <color key="textColor" red="0.0078431372550000003" green="0.015686274510000001" blue="0.01176470588" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
