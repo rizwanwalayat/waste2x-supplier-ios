@@ -41,4 +41,15 @@ extension String {
             return nil
         }
     }
+    
+    func stringToDate(_ dateFormatter : String) -> Date?
+    {
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = dateFormatter//"MMM dd, yyyy"
+        let date = formatter.date(from: self)
+        
+        return date
+    }
+    
 }

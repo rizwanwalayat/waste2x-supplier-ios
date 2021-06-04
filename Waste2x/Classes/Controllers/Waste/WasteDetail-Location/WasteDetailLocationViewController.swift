@@ -23,6 +23,7 @@ class WasteDetailLocationViewController: BaseViewController {
     @IBOutlet weak var searchIcon           : UIImageView!
     @IBOutlet weak var nextButton           : UIButton!
     @IBOutlet weak var titleLabel           : UILabel!
+    @IBOutlet weak var constBottom          : NSLayoutConstraint!
     
     // MARK: - Declarations
     
@@ -35,7 +36,7 @@ class WasteDetailLocationViewController: BaseViewController {
     var selectedPlace               : GMSPlace?
     var marker                      : GMSMarker?
     var delegate                    : WasteDetailLocationViewControllerDelegate?
-    
+    var isNeedToUpBottomConst       = true
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -58,6 +59,11 @@ class WasteDetailLocationViewController: BaseViewController {
         mapView.delegate = self
         
         mapView.roundCorners(uiViewCorners: .top, radius: 32)
+        
+        if isNeedToUpBottomConst {
+            constBottom.constant = tabbarViewHeight
+            self.view.layoutIfNeeded()
+        }
     }
 
     @IBAction func nextButtonTapped(_ sender: Any) {

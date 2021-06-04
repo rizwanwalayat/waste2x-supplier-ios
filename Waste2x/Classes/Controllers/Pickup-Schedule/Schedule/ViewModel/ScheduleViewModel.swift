@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, CalenderPopupViewControllerDelegate
+extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, CalenderPopupViewControllerDelegate, WasteDetailLocationViewControllerDelegate
 {
     // MARK: - ScheduleOptionsViewControllerDelegate Method
     
@@ -43,6 +43,14 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
         selectionHandlingsOfViews(selectDateTimeHolderview, isSelection: true)
     }
     
+    
+    // MARK: - WasteDetailLocationViewControllerDelegate Method
+    
+    func selectedLocationDetail(address: String) {
+        
+        selectLocationLabel.text = address
+        selectionHandlingsOfViews(selectLocationHolderview, isSelection: true)
+    }
     
     // MARK: - Custom Methods Method
     
@@ -86,19 +94,34 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
     
     func showCalenderView()
     {
+        var alreadySelectedText = ""
+        (selectDateTimeLabel.text != selectDateTimePlaceholder) ? (alreadySelectedText = selectDateTimeLabel.text ?? "") : (alreadySelectedText = "")
+        
         let calenderVC               = CalenderPopupViewController(nibName: "CalenderPopupViewController", bundle: nil)
         calenderVC.modalPresentationStyle = .overFullScreen
         calenderVC.delegate = self
+        calenderVC.alreadySelectedDateTime = alreadySelectedText
         self.present(calenderVC, animated: false, completion: nil)
+    }
+    
+    func showMapView()
+    {
+        let locationVC            = WasteDetailLocationViewController(nibName: "WasteDetailLocationViewController", bundle: nil)
+        locationVC.delegate       = self
+        locationVC.isNeedToUpBottomConst = false
+        self.navigationController?.pushViewController(locationVC, animated: true)
     }
     
     func pickupTypeHandlings(selectionType : SelectionType)
     {
         selectSiteLabel.text = selectSitePlaceholder
         selectFrequencyPriodicLabel.text = selectFrequencyPerodicPlaceholder
+        selectDateTimeLabel.text = selectDateTimePlaceholder
+        selectLocationLabel.text = selectLocationPlaceHolder
         selectionHandlingsOfViews(selectSiteHolderview, isSelection: false)
         selectionHandlingsOfViews(selectFrequencyPriodicHolderview, isSelection: false)
         selectionHandlingsOfViews(selectDateTimeHolderview, isSelection: false)
+        selectionHandlingsOfViews(selectLocationHolderview, isSelection: false)
         
         let lableUnselectHexCode = "A09F9F"
         let lableSelectedHexCode = "2B2B2B"
@@ -133,21 +156,25 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
             self.checkboxRegular.backgroundColor = UIColor.appColor
             self.checkboxRegular.image = UIImage(named: "check")
             self.regularPickupLabel.textColor = UIColor(hexString: lableSelectedHexCode)
-            hideAnimated(in: stackview, selectDateTimeHolderview, selectFrequencyPriodicHolderview)
+            //hideAnimated(in: stackview, selectDateTimeHolderview, selectFrequencyPriodicHolderview)
+            showAnimated(in: stackview, selectFrequencyPriodicHolderview)
             
         case .none:
             
             self.regularPickupHolderview.animateBorderColor(toColor: UIColor.clear, duration: 0.1)
             self.regularPickupHolderview.borderWidth = 0
+            self.regularPickupLabel.textColor = UIColor(hexString: lableUnselectHexCode)
             self.checkboxRegular.backgroundColor = UIColor.clear
             self.checkboxRegular.image = UIImage(named: "")
             
             self.onePickupHolderview.borderWidth = 0
             self.onePickupHolderview.animateBorderColor(toColor: UIColor.clear, duration: 0.3)
+            self.onePickupLabel.textColor = UIColor(hexString: lableUnselectHexCode)
             self.CheckboxonePickup.backgroundColor = UIColor.clear
             self.CheckboxonePickup.image = UIImage(named: "")
-            hideAnimated(in: stackview, selectFrequencyPriodicHolderview, selectDateTimeHolderview)
-            
+            //hideAnimated(in: stackview, selectFrequencyPriodicHolderview, selectDateTimeHolderview)
+            showAnimated(in: stackview, selectFrequencyPriodicHolderview)
+            showAnimated(in: stackview, selectDateTimeHolderview)
         }
     }
     
@@ -247,5 +274,28 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
 //            siteTitleLabel.textColor = UIColor(hexString: unSelectedTitleLabelTextColor)
 //        }
         
+    }
+    
+    func allFieldsAuth() -> Bool
+    {
+        switch selectionType {
+        
+        case .none:
+            return false
+        case .regular:
+            
+            if selectFrequencyPriodicLabel.text != selectFrequencyPerodicPlaceholder && selectSiteLabel.text != selectSitePlaceholder && selectDateTimeLabel.text != selectDateTimePlaceholder && selectLocationLabel.text != selectLocationPlaceHolder
+            {
+                return true
+            }
+            return false
+        case .onePickup:
+            
+            if selectSiteLabel.text != selectSitePlaceholder && selectDateTimeLabel.text != selectDateTimePlaceholder && selectLocationLabel.text != selectLocationPlaceHolder
+            {
+                return true
+            }
+            return false
+        }
     }
 }

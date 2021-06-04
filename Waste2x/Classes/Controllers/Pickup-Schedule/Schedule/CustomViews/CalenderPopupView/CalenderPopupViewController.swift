@@ -24,10 +24,12 @@ class CalenderPopupViewController: BaseViewController {
     @IBOutlet weak var popupView: UIView!
     
     
-    // MARK: - Outlets
+    // MARK: - Declarations
     
     var timesSchadules = ["10:00 AM", "11:00 AM", "12:00 PM", "01:00 PM", "02:00 PM", "03:00 PM"]
     var delegate : CalenderPopupViewControllerDelegate?
+    var alreadySelectedDateTime = ""
+    var lastSelectedDate = Date()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -37,6 +39,7 @@ class CalenderPopupViewController: BaseViewController {
         timeLabel.text = timesSchadules[0]
         
         calenderview.delegate = self
+        alreadySelectedDateTimeHandlings()
         
     }
 
@@ -47,6 +50,20 @@ class CalenderPopupViewController: BaseViewController {
             
           self.popupView.transform = .identity
         })
+    }
+    
+    func alreadySelectedDateTimeHandlings()
+    {
+        let stringArray = alreadySelectedDateTime.components(separatedBy: "-")
+        guard let dateString = stringArray.first else {return }
+        guard let date = dateString.stringToDate("MMM dd, yyyy") else {return }
+        calenderview.select(date, scrollToDate: true)
+        
+        guard let timeSting = stringArray.last else {return }
+        let trimmedString = timeSting.trimmingCharacters(in: .whitespaces)
+        if timesSchadules.contains(trimmedString) {
+            timeLabel.text = trimmedString
+        }
     }
     
     func hidePopup()
@@ -94,27 +111,18 @@ class CalenderPopupViewController: BaseViewController {
     
     @IBAction func reverseButtonPressed(_ sender : UIButton)
     {
-        let previousMonth = Calendar.current.date(byAdding: .month, value: -1, to: Date())
+        let date = lastSelectedDate.startOfDay
+        let previousMonth = Calendar.current.date(byAdding: .month, value: -1, to: date)
+        lastSelectedDate = previousMonth ?? date
         calenderview.select(previousMonth, scrollToDate: true)
     }
     
     @IBAction func forwardButtonPressed(_ sender : UIButton)
     {
-        let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: Date())
+        let date = lastSelectedDate.startOfDay
+        let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: date)
+        lastSelectedDate = nextMonth ?? date
         calenderview.select(nextMonth, scrollToDate: true)
-    }
-    
-    func dateToString(_ ofDate : Date) -> String
-    {
-        let formatter = DateFormatter()
-        
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let dateString = formatter.string(from: ofDate)
-        let date = formatter.date(from: dateString)
-        formatter.dateFormat = "MMM dd, yyyy"//"dd-MMM-yyyy"
-        let returnString = formatter.string(from: date ?? ofDate)
-
-        return returnString
     }
 }
 
@@ -128,7 +136,7 @@ extension CalenderPopupViewController : FSCalendarDelegate
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         
-        let dateString = dateToString(date)
+        let dateString = date.dateToString("MMM dd, yyyy")
         print(dateString)
         
         let selectedString = "\(dateString) - \(timeLabel.text ?? "")"

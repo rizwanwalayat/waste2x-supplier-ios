@@ -102,10 +102,18 @@ class ScheduleViewController: BaseViewController {
         
     @IBAction func nextButtonPressed(_ sender: UIButton)
     {
-        print("next button pressed")
+        if allFieldsAuth() {
+            
+            let vc = SchedulePlannedViewController(nibName: "SchedulePlannedViewController", bundle: nil)
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func selectLocationButtonPressed(_ sender: Any) {
+        
+        if selectionType != .none {
+            showMapView()
+        }
     }
     
     @IBAction func dateTimeButtonPressed(_ sender: Any) {
@@ -117,7 +125,7 @@ class ScheduleViewController: BaseViewController {
     
     @IBAction func frequencyPriodicButtonPressed(_ sender: Any) {
         
-        if selectionType != .none {
+        if selectionType == .regular {
             popupOptionType = .frequency_preodic
             showPopupViewHandlings(forSelection: .frequency_preodic)
         }
