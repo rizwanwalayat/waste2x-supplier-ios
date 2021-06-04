@@ -6,8 +6,9 @@
 //
 
 import UIKit
-
+var globalObjectHome : HomeViewController?
 class HomeViewController: BaseViewController {
+    
     
     
     //MARK: - IBOutlets
@@ -25,7 +26,7 @@ class HomeViewController: BaseViewController {
     //MARK: - Variables
     var notification:Bool = true
     var email:String = "Haid3rawan@icloud.com"
-    var pendingCollection:Bool = true
+    var pendingCollection = true
     var timer: Timer?
     var count = Int()
     var selecetedIndex = 0
@@ -35,7 +36,8 @@ class HomeViewController: BaseViewController {
     //MARK: - AppCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        globalObjectHome = self
+        tableView.reloadData()
         setAttributedTextInLable(emailAddress: email)
         self.indicatorMarker.currentPage = 0
         let progressbarAdjustment = UIScreen.main.bounds.height / 222
@@ -66,6 +68,7 @@ class HomeViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         weatherCollectionView.reloadData()
+        tableView.reloadData()
     }
     
     //MARK: - Logic For Slider
@@ -138,6 +141,10 @@ class HomeViewController: BaseViewController {
         self.navigationController?.pushViewController(notification, animated: true)
     }
     
+    @IBAction func viewAllAction(_ sender: Any) {
+        let vc = PendingCollectionViewController(nibName: "PendingCollectionViewController", bundle: nil)
+        self.navigationController?.pushTo(controller: vc)
+    }
     
 }
 
@@ -253,6 +260,15 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
             let vc = PendingCollectionViewController(nibName: "PendingCollectionViewController", bundle: nil)
             self.navigationController?.pushTo(controller: vc)
         }
+        }
+        else
+        {
+            let text = "Invite Supplieer."
+            let textToShare = [ text ]
+            let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+            activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
+            self.present(activityViewController, animated: true, completion: nil)
         }
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

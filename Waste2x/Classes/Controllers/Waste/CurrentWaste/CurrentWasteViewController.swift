@@ -18,7 +18,6 @@ class CurrentWasteViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         currentWasteTableview.register(UINib(nibName: "CurrentWasteTableViewCell", bundle: nil), forCellReuseIdentifier: "CurrentWasteTableViewCell")
         currentWasteTableview.rowHeight = UITableView.automaticDimension
         currentWasteTableview.estimatedRowHeight = UITableView.automaticDimension

@@ -20,7 +20,6 @@ class NotificationsViewController: BaseViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
         notificationsTableview.register(UINib(nibName: "NotificationsTableViewCell", bundle: nil), forCellReuseIdentifier: "NotificationsTableViewCell")
         notificationsTableview.rowHeight = UITableView.automaticDimension
         notificationsTableview.estimatedRowHeight = UITableView.automaticDimension

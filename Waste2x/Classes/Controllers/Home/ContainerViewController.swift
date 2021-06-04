@@ -22,6 +22,7 @@ class ContainerViewController: BaseViewController {
     @IBOutlet weak var messagesHoverView: UIView!
     @IBOutlet weak var faqHoverView: UIView!
     @IBOutlet weak var newsHoverView: UIView!
+    @IBOutlet weak var tabbarHiddenView: UIView!
     
     var nav = BaseNavigationViewController()
 
@@ -122,6 +123,7 @@ class ContainerViewController: BaseViewController {
         tabsView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         tabsView.layer.masksToBounds = true
         self.navigationController?.navigationBar.isHidden = true
+        self.tabbarHiddenView.isHidden = false
         
     }
     

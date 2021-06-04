@@ -28,14 +28,14 @@ struct NetworkingConnection {
     }
     
     class func loginRootViewController () {
-//        let loginViewController = LoginViewController()
-//        let navigationController = BaseNavigationViewController()
-//                navigationController.viewControllers = [loginViewController]
-        let slideMenuController = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
-        let nav = BaseNavigationViewController()
-        nav.viewControllers = [slideMenuController]
+        let loginViewController = LoginViewController()
+        let navigationController = BaseNavigationViewController()
+                navigationController.viewControllers = [loginViewController]
+//        let slideMenuController = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
+//        let nav = BaseNavigationViewController()
+//        nav.viewControllers = [slideMenuController]
         kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)
-        kApplicationWindow?.rootViewController = nav
+        kApplicationWindow?.rootViewController = navigationController
         kApplicationWindow?.makeKeyAndVisible()
     }
     

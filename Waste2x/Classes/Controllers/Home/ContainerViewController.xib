@@ -21,6 +21,7 @@
                 <outlet property="messagesHoverView" destination="wUO-ig-Wr6" id="10l-cq-vaI"/>
                 <outlet property="newsButton" destination="OHf-ho-s9p" id="tfl-EJ-VeO"/>
                 <outlet property="newsHoverView" destination="YGo-yL-04r" id="LsX-jS-ekN"/>
+                <outlet property="tabbarHiddenView" destination="LbU-WF-VKW" id="kfV-iD-RyT"/>
                 <outlet property="tabsView" destination="LbU-WF-VKW" id="afI-ma-DQt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
