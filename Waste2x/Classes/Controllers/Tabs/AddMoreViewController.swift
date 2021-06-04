@@ -9,14 +9,19 @@ import UIKit
 
 class AddMoreViewController: BaseViewController {
 
+    @IBOutlet weak var hiddenView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .gray
+        self.hiddenView.isHidden = true
         // Do any additional setup after loading the view.
     }
-    
+    func expandCollapse() {
+        self.hiddenView.isHidden = !self.hiddenView.isHidden
 
-    @IBAction func actionBack(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+    }
+
+    @IBAction func collaps(_ sender: Any) {
+        expandCollapse()
     }
 }

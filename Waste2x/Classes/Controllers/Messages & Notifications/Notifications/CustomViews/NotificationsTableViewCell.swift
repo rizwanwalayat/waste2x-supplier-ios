@@ -37,28 +37,88 @@ class NotificationsTableViewCell: UITableViewCell {
     }
     
     
-    func notificationStatusHandlings(_ status : NotificationStatus)
+    func notificationStatusHandlings(_ status : NotificationStatus, notificationTitle : String, detailText : String, questionText : String)
     {
+        let acceptStatusColor = UIColor(hexString: "7D9D15", alpha: 0.15)
+        let acceptLabelColor  = UIColor(hexString: "7D9D15")
+        let acceptImage       = UIImage(named: "accept-icon")
+        
+        let rejectStatusColor = UIColor(hexString: "FA5656", alpha: 0.15)
+        let rejectLabelColor  = UIColor(hexString: "FA5656")
+        let rejectImage       = UIImage(named: "reject-icon")
+        
+        let pendingStatusColor = UIColor(hexString: "FFD367", alpha: 0.15)
+        let pendingLabelColor  = UIColor(hexString: "FFD367")
+        let pendingImage       = UIImage(named: "Pending-Icon")
+        
+        let confirmStatusColor = UIColor(hexString: "7D9D15", alpha: 0.15)
+        let confirmLabelColor  = UIColor(hexString: "7D9D15")
+        let confirmImage       = UIImage(named: "Confirm-icon")
+        
+        let otwStatusColor = UIColor(hexString: "7D9D15", alpha: 0.15)
+        let otwLabelColor  = UIColor(hexString: "7D9D15")
+        let otwImage       = UIImage(named: "Otw-Icon")
+        
         switch status {
         case .accepted:
             
-            self.notificationStatusHolderView.backgroundColor = UIColor(hexString: "7D9D15", alpha: 0.15)
-            self.notificationStatusLabel.textColor = UIColor(hexString: "7D9D15")
+            self.notificationTitle.text = notificationTitle
+            self.notificationDetailLabel.text = detailText
+            self.notificationQuestionLabel.text = questionText
+            self.notificationStatusHolderView.backgroundColor = acceptStatusColor
+            self.notificationStatusLabel.textColor = acceptLabelColor
             self.notificationStatusLabel.text      = "Accepted"
-            self.notificationStatusImageView.image = UIImage(named: "accept-icon")
+            self.notificationStatusImageView.image = acceptImage
+            self.notificationNoButton.isHidden = false
+            self.notificationYesButton.setTitle("Yes", for: .normal)
+            
         case .rejected:
             
-            self.notificationStatusHolderView.backgroundColor = UIColor(hexString: "FA5656", alpha: 0.15)
-            self.notificationStatusLabel.textColor = UIColor(hexString: "FA5656")
+            self.notificationTitle.text = notificationTitle
+            self.notificationDetailLabel.text = detailText
+            self.notificationQuestionLabel.text = questionText
+            self.notificationStatusHolderView.backgroundColor = rejectStatusColor
+            self.notificationStatusLabel.textColor = rejectLabelColor
             self.notificationStatusLabel.text      = "Rejected"
-            self.notificationStatusImageView.image = UIImage(named: "reject-icon")
+            self.notificationStatusImageView.image = rejectImage
+            self.notificationNoButton.isHidden = false
+            self.notificationYesButton.setTitle("Yes", for: .normal)
             
         case .pending:
             
-            self.notificationStatusHolderView.backgroundColor = UIColor(hexString: "FFD367", alpha: 0.15)
-            self.notificationStatusLabel.textColor = UIColor(hexString: "FFD367")
+            self.notificationTitle.text = notificationTitle
+            self.notificationDetailLabel.text = detailText
+            self.notificationQuestionLabel.text = questionText
+            self.notificationStatusHolderView.backgroundColor = pendingStatusColor
+            self.notificationStatusLabel.textColor = pendingLabelColor
             self.notificationStatusLabel.text      = "Pending"
-            self.notificationStatusImageView.image = UIImage(named: "Pending-Icon")
+            self.notificationStatusImageView.image = pendingImage
+            self.notificationNoButton.isHidden = false
+            self.notificationYesButton.setTitle("Yes", for: .normal)
+            
+        case .confirmed:
+            
+            self.notificationTitle.text = notificationTitle
+            self.notificationDetailLabel.text = detailText
+            self.notificationQuestionLabel.text = questionText
+            self.notificationStatusHolderView.backgroundColor = confirmStatusColor
+            self.notificationStatusLabel.textColor = confirmLabelColor
+            self.notificationStatusLabel.text      = "Confrimed"
+            self.notificationStatusImageView.image = confirmImage
+            self.notificationNoButton.isHidden = true
+            self.notificationYesButton.setTitle("Check", for: .normal)
+            
+        case .onway:
+            
+            self.notificationTitle.text = notificationTitle
+            self.notificationDetailLabel.text = detailText
+            self.notificationQuestionLabel.text = questionText
+            self.notificationStatusHolderView.backgroundColor = otwStatusColor
+            self.notificationStatusLabel.textColor = otwLabelColor
+            self.notificationStatusLabel.text      = "On Way"
+            self.notificationStatusImageView.image = otwImage
+            self.notificationNoButton.isHidden = true
+            self.notificationYesButton.setTitle("Track", for: .normal)
             
         }
     }
@@ -67,9 +127,7 @@ class NotificationsTableViewCell: UITableViewCell {
     func expandCollapse() {
         self.bodyView.isHidden = !self.bodyView.isHidden
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
-            self.layoutIfNeeded()
-            
-        }, completion: { finished in
+            self.layoutIfNeeded()}, completion: { finished in
             if self.expandArrow.image == UIImage(named: "Down-Arrow")
             {
                 self.expandArrow.image = UIImage(named: "Right-arrow-gray")
@@ -86,4 +144,6 @@ enum NotificationStatus {
     case accepted
     case rejected
     case pending
+    case confirmed
+    case onway
 }

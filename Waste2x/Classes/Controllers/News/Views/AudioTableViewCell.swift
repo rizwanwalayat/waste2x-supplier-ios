@@ -9,7 +9,7 @@
 import UIKit
 
 class AudioTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var playButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +19,9 @@ class AudioTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    @IBAction func playAction(_ sender: Any) {
+        playButton.isSelected = !playButton.isSelected
     }
     
 }

@@ -14,6 +14,7 @@ class NotificationsViewController: BaseViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var mainHolderView: UIView!
     @IBOutlet weak var notificationsTableview : UITableView!
+    @IBOutlet weak var bottomConst : NSLayoutConstraint!
     
     
     // MARK: - Lifecycle
@@ -25,6 +26,8 @@ class NotificationsViewController: BaseViewController {
         notificationsTableview.estimatedRowHeight = UITableView.automaticDimension
         
         mainHolderView.roundCorners(uiViewCorners: .top, radius: 32)
+        bottomConst.constant = tabbarViewHeight
+        self.view.layoutIfNeeded()
     }
     
     
@@ -38,19 +41,38 @@ class NotificationsViewController: BaseViewController {
 extension NotificationsViewController : UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationsTableViewCell", for: indexPath) as! NotificationsTableViewCell
         switch indexPath.row {
+        
+        
         case 0:
-            cell.notificationStatusHandlings(.pending)
+            
+            cell.notificationStatusHandlings(.pending, notificationTitle: "Purchase Request from Enmass", detailText: "EnMass Energy requested you to sell 10 Tons waste of commodity “Crop waste - Cotton” at price of $100.", questionText: "Do you want to sell?")
+            
         case 1:
-            cell.notificationStatusHandlings(.rejected)
+            
+            cell.notificationStatusHandlings(.rejected, notificationTitle: "Purchase Request from Enmass", detailText: "EnMass Energy requested you to sell 10 Tons waste of commodity “Crop waste - Cotton” at price of $100.", questionText: "Do you want to sell?")
+            
+        case 2:
+            
+            cell.notificationStatusHandlings(.accepted, notificationTitle: "Purchase Request from Enmass", detailText: "EnMass Energy requested you to sell 10 Tons waste of commodity “Crop waste - Cotton” at price of $100.", questionText: "Do you want to sell?")
+            
+        case 3:
+            
+            cell.notificationStatusHandlings(.confirmed, notificationTitle: "Pickup schedule has been confirmed", detailText: "You can check your pickup schedule information on Pending Collection or by clicking this button.", questionText: "")
+            
+        case 4:
+            
+            cell.notificationStatusHandlings(.onway, notificationTitle: "Vehicle on route to your location", detailText: "EnMass Energy vehicle is on the way to your supplies location.", questionText: "")
+            
         default:
-            cell.notificationStatusHandlings(.accepted)
+            
+            print("Default select")
         }
         
         return cell

@@ -66,7 +66,8 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
             let vc = CreatePaymentViewController(nibName: "CreatePaymentViewController", bundle: nil)
             navigationController?.pushViewController(vc, animated: true)
         case 1:
-            print("sceduled")
+            let vc = ScheduleViewController(nibName: "ScheduleViewController", bundle: nil)
+            navigationController?.pushViewController(vc, animated: true)
         default:
             print("none")
         }

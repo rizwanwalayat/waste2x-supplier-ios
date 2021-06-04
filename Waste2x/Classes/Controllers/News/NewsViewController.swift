@@ -67,23 +67,25 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
             return 3
         }
         else {
-            return 1 }
+            return 1
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if category == cellType.video.rawValue {
+        if indexPath.row == 0 {
             
             let cell = tableView.register(VideoTableViewCell.self, indexPath: indexPath)
             cell.selectionStyle = .none
             return cell
         }
-        if category == cellType.audio.rawValue {
+        if indexPath.row == 1 {
             let cell = tableView.register(AudioTableViewCell.self, indexPath: indexPath)
             cell.selectionStyle = .none
             return cell
         }
-        if category == cellType.detail.rawValue {
+        if indexPath.row == 2 {
             let cell = tableView.register(DetailTableViewCell.self, indexPath: indexPath)
             cell.selectionStyle = .none
             return cell
@@ -94,13 +96,16 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if category == cellType.video.rawValue{
+        if indexPath.row == 0
+        {
             return 300
         }
-        else if category == cellType.audio.rawValue{
+        else if indexPath.row == 1
+        {
             return 80
         }
-        else {
+        else
+        {
             return 125
         }
     }
