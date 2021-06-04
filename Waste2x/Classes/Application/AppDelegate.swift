@@ -14,55 +14,29 @@ import netfox
 import FirebaseMessaging
 import GoogleMaps
 import GooglePlaces
-
+let gcmMessageIDKey = "gcm.message_id"
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 //        NFX.sharedInstance().start()
-//        FirebaseApp.configure()
+        FirebaseApp.configure()
 
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 30
-//        registerForPushNotification()
+        Messaging.messaging().delegate = self
+        pushNotification(applicationVariable: application, launchOptionsVariable: launchOptions)
         Utility.loginRootViewController()
-        
         GMSServices.provideAPIKey(googleAPIKey)
         GMSPlacesClient.provideAPIKey(googleAPIKey)
         return true
     }
-    
-    
-    func registerForPushNotification() {
-        UNUserNotificationCenter.current().delegate = self
-        
-        if #available(iOS 10.0, *) {
-            let center  = UNUserNotificationCenter.current()
-            center.delegate = self
-            center.requestAuthorization(options:  [.sound, .alert, .badge]) { (granted, error) in
-                if error == nil{
-                    DispatchQueue.main.async {
-                        UIApplication.shared.registerForRemoteNotifications()
-                        
-                    }
-                }
-            }
-            
-        }
-        else {
-            let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            UIApplication.shared.registerUserNotificationSettings(settings)
-            UIApplication.shared.registerForRemoteNotifications()
-        }
-    }
-
-
     // This method is where you handle URL opens if you are using univeral link URLs (eg "https://example.com/stripe_ios_callback")
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
-            if let url = userActivity.webpageURL {
+            if userActivity.webpageURL != nil {
 //                let stripeHandled = StripeAPI.handleURLCallback(with: url)
 //
 //                if stripeHandled {
@@ -76,57 +50,106 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         return false
     }
+    // [REGISTRATION push_notifications]
+    func pushNotification(applicationVariable:UIApplication,launchOptionsVariable:[UIApplication.LaunchOptionsKey : Any]?){
+        if #available(iOS 10.0, *) {
+                  // For iOS 10 display notification (sent via APNS)
+                  UNUserNotificationCenter.current().delegate = self
+
+                  let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+                  UNUserNotificationCenter.current().requestAuthorization(
+                    options: authOptions,
+                    completionHandler: {_, _ in })
+                } else {
+                  let settings: UIUserNotificationSettings =
+                  UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+                    applicationVariable.registerUserNotificationSettings(settings)
+                }
+        applicationVariable.registerForRemoteNotifications()
+                let notification = launchOptionsVariable?[UIApplication.LaunchOptionsKey.remoteNotification]
+                if notification != nil {
+                    Global.shared.didRecievedNotiFication = true
+                }
+                // [END register_for_notifications]
+    }
+    // [START receive_message]
+      func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+        if let messageID = userInfo[gcmMessageIDKey] {
+          print("Message IDwithout completion: \(messageID)")
+        }
+        // Print full message.
+        print(userInfo)
+      }
+      func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+                       fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print("recieved")
+        if let messageID = userInfo[gcmMessageIDKey] {
+          print("Message ID: didreceveremote\(messageID)")
+        }
+        print(userInfo)
+        completionHandler(UIBackgroundFetchResult.newData)
+        
+      }
+      // [END receive_message]
+      func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Unable to register for remote notifications: \(error.localizedDescription)")
+      }
+
+      // This function is added here only for debugging purposes, and can be removed if swizzling is enabled.
+      // If swizzling is disabled then this function must be implemented so that the APNs token can be paired to
+      // the FCM registration token.
+      func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print("APNs token retrieved: \(deviceToken)")
+        // With swizzling disabled you must set the APNs token here.
+        // Messaging.messaging().apnsToken = deviceToken
+      }
+
+
 }
+
+
+
 
 
 //MARK: - UNUserNotificationCenterDelegate
-
 @available(iOS 10, *)
-extension AppDelegate: MessagingDelegate {
+extension AppDelegate : UNUserNotificationCenterDelegate {
+  func userNotificationCenter(_ center: UNUserNotificationCenter,
+                              willPresent notification: UNNotification,
+    withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    let userInfo = notification.request.content.userInfo
 
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        
-//        UpdateToken.updateToken(token: fcmToken ?? "") { (result, error, status) in
-//            
-//            if error == nil {
-//                print(result?.responseMessage ?? "")
-//            }
-//        }
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter,willPresent notification: UNNotification,withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-
-        print(notification.request.content.userInfo)
-        if let aps = notification.request.content.userInfo["aps"] as? [String:Any], let alert = aps["alert"] as? [String:Any], let title = alert["title"] as? String {}
-        completionHandler([[.alert, .sound]])
-    }
-
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let userInfo = response.notification.request.content.userInfo
-        print("didReceive response")
+    if (userInfo["id"] as? String) != nil {
         print(userInfo)
+    }
+    completionHandler([[.alert, .sound,.badge]])
+  }
+
+  func userNotificationCenter(_ center: UNUserNotificationCenter,
+                              didReceive response: UNNotificationResponse,
+                              withCompletionHandler completionHandler: @escaping () -> Void) {
+    let userInfo = response.notification.request.content.userInfo
+    print(userInfo)
+    if let id = userInfo["id"] as? String {
+        print(id)
+        let n = window
+        self.window = n
+        window?.makeKeyAndVisible()
         completionHandler()
     }
-
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-
-        // 1. Convert device token to string
-        let tokenParts = deviceToken.map { data -> String in
-            return String(format: "%02.2hhx", data)
-        }
-
-        let token = tokenParts.joined()
-
-        // 2. Print device token to use for PNs payloads
-
-        print("Device Token: \(token)")
-        Messaging.messaging().apnsToken = deviceToken
-    }
-
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        Messaging.messaging().appDidReceiveMessage(userInfo)
-        
-    }
-
+    
+  }
+    
 }
 
+extension AppDelegate : MessagingDelegate {
+  // [START refresh_token]
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        if let fcmTokenVariable = fcmToken {
+            print("Firebase registration token: \(fcmTokenVariable)")
+        }
+    
+    }
+    
+}
+    
