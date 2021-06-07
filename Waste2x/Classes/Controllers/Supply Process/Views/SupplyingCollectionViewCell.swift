@@ -18,15 +18,22 @@ class SupplyingCollectionViewCell: UICollectionViewCell {
         
     }
     
-    let tableViewData: [CellData] = [
-        CellData(imageType: #imageLiteral(resourceName: "tire"), labelTitle: "Tire Waste"),
-        CellData(imageType: #imageLiteral(resourceName: "bottle"), labelTitle: "Factory"),
+    let FormData: [CellData] = [
+        CellData(imageType: #imageLiteral(resourceName: "Lump"), labelTitle: "Lump"),
+        CellData(imageType: #imageLiteral(resourceName: "Loose"), labelTitle: "Loose"),
+        CellData(imageType: #imageLiteral(resourceName: "Densified"), labelTitle: "Densified"),
+        CellData(imageType: #imageLiteral(resourceName: "Baled"), labelTitle: "Baled")
+    ]
+    let SupplyingType: [CellData] = [
+        CellData(imageType: #imageLiteral(resourceName: "Crop Icon"), labelTitle: "Crop Waste"),
+        CellData(imageType: #imageLiteral(resourceName: "bottle"), labelTitle: "Plastic Waste"),
         CellData(imageType: #imageLiteral(resourceName: "food"), labelTitle: "Food Waste"),
-        CellData(imageType: #imageLiteral(resourceName: "poultry"), labelTitle: "Cattle Waste"),
-        CellData(imageType: #imageLiteral(resourceName: "bottle"), labelTitle: "Hello"),
-        CellData(imageType: #imageLiteral(resourceName: "food"), labelTitle: "Food Waste"),
+        CellData(imageType: #imageLiteral(resourceName: "Livestock Icon"), labelTitle: "LiveStock\nWaste"),
+        CellData(imageType: #imageLiteral(resourceName: "Cans"), labelTitle: "Inorganic\nWaste"),
+        CellData(imageType: #imageLiteral(resourceName: "Recycle Bin Icon"), labelTitle: "Other Inorganic Waste"),
         CellData(imageType: #imageLiteral(resourceName: "tire"), labelTitle: "Tire Waste")
     ]
+    
     
     
     @IBOutlet weak var mainViewSelection: UIView!
@@ -40,9 +47,14 @@ class SupplyingCollectionViewCell: UICollectionViewCell {
     func selection(index:Int){
         
     }
-    func config(index:Int){
-        self.imgView.image = tableViewData[index].imageType
-        self.titleLabel.text = tableViewData[index].labelTitle
+    func configForSupplying(index:Int){
+        self.imgView.image = SupplyingType[index].imageType
+        self.titleLabel.text = SupplyingType[index].labelTitle
     }
+    func configForForm(index:Int){
+        self.imgView.image = FormData[index].imageType
+        self.titleLabel.text = FormData[index].labelTitle
+    }
+    
 
 }

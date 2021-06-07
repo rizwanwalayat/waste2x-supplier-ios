@@ -20,11 +20,16 @@ class SupplyDetailTableViewCell: UITableViewCell {
         
     }
     
-    let tableViewData: [CellData] = [
-        CellData(imageType: #imageLiteral(resourceName: "tire"), labelTitle: "HDPI 1"),
-        CellData(imageType: #imageLiteral(resourceName: "bottle"), labelTitle: "LDPI 4"),
-        CellData(imageType: #imageLiteral(resourceName: "food"), labelTitle: "PP 5"),
-        CellData(imageType: #imageLiteral(resourceName: "poultry"), labelTitle: "PS 6"),
+    let GradeData: [CellData] = [
+        CellData(imageType: #imageLiteral(resourceName: "A Icon"), labelTitle: "Grade A"),
+        CellData(imageType: #imageLiteral(resourceName: "B Icon"), labelTitle: "Grade B"),
+        CellData(imageType: #imageLiteral(resourceName: "C Icon"), labelTitle: "Grade C")
+    ]
+    let supplyType: [CellData] = [
+        CellData(imageType: #imageLiteral(resourceName: "Icon-2"), labelTitle: "HDPI 1"),
+        CellData(imageType: #imageLiteral(resourceName: "Icon-1"), labelTitle: "LDPI 4"),
+        CellData(imageType: #imageLiteral(resourceName: "Icon"), labelTitle: "PP 5"),
+        CellData(imageType: #imageLiteral(resourceName: "PS6 Icon"), labelTitle: "PS 6")
     ]
     //MARK: - Outlets
     
@@ -47,9 +52,14 @@ class SupplyDetailTableViewCell: UITableViewCell {
     func selection(index:Int){
         
     }
-    func config(index:Int){
-        self.imgView.image = tableViewData[index].imageType
-        self.labelTitle.text = tableViewData[index].labelTitle
+    func configForType(index:Int){
+        self.imgView.image = supplyType[index].imageType
+        self.labelTitle.text = supplyType[index].labelTitle
     }
+    func configForGrade(index:Int){
+        self.imgView.image = GradeData[index].imageType
+        self.labelTitle.text = GradeData[index].labelTitle
+    }
+    
     
 }

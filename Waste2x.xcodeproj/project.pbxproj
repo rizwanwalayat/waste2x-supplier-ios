@@ -84,8 +84,6 @@
 		181025402657E48500DEBF7D /* FaqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181025362657E48500DEBF7D /* FaqViewController.swift */; };
 		18342C77266E436E00A678D3 /* FormOfWasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18342C75266E436E00A678D3 /* FormOfWasteViewController.swift */; };
 		18342C78266E436E00A678D3 /* FormOfWasteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18342C76266E436E00A678D3 /* FormOfWasteViewController.xib */; };
-		18342C7E266E45ED00A678D3 /* FormOfWasteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18342C7C266E45ED00A678D3 /* FormOfWasteCollectionViewCell.swift */; };
-		18342C7F266E45ED00A678D3 /* FormOfWasteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18342C7D266E45ED00A678D3 /* FormOfWasteCollectionViewCell.xib */; };
 		18397DCD2660FD35003DE30C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18397DCA2660FD35003DE30C /* LoginViewModel.swift */; };
 		18397DCE2660FD35003DE30C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18397DCB2660FD35003DE30C /* LoginViewController.xib */; };
 		18397DCF2660FD35003DE30C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18397DCC2660FD35003DE30C /* LoginViewController.swift */; };
@@ -129,8 +127,6 @@
 		187D7570266E0816007811C4 /* SupplyingTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187D756E266E0816007811C4 /* SupplyingTypeViewController.xib */; };
 		18896077266E1EB800061783 /* SupplyingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18896075266E1EB800061783 /* SupplyingCollectionViewCell.swift */; };
 		18896078266E1EB800061783 /* SupplyingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18896076266E1EB800061783 /* SupplyingCollectionViewCell.xib */; };
-		1889607B266E269E00061783 /* SupplyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18896079266E269E00061783 /* SupplyDetailsViewController.swift */; };
-		1889607C266E269E00061783 /* SupplyDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1889607A266E269E00061783 /* SupplyDetailsViewController.xib */; };
 		1889607F266E289800061783 /* SupplyDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1889607D266E289800061783 /* SupplyDetailTableViewCell.swift */; };
 		18896080266E289800061783 /* SupplyDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1889607E266E289800061783 /* SupplyDetailTableViewCell.xib */; };
 		188B36D32668C95A0036B412 /* UnconfirmPendingCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B36D12668C95A0036B412 /* UnconfirmPendingCollectionTableViewCell.swift */; };
@@ -250,8 +246,6 @@
 		181025362657E48500DEBF7D /* FaqViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqViewController.swift; sourceTree = "<group>"; };
 		18342C75266E436E00A678D3 /* FormOfWasteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormOfWasteViewController.swift; sourceTree = "<group>"; };
 		18342C76266E436E00A678D3 /* FormOfWasteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormOfWasteViewController.xib; sourceTree = "<group>"; };
-		18342C7C266E45ED00A678D3 /* FormOfWasteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormOfWasteCollectionViewCell.swift; sourceTree = "<group>"; };
-		18342C7D266E45ED00A678D3 /* FormOfWasteCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormOfWasteCollectionViewCell.xib; sourceTree = "<group>"; };
 		18397DCA2660FD35003DE30C /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		18397DCB2660FD35003DE30C /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		18397DCC2660FD35003DE30C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -295,8 +289,6 @@
 		187D756E266E0816007811C4 /* SupplyingTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplyingTypeViewController.xib; sourceTree = "<group>"; };
 		18896075266E1EB800061783 /* SupplyingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplyingCollectionViewCell.swift; sourceTree = "<group>"; };
 		18896076266E1EB800061783 /* SupplyingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplyingCollectionViewCell.xib; sourceTree = "<group>"; };
-		18896079266E269E00061783 /* SupplyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplyDetailsViewController.swift; sourceTree = "<group>"; };
-		1889607A266E269E00061783 /* SupplyDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplyDetailsViewController.xib; sourceTree = "<group>"; };
 		1889607D266E289800061783 /* SupplyDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplyDetailTableViewCell.swift; sourceTree = "<group>"; };
 		1889607E266E289800061783 /* SupplyDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplyDetailTableViewCell.xib; sourceTree = "<group>"; };
 		188B36D12668C95A0036B412 /* UnconfirmPendingCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnconfirmPendingCollectionTableViewCell.swift; sourceTree = "<group>"; };
@@ -769,22 +761,6 @@
 			path = Form;
 			sourceTree = "<group>";
 		};
-		18342C7A266E438E00A678D3 /* WasteDetail */ = {
-			isa = PBXGroup;
-			children = (
-				18896079266E269E00061783 /* SupplyDetailsViewController.swift */,
-				1889607A266E269E00061783 /* SupplyDetailsViewController.xib */,
-			);
-			path = WasteDetail;
-			sourceTree = "<group>";
-		};
-		18342C7B266E439F00A678D3 /* Quality Waste */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Quality Waste";
-			sourceTree = "<group>";
-		};
 		18342C80266E4AFF00A678D3 /* Main Supply */ = {
 			isa = PBXGroup;
 			children = (
@@ -902,8 +878,6 @@
 			isa = PBXGroup;
 			children = (
 				18342C80266E4AFF00A678D3 /* Main Supply */,
-				18342C7B266E439F00A678D3 /* Quality Waste */,
-				18342C7A266E438E00A678D3 /* WasteDetail */,
 				18342C79266E438300A678D3 /* Form */,
 				18896074266E1EA300061783 /* Views */,
 			);
@@ -917,8 +891,6 @@
 				1889607E266E289800061783 /* SupplyDetailTableViewCell.xib */,
 				18896075266E1EB800061783 /* SupplyingCollectionViewCell.swift */,
 				18896076266E1EB800061783 /* SupplyingCollectionViewCell.xib */,
-				18342C7C266E45ED00A678D3 /* FormOfWasteCollectionViewCell.swift */,
-				18342C7D266E45ED00A678D3 /* FormOfWasteCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1137,7 +1109,6 @@
 				18719142266667420050FAAA /* AudioTableViewCell.xib in Resources */,
 				18D1A36C266A7CC2009CAD26 /* GoogleService-Info.plist in Resources */,
 				18397E262660FF54003DE30C /* Poppins-SemiBold.ttf in Resources */,
-				18342C7F266E45ED00A678D3 /* FormOfWasteCollectionViewCell.xib in Resources */,
 				1850CEFA265E5491001F5E92 /* SupplierTableViewCell.xib in Resources */,
 				181025392657E48500DEBF7D /* MessagesViewController.xib in Resources */,
 				04C82E192664BCCB00D52947 /* WasteImageDetailCollectionViewCell.xib in Resources */,
@@ -1171,7 +1142,6 @@
 				18896080266E289800061783 /* SupplyDetailTableViewCell.xib in Resources */,
 				18937565266127F800D55A33 /* NewWasteSizeViewController.xib in Resources */,
 				18C11A71265FA49C00BC022F /* ContactTableViewCell.xib in Resources */,
-				1889607C266E269E00061783 /* SupplyDetailsViewController.xib in Resources */,
 				04C82E1B2664BCCB00D52947 /* WasteDetailViewController.xib in Resources */,
 				18397DCE2660FD35003DE30C /* LoginViewController.xib in Resources */,
 				18397E182660FF54003DE30C /* Poppins-ThinItalic.ttf in Resources */,
@@ -1271,7 +1241,6 @@
 			files = (
 				0067A2DD252753D100CECA8C /* APIService.swift in Sources */,
 				0067A31B252AFC9E00CECA8C /* TimeInterval.swift in Sources */,
-				1889607B266E269E00061783 /* SupplyDetailsViewController.swift in Sources */,
 				18A849CD265E37A7008F77E8 /* WeatherCollectionViewCell.swift in Sources */,
 				0067A318252AFC9E00CECA8C /* UIDevice.swift in Sources */,
 				181025292657E36500DEBF7D /* GCD.swift in Sources */,
@@ -1351,7 +1320,6 @@
 				04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */,
 				0067A31F252AFC9E00CECA8C /* UIViewController.swift in Sources */,
 				0428F1BF265B8EC5007C51EE /* LoginCodeVerificationViewController.swift in Sources */,
-				18342C7E266E45ED00A678D3 /* FormOfWasteCollectionViewCell.swift in Sources */,
 				181025232657E33A00DEBF7D /* ContainerViewController.swift in Sources */,
 				1893754B266127CB00D55A33 /* NotificationsViewController.swift in Sources */,
 				04C31D1B2667BBE600A1CF9C /* ScheduleOptionsViewController.swift in Sources */,
