@@ -182,7 +182,7 @@ Enmass Energy</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rey-bq-Tcf" customClass="StepIndicatorView" customModule="StepIndicator">
-                                                <rect key="frame" x="112" y="71" width="15" height="186"/>
+                                                <rect key="frame" x="112" y="56" width="15" height="201"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="15" id="zZP-oL-Xb6"/>
@@ -216,14 +216,17 @@ Enmass Energy</string>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="circleRadius">
                                                         <real key="value" value="12"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineMargin">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="PLe-Wi-bbF" firstAttribute="leading" secondItem="9IQ-an-3bU" secondAttribute="leading" constant="20" id="10A-ib-3sx"/>
+                                            <constraint firstItem="Rey-bq-Tcf" firstAttribute="top" secondItem="WfU-sa-DAg" secondAttribute="top" id="4zf-Tj-X35"/>
                                             <constraint firstItem="lY0-RS-7Ip" firstAttribute="leading" secondItem="9IQ-an-3bU" secondAttribute="leading" constant="20" id="5Cd-Fd-2fp"/>
-                                            <constraint firstItem="Rey-bq-Tcf" firstAttribute="top" secondItem="PLe-Wi-bbF" secondAttribute="bottom" constant="45" id="5gM-lN-cdM"/>
                                             <constraint firstAttribute="trailing" secondItem="xmR-Ma-HQS" secondAttribute="trailing" id="9b8-9b-nhs"/>
                                             <constraint firstItem="Rey-bq-Tcf" firstAttribute="leading" secondItem="P6n-sZ-1I4" secondAttribute="trailing" constant="30" id="B76-d7-Plb"/>
                                             <constraint firstAttribute="bottom" secondItem="LKD-g7-gIu" secondAttribute="bottom" constant="20" id="DJx-j0-7An"/>
