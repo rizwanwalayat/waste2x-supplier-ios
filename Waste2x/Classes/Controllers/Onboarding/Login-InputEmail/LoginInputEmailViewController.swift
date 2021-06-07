@@ -31,7 +31,7 @@ class LoginInputEmailViewController: BaseViewController {
     @IBAction func nextButtonPressed(_ sender: Any) {
         let slider = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
 //        let codeVerificationVC = ContainerViewController(nibName: "ContainerViewController", bundle: nil)
-        self.navigationController?.pushViewController(slider, animated: true)
+        self.navigationController?.setViewControllers([slider], animated: true) //pushViewController(slider, animated: true)
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {

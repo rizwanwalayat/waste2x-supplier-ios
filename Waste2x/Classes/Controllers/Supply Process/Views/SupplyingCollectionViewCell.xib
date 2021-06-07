@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,11 +26,18 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zrT-Wb-s3c">
                         <rect key="frame" x="10" y="10" width="241" height="187"/>
                         <subviews>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ScH-os-6NJ">
+                                <rect key="frame" x="0.0" y="86" width="241" height="131"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCirculer" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="32887180" translatesAutoresizingMaskIntoConstraints="NO" id="MPB-5W-s7x">
                                 <rect key="frame" x="23.5" y="18.5" width="194" height="110"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crop Waste" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5W-kj-bXD">
-                                <rect key="frame" x="73" y="138.5" width="95" height="21"/>
+                                <rect key="frame" x="67.5" y="138.5" width="106" height="25.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="18"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -37,11 +45,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95655101539999998" green="0.96937495470000001" blue="0.93187516930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ScH-os-6NJ" firstAttribute="width" secondItem="zrT-Wb-s3c" secondAttribute="width" id="26m-Us-hvM"/>
+                            <constraint firstItem="ScH-os-6NJ" firstAttribute="height" secondItem="zrT-Wb-s3c" secondAttribute="height" multiplier="0.7" id="Ah2-tB-7YO"/>
                             <constraint firstItem="G5W-kj-bXD" firstAttribute="centerX" secondItem="zrT-Wb-s3c" secondAttribute="centerX" id="IPF-QC-Yi5"/>
                             <constraint firstItem="MPB-5W-s7x" firstAttribute="height" secondItem="zrT-Wb-s3c" secondAttribute="height" multiplier="0.59" id="Jx6-XZ-KzG"/>
                             <constraint firstItem="MPB-5W-s7x" firstAttribute="centerY" secondItem="zrT-Wb-s3c" secondAttribute="centerY" constant="-20" id="SmD-6f-OxC"/>
                             <constraint firstItem="G5W-kj-bXD" firstAttribute="top" secondItem="MPB-5W-s7x" secondAttribute="bottom" constant="10" id="U3s-zw-JjY"/>
+                            <constraint firstItem="ScH-os-6NJ" firstAttribute="leading" secondItem="zrT-Wb-s3c" secondAttribute="leading" id="V6Z-hd-9Ew"/>
+                            <constraint firstAttribute="bottom" secondItem="ScH-os-6NJ" secondAttribute="bottom" constant="-30" id="euk-Rk-Ig4"/>
                             <constraint firstItem="MPB-5W-s7x" firstAttribute="centerX" secondItem="zrT-Wb-s3c" secondAttribute="centerX" id="hNy-mp-t69"/>
+                            <constraint firstAttribute="trailing" secondItem="ScH-os-6NJ" secondAttribute="trailing" id="hTR-7b-FYO"/>
                             <constraint firstItem="MPB-5W-s7x" firstAttribute="width" secondItem="zrT-Wb-s3c" secondAttribute="width" multiplier="0.804183" id="xGo-Ot-U7R"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -61,10 +74,18 @@
                 <constraint firstAttribute="bottom" secondItem="zrT-Wb-s3c" secondAttribute="bottom" constant="10" id="z9G-cV-gVp"/>
             </constraints>
             <size key="customSize" width="261" height="207"/>
+            <connections>
+                <outlet property="imgView" destination="MPB-5W-s7x" id="e9h-u9-EHE"/>
+                <outlet property="mainViewSelection" destination="zrT-Wb-s3c" id="e6N-SC-FgY"/>
+                <outlet property="titleLabel" destination="G5W-kj-bXD" id="I5f-9S-EbT"/>
+            </connections>
             <point key="canvasLocation" x="193.47826086956522" y="121.54017857142857"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="32887180" width="800" height="563"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

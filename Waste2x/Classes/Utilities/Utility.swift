@@ -28,15 +28,11 @@ struct NetworkingConnection {
     }
     
     class func loginRootViewController () {
-//        let loginViewController = LoginViewController()
-//        let navigationController = BaseNavigationViewController()
-//        navigationController.viewControllers = [loginViewController]
-//        kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)
-//        kApplicationWindow?.rootViewController = navigationController
-//        kApplicationWindow?.makeKeyAndVisible()
-        let slideMenuController = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
+        let loginViewController = LoginViewController()
+        let navigationController = BaseNavigationViewController()
+        navigationController.viewControllers = [loginViewController]
         kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)
-        kApplicationWindow?.rootViewController = slideMenuController
+        kApplicationWindow?.rootViewController = navigationController
         kApplicationWindow?.makeKeyAndVisible()
     }
     
@@ -47,7 +43,7 @@ struct NetworkingConnection {
         kApplicationWindow?.makeKeyAndVisible()
     }
 
-    class func autoLogin () {
+    class func autoLogin() {
         
         if DataManager.shared.getUser() == nil {
             loginRootViewController()
