@@ -18,4 +18,5 @@ class Global {
     var currentNavigationController = BaseNavigationViewController()
     var currentStoryBoard = ""
     var currentController = ""
+    var didRecievedNotiFication = Bool()
 }
