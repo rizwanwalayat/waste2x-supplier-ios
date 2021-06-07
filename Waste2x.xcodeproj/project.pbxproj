@@ -121,6 +121,14 @@
 		18719146266667550050FAAA /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18719144266667550050FAAA /* DetailTableViewCell.xib */; };
 		1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC85265688EB00147EB8 /* BaseViewController.swift */; };
 		1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */; };
+		187D756F266E0816007811C4 /* SupplyingTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D756D266E0816007811C4 /* SupplyingTypeViewController.swift */; };
+		187D7570266E0816007811C4 /* SupplyingTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187D756E266E0816007811C4 /* SupplyingTypeViewController.xib */; };
+		18896077266E1EB800061783 /* SupplyingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18896075266E1EB800061783 /* SupplyingCollectionViewCell.swift */; };
+		18896078266E1EB800061783 /* SupplyingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18896076266E1EB800061783 /* SupplyingCollectionViewCell.xib */; };
+		1889607B266E269E00061783 /* SupplyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18896079266E269E00061783 /* SupplyDetailsViewController.swift */; };
+		1889607C266E269E00061783 /* SupplyDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1889607A266E269E00061783 /* SupplyDetailsViewController.xib */; };
+		1889607F266E289800061783 /* SupplyDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1889607D266E289800061783 /* SupplyDetailTableViewCell.swift */; };
+		18896080266E289800061783 /* SupplyDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1889607E266E289800061783 /* SupplyDetailTableViewCell.xib */; };
 		188B36D32668C95A0036B412 /* UnconfirmPendingCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B36D12668C95A0036B412 /* UnconfirmPendingCollectionTableViewCell.swift */; };
 		188B36D42668C95A0036B412 /* UnconfirmPendingCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188B36D22668C95A0036B412 /* UnconfirmPendingCollectionTableViewCell.xib */; };
 		18937548266127CB00D55A33 /* NotificationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18937544266127CB00D55A33 /* NotificationsTableViewCell.xib */; };
@@ -275,6 +283,14 @@
 		18719144266667550050FAAA /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		1875BC85265688EB00147EB8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
+		187D756D266E0816007811C4 /* SupplyingTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplyingTypeViewController.swift; sourceTree = "<group>"; };
+		187D756E266E0816007811C4 /* SupplyingTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplyingTypeViewController.xib; sourceTree = "<group>"; };
+		18896075266E1EB800061783 /* SupplyingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplyingCollectionViewCell.swift; sourceTree = "<group>"; };
+		18896076266E1EB800061783 /* SupplyingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplyingCollectionViewCell.xib; sourceTree = "<group>"; };
+		18896079266E269E00061783 /* SupplyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplyDetailsViewController.swift; sourceTree = "<group>"; };
+		1889607A266E269E00061783 /* SupplyDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplyDetailsViewController.xib; sourceTree = "<group>"; };
+		1889607D266E289800061783 /* SupplyDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplyDetailTableViewCell.swift; sourceTree = "<group>"; };
+		1889607E266E289800061783 /* SupplyDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplyDetailTableViewCell.xib; sourceTree = "<group>"; };
 		188B36D12668C95A0036B412 /* UnconfirmPendingCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnconfirmPendingCollectionTableViewCell.swift; sourceTree = "<group>"; };
 		188B36D22668C95A0036B412 /* UnconfirmPendingCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnconfirmPendingCollectionTableViewCell.xib; sourceTree = "<group>"; };
 		18937544266127CB00D55A33 /* NotificationsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsTableViewCell.xib; sourceTree = "<group>"; };
@@ -373,6 +389,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				187D756C266E07E9007811C4 /* Supply Process */,
 				18D1A363266A2B51009CAD26 /* Tracker */,
 				04C31D062667731100A1CF9C /* Pickup-Schedule */,
 				184F51642667A42600F0328A /* Pending Collection */,
@@ -839,6 +856,29 @@
 			path = News;
 			sourceTree = "<group>";
 		};
+		187D756C266E07E9007811C4 /* Supply Process */ = {
+			isa = PBXGroup;
+			children = (
+				18896074266E1EA300061783 /* Views */,
+				187D756D266E0816007811C4 /* SupplyingTypeViewController.swift */,
+				187D756E266E0816007811C4 /* SupplyingTypeViewController.xib */,
+			);
+			path = "Supply Process";
+			sourceTree = "<group>";
+		};
+		18896074266E1EA300061783 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				18896075266E1EB800061783 /* SupplyingCollectionViewCell.swift */,
+				18896076266E1EB800061783 /* SupplyingCollectionViewCell.xib */,
+				18896079266E269E00061783 /* SupplyDetailsViewController.swift */,
+				1889607A266E269E00061783 /* SupplyDetailsViewController.xib */,
+				1889607D266E289800061783 /* SupplyDetailTableViewCell.swift */,
+				1889607E266E289800061783 /* SupplyDetailTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		18937542266127CB00D55A33 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
@@ -1043,6 +1083,7 @@
 				18397E1F2660FF54003DE30C /* Poppins-BlackItalic.ttf in Resources */,
 				18397E252660FF54003DE30C /* Poppins-Thin.ttf in Resources */,
 				181025372657E48500DEBF7D /* AddMoreViewController.xib in Resources */,
+				18896078266E1EB800061783 /* SupplyingCollectionViewCell.xib in Resources */,
 				18397E1D2660FF54003DE30C /* Poppins-SemiBoldItalic.ttf in Resources */,
 				188B36D42668C95A0036B412 /* UnconfirmPendingCollectionTableViewCell.xib in Resources */,
 				1893756F266127F800D55A33 /* CurrentWasteViewController.xib in Resources */,
@@ -1081,8 +1122,10 @@
 				18011273266774E5000C7102 /* FaqTableViewCell.xib in Resources */,
 				18397E222660FF54003DE30C /* Poppins-LightItalic.ttf in Resources */,
 				18397E1E2660FF54003DE30C /* Poppins-ExtraBold.ttf in Resources */,
+				18896080266E289800061783 /* SupplyDetailTableViewCell.xib in Resources */,
 				18937565266127F800D55A33 /* NewWasteSizeViewController.xib in Resources */,
 				18C11A71265FA49C00BC022F /* ContactTableViewCell.xib in Resources */,
+				1889607C266E269E00061783 /* SupplyDetailsViewController.xib in Resources */,
 				04C82E1B2664BCCB00D52947 /* WasteDetailViewController.xib in Resources */,
 				18397DCE2660FD35003DE30C /* LoginViewController.xib in Resources */,
 				18397E182660FF54003DE30C /* Poppins-ThinItalic.ttf in Resources */,
@@ -1092,6 +1135,7 @@
 				04C31D1C2667BBE600A1CF9C /* ScheduleOptionsViewController.xib in Resources */,
 				18397E1A2660FF54003DE30C /* Poppins-BoldItalic.ttf in Resources */,
 				18719146266667550050FAAA /* DetailTableViewCell.xib in Resources */,
+				187D7570266E0816007811C4 /* SupplyingTypeViewController.xib in Resources */,
 				18397E232660FF54003DE30C /* Poppins-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1181,6 +1225,7 @@
 			files = (
 				0067A2DD252753D100CECA8C /* APIService.swift in Sources */,
 				0067A31B252AFC9E00CECA8C /* TimeInterval.swift in Sources */,
+				1889607B266E269E00061783 /* SupplyDetailsViewController.swift in Sources */,
 				18A849CD265E37A7008F77E8 /* WeatherCollectionViewCell.swift in Sources */,
 				0067A318252AFC9E00CECA8C /* UIDevice.swift in Sources */,
 				181025292657E36500DEBF7D /* GCD.swift in Sources */,
@@ -1188,6 +1233,7 @@
 				1810253A2657E48500DEBF7D /* AddMoreViewController.swift in Sources */,
 				180CD1AF2665048D0092168B /* PaymentViewController.swift in Sources */,
 				181025282657E36500DEBF7D /* Global.swift in Sources */,
+				1889607F266E289800061783 /* SupplyDetailTableViewCell.swift in Sources */,
 				18719141266667420050FAAA /* AudioTableViewCell.swift in Sources */,
 				18397DCD2660FD35003DE30C /* LoginViewModel.swift in Sources */,
 				18666B2326666175005C1A78 /* VideoTableViewCell.swift in Sources */,
@@ -1197,6 +1243,7 @@
 				04C2361C2669224600A27B78 /* Array.swift in Sources */,
 				1850CEF9265E5491001F5E92 /* SupplierTableViewCell.swift in Sources */,
 				0067A2E32529D2CD00CECA8C /* Utility.swift in Sources */,
+				187D756F266E0816007811C4 /* SupplyingTypeViewController.swift in Sources */,
 				0428F1C6265BC9EC007C51EE /* UINavigationController.swift in Sources */,
 				1893756E266127F800D55A33 /* CurrentWasteTableViewCell.swift in Sources */,
 				0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */,
@@ -1252,6 +1299,7 @@
 				04BD2801266A2589008FC8B4 /* SchedulePlannedViewController.swift in Sources */,
 				0067A322252AFC9E00CECA8C /* UIImage.swift in Sources */,
 				0043454E2548302A009A6166 /* Users.swift in Sources */,
+				18896077266E1EB800061783 /* SupplyingCollectionViewCell.swift in Sources */,
 				0043453F254823FE009A6166 /* ApiResponseHandler.swift in Sources */,
 				04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */,
 				0067A31F252AFC9E00CECA8C /* UIViewController.swift in Sources */,

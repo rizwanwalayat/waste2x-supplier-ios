@@ -125,6 +125,7 @@ PODS:
   - SDWebImage/Core (5.11.1)
   - SlideMenuControllerSwift (4.0.0)
   - StepIndicator (1.0.8)
+  - StepperView (1.6.6)
 
 DEPENDENCIES:
   - Alamofire (~> 4.2)
@@ -141,6 +142,7 @@ DEPENDENCIES:
   - SDWebImage (~> 5.0)
   - SlideMenuControllerSwift
   - StepIndicator (~> 1.0.8)
+  - StepperView (~> 1.6.6)
 
 SPEC REPOS:
   trunk:
@@ -169,6 +171,7 @@ SPEC REPOS:
     - SDWebImage
     - SlideMenuControllerSwift
     - StepIndicator
+    - StepperView
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -196,7 +199,8 @@ SPEC CHECKSUMS:
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
   StepIndicator: 748b293f671355b021253f82031ac002f153dc81
+  StepperView: a8b9fc8c18d9050090c900e9fe13c73ab8fe97b3
 
-PODFILE CHECKSUM: a24c5889f43bb6ccc18b7f294aaa47486a10611c
+PODFILE CHECKSUM: e4636e1d01676bb241ed0192d298d4c57beba423
 
 COCOAPODS: 1.10.1

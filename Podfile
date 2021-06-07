@@ -18,4 +18,5 @@ target 'Waste2x' do
   pod 'SlideMenuControllerSwift'
   pod 'FSCalendar'
   pod 'StepIndicator', '~> 1.0.8'
+  pod 'StepperView','~> 1.6.6'
 end

@@ -43,4 +43,8 @@ struct APIRoutes {
     static var forgotPassword = "/api/shared/user/forgetPassword"
     static var widthdrawFromDonee = "/api/payments/paypal/donee/withdrawRequest"
     static var getDoneeUserTransactions = "/api/payments/paypal/donee/transactions"
+    
+}
+struct FireBaseVariables {
+    static var fireBaseToken = ""
 }

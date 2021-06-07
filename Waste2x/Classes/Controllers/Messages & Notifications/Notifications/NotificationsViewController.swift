@@ -33,7 +33,16 @@ class NotificationsViewController: BaseViewController {
     @IBAction func backButtonPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
+    @objc func yesButtonPress(sender:UIButton){
+        switch sender.tag {
+        case 4:
+            let vc = TrackerViewController(nibName: "TrackerViewController", bundle: nil)
+            self.navigationController?.pushTo(controller: vc)
+        default:
+            let vc = NotificationsViewController(nibName: "NotificationsViewController", bundle: nil)
+            self.navigationController?.pushTo(controller: vc)
+        }
+    }
     
 }
 
@@ -46,6 +55,8 @@ extension NotificationsViewController : UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationsTableViewCell", for: indexPath) as! NotificationsTableViewCell
+        cell.notificationYesButton.tag = indexPath.row
+        cell.notificationYesButton.addTarget(self, action: #selector(yesButtonPress(sender:)), for: .touchUpInside)
         switch indexPath.row {
         
         

@@ -59,7 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                   let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
                   UNUserNotificationCenter.current().requestAuthorization(
                     options: authOptions,
-                    completionHandler: {_, _ in })
+                    completionHandler: {_, _ in
+                        
+                    })
                 } else {
                   let settings: UIUserNotificationSettings =
                   UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
@@ -112,13 +114,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 //MARK: - UNUserNotificationCenterDelegate
-@available(iOS 10, *)
+//@available(iOS 10, *)
 extension AppDelegate : UNUserNotificationCenterDelegate {
   func userNotificationCenter(_ center: UNUserNotificationCenter,
                               willPresent notification: UNNotification,
     withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
     let userInfo = notification.request.content.userInfo
-
+    print(userInfo)
     if (userInfo["id"] as? String) != nil {
         print(userInfo)
     }
@@ -135,9 +137,8 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         let n = window
         self.window = n
         window?.makeKeyAndVisible()
-        completionHandler()
     }
-    
+    completionHandler()
   }
     
 }
@@ -146,6 +147,7 @@ extension AppDelegate : MessagingDelegate {
   // [START refresh_token]
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
         if let fcmTokenVariable = fcmToken {
+            FireBaseVariables.fireBaseToken = fcmTokenVariable
             print("Firebase registration token: \(fcmTokenVariable)")
         }
     

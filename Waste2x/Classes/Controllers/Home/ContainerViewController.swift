@@ -30,6 +30,7 @@ class ContainerViewController: BaseViewController {
     //MARK: - Variables
     override func viewDidLoad() {
         super .viewDidLoad()
+        
         globalObjectContainer = self
         messagesHoverView.isHidden = true
         faqHoverView.isHidden = true
@@ -73,7 +74,7 @@ class ContainerViewController: BaseViewController {
         
     }
     @IBAction func didTapAddWaste(_ sender: Any) {
-        nav.viewControllers = [AddMoreViewController()]
+        nav.viewControllers = [SupplyingTypeViewController()]
         activeViewController = self.nav
         messagesHoverView.isHidden = true
         faqHoverView.isHidden = true

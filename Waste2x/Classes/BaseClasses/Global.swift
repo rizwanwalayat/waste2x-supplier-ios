@@ -19,4 +19,6 @@ class Global {
     var currentStoryBoard = ""
     var currentController = ""
     var didRecievedNotiFication = Bool()
+    var is_new_user = true
+    
 }
