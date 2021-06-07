@@ -31,7 +31,6 @@ class SchedulePlannedViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func okayButtonPressed(_ sender: Any) {
-        
         for controller in self.navigationController!.viewControllers as Array {
             if controller.isKind(of: HomeViewController.self) {
                 self.navigationController!.popToViewController(controller, animated: true)
@@ -44,5 +43,6 @@ class SchedulePlannedViewController: BaseViewController {
             }
             
         }
+        
     }
 }

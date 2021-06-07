@@ -242,6 +242,9 @@
                                     <state key="normal" title="View All">
                                         <color key="titleColor" red="0.43529411759999997" green="0.55294117649999996" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="viewAllAction:" destination="-1" eventType="touchUpInside" id="4s5-HD-oj7"/>
+                                    </connections>
                                 </button>
                                 <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="MAg-aS-k9i">
                                     <rect key="frame" x="0.0" y="62.000000000000028" width="414" height="96"/>

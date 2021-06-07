@@ -71,7 +71,7 @@
                     <rect key="frame" x="0.0" y="103.5" width="414" height="792.5"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zRc-1y-yDc">
-                            <rect key="frame" x="0.0" y="40" width="414" height="752.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="792.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="scrollIndicatorInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,7 +86,7 @@
                         <constraint firstAttribute="trailing" secondItem="zRc-1y-yDc" secondAttribute="trailing" id="TbI-8q-tID"/>
                         <constraint firstAttribute="bottom" secondItem="zRc-1y-yDc" secondAttribute="bottom" id="YZs-zJ-0q7"/>
                         <constraint firstItem="zRc-1y-yDc" firstAttribute="leading" secondItem="AQ2-cA-Gdd" secondAttribute="leading" id="el6-Ly-wPF"/>
-                        <constraint firstItem="zRc-1y-yDc" firstAttribute="top" secondItem="AQ2-cA-Gdd" secondAttribute="top" constant="40" id="u7V-WT-SPs"/>
+                        <constraint firstItem="zRc-1y-yDc" firstAttribute="top" secondItem="AQ2-cA-Gdd" secondAttribute="top" id="u7V-WT-SPs"/>
                     </constraints>
                 </view>
             </subviews>

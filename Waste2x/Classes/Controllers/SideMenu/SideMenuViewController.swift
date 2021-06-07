@@ -13,7 +13,6 @@ class SideMenuViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     
-    
     //MARK: - Variables
     var img = [#imageLiteral(resourceName: "Payment Icons"),#imageLiteral(resourceName: "Calendar")]
     var text = ["Payments","Schedule Pickup"]

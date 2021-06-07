@@ -45,6 +45,9 @@
                                         <constraint firstAttribute="height" constant="22" id="WHb-Nl-cjT"/>
                                     </constraints>
                                     <state key="normal" image="Arrow Left"/>
+                                    <connections>
+                                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="jqB-Vw-Y3L"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v57-Bi-Hdy">
                                     <rect key="frame" x="181.5" y="16" width="51.5" height="25.5"/>

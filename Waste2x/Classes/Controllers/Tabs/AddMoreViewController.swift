@@ -9,16 +9,11 @@ import UIKit
 
 class AddMoreViewController: BaseViewController {
 
-    @IBOutlet weak var hiddenView: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hiddenView.isHidden = true
         // Do any additional setup after loading the view.
-    }
-    func expandCollapse() {
-        self.hiddenView.isHidden = !self.hiddenView.isHidden
-
     }
 
     @IBAction func collaps(_ sender: Any) {

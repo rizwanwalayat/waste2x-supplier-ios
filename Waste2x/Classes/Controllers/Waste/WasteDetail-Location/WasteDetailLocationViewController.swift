@@ -60,10 +60,10 @@ class WasteDetailLocationViewController: BaseViewController {
         
         mapView.roundCorners(uiViewCorners: .top, radius: 32)
         
-        if isNeedToUpBottomConst {
-            constBottom.constant = tabbarViewHeight
-            self.view.layoutIfNeeded()
-        }
+//        if isNeedToUpBottomConst {
+//            constBottom.constant = tabbarViewHeight
+//            self.view.layoutIfNeeded()
+//        }
     }
 
     @IBAction func nextButtonTapped(_ sender: Any) {
