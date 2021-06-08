@@ -34,7 +34,7 @@ class SupplyingCollectionViewCell: UICollectionViewCell {
         CellData(imageType: #imageLiteral(resourceName: "food"), labelTitle: "Food Waste"),
         CellData(imageType: #imageLiteral(resourceName: "Livestock Icon"), labelTitle: "LiveStock\nWaste"),
         CellData(imageType: #imageLiteral(resourceName: "Cans"), labelTitle: "Inorganic\nWaste"),
-        CellData(imageType: #imageLiteral(resourceName: "Recycle Bin Icon"), labelTitle: "Other Inorganic Waste"),
+        CellData(imageType: #imageLiteral(resourceName: "Recycle Bin Icon"), labelTitle: "Other \nInorganic \nWaste"),
         CellData(imageType: #imageLiteral(resourceName: "tire"), labelTitle: "Tire Waste")
     ]
     

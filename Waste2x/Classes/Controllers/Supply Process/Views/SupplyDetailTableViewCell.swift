@@ -26,8 +26,8 @@ class SupplyDetailTableViewCell: UITableViewCell {
         CellData(imageType: #imageLiteral(resourceName: "C Icon"), labelTitle: "Grade C")
     ]
     let supplyType: [CellData] = [
-        CellData(imageType: #imageLiteral(resourceName: "Icon-2"), labelTitle: "HDPI 1"),
-        CellData(imageType: #imageLiteral(resourceName: "Icon-1"), labelTitle: "LDPI 4"),
+        CellData(imageType: #imageLiteral(resourceName: "Icon-2"), labelTitle: "HDPE 2"),
+        CellData(imageType: #imageLiteral(resourceName: "Icon-1"), labelTitle: "LDPE 4"),
         CellData(imageType: #imageLiteral(resourceName: "Icon"), labelTitle: "PP 5"),
         CellData(imageType: #imageLiteral(resourceName: "PS6 Icon"), labelTitle: "PS 6")
     ]

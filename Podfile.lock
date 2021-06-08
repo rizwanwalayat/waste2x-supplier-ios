@@ -126,6 +126,7 @@ PODS:
   - SlideMenuControllerSwift (4.0.0)
   - StepIndicator (1.0.8)
   - StepperView (1.6.6)
+  - youtube-ios-player-helper (0.1.6)
 
 DEPENDENCIES:
   - Alamofire (~> 4.2)
@@ -143,6 +144,7 @@ DEPENDENCIES:
   - SlideMenuControllerSwift
   - StepIndicator (~> 1.0.8)
   - StepperView (~> 1.6.6)
+  - youtube-ios-player-helper (~> 0.1)
 
 SPEC REPOS:
   trunk:
@@ -172,6 +174,7 @@ SPEC REPOS:
     - SlideMenuControllerSwift
     - StepIndicator
     - StepperView
+    - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -200,7 +203,8 @@ SPEC CHECKSUMS:
   SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
   StepIndicator: 748b293f671355b021253f82031ac002f153dc81
   StepperView: a8b9fc8c18d9050090c900e9fe13c73ab8fe97b3
+  youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: e4636e1d01676bb241ed0192d298d4c57beba423
+PODFILE CHECKSUM: 4bce63b55550e1d6cb79e6c4d0c483622ce743ac
 
 COCOAPODS: 1.10.1

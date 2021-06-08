@@ -35,7 +35,13 @@ class SideMenuViewController: BaseViewController {
     
     @IBAction func logoutButtonAction(_ sender: Any) {
         print("LogOut")
+        let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        self.navigationController?.setViewControllers([vc], animated: true)
     }
+    @IBAction func logOutAction(_ sender: Any) {
+        
+    }
+    
     
 }
 

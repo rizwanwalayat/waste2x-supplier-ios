@@ -16,7 +16,7 @@ class NotificationsViewController: BaseViewController {
     @IBOutlet weak var notificationsTableview : UITableView!
     @IBOutlet weak var bottomConst : NSLayoutConstraint!
     
-    
+    var index = -1
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,7 @@ class NotificationsViewController: BaseViewController {
         bottomConst.constant = tabbarViewHeight
         self.view.layoutIfNeeded()
     }
+    
     
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -96,9 +97,10 @@ extension NotificationsViewController : UITableViewDelegate, UITableViewDataSour
         
         if let cell = tableView.cellForRow(at: indexPath) as? NotificationsTableViewCell
         {
-            cell.expandCollapse()
+            cell.expandCollapse(index:indexPath.row)
         }
         
+        self.index = indexPath.row
         tableView.beginUpdates()
         tableView.endUpdates()
     }

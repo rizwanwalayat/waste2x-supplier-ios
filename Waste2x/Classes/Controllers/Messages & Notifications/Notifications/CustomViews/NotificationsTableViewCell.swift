@@ -27,7 +27,7 @@ class NotificationsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        bodyView.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -61,7 +61,7 @@ class NotificationsTableViewCell: UITableViewCell {
         
         switch status {
         case .accepted:
-            
+//            bodyView.tag = 0
             self.notificationTitle.text = notificationTitle
             self.notificationDetailLabel.text = detailText
             self.notificationQuestionLabel.text = questionText
@@ -73,7 +73,7 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationYesButton.setTitle("Yes", for: .normal)
             
         case .rejected:
-            
+//            bodyView.tag = 1
             self.notificationTitle.text = notificationTitle
             self.notificationDetailLabel.text = detailText
             self.notificationQuestionLabel.text = questionText
@@ -85,7 +85,7 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationYesButton.setTitle("Yes", for: .normal)
             
         case .pending:
-            
+//            bodyView.tag = 2
             self.notificationTitle.text = notificationTitle
             self.notificationDetailLabel.text = detailText
             self.notificationQuestionLabel.text = questionText
@@ -97,7 +97,7 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationYesButton.setTitle("Yes", for: .normal)
             
         case .confirmed:
-            
+//            bodyView.tag = 3
             self.notificationTitle.text = notificationTitle
             self.notificationDetailLabel.text = detailText
             self.notificationQuestionLabel.text = questionText
@@ -109,7 +109,7 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationYesButton.setTitle("Check", for: .normal)
             
         case .onway:
-            
+//            bodyView.tag = 4
             self.notificationTitle.text = notificationTitle
             self.notificationDetailLabel.text = detailText
             self.notificationQuestionLabel.text = questionText
@@ -124,8 +124,9 @@ class NotificationsTableViewCell: UITableViewCell {
     }
     
     
-    func expandCollapse() {
+    func expandCollapse(index:Int) {
         self.bodyView.isHidden = !self.bodyView.isHidden
+        print(index)
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
             self.layoutIfNeeded()}, completion: { finished in
             if self.expandArrow.image == UIImage(named: "Down-Arrow")
@@ -138,6 +139,22 @@ class NotificationsTableViewCell: UITableViewCell {
             }
         })
     }
+    func notExpandCollapse(index:Int) {
+        self.bodyView.isHidden = !self.bodyView.isHidden
+        print(index)
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
+            self.layoutIfNeeded()}, completion: { finished in
+            if self.expandArrow.image == UIImage(named: "Down-Arrow")
+            {
+                self.expandArrow.image = UIImage(named: "Right-arrow-gray")
+            }
+            else
+            {
+                self.expandArrow.image = UIImage(named: "Down-Arrow")
+            }
+        })
+    }
+    
 }
 
 enum NotificationStatus {
