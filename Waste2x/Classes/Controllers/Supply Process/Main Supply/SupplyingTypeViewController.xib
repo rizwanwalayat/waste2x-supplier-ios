@@ -158,7 +158,7 @@ supplying?</string>
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" red="0.94117647058823528" green="0.95720177890000002" blue="0.94468259809999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.94117647058823528" green="0.95686274509803915" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="zT6-Rn-uud" firstAttribute="top" secondItem="1yJ-ni-2oi" secondAttribute="bottom" constant="10" id="BbZ-3k-ReP"/>
                         <constraint firstItem="1yJ-ni-2oi" firstAttribute="centerY" secondItem="jgv-SW-lGF" secondAttribute="centerY" constant="-15" id="QJ6-EQ-NIz"/>

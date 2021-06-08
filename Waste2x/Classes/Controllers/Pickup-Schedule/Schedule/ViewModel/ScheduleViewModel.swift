@@ -108,7 +108,6 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
     {
         let locationVC            = WasteDetailLocationViewController(nibName: "WasteDetailLocationViewController", bundle: nil)
         locationVC.delegate       = self
-        locationVC.isNeedToUpBottomConst = false
         self.navigationController?.pushViewController(locationVC, animated: true)
     }
     
@@ -254,26 +253,6 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
                 }
             }
         }
-        
-//        if selectSiteLabel.text == selectSitePlaceholder
-//        {
-//            selectSiteContentview.animateBorderColor(toColor: UIColor.appColor, duration: 0.1)
-//            selectSiteContentview.borderWidth = 1
-//            selectSiteContentview.backgroundColor = UIColor(hexString: selectedBackground)
-//            selectSiteLabel.textColor = UIColor(hexString: selectedBodyLabelTextColor)
-//            siteImageview.tintColor = UIColor.appColor
-//            siteTitleLabel.textColor = UIColor(hexString: selectedTitleLabelTextColor)
-//        }
-//        else
-//        {
-//            selectSiteContentview.animateBorderColor(toColor: UIColor.clear, duration: 0.1)
-//            selectSiteContentview.borderWidth = 0
-//            selectSiteContentview.backgroundColor = UIColor(hexString: unSelectedBackground)
-//            selectSiteLabel.textColor = UIColor(hexString: unSelectedTitleLabelTextColor)
-//            siteImageview.tintColor = UIColor(hexString: unSelectedBodyLabelTextColor)
-//            siteTitleLabel.textColor = UIColor(hexString: unSelectedTitleLabelTextColor)
-//        }
-        
     }
     
     func allFieldsAuth() -> Bool

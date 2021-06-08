@@ -193,6 +193,9 @@
                                     <real key="value" value="16"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="amountOfWastetype:" destination="-1" eventType="touchUpInside" id="fdx-sq-ZpR"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGray6Color"/>
