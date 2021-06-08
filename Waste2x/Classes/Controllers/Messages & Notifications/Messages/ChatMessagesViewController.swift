@@ -124,7 +124,10 @@ extension ChatMessagesViewController : UITableViewDelegate, UITableViewDataSourc
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessagesTableViewCell", for: indexPath) as! MessagesTableViewCell
         
-        cell.messageLabel.text = messagesArray[indexPath.row]
+        let arrayIndex  = messagesArray.count - indexPath.row
+        let cellData    = messagesArray[arrayIndex - 1]
+        
+        cell.messageLabel.text = cellData
         cell.transform  = CGAffineTransform(scaleX: 1, y: -1)
         return cell
     }

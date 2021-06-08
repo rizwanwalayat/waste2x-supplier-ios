@@ -53,6 +53,12 @@ class FormOfWasteViewController: BaseViewController {
         }
     }
     
+    @IBAction func amountOfWastetype(_ sender: Any) {
+        let vc = AmountWasteViewController(nibName: "AmountWasteViewController", bundle: nil)
+        self.navigationController?.pushTo(controller: vc)
+        globalObjectContainer?.tabbarHiddenView.isHidden = true
+        
+    }
 
 }
 

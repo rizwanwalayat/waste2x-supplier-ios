@@ -65,6 +65,10 @@
 		04C31D1226678E1800A1CF9C /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C31D1126678E1800A1CF9C /* ScheduleViewModel.swift */; };
 		04C31D1B2667BBE600A1CF9C /* ScheduleOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C31D192667BBE600A1CF9C /* ScheduleOptionsViewController.swift */; };
 		04C31D1C2667BBE600A1CF9C /* ScheduleOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C31D1A2667BBE600A1CF9C /* ScheduleOptionsViewController.xib */; };
+		04C54DC2266F571500DE4F05 /* AmountWasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54DC0266F571500DE4F05 /* AmountWasteViewController.swift */; };
+		04C54DC3266F571500DE4F05 /* AmountWasteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C54DC1266F571500DE4F05 /* AmountWasteViewController.xib */; };
+		04C54DC7266F6A1F00DE4F05 /* SiteCreatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54DC5266F6A1F00DE4F05 /* SiteCreatedViewController.swift */; };
+		04C54DC8266F6A1F00DE4F05 /* SiteCreatedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C54DC6266F6A1F00DE4F05 /* SiteCreatedViewController.xib */; };
 		04C82E182664BCCB00D52947 /* WasteDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C82E122664BCCB00D52947 /* WasteDetailViewModel.swift */; };
 		04C82E192664BCCB00D52947 /* WasteImageDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C82E142664BCCB00D52947 /* WasteImageDetailCollectionViewCell.xib */; };
 		04C82E1A2664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C82E152664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift */; };
@@ -231,6 +235,10 @@
 		04C31D1126678E1800A1CF9C /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		04C31D192667BBE600A1CF9C /* ScheduleOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleOptionsViewController.swift; sourceTree = "<group>"; };
 		04C31D1A2667BBE600A1CF9C /* ScheduleOptionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleOptionsViewController.xib; sourceTree = "<group>"; };
+		04C54DC0266F571500DE4F05 /* AmountWasteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountWasteViewController.swift; sourceTree = "<group>"; };
+		04C54DC1266F571500DE4F05 /* AmountWasteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmountWasteViewController.xib; sourceTree = "<group>"; };
+		04C54DC5266F6A1F00DE4F05 /* SiteCreatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteCreatedViewController.swift; sourceTree = "<group>"; };
+		04C54DC6266F6A1F00DE4F05 /* SiteCreatedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SiteCreatedViewController.xib; sourceTree = "<group>"; };
 		04C82E122664BCCB00D52947 /* WasteDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasteDetailViewModel.swift; sourceTree = "<group>"; };
 		04C82E142664BCCB00D52947 /* WasteImageDetailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WasteImageDetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		04C82E152664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasteImageDetailCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -690,6 +698,24 @@
 			path = OptionsPopupView;
 			sourceTree = "<group>";
 		};
+		04C54DBF266F565700DE4F05 /* Amount Waste  */ = {
+			isa = PBXGroup;
+			children = (
+				04C54DC0266F571500DE4F05 /* AmountWasteViewController.swift */,
+				04C54DC1266F571500DE4F05 /* AmountWasteViewController.xib */,
+			);
+			path = "Amount Waste ";
+			sourceTree = "<group>";
+		};
+		04C54DC4266F6A0700DE4F05 /* Site Created  */ = {
+			isa = PBXGroup;
+			children = (
+				04C54DC5266F6A1F00DE4F05 /* SiteCreatedViewController.swift */,
+				04C54DC6266F6A1F00DE4F05 /* SiteCreatedViewController.xib */,
+			);
+			path = "Site Created ";
+			sourceTree = "<group>";
+		};
 		04C82E102664BCCB00D52947 /* WasteDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -919,6 +945,8 @@
 		187D756C266E07E9007811C4 /* Supply Process */ = {
 			isa = PBXGroup;
 			children = (
+				04C54DC4266F6A0700DE4F05 /* Site Created  */,
+				04C54DBF266F565700DE4F05 /* Amount Waste  */,
 				18342C80266E4AFF00A678D3 /* Main Supply */,
 				18342C79266E438300A678D3 /* Form */,
 				18896074266E1EA300061783 /* Views */,
@@ -1132,6 +1160,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				18937563266127F800D55A33 /* WasteDetailLocationViewController.xib in Resources */,
+				04C54DC8266F6A1F00DE4F05 /* SiteCreatedViewController.xib in Resources */,
+				04C54DC3266F571500DE4F05 /* AmountWasteViewController.xib in Resources */,
 				186CD719266610C600A1F30F /* CreatePaymentViewController.xib in Resources */,
 				0463F2E6266E29F300E8924D /* ChatMessagesViewController.xib in Resources */,
 				18397E272660FF54003DE30C /* Poppins-Italic.ttf in Resources */,
@@ -1306,6 +1336,7 @@
 				0067A2E32529D2CD00CECA8C /* Utility.swift in Sources */,
 				187D756F266E0816007811C4 /* SupplyingTypeViewController.swift in Sources */,
 				0428F1C6265BC9EC007C51EE /* UINavigationController.swift in Sources */,
+				04C54DC7266F6A1F00DE4F05 /* SiteCreatedViewController.swift in Sources */,
 				18342C77266E436E00A678D3 /* FormOfWasteViewController.swift in Sources */,
 				1893756E266127F800D55A33 /* CurrentWasteTableViewCell.swift in Sources */,
 				0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */,
@@ -1338,6 +1369,7 @@
 				0463F2DE266E08CC00E8924D /* RewardViewController.swift in Sources */,
 				0463F2E5266E29F300E8924D /* ChatMessagesViewController.swift in Sources */,
 				18A849D7265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift in Sources */,
+				04C54DC2266F571500DE4F05 /* AmountWasteViewController.swift in Sources */,
 				1810253C2657E48500DEBF7D /* HomeViewController.swift in Sources */,
 				18937566266127F800D55A33 /* NewWasteSizeViewController.swift in Sources */,
 				0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */,

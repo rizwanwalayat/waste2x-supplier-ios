@@ -36,7 +36,7 @@ class WasteDetailLocationViewController: BaseViewController {
     var selectedPlace               : GMSPlace?
     var marker                      : GMSMarker?
     var delegate                    : WasteDetailLocationViewControllerDelegate?
-    var isNeedToUpBottomConst       = true
+    var isForSiteCreation           = false
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -60,10 +60,6 @@ class WasteDetailLocationViewController: BaseViewController {
         
         mapView.roundCorners(uiViewCorners: .top, radius: 32)
         
-//        if isNeedToUpBottomConst {
-//            constBottom.constant = tabbarViewHeight
-//            self.view.layoutIfNeeded()
-//        }
     }
 
     @IBAction func nextButtonTapped(_ sender: Any) {
@@ -76,7 +72,17 @@ class WasteDetailLocationViewController: BaseViewController {
                 }
             }
         }
-        self.navigationController?.popViewController(animated: true)
+        
+        // screen is reusing for site Creation add condition for that puropose to set flow of applcation
+        if isForSiteCreation {
+            
+            let vc = SiteCreatedViewController(nibName: "SiteCreatedViewController", bundle: nil)
+            self.navigationController?.pushTo(controller: vc)
+        }
+        else {
+            
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
