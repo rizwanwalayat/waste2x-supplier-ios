@@ -41,31 +41,29 @@ class WasteDetailLocationViewController: BaseViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configLocation()
+    }
+    
+    //MARK: - Functions
+    
+    func configLocation(){
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
-
         placesClient = GMSPlacesClient.shared()
-        
-        
-        
         mapView.settings.myLocationButton = true
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.isMyLocationEnabled = true
         mapView.delegate = self
-        
         mapView.roundCorners(uiViewCorners: .top, radius: 32)
-        
-//        if isNeedToUpBottomConst {
-//            constBottom.constant = tabbarViewHeight
-//            self.view.layoutIfNeeded()
-//        }
     }
-
+    
+    
+//MARK: - IBOutlets
+    
     @IBAction func nextButtonTapped(_ sender: Any) {
         
         if currentLocation != nil {
@@ -87,30 +85,11 @@ class WasteDetailLocationViewController: BaseViewController {
 }
 
 
+//MARK: - Extentions
+
 extension WasteDetailLocationViewController: UITextFieldDelegate
 {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-//        let autocompleteController = GMSAutocompleteViewController()
-//            autocompleteController.delegate = self
-//
-//            // Specify the place data types to return.
-//            let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) | UInt(GMSPlaceField.placeID.rawValue))
-//            autocompleteController.placeFields = fields
-//
-//            // Specify a filter.
-//            let filter = GMSAutocompleteFilter()
-//            filter.type = .address
-//            autocompleteController.autocompleteFilter = filter
-//
-//            // Display the autocomplete view controller.
-//            present(autocompleteController, animated: true, completion: nil)
-//        let dropDownVC = CustomDropDownViewController(nibName: "CustomDropDownViewController", bundle: nil)
-//        dropDownVC.modalPresentationStyle   = .overFullScreen
-//        dropDownVC.frameAdjustment = searchbarHolderView.bounds
-//        dropDownVC.searchText = textField.text ?? ""
-//        self.present(dropDownVC, animated: false, completion: nil)
-        
         return true
     }
 }

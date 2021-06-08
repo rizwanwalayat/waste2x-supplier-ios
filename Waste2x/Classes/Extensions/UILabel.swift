@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-
+import CoreLocation
 extension UILabel {
     var substituteFontName : String {
         get { return self.font.fontName }
@@ -81,4 +81,7 @@ extension UILabel {
         }
         return self.text!.count
     }
+}
+
+extension UILabel {
 }

@@ -31,8 +31,18 @@ class WasteDetailViewController: BaseViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupviews()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        Global.shared.convertLocationToAddress(location: Global.shared.location) { (success, address) in
+                if success
+                {
+                    self.addressLabel.text = address ?? ""
+                }
+            }
+        globalObjectContainer?.tabbarHiddenView.isHidden = false
+        
     }
     
     

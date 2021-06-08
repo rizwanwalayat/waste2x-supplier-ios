@@ -14,14 +14,15 @@ import netfox
 import FirebaseMessaging
 import GoogleMaps
 import GooglePlaces
+
 let gcmMessageIDKey = "gcm.message_id"
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var locationManager = CLLocationManager()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        NFX.sharedInstance().start()
+        NFX.sharedInstance().start()
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 30
@@ -30,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Utility.setupHomeAsRootViewController()
         GMSServices.provideAPIKey(googleAPIKey)
         GMSPlacesClient.provideAPIKey(googleAPIKey)
+        initializeLocationManager()
         return true
     }
     // This method is where you handle URL opens if you are using univeral link URLs (eg "https://example.com/stripe_ios_callback")
@@ -49,6 +51,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return false
     }
+    
+    
+    //MARK: - Locationmanager
+    
+    private func initializeLocationManager() {
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.distanceFilter = 50
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+            locationManager.delegate = self
+        }else{
+            print("Internet Error")
+        }
+    }
+
     // [REGISTRATION push_notifications]
     func pushNotification(applicationVariable:UIApplication,launchOptionsVariable:[UIApplication.LaunchOptionsKey : Any]?){
         if #available(iOS 10.0, *) {
@@ -154,3 +174,17 @@ extension AppDelegate : MessagingDelegate {
     
 }
     
+// MARK: - Location delegate
+extension AppDelegate:CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        if let location = locations.last
+        {
+            
+            Global.shared.location = location
+            Global.shared.current_lat = location.coordinate.latitude
+            Global.shared.current_lng = location.coordinate.longitude
+            print(location,Global.shared.current_lat,Global.shared.current_lng)
+        }
+    }
+}
