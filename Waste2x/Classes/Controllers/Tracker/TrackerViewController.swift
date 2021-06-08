@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class TrackerViewController: BaseViewController {
 
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var mapView: GMSMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,3 +32,19 @@ class TrackerViewController: BaseViewController {
     }
     
 }
+
+//extension TrackerViewController:CLLocationManagerDelegate{
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//    print("lcoation delegate call")
+//    cameraMoveToLocation(toLocation: locations)
+//    self.locationManager.stopUpdatingLocation()
+//
+//    func cameraMoveToLocation(toLocation: CLLocationCoordinate2D?) {
+//            if toLocation != nil {
+//                mapView.camera = GMSCameraPosition.camera(withTarget: toLocation!, zoom: 13)
+//            }
+//        
+//        }
+//    }
+//    
+//}

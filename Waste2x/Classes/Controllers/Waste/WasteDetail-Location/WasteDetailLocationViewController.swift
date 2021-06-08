@@ -25,6 +25,7 @@ class WasteDetailLocationViewController: BaseViewController {
     @IBOutlet weak var titleLabel           : UILabel!
     @IBOutlet weak var constBottom          : NSLayoutConstraint!
     
+    
     // MARK: - Declarations
     
     var locationManager             : CLLocationManager!
@@ -36,7 +37,8 @@ class WasteDetailLocationViewController: BaseViewController {
     var selectedPlace               : GMSPlace?
     var marker                      : GMSMarker?
     var delegate                    : WasteDetailLocationViewControllerDelegate?
-    var isNeedToUpBottomConst       = true
+    var isForSiteCreation       = false
+    
     
     // MARK: - LifeCycle
     override func viewDidLoad() {

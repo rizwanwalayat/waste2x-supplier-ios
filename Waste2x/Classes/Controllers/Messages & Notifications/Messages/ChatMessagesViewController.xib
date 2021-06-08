@@ -89,7 +89,7 @@
                                         <action selector="sendButtonPressed:" destination="-1" eventType="touchUpInside" id="Glf-3A-Nlt"/>
                                     </connections>
                                 </button>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" text="Write your message ..." translatesAutoresizingMaskIntoConstraints="NO" id="wfi-v1-Owi">
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bouncesZoom="NO" text="Write your message ..." translatesAutoresizingMaskIntoConstraints="NO" id="wfi-v1-Owi">
                                     <rect key="frame" x="12" y="12" width="300" height="34"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -97,7 +97,7 @@
                                     </constraints>
                                     <color key="textColor" red="0.0078431372549019607" green="0.015686274509803921" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet"/>
                                     <connections>
                                         <outlet property="delegate" destination="-1" id="keO-Yg-LVy"/>
                                     </connections>
