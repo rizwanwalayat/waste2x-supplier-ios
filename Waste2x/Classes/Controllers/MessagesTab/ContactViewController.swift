@@ -35,7 +35,14 @@ extension ContactViewController : UITableViewDelegate,UITableViewDataSource{
         return 80
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
+        //tableView.deselectRow(at: indexPath, animated: false)
+        
+        if indexPath.row == 0
+        {
+            let vc = ChatMessagesViewController(nibName: "ChatMessagesViewController", bundle: nil)
+            globalObjectContainer?.tabbarHiddenView.isHidden = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     
