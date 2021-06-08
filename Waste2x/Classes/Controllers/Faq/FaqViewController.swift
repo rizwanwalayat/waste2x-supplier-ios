@@ -20,6 +20,7 @@ class FaqViewController: BaseViewController {
         mainView.layer.cornerRadius = 36
         mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         mainView.layer.masksToBounds = true
+        globalObjectContainer?.tabbarHiddenView.isHidden = false
         
     }
 

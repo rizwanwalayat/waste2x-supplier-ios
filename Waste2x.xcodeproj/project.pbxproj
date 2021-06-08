@@ -79,10 +79,8 @@
 		181025282657E36500DEBF7D /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181025252657E36500DEBF7D /* Global.swift */; };
 		181025292657E36500DEBF7D /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181025262657E36500DEBF7D /* GCD.swift */; };
 		1810252A2657E36500DEBF7D /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181025272657E36500DEBF7D /* Extentions.swift */; };
-		181025372657E48500DEBF7D /* AddMoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1810252D2657E48500DEBF7D /* AddMoreViewController.xib */; };
 		181025382657E48500DEBF7D /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1810252E2657E48500DEBF7D /* NewsViewController.xib */; };
 		181025392657E48500DEBF7D /* MessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1810252F2657E48500DEBF7D /* MessagesViewController.xib */; };
-		1810253A2657E48500DEBF7D /* AddMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181025302657E48500DEBF7D /* AddMoreViewController.swift */; };
 		1810253B2657E48500DEBF7D /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181025312657E48500DEBF7D /* MessagesViewController.swift */; };
 		1810253C2657E48500DEBF7D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181025322657E48500DEBF7D /* HomeViewController.swift */; };
 		1810253D2657E48500DEBF7D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181025332657E48500DEBF7D /* NewsViewController.swift */; };
@@ -247,10 +245,8 @@
 		181025252657E36500DEBF7D /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		181025262657E36500DEBF7D /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 		181025272657E36500DEBF7D /* Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
-		1810252D2657E48500DEBF7D /* AddMoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddMoreViewController.xib; sourceTree = "<group>"; };
 		1810252E2657E48500DEBF7D /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
 		1810252F2657E48500DEBF7D /* MessagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagesViewController.xib; sourceTree = "<group>"; };
-		181025302657E48500DEBF7D /* AddMoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMoreViewController.swift; sourceTree = "<group>"; };
 		181025312657E48500DEBF7D /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		181025322657E48500DEBF7D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		181025332657E48500DEBF7D /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -784,8 +780,6 @@
 		1810252C2657E48500DEBF7D /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
-				1810252D2657E48500DEBF7D /* AddMoreViewController.xib */,
-				181025302657E48500DEBF7D /* AddMoreViewController.swift */,
 				1810252F2657E48500DEBF7D /* MessagesViewController.xib */,
 				181025312657E48500DEBF7D /* MessagesViewController.swift */,
 				181025352657E48500DEBF7D /* HomeViewController.xib */,
@@ -1141,7 +1135,6 @@
 				0428F1C0265B8EC5007C51EE /* LoginCodeVerificationViewController.xib in Resources */,
 				18397E1F2660FF54003DE30C /* Poppins-BlackItalic.ttf in Resources */,
 				18397E252660FF54003DE30C /* Poppins-Thin.ttf in Resources */,
-				181025372657E48500DEBF7D /* AddMoreViewController.xib in Resources */,
 				18896078266E1EB800061783 /* SupplyingCollectionViewCell.xib in Resources */,
 				18397E1D2660FF54003DE30C /* Poppins-SemiBoldItalic.ttf in Resources */,
 				188B36D42668C95A0036B412 /* UnconfirmPendingCollectionTableViewCell.xib in Resources */,
@@ -1291,7 +1284,6 @@
 				0067A318252AFC9E00CECA8C /* UIDevice.swift in Sources */,
 				181025292657E36500DEBF7D /* GCD.swift in Sources */,
 				184F51702667AD9700F0328A /* ConfirmPendingTableViewCell.swift in Sources */,
-				1810253A2657E48500DEBF7D /* AddMoreViewController.swift in Sources */,
 				180CD1AF2665048D0092168B /* PaymentViewController.swift in Sources */,
 				181025282657E36500DEBF7D /* Global.swift in Sources */,
 				1889607F266E289800061783 /* SupplyDetailTableViewCell.swift in Sources */,

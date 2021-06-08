@@ -17,6 +17,12 @@ class ContactViewController: BaseViewController {
         self.tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        globalObjectContainer?.tabbarHiddenView.isHidden = false
+        
+    }
+    
     
 }
 

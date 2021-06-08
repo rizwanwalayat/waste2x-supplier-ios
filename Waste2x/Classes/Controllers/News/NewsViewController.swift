@@ -48,6 +48,7 @@ class NewsViewController: BaseViewController {
         self.tableView.layer.cornerRadius = 36
         self.tableView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         self.tableView.layer.masksToBounds = true
+        globalObjectContainer?.tabbarHiddenView.isHidden = false
         
     }
     @objc func slideToNext() {

@@ -22,6 +22,10 @@ class SupplyingCollectionViewCell: UICollectionViewCell {
         CellData(imageType: #imageLiteral(resourceName: "Lump"), labelTitle: "Lump"),
         CellData(imageType: #imageLiteral(resourceName: "Loose"), labelTitle: "Loose"),
         CellData(imageType: #imageLiteral(resourceName: "Densified"), labelTitle: "Densified"),
+        CellData(imageType: #imageLiteral(resourceName: "Baled"), labelTitle: "Baled"),
+        CellData(imageType: #imageLiteral(resourceName: "Lump"), labelTitle: "Lump"),
+        CellData(imageType: #imageLiteral(resourceName: "Loose"), labelTitle: "Loose"),
+        CellData(imageType: #imageLiteral(resourceName: "Densified"), labelTitle: "Densified"),
         CellData(imageType: #imageLiteral(resourceName: "Baled"), labelTitle: "Baled")
     ]
     let SupplyingType: [CellData] = [

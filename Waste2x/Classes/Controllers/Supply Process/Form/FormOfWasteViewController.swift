@@ -27,7 +27,8 @@ class FormOfWasteViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         hiddenViewHeight.constant = 0
-        nextButtonBottomConstraints.constant = tabbarViewHeight+10
+        globalObjectContainer?.tabbarHiddenView.isHidden = true
+//        nextButtonBottomConstraints.constant = tabbarViewHeight+10
         
         
     }
@@ -42,13 +43,15 @@ class FormOfWasteViewController: BaseViewController {
                 self.view.layoutIfNeeded()
                 
             }
+        nextButtonBottomConstraints.constant = 0
         globalObjectContainer?.tabbarHiddenView.isHidden = true
         
     }
     @objc func dismiss(_ sender: UITapGestureRecognizer? = nil) {
         if hiddenViewHeight.constant > 20{
-        hiddenViewHeight.constant = 0
+            hiddenViewHeight.constant = 0
             globalObjectContainer?.tabbarHiddenView.isHidden = false
+            nextButtonBottomConstraints.constant = tabbarViewHeight+10
             
         }
     }
@@ -56,7 +59,7 @@ class FormOfWasteViewController: BaseViewController {
 
 }
 
-//MARK: - Extentions
+//MARK: - CollectionView extention
 extension FormOfWasteViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

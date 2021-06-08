@@ -20,7 +20,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FormOfWasteViewController" customModule="Waste2x" customModuleProvider="target">
             <connections>
                 <outlet property="hiddenViewHeight" destination="KLj-Rd-9no" id="ynS-Tu-ylI"/>
-                <outlet property="mainViewWithNav" destination="yhZ-TM-gPJ" id="EQH-v2-Ufm"/>
+                <outlet property="mainViewWithNav" destination="O3i-KB-Z8y" id="nTX-71-YW1"/>
                 <outlet property="nextButtonBottomConstraints" destination="2ko-P0-bRY" id="8Hm-zZ-hIG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -49,8 +49,8 @@
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
                             <connections>
-                                <outlet property="dataSource" destination="-1" id="vb3-Vb-lAN"/>
-                                <outlet property="delegate" destination="-1" id="kXk-pv-p8C"/>
+                                <outlet property="dataSource" destination="-1" id="WYw-0c-2Cf"/>
+                                <outlet property="delegate" destination="-1" id="2wG-Hw-3vB"/>
                             </connections>
                         </collectionView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQz-6W-Ffa">
@@ -173,12 +173,12 @@
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Odo-2d-tPL">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Odo-2d-tPL">
                             <rect key="frame" x="10" y="85.5" width="394" height="303"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <outlet property="dataSource" destination="-1" id="b7o-RU-QZf"/>
-                                <outlet property="delegate" destination="-1" id="ASh-57-x3W"/>
+                                <outlet property="dataSource" destination="-1" id="4v5-fp-bVr"/>
+                                <outlet property="delegate" destination="-1" id="yhy-oL-52F"/>
                             </connections>
                         </tableView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4b-5a-H59">
