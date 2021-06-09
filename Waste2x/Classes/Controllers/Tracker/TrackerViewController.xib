@@ -20,6 +20,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TrackerViewController" customModule="Waste2x" customModuleProvider="target">
             <connections>
                 <outlet property="mainView" destination="0kN-sf-AdF" id="Opv-eW-vr0"/>
+                <outlet property="mapView" destination="aWY-uf-7zd" id="1DH-Yt-HoK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -74,10 +75,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0kN-sf-AdF" userLabel="BottomView">
-                    <rect key="frame" x="0.0" y="746" width="414" height="150"/>
+                    <rect key="frame" x="0.0" y="734.5" width="414" height="161.5"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Car Pickup" translatesAutoresizingMaskIntoConstraints="NO" id="HyR-zL-SXv">
-                            <rect key="frame" x="15" y="5" width="98.5" height="125"/>
+                            <rect key="frame" x="15" y="15" width="98.5" height="134.5"/>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="259-vP-nEL">
                             <rect key="frame" x="123.5" y="10" width="280.5" height="114"/>
@@ -150,8 +151,7 @@ California, United State</string>
                         <constraint firstItem="259-vP-nEL" firstAttribute="top" secondItem="0kN-sf-AdF" secondAttribute="top" constant="10" id="ehj-zs-zRb"/>
                         <constraint firstItem="HyR-zL-SXv" firstAttribute="height" secondItem="0kN-sf-AdF" secondAttribute="height" multiplier="0.833333" id="hnk-V6-hKI"/>
                         <constraint firstItem="HyR-zL-SXv" firstAttribute="width" secondItem="0kN-sf-AdF" secondAttribute="width" multiplier="0.238164" id="lrL-0i-hES"/>
-                        <constraint firstItem="HyR-zL-SXv" firstAttribute="top" secondItem="0kN-sf-AdF" secondAttribute="top" constant="5" id="zA3-hd-DZw"/>
-                        <constraint firstAttribute="height" constant="150" id="zhh-h3-stE"/>
+                        <constraint firstItem="HyR-zL-SXv" firstAttribute="top" secondItem="0kN-sf-AdF" secondAttribute="top" constant="15" id="zA3-hd-DZw"/>
                     </constraints>
                 </view>
             </subviews>
@@ -164,6 +164,7 @@ California, United State</string>
                 <constraint firstAttribute="bottom" secondItem="aWY-uf-7zd" secondAttribute="bottom" id="EgL-lM-ZXc"/>
                 <constraint firstItem="aWY-uf-7zd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="a70-uH-GRK"/>
                 <constraint firstItem="0kN-sf-AdF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iCx-a3-0nS"/>
+                <constraint firstItem="0kN-sf-AdF" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.18" id="knW-Mi-iPC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aWY-uf-7zd" secondAttribute="trailing" id="scu-Vn-V2s"/>
                 <constraint firstAttribute="bottom" secondItem="0kN-sf-AdF" secondAttribute="bottom" id="t6P-z0-zf9"/>
                 <constraint firstItem="bap-yq-2Vo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="v7x-c8-Wth"/>

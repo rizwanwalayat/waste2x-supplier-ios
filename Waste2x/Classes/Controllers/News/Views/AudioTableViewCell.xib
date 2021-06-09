@@ -22,16 +22,20 @@
                         <rect key="frame" x="20" y="10" width="372" height="89"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGE-UQ-BpB">
-                                <rect key="frame" x="20" y="33.5" width="15" height="22"/>
+                                <rect key="frame" x="20" y="32" width="20" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="6Le-vy-FjR"/>
+                                    <constraint firstAttribute="height" constant="25" id="iEL-1F-wWL"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="labelColor"/>
-                                <state key="normal" image="play.fill" catalog="system"/>
-                                <state key="selected" image="pause" catalog="system"/>
+                                <state key="normal" image="play"/>
+                                <state key="selected" image="pause"/>
                                 <connections>
                                     <action selector="playAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UsM-z2-HKL"/>
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iWH-bZ-L1s">
-                                <rect key="frame" x="55" y="42.5" width="297" height="4"/>
+                                <rect key="frame" x="60" y="42.5" width="292" height="4"/>
                                 <color key="tintColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                         </subviews>
@@ -66,8 +70,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="pause" catalog="system" width="88" height="128"/>
-        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="pause" width="362" height="676"/>
+        <image name="play" width="604" height="762"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -25,6 +25,7 @@ class WasteDetailLocationViewController: BaseViewController {
     @IBOutlet weak var titleLabel           : UILabel!
     @IBOutlet weak var constBottom          : NSLayoutConstraint!
     
+    
     // MARK: - Declarations
     
     var locationManager             : CLLocationManager!

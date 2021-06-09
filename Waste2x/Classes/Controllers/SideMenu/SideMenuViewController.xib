@@ -90,23 +90,24 @@
                     <rect key="frame" x="0.0" y="786" width="270" height="80"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKC-F8-XqI">
-                            <rect key="frame" x="30" y="25.5" width="92" height="29"/>
+                            <rect key="frame" x="50" y="25.5" width="92" height="29"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="92" id="Gyb-w5-nz0"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="18"/>
-                            <inset key="imageEdgeInsets" minX="-13" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="-15" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <state key="normal" title="Logout" image="Logout">
                                 <color key="titleColor" systemColor="labelColor"/>
                             </state>
                             <connections>
+                                <action selector="logOutAction:" destination="-1" eventType="touchUpInside" id="nQk-Pg-s8k"/>
                                 <action selector="logoutButtonAction:" destination="-1" eventType="touchUpInside" id="17I-tC-ha3"/>
                             </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="RKC-F8-XqI" firstAttribute="leading" secondItem="tYs-Up-Cd7" secondAttribute="leading" constant="30" id="E5S-HY-Zoj"/>
+                        <constraint firstItem="RKC-F8-XqI" firstAttribute="leading" secondItem="tYs-Up-Cd7" secondAttribute="leading" constant="50" id="E5S-HY-Zoj"/>
                         <constraint firstAttribute="height" constant="80" id="Wzu-6w-Veo"/>
                         <constraint firstItem="RKC-F8-XqI" firstAttribute="centerY" secondItem="tYs-Up-Cd7" secondAttribute="centerY" id="hZx-sy-BFc"/>
                         <constraint firstAttribute="width" constant="270" id="xHT-Ce-oBk"/>
