@@ -39,21 +39,9 @@ class LoginViewController: BaseViewController {
     
     @IBAction func nextButtonPressed(_ sender: Any) {
         if Utility.isTextFieldHasText(textField: phoneNoTextfield) {
-            
-            
-            
-//            CodeVerification.verificationCode(phoneNumber: phoneNoTextfield.text ?? "") { result, error, status in
-//                if error == nil {
                     let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
                     codeVerificationVC.phone = self.phoneNoTextfield.text ?? ""
                     self.navigationController?.pushViewController(codeVerificationVC, animated: true)
-                    
-//                }
-//                else{
-//                    return
-//                }
-//            }
-//        }
     }
     }
     
