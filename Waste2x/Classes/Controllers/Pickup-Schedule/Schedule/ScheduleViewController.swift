@@ -94,6 +94,17 @@ class ScheduleViewController: BaseViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        Global.shared.convertLocationToAddress(location: Global.shared.location) { (success, address) in
+                if success
+                {
+                    self.selectLocationLabel.text =  address ?? ""
+                }
+            }
+        
+        
+    }
     // MARK: - Actions
     @IBAction func backButtonPressed(_ sender: Any) {
         
@@ -112,7 +123,8 @@ class ScheduleViewController: BaseViewController {
     @IBAction func selectLocationButtonPressed(_ sender: Any) {
         
         if selectionType != .none {
-            showMapView()
+//            showMapView()
+            
         }
     }
     
