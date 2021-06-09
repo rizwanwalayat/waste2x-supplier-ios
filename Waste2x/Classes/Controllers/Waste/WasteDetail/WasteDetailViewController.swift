@@ -24,6 +24,7 @@ class WasteDetailViewController: BaseViewController {
     @IBOutlet weak var collectionviewImages : UICollectionView!
     @IBOutlet weak var takePictureButton    : UIButton!
     
+    @IBOutlet weak var bottomConstraints: NSLayoutConstraint!
     
     // MARK: - Declarations
     var imagesArray               = [UIImage]()
@@ -42,6 +43,8 @@ class WasteDetailViewController: BaseViewController {
                 }
             }
         globalObjectContainer?.tabbarHiddenView.isHidden = false
+         bottomConstraints.constant = tabbarViewHeight+10
+        
         
     }
     
