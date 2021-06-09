@@ -103,6 +103,8 @@ extension FaqViewController : UITableViewDelegate,UITableViewDataSource{
         }
         headerView.addSubview(label)
         return headerView
-}
+    }
+    
+
 }
 

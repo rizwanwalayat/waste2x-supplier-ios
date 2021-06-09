@@ -9,59 +9,52 @@
 import UIKit
 
 class FormOfWasteViewController: BaseViewController {
-    //MARK: - Variables
-    var collectionViewIndex = 0
-    var tableViewCount =  3
-    var collectionViewCount =  4
-    var tabaleViewIndex = 0
     
-    @IBOutlet weak var hiddenViewHeight: NSLayoutConstraint!
+    
+    //MARK: - Variables
+    
+    var collectionViewIndex = 0
+    var collectionViewCount =  4
+    var formForLiveStock = false
+    
+    //MARK: - Outlets
+    
+    //@IBOutlet weak var hiddenViewHeight: NSLayoutConstraint!
     @IBOutlet weak var nextButtonBottomConstraints: NSLayoutConstraint!
     @IBOutlet weak var mainViewWithNav: UIView!
+    @IBOutlet weak var constHeightOfCollection : NSLayoutConstraint!
+    @IBOutlet weak var collectionView : UICollectionView!
+    
+    
+    //MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //MARK: - Guestures for dismiss
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismiss(_:)))
-        mainViewWithNav.addGestureRecognizer(tap)
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super .viewWillAppear(animated)
-        hiddenViewHeight.constant = 0
-        globalObjectContainer?.tabbarHiddenView.isHidden = true
-//        nextButtonBottomConstraints.constant = tabbarViewHeight+10
         
-        
-    }
-    @IBAction func nextAction(_ sender: Any) {
-        handleTap()
-    }
-    //MARK: - Bottom Sheet Tap
-    @objc func handleTap() {
-        // handling code
-            hiddenViewHeight.constant = ScreenSize.SCREEN_HEIGHT-200
-            UIView.animate(withDuration: 0.3) {
-                self.view.layoutIfNeeded()
-                
-            }
-        nextButtonBottomConstraints.constant = 0
-        globalObjectContainer?.tabbarHiddenView.isHidden = true
-        
-    }
-    @objc func dismiss(_ sender: UITapGestureRecognizer? = nil) {
-        if hiddenViewHeight.constant > 20{
-            hiddenViewHeight.constant = 0
-            globalObjectContainer?.tabbarHiddenView.isHidden = false
-            nextButtonBottomConstraints.constant = tabbarViewHeight+10
-            
+        formForLiveStock ? (collectionViewCount = 3) : (collectionViewCount =  4)
+        collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.constHeightOfCollection.constant = self.collectionView.contentSize.height
+            self.view.layoutIfNeeded()
         }
     }
     
-    @IBAction func amountOfWastetype(_ sender: Any) {
-        let vc = AmountWasteViewController(nibName: "AmountWasteViewController", bundle: nil)
-        self.navigationController?.pushTo(controller: vc)
-        globalObjectContainer?.tabbarHiddenView.isHidden = true
+    @IBAction func nextAction(_ sender: Any) {
         
+        if formForLiveStock {
+            
+            let vc = AmountWasteViewController(nibName: "AmountWasteViewController", bundle: nil)
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
+        else
+        {
+            let vc = FormSubTypesViewController(nibName: "FormSubTypesViewController", bundle: nil)
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: false, completion: nil)
+        }
     }
+    
 
 }
 
@@ -76,7 +69,8 @@ extension FormOfWasteViewController : UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.register(SupplyingCollectionViewCell.self, indexPath: indexPath)
-        cell.configForForm(index: indexPath.row)
+        cell.configForForm(index: indexPath.row, isForLiveStock: formForLiveStock)
+        
         if collectionViewIndex == indexPath.row {
             cell.mainViewSelection.borderColor = UIColor(named: "themeColor")
             cell.mainViewSelection.borderWidth = 2
@@ -88,55 +82,20 @@ extension FormOfWasteViewController : UICollectionViewDelegate, UICollectionView
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = (collectionView.frame.width-30)/2
-        return CGSize(width: size, height: size+10)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        let size = (collectionView.frame.width - 65) / 2
+        return CGSize(width: size, height: size + 10)
     }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
         self.collectionViewIndex = indexPath.row
         collectionView.reloadData()
         if let confirmCell = collectionView.cellForItem(at: indexPath) as? SupplyingCollectionViewCell
         {
             confirmCell.selection(index: indexPath.row)
         }
-    }
-    
-}
-
-//MARK: - TableView
-
-extension FormOfWasteViewController : UITableViewDelegate,UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableViewCount
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.register(SupplyDetailTableViewCell.self, indexPath: indexPath)
-        cell.selectionStyle = .none
-        cell.configForGrade(index: indexPath.row)
-        if tabaleViewIndex == indexPath.row {
-            cell.mainView.borderColor = UIColor(named: "themeColor")
-            cell.mainView.borderWidth = 2
-        }
-        else {
-            cell.mainView.borderColor = .clear
-            cell.mainView.borderWidth = 0
-        }
-        
-        return cell
-        
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.frame.height/4
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        if let confirmCell = tableView.cellForRow(at: indexPath) as? SupplyDetailTableViewCell
-        {
-            confirmCell.selection(index: indexPath.row)
-        }
-        self.tabaleViewIndex = indexPath.row
-        tableView.reloadData()
     }
     
 }

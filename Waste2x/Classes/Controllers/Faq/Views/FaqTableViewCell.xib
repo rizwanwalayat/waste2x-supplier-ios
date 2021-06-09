@@ -26,22 +26,22 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suU-Ey-tl7">
-                        <rect key="frame" x="30" y="21" width="399" height="313"/>
+                        <rect key="frame" x="0.0" y="21" width="459" height="313"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vfE-e8-3AY">
-                                <rect key="frame" x="18" y="0.0" width="363" height="313"/>
+                                <rect key="frame" x="16" y="0.0" width="427" height="313"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUd-Gm-vcf" userLabel="Headerview">
-                                        <rect key="frame" x="0.0" y="0.0" width="363" height="28"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="427" height="28"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="How do i select type of waste?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1j-0J-gIx">
-                                                <rect key="frame" x="0.0" y="0.0" width="337" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="401" height="20"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                                 <color key="textColor" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Right-arrow-gray" translatesAutoresizingMaskIntoConstraints="NO" id="XXE-7X-XX4">
-                                                <rect key="frame" x="353" y="5" width="10" height="10"/>
+                                                <rect key="frame" x="417" y="5" width="10" height="10"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="XXE-7X-XX4" secondAttribute="height" multiplier="1:1" id="FSK-nS-Nsx"/>
                                                     <constraint firstAttribute="height" constant="10" id="U0w-G7-KEi"/>
@@ -59,10 +59,10 @@
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcA-O6-dG5" userLabel="BodyView">
-                                        <rect key="frame" x="0.0" y="28" width="363" height="285"/>
+                                        <rect key="frame" x="0.0" y="28" width="427" height="285"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35k-Z0-zpg">
-                                                <rect key="frame" x="0.0" y="0.0" width="363" height="101"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="427" height="84"/>
                                                 <string key="text">EnMass Energy requested you to sell 10 Tons waste of commodity “Crop waste - Cotton” at price of $100.EnMass Energy requested you to sell 10 Tons waste of commodity “Crop waste - Cotton” at price of $100.EnMass Energy requested you to sell 10 Tons waste of commodity “Crop waste - Cotton” at price of $100.</string>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                 <color key="textColor" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
@@ -86,13 +86,23 @@
                                     <constraint firstAttribute="bottom" secondItem="KcA-O6-dG5" secondAttribute="bottom" id="t5J-sk-QLv"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lPt-MN-9aY">
+                                <rect key="frame" x="12" y="312.5" width="435" height="0.5"/>
+                                <color key="backgroundColor" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="9Qw-1s-UBN"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="vfE-e8-3AY" secondAttribute="trailing" constant="18" id="2Kv-1x-TSN"/>
+                            <constraint firstItem="lPt-MN-9aY" firstAttribute="leading" secondItem="suU-Ey-tl7" secondAttribute="leading" constant="12" id="2E5-x0-dYr"/>
+                            <constraint firstAttribute="trailing" secondItem="vfE-e8-3AY" secondAttribute="trailing" constant="16" id="2Kv-1x-TSN"/>
                             <constraint firstItem="vfE-e8-3AY" firstAttribute="top" secondItem="suU-Ey-tl7" secondAttribute="top" id="9uU-6I-NY7"/>
                             <constraint firstAttribute="bottom" secondItem="vfE-e8-3AY" secondAttribute="bottom" id="CxA-e6-LTC"/>
-                            <constraint firstItem="vfE-e8-3AY" firstAttribute="leading" secondItem="suU-Ey-tl7" secondAttribute="leading" constant="18" id="K5f-TD-Upb"/>
+                            <constraint firstItem="vfE-e8-3AY" firstAttribute="leading" secondItem="suU-Ey-tl7" secondAttribute="leading" constant="16" id="K5f-TD-Upb"/>
+                            <constraint firstAttribute="trailing" secondItem="lPt-MN-9aY" secondAttribute="trailing" constant="12" id="bmq-eh-wlN"/>
+                            <constraint firstAttribute="bottom" secondItem="lPt-MN-9aY" secondAttribute="bottom" id="fiY-Yy-kiJ"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -102,8 +112,8 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="suU-Ey-tl7" secondAttribute="trailing" constant="10" id="LZk-s5-64B"/>
-                    <constraint firstItem="suU-Ey-tl7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="P4V-w1-XoJ"/>
+                    <constraint firstAttribute="trailing" secondItem="suU-Ey-tl7" secondAttribute="trailing" id="MnU-CB-RhL"/>
+                    <constraint firstItem="suU-Ey-tl7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="VC6-cy-V2K"/>
                     <constraint firstAttribute="bottomMargin" secondItem="suU-Ey-tl7" secondAttribute="bottom" constant="10" id="zDc-88-zaK"/>
                     <constraint firstItem="suU-Ey-tl7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="zGY-Dh-v1D"/>
                 </constraints>

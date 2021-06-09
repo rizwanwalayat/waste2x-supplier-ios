@@ -13,65 +13,50 @@ class SupplyingTypeViewController: BaseViewController {
     
     //MARK: - Variables
     var collectionViewIndex = 0
-    var tableViewCount =  4
     var collectionViewCount =  7
-    var tabaleViewIndex = 0
     
     //MARK: - Outlets
     
     @IBOutlet weak var nextButtonBottomConstraints: NSLayoutConstraint!
-    @IBOutlet weak var hiddenViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var constCollectionViewHeigh: NSLayoutConstraint!
     @IBOutlet weak var mainViewwithNavBar: UIView!
+
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        //MARK: - Guestures for dismiss
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismiss(_:)))
-        mainViewwithNavBar.addGestureRecognizer(tap)
-        
+        collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.constCollectionViewHeigh.constant = self.collectionView.contentSize.height
+            self.view.layoutIfNeeded()
+        }
         
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
-        hiddenViewHeight.constant = 0
+        
         nextButtonBottomConstraints.constant = tabbarViewHeight+10
-        globalObjectContainer?.tabbarHiddenView.isHidden = false
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+    }
     //MARK: - IBOutlets
 
     
     
     @IBAction func nextAction(_ sender: Any) {
-        handleTap()
-    }
-    @IBAction func typeOfPlasticAction(_ sender: Any) {
-        let vc = FormOfWasteViewController(nibName: "FormOfWasteViewController", bundle: nil)
-        self.navigationController?.pushTo(controller: vc)
-        globalObjectContainer?.tabbarHiddenView.isHidden = true
         
-    }
-    //MARK: - Bottom Sheet Tap
-    @objc func handleTap() {
-        // handling code
-            hiddenViewHeight.constant = ScreenSize.SCREEN_HEIGHT-200
-            UIView.animate(withDuration: 0.3) {
-                self.view.layoutIfNeeded()
-                
-            }
-        globalObjectContainer?.tabbarHiddenView.isHidden = true
+        let vc = SupplySubTypeViewController(nibName: "SupplySubTypeViewController", bundle: nil)
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: false, completion: nil)
         
-    }
-    @objc func dismiss(_ sender: UITapGestureRecognizer? = nil) {
-        if hiddenViewHeight.constant > 20{
-        hiddenViewHeight.constant = 0
-            globalObjectContainer?.tabbarHiddenView.isHidden = false
-            
-        }
     }
     
 }
@@ -100,9 +85,11 @@ extension SupplyingTypeViewController : UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = (collectionView.frame.width-30)/2
+        
+        let size = (collectionView.frame.width - 65) / 2
         return CGSize(width: size, height: size+10)
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.collectionViewIndex = indexPath.row
         collectionView.reloadData()
@@ -110,43 +97,6 @@ extension SupplyingTypeViewController : UICollectionViewDelegate, UICollectionVi
         {
             confirmCell.selection(index: indexPath.row)
         }
-    }
-    
-}
-//MARK: - TableView Extention
-
-extension SupplyingTypeViewController : UITableViewDelegate,UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableViewCount
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.register(SupplyDetailTableViewCell.self, indexPath: indexPath)
-        cell.selectionStyle = .none
-        cell.configForType(index: indexPath.row)
-        if tabaleViewIndex == indexPath.row {
-            cell.mainView.borderColor = UIColor(named: "themeColor")
-            cell.mainView.borderWidth = 2
-        }
-        else {
-            cell.mainView.borderColor = .clear
-            cell.mainView.borderWidth = 0
-        }
-        
-        return cell
-        
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.frame.height/4
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        if let confirmCell = tableView.cellForRow(at: indexPath) as? SupplyDetailTableViewCell
-        {
-            confirmCell.selection(index: indexPath.row)
-        }
-        self.tabaleViewIndex = indexPath.row
-        tableView.reloadData()
     }
     
 }

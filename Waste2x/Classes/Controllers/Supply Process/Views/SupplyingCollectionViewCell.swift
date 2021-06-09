@@ -38,6 +38,13 @@ class SupplyingCollectionViewCell: UICollectionViewCell {
         CellData(imageType: #imageLiteral(resourceName: "tire"), labelTitle: "Tire Waste")
     ]
     
+    let formLivestockData : [CellData] = [
+        
+        CellData(imageType: #imageLiteral(resourceName: "poultry"), labelTitle: "Poultry"),
+        CellData(imageType: #imageLiteral(resourceName: "Hogs Icon"), labelTitle: "Hogs"),
+        CellData(imageType: #imageLiteral(resourceName: "Cattle"), labelTitle: "Cattle")
+    ]
+    
     
     
     @IBOutlet weak var mainViewSelection: UIView!
@@ -55,9 +62,18 @@ class SupplyingCollectionViewCell: UICollectionViewCell {
         self.imgView.image = SupplyingType[index].imageType
         self.titleLabel.text = SupplyingType[index].labelTitle
     }
-    func configForForm(index:Int){
-        self.imgView.image = FormData[index].imageType
-        self.titleLabel.text = FormData[index].labelTitle
+    func configForForm(index:Int, isForLiveStock : Bool){
+        
+        if isForLiveStock {
+            
+            self.imgView.image = formLivestockData[index].imageType
+            self.titleLabel.text = formLivestockData[index].labelTitle
+        }
+        else {
+            
+            self.imgView.image = FormData[index].imageType
+            self.titleLabel.text = FormData[index].labelTitle
+        }
     }
     
 

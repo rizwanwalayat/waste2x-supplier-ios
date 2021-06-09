@@ -45,9 +45,9 @@ class AmountWasteViewController: BaseViewController {
     
     @IBAction func nextButtonPressed(_ sender: Any) {
         
-        let locationVC            = WasteDetailLocationViewController(nibName: "WasteDetailLocationViewController", bundle: nil)
-        locationVC.isForSiteCreation = true
-        self.navigationController?.pushTo(controller: locationVC)
+        let vc = WasteDetailLocationViewController(nibName: "WasteDetailLocationViewController", bundle: nil)
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 }
 

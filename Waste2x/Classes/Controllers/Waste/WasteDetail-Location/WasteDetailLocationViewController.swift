@@ -37,8 +37,7 @@ class WasteDetailLocationViewController: BaseViewController {
     var selectedPlace               : GMSPlace?
     var marker                      : GMSMarker?
     var delegate                    : WasteDetailLocationViewControllerDelegate?
-    var isForSiteCreation       = false
-    
+    var isForSiteCreation           = true
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -81,7 +80,8 @@ class WasteDetailLocationViewController: BaseViewController {
         if isForSiteCreation {
             
             let vc = SiteCreatedViewController(nibName: "SiteCreatedViewController", bundle: nil)
-            self.navigationController?.pushTo(controller: vc)
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true, completion: nil)
         }
         else {
             
