@@ -11,12 +11,18 @@ import UIKit
 class NotificationsViewController: BaseViewController {
 
     // MARK: - Outlets
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var mainHolderView: UIView!
     @IBOutlet weak var notificationsTableview : UITableView!
     @IBOutlet weak var bottomConst : NSLayoutConstraint!
     
-    var index = -1
+    
+    // MARK: - Declarations
+    
+    var selectedIndex : IndexPath?
+    
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,12 +105,37 @@ extension NotificationsViewController : UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let cell = tableView.cellForRow(at: indexPath) as? NotificationsTableViewCell
+        
+        // handlings for collapse and expand one at a time. 
+        if selectedIndex == indexPath {
+            
+            if let cell = tableView.cellForRow(at: indexPath) as? NotificationsTableViewCell
+            {
+                cell.collapse()
+                self.selectedIndex = nil
+            }
+        }
+        else if selectedIndex != nil
         {
-            cell.expandCollapse(index:indexPath.row)
+            if let cell = tableView.cellForRow(at: selectedIndex!) as? NotificationsTableViewCell
+            {
+                cell.collapse()
+            }
+            
+            if let cell = tableView.cellForRow(at: indexPath) as? NotificationsTableViewCell
+            {
+                cell.expand()
+            }
+            selectedIndex = indexPath
+        }
+        else if selectedIndex == nil {
+            if let cell = tableView.cellForRow(at: indexPath) as? NotificationsTableViewCell
+            {
+                cell.expand()
+                self.selectedIndex = indexPath
+            }
         }
         
-        self.index = indexPath.row
         tableView.beginUpdates()
         tableView.endUpdates()
     }
