@@ -3,7 +3,7 @@ import Foundation
 import ObjectMapper
 
 typealias LoginUserCompletionHandler = (_ data: UserData?, _ error: Error?, _ status: Int?) -> Void
-typealias ForgotPasswordCompletionHandler = (_ data: AnyObject?, _ error: Error?, _ status: Int?) -> Void
+typealias ForgotPasswordCompletionHandler = (_ data: CodeVerification?, _ error: Error?, _ status: Int?) -> Void
 typealias RegistrationCompletionHandler = (_ data: AnyObject?, _ error: Error?, _ status: Int?) -> Void
 typealias EmailRegistrationCompletionHandler = (_ data: AnyObject?, _ error: Error?, _ status: Int?) -> Void
 

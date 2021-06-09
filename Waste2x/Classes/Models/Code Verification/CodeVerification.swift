@@ -30,9 +30,10 @@ class CodeVerification : Mappable {
         APIClient.shared.verificationCode(number: phoneNumber) { result, error, status in
             Utility.hideLoading()
             if error == nil {
-        
-                if let data = result as AnyObject? {
+                if let data = Mapper<CodeVerification>().map(JSON: result as! [String : Any]) {
+                    
                     completion(data, nil, 200)
+                    
                     
                 } else {
                     completion(nil, nil, 201)
@@ -48,11 +49,11 @@ class CodeVerification : Mappable {
 
 class CodeVerificationResponce : Mappable {
     
-    var code = ""
+    var verificationCode = ""
 
     required init?(map: Map) { }
 
     func mapping(map: Map) {
-        code <- map["code"]
+        verificationCode <- map["code"]
     }
 }

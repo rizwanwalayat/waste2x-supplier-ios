@@ -73,7 +73,7 @@ class RegistrationResult : Mappable {
     var stripe_account_name = ""
     var waste_id = Int()
     var auth_token = ""
-    var waste_types = Mapper<WasteTypes>().map(JSON: [:])
+    var waste_types = [WasteTypes]()
     var farm_exist = Bool()
     var farmer_medals = Double()
     var stars_earned = Double()
