@@ -70,7 +70,6 @@ class HomeViewController: BaseViewController {
             self.view.layoutIfNeeded()
         }
     }
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         weatherCollectionView.reloadData()
@@ -104,6 +103,7 @@ class HomeViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(true)
         self.navigationController?.navigationBar.isHidden = true
+        globalObjectContainer?.tabbarHiddenView.isHidden = false
     }
     
     

@@ -42,19 +42,21 @@ class LoginViewController: BaseViewController {
             
             
             
-            CodeVerification.verificationCode(phoneNumber: phoneNoTextfield.text ?? "") { result, error, status in
-                if error == nil {
+//            CodeVerification.verificationCode(phoneNumber: phoneNoTextfield.text ?? "") { result, error, status in
+//                if error == nil {
                     let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
                     codeVerificationVC.phone = self.phoneNoTextfield.text ?? ""
                     self.navigationController?.pushViewController(codeVerificationVC, animated: true)
                     
-                }
-                else{
-                    return
-                }
-            }
-        }
+//                }
+//                else{
+//                    return
+//                }
+//            }
+//        }
     }
+    }
+    
 }
 
 

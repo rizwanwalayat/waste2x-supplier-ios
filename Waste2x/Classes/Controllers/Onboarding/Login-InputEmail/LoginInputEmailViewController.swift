@@ -28,12 +28,12 @@ class LoginInputEmailViewController: BaseViewController {
     // MARK: - Actions
 
     @IBAction func nextButtonPressed(_ sender: Any) {
-        Registration.emailVerification(email: self.emailAddressTextField.text!) { result, error, status in
-            if error == nil{
+//        Registration.emailVerification(email: self.emailAddressTextField.text!) { result, error, status in
+//            if error == nil{
             let slider = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
                 self.navigationController?.setViewControllers([slider], animated: true)
-            }
-        }
+//            }
+//        }
 
     }
     

@@ -131,7 +131,7 @@
                                             <rect key="frame" x="169" y="0.0" width="76" height="83"/>
                                             <subviews>
                                                 <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGw-jV-vLD">
-                                                    <rect key="frame" x="6.5" y="10" width="63" height="63"/>
+                                                    <rect key="frame" x="-3.5" y="0.0" width="83" height="83"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="bGw-jV-vLD" secondAttribute="height" multiplier="1:1" id="O7i-e7-Zxh"/>
@@ -150,8 +150,8 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="bGw-jV-vLD" secondAttribute="bottom" constant="10" id="5fs-Bl-MKX"/>
-                                                <constraint firstItem="bGw-jV-vLD" firstAttribute="top" secondItem="Yup-fS-7SC" secondAttribute="top" constant="10" id="YPS-z0-vQx"/>
+                                                <constraint firstAttribute="bottom" secondItem="bGw-jV-vLD" secondAttribute="bottom" id="5fs-Bl-MKX"/>
+                                                <constraint firstItem="bGw-jV-vLD" firstAttribute="top" secondItem="Yup-fS-7SC" secondAttribute="top" id="YPS-z0-vQx"/>
                                                 <constraint firstItem="bGw-jV-vLD" firstAttribute="centerX" secondItem="Yup-fS-7SC" secondAttribute="centerX" id="rAc-K7-fxe"/>
                                             </constraints>
                                         </view>

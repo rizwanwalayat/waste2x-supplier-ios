@@ -37,8 +37,9 @@ class SupplyingTypeViewController: BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
-        
-        nextButtonBottomConstraints.constant = tabbarViewHeight+10
+//        nextButtonBottomConstraints.constant = 0
+//        nextButtonBottomConstraints.constant = tabbarViewHeight+10
+        globalObjectContainer?.tabbarHiddenView.isHidden = true
         
     }
     
