@@ -39,8 +39,7 @@ class NotificationsViewController: BaseViewController {
             let vc = TrackerViewController(nibName: "TrackerViewController", bundle: nil)
             self.navigationController?.pushTo(controller: vc)
         default:
-            let vc = NotificationsViewController(nibName: "NotificationsViewController", bundle: nil)
-            self.navigationController?.pushTo(controller: vc)
+            print("nothing")
         }
     }
     

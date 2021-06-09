@@ -36,6 +36,15 @@ struct NetworkingConnection {
         kApplicationWindow?.makeKeyAndVisible()
     }
     
+    class func homeViewController () {
+        let slider = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
+        let navigationController = BaseNavigationViewController()
+        navigationController.viewControllers = [slider]
+        kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)
+        kApplicationWindow?.rootViewController = navigationController
+        kApplicationWindow?.makeKeyAndVisible()
+    }
+    
     class func setupHomeAsRootViewController () {
         let slideMenuController = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
         kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)

@@ -40,9 +40,9 @@ class HomeViewController: BaseViewController {
         tableView.reloadData()
         setAttributedTextInLable(emailAddress: email)
         self.indicatorMarker.currentPage = 0
+        indicatorMarker.numberOfPages = images.count
         let progressbarAdjustment = UIScreen.main.bounds.height / 222
         progressBar.transform = CGAffineTransform(scaleX: 1, y: progressbarAdjustment)
-        indicatorMarker.numberOfPages = images.count
         count = images.count-1
         collectionDataSourceDelegate(outlet: weatherCollectionView)
         collectionDataSourceDelegate(outlet: wasteTypeCollectionView)
@@ -58,11 +58,17 @@ class HomeViewController: BaseViewController {
         }
         
         wasteTypeCollectionView.contentInset  = .zero
-        let heightAdjustment = UIScreen.main.bounds.height * 0.223214
-        let adjustment = UIScreen.main.bounds.height * 0.446428
-        pendingCollection ? (tableViewHeight.constant = adjustment) : (tableViewHeight.constant = heightAdjustment)
-        self.view.layoutIfNeeded()
+//        let heightAdjustment = UIScreen.main.bounds.height * 0.24//0.223214
+//        let adjustment = UIScreen.main.bounds.height * 0.48//0.446428
+//        pendingCollection ? (tableViewHeight.constant = adjustment) : (tableViewHeight.constant = heightAdjustment)
+        
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableViewHeight.constant = self.tableView.contentSize.height
+            self.view.layoutIfNeeded()
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -142,7 +148,7 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func viewAllAction(_ sender: Any) {
-        let vc = PendingCollectionViewController(nibName: "PendingCollectionViewController", bundle: nil)
+        let vc = CurrentWasteViewController(nibName: "CurrentWasteViewController", bundle: nil)
         self.navigationController?.pushTo(controller: vc)
     }
     
@@ -151,7 +157,7 @@ class HomeViewController: BaseViewController {
 
 //MARK: - Extentions
 
-extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate{
+extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == weatherCollectionView {
             return 5
@@ -185,6 +191,7 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
             return CGSize(width: (wasteTypeCollectionView.bounds.width - 100), height: wasteTypeCollectionView.bounds.height)
         }
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
         
@@ -199,8 +206,6 @@ extension HomeViewController:UICollectionViewDelegate,UICollectionViewDataSource
             }
         }
     }
-    
-    
 }
 
 //MARK: - TableView
@@ -248,9 +253,9 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return pendingCollection ? (tableView.frame.height / 2) : tableView.frame.height
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return pendingCollection ? (tableView.frame.height / 2) : tableView.frame.height
+//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -277,7 +282,11 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         let indexPath = wasteTypeCollectionView.indexPath(for: cell ?? UICollectionViewCell())
         if let index = indexPath{
             supplierCell?.config(index: index.row)
-            self.indicatorMarker.currentPage = Int(scrollView.contentOffset.x + 100) / Int(scrollView.frame.width)
+        }
+        
+        if scrollView != self.weatherCollectionView {
+            let index = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+            self.indicatorMarker.currentPage = index
         }
     }
     

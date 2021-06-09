@@ -54,7 +54,7 @@ Asked Questions</string>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FpN-gt-qF7">
                     <rect key="frame" x="0.0" y="180" width="375" height="572"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zaN-ds-4o4">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="zaN-ds-4o4">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="572"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <connections>
