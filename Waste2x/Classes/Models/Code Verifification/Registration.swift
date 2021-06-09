@@ -32,6 +32,7 @@ class Registration : Mappable {
             if error == nil {
         
                 if let data = result as AnyObject? {
+                    
                     completion(data, nil, 200)
                     
                 } else {
