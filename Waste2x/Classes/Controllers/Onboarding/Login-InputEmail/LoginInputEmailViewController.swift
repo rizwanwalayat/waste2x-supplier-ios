@@ -21,7 +21,6 @@ class LoginInputEmailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         nextButton.makeEnable(value: false)
     }
 
@@ -29,9 +28,13 @@ class LoginInputEmailViewController: BaseViewController {
     // MARK: - Actions
 
     @IBAction func nextButtonPressed(_ sender: Any) {
-        let slider = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
-//        let codeVerificationVC = ContainerViewController(nibName: "ContainerViewController", bundle: nil)
-        self.navigationController?.setViewControllers([slider], animated: true) //pushViewController(slider, animated: true)
+        Registration.emailVerification(email: self.emailAddressTextField.text!) { result, error, status in
+            if error == nil{
+            let slider = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
+                self.navigationController?.setViewControllers([slider], animated: true)
+            }
+        }
+
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {

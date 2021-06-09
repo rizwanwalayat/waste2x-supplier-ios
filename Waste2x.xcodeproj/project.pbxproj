@@ -91,6 +91,10 @@
 		1810253E2657E48500DEBF7D /* FaqViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181025342657E48500DEBF7D /* FaqViewController.xib */; };
 		1810253F2657E48500DEBF7D /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181025352657E48500DEBF7D /* HomeViewController.xib */; };
 		181025402657E48500DEBF7D /* FaqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181025362657E48500DEBF7D /* FaqViewController.swift */; };
+		183262742670A3A500F0CCBA /* CodeVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183262732670A3A500F0CCBA /* CodeVerification.swift */; };
+		183262762670BB8400F0CCBA /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183262752670BB8400F0CCBA /* Registration.swift */; };
+		183262792670C68A00F0CCBA /* InviteSupplierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183262772670C68A00F0CCBA /* InviteSupplierViewController.swift */; };
+		1832627A2670C68A00F0CCBA /* InviteSupplierViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183262782670C68A00F0CCBA /* InviteSupplierViewController.xib */; };
 		18342C77266E436E00A678D3 /* FormOfWasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18342C75266E436E00A678D3 /* FormOfWasteViewController.swift */; };
 		18342C78266E436E00A678D3 /* FormOfWasteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18342C76266E436E00A678D3 /* FormOfWasteViewController.xib */; };
 		18397DCD2660FD35003DE30C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18397DCA2660FD35003DE30C /* LoginViewModel.swift */; };
@@ -265,6 +269,10 @@
 		181025342657E48500DEBF7D /* FaqViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FaqViewController.xib; sourceTree = "<group>"; };
 		181025352657E48500DEBF7D /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		181025362657E48500DEBF7D /* FaqViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqViewController.swift; sourceTree = "<group>"; };
+		183262732670A3A500F0CCBA /* CodeVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVerification.swift; sourceTree = "<group>"; };
+		183262752670BB8400F0CCBA /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
+		183262772670C68A00F0CCBA /* InviteSupplierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteSupplierViewController.swift; sourceTree = "<group>"; };
+		183262782670C68A00F0CCBA /* InviteSupplierViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InviteSupplierViewController.xib; sourceTree = "<group>"; };
 		18342C75266E436E00A678D3 /* FormOfWasteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormOfWasteViewController.swift; sourceTree = "<group>"; };
 		18342C76266E436E00A678D3 /* FormOfWasteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormOfWasteViewController.xib; sourceTree = "<group>"; };
 		18397DCA2660FD35003DE30C /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -405,6 +413,7 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				183262722670A38F00F0CCBA /* Code Verifification */,
 				0067A307252AFBAF00CECA8C /* Login */,
 			);
 			path = Models;
@@ -823,6 +832,15 @@
 			path = Tabs;
 			sourceTree = "<group>";
 		};
+		183262722670A38F00F0CCBA /* Code Verifification */ = {
+			isa = PBXGroup;
+			children = (
+				183262732670A3A500F0CCBA /* CodeVerification.swift */,
+				183262752670BB8400F0CCBA /* Registration.swift */,
+			);
+			path = "Code Verifification";
+			sourceTree = "<group>";
+		};
 		18342C79266E438300A678D3 /* Form */ = {
 			isa = PBXGroup;
 			children = (
@@ -911,6 +929,8 @@
 				1849F5A6266FE31B0001B533 /* Views */,
 				1849F5A2266FDFD60001B533 /* ContactsFetchViewController.swift */,
 				1849F5A3266FDFD60001B533 /* ContactsFetchViewController.xib */,
+				183262772670C68A00F0CCBA /* InviteSupplierViewController.swift */,
+				183262782670C68A00F0CCBA /* InviteSupplierViewController.xib */,
 			);
 			path = "Contacts Fetch";
 			sourceTree = "<group>";
@@ -1201,6 +1221,7 @@
 				1893756F266127F800D55A33 /* CurrentWasteViewController.xib in Resources */,
 				1893756D266127F800D55A33 /* CurrentWasteTableViewCell.xib in Resources */,
 				184F51682667A46400F0328A /* PendingCollectionViewController.xib in Resources */,
+				1832627A2670C68A00F0CCBA /* InviteSupplierViewController.xib in Resources */,
 				0463F2E1266E09EE00E8924D /* GoogleService-Info.plist in Resources */,
 				18D1A367266A2B77009CAD26 /* TrackerViewController.xib in Resources */,
 				18719142266667420050FAAA /* AudioTableViewCell.xib in Resources */,
@@ -1352,6 +1373,7 @@
 				18666B2326666175005C1A78 /* VideoTableViewCell.swift in Sources */,
 				0043454F2548302A009A6166 /* UserData.swift in Sources */,
 				1810252A2657E36500DEBF7D /* Extentions.swift in Sources */,
+				183262742670A3A500F0CCBA /* CodeVerification.swift in Sources */,
 				04C31D1226678E1800A1CF9C /* ScheduleViewModel.swift in Sources */,
 				04C2361C2669224600A27B78 /* Array.swift in Sources */,
 				1850CEF9265E5491001F5E92 /* SupplierTableViewCell.swift in Sources */,
@@ -1395,6 +1417,7 @@
 				1810253C2657E48500DEBF7D /* HomeViewController.swift in Sources */,
 				18937566266127F800D55A33 /* NewWasteSizeViewController.swift in Sources */,
 				0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */,
+				183262792670C68A00F0CCBA /* InviteSupplierViewController.swift in Sources */,
 				1849F5A4266FDFD60001B533 /* ContactsFetchViewController.swift in Sources */,
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,
 				188B36D32668C95A0036B412 /* UnconfirmPendingCollectionTableViewCell.swift in Sources */,
@@ -1410,6 +1433,7 @@
 				04C82E1A2664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift in Sources */,
 				048582C02667BEC70077B42E /* ScheduleOptionsTableViewCell.swift in Sources */,
 				041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */,
+				183262762670BB8400F0CCBA /* Registration.swift in Sources */,
 				00434544254825AE009A6166 /* DataManager.swift in Sources */,
 				1810253D2657E48500DEBF7D /* NewsViewController.swift in Sources */,
 				18397DCF2660FD35003DE30C /* LoginViewController.swift in Sources */,

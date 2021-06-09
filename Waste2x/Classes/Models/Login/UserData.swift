@@ -4,6 +4,8 @@ import ObjectMapper
 
 typealias LoginUserCompletionHandler = (_ data: UserData?, _ error: Error?, _ status: Int?) -> Void
 typealias ForgotPasswordCompletionHandler = (_ data: AnyObject?, _ error: Error?, _ status: Int?) -> Void
+typealias RegistrationCompletionHandler = (_ data: AnyObject?, _ error: Error?, _ status: Int?) -> Void
+typealias EmailRegistrationCompletionHandler = (_ data: AnyObject?, _ error: Error?, _ status: Int?) -> Void
 
 
 class UserData : Mappable {
@@ -43,48 +45,49 @@ class UserData : Mappable {
             }
         }
     }
-    
-    class func createUser(user: [String: String], _ completion: @escaping LoginUserCompletionHandler) {
-    
-        APIClient.shared.createUser(params: user) { (result, error, status) in
-            Utility.hideLoading()
-            
-            if error == nil {
-        
-                if let data = Mapper<UserData>().map(JSON: result as! [String : Any]) {
-                    DataManager.shared.setUser(user: data.toJSONString() ?? "")
-                    UserData.shared = data
-                    completion(data, nil, 200)
-                    
-                } else {
-                    completion(nil, nil, 201)
-                }
-                
-            } else {
-                 completion(nil, error, 404)
-            }
-        }
-    }
-    
-    class func forgotPassword(email: String, _ completion: @escaping ForgotPasswordCompletionHandler) {
-    
-        Utility.showLoading()
-        APIClient.shared.forgotPasswordMethod(email: email) { (result, error, status) in
-            Utility.hideLoading()
-            
-
-            if error == nil {
-        
-                if let data = result as AnyObject? {
-                    completion(data, nil, 200)
-                    
-                } else {
-                    completion(nil, nil, 201)
-                }
-                
-            } else {
-                 completion(nil, error, 404)
-            }
-        }
-    }
 }
+    
+//    class func createUser(user: [String: String], _ completion: @escaping LoginUserCompletionHandler) {
+//
+//        APIClient.shared.createUser(params: user) { (result, error, status) in
+//            Utility.hideLoading()
+//
+//            if error == nil {
+//
+//                if let data = Mapper<UserData>().map(JSON: result as! [String : Any]) {
+//                    DataManager.shared.setUser(user: data.toJSONString() ?? "")
+//                    UserData.shared = data
+//                    completion(data, nil, 200)
+//
+//                } else {
+//                    completion(nil, nil, 201)
+//                }
+//
+//            } else {
+//                 completion(nil, error, 404)
+//            }
+//        }
+//    }
+    
+//    class func forgotPassword(email: String, _ completion: @escaping ForgotPasswordCompletionHandler) {
+//
+//        Utility.showLoading()
+//        APIClient.shared.forgotPasswordMethod(email: email) { (result, error, status) in
+//            Utility.hideLoading()
+//
+//
+//            if error == nil {
+//
+//                if let data = result as AnyObject? {
+//                    completion(data, nil, 200)
+//
+//                } else {
+//                    completion(nil, nil, 201)
+//                }
+//
+//            } else {
+//                 completion(nil, error, 404)
+//            }
+//        }
+//    }
+//}

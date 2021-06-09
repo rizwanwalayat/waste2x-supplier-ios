@@ -25,6 +25,7 @@ class Global {
     var current_lat = Double()
     var current_lng = Double()
     var location = CLLocation()
+    var fireBaseToken = ""
     
     
     

@@ -74,6 +74,21 @@ class APIClient: APIClientHandler {
         _ = sendRequest(APIRoutes.login , parameters: params as [String : AnyObject],httpMethod: .post , headers: nil, completionBlock: completionBlock)
     }
     
+    func verificationCode(number: String, _ completionBlock: @escaping APIClientCompletionHandler) {
+        let params = ["phone": number] as [String:String]
+        _ = sendRequest(APIRoutes.login , parameters: params as [String : AnyObject],httpMethod: .post , headers: nil, completionBlock: completionBlock)
+    }
+    func emailVerification(email: String, _ completionBlock: @escaping APIClientCompletionHandler) {
+        let params = ["email": email] as [String:String]
+        _ = sendRequest(APIRoutes.emailVerification , parameters: params as [String : AnyObject],httpMethod: .post , headers: nil, completionBlock: completionBlock)
+    }
+    
+    func userRegistration(phone: String,code: String,latitude: Double,longitude: Double,firebase_token: String,phone_imei: Int,phone_os: String,phone_model: String, _ completionBlock: @escaping APIClientCompletionHandler) {
+        let params = ["phone":phone,"code":code,"latitude":latitude,"longitude":longitude,"firebase_token":firebase_token,"phone_imei":phone_imei,"phone_os":phone_os,"phone_model":phone_model] as [String:Any]
+        _ = sendRequest(APIRoutes.registration , parameters: params as [String : AnyObject],httpMethod: .post , headers: nil, completionBlock: completionBlock)
+    }
+    
+    
     func createUser(params: [String: String],_ completionBlock: @escaping APIClientCompletionHandler) {
         _ = sendRequest(APIRoutes.createUser , parameters: params as [String : AnyObject],httpMethod: .post , headers: nil, completionBlock: completionBlock)
     }

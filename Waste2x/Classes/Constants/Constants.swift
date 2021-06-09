@@ -34,10 +34,18 @@ enum UserType: String {
 
 
 struct APIRoutes {
-    static var baseUrl = "https://doro-backend.codesorbit.com"
+    static var baseUrl = "http://enmass-cache-programme.appspot.com/"
     static var imageBaseUrl = "/api/shared/user/userImage"
-    static var login = "/api/auth/login"
-    static var getUserProfile = "/api/shared/user/userProfile"
+    static var login = "paudapay_us/send_code/"
+    static var registration = "paudapay_us/registration/"
+    static var emailVerification = "paudapay_us/verify_email/"
+    
+    
+    
+    
+    
+    
+    
     static var createUser = "/api/shared/user/create"
     static var updateUser = "/api/shared/user/update"
     static var forgotPassword = "/api/shared/user/forgetPassword"

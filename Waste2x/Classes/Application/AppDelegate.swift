@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 30
         Messaging.messaging().delegate = self
         pushNotification(applicationVariable: application, launchOptionsVariable: launchOptions)
-        Utility.setupHomeAsRootViewController()
+        Utility.loginRootViewController()
         GMSServices.provideAPIKey(googleAPIKey)
         GMSPlacesClient.provideAPIKey(googleAPIKey)
         initializeLocationManager()
@@ -166,6 +166,7 @@ extension AppDelegate : MessagingDelegate {
   // [START refresh_token]
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
         if let fcmTokenVariable = fcmToken {
+            Global.shared.fireBaseToken = fcmTokenVariable
             FireBaseVariables.fireBaseToken = fcmTokenVariable
             print("Firebase registration token: \(fcmTokenVariable)")
         }

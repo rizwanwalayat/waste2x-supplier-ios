@@ -11,6 +11,8 @@ import Contacts
 
 class ContactsFetchViewController: BaseViewController {
     var contacts = [CNContact]()
+    var tableViewIndex = -1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let contactStore = CNContactStore()
@@ -32,6 +34,7 @@ class ContactsFetchViewController: BaseViewController {
                         print("\(contact.givenName) \(contact.familyName) tel:\(localizedLabel) -- \(number.stringValue), email: \(contact.emailAddresses)")
                     }
                 }
+//                print(self.contacts)
             }
         } catch {
             print("unable to fetch contacts")
@@ -49,13 +52,13 @@ extension ContactsFetchViewController : UITableViewDelegate,UITableViewDataSourc
         let cell = tableView.register(ContactFetchTableViewCell.self, indexPath: indexPath)
         cell.textLabel?.text = contacts[indexPath.row].givenName
         let phone = contacts[indexPath.row].phoneNumbers
-        cell.textLabel?.text = "\(phone)"
         cell.selectionStyle = .none
         return cell
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        self.tableViewIndex = indexPath.row
     }
     
 }
