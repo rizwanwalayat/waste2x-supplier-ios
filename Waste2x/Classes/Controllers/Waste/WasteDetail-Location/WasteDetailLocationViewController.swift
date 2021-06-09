@@ -37,12 +37,24 @@ class WasteDetailLocationViewController: BaseViewController {
     var selectedPlace               : GMSPlace?
     var marker                      : GMSMarker?
     var delegate                    : WasteDetailLocationViewControllerDelegate?
-    var isForSiteCreation           = true
+    var isForSiteCreation           = false
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configLocation()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        
+        if !isForSiteCreation {
+            constBottom.constant = tabbarViewHeight+15
+            
+        }
+        mapView.layer.cornerRadius = 36
+        mapView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        mapView.layer.masksToBounds = true
+        
     }
     
     //MARK: - Functions

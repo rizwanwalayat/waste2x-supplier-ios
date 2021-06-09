@@ -32,7 +32,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1m-F4-IAC">
-                    <rect key="frame" x="0.0" y="124" width="414" height="646"/>
+                    <rect key="frame" x="0.0" y="154" width="414" height="616"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhZ-TM-gPJ" userLabel="MainView">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="474.5"/>
@@ -102,10 +102,10 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3i-KB-Z8y" userLabel="Nav">
-                    <rect key="frame" x="0.0" y="64" width="414" height="60"/>
+                    <rect key="frame" x="0.0" y="64" width="414" height="90"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NsP-0L-kyb" customClass="StepIndicatorView" customModule="StepIndicator">
-                            <rect key="frame" x="52" y="10" width="310.5" height="10"/>
+                            <rect key="frame" x="52" y="40" width="310.5" height="10"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="R1n-Au-vGe"/>
@@ -145,7 +145,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tST-bp-01C">
-                            <rect key="frame" x="52" y="30" width="310.5" height="20"/>
+                            <rect key="frame" x="52" y="60" width="310.5" height="20"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8QV-9G-S4w">
                                     <rect key="frame" x="0.0" y="0.0" width="103.5" height="20"/>
@@ -173,7 +173,7 @@
                         <constraint firstAttribute="bottom" secondItem="tST-bp-01C" secondAttribute="bottom" constant="10" id="Ayp-Ua-3a3"/>
                         <constraint firstItem="tST-bp-01C" firstAttribute="width" secondItem="NsP-0L-kyb" secondAttribute="width" id="MAu-Qu-5OH"/>
                         <constraint firstItem="tST-bp-01C" firstAttribute="top" secondItem="NsP-0L-kyb" secondAttribute="bottom" constant="10" id="YSM-8w-5KR"/>
-                        <constraint firstItem="NsP-0L-kyb" firstAttribute="centerY" secondItem="O3i-KB-Z8y" secondAttribute="centerY" constant="-15" id="ii5-qy-gHd"/>
+                        <constraint firstItem="NsP-0L-kyb" firstAttribute="centerY" secondItem="O3i-KB-Z8y" secondAttribute="centerY" id="ii5-qy-gHd"/>
                         <constraint firstItem="NsP-0L-kyb" firstAttribute="width" secondItem="O3i-KB-Z8y" secondAttribute="width" multiplier="0.75" id="tw9-Tl-cdR"/>
                         <constraint firstItem="tST-bp-01C" firstAttribute="centerX" secondItem="O3i-KB-Z8y" secondAttribute="centerX" id="wxh-8F-Whn"/>
                         <constraint firstItem="NsP-0L-kyb" firstAttribute="centerX" secondItem="O3i-KB-Z8y" secondAttribute="centerX" id="xdq-3Q-nPh"/>

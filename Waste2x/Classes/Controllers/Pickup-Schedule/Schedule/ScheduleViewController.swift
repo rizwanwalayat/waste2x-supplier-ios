@@ -88,8 +88,6 @@ class ScheduleViewController: BaseViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        backgroundColoredView.roundCorners(uiViewCorners: .top, radius: 32)
         self.view.layoutIfNeeded()
         
     }
@@ -102,9 +100,13 @@ class ScheduleViewController: BaseViewController {
                     self.selectLocationLabel.text =  address ?? ""
                 }
             }
+        backgroundColoredView.layer.cornerRadius = 36
+        backgroundColoredView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        backgroundColoredView.layer.masksToBounds = true
         
         
     }
+    
     // MARK: - Actions
     @IBAction func backButtonPressed(_ sender: Any) {
         

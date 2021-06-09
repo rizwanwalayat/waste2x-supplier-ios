@@ -22,11 +22,12 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var indicatorMarker: UIPageControl!
     @IBOutlet weak var homeScrollview : UIScrollView!
+    @IBOutlet weak var bottomConst: NSLayoutConstraint!
     
     //MARK: - Variables
     var notification:Bool = true
     var email:String = "Haid3rawan@icloud.com"
-    var pendingCollection = true
+    var pendingCollection = false
     var timer: Timer?
     var count = Int()
     var selecetedIndex = 0
@@ -36,6 +37,7 @@ class HomeViewController: BaseViewController {
     //MARK: - AppCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        bottomConst.constant = tabbarViewHeight
         globalObjectHome = self
         tableView.reloadData()
         setAttributedTextInLable(emailAddress: email)
@@ -75,6 +77,7 @@ class HomeViewController: BaseViewController {
         weatherCollectionView.reloadData()
         tableView.reloadData()
     }
+    
     
     //MARK: - Logic For Slider
     

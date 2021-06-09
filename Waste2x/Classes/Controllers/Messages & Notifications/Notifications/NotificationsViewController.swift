@@ -23,14 +23,17 @@ class NotificationsViewController: BaseViewController {
         notificationsTableview.register(UINib(nibName: "NotificationsTableViewCell", bundle: nil), forCellReuseIdentifier: "NotificationsTableViewCell")
         notificationsTableview.rowHeight = UITableView.automaticDimension
         notificationsTableview.estimatedRowHeight = UITableView.automaticDimension
-        
-        mainHolderView.roundCorners(uiViewCorners: .top, radius: 32)
         bottomConst.constant = tabbarViewHeight
         self.view.layoutIfNeeded()
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         globalObjectContainer?.tabbarHiddenView.isHidden = false
+        
+        mainHolderView.layer.cornerRadius = 36
+        mainHolderView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        mainHolderView.layer.masksToBounds = true
+        
         
     }
     

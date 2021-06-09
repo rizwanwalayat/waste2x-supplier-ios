@@ -21,6 +21,7 @@
             <connections>
                 <outlet property="addressLabel" destination="B1Q-Zb-CCt" id="JiG-jz-Tjf"/>
                 <outlet property="bottomConstraints" destination="8TK-u4-YNd" id="gXk-UH-RFi"/>
+                <outlet property="collectionViewConst" destination="efI-Hk-TZF" id="sD1-oH-u8L"/>
                 <outlet property="collectionviewImages" destination="wUj-Dp-H01" id="IYE-Di-LGQ"/>
                 <outlet property="detailHolderview" destination="nYN-rU-6Ql" id="CbL-s2-z0z"/>
                 <outlet property="editButton" destination="e5d-rS-H7A" id="crX-a1-etA"/>
@@ -44,10 +45,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iur-os-tHF">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="496"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYN-rU-6Ql">
-                                    <rect key="frame" x="30" y="30" width="315" height="510"/>
+                                    <rect key="frame" x="30" y="30" width="315" height="365"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poultry" translatesAutoresizingMaskIntoConstraints="NO" id="gvh-pg-42R">
                                             <rect key="frame" x="27" y="34" width="85" height="85"/>
@@ -224,10 +225,10 @@ United States of America</string>
                                             </constraints>
                                         </view>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wUj-Dp-H01">
-                                            <rect key="frame" x="7" y="343" width="301" height="145"/>
+                                            <rect key="frame" x="7" y="343" width="301" height="0.0"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="145" id="efI-Hk-TZF"/>
+                                                <constraint firstAttribute="height" id="efI-Hk-TZF"/>
                                             </constraints>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="15" minimumInteritemSpacing="15" id="6jk-vG-Rf4">
                                                 <size key="itemSize" width="128" height="128"/>
@@ -286,7 +287,7 @@ United States of America</string>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNx-XS-bsc">
-                                    <rect key="frame" x="30" y="573" width="315" height="58"/>
+                                    <rect key="frame" x="30" y="428" width="315" height="58"/>
                                     <color key="backgroundColor" red="0.49019607843137253" green="0.61568627450980395" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="58" id="88F-Vm-cVu"/>

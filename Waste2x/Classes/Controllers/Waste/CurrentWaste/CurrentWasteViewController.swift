@@ -21,13 +21,21 @@ class CurrentWasteViewController: BaseViewController {
         currentWasteTableview.register(UINib(nibName: "CurrentWasteTableViewCell", bundle: nil), forCellReuseIdentifier: "CurrentWasteTableViewCell")
         currentWasteTableview.rowHeight = UITableView.automaticDimension
         currentWasteTableview.estimatedRowHeight = UITableView.automaticDimension
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+
+        backgroundHolderview.layer.cornerRadius = 36
+        backgroundHolderview.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        backgroundHolderview.layer.masksToBounds = true
         
-        backgroundHolderview.roundCorners(uiViewCorners: .top, radius: 32)
+        
     }
 
     @IBAction func backButtonPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
     
 }
 
