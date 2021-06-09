@@ -421,7 +421,7 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				183262722670A38F00F0CCBA /* Code Verifification */,
+				183262722670A38F00F0CCBA /* Code Verification */,
 				0067A307252AFBAF00CECA8C /* Login */,
 			);
 			path = Models;
@@ -858,13 +858,13 @@
 			path = Tabs;
 			sourceTree = "<group>";
 		};
-		183262722670A38F00F0CCBA /* Code Verifification */ = {
+		183262722670A38F00F0CCBA /* Code Verification */ = {
 			isa = PBXGroup;
 			children = (
 				183262732670A3A500F0CCBA /* CodeVerification.swift */,
 				183262752670BB8400F0CCBA /* Registration.swift */,
 			);
-			path = "Code Verifification";
+			path = "Code Verification";
 			sourceTree = "<group>";
 		};
 		18342C79266E438300A678D3 /* Form */ = {
