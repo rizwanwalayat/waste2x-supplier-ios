@@ -19,6 +19,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Waste2x" customModuleProvider="target">
             <connections>
+                <outlet property="bottomConst" destination="ydK-LX-bcs" id="Fo0-4g-y3F"/>
                 <outlet property="homeScrollview" destination="IAV-u5-OWe" id="DUY-Fd-QDV"/>
                 <outlet property="indicatorMarker" destination="y16-Fi-04U" id="PqN-5g-MDC"/>
                 <outlet property="notificationMark" destination="kdn-zJ-hxw" id="JIM-qW-2a7"/>
@@ -222,10 +223,10 @@
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAV-u5-OWe">
-                    <rect key="frame" x="0.0" y="241.66666666666666" width="414" height="494.33333333333326"/>
+                    <rect key="frame" x="0.0" y="241.66666666666666" width="414" height="494.33333333333337"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eR6-Va-5fB">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="484.33333333333331"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="394.33333333333331"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kc3-On-fte">
                                     <rect key="frame" x="29.999999999999993" y="25.000000000000028" width="108.33333333333331" height="21"/>
@@ -263,21 +264,21 @@
                                     <color key="currentPageIndicatorTintColor" red="0.43137254899999999" green="0.54901960780000003" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </pageControl>
                                 <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pka-2w-Hhg">
-                                    <rect key="frame" x="0.0" y="204.33333333333337" width="414" height="200"/>
+                                    <rect key="frame" x="0.0" y="194.33333333333337" width="414" height="200"/>
                                     <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="200" id="ggk-Ym-Ask"/>
                                     </constraints>
                                 </tableView>
                             </subviews>
-                            <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="Pka-2w-Hhg" firstAttribute="top" secondItem="y16-Fi-04U" secondAttribute="bottom" constant="10" id="3Pn-uc-ogS"/>
+                                <constraint firstItem="Pka-2w-Hhg" firstAttribute="top" secondItem="y16-Fi-04U" secondAttribute="bottom" id="3Pn-uc-ogS"/>
                                 <constraint firstItem="UJV-KS-rAk" firstAttribute="centerY" secondItem="kc3-On-fte" secondAttribute="centerY" id="BEe-Za-iPC"/>
                                 <constraint firstItem="y16-Fi-04U" firstAttribute="centerX" secondItem="eR6-Va-5fB" secondAttribute="centerX" id="BdM-WP-dis"/>
                                 <constraint firstItem="Pka-2w-Hhg" firstAttribute="leading" secondItem="eR6-Va-5fB" secondAttribute="leading" id="JrQ-yt-xxJ"/>
                                 <constraint firstAttribute="trailing" secondItem="MAg-aS-k9i" secondAttribute="trailing" id="Lc5-z6-gmf"/>
-                                <constraint firstAttribute="bottom" secondItem="Pka-2w-Hhg" secondAttribute="bottom" constant="80" id="Phd-oI-xB2"/>
+                                <constraint firstAttribute="bottom" secondItem="Pka-2w-Hhg" secondAttribute="bottom" id="Phd-oI-xB2"/>
                                 <constraint firstItem="kc3-On-fte" firstAttribute="top" secondItem="eR6-Va-5fB" secondAttribute="top" constant="25" id="Pwe-hL-t8H"/>
                                 <constraint firstItem="MAg-aS-k9i" firstAttribute="leading" secondItem="eR6-Va-5fB" secondAttribute="leading" id="Q9U-Vn-Jhc"/>
                                 <constraint firstItem="MAg-aS-k9i" firstAttribute="top" secondItem="kc3-On-fte" secondAttribute="bottom" constant="16" id="VoJ-qw-Wfi"/>
@@ -288,13 +289,13 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="eR6-Va-5fB" firstAttribute="leading" secondItem="IAV-u5-OWe" secondAttribute="leading" id="3LF-QA-0jp"/>
                         <constraint firstItem="eR6-Va-5fB" firstAttribute="top" secondItem="IAV-u5-OWe" secondAttribute="top" id="LT4-Mu-f9w"/>
                         <constraint firstItem="eR6-Va-5fB" firstAttribute="centerX" secondItem="IAV-u5-OWe" secondAttribute="centerX" id="bx7-QT-OBV"/>
                         <constraint firstAttribute="trailing" secondItem="eR6-Va-5fB" secondAttribute="trailing" id="jgy-Gl-DoH"/>
-                        <constraint firstAttribute="bottom" secondItem="eR6-Va-5fB" secondAttribute="bottom" constant="43" id="yOw-CN-Yha"/>
+                        <constraint firstAttribute="bottom" secondItem="eR6-Va-5fB" secondAttribute="bottom" id="yOw-CN-Yha"/>
                     </constraints>
                 </scrollView>
             </subviews>

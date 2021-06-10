@@ -83,14 +83,29 @@ class ScheduleViewController: BaseViewController {
     let selectDateTimePlaceholder = "Select Date and Time"
     let selectLocationPlaceHolder = "Select Location"
     let selectFrequencyPerodicPlaceholder = "Select Frequency / Periodic"
-    
+    var locationAutoFill = false
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        backgroundColoredView.roundCorners(uiViewCorners: .top, radius: 32)
         self.view.layoutIfNeeded()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        Global.shared.convertLocationToAddress(location: Global.shared.location) { (success, address) in
+            if success
+            {
+                self.selectLocationLabel.text =  address ?? ""
+                self.selectionHandlingsOfViews(self.selectLocationHolderview, isSelection: true)
+                self.locationAutoFill = true
+            }
+        }
+        backgroundColoredView.layer.cornerRadius = 36
+        backgroundColoredView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        backgroundColoredView.layer.masksToBounds = true
+        
         
     }
     
@@ -112,7 +127,8 @@ class ScheduleViewController: BaseViewController {
     @IBAction func selectLocationButtonPressed(_ sender: Any) {
         
         if selectionType != .none {
-            showMapView()
+//            showMapView()
+            
         }
     }
     

@@ -19,6 +19,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WasteDetailLocationViewController" customModule="Waste2x" customModuleProvider="target">
             <connections>
+                <outlet property="constBottom" destination="rlk-gl-WLa" id="pYV-TA-SzQ"/>
                 <outlet property="mapView" destination="qbT-6v-hq3" id="ZsQ-AP-BeN"/>
                 <outlet property="nextButton" destination="utG-VH-QwY" id="nN8-mD-hAp"/>
                 <outlet property="searchIcon" destination="boG-Hz-Kjm" id="wA6-Q4-izA"/>

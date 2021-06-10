@@ -46,6 +46,7 @@ class AmountWasteViewController: BaseViewController {
     @IBAction func nextButtonPressed(_ sender: Any) {
         
         let vc = WasteDetailLocationViewController(nibName: "WasteDetailLocationViewController", bundle: nil)
+        vc.isForSiteCreation = true
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true, completion: nil)
     }
@@ -64,6 +65,14 @@ extension AmountWasteViewController : UITextFieldDelegate
         {
             self.selectionHandlingsOfViews(numberOfTonsPerMonthFieldHolderView, isSelection: true)
         }
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField.text!.count > 8
+        {
+            return false
+            
+        }
+       return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {

@@ -28,17 +28,17 @@ class SupplyingTypeViewController: BaseViewController {
         super.viewDidLoad()
         
         
-        collectionView.reloadData()
-        DispatchQueue.main.async {
-            self.constCollectionViewHeigh.constant = self.collectionView.contentSize.height
-            self.view.layoutIfNeeded()
-        }
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
 //        nextButtonBottomConstraints.constant = 0
 //        nextButtonBottomConstraints.constant = tabbarViewHeight+10
+        
+        collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.constCollectionViewHeigh.constant = self.collectionView.contentSize.height
+            self.view.layoutIfNeeded()
+        }
         globalObjectContainer?.tabbarHiddenView.isHidden = true
         
     }
