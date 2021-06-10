@@ -38,9 +38,9 @@
                                     <constraint firstAttribute="width" secondItem="Z9I-Kq-sWf" secondAttribute="height" multiplier="35:20" id="Djt-eo-h4c"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" text="Wed, 26 Aug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="1sy-A8-fAj">
-                                <rect key="frame" x="2" y="58" width="75" height="20.5"/>
-                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="9"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" text="Wed, 26 Aug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="1sy-A8-fAj">
+                                <rect key="frame" x="4" y="58" width="71" height="20.5"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="8"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -48,13 +48,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fa9-Jg-0qH" firstAttribute="leading" secondItem="u12-gP-WWR" secondAttribute="leading" constant="8" id="8Vs-BH-KvW"/>
-                            <constraint firstAttribute="trailing" secondItem="1sy-A8-fAj" secondAttribute="trailing" constant="2" id="Cpc-NZ-fOQ"/>
+                            <constraint firstAttribute="trailing" secondItem="1sy-A8-fAj" secondAttribute="trailing" constant="4" id="Cpc-NZ-fOQ"/>
                             <constraint firstItem="Z9I-Kq-sWf" firstAttribute="width" secondItem="u12-gP-WWR" secondAttribute="width" multiplier="0.459459" id="Fw4-OZ-VnR"/>
                             <constraint firstItem="fa9-Jg-0qH" firstAttribute="top" secondItem="u12-gP-WWR" secondAttribute="top" constant="5.5" id="Sis-fX-R1I"/>
                             <constraint firstItem="Z9I-Kq-sWf" firstAttribute="centerX" secondItem="u12-gP-WWR" secondAttribute="centerX" id="WSc-AG-Dpx"/>
                             <constraint firstItem="Z9I-Kq-sWf" firstAttribute="centerY" secondItem="u12-gP-WWR" secondAttribute="centerY" id="YI1-Nj-WYV"/>
                             <constraint firstItem="Z9I-Kq-sWf" firstAttribute="top" relation="lessThanOrEqual" secondItem="fa9-Jg-0qH" secondAttribute="bottom" constant="5.5" id="ffi-aD-B6W"/>
-                            <constraint firstItem="1sy-A8-fAj" firstAttribute="leading" secondItem="u12-gP-WWR" secondAttribute="leading" constant="2" id="g8Z-Tb-LBP"/>
+                            <constraint firstItem="1sy-A8-fAj" firstAttribute="leading" secondItem="u12-gP-WWR" secondAttribute="leading" constant="4" id="g8Z-Tb-LBP"/>
                             <constraint firstAttribute="trailing" secondItem="fa9-Jg-0qH" secondAttribute="trailing" constant="8" id="gcG-wL-2cC"/>
                             <constraint firstAttribute="bottom" secondItem="1sy-A8-fAj" secondAttribute="bottom" constant="5.5" id="qkP-eT-5cq"/>
                             <constraint firstItem="1sy-A8-fAj" firstAttribute="top" relation="lessThanOrEqual" secondItem="Z9I-Kq-sWf" secondAttribute="bottom" constant="5.5" id="ruf-qr-Dt7"/>

@@ -25,6 +25,7 @@ class WasteDetailViewController: BaseViewController {
     @IBOutlet weak var takePictureButton    : UIButton!
     
     @IBOutlet weak var bottomConstraints: NSLayoutConstraint!
+    @IBOutlet weak var collectionViewConst: NSLayoutConstraint!
     
     // MARK: - Declarations
     var imagesArray               = [UIImage]()
@@ -76,8 +77,16 @@ class WasteDetailViewController: BaseViewController {
     }
 
     @objc override func imageSelectedFromGalleryOrCamera(selectedImage:UIImage){
+
         imagesArray.append(selectedImage)
         collectionviewImages.reloadData()
+        if imagesArray.count > 0
+            {
+            DispatchQueue.main.async {
+                self.collectionViewConst.constant = 145
+                self.view.layoutIfNeeded()
+            }
+            }
     }
 }
 
