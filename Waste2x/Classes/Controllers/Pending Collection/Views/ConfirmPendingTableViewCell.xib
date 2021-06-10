@@ -123,66 +123,76 @@ California, United State</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9IQ-an-3bU">
                                         <rect key="frame" x="0.0" y="684" width="334" height="326"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLe-Wi-bbF">
-                                                <rect key="frame" x="20" y="0.0" width="63" height="26"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLe-Wi-bbF">
+                                                <rect key="frame" x="20" y="0.0" width="63" height="25.5"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="260" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" text="April 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfU-sa-DAg">
-                                                <rect key="frame" x="20" y="56" width="55" height="67.5"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="April 11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6n-sZ-1I4">
-                                                <rect key="frame" x="20" y="153.5" width="55" height="22.5"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="April 12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJB-8Y-had">
-                                                <rect key="frame" x="20" y="196" width="55" height="45"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="April 13" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lY0-RS-7Ip">
-                                                <rect key="frame" x="20" y="261" width="55" height="45"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Pickup schedule plannedPickup schedule planned" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmR-Ma-HQS">
-                                                <rect key="frame" x="140" y="56" width="194" height="67.5"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Pickup schedule confirmed" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="018-49-K2y">
-                                                <rect key="frame" x="140" y="153.5" width="194" height="22.5"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iND-k8-8br">
-                                                <rect key="frame" x="140" y="196" width="194" height="45"/>
-                                                <string key="text">Vehicle picking up into
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="g8i-Ag-Roj">
+                                                <rect key="frame" x="20" y="41" width="48.5" height="265"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="260" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" text="April 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="WfU-sa-DAg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="48.5" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="April 11" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="P6n-sZ-1I4">
+                                                        <rect key="frame" x="0.0" y="81.5" width="48.5" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="April 12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="eJB-8Y-had">
+                                                        <rect key="frame" x="0.0" y="163.5" width="48.5" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="April 13" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="lY0-RS-7Ip">
+                                                        <rect key="frame" x="0.0" y="245" width="48.5" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wFK-uZ-JmK">
+                                                <rect key="frame" x="123.5" y="41" width="210.5" height="265"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Pickup schedule plannedPickup schedule planned" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="xmR-Ma-HQS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="210.5" height="39.5"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Pickup schedule confirmed" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="018-49-K2y">
+                                                        <rect key="frame" x="0.0" y="81.5" width="210.5" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="iND-k8-8br">
+                                                        <rect key="frame" x="0.0" y="144" width="210.5" height="39.5"/>
+                                                        <string key="text">Vehicle picking up into
 your supplies location</string>
-                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKD-g7-gIu">
-                                                <rect key="frame" x="140" y="261" width="194" height="45"/>
-                                                <string key="text">Your supplies arrived to 
+                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="LKD-g7-gIu">
+                                                        <rect key="frame" x="0.0" y="225.5" width="210.5" height="39.5"/>
+                                                        <string key="text">Your supplies arrived to 
 Enmass Energy</string>
-                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rey-bq-Tcf" customClass="StepIndicatorView" customModule="StepIndicator">
-                                                <rect key="frame" x="105" y="66" width="15" height="230"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rey-bq-Tcf" customClass="StepIndicatorView" customModule="StepIndicator">
+                                                <rect key="frame" x="88.5" y="41" width="15" height="265"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="15" id="zZP-oL-Xb6"/>
@@ -225,40 +235,17 @@ Enmass Energy</string>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="PLe-Wi-bbF" firstAttribute="leading" secondItem="9IQ-an-3bU" secondAttribute="leading" constant="20" id="10A-ib-3sx"/>
-                                            <constraint firstItem="Rey-bq-Tcf" firstAttribute="bottom" secondItem="lY0-RS-7Ip" secondAttribute="bottom" constant="-10" id="1fl-5F-d6E"/>
-                                            <constraint firstItem="Rey-bq-Tcf" firstAttribute="top" secondItem="WfU-sa-DAg" secondAttribute="top" constant="10" id="4zf-Tj-X35"/>
-                                            <constraint firstItem="lY0-RS-7Ip" firstAttribute="leading" secondItem="9IQ-an-3bU" secondAttribute="leading" constant="20" id="5Cd-Fd-2fp"/>
-                                            <constraint firstAttribute="trailing" secondItem="xmR-Ma-HQS" secondAttribute="trailing" id="9b8-9b-nhs"/>
-                                            <constraint firstItem="Rey-bq-Tcf" firstAttribute="leading" secondItem="P6n-sZ-1I4" secondAttribute="trailing" constant="30" id="B76-d7-Plb"/>
-                                            <constraint firstAttribute="bottom" secondItem="LKD-g7-gIu" secondAttribute="bottom" constant="20" id="DJx-j0-7An"/>
-                                            <constraint firstItem="iND-k8-8br" firstAttribute="height" secondItem="eJB-8Y-had" secondAttribute="height" id="Gpq-Qd-jhn"/>
-                                            <constraint firstItem="LKD-g7-gIu" firstAttribute="top" secondItem="iND-k8-8br" secondAttribute="bottom" constant="20" id="HD5-th-PHs"/>
-                                            <constraint firstItem="iND-k8-8br" firstAttribute="top" secondItem="018-49-K2y" secondAttribute="bottom" constant="20" id="IEc-WJ-Fa7"/>
-                                            <constraint firstItem="Rey-bq-Tcf" firstAttribute="leading" secondItem="WfU-sa-DAg" secondAttribute="trailing" constant="30" id="JxF-IZ-xaZ"/>
-                                            <constraint firstItem="Rey-bq-Tcf" firstAttribute="leading" secondItem="eJB-8Y-had" secondAttribute="trailing" constant="30" id="MIm-4G-06N"/>
-                                            <constraint firstItem="xmR-Ma-HQS" firstAttribute="leading" secondItem="Rey-bq-Tcf" secondAttribute="trailing" constant="20" id="NM6-la-9ip"/>
-                                            <constraint firstItem="eJB-8Y-had" firstAttribute="leading" secondItem="9IQ-an-3bU" secondAttribute="leading" constant="20" id="RVq-cO-Bxf"/>
+                                            <constraint firstItem="g8i-Ag-Roj" firstAttribute="top" secondItem="wFK-uZ-JmK" secondAttribute="top" id="3ic-sa-BVS"/>
+                                            <constraint firstItem="g8i-Ag-Roj" firstAttribute="bottom" secondItem="wFK-uZ-JmK" secondAttribute="bottom" id="4ah-nQ-68P"/>
+                                            <constraint firstItem="g8i-Ag-Roj" firstAttribute="leading" secondItem="9IQ-an-3bU" secondAttribute="leading" constant="20" id="Bfd-Yh-Y4n"/>
+                                            <constraint firstItem="Rey-bq-Tcf" firstAttribute="leading" secondItem="g8i-Ag-Roj" secondAttribute="trailing" constant="20" id="FpC-fB-IFD"/>
+                                            <constraint firstAttribute="trailing" secondItem="wFK-uZ-JmK" secondAttribute="trailing" id="KKt-1h-vay"/>
+                                            <constraint firstAttribute="bottom" secondItem="wFK-uZ-JmK" secondAttribute="bottom" constant="20" id="Kbk-TG-tWX"/>
+                                            <constraint firstItem="wFK-uZ-JmK" firstAttribute="leading" secondItem="Rey-bq-Tcf" secondAttribute="trailing" constant="20" id="Nuw-JF-3k9"/>
                                             <constraint firstItem="PLe-Wi-bbF" firstAttribute="top" secondItem="9IQ-an-3bU" secondAttribute="top" id="Tl8-Fg-TK8"/>
-                                            <constraint firstItem="iND-k8-8br" firstAttribute="centerY" secondItem="eJB-8Y-had" secondAttribute="centerY" id="WEO-ve-k8y"/>
-                                            <constraint firstItem="xmR-Ma-HQS" firstAttribute="top" secondItem="9IQ-an-3bU" secondAttribute="top" constant="56" id="ZXL-gQ-vsK"/>
-                                            <constraint firstItem="xmR-Ma-HQS" firstAttribute="height" secondItem="WfU-sa-DAg" secondAttribute="height" id="aJU-fi-uNM"/>
-                                            <constraint firstItem="LKD-g7-gIu" firstAttribute="centerY" secondItem="lY0-RS-7Ip" secondAttribute="centerY" id="aLz-K5-S5U"/>
-                                            <constraint firstItem="LKD-g7-gIu" firstAttribute="leading" secondItem="Rey-bq-Tcf" secondAttribute="trailing" constant="20" id="bI4-TR-ZDh"/>
-                                            <constraint firstItem="018-49-K2y" firstAttribute="centerY" secondItem="P6n-sZ-1I4" secondAttribute="centerY" id="ch9-Ib-fsj"/>
-                                            <constraint firstItem="LKD-g7-gIu" firstAttribute="height" secondItem="lY0-RS-7Ip" secondAttribute="height" id="dbr-cs-aM4"/>
-                                            <constraint firstItem="018-49-K2y" firstAttribute="leading" secondItem="Rey-bq-Tcf" secondAttribute="trailing" constant="20" id="er9-mP-xl0"/>
-                                            <constraint firstItem="018-49-K2y" firstAttribute="top" secondItem="xmR-Ma-HQS" secondAttribute="bottom" constant="30" id="etX-JC-b8R"/>
-                                            <constraint firstItem="iND-k8-8br" firstAttribute="leading" secondItem="Rey-bq-Tcf" secondAttribute="trailing" constant="20" id="hsS-4N-baU"/>
-                                            <constraint firstAttribute="bottom" secondItem="lY0-RS-7Ip" secondAttribute="bottom" constant="20" id="jXV-n6-rIe"/>
-                                            <constraint firstAttribute="trailing" secondItem="iND-k8-8br" secondAttribute="trailing" id="nhP-2J-jvN"/>
-                                            <constraint firstItem="P6n-sZ-1I4" firstAttribute="leading" secondItem="9IQ-an-3bU" secondAttribute="leading" constant="20" id="oPl-iN-n0l"/>
-                                            <constraint firstItem="WfU-sa-DAg" firstAttribute="leading" secondItem="9IQ-an-3bU" secondAttribute="leading" constant="20" id="pc3-cv-hzE"/>
-                                            <constraint firstItem="xmR-Ma-HQS" firstAttribute="centerY" secondItem="WfU-sa-DAg" secondAttribute="centerY" id="tWR-Oz-mGi"/>
-                                            <constraint firstAttribute="trailing" secondItem="LKD-g7-gIu" secondAttribute="trailing" id="vu2-sF-Hx7"/>
-                                            <constraint firstItem="WfU-sa-DAg" firstAttribute="top" secondItem="PLe-Wi-bbF" secondAttribute="bottom" constant="30" id="w4I-7c-nEu"/>
-                                            <constraint firstAttribute="trailing" secondItem="018-49-K2y" secondAttribute="trailing" id="wVH-oI-HqB"/>
-                                            <constraint firstItem="018-49-K2y" firstAttribute="height" secondItem="P6n-sZ-1I4" secondAttribute="height" id="yDz-Dw-4eC"/>
-                                            <constraint firstItem="Rey-bq-Tcf" firstAttribute="leading" secondItem="lY0-RS-7Ip" secondAttribute="trailing" constant="30" id="zRU-ma-j4n"/>
+                                            <constraint firstItem="Rey-bq-Tcf" firstAttribute="bottom" secondItem="wFK-uZ-JmK" secondAttribute="bottom" id="ZfJ-i0-tfU"/>
+                                            <constraint firstItem="wFK-uZ-JmK" firstAttribute="top" secondItem="PLe-Wi-bbF" secondAttribute="bottom" constant="15.5" id="d0Q-Jb-uax"/>
+                                            <constraint firstItem="Rey-bq-Tcf" firstAttribute="top" secondItem="wFK-uZ-JmK" secondAttribute="top" id="m6U-tf-9ty"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -306,6 +293,10 @@ Enmass Energy</string>
             <connections>
                 <outlet property="checkButton" destination="YRw-Ro-Gg5" id="SU2-sJ-moZ"/>
                 <outlet property="hiddenView" destination="9IQ-an-3bU" id="xTK-OX-0BA"/>
+                <outletCollection property="daysLabel" destination="WfU-sa-DAg" collectionClass="NSMutableArray" id="sJl-9D-YZS"/>
+                <outletCollection property="daysLabel" destination="P6n-sZ-1I4" collectionClass="NSMutableArray" id="gdG-Ew-v8d"/>
+                <outletCollection property="daysLabel" destination="eJB-8Y-had" collectionClass="NSMutableArray" id="0ee-fF-5VF"/>
+                <outletCollection property="daysLabel" destination="lY0-RS-7Ip" collectionClass="NSMutableArray" id="muY-Xz-sul"/>
             </connections>
             <point key="canvasLocation" x="-255.07246376811597" y="263.83928571428572"/>
         </tableViewCell>

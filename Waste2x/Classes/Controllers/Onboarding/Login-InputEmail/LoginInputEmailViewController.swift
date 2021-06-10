@@ -28,8 +28,12 @@ class LoginInputEmailViewController: BaseViewController {
     // MARK: - Actions
 
     @IBAction func nextButtonPressed(_ sender: Any) {
-            let slider = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
-                self.navigationController?.setViewControllers([slider], animated: true)
+//            let slider = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
+//                self.navigationController?.setViewControllers([slider], animated: true)
+        
+        let vc = SupplyingTypeViewController(nibName: "SupplyingTypeViewController", bundle: nil)
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: false, completion: nil)
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
