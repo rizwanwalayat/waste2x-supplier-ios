@@ -52,6 +52,7 @@ class LoginCodeVerificationViewController: BaseViewController {
         let os = device.systemVersion
         Registration.verificationCode(phone: phone, code: code, latitude: Global.shared.current_lat, longitude: Global.shared.current_lng, firebase_token: Global.shared.fireBaseToken, phone_imei: 123456789, phone_os: os, phone_model: model) { result, error, status in
             if error == nil{
+                
                 let codeVerificationVC = LoginInputEmailViewController(nibName: "LoginInputEmailViewController", bundle: nil)
                 self.navigationController?.pushViewController(codeVerificationVC, animated: true)
             }
