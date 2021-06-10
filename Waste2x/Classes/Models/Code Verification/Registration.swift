@@ -30,8 +30,8 @@ class Registration : Mappable {
         APIClient.shared.userRegistration(phone: phone, code: code, latitude: latitude, longitude: longitude, firebase_token: firebase_token, phone_imei: phone_imei, phone_os: phone_os, phone_model: phone_model) { result, error, status in
             Utility.hideLoading()
             if error == nil {
-        
-                if let data = result as AnyObject? {
+                let newResult = ["result": result]
+                if let data = Mapper<Registration>().map(JSON: newResult as [String : Any]) {
                     
                     completion(data, nil, 200)
                     

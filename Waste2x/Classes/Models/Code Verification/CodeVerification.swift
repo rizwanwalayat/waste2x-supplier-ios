@@ -31,10 +31,7 @@ class CodeVerification : Mappable {
             Utility.hideLoading()
             if error == nil {
                 if let data = Mapper<CodeVerification>().map(JSON: result as! [String : Any]) {
-                    
                     completion(data, nil, 200)
-                    
-                    
                 } else {
                     completion(nil, nil, 201)
                 }
