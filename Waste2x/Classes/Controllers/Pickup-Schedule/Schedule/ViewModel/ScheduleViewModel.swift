@@ -116,11 +116,11 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
         selectSiteLabel.text = selectSitePlaceholder
         selectFrequencyPriodicLabel.text = selectFrequencyPerodicPlaceholder
         selectDateTimeLabel.text = selectDateTimePlaceholder
-        selectLocationLabel.text = selectLocationPlaceHolder
+        self.locationAutoFill ? print("Nothing") : (selectLocationLabel.text = selectLocationPlaceHolder)
         selectionHandlingsOfViews(selectSiteHolderview, isSelection: false)
         selectionHandlingsOfViews(selectFrequencyPriodicHolderview, isSelection: false)
         selectionHandlingsOfViews(selectDateTimeHolderview, isSelection: false)
-        selectionHandlingsOfViews(selectLocationHolderview, isSelection: false)
+        self.locationAutoFill ? print("Nothing") : selectionHandlingsOfViews(selectLocationHolderview, isSelection: false)
         
         let lableUnselectHexCode = "A09F9F"
         let lableSelectedHexCode = "2B2B2B"

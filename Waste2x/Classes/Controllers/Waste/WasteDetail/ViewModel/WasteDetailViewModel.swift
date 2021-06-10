@@ -21,7 +21,6 @@ extension WasteDetailViewController : UICollectionViewDelegate, UICollectionView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WasteImageDetailCollectionViewCell", for: indexPath) as! WasteImageDetailCollectionViewCell
         
         cell.titleImageview.image = imagesArray[indexPath.row]
-        cell.alpha = 0 // make cell initial state transparent
         
         return cell
     }

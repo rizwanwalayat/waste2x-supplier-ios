@@ -77,16 +77,26 @@ class WasteDetailViewController: BaseViewController {
     }
 
     @objc override func imageSelectedFromGalleryOrCamera(selectedImage:UIImage){
-
+        
         imagesArray.append(selectedImage)
         collectionviewImages.reloadData()
-        if imagesArray.count > 0
-            {
-            DispatchQueue.main.async {
-                self.collectionViewConst.constant = 145
-                self.view.layoutIfNeeded()
-            }
-            }
+        if imagesArray.count > 0 && !(collectionViewConst.constant > 0)
+        {
+            self.collectionViewConst.constant = 145
+            UIView.animate(withDuration: 0.3,
+                       delay: 0.1,
+                       options: UIView.AnimationOptions.curveEaseInOut,
+                       animations: { () -> Void in
+                        
+                        self.view.layoutIfNeeded()
+                        
+            }, completion: { (finished) -> Void in
+            // ....
+            })
+        }
+        
+        let indexPath = IndexPath(item: imagesArray.count - 1, section: 0)
+        collectionviewImages.scrollToItem(at: indexPath, at: .right, animated: true)
     }
 }
 
