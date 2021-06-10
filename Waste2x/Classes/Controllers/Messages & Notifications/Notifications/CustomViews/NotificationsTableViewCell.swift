@@ -124,8 +124,9 @@ class NotificationsTableViewCell: UITableViewCell {
     }
     
     
-    func expandCollapse(index:Int) {
-        self.bodyView.isHidden = !self.bodyView.isHidden
+    func expand()
+    {
+        self.bodyView.isHidden = false
         print(index)
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
             self.layoutIfNeeded()}, completion: { finished in
@@ -139,8 +140,10 @@ class NotificationsTableViewCell: UITableViewCell {
             }
         })
     }
-    func notExpandCollapse(index:Int) {
-        self.bodyView.isHidden = !self.bodyView.isHidden
+    
+    func collapse()
+    {
+        self.bodyView.isHidden = true
         print(index)
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
             self.layoutIfNeeded()}, completion: { finished in

@@ -33,8 +33,6 @@ class FormSubTypesViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        mainHolderView.roundCorners(uiViewCorners: .top, radius: 32)
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
         self.tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
@@ -46,7 +44,13 @@ class FormSubTypesViewController: BaseViewController {
         self.tableView.removeObserver(self, forKeyPath: "contentSize")
         super.viewWillDisappear(animated)
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        mainHolderView.layer.cornerRadius = 36
+        mainHolderView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        mainHolderView.layer.masksToBounds = true
+        
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

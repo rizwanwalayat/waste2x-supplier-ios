@@ -12,8 +12,15 @@ class ConfirmPendingTableViewCell: UITableViewCell {
 
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var hiddenView: UIView!
+    @IBOutlet var daysLabel : [UIView]!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        for dayLbl in daysLabel
+        {
+            dayLbl.sizeToFit()
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
