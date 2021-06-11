@@ -39,6 +39,7 @@ struct APIRoutes {
     static var login = "paudapay_us/send_code/"
     static var registration = "paudapay_us/registration/"
     static var emailVerification = "paudapay_us/verify_email/"
+    static var fetchSupplyProcessData = "paudapay_us/waste_types/"
     
     
     
@@ -51,7 +52,6 @@ struct APIRoutes {
     static var forgotPassword = "/api/shared/user/forgetPassword"
     static var widthdrawFromDonee = "/api/payments/paypal/donee/withdrawRequest"
     static var getDoneeUserTransactions = "/api/payments/paypal/donee/transactions"
-    
 }
 struct FireBaseVariables {
     static var fireBaseToken = ""

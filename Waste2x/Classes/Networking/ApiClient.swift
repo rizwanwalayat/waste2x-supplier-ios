@@ -111,5 +111,16 @@ class APIClient: APIClientHandler {
         let params = ["image": image, "full_name": name, "email": email, "phone_number": phoneNo, "national_id": nationalId, "social_security_number": ssn, "occupation": occupation ,"type": type] as [String : Any]
         sendRequestUsingMultipart(APIRoutes.baseUrl+APIRoutes.updateUser, parameters: params as [String : AnyObject] , httpMethod: .put, headers: headers, completionBlock: completionBlock)
     }
+    
+    
+    // NH : for fetch data for supply process
+    
+    func fetchSupplyProcessData(_ completionBlock: @escaping APIClientCompletionHandler) {
+        
+        let headers = ["Authorization": "token " + Global.shared.fireBaseToken]
+        _ = sendRequest(APIRoutes.fetchSupplyProcessData , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+        
+        
+    }
 }
 

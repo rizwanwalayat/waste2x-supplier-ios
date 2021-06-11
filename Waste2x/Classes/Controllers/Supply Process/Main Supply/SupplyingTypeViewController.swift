@@ -27,6 +27,7 @@ class SupplyingTypeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchDataFromServer()
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -102,3 +103,19 @@ extension SupplyingTypeViewController : UICollectionViewDelegate, UICollectionVi
     
 }
 
+
+// MARK: - API Calls Handlings
+extension SupplyingTypeViewController {
+    
+    
+    func fetchDataFromServer()
+    {
+        SupplyProcessDataModel.fetchSupplyProcessData { response, error, statusCode in
+            
+            if error == nil
+            {
+                
+            }
+        }
+    }
+}
