@@ -22,7 +22,7 @@ class VTResponseHandler: Mappable {
         message                 <- map["message"]
         data                        <- map["result"]
         error                       <- map["error"]
-        
+//        weatherList                 <- map["list"]
         errorDescription    <- map["error_description"]
 
     }

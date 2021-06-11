@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Alamofire
+import ObjectMapper
 var globalObjectHome : HomeViewController?
 class HomeViewController: BaseViewController {
     
-    
+
     
     //MARK: - IBOutlets
     @IBOutlet weak var notificationMark: UIView!
@@ -33,6 +35,7 @@ class HomeViewController: BaseViewController {
     var selecetedIndex = 0
     var supplierCell: SupplierTableViewCell?
     var images = [#imageLiteral(resourceName: "poultry"),#imageLiteral(resourceName: "bottle"),#imageLiteral(resourceName: "tire"),#imageLiteral(resourceName: "food")]
+    var weatherCount  = 5
     
     //MARK: - AppCycle
     override func viewDidLoad() {
@@ -68,6 +71,7 @@ class HomeViewController: BaseViewController {
             self.tableViewHeight.constant = self.tableView.contentSize.height
             self.view.layoutIfNeeded()
         }
+        self.weatherAPI()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -160,7 +164,8 @@ class HomeViewController: BaseViewController {
 extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == weatherCollectionView {
-            return 5
+            
+            return weatherCount
         }
         else{
             return images.count
@@ -171,6 +176,9 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == weatherCollectionView{
             let cell = collectionView.register(WeatherCollectionViewCell.self, indexPath: indexPath)
+            let weatherTemp = DataManager.shared.getWeather()?.list[indexPath.row].main?.temp ?? 00
+            cell.tempratureLabel.text = "\(weatherTemp.shortValue)°" + ""
+               
             cell.config()
             return cell
             
@@ -290,4 +298,21 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         }
     }
     
+}
+
+
+//MARK: - API calls
+extension HomeViewController{
+    
+    func weatherAPI(){
+        
+        WeatherAPI.WeatherAPICall{ result, error, statusCode in
+            if statusCode == 200{
+                self.weatherCount = DataManager.shared.getWeather()?.list.count ?? 0
+                self.weatherCollectionView.reloadData()
+            }
+        }
+    }
+
+
 }

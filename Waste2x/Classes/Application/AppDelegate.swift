@@ -28,7 +28,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 30
         Messaging.messaging().delegate = self
         pushNotification(applicationVariable: application, launchOptionsVariable: launchOptions)
-        Utility.loginRootViewController()
+        if DataManager.shared.getUser() == nil
+        {
+            Utility.loginRootViewController()
+            
+            
+        }
+        else
+        {
+            Utility.homeViewController()
+        }
         GMSServices.provideAPIKey(googleAPIKey)
         GMSPlacesClient.provideAPIKey(googleAPIKey)
         initializeLocationManager()

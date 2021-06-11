@@ -79,13 +79,13 @@ class APIClientHandler: TSAPIClient {
     }
     
     
-    func sendRequest(_ methodName: String,
+    func sendRequest(_ endPoint: String,
                      parameters: [String : AnyObject]?,
                      httpMethod: HTTPMethod = .get,
                      headers: [String : String]?,
                      completionBlock: @escaping APIClientCompletionHandler) -> Request {
 
-        let request = self.serverRequest(APIRoutes.baseUrl + methodName, parameters: parameters, httpMethod: httpMethod, headers: headers) { (response, result, error) in
+        let request = self.serverRequest(APIRoutes.baseUrl + endPoint, parameters: parameters, httpMethod: httpMethod, headers: headers) { (response, result, error) in
 
             if error != nil {
                 var apiError = error

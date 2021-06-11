@@ -30,7 +30,6 @@ class ContainerViewController: BaseViewController {
     //MARK: - Variables
     override func viewDidLoad() {
         super .viewDidLoad()
-        
         globalObjectContainer = self
         messagesHoverView.isHidden = true
         faqHoverView.isHidden = true
@@ -39,6 +38,7 @@ class ContainerViewController: BaseViewController {
         homeHoverView.isHidden = false
         nav.viewControllers = [HomeViewController()]
         activeViewController = self.nav
+        self.tabbarHiddenView.isHidden = false
         
     }
     
@@ -135,7 +135,7 @@ class ContainerViewController: BaseViewController {
     }
     func buttonSelect(button:UIButton){
         button.isSelected = true
-        
+        self.tabbarHiddenView.isHidden = false
 //        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).cgColor
 //        button.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
 //        button.layer.shadowOpacity = 1.0
@@ -147,6 +147,7 @@ class ContainerViewController: BaseViewController {
     }
     func buttonDeselect(button:UIButton){
         button.isSelected = false
+        self.tabbarHiddenView.isHidden = false
 //        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0).cgColor
 //        button.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
 //        button.layer.shadowOpacity = 0.0

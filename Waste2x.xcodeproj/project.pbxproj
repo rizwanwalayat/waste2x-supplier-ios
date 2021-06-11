@@ -168,6 +168,7 @@
 		18A849D7265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A849D5265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift */; };
 		18A849D8265E48A0008F77E8 /* WasteTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A849D6265E48A0008F77E8 /* WasteTypeCollectionViewCell.xib */; };
 		18BD8473267337E400B5F797 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD8472267337E400B5F797 /* NewsModel.swift */; };
+		18BD84762673770B00B5F797 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD84752673770B00B5F797 /* WeatherAPI.swift */; };
 		18C11A6C265F9D5F00BC022F /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C11A6A265F9D5F00BC022F /* ContactViewController.swift */; };
 		18C11A6D265F9D5F00BC022F /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C11A6B265F9D5F00BC022F /* ContactViewController.xib */; };
 		18C11A70265FA49C00BC022F /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C11A6E265FA49C00BC022F /* ContactTableViewCell.swift */; };
@@ -347,6 +348,7 @@
 		18A849D5265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		18A849D6265E48A0008F77E8 /* WasteTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteTypeCollectionViewCell.xib; sourceTree = "<group>"; };
 		18BD8472267337E400B5F797 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		18BD84752673770B00B5F797 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		18C11A6A265F9D5F00BC022F /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		18C11A6B265F9D5F00BC022F /* ContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactViewController.xib; sourceTree = "<group>"; };
 		18C11A6E265FA49C00BC022F /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
@@ -846,6 +848,7 @@
 			children = (
 				183262732670A3A500F0CCBA /* CodeVerification.swift */,
 				183262752670BB8400F0CCBA /* Registration.swift */,
+				18BD84752673770B00B5F797 /* WeatherAPI.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1452,6 +1455,7 @@
 				0067A31D252AFC9E00CECA8C /* UISlider.swift in Sources */,
 				04C82E1A2664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift in Sources */,
 				048582C02667BEC70077B42E /* ScheduleOptionsTableViewCell.swift in Sources */,
+				18BD84762673770B00B5F797 /* WeatherAPI.swift in Sources */,
 				041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */,
 				183262762670BB8400F0CCBA /* Registration.swift in Sources */,
 				00434544254825AE009A6166 /* DataManager.swift in Sources */,

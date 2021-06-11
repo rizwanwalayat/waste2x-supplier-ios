@@ -87,3 +87,8 @@ extension UIView {
     
 }
 
+extension Double {
+    var shortValue: String {
+        return String(format: "%.0f", self)
+    }
+}

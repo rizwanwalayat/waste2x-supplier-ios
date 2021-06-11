@@ -78,6 +78,13 @@ class APIClient: APIClientHandler {
         let params = ["phone": number] as [String:String]
         _ = sendRequest(APIRoutes.login , parameters: params as [String : AnyObject],httpMethod: .post , headers: nil, completionBlock: completionBlock)
     }
+    func weatherAPi( _ completionBlock: @escaping APIClientCompletionHandler) {
+        let params = [String:AnyObject]()
+        print(APIRoutes.weatherAPi)
+        
+        rawRequest(url: APIRoutes.weatherAPi, method: .get, parameters: params, headers: nil, completionBlock: completionBlock)
+    }
+    
     func emailVerification(email: String, _ completionBlock: @escaping APIClientCompletionHandler) {
         let params = ["email": email] as [String:String]
         _ = sendRequest(APIRoutes.emailVerification , parameters: params as [String : AnyObject],httpMethod: .post , headers: nil, completionBlock: completionBlock)

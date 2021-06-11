@@ -13,6 +13,10 @@ class DataManager {
     
     static let shared = DataManager()
     
+    func setWeatherData(value:AnyObject?,key: String){
+        UserDefaults.standard.set(value, forKey: key)
+    }
+    
     func setStringData (value: String, key: String) {
         UserDefaults.standard.set(value, forKey: key)
     }
@@ -59,6 +63,19 @@ class DataManager {
         }
         return user
     }
+    func setWeather (weather: String) {
+        UserDefaults.standard.set(weather, forKey: "weather")
+    }
+    
+    func getWeather() -> WeatherAPI? {
+        var weather: WeatherAPI?
+
+        if UserDefaults.standard.object(forKey: "weather") != nil {
+            weather = Mapper<WeatherAPI>().map(JSONString:UserDefaults.standard.string(forKey: "weather")!)
+        }
+        return weather
+    }
+    
     
     func deleteUser () {
          UserDefaults.standard.set(nil, forKey: "user_data")
@@ -112,4 +129,34 @@ class DataManager {
         //items?.removeFirst()
         UserDefaults.standard.set(items, forKey: "fav_data")
     }
+    
+    
+    
+    
+    
+//
+//
+//     func getWeatherData() -> [String : Any]?
+//        {
+//
+//            let savedData = UserDefaults.standard.value(forKey: "weather") as? [String: Any]
+//            if let response = savedData
+//            {
+//                return response
+//            }
+//            else
+//            {
+//                return nil
+//            }
+//        }
+//     func saveWeather (responseDict : [String : Any] )
+//        {
+//            let saveWeather = UserDefaults.standard
+//            saveWeather.set(responseDict, forKey: "weather")
+//        }
+//
+//
+//
+    
+    
 }

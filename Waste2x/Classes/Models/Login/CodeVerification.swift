@@ -12,7 +12,7 @@ import ObjectMapper
 class CodeVerification : Mappable {
     var success = Bool()
     var message = ""
-    var result = Mapper<CodeVerificationResponce>().map(JSON: [:])
+    var result = [CodeVerificationResponce]()
     var statusCode = [""]
 
     required init?(map: Map) { }
