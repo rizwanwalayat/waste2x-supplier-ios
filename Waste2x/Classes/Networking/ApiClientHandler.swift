@@ -124,6 +124,9 @@ class APIClientHandler: TSAPIClient {
                     errorMessage = responseHandler.error
                     message = responseHandler.message
                     resultData = responseHandler.data
+                    if !isError {
+                        status  = responseHandler.status
+                    }
 
                     if   !isError {
                         resultData = responseHandler.data

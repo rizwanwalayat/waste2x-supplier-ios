@@ -9,6 +9,10 @@
 import Foundation
 import ObjectMapper
 
+typealias ForgotPasswordCompletionHandler = (_ data: CodeVerification?, _ error: Error?, _ status: Int?) -> Void
+typealias RegistrationCompletionHandler = (_ data: Registration?, _ error: Error?, _ status: Int?) -> Void
+typealias EmailRegistrationCompletionHandler = (_ data: AnyObject?, _ error: Error?, _ status: Int?) -> Void
+
 class Registration : Mappable {
     var success = Bool()
     var message = ""
@@ -29,23 +33,16 @@ class Registration : Mappable {
         Utility.showLoading()
         APIClient.shared.userRegistration(phone: phone, code: code, latitude: latitude, longitude: longitude, firebase_token: firebase_token, phone_imei: phone_imei, phone_os: phone_os, phone_model: phone_model) { result, error, status in
             Utility.hideLoading()
-            //            if let responcedDict = result as? NSDictionary
-            //            {
-            //                DataManager.shared.setUserDict(value: responcedDict, key: "userdict")
-            //                if let get = DataManager.shared.getUserDict(key: "userdict"){
-            //                    print(get)
-            //                }
-            //            }
             if error == nil {
                 let newResult = ["result": result]
                 if let data = Mapper<Registration>().map(JSON: newResult as [String : Any]) {
+                    let convretedData = data.toJSONString()
+                    DataManager.shared.setUser(user: convretedData ?? "")
                     
                     completion(data, nil, 200)
-                    
                 } else {
                     completion(nil, nil, 201)
                 }
-                
             } else {
                  completion(nil, error, 404)
             }
@@ -108,11 +105,54 @@ class RegistrationResult : Mappable {
 
 
 class WasteTypes : Mappable {
-    
-
+    var id = ""
+    var title = ""
+    var iconUrl = ""
+    var wasteTypeQuestions = [WasteTypeQuestion]()
     required init?(map: Map) { }
 
     func mapping(map: Map) {
+        
+        id <- map["id"]
+        title <- map["title"]
+        iconUrl <- map["icon_url"]
+        wasteTypeQuestions <- map["waste_type_questions"]
+        
+        
+    }
+}
 
+class WasteTypeQuestion : Mappable {
+    var id = ""
+    var title = ""
+    var iconUrl = ""
+    var questionOptions = [QuestionOption]()
+    var userInput = Bool()
+    required init?(map: Map) { }
+
+    func mapping(map: Map) {
+        
+        id <- map["id"]
+        title <- map["title"]
+        questionOptions <- map["question_options"]
+        userInput <- map["user_input"]
+        
+        
+    }
+}
+
+class QuestionOption : Mappable {
+    var id = ""
+    var title = ""
+    var iconUrl = ""
+    required init?(map: Map) { }
+
+    func mapping(map: Map) {
+        
+        id <- map["id"]
+        title <- map["title"]
+        iconUrl <- map["icon_url"]
+        
+        
     }
 }

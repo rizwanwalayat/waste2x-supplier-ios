@@ -51,11 +51,11 @@ class DataManager {
         UserDefaults.standard.set(user, forKey: "user_data")
     }
     
-    func getUser() -> UserData? {
-        var user: UserData?
+    func getUser() -> Registration? {
+        var user: Registration?
 
         if UserDefaults.standard.object(forKey: "user_data") != nil {
-            user = Mapper<UserData>().map(JSONString:UserDefaults.standard.string(forKey: "user_data")!)
+            user = Mapper<Registration>().map(JSONString:UserDefaults.standard.string(forKey: "user_data")!)
         }
         return user
     }

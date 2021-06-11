@@ -29,6 +29,7 @@ class CodeVerification : Mappable {
         Utility.showLoading()
         APIClient.shared.verificationCode(number: phoneNumber) { result, error, status in
             Utility.hideLoading()
+            
             if error == nil {
                 if let data = Mapper<CodeVerification>().map(JSON: result as! [String : Any]) {
                     completion(data, nil, 200)

@@ -18,6 +18,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreatePaymentViewController" customModule="Waste2x" customModuleProvider="target">
             <connections>
+                <outlet property="emailTitle" destination="crQ-cg-a9W" id="D3G-xA-ZGe"/>
+                <outlet property="idTitle" destination="FS0-kO-uzb" id="XqP-um-KT1"/>
                 <outlet property="mainView" destination="veq-BJ-fXd" id="lvg-aQ-cCM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
