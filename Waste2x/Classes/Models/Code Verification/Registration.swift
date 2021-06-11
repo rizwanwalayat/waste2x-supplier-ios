@@ -29,6 +29,13 @@ class Registration : Mappable {
         Utility.showLoading()
         APIClient.shared.userRegistration(phone: phone, code: code, latitude: latitude, longitude: longitude, firebase_token: firebase_token, phone_imei: phone_imei, phone_os: phone_os, phone_model: phone_model) { result, error, status in
             Utility.hideLoading()
+            //            if let responcedDict = result as? NSDictionary
+            //            {
+            //                DataManager.shared.setUserDict(value: responcedDict, key: "userdict")
+            //                if let get = DataManager.shared.getUserDict(key: "userdict"){
+            //                    print(get)
+            //                }
+            //            }
             if error == nil {
                 let newResult = ["result": result]
                 if let data = Mapper<Registration>().map(JSON: newResult as [String : Any]) {

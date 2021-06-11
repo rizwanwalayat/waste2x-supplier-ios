@@ -16,6 +16,15 @@ class DataManager {
     func setStringData (value: String, key: String) {
         UserDefaults.standard.set(value, forKey: key)
     }
+    func setUserDict (value: NSDictionary, key: String) {
+        UserDefaults.standard.set(value, forKey: key)
+    }
+    func getUserDict (key: String) -> NSDictionary? {
+        if let dict = UserDefaults.standard.object(forKey: key) as? NSDictionary{
+            return dict
+        }
+        return nil
+    }
     
     func setIntData (value: Int, key: String) {
         UserDefaults.standard.set(value, forKey: key)
