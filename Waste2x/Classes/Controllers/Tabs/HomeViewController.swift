@@ -8,8 +8,14 @@
 import UIKit
 import Alamofire
 import ObjectMapper
+protocol WeatherCallDelegate {
+    func Weather()
+}
 var globalObjectHome : HomeViewController?
-class HomeViewController: BaseViewController {
+class HomeViewController: BaseViewController{
+
+    
+    
     
 
     
@@ -36,10 +42,13 @@ class HomeViewController: BaseViewController {
     var supplierCell: SupplierTableViewCell?
     var images = [#imageLiteral(resourceName: "poultry"),#imageLiteral(resourceName: "bottle"),#imageLiteral(resourceName: "tire"),#imageLiteral(resourceName: "food")]
     var weatherCount  = 5
+    var delegate:WeatherCallDelegate?
     
     //MARK: - AppCycle
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
+        print(Data?.auth_token)
+        (UIApplication.shared.delegate as! AppDelegate).weaterCalldelegate = self
         bottomConst.constant = tabbarViewHeight
         globalObjectHome = self
         tableView.reloadData()
@@ -71,7 +80,6 @@ class HomeViewController: BaseViewController {
             self.tableViewHeight.constant = self.tableView.contentSize.height
             self.view.layoutIfNeeded()
         }
-        self.weatherAPI()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -302,17 +310,12 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
 
 
 //MARK: - API calls
-extension HomeViewController{
+extension HomeViewController: WeatherCallDelegate {
     
-    func weatherAPI(){
-        
-        WeatherAPI.WeatherAPICall{ result, error, statusCode in
-            if statusCode == 200{
-                self.weatherCount = DataManager.shared.getWeather()?.list.count ?? 0
-                self.weatherCollectionView.reloadData()
-            }
-        }
-    }
 
+    func Weather() {
+        self.weatherCount = DataManager.shared.getWeather()?.list.count ?? 0
+        self.weatherCollectionView.reloadData()
+    }
 
 }

@@ -16,10 +16,12 @@ import GoogleMaps
 import GooglePlaces
 
 let gcmMessageIDKey = "gcm.message_id"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var weaterCalldelegate:WeatherCallDelegate?
     var locationManager = CLLocationManager()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         NFX.sharedInstance().start()
@@ -186,6 +188,8 @@ extension AppDelegate : MessagingDelegate {
     
 // MARK: - Location delegate
 extension AppDelegate:CLLocationManagerDelegate {
+
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if let location = locations.last
@@ -194,7 +198,18 @@ extension AppDelegate:CLLocationManagerDelegate {
             Global.shared.location = location
             Global.shared.current_lat = location.coordinate.latitude
             Global.shared.current_lng = location.coordinate.longitude
+            weatherAPI()
             print(location,Global.shared.current_lat,Global.shared.current_lng)
+            
+            
+        }
+    }
+    func weatherAPI(){
+        
+        WeatherAPI.WeatherAPICall{ result, error, statusCode in
+            if statusCode == 200{
+                self.weaterCalldelegate?.Weather()
+            }
         }
     }
 }
