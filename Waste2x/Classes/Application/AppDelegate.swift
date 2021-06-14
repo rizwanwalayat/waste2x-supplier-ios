@@ -203,6 +203,7 @@ extension AppDelegate:CLLocationManagerDelegate {
             
             
         }
+        locationManager.stopUpdatingLocation()
     }
     func weatherAPI(){
         

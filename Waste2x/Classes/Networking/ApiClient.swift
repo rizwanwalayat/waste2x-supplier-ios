@@ -14,6 +14,7 @@ class Connectivity {
 let APIClientDefaultTimeOut = 40.0
 
 class APIClient: APIClientHandler {
+    let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
     
     fileprivate var clientDateFormatter: DateFormatter
     var isConnectedToNetwork: Bool?
@@ -79,6 +80,10 @@ class APIClient: APIClientHandler {
         print("WeatherAPI",APIRoutes.weatherAPi)
         rawRequest(url: APIRoutes.weatherAPi, method: .get, parameters: params, headers: nil, completionBlock: completionBlock)
     }
+    func NewsApiCall(_ completionBlock: @escaping APIClientCompletionHandler) {
+        let params = [String : AnyObject]()
+        _ = sendRequest(APIRoutes.newsUrl, parameters: params,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+    }
     
     func emailVerification(email: String, _ completionBlock: @escaping APIClientCompletionHandler) {
         let params = ["email": email] as [String:String]
@@ -93,14 +98,14 @@ class APIClient: APIClientHandler {
     // NH : for fetch data for supply process
     
     func fetchSupplyProcessData(_ completionBlock: @escaping APIClientCompletionHandler) {
-        
-        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]// + Global.shared.tok]
+//
+//        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]// + Global.shared.tok]
         _ = sendRequest(APIRoutes.fetchSupplyProcessData , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
     
     func postSupplyProcessData(params : [String: AnyObject], _ completionBlock: @escaping APIClientCompletionHandler) {
         
-        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        
         
         DataManager.shared.getUser()?.result?.isNewUser ?? true ? (_ = sendRequest(APIRoutes.postSupplyProcessDataNewUser , parameters: params ,httpMethod: .post , headers: headers, completionBlock: completionBlock)) : (_ = sendRequest(APIRoutes.postSupplyProcessDataUser , parameters: params ,httpMethod: .post , headers: headers, completionBlock: completionBlock))
         

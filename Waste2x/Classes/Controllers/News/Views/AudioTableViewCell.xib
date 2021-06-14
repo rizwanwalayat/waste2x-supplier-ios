@@ -30,22 +30,22 @@
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" image="play"/>
                                 <state key="selected" image="pause"/>
-                                <connections>
-                                    <action selector="playAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UsM-z2-HKL"/>
-                                </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iWH-bZ-L1s">
-                                <rect key="frame" x="60" y="42.5" width="292" height="4"/>
-                                <color key="tintColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuP-Nr-BD6">
+                                <rect key="frame" x="60" y="10" width="302" height="69"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="iWH-bZ-L1s" firstAttribute="centerY" secondItem="rGE-UQ-BpB" secondAttribute="centerY" id="TFO-4G-nMR"/>
-                            <constraint firstItem="iWH-bZ-L1s" firstAttribute="leading" secondItem="rGE-UQ-BpB" secondAttribute="trailing" constant="20" id="j8u-de-fd8"/>
+                            <constraint firstAttribute="trailing" secondItem="AuP-Nr-BD6" secondAttribute="trailing" constant="10" id="GRD-Km-NhS"/>
+                            <constraint firstAttribute="bottom" secondItem="AuP-Nr-BD6" secondAttribute="bottom" constant="10" id="P2p-GG-lll"/>
+                            <constraint firstItem="AuP-Nr-BD6" firstAttribute="top" secondItem="FIC-ma-YrW" secondAttribute="top" constant="10" id="iI0-Ig-V5c"/>
+                            <constraint firstItem="AuP-Nr-BD6" firstAttribute="leading" secondItem="rGE-UQ-BpB" secondAttribute="trailing" constant="20" id="pra-8v-rwr"/>
                             <constraint firstItem="rGE-UQ-BpB" firstAttribute="leading" secondItem="FIC-ma-YrW" secondAttribute="leading" constant="20" id="qIK-zN-q4L"/>
                             <constraint firstItem="rGE-UQ-BpB" firstAttribute="centerY" secondItem="FIC-ma-YrW" secondAttribute="centerY" id="tib-Th-rmZ"/>
-                            <constraint firstAttribute="trailing" secondItem="iWH-bZ-L1s" secondAttribute="trailing" constant="20" id="ywP-01-piI"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -64,14 +64,14 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="playButton" destination="rGE-UQ-BpB" id="0v5-RA-K7J"/>
+                <outlet property="playPauseButton" destination="rGE-UQ-BpB" id="sz5-Yr-Zso"/>
             </connections>
             <point key="canvasLocation" x="-17.39130434782609" y="84.709821428571431"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="pause" width="362" height="676"/>
-        <image name="play" width="604" height="762"/>
+        <image name="pause" width="292" height="300"/>
+        <image name="play" width="314" height="302"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

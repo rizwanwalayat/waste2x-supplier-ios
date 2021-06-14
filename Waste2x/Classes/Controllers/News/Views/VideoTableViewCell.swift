@@ -11,7 +11,7 @@ import AVFoundation
 import AVKit
 import youtube_ios_player_helper
 
-class VideoTableViewCell: UITableViewCell {
+class VideoTableViewCell: BaseTableViewCell {
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -20,9 +20,7 @@ class VideoTableViewCell: UITableViewCell {
     var playerViewController: AVPlayerViewController!
     override func awakeFromNib() {
         super.awakeFromNib()
-        let videoId = "so2lvlJ1Goc"
-        playerView.load(withVideoId: videoId);
-        playerView.playVideo()
+
         
     }
 
@@ -30,6 +28,11 @@ class VideoTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    func config(data:NewsModel,index:Int){
+        self.titleLabel.text = data.result[index].title
+        self.descriptionLabel.text = self.dateCalculate(date: data.result[index].date_published)
+        self.playerView.load(withVideoId: data.result[index].fileUrl);
     }
     
     

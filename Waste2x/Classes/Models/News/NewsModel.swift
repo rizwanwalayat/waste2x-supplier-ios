@@ -7,15 +7,13 @@
 //
 
 import Foundation
-
-import Foundation
 import ObjectMapper
-
+typealias NewsCompletionHandler = (_ data: NewsModel?, _ error: Error?, _ status: Int?) -> Void
 class NewsModel : Mappable {
     var success = Bool()
     var message = ""
-    var result = ""
-    var statusCode = [""]
+    var result = [NewsResult]()
+    var statusCode = Int()
 
     required init?(map: Map) { }
 
@@ -25,5 +23,47 @@ class NewsModel : Mappable {
         message <- map["message"]
         result    <- map["result"]
         statusCode  <- map["status_code"]
+    }
+    
+    class func NewsApiCall(_ completion: @escaping NewsCompletionHandler) {
+        Utility.showLoading()
+        APIClient.shared.NewsApiCall{ result, error, status in
+            Utility.hideLoading()
+            if error == nil {
+                let newResult = ["result":result]
+                if let data = Mapper<NewsModel>().map(JSON: newResult as [String : AnyObject]) {
+                    completion(data, nil, 200)
+                } else {
+                    completion(nil, nil, 201)
+                }
+                
+            } else {
+                 completion(nil, error, 404)
+            }
+        }
+    }
+}
+
+
+
+class NewsResult : Mappable {
+    var type = ""
+    var title = ""
+    var description = ""
+    var fileUrl = ""
+    var date_published = ""
+    var picture = ""
+
+
+    required init?(map: Map) { }
+
+    func mapping(map: Map) {
+
+        type   <- map["type"]
+        title <- map["title"]
+        description    <- map["description"]
+        fileUrl  <- map["file_url"]
+        date_published <- map["date_published"]
+        picture  <- map["picture"]
     }
 }

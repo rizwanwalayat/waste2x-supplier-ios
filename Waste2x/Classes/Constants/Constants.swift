@@ -43,6 +43,7 @@ struct APIRoutes {
     static var fetchSupplyProcessData = "paudapay_us/waste_types/"
     static var postSupplyProcessDataNewUser = "paudapay_us/waste_type_selection_v2/"
     static var postSupplyProcessDataUser = "paudapay_us/create_farm_v2/"
+    static var newsUrl = "paudapay_us/fetch_news/"
 }
 struct FireBaseVariables {
     static var fireBaseToken = ""

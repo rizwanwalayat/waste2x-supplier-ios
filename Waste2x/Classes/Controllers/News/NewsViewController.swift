@@ -6,28 +6,36 @@
 //
 
 import UIKit
-
+import AVFoundation
 class NewsViewController: BaseViewController {
     
     
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bottomConst: NSLayoutConstraint!
     
+    var NewsListModell : [NewsResult]?
+    var NewsModell : NewsModel?
+    
+    //audio
+    var playerItem:AVPlayerItem?
+    var player:AVPlayer?
+    var slider: UISlider?
     
     //MARK: - enums
     enum cellType {
         case video
         case audio
-        case detail
+        case blog
         var rawValue : String
         {
             switch self{
                 case .video:
-                    return "video"
+                    return "Video"
                 case .audio:
-                    return "audio"
-                case .detail:
-                    return "detail"
+                    return "Audio"
+                case .blog:
+                    return "Blog"
                     
             }
             
@@ -41,8 +49,13 @@ class NewsViewController: BaseViewController {
     var timer : Timer?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(slideToNext), userInfo: nil, repeats: true)
+        self.newsApiCall()
+        startPlayer()
+    }
+    func startPlayer() {
+        let url = URL(string: "https://s3.amazonaws.com/kargopolov/kukushka.mp3")
+        let playerItem:AVPlayerItem = AVPlayerItem(url: url!)
+        player = AVPlayer(playerItem: playerItem)
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
@@ -50,12 +63,10 @@ class NewsViewController: BaseViewController {
         self.tableView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         self.tableView.layer.masksToBounds = true
         globalObjectContainer?.tabbarHiddenView.isHidden = false
+        self.bottomConst.constant = self.tabbarViewHeight
         
     }
-    @objc func slideToNext() {
-        self.category = cellType.detail.rawValue
-        tableView.reloadData()
-    }
+
 
 
 
@@ -65,44 +76,44 @@ class NewsViewController: BaseViewController {
 //MARK: - Extentions
 extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if category == cellType.audio.rawValue || category == cellType.video.rawValue || category == cellType.detail.rawValue {
-            return 3
-        }
-        else {
-            return 1
-            
-        }
+        NewsListModell?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == 0 {
+        if NewsListModell?[indexPath.row].type == cellType.video.rawValue {
             
             let cell = tableView.register(VideoTableViewCell.self, indexPath: indexPath)
             cell.selectionStyle = .none
+            cell.config(data: NewsModell!, index: indexPath.row)
             return cell
         }
-        if indexPath.row == 1 {
+        else if NewsListModell?[indexPath.row].type == cellType.audio.rawValue {
             let cell = tableView.register(AudioTableViewCell.self, indexPath: indexPath)
-            cell.selectionStyle = .none
+            cell.config(data: NewsModell!, index: indexPath.row)
             return cell
         }
-        if indexPath.row == 2 {
+        else if NewsListModell?[indexPath.row].type == cellType.blog.rawValue {
             let cell = tableView.register(DetailTableViewCell.self, indexPath: indexPath)
+            cell.config(data: NewsModell!, index: indexPath.row)
             cell.selectionStyle = .none
             return cell
         }
+        else {
         let cell = tableView.register(DetailTableViewCell.self, indexPath: indexPath)
         cell.selectionStyle = .none
+        cell.config(data: NewsModell!, index: indexPath.row)
         cell.textLabel?.text = "Noting Found"
-        return cell
+            return cell
+            
+        }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0
+        if NewsListModell?[indexPath.row].type == cellType.video.rawValue
         {
             return 300
         }
-        else if indexPath.row == 1
+        else if NewsListModell?[indexPath.row].type == cellType.audio.rawValue
         {
             return 80
         }
@@ -113,6 +124,13 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if NewsListModell?[indexPath.row].type == cellType.audio.rawValue{
+        if let cell = tableView.cellForRow(at: indexPath) as? AudioTableViewCell
+        {
+            cell.config(data: NewsModell!, index: indexPath.row)
+        }
+            
+        }
     }
     
     
@@ -123,8 +141,17 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
 extension NewsViewController{
     
     func newsApiCall(){
-        
+        NewsModel.NewsApiCall { result, error, status in
+            if status == 200{
+                GCD.async(.Main) {
+                    self.NewsModell = result
+                    self.NewsListModell = result?.result
+                    self.tableView.reloadData()
+                }
+            }
+        }
         
     }
+    
 }
 

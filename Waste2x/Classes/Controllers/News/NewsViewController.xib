@@ -15,6 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsViewController" customModule="Waste2x" customModuleProvider="target">
             <connections>
+                <outlet property="bottomConst" destination="DL5-Ah-UPb" id="fdX-MK-r0v"/>
                 <outlet property="tableView" destination="tUH-ED-8LL" id="lky-07-h6F"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
