@@ -27,7 +27,7 @@ class WeatherAPI : Mappable {
         city   <- map["city"]
     }
     
-    class func WeatherAPICall(_ completion: @escaping EmailRegistrationCompletionHandler) {
+    class func WeatherAPICall(_ completion: @escaping RawCompletionHandler) {
         Utility.showLoading()
         APIClient.shared.weatherAPi{ result, error, status in
             

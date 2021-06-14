@@ -14,7 +14,7 @@ import ObjectMapper
 class NewsModel : Mappable {
     var success = Bool()
     var message = ""
-    var result = Mapper<CodeVerificationResponce>().map(JSON: [:])
+    var result = ""
     var statusCode = [""]
 
     required init?(map: Map) { }

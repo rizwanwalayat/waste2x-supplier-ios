@@ -8,7 +8,7 @@
 
 import Foundation
 import ObjectMapper
-
+typealias CodeVerificationCompletionHandler = (_ data: CodeVerification?, _ error: Error?, _ status: Int?) -> Void
 class CodeVerification : Mappable {
     var success = Bool()
     var message = ""
@@ -25,7 +25,7 @@ class CodeVerification : Mappable {
         statusCode  <- map["status_code"]
     }
     
-    class func verificationCode(phoneNumber: String, _ completion: @escaping ForgotPasswordCompletionHandler) {
+    class func verificationCode(phoneNumber: String, _ completion: @escaping CodeVerificationCompletionHandler) {
         Utility.showLoading()
         APIClient.shared.verificationCode(number: phoneNumber) { result, error, status in
             Utility.hideLoading()
