@@ -55,7 +55,6 @@
 		046528042668F694005F3FB0 /* CalenderPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046528022668F694005F3FB0 /* CalenderPopupViewController.xib */; };
 		048582C02667BEC70077B42E /* ScheduleOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */; };
 		048582C12667BEC70077B42E /* ScheduleOptionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */; };
-		048B5FB026723570003979DA /* SupplyProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B5FAF26723570003979DA /* SupplyProcess.swift */; };
 		048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C09E6265E2265003E301F /* ImagePickerVC.swift */; };
 		048C09F0265E5FDE003E301F /* CodeVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C7265BD9AE007C51EE /* CodeVerificationViewModel.swift */; };
 		04BD2801266A2589008FC8B4 /* SchedulePlannedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD27FF266A2589008FC8B4 /* SchedulePlannedViewController.swift */; };
@@ -80,7 +79,7 @@
 		04D053642670A978005458F7 /* FormSubTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D053622670A978005458F7 /* FormSubTypesViewController.swift */; };
 		04D053652670A978005458F7 /* FormSubTypesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D053632670A978005458F7 /* FormSubTypesViewController.xib */; };
 		04E6104626725422001E6629 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6104226725421001E6629 /* Questions.swift */; };
-		04E6104726725422001E6629 /* Json4Swift_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6104326725421001E6629 /* Json4Swift_Base.swift */; };
+		04E6104726725422001E6629 /* SupplyProcessDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6104326725421001E6629 /* SupplyProcessDataModel.swift */; };
 		04E6104826725422001E6629 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6104426725422001E6629 /* Result.swift */; };
 		04E6104926725422001E6629 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6104526725422001E6629 /* Options.swift */; };
 		18011272266774E5000C7102 /* FaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18011270266774E5000C7102 /* FaqTableViewCell.swift */; };
@@ -238,7 +237,6 @@
 		046528022668F694005F3FB0 /* CalenderPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalenderPopupViewController.xib; sourceTree = "<group>"; };
 		048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleOptionsTableViewCell.xib; sourceTree = "<group>"; };
-		048B5FAF26723570003979DA /* SupplyProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplyProcess.swift; sourceTree = "<group>"; };
 		048C09E6265E2265003E301F /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		04969272265CFCB10081E875 /* WasteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDetailViewController.swift; sourceTree = "<group>"; };
 		04969273265CFCB10081E875 /* WasteDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteDetailViewController.xib; sourceTree = "<group>"; };
@@ -267,7 +265,7 @@
 		04E3D69C265D298C0058528D /* WasteImageDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteImageDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		04E3D69D265D298C0058528D /* WasteImageDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteImageDetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		04E6104226725421001E6629 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
-		04E6104326725421001E6629 /* Json4Swift_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base.swift; sourceTree = "<group>"; };
+		04E6104326725421001E6629 /* SupplyProcessDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupplyProcessDataModel.swift; sourceTree = "<group>"; };
 		04E6104426725422001E6629 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		04E6104526725422001E6629 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		18011270266774E5000C7102 /* FaqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
@@ -671,7 +669,6 @@
 		048B5FAE267234AD003979DA /* Supply Process */ = {
 			isa = PBXGroup;
 			children = (
-				048B5FAF26723570003979DA /* SupplyProcess.swift */,
 				04E610412672540B001E6629 /* DataModel */,
 			);
 			path = "Supply Process";
@@ -818,7 +815,7 @@
 		04E610412672540B001E6629 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				04E6104326725421001E6629 /* Json4Swift_Base.swift */,
+				04E6104326725421001E6629 /* SupplyProcessDataModel.swift */,
 				04E6104526725422001E6629 /* Options.swift */,
 				04E6104226725421001E6629 /* Questions.swift */,
 				04E6104426725422001E6629 /* Result.swift */,
@@ -1426,7 +1423,7 @@
 				0067A318252AFC9E00CECA8C /* UIDevice.swift in Sources */,
 				181025292657E36500DEBF7D /* GCD.swift in Sources */,
 				184F51702667AD9700F0328A /* ConfirmPendingTableViewCell.swift in Sources */,
-				04E6104726725422001E6629 /* Json4Swift_Base.swift in Sources */,
+				04E6104726725422001E6629 /* SupplyProcessDataModel.swift in Sources */,
 				180CD1AF2665048D0092168B /* PaymentViewController.swift in Sources */,
 				181025282657E36500DEBF7D /* Global.swift in Sources */,
 				1889607F266E289800061783 /* SupplyDetailTableViewCell.swift in Sources */,
@@ -1461,7 +1458,6 @@
 				18C11A6C265F9D5F00BC022F /* ContactViewController.swift in Sources */,
 				18937564266127F800D55A33 /* WasteDetailLocationViewController.swift in Sources */,
 				04C82E182664BCCB00D52947 /* WasteDetailViewModel.swift in Sources */,
-				048B5FB026723570003979DA /* SupplyProcess.swift in Sources */,
 				00434540254823FE009A6166 /* ApiClient.swift in Sources */,
 				0043453E254823FE009A6166 /* TSAPIClient.swift in Sources */,
 				0067A31E252AFC9E00CECA8C /* UIButton.swift in Sources */,

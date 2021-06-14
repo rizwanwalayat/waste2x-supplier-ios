@@ -2,9 +2,9 @@
 import Foundation
 import ObjectMapper
 
-struct Options : Mappable {
-	var title : String?
-	var icon_url : String?
+struct OptionsSupplyProcess : Mappable {
+	var title = ""
+	var icon_url = ""
 
 	init?(map: Map) {
 

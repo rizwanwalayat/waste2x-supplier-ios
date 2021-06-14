@@ -117,10 +117,14 @@ class APIClient: APIClientHandler {
     
     func fetchSupplyProcessData(_ completionBlock: @escaping APIClientCompletionHandler) {
         
-        let headers = ["Authorization": "token " + Global.shared.fireBaseToken]
+        let headers = ["Authorization": "token b94662d8340a0c3d56c829a1d0902a96efe88be7"]// + Global.shared.tok]
         _ = sendRequest(APIRoutes.fetchSupplyProcessData , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+    }
+    
+    func postSupplyProcessData(params : [String: AnyObject], _ completionBlock: @escaping APIClientCompletionHandler) {
         
-        
+        let headers = ["Authorization": "token b94662d8340a0c3d56c829a1d0902a96efe88be7"]
+        _ = sendRequest(APIRoutes.postSupplyProcessDataNewUser , parameters: params ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
 }
 

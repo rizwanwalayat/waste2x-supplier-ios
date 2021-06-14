@@ -13,7 +13,8 @@ class SupplyingTypeViewController: BaseViewController {
     
     //MARK: - Variables
     var collectionViewIndex = 0
-    var collectionViewCount =  7
+    var supplyProcessData =  [SupplyProcessResponse]()
+    var selectionData = [String : Any]()
     
     //MARK: - Outlets
     
@@ -32,14 +33,8 @@ class SupplyingTypeViewController: BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
-//        nextButtonBottomConstraints.constant = 0
-//        nextButtonBottomConstraints.constant = tabbarViewHeight+10
         
-        collectionView.reloadData()
-        DispatchQueue.main.async {
-            self.constCollectionViewHeigh.constant = self.collectionView.contentSize.height
-            self.view.layoutIfNeeded()
-        }
+        collectionViewReload()
         globalObjectContainer?.tabbarHiddenView.isHidden = true
         
     }
@@ -47,17 +42,31 @@ class SupplyingTypeViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        
     }
-    //MARK: - IBOutlets
-
     
+    
+    func collectionViewReload()
+    {
+        collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.constCollectionViewHeigh.constant = self.collectionView.contentSize.height
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    //MARK: - IBOutlets
     
     @IBAction func nextAction(_ sender: Any) {
         
-        let vc = SupplySubTypeViewController(nibName: "SupplySubTypeViewController", bundle: nil)
-        vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: false, completion: nil)
+        if supplyProcessData.count > 0 {
+            
+            selectionData["waste_type"] = supplyProcessData[collectionViewIndex].title
+            let vc = SupplySubTypeViewController(nibName: "SupplySubTypeViewController", bundle: nil)
+            vc.modalPresentationStyle = .overFullScreen
+            vc.supplyProcessQuestions = supplyProcessData[collectionViewIndex].questions
+            vc.selectionData = selectionData
+            self.present(vc, animated: false, completion: nil)
+        }
         
     }
     
@@ -68,13 +77,17 @@ extension SupplyingTypeViewController : UICollectionViewDelegate, UICollectionVi
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return collectionViewCount
+        return supplyProcessData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.register(SupplyingCollectionViewCell.self, indexPath: indexPath)
-        cell.configForSupplying(index: indexPath.row)
+        
+        let cellData = supplyProcessData[indexPath.item]
+        
+        cell.configForSupplying(cellData.title, cellData.icon_url)
+        
         if collectionViewIndex == indexPath.row {
             cell.mainViewSelection.borderColor = UIColor(named: "themeColor")
             cell.mainViewSelection.borderWidth = 2
@@ -110,11 +123,17 @@ extension SupplyingTypeViewController {
     
     func fetchDataFromServer()
     {
-        SupplyProcessDataModel.fetchSupplyProcessData { response, error, statusCode in
+        SupplyProcessDataModel.fetchSupplyProcess { response, error, statusCode in
             
-            if error == nil
+            if error != nil
             {
+                Utility.showAlertController(self, error!.localizedDescription)
+            }
+            
+            if response != nil {
                 
+                self.supplyProcessData = response!.result
+                self.collectionViewReload()
             }
         }
     }

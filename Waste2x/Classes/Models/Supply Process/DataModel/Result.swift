@@ -4,10 +4,10 @@ import Foundation
 import ObjectMapper
 
 struct SupplyProcessResponse : Mappable {
-	var title : String?
-	var icon_url : String?
-	var share_icon_url : String?
-	var questions : [Questions]?
+	var title = ""
+	var icon_url = ""
+	var share_icon_url = ""
+	var questions = [QuestionsSuppyProcess]()
 
 	init?(map: Map) {
 

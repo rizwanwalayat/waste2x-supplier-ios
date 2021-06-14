@@ -40,7 +40,7 @@ struct APIRoutes {
     static var registration = "paudapay_us/registration/"
     static var emailVerification = "paudapay_us/verify_email/"
     static var fetchSupplyProcessData = "paudapay_us/waste_types/"
-    
+    static var postSupplyProcessDataNewUser = "paudapay_us/waste_type_selection_v2/"
     
     
     

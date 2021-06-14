@@ -4,7 +4,7 @@ import Alamofire
 import ObjectMapper
 
 typealias APIClientCompletionHandler = (_ result: AnyObject?, _ error: NSError?,_ statusCode: Int) -> Void
-
+typealias APIClientCompletionHandler1 = (_ result: [String : Any]?, _ error: NSError?,_ statusCode: Int) -> Void
 
 enum APIClientHandlerErrorCode: Int {
     case general = 30001

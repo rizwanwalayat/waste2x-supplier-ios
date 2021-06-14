@@ -26,8 +26,14 @@ class FormSubTypesViewController: BaseViewController {
     // MARK: - Declarations
     
     var heightOfHiddenView : CGFloat = 0.0
-    var tableViewCount =  3
     var tabaleViewIndex = 0
+    var supplyProcessQuestions = [QuestionsSuppyProcess]()
+    
+    var panGestureRecognizer : UIPanGestureRecognizer?
+    var originalPosition : CGPoint?
+    var currentPositionTouched : CGPoint?
+    
+    var selectionData = [String: Any]()
     
     // MARK: - LifeCycle
     
@@ -37,6 +43,9 @@ class FormSubTypesViewController: BaseViewController {
         tableView.rowHeight = UITableView.automaticDimension
         self.tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
         tableView.reloadData()
+        
+        formOfWasteLabel.text =  supplyProcessQuestions.first?.title ?? ""
+        tabGestureInit()
     }
 
     override func viewWillDisappear(_ animated: Bool)
@@ -55,8 +64,11 @@ class FormSubTypesViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        
         self.heightOfHiddenView = self.dataContentView.bounds.height
+        let estimatedMaxScreenHeight = UIScreen.main.bounds.height - 100 // coz have to give minimum margin from top
+        if self.heightOfHiddenView > estimatedMaxScreenHeight {
+            self.heightOfHiddenView = estimatedMaxScreenHeight
+        }
         self.constHeightMainHolderview.constant = self.heightOfHiddenView
         self.constTopMainHolderview.constant   = -self.heightOfHiddenView
         
@@ -109,10 +121,12 @@ class FormSubTypesViewController: BaseViewController {
             
             if forNavigate {
                 
-                let vc = FormOfWasteViewController(nibName: "FormOfWasteViewController", bundle: nil)
+                let vc = AmountWasteViewController(nibName: "AmountWasteViewController", bundle: nil)
                 vc.modalPresentationStyle = .overFullScreen
-                vc.formForLiveStock = true
+                vc.supplyProcessQuestions = self.supplyProcessQuestions
+                vc.selectionData = self.selectionData
                 self.present(vc, animated: true, completion: nil)
+
             }
             else
             {
@@ -124,6 +138,11 @@ class FormSubTypesViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func nextButtonPressed(_ sender: Any) {
+        
+        var questionsArray = selectionData["question_responses"] as! [String]
+        let selectedOption = supplyProcessQuestions.first?.options[tabaleViewIndex].title ?? ""
+        questionsArray.append(selectedOption)
+        selectionData["question_responses"] = questionsArray
         
         hideView(true)
     }
@@ -139,13 +158,16 @@ class FormSubTypesViewController: BaseViewController {
 
 extension FormSubTypesViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableViewCount
+        return supplyProcessQuestions.first?.options.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.register(SupplyDetailTableViewCell.self, indexPath: indexPath)
         cell.selectionStyle = .none
-        cell.configForGrade(index: indexPath.row)
+        
+        let cellData = supplyProcessQuestions.first?.options[indexPath.item]
+        
+        cell.configForGrade(cellData?.title ?? "", imageStr: cellData?.icon_url ?? "")
         if tabaleViewIndex == indexPath.row {
             cell.mainView.borderColor = UIColor(named: "themeColor")
             cell.mainView.borderWidth = 2
@@ -169,4 +191,59 @@ extension FormSubTypesViewController : UITableViewDelegate,UITableViewDataSource
         tableView.reloadData()
     }
     
+}
+
+// tapGesture Handligs
+extension FormSubTypesViewController
+{
+    
+    func tabGestureInit()
+    {
+        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panGestureAction(_:)))
+        mainHolderView.addGestureRecognizer(panGestureRecognizer!)
+        mainHolderView.isUserInteractionEnabled = true
+    }
+    
+    @objc func panGestureAction(_ panGesture: UIPanGestureRecognizer) {
+        let translation = panGesture.translation(in: view)
+        
+        if panGesture.state == .began {
+            originalPosition = view.center
+            currentPositionTouched = panGesture.location(in: view)
+        } else if panGesture.state == .changed {
+            let velocity = panGesture.velocity(in: view)
+            if velocity.y <= 0
+            {
+                self.view.center = self.originalPosition!
+            }
+            else
+            {
+                view.frame.origin = CGPoint(
+                    x: originalPosition!.x - self.view.frame.width / 2,  //translation.x,
+                    y: translation.y
+                )
+            }
+        } else if panGesture.state == .ended {
+            let velocity = panGesture.velocity(in: view)
+            
+            if velocity.y >= 1000 {
+                UIView.animate(withDuration: 0.2
+                    , animations: {
+                        self.view.frame.origin = CGPoint(
+                            x: self.view.frame.origin.x,
+                            y: self.view.frame.size.height
+                        )
+                }, completion: { (isCompleted) in
+                    if isCompleted {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                })
+            }
+            else {
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.view.center = self.originalPosition!
+                })
+            }
+        }
+    }
 }

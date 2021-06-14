@@ -21,12 +21,16 @@ class SiteCreatedViewController: BaseViewController {
     @IBOutlet weak var okayButton: UIButton!
     
     
+    // MARK: - Declarations
+    
+    var postDictData = [String : Any]()
+    
+    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
 
@@ -34,6 +38,31 @@ class SiteCreatedViewController: BaseViewController {
 
     @IBAction func okayButtonPressed(_ sender: Any) {
         
-        Utility.homeViewController()
+        fetchDataFromServer()
+    }
+}
+
+// MARK: - API Calls Handlings
+extension SiteCreatedViewController {
+    
+    
+    func fetchDataFromServer()
+    {
+        postDictData["phone"] = "+923337646947"
+        postDictData["email"] = "naeem@gmail.com"
+        let postDict = postDictData as [String : AnyObject]
+        
+        SupplyProcessDataModel.postSiteCreateData(params: postDict, { data, error, code in
+            
+            if error != nil
+            {
+                Utility.showAlertController(self, error!.localizedDescription)
+            }
+            
+            if data != nil {
+                
+                Utility.homeViewController()
+            }
+        })
     }
 }

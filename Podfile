@@ -19,5 +19,6 @@ target 'Waste2x' do
   pod 'FSCalendar'
   pod 'StepIndicator', '~> 1.0.8'
   pod 'StepperView','~> 1.6.6'
+  pod 'SDWebImage'
   pod ‘youtube-ios-player-helper’, ‘~> 0.1’
 end

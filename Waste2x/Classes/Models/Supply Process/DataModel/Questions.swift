@@ -2,10 +2,10 @@
 import Foundation
 import ObjectMapper
 
-struct Questions : Mappable {
-	var title : String?
-	var options : [Options]?
-	var user_input : Bool?
+struct QuestionsSuppyProcess : Mappable {
+	var title = ""
+	var options = [OptionsSupplyProcess]()
+	var user_input = false
 
 	init?(map: Map) {
 

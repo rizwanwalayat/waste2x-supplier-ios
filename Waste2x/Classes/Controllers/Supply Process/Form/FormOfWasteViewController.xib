@@ -23,6 +23,7 @@
                 <outlet property="constHeightOfCollection" destination="pFj-kQ-wk9" id="lxD-zB-MNL"/>
                 <outlet property="mainViewWithNav" destination="O3i-KB-Z8y" id="nTX-71-YW1"/>
                 <outlet property="nextButtonBottomConstraints" destination="Zcq-jg-AfZ" id="ZvM-nz-fwZ"/>
+                <outlet property="questionLabel" destination="9EY-FZ-dZz" id="p3a-5y-cNR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

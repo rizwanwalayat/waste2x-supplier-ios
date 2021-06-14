@@ -31,13 +31,23 @@ class AmountWasteViewController: BaseViewController {
     @IBOutlet weak var nextButton: UIButton!
     
     
+    // MARK: - Declarations
+    
+    var supplyProcessQuestions = [QuestionsSuppyProcess]()
+    var tempArray = [QuestionsSuppyProcess]()
+    var selectionData = [String: Any]()
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tempArray = supplyProcessQuestions
         
+        
+        numberOfTonsPerMonthLabel.text = tempArray.last?.title
+        tempArray.removeLast()
+        numberOfTonsTitleLabel.text = tempArray.last?.title
     }
 
 
@@ -45,10 +55,30 @@ class AmountWasteViewController: BaseViewController {
     
     @IBAction func nextButtonPressed(_ sender: Any) {
         
-        let vc = WasteDetailLocationViewController(nibName: "WasteDetailLocationViewController", bundle: nil)
-        vc.isForSiteCreation = true
-        vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: true, completion: nil)
+        if checkFieldsAuth() {
+            
+            var questionsArray = selectionData["question_responses"] as! [String]
+            let numberOftones = numberOfTonsTextField.text ?? ""
+            let numberOftonesPerMonth = tonsPerMonthTextField.text ?? ""
+            questionsArray.append(numberOftones)
+            questionsArray.append(numberOftonesPerMonth)
+            selectionData["question_responses"] = questionsArray
+            
+            //let jsonStr = Utility.DictToJsonString(selectionData)
+            guard let jsonData = try? JSONSerialization.data(withJSONObject: selectionData, options: .prettyPrinted) else {return }
+            // here "jsonData" is the dictionary encoded in JSON data
+            
+            guard let decoded = try? JSONSerialization.jsonObject(with: jsonData, options: []) else {return }
+            // here "decoded" is of type `Any`, decoded from JSON data
+            
+            let postDict : [String : Any] = ["waste_type_questions" : decoded]
+
+            let vc = WasteDetailLocationViewController(nibName: "WasteDetailLocationViewController", bundle: nil)
+            vc.isForSiteCreation = true
+            vc.selectionData = postDict
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
     }
 }
 
@@ -87,6 +117,15 @@ extension AmountWasteViewController : UITextFieldDelegate
             let isSelected = textField.text!.isEmpty ? false : true
             self.selectionHandlingsOfViews(numberOfTonsPerMonthFieldHolderView, isSelection: isSelected)
         }
+    }
+    
+    func checkFieldsAuth() -> Bool
+    {
+        if !numberOfTonsTextField.text!.isEmpty && !tonsPerMonthTextField.text!.isEmpty{
+            return true
+        }
+        Utility.showAlertController(self, "Please fill all fields")
+        return false
     }
 }
 
