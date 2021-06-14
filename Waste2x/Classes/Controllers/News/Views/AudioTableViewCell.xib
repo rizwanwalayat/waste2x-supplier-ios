@@ -30,6 +30,9 @@
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" image="play"/>
                                 <state key="selected" image="pause"/>
+                                <connections>
+                                    <action selector="playPauseAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="j76-cf-BaJ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuP-Nr-BD6">
                                 <rect key="frame" x="60" y="10" width="302" height="69"/>
@@ -65,6 +68,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="playPauseButton" destination="rGE-UQ-BpB" id="sz5-Yr-Zso"/>
+                <outlet property="titleLabel" destination="AuP-Nr-BD6" id="KPj-4l-f7o"/>
             </connections>
             <point key="canvasLocation" x="-17.39130434782609" y="84.709821428571431"/>
         </tableViewCell>

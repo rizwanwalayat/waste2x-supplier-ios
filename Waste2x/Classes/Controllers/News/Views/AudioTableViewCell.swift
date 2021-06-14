@@ -12,6 +12,7 @@ class AudioTableViewCell: UITableViewCell {
 
 
     @IBOutlet weak var playPauseButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
     
     var player : AVPlayer?
     var played = Bool()
@@ -30,11 +31,25 @@ class AudioTableViewCell: UITableViewCell {
             guard let url = URL.init(string: radioURL) else { return }
             let playerItem = AVPlayerItem.init(url: url)
             player = AVPlayer.init(playerItem: playerItem)
-            player?.play()
         }
     func config(data:NewsModel,index:Int){
-        player?.pause()
         loadRadio(radioURL: data.result[index].fileUrl)
+        self.titleLabel.text = data.result[index].title
+    }
+    @IBAction func playPauseAction(_ sender: Any) {
+        print(played)
+        played = !played
+        if played
+        {playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            player?.play()
+        }
+        else
+        {
+            playPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            player?.pause()
+        }
+        
+        
     }
     
     

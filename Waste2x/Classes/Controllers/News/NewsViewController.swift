@@ -90,7 +90,6 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
         }
         else if NewsListModell?[indexPath.row].type == cellType.audio.rawValue {
             let cell = tableView.register(AudioTableViewCell.self, indexPath: indexPath)
-            cell.config(data: NewsModell!, index: indexPath.row)
             return cell
         }
         else if NewsListModell?[indexPath.row].type == cellType.blog.rawValue {
