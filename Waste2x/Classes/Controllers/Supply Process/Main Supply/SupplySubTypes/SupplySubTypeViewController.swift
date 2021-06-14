@@ -25,8 +25,13 @@ class SupplySubTypeViewController: BaseViewController {
     // MARK: - Declarations
     
     var heightOfHiddenView : CGFloat = 0.0
-    var tableViewCount =  4
     var tabaleViewIndex = 0
+    var supplyProcessQuestions = [QuestionsSuppyProcess]()
+    var panGestureRecognizer : UIPanGestureRecognizer?
+    var originalPosition : CGPoint?
+    var currentPositionTouched : CGPoint?
+    var optionsCount = 0
+    var selectionData = [String : Any]()
     
     
     // MARK: - Lifecycle
@@ -37,6 +42,10 @@ class SupplySubTypeViewController: BaseViewController {
         tableView.rowHeight = UITableView.automaticDimension
         self.tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
         tableView.reloadData()
+        
+        optionsCount = supplyProcessQuestions.count
+        typeOfWasteLabel.text =  supplyProcessQuestions.first?.title ?? ""
+        tabGestureInit()
     }
 
 
@@ -58,9 +67,13 @@ class SupplySubTypeViewController: BaseViewController {
         
         
         self.heightOfHiddenView = self.dataContentView.bounds.height
+        let estimatedMaxScreenHeight = UIScreen.main.bounds.height - 100 // coz have to give minimum margin from top
+        if self.heightOfHiddenView > estimatedMaxScreenHeight {
+            self.heightOfHiddenView = estimatedMaxScreenHeight
+        }
         self.constHeightMainHolderview.constant = self.heightOfHiddenView
-        
         self.constTopMainHolderview.constant   = -self.heightOfHiddenView
+        
         UIView.animate(withDuration: 0.3,
                    delay: 0.1,
                    options: UIView.AnimationOptions.curveEaseInOut,
@@ -109,9 +122,29 @@ class SupplySubTypeViewController: BaseViewController {
         }, completion: { (finished) -> Void in
             
             if forNavigate {
-                let vc = FormOfWasteViewController(nibName: "FormOfWasteViewController", bundle: nil)
-                vc.modalPresentationStyle = .overFullScreen
-                self.present(vc, animated: true, completion: nil)
+                
+                // in this condition we are judge if more then 3 question then questions will be related to forms other wise question will be related to tons
+                if self.optionsCount > 3 {
+                    
+                    // removing first because we have already used this first option, in next screen we will again use first option again
+                    
+                    var tempArray = self.supplyProcessQuestions
+                    tempArray.removeFirst()
+                    let vc = FormOfWasteViewController(nibName: "FormOfWasteViewController", bundle: nil)
+                    vc.modalPresentationStyle = .overFullScreen
+                    vc.supplyProcessQuestions = tempArray
+                    vc.selectionData = self.selectionData
+                    self.present(vc, animated: true, completion: nil)
+                    
+                }else
+                {
+                    
+                    let vc = AmountWasteViewController(nibName: "AmountWasteViewController", bundle: nil)
+                    vc.modalPresentationStyle = .overFullScreen
+                    vc.supplyProcessQuestions = self.supplyProcessQuestions
+                    vc.selectionData = self.selectionData
+                    self.present(vc, animated: true, completion: nil)
+                }
             }
             else
             {
@@ -125,6 +158,10 @@ class SupplySubTypeViewController: BaseViewController {
     
     @IBAction func nextButtonPressed(_ sender: Any) {
         
+        let selectedOption = supplyProcessQuestions.first?.options[tabaleViewIndex].title ?? ""
+        
+        let selectedOptionArray = [selectedOption]
+        selectionData["question_responses"] = selectedOptionArray
         hideView(true)
     }
     
@@ -139,14 +176,20 @@ class SupplySubTypeViewController: BaseViewController {
 extension SupplySubTypeViewController : UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableViewCount
+        return supplyProcessQuestions.first?.options.count ?? 0 //supplyProcessQuestions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.register(SupplyDetailTableViewCell.self, indexPath: indexPath)
+        
         cell.selectionStyle = .none
-        cell.configForType(index: indexPath.row)
+        
+        if let cellDate = supplyProcessQuestions.first?.options[indexPath.row] {
+            
+            cell.configForType(cellDate.title ,  cellDate.icon_url)
+        }
+        
         if tabaleViewIndex == indexPath.row {
             cell.mainView.borderColor = UIColor(named: "themeColor")
             cell.mainView.borderWidth = 2
@@ -167,5 +210,60 @@ extension SupplySubTypeViewController : UITableViewDelegate, UITableViewDataSour
         }
         self.tabaleViewIndex = indexPath.row
         tableView.reloadData()
+    }
+}
+
+// tapGesture Handligs
+extension SupplySubTypeViewController
+{
+    
+    func tabGestureInit()
+    {
+        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panGestureAction(_:)))
+        mainHolderView.addGestureRecognizer(panGestureRecognizer!)
+        mainHolderView.isUserInteractionEnabled = true
+    }
+    
+    @objc func panGestureAction(_ panGesture: UIPanGestureRecognizer) {
+        let translation = panGesture.translation(in: view)
+        
+        if panGesture.state == .began {
+            originalPosition = view.center
+            currentPositionTouched = panGesture.location(in: view)
+        } else if panGesture.state == .changed {
+            let velocity = panGesture.velocity(in: view)
+            if velocity.y <= 0
+            {
+                self.view.center = self.originalPosition!
+            }
+            else
+            {
+                view.frame.origin = CGPoint(
+                    x: originalPosition!.x - self.view.frame.width / 2,  //translation.x,
+                    y: translation.y
+                )
+            }
+        } else if panGesture.state == .ended {
+            let velocity = panGesture.velocity(in: view)
+            
+            if velocity.y >= 1000 {
+                UIView.animate(withDuration: 0.2
+                    , animations: {
+                        self.view.frame.origin = CGPoint(
+                            x: self.view.frame.origin.x,
+                            y: self.view.frame.size.height
+                        )
+                }, completion: { (isCompleted) in
+                    if isCompleted {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                })
+            }
+            else {
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.view.center = self.originalPosition!
+                })
+            }
+        }
     }
 }

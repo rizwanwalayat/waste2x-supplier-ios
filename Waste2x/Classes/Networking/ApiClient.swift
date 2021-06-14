@@ -118,5 +118,27 @@ class APIClient: APIClientHandler {
 //        let params = ["image": image, "full_name": name, "email": email, "phone_number": phoneNo, "national_id": nationalId, "social_security_number": ssn, "occupation": occupation ,"type": type] as [String : Any]
 //        sendRequestUsingMultipart(APIRoutes.baseUrl+APIRoutes.updateUser, parameters: params as [String : AnyObject] , httpMethod: .put, headers: headers, completionBlock: completionBlock)
 //    }
+    func updateUserProfile(image: UIImage, name: String, email: String, phoneNo: String, nationalId: String, ssn: String, occupation: String, type: Int, _ completionBlock: @escaping APIClientCompletionHandler) {
+        let headers = ["Authorization": "Bearer "+(DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        let params = ["image": image, "full_name": name, "email": email, "phone_number": phoneNo, "national_id": nationalId, "social_security_number": ssn, "occupation": occupation ,"type": type] as [String : Any]
+        sendRequestUsingMultipart(APIRoutes.baseUrl+APIRoutes.updateUser, parameters: params as [String : AnyObject] , httpMethod: .put, headers: headers, completionBlock: completionBlock)
+    }
+    
+    
+    // NH : for fetch data for supply process
+    
+    func fetchSupplyProcessData(_ completionBlock: @escaping APIClientCompletionHandler) {
+        
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]// + Global.shared.tok]
+        _ = sendRequest(APIRoutes.fetchSupplyProcessData , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+    }
+    
+    func postSupplyProcessData(params : [String: AnyObject], _ completionBlock: @escaping APIClientCompletionHandler) {
+        
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        
+        DataManager.shared.getUser()?.result?.isNewUser ?? true ? (_ = sendRequest(APIRoutes.postSupplyProcessDataNewUser , parameters: params ,httpMethod: .post , headers: headers, completionBlock: completionBlock)) : (_ = sendRequest(APIRoutes.postSupplyProcessDataUser , parameters: params ,httpMethod: .post , headers: headers, completionBlock: completionBlock))
+        
+    }
 }
 

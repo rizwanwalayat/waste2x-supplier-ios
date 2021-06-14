@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SupplyingCollectionViewCell: UICollectionViewCell {
     //MARK: - DATA
@@ -28,15 +29,15 @@ class SupplyingCollectionViewCell: UICollectionViewCell {
         CellData(imageType: #imageLiteral(resourceName: "Densified"), labelTitle: "Densified"),
         CellData(imageType: #imageLiteral(resourceName: "Baled"), labelTitle: "Baled")
     ]
-    let SupplyingType: [CellData] = [
-        CellData(imageType: #imageLiteral(resourceName: "Crop Icon"), labelTitle: "Crop Waste"),
-        CellData(imageType: #imageLiteral(resourceName: "bottle"), labelTitle: "Plastic Waste"),
-        CellData(imageType: #imageLiteral(resourceName: "food"), labelTitle: "Food Waste"),
-        CellData(imageType: #imageLiteral(resourceName: "Livestock Icon"), labelTitle: "LiveStock\nWaste"),
-        CellData(imageType: #imageLiteral(resourceName: "Cans"), labelTitle: "Inorganic\nWaste"),
-        CellData(imageType: #imageLiteral(resourceName: "Recycle Bin Icon"), labelTitle: "Other \nInorganic \nWaste"),
-        CellData(imageType: #imageLiteral(resourceName: "tire"), labelTitle: "Tire Waste")
-    ]
+//    let SupplyingType: [CellData] = [
+//        CellData(imageType: #imageLiteral(resourceName: "Crop Icon"), labelTitle: "Crop Waste"),
+//        CellData(imageType: #imageLiteral(resourceName: "bottle"), labelTitle: "Plastic Waste"),
+//        CellData(imageType: #imageLiteral(resourceName: "food"), labelTitle: "Food Waste"),
+//        CellData(imageType: #imageLiteral(resourceName: "Livestock Icon"), labelTitle: "LiveStock\nWaste"),
+//        CellData(imageType: #imageLiteral(resourceName: "Cans"), labelTitle: "Inorganic\nWaste"),
+//        CellData(imageType: #imageLiteral(resourceName: "Recycle Bin Icon"), labelTitle: "Other \nInorganic \nWaste"),
+//        CellData(imageType: #imageLiteral(resourceName: "tire"), labelTitle: "Tire Waste")
+//    ]
     
     let formLivestockData : [CellData] = [
         
@@ -58,22 +59,77 @@ class SupplyingCollectionViewCell: UICollectionViewCell {
     func selection(index:Int){
         
     }
-    func configForSupplying(index:Int){
-        self.imgView.image = SupplyingType[index].imageType
-        self.titleLabel.text = SupplyingType[index].labelTitle
-    }
-    func configForForm(index:Int, isForLiveStock : Bool){
+    func configForSupplying(_ title : String, _ imageStr : String)
+    {
+        self.titleLabel.text = title
         
-        if isForLiveStock {
-            
-            self.imgView.image = formLivestockData[index].imageType
-            self.titleLabel.text = formLivestockData[index].labelTitle
+        if imageStr == ""
+        {
+            self.imgView.image = nil
         }
-        else {
+        else
+        {
             
-            self.imgView.image = FormData[index].imageType
-            self.titleLabel.text = FormData[index].labelTitle
+            if let image = SDImageCache.shared.imageFromCache(forKey: imageStr )
+            {
+                
+                self.imgView.image = image
+            }
+            else
+            {
+                guard let imageUrl = URL(string: imageStr) else { print("URL not created for imagesURL String"); return }
+                
+                self.imgView.sd_setImage(with: imageUrl, placeholderImage: nil,options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, url) in
+                    
+                    if image != nil
+                    {
+                        SDImageCache.shared.store(image, forKey: (imageStr), completion: nil)
+                        self.imgView.image = image
+                    }
+                })
+            }
         }
+    }
+    
+    func configForForm(_ title :String, _ imageStr : String){
+        
+        self.titleLabel.text = title
+        
+        
+        if imageStr == ""
+        {
+            self.imgView.image = nil
+        }
+        else
+        {
+            
+            if let image = SDImageCache.shared.imageFromCache(forKey: imageStr )
+            {
+                
+                self.imgView.image = image
+            }
+            else
+            {
+                guard let imageUrl = URL(string: imageStr) else { print("URL not created for imagesURL String"); return }
+                
+                self.imgView.sd_setImage(with: imageUrl, placeholderImage: nil,options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, url) in
+                    
+                    if image != nil
+                    {
+                        SDImageCache.shared.store(image, forKey: (imageStr), completion: nil)
+                        self.imgView.image = image
+                    }
+                })
+            }
+        }
+//        if isForLiveStock {
+//
+//        }
+//        else {
+//
+//            self.imgView.image = FormData[index].imageType
+//            self.titleLabel.text = FormData[index].labelTitle
+//        }
     }
     
 

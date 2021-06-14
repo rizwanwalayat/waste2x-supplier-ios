@@ -38,6 +38,7 @@ class WasteDetailLocationViewController: BaseViewController {
     var marker                      : GMSMarker?
     var delegate                    : WasteDetailLocationViewControllerDelegate?
     var isForSiteCreation           = false
+    var selectionData               = [String : Any]()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -87,17 +88,26 @@ class WasteDetailLocationViewController: BaseViewController {
                     self.delegate?.selectedLocationDetail(address: address ?? "")
                 }
             }
-        }
-        // screen is reusing for site Creation add condition for that puropose to set flow of applcation
-        if isForSiteCreation {
             
-            let vc = SiteCreatedViewController(nibName: "SiteCreatedViewController", bundle: nil)
-            vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true, completion: nil)
-        }
-        else {
             
-            self.navigationController?.popViewController(animated: true)
+            selectionData["latitude"] = currentLocation!.coordinate.latitude
+            selectionData["longitude"] = currentLocation!.coordinate.longitude
+            // screen is reusing for site Creation add condition for that puropose to set flow of applcation
+            if isForSiteCreation {
+                
+                let vc = SiteCreatedViewController(nibName: "SiteCreatedViewController", bundle: nil)
+                vc.modalPresentationStyle = .overFullScreen
+                vc.postDictData = selectionData
+                self.present(vc, animated: true, completion: nil)
+            }
+            else {
+                
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+        else
+        {
+            Utility.showAlertController(self, "Please select location, first")
         }
     }
     

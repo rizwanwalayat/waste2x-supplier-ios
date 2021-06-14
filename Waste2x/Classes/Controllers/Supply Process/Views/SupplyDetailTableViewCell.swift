@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SupplyDetailTableViewCell: UITableViewCell {
 
@@ -52,13 +53,68 @@ class SupplyDetailTableViewCell: UITableViewCell {
     func selection(index:Int){
         
     }
-    func configForType(index:Int){
-        self.imgView.image = supplyType[index].imageType
-        self.labelTitle.text = supplyType[index].labelTitle
+    func configForType(_ title : String, _ imageStr : String){
+        self.labelTitle.text = title
+        
+        if imageStr == ""
+        {
+            self.imgView.image = #imageLiteral(resourceName: "Icon")
+        }
+        else
+        {
+            
+            if let image = SDImageCache.shared.imageFromCache(forKey: imageStr )
+            {
+                
+                self.imgView.image = image
+            }
+            else
+            {
+                guard let imageUrl = URL(string: imageStr) else { print("URL not created for imagesURL String"); return }
+                
+                self.imgView.sd_setImage(with: imageUrl, placeholderImage: nil,options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, url) in
+                    
+                    if image != nil
+                    {
+                        SDImageCache.shared.store(image, forKey: (imageStr), completion: nil)
+                        self.imgView.image = image
+                    }
+                })
+            }
+        }
+        
+        
     }
-    func configForGrade(index:Int){
-        self.imgView.image = GradeData[index].imageType
-        self.labelTitle.text = GradeData[index].labelTitle
+    func configForGrade(_ title : String, imageStr : String){
+        
+        self.labelTitle.text = title
+        
+        if imageStr == ""
+        {
+            self.imgView.image = nil
+        }
+        else
+        {
+            
+            if let image = SDImageCache.shared.imageFromCache(forKey: imageStr )
+            {
+                
+                self.imgView.image = image
+            }
+            else
+            {
+                guard let imageUrl = URL(string: imageStr) else { print("URL not created for imagesURL String"); return }
+                
+                self.imgView.sd_setImage(with: imageUrl, placeholderImage: nil,options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, url) in
+                    
+                    if image != nil
+                    {
+                        SDImageCache.shared.store(image, forKey: (imageStr), completion: nil)
+                        self.imgView.image = image
+                    }
+                })
+            }
+        }
     }
     
     

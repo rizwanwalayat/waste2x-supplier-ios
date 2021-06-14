@@ -287,4 +287,12 @@ struct NetworkingConnection {
         manager?.startListening()
         return bConnected!
     }
+    
+    class func DictToJsonString(_ dict : [String : Any]) -> String?
+    {
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: []) else {return nil}
+        let decoded = String(data: jsonData, encoding: .utf8)!
+        return decoded
+    }
+    
 }

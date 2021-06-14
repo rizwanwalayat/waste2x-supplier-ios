@@ -140,6 +140,7 @@ DEPENDENCIES:
   - netfox
   - NVActivityIndicatorView
   - ObjectMapper (~> 3.4)
+  - SDWebImage
   - SDWebImage (~> 5.0)
   - SlideMenuControllerSwift
   - StepIndicator (~> 1.0.8)
@@ -205,6 +206,6 @@ SPEC CHECKSUMS:
   StepperView: a8b9fc8c18d9050090c900e9fe13c73ab8fe97b3
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: 4bce63b55550e1d6cb79e6c4d0c483622ce743ac
+PODFILE CHECKSUM: 6a844d57475ab0bbddcc96a5095936b717e7b7ba
 
 COCOAPODS: 1.10.1
