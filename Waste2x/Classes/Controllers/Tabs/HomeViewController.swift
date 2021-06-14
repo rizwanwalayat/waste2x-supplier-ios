@@ -35,7 +35,7 @@ class HomeViewController: BaseViewController{
     //MARK: - Variables
     var notification:Bool = true
     var email:String = "Haid3rawan@icloud.com"
-    var pendingCollection = true
+    var pendingCollection = false
     var timer: Timer?
     var count = Int()
     var selecetedIndex = 0

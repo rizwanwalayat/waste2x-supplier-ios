@@ -13,7 +13,7 @@ enum APIClientHandlerErrorCode: Int {
     case invalidToken = 401
 }
 
-let APIClientHandlerErrorDomain = "com.VT.webserviceerror"
+let APIClientHandlerErrorDomain = ""
 let APIClientHandlerDefaultErrorDescription = "Operation failed" //"Operation failed"
 
 class APIClientHandler: TSAPIClient {

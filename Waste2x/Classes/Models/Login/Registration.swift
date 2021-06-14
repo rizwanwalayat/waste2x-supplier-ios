@@ -9,9 +9,8 @@
 import Foundation
 import ObjectMapper
 
-typealias ForgotPasswordCompletionHandler = (_ data: CodeVerification?, _ error: Error?, _ status: Int?) -> Void
 typealias RegistrationCompletionHandler = (_ data: Registration?, _ error: Error?, _ status: Int?) -> Void
-typealias EmailRegistrationCompletionHandler = (_ data: AnyObject?, _ error: Error?, _ status: Int?) -> Void
+typealias RawCompletionHandler = (_ data: AnyObject?, _ error: Error?, _ status: Int?) -> Void
 
 class Registration : Mappable {
     var success = Bool()
@@ -48,7 +47,7 @@ class Registration : Mappable {
             }
         }
     }
-    class func emailVerification(email: String, _ completion: @escaping EmailRegistrationCompletionHandler) {
+    class func emailVerification(email: String, _ completion: @escaping RawCompletionHandler) {
         Utility.showLoading()
         APIClient.shared.emailVerification(email: email) { result, error, status in
             Utility.hideLoading()
