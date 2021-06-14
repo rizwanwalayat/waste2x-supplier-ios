@@ -48,10 +48,10 @@ extension SiteCreatedViewController {
     
     func postDataFromServer()
     {
-        if DataManager.shared.getUser()?.result?.isNewUser ?? true {
+        if Data?.isNewUser ?? true {
             
-            postDictData["phone"] = DataManager.shared.getUser()?.result?.phone ?? "" //"+923337646947"
-            postDictData["email"] = DataManager.shared.getUser()?.result?.email ?? "" //"naeem@gmail.com"
+            postDictData["phone"] = Data?.phone ?? ""
+            postDictData["email"] = Data?.email ?? ""
         }
         
         let postDict = postDictData as [String : AnyObject]
@@ -60,7 +60,7 @@ extension SiteCreatedViewController {
             
             if error != nil
             {
-                Utility.showAlertController(self, error!.localizedDescription)
+                self.alertManager("Failed", message: error!.localizedDescription )
             }
             
             if code == 200 {
@@ -69,6 +69,10 @@ extension SiteCreatedViewController {
                     
                     self.alertManager("Success", message: "Site created successfully" )
                 }
+            }
+            else
+            {
+                self.alertManager("Failed", message: "Site not created ..!" )
             }
         })
     }
