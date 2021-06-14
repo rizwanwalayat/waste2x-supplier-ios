@@ -38,7 +38,7 @@ class SiteCreatedViewController: BaseViewController {
 
     @IBAction func okayButtonPressed(_ sender: Any) {
         
-        fetchDataFromServer()
+        postDataFromServer()
     }
 }
 
@@ -46,23 +46,42 @@ class SiteCreatedViewController: BaseViewController {
 extension SiteCreatedViewController {
     
     
-    func fetchDataFromServer()
+    func postDataFromServer()
     {
-        postDictData["phone"] = "+923337646947"
-        postDictData["email"] = "naeem@gmail.com"
+        if DataManager.shared.getUser()?.result?.isNewUser ?? true {
+            
+            postDictData["phone"] = DataManager.shared.getUser()?.result?.phone ?? "" //"+923337646947"
+            postDictData["email"] = DataManager.shared.getUser()?.result?.email ?? "" //"naeem@gmail.com"
+        }
+        
         let postDict = postDictData as [String : AnyObject]
         
-        SupplyProcessDataModel.postSiteCreateData(params: postDict, { data, error, code in
+        CreateSiteDataModel.postSiteCreateData(params: postDict, { data, error, code in
             
             if error != nil
             {
                 Utility.showAlertController(self, error!.localizedDescription)
             }
             
-            if data != nil {
+            if code == 200 {
                 
-                Utility.homeViewController()
+                if data != nil {
+                    
+                    self.alertManager("Success", message: "Site created successfully" )
+                }
             }
         })
+    }
+    
+    
+    func alertManager(_ title : String, message : String)
+    {
+        let alert =  UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { action in
+            
+            Utility.homeViewController()
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }

@@ -64,14 +64,20 @@ class AmountWasteViewController: BaseViewController {
             questionsArray.append(numberOftonesPerMonth)
             selectionData["question_responses"] = questionsArray
             
-            //let jsonStr = Utility.DictToJsonString(selectionData)
-            guard let jsonData = try? JSONSerialization.data(withJSONObject: selectionData, options: .prettyPrinted) else {return }
-            // here "jsonData" is the dictionary encoded in JSON data
-            
-            guard let decoded = try? JSONSerialization.jsonObject(with: jsonData, options: []) else {return }
-            // here "decoded" is of type `Any`, decoded from JSON data
-            
-            let postDict : [String : Any] = ["waste_type_questions" : decoded]
+            guard let jsonStr = Utility.DictToJsonString(selectionData) else {
+                Utility.showAlertController(self, "not converting dict to jsonString")
+                return
+                
+            }
+            var postDict = [String : Any]()
+            if DataManager.shared.getUser()?.result?.isNewUser ?? true{
+                
+                postDict = ["waste_type_questions" : jsonStr]
+            }
+            else {
+                
+                postDict = ["waste_selection_json" : jsonStr]
+            }
 
             let vc = WasteDetailLocationViewController(nibName: "WasteDetailLocationViewController", bundle: nil)
             vc.isForSiteCreation = true

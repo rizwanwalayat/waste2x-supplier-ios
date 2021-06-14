@@ -45,25 +45,4 @@ class SupplyProcessDataModel : Mappable
             }
         }
     }
-    
-    class func postSiteCreateData(params : [String : AnyObject], _ completion: @escaping SupplyProcessCompletionHandler) {
-        Utility.showLoading()
-        APIClient.shared.postSupplyProcessData(params: params, { response, error, code in
-            
-            Utility.hideLoading()
-            
-            if response != nil {
-                
-                let newResult  = ["result" : response!]
-                if let data = Mapper<SupplyProcessDataModel>().map(JSON: newResult as [String : Any] ) {
-                    completion(data, nil, 200)
-                } else {
-                    completion(nil, nil, 201)
-                }
-                
-            } else {
-                completion(nil, error, 404)
-            }
-        })
-    }
 }

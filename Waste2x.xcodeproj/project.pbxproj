@@ -33,6 +33,8 @@
 		0067A324252AFC9E00CECA8C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A316252AFC9E00CECA8C /* UIFont.swift */; };
 		0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0067A33A252B91BA00CECA8C /* Assets.xcassets */; };
 		041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041242AA266A05AE00EB1A3F /* DateExtenstion.swift */; };
+		041D40D126772A65003A0039 /* CreateSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D40CF26772A65003A0039 /* CreateSite.swift */; };
+		041D40D226772A65003A0039 /* CreateSiteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D40D026772A65003A0039 /* CreateSiteResult.swift */; };
 		0428F1BF265B8EC5007C51EE /* LoginCodeVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1BD265B8EC5007C51EE /* LoginCodeVerificationViewController.swift */; };
 		0428F1C0265B8EC5007C51EE /* LoginCodeVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0428F1BE265B8EC5007C51EE /* LoginCodeVerificationViewController.xib */; };
 		0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C1265BC124007C51EE /* UIColorExtensions.swift */; };
@@ -76,7 +78,7 @@
 		04D053652670A978005458F7 /* FormSubTypesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D053632670A978005458F7 /* FormSubTypesViewController.xib */; };
 		04E6104626725422001E6629 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6104226725421001E6629 /* Questions.swift */; };
 		04E6104726725422001E6629 /* SupplyProcessDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6104326725421001E6629 /* SupplyProcessDataModel.swift */; };
-		04E6104826725422001E6629 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6104426725422001E6629 /* Result.swift */; };
+		04E6104826725422001E6629 /* FetchSupplyProcessResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6104426725422001E6629 /* FetchSupplyProcessResult.swift */; };
 		04E6104926725422001E6629 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6104526725422001E6629 /* Options.swift */; };
 		18011272266774E5000C7102 /* FaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18011270266774E5000C7102 /* FaqTableViewCell.swift */; };
 		18011273266774E5000C7102 /* FaqTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18011271266774E5000C7102 /* FaqTableViewCell.xib */; };
@@ -212,6 +214,8 @@
 		0067A316252AFC9E00CECA8C /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		0067A33A252B91BA00CECA8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		041242AA266A05AE00EB1A3F /* DateExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtenstion.swift; sourceTree = "<group>"; };
+		041D40CF26772A65003A0039 /* CreateSite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSite.swift; sourceTree = "<group>"; };
+		041D40D026772A65003A0039 /* CreateSiteResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSiteResult.swift; sourceTree = "<group>"; };
 		0428F1BD265B8EC5007C51EE /* LoginCodeVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCodeVerificationViewController.swift; sourceTree = "<group>"; };
 		0428F1BE265B8EC5007C51EE /* LoginCodeVerificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginCodeVerificationViewController.xib; sourceTree = "<group>"; };
 		0428F1C1265BC124007C51EE /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
@@ -260,7 +264,7 @@
 		04E3D69D265D298C0058528D /* WasteImageDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteImageDetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		04E6104226725421001E6629 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		04E6104326725421001E6629 /* SupplyProcessDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupplyProcessDataModel.swift; sourceTree = "<group>"; };
-		04E6104426725422001E6629 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		04E6104426725422001E6629 /* FetchSupplyProcessResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchSupplyProcessResult.swift; sourceTree = "<group>"; };
 		04E6104526725422001E6629 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		18011270266774E5000C7102 /* FaqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
 		18011271266774E5000C7102 /* FaqTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaqTableViewCell.xib; sourceTree = "<group>"; };
@@ -426,10 +430,8 @@
 			isa = PBXGroup;
 			children = (
 				18BD8474267349DB00B5F797 /* News */,
-				183262722670A38F00F0CCBA /* Login */,
 				048B5FAE267234AD003979DA /* Supply Process */,
-				183262722670A38F00F0CCBA /* Code Verification */,
-				0067A307252AFBAF00CECA8C /* Login */,
+				183262722670A38F00F0CCBA /* Login */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -580,6 +582,15 @@
 			path = Schedule;
 			sourceTree = "<group>";
 		};
+		041D40CE26772A27003A0039 /* CreateSiteDM */ = {
+			isa = PBXGroup;
+			children = (
+				041D40CF26772A65003A0039 /* CreateSite.swift */,
+				041D40D026772A65003A0039 /* CreateSiteResult.swift */,
+			);
+			path = CreateSiteDM;
+			sourceTree = "<group>";
+		};
 		0428F1BC265B8019007C51EE /* Login-CodeVerification */ = {
 			isa = PBXGroup;
 			children = (
@@ -656,7 +667,8 @@
 		048B5FAE267234AD003979DA /* Supply Process */ = {
 			isa = PBXGroup;
 			children = (
-				04E610412672540B001E6629 /* DataModel */,
+				041D40CE26772A27003A0039 /* CreateSiteDM */,
+				04E610412672540B001E6629 /* FetchDataModel */,
 			);
 			path = "Supply Process";
 			sourceTree = "<group>";
@@ -799,15 +811,15 @@
 			path = Waste;
 			sourceTree = "<group>";
 		};
-		04E610412672540B001E6629 /* DataModel */ = {
+		04E610412672540B001E6629 /* FetchDataModel */ = {
 			isa = PBXGroup;
 			children = (
 				04E6104326725421001E6629 /* SupplyProcessDataModel.swift */,
 				04E6104526725422001E6629 /* Options.swift */,
 				04E6104226725421001E6629 /* Questions.swift */,
-				04E6104426725422001E6629 /* Result.swift */,
+				04E6104426725422001E6629 /* FetchSupplyProcessResult.swift */,
 			);
-			path = DataModel;
+			path = FetchDataModel;
 			sourceTree = "<group>";
 		};
 		1801126D2667746D000C7102 /* Faq */ = {
@@ -1427,8 +1439,7 @@
 				18397DCD2660FD35003DE30C /* LoginViewModel.swift in Sources */,
 				04E6104926725422001E6629 /* Options.swift in Sources */,
 				18666B2326666175005C1A78 /* VideoTableViewCell.swift in Sources */,
-				04E6104826725422001E6629 /* Result.swift in Sources */,
-				0043454F2548302A009A6166 /* UserData.swift in Sources */,
+				04E6104826725422001E6629 /* FetchSupplyProcessResult.swift in Sources */,
 				04D0535F2670858B005458F7 /* SupplySubTypeViewController.swift in Sources */,
 				1810252A2657E36500DEBF7D /* Extentions.swift in Sources */,
 				183262742670A3A500F0CCBA /* CodeVerification.swift in Sources */,
@@ -1441,7 +1452,9 @@
 				04C54DC7266F6A1F00DE4F05 /* SiteCreatedViewController.swift in Sources */,
 				18342C77266E436E00A678D3 /* FormOfWasteViewController.swift in Sources */,
 				1893756E266127F800D55A33 /* CurrentWasteTableViewCell.swift in Sources */,
+				041D40D226772A65003A0039 /* CreateSiteResult.swift in Sources */,
 				0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */,
+				041D40D126772A65003A0039 /* CreateSite.swift in Sources */,
 				04E6104626725422001E6629 /* Questions.swift in Sources */,
 				1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */,
 				18D1A366266A2B77009CAD26 /* TrackerViewController.swift in Sources */,
