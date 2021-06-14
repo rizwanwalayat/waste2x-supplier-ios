@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Alamofire
+import ObjectMapper
 var globalObjectHome : HomeViewController?
 class HomeViewController: BaseViewController {
     
-    
+
     
     //MARK: - IBOutlets
     @IBOutlet weak var notificationMark: UIView!
@@ -33,6 +35,7 @@ class HomeViewController: BaseViewController {
     var selecetedIndex = 0
     var supplierCell: SupplierTableViewCell?
     var images = [#imageLiteral(resourceName: "poultry"),#imageLiteral(resourceName: "bottle"),#imageLiteral(resourceName: "tire"),#imageLiteral(resourceName: "food")]
+    var weatherCount  = 5
     
     //MARK: - AppCycle
     override func viewDidLoad() {
@@ -40,7 +43,7 @@ class HomeViewController: BaseViewController {
         bottomConst.constant = tabbarViewHeight
         globalObjectHome = self
         tableView.reloadData()
-        setAttributedTextInLable(emailAddress: email)
+        setAttributedTextInLable(emailAddress: DataManager.shared.getUser()?.result?.email ?? "")
         self.indicatorMarker.currentPage = 0
         indicatorMarker.numberOfPages = images.count
         let progressbarAdjustment = UIScreen.main.bounds.height / 222
@@ -50,7 +53,8 @@ class HomeViewController: BaseViewController {
         collectionDataSourceDelegate(outlet: wasteTypeCollectionView)
         tableDataSourceDelegate(outlet: tableView)
         weatherCollectionView.backgroundColor = .clear
-        self.progressPointsLabel.text = "\(Int(progressBar.progress*100))/100"
+        
+        self.progressPointsLabel.text = "\(Int((DataManager.shared.getUser()?.result?.percentage ?? 0 )*100))/100"
         if notification {
             notificationMark.backgroundColor = UIColor.init(red: 196, green: 210, blue: 150, alpha: 1)
         }
@@ -60,10 +64,6 @@ class HomeViewController: BaseViewController {
         }
         
         wasteTypeCollectionView.contentInset  = .zero
-//        let heightAdjustment = UIScreen.main.bounds.height * 0.24//0.223214
-//        let adjustment = UIScreen.main.bounds.height * 0.48//0.446428
-//        pendingCollection ? (tableViewHeight.constant = adjustment) : (tableViewHeight.constant = heightAdjustment)
-        
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
         tableView.reloadData()
@@ -71,6 +71,7 @@ class HomeViewController: BaseViewController {
             self.tableViewHeight.constant = self.tableView.contentSize.height
             self.view.layoutIfNeeded()
         }
+        self.weatherAPI()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -163,7 +164,8 @@ class HomeViewController: BaseViewController {
 extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == weatherCollectionView {
-            return 5
+            
+            return weatherCount
         }
         else{
             return images.count
@@ -174,6 +176,9 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == weatherCollectionView{
             let cell = collectionView.register(WeatherCollectionViewCell.self, indexPath: indexPath)
+            let weatherTemp = DataManager.shared.getWeather()?.list[indexPath.row].main?.temp ?? 00
+            cell.tempratureLabel.text = "\(weatherTemp.shortValue)°" + ""
+               
             cell.config()
             return cell
             
@@ -293,4 +298,21 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         }
     }
     
+}
+
+
+//MARK: - API calls
+extension HomeViewController{
+    
+    func weatherAPI(){
+        
+        WeatherAPI.WeatherAPICall{ result, error, statusCode in
+            if statusCode == 200{
+                self.weatherCount = DataManager.shared.getWeather()?.list.count ?? 0
+                self.weatherCollectionView.reloadData()
+            }
+        }
+    }
+
+
 }

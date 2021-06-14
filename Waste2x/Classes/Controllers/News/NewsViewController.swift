@@ -41,6 +41,7 @@ class NewsViewController: BaseViewController {
     var timer : Timer?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(slideToNext), userInfo: nil, repeats: true)
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -115,5 +116,15 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
     }
     
     
+}
+
+
+//MARK: - Api Call
+extension NewsViewController{
+    
+    func newsApiCall(){
+        
+        
+    }
 }
 

@@ -78,6 +78,13 @@ class APIClient: APIClientHandler {
         let params = ["phone": number] as [String:String]
         _ = sendRequest(APIRoutes.login , parameters: params as [String : AnyObject],httpMethod: .post , headers: nil, completionBlock: completionBlock)
     }
+    func weatherAPi( _ completionBlock: @escaping APIClientCompletionHandler) {
+        let params = [String:AnyObject]()
+        print(APIRoutes.weatherAPi)
+        
+        rawRequest(url: APIRoutes.weatherAPi, method: .get, parameters: params, headers: nil, completionBlock: completionBlock)
+    }
+    
     func emailVerification(email: String, _ completionBlock: @escaping APIClientCompletionHandler) {
         let params = ["email": email] as [String:String]
         _ = sendRequest(APIRoutes.emailVerification , parameters: params as [String : AnyObject],httpMethod: .post , headers: nil, completionBlock: completionBlock)
@@ -106,6 +113,11 @@ class APIClient: APIClientHandler {
         _ = sendRequest(APIRoutes.updateUser , parameters: params as [String : AnyObject],httpMethod: .put , headers: nil, completionBlock: completionBlock)
     }
     
+//    func updateUserProfile(image: UIImage, name: String, email: String, phoneNo: String, nationalId: String, ssn: String, occupation: String, type: Int, _ completionBlock: @escaping APIClientCompletionHandler) {
+//        let headers = ["Authorization": "Bearer "+DataManager.shared.getUser()!.token]
+//        let params = ["image": image, "full_name": name, "email": email, "phone_number": phoneNo, "national_id": nationalId, "social_security_number": ssn, "occupation": occupation ,"type": type] as [String : Any]
+//        sendRequestUsingMultipart(APIRoutes.baseUrl+APIRoutes.updateUser, parameters: params as [String : AnyObject] , httpMethod: .put, headers: headers, completionBlock: completionBlock)
+//    }
     func updateUserProfile(image: UIImage, name: String, email: String, phoneNo: String, nationalId: String, ssn: String, occupation: String, type: Int, _ completionBlock: @escaping APIClientCompletionHandler) {
         let headers = ["Authorization": "Bearer "+DataManager.shared.getUser()!.token]
         let params = ["image": image, "full_name": name, "email": email, "phone_number": phoneNo, "national_id": nationalId, "social_security_number": ssn, "occupation": occupation ,"type": type] as [String : Any]

@@ -10,17 +10,19 @@ import UIKit
 
 class CreatePaymentViewController: BaseViewController {
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var idTitle: UITextField!
+    @IBOutlet weak var emailTitle: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         mainView.layer.cornerRadius = 36
         mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         mainView.layer.masksToBounds = true
+        self.idTitle.text = Data?.stripe_account_name
+        self.emailTitle.text = Data?.email
         
     }
     

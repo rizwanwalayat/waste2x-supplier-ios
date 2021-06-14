@@ -29,6 +29,7 @@ class SideMenuViewController: BaseViewController {
         headerView.layer.cornerRadius = 30
         headerView.layer.maskedCorners = [.layerMaxXMaxYCorner]
         headerView.layer.masksToBounds = true
+        self.phoneNumberLabel.text = self.Data?.phone
         
     }
     //MARK: - Action Buttons
@@ -68,8 +69,15 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
         self.selectionIndex = indexPath.row
         switch indexPath.row {
         case 0:
-            let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
-            navigationController?.pushViewController(vc, animated: true)
+            if ((Data?.isNewUser) == true){
+                let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
+                    navigationController?.pushViewController(vc, animated: true)
+                
+            }
+            else{
+                let vc = CreatePaymentViewController(nibName: "CreatePaymentViewController", bundle: nil)
+                    navigationController?.pushViewController(vc, animated: true)
+            }
         case 1:
             let vc = ScheduleViewController(nibName: "ScheduleViewController", bundle: nil)
             navigationController?.pushViewController(vc, animated: true)

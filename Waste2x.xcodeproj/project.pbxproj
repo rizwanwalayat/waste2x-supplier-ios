@@ -12,12 +12,8 @@
 		00434540254823FE009A6166 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043453C254823FE009A6166 /* ApiClient.swift */; };
 		00434541254823FE009A6166 /* ApiClientHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043453D254823FE009A6166 /* ApiClientHandler.swift */; };
 		00434544254825AE009A6166 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00434543254825AE009A6166 /* DataManager.swift */; };
-		0043454D2548302A009A6166 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043454A2548302A009A6166 /* User.swift */; };
-		0043454E2548302A009A6166 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043454B2548302A009A6166 /* Users.swift */; };
-		0043454F2548302A009A6166 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043454C2548302A009A6166 /* UserData.swift */; };
 		0067A2BC25274C0900CECA8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A2BB25274C0900CECA8C /* AppDelegate.swift */; };
 		0067A2C825274C0B00CECA8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0067A2C625274C0B00CECA8C /* LaunchScreen.storyboard */; };
-		0067A2DA25274CF800CECA8C /* Login1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A2D925274CF800CECA8C /* Login1.swift */; };
 		0067A2DD252753D100CECA8C /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A2DC252753D100CECA8C /* APIService.swift */; };
 		0067A2E32529D2CD00CECA8C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A2E22529D2CD00CECA8C /* Utility.swift */; };
 		0067A2E62529D52B00CECA8C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A2E52529D52B00CECA8C /* Constants.swift */; };
@@ -175,6 +171,8 @@
 		18A849D0265E411F008F77E8 /* WeatherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A849CF265E411F008F77E8 /* WeatherCollectionViewCell.xib */; };
 		18A849D7265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A849D5265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift */; };
 		18A849D8265E48A0008F77E8 /* WasteTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A849D6265E48A0008F77E8 /* WasteTypeCollectionViewCell.xib */; };
+		18BD8473267337E400B5F797 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD8472267337E400B5F797 /* NewsModel.swift */; };
+		18BD84762673770B00B5F797 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD84752673770B00B5F797 /* WeatherAPI.swift */; };
 		18C11A6C265F9D5F00BC022F /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C11A6A265F9D5F00BC022F /* ContactViewController.swift */; };
 		18C11A6D265F9D5F00BC022F /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C11A6B265F9D5F00BC022F /* ContactViewController.xib */; };
 		18C11A70265FA49C00BC022F /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C11A6E265FA49C00BC022F /* ContactTableViewCell.swift */; };
@@ -191,14 +189,10 @@
 		0043453C254823FE009A6166 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		0043453D254823FE009A6166 /* ApiClientHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClientHandler.swift; sourceTree = "<group>"; };
 		00434543254825AE009A6166 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		0043454A2548302A009A6166 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		0043454B2548302A009A6166 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
-		0043454C2548302A009A6166 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		0067A2B825274C0900CECA8C /* Waste2x.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waste2x.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0067A2BB25274C0900CECA8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0067A2C725274C0B00CECA8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0067A2C925274C0B00CECA8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0067A2D925274CF800CECA8C /* Login1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login1.swift; sourceTree = "<group>"; };
 		0067A2DC252753D100CECA8C /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		0067A2E22529D2CD00CECA8C /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		0067A2E52529D52B00CECA8C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -361,6 +355,8 @@
 		18A849CF265E411F008F77E8 /* WeatherCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherCollectionViewCell.xib; sourceTree = "<group>"; };
 		18A849D5265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		18A849D6265E48A0008F77E8 /* WasteTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteTypeCollectionViewCell.xib; sourceTree = "<group>"; };
+		18BD8472267337E400B5F797 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		18BD84752673770B00B5F797 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		18C11A6A265F9D5F00BC022F /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		18C11A6B265F9D5F00BC022F /* ContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactViewController.xib; sourceTree = "<group>"; };
 		18C11A6E265FA49C00BC022F /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
@@ -429,6 +425,8 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				18BD8474267349DB00B5F797 /* News */,
+				183262722670A38F00F0CCBA /* Login */,
 				048B5FAE267234AD003979DA /* Supply Process */,
 				183262722670A38F00F0CCBA /* Code Verification */,
 				0067A307252AFBAF00CECA8C /* Login */,
@@ -531,17 +529,6 @@
 				0067A33A252B91BA00CECA8C /* Assets.xcassets */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		0067A307252AFBAF00CECA8C /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				0043454C2548302A009A6166 /* UserData.swift */,
-				0043454B2548302A009A6166 /* Users.swift */,
-				0043454A2548302A009A6166 /* User.swift */,
-				0067A2D925274CF800CECA8C /* Login1.swift */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		0067A308252AFC5000CECA8C /* Extensions */ = {
@@ -886,13 +873,14 @@
 			path = Tabs;
 			sourceTree = "<group>";
 		};
-		183262722670A38F00F0CCBA /* Code Verification */ = {
+		183262722670A38F00F0CCBA /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				183262732670A3A500F0CCBA /* CodeVerification.swift */,
 				183262752670BB8400F0CCBA /* Registration.swift */,
+				18BD84752673770B00B5F797 /* WeatherAPI.swift */,
 			);
-			path = "Code Verification";
+			path = Login;
 			sourceTree = "<group>";
 		};
 		18342C79266E438300A678D3 /* Form */ = {
@@ -1158,6 +1146,14 @@
 				18C11A6F265FA49C00BC022F /* ContactTableViewCell.xib */,
 			);
 			path = TableViews;
+			sourceTree = "<group>";
+		};
+		18BD8474267349DB00B5F797 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				18BD8472267337E400B5F797 /* NewsModel.swift */,
+			);
+			path = News;
 			sourceTree = "<group>";
 		};
 		18C11A69265F9D3C00BC022F /* MessagesTab */ = {
@@ -1448,13 +1444,11 @@
 				0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */,
 				04E6104626725422001E6629 /* Questions.swift in Sources */,
 				1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */,
-				0043454D2548302A009A6166 /* User.swift in Sources */,
 				18D1A366266A2B77009CAD26 /* TrackerViewController.swift in Sources */,
 				0428F1CD265BECB5007C51EE /* LoginInputEmailViewController.swift in Sources */,
 				18C5DD7E265FEB7800EE1A2F /* SJCenterFlowLayout.swift in Sources */,
 				1893756C266127F800D55A33 /* CurrentWasteViewController.swift in Sources */,
 				1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */,
-				0043454D2548302A009A6166 /* User.swift in Sources */,
 				18C11A6C265F9D5F00BC022F /* ContactViewController.swift in Sources */,
 				18937564266127F800D55A33 /* WasteDetailLocationViewController.swift in Sources */,
 				04C82E182664BCCB00D52947 /* WasteDetailViewModel.swift in Sources */,
@@ -1478,6 +1472,7 @@
 				18A849D7265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift in Sources */,
 				04C54DC2266F571500DE4F05 /* AmountWasteViewController.swift in Sources */,
 				1810253C2657E48500DEBF7D /* HomeViewController.swift in Sources */,
+				18BD8473267337E400B5F797 /* NewsModel.swift in Sources */,
 				18937566266127F800D55A33 /* NewWasteSizeViewController.swift in Sources */,
 				0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */,
 				183262792670C68A00F0CCBA /* InviteSupplierViewController.swift in Sources */,
@@ -1495,6 +1490,7 @@
 				0067A31D252AFC9E00CECA8C /* UISlider.swift in Sources */,
 				04C82E1A2664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift in Sources */,
 				048582C02667BEC70077B42E /* ScheduleOptionsTableViewCell.swift in Sources */,
+				18BD84762673770B00B5F797 /* WeatherAPI.swift in Sources */,
 				041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */,
 				183262762670BB8400F0CCBA /* Registration.swift in Sources */,
 				00434544254825AE009A6166 /* DataManager.swift in Sources */,
@@ -1506,7 +1502,6 @@
 				18C11A70265FA49C00BC022F /* ContactTableViewCell.swift in Sources */,
 				04BD2801266A2589008FC8B4 /* SchedulePlannedViewController.swift in Sources */,
 				0067A322252AFC9E00CECA8C /* UIImage.swift in Sources */,
-				0043454E2548302A009A6166 /* Users.swift in Sources */,
 				18896077266E1EB800061783 /* SupplyingCollectionViewCell.swift in Sources */,
 				0043453F254823FE009A6166 /* ApiResponseHandler.swift in Sources */,
 				04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */,
@@ -1517,7 +1512,6 @@
 				04C31D1B2667BBE600A1CF9C /* ScheduleOptionsViewController.swift in Sources */,
 				046528032668F694005F3FB0 /* CalenderPopupViewController.swift in Sources */,
 				189782FA265D3479008FD5E3 /* SideMenuViewController.swift in Sources */,
-				0067A2DA25274CF800CECA8C /* Login1.swift in Sources */,
 				04C82E1C2664BCCB00D52947 /* WasteDetailViewController.swift in Sources */,
 				18937562266127F800D55A33 /* WasteDetailLocationVM.swift in Sources */,
 			);
