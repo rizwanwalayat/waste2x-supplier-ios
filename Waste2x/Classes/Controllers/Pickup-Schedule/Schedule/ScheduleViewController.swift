@@ -74,7 +74,7 @@ class ScheduleViewController: BaseViewController {
     
     @IBOutlet weak var nextButton : UIButton!
     
-    
+    var array = [String]()
     // MARK: - Declarations
     
     var selectionType = SelectionType.none
@@ -88,6 +88,7 @@ class ScheduleViewController: BaseViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        globalObjectHome?.fetchSitesData
         self.view.layoutIfNeeded()
         
     }

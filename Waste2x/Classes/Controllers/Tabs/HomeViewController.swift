@@ -154,9 +154,12 @@ class HomeViewController: BaseViewController{
     
     //MARK: - ActionButtons
     @IBAction func sideMenuAction(_ sender: Any) {
+        
         if let slideMenuController = self.slideMenuController() {
             slideMenuController.openLeft()
         }
+        let vc = ScheduleViewController(nibName: "ScheduleViewController", bundle: nil)
+        vc.array = ["ali","haid3r"]
     }
     
     @IBAction func notificationAction(_ sender: Any) {
