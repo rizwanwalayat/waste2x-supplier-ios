@@ -43,6 +43,15 @@
 		0428F1CE265BECB5007C51EE /* LoginInputEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0428F1CC265BECB5007C51EE /* LoginInputEmailViewController.xib */; };
 		04340E96266E439900B5F87C /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340E94266E439900B5F87C /* MessagesTableViewCell.swift */; };
 		04340E97266E439900B5F87C /* MessagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04340E95266E439900B5F87C /* MessagesTableViewCell.xib */; };
+		043F6BE82677719F000E3C4F /* HomeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F6BE72677719F000E3C4F /* HomeDataModel.swift */; };
+		043F6BF2267776A2000E3C4F /* HomeFarms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F6BE9267776A1000E3C4F /* HomeFarms.swift */; };
+		043F6BF4267776A2000E3C4F /* HomeFarmer_medals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F6BEB267776A1000E3C4F /* HomeFarmer_medals.swift */; };
+		043F6BF5267776A2000E3C4F /* HomeWaste_type_questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F6BEC267776A1000E3C4F /* HomeWaste_type_questions.swift */; };
+		043F6BF6267776A2000E3C4F /* HomeQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F6BED267776A1000E3C4F /* HomeQuestions.swift */; };
+		043F6BF7267776A2000E3C4F /* HomeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F6BEE267776A1000E3C4F /* HomeOptions.swift */; };
+		043F6BF8267776A2000E3C4F /* HomeResultDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F6BEF267776A1000E3C4F /* HomeResultDataModel.swift */; };
+		043F6BF9267776A2000E3C4F /* HomeWaste_types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F6BF0267776A1000E3C4F /* HomeWaste_types.swift */; };
+		043F6BFA267776A2000E3C4F /* Commodity_farms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F6BF1267776A2000E3C4F /* Commodity_farms.swift */; };
 		04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04629D2526664D86008A6A3A /* CustomProgressbar.swift */; };
 		0463F2DE266E08CC00E8924D /* RewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463F2DC266E08CC00E8924D /* RewardViewController.swift */; };
 		0463F2DF266E08CC00E8924D /* RewardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0463F2DD266E08CC00E8924D /* RewardViewController.xib */; };
@@ -227,6 +236,15 @@
 		0428F1CC265BECB5007C51EE /* LoginInputEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginInputEmailViewController.xib; sourceTree = "<group>"; };
 		04340E94266E439900B5F87C /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
 		04340E95266E439900B5F87C /* MessagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesTableViewCell.xib; sourceTree = "<group>"; };
+		043F6BE72677719F000E3C4F /* HomeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataModel.swift; sourceTree = "<group>"; };
+		043F6BE9267776A1000E3C4F /* HomeFarms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFarms.swift; sourceTree = "<group>"; };
+		043F6BEB267776A1000E3C4F /* HomeFarmer_medals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFarmer_medals.swift; sourceTree = "<group>"; };
+		043F6BEC267776A1000E3C4F /* HomeWaste_type_questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeWaste_type_questions.swift; sourceTree = "<group>"; };
+		043F6BED267776A1000E3C4F /* HomeQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeQuestions.swift; sourceTree = "<group>"; };
+		043F6BEE267776A1000E3C4F /* HomeOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeOptions.swift; sourceTree = "<group>"; };
+		043F6BEF267776A1000E3C4F /* HomeResultDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeResultDataModel.swift; sourceTree = "<group>"; };
+		043F6BF0267776A1000E3C4F /* HomeWaste_types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeWaste_types.swift; sourceTree = "<group>"; };
+		043F6BF1267776A2000E3C4F /* Commodity_farms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commodity_farms.swift; sourceTree = "<group>"; };
 		04629D2526664D86008A6A3A /* CustomProgressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressbar.swift; sourceTree = "<group>"; };
 		0463F2DC266E08CC00E8924D /* RewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardViewController.swift; sourceTree = "<group>"; };
 		0463F2DD266E08CC00E8924D /* RewardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RewardViewController.xib; sourceTree = "<group>"; };
@@ -433,6 +451,7 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				043F6BE62677716A000E3C4F /* Home */,
 				18BD8474267349DB00B5F797 /* News */,
 				048B5FAE267234AD003979DA /* Supply Process */,
 				183262722670A38F00F0CCBA /* Login */,
@@ -631,6 +650,22 @@
 				04340E95266E439900B5F87C /* MessagesTableViewCell.xib */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		043F6BE62677716A000E3C4F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				043F6BE72677719F000E3C4F /* HomeDataModel.swift */,
+				043F6BF1267776A2000E3C4F /* Commodity_farms.swift */,
+				043F6BEB267776A1000E3C4F /* HomeFarmer_medals.swift */,
+				043F6BE9267776A1000E3C4F /* HomeFarms.swift */,
+				043F6BEE267776A1000E3C4F /* HomeOptions.swift */,
+				043F6BED267776A1000E3C4F /* HomeQuestions.swift */,
+				043F6BEF267776A1000E3C4F /* HomeResultDataModel.swift */,
+				043F6BEC267776A1000E3C4F /* HomeWaste_type_questions.swift */,
+				043F6BF0267776A1000E3C4F /* HomeWaste_types.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		0463F2DB266E08A900E8924D /* Reward */ = {
@@ -1439,6 +1474,7 @@
 				184F51702667AD9700F0328A /* ConfirmPendingTableViewCell.swift in Sources */,
 				04E6104726725422001E6629 /* SupplyProcessDataModel.swift in Sources */,
 				180CD1AF2665048D0092168B /* PaymentViewController.swift in Sources */,
+				043F6BF8267776A2000E3C4F /* HomeResultDataModel.swift in Sources */,
 				181025282657E36500DEBF7D /* Global.swift in Sources */,
 				1889607F266E289800061783 /* SupplyDetailTableViewCell.swift in Sources */,
 				18719141266667420050FAAA /* AudioTableViewCell.swift in Sources */,
@@ -1450,6 +1486,7 @@
 				1810252A2657E36500DEBF7D /* Extentions.swift in Sources */,
 				183262742670A3A500F0CCBA /* CodeVerification.swift in Sources */,
 				04C31D1226678E1800A1CF9C /* ScheduleViewModel.swift in Sources */,
+				043F6BF5267776A2000E3C4F /* HomeWaste_type_questions.swift in Sources */,
 				04C2361C2669224600A27B78 /* Array.swift in Sources */,
 				1850CEF9265E5491001F5E92 /* SupplierTableViewCell.swift in Sources */,
 				0067A2E32529D2CD00CECA8C /* Utility.swift in Sources */,
@@ -1467,6 +1504,8 @@
 				18D1A366266A2B77009CAD26 /* TrackerViewController.swift in Sources */,
 				0428F1CD265BECB5007C51EE /* LoginInputEmailViewController.swift in Sources */,
 				18C5DD7E265FEB7800EE1A2F /* SJCenterFlowLayout.swift in Sources */,
+				043F6BF4267776A2000E3C4F /* HomeFarmer_medals.swift in Sources */,
+				043F6BF2267776A2000E3C4F /* HomeFarms.swift in Sources */,
 				1893756C266127F800D55A33 /* CurrentWasteViewController.swift in Sources */,
 				1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */,
 				18C11A6C265F9D5F00BC022F /* ContactViewController.swift in Sources */,
@@ -1486,6 +1525,7 @@
 				181025402657E48500DEBF7D /* FaqViewController.swift in Sources */,
 				1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */,
 				186CD718266610C600A1F30F /* CreatePaymentViewController.swift in Sources */,
+				043F6BF7267776A2000E3C4F /* HomeOptions.swift in Sources */,
 				0067A2E62529D52B00CECA8C /* Constants.swift in Sources */,
 				0067A317252AFC9E00CECA8C /* UITableView.swift in Sources */,
 				0463F2DE266E08CC00E8924D /* RewardViewController.swift in Sources */,
@@ -1495,6 +1535,7 @@
 				1810253C2657E48500DEBF7D /* HomeViewController.swift in Sources */,
 				18BD8473267337E400B5F797 /* NewsModel.swift in Sources */,
 				18937566266127F800D55A33 /* NewWasteSizeViewController.swift in Sources */,
+				043F6BFA267776A2000E3C4F /* Commodity_farms.swift in Sources */,
 				0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */,
 				183262792670C68A00F0CCBA /* InviteSupplierViewController.swift in Sources */,
 				1849F5A4266FDFD60001B533 /* ContactsFetchViewController.swift in Sources */,
@@ -1510,9 +1551,11 @@
 				1810253B2657E48500DEBF7D /* MessagesViewController.swift in Sources */,
 				0067A31D252AFC9E00CECA8C /* UISlider.swift in Sources */,
 				04C82E1A2664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift in Sources */,
+				043F6BF9267776A2000E3C4F /* HomeWaste_types.swift in Sources */,
 				048582C02667BEC70077B42E /* ScheduleOptionsTableViewCell.swift in Sources */,
 				18BD84762673770B00B5F797 /* WeatherAPI.swift in Sources */,
 				041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */,
+				043F6BF6267776A2000E3C4F /* HomeQuestions.swift in Sources */,
 				183262762670BB8400F0CCBA /* Registration.swift in Sources */,
 				00434544254825AE009A6166 /* DataManager.swift in Sources */,
 				04D053642670A978005458F7 /* FormSubTypesViewController.swift in Sources */,
@@ -1530,6 +1573,7 @@
 				0428F1BF265B8EC5007C51EE /* LoginCodeVerificationViewController.swift in Sources */,
 				181025232657E33A00DEBF7D /* ContainerViewController.swift in Sources */,
 				1893754B266127CB00D55A33 /* NotificationsViewController.swift in Sources */,
+				043F6BE82677719F000E3C4F /* HomeDataModel.swift in Sources */,
 				04C31D1B2667BBE600A1CF9C /* ScheduleOptionsViewController.swift in Sources */,
 				046528032668F694005F3FB0 /* CalenderPopupViewController.swift in Sources */,
 				189782FA265D3479008FD5E3 /* SideMenuViewController.swift in Sources */,

@@ -125,12 +125,10 @@ struct NetworkingConnection {
     }
     
     class func showAlertController (_ controller: UIViewController,_ message: String) {
-//        let easyVC = EasyOrderPopupViewController()
-//        easyVC.alertType = .alert
-//        easyVC.titleText = "Error"
-//        easyVC.descriptionText = message
-//        easyVC.modalPresentationStyle = .overCurrentContext
-//        controller.present(easyVC, animated: true, completion: nil)
+        let easyVC = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        easyVC.modalPresentationStyle = .overCurrentContext
+        easyVC.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        controller.present(easyVC, animated: true, completion: nil)
     }
     
     class func hasTopNotch() -> Bool {

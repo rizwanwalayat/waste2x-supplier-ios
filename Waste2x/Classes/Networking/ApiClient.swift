@@ -108,7 +108,12 @@ class APIClient: APIClientHandler {
         
         
         DataManager.shared.getUser()?.result?.isNewUser ?? true ? (_ = sendRequest(APIRoutes.postSupplyProcessDataNewUser , parameters: params ,httpMethod: .post , headers: headers, completionBlock: completionBlock)) : (_ = sendRequest(APIRoutes.postSupplyProcessDataUser , parameters: params ,httpMethod: .post , headers: headers, completionBlock: completionBlock))
-        
+    }
+    
+    func fetchSitesForHomeData(_ completionBlock: @escaping APIClientCompletionHandler)
+    {
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        _ = sendRequest(APIRoutes.fetchSitesHomeProcessDataUser , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
 }
 

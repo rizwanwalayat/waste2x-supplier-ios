@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class WasteTypeCollectionViewCell: UICollectionViewCell {
 
@@ -20,10 +21,37 @@ class WasteTypeCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    func config(index:Int){
-        self.titleLabel.text = title[index]
-        self.descriptionLabel.text = descrip[index]
-        self.imgView.image = images[index]
+    func config(_ title : String, _ detail : String, _ imageStr : String)
+    {
+        self.titleLabel.text = title
+        self.descriptionLabel.text = detail
+        
+        if imageStr == ""
+        {
+            self.imgView.image = nil
+        }
+        else
+        {
+            
+            if let image = SDImageCache.shared.imageFromCache(forKey: imageStr )
+            {
+                
+                self.imgView.image = image
+            }
+            else
+            {
+                guard let imageUrl = URL(string: imageStr) else { print("URL not created for imagesURL String"); return }
+                
+                self.imgView.sd_setImage(with: imageUrl, placeholderImage: nil,options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, url) in
+                    
+                    if image != nil
+                    {
+                        SDImageCache.shared.store(image, forKey: (imageStr), completion: nil)
+                        self.imgView.image = image
+                    }
+                })
+            }
+        }
     }
 
 }

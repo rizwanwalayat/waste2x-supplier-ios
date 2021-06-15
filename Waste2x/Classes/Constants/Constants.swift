@@ -43,6 +43,12 @@ struct APIRoutes {
     static var fetchSupplyProcessData = "paudapay_us/waste_types/"
     static var postSupplyProcessDataNewUser = "paudapay_us/waste_type_selection_v2/"
     static var postSupplyProcessDataUser = "paudapay_us/create_farm_v2/"
+    static var fetchSitesHomeProcessDataUser = "paudapay_us/fetch_sites/"
+    static var createUser = "/api/shared/user/create"
+    static var updateUser = "/api/shared/user/update"
+    static var forgotPassword = "/api/shared/user/forgetPassword"
+    static var widthdrawFromDonee = "/api/payments/paypal/donee/withdrawRequest"
+    static var getDoneeUserTransactions = "/api/payments/paypal/donee/transactions"
     static var newsUrl = "paudapay_us/fetch_news/"
 }
 struct FireBaseVariables {

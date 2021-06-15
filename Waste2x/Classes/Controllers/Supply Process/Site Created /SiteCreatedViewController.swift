@@ -69,6 +69,7 @@ extension SiteCreatedViewController {
                     
                     self.alertManager("Success", message: "Site created successfully" )
                 }
+                
             }
             else
             {
