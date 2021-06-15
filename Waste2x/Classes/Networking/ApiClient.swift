@@ -14,7 +14,7 @@ class Connectivity {
 let APIClientDefaultTimeOut = 40.0
 
 class APIClient: APIClientHandler {
-    let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+//    let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
     
     fileprivate var clientDateFormatter: DateFormatter
     var isConnectedToNetwork: Bool?
@@ -82,6 +82,7 @@ class APIClient: APIClientHandler {
     }
     func NewsApiCall(_ completionBlock: @escaping APIClientCompletionHandler) {
         let params = [String : AnyObject]()
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
         _ = sendRequest(APIRoutes.newsUrl, parameters: params,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
     
@@ -91,6 +92,7 @@ class APIClient: APIClientHandler {
     }
     
     func userRegistration(phone: String,code: String,latitude: Double,longitude: Double,firebase_token: String,phone_imei: Int,phone_os: String,phone_model: String, _ completionBlock: @escaping APIClientCompletionHandler) {
+        
         let params = ["phone":phone,"code":code,"latitude":latitude,"longitude":longitude,"firebase_token":firebase_token,"phone_imei":phone_imei,"phone_os":phone_os,"phone_model":phone_model] as [String:Any]
         _ = sendRequest(APIRoutes.registration , parameters: params as [String : AnyObject],httpMethod: .post , headers: nil, completionBlock: completionBlock)
     }
@@ -99,7 +101,7 @@ class APIClient: APIClientHandler {
     
     func fetchSupplyProcessData(_ completionBlock: @escaping APIClientCompletionHandler) {
 //
-//        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]// + Global.shared.tok]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
         _ = sendRequest(APIRoutes.fetchSupplyProcessData , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
     
