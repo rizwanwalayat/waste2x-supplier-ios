@@ -65,13 +65,15 @@ class FetchSitesCustomModel : NSObject
     var cropTypeId = -1
     var cropTypeImage = ""
     var sharedIconUrl = ""
+    var completeCropType = ""
     
-    init(_ farmName : String, _ farmId : Int, _ cropType : String, _ cropTypeId : Int, _ cropTypeImage : String) {
+    init(_ farmName : String, _ farmId : Int, _ cropType : String, _ cropTypeId : Int, _ cropTypeImage : String, _ completeCropName : String) {
         
         self.farmName = farmName
         self.farmId = farmId
         self.cropType = cropType
         self.cropTypeId = cropTypeId
         self.cropTypeImage = cropTypeImage
+        self.completeCropType = completeCropName
     }
 }
