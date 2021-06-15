@@ -70,13 +70,12 @@ class AmountWasteViewController: BaseViewController {
                 
             }
             var postDict = [String : Any]()
-            if DataManager.shared.getUser()?.result?.isNewUser ?? true{
+            if Global.shared.apiCurve{
+                postDict = ["waste_selection_json" : jsonStr]
                 
-                postDict = ["waste_type_questions" : jsonStr]
             }
             else {
-                
-                postDict = ["waste_selection_json" : jsonStr]
+                postDict = ["waste_type_questions" : jsonStr]
             }
 
             let vc = WasteDetailLocationViewController(nibName: "WasteDetailLocationViewController", bundle: nil)

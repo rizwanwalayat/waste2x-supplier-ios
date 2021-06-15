@@ -26,7 +26,7 @@ class Global {
     var current_lng = Double()
     var location = CLLocation()
     var fireBaseToken = ""
-    
+    var apiCurve = false
     
     
     func convertLocationToAddress(location: CLLocation, _ completionHandler: ((Bool, String?) -> Void)?)

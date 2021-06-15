@@ -142,7 +142,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qlk-z8-DES" userLabel="progressbarPointView">
                             <rect key="frame" x="0.0" y="93.666666666666671" width="414" height="59.333333333333329"/>
                             <subviews>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.59999999999999998" trackImage="progressbar-Bg" translatesAutoresizingMaskIntoConstraints="NO" id="0lV-ZR-g59">
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" trackImage="progressbar-Bg" translatesAutoresizingMaskIntoConstraints="NO" id="0lV-ZR-g59">
                                     <rect key="frame" x="80" y="13" width="279" height="4"/>
                                     <color key="progressTintColor" red="0.99215686274509807" green="0.75294117647058822" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </progressView>

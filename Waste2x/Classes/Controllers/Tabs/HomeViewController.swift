@@ -49,6 +49,7 @@ class HomeViewController: BaseViewController{
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        
         print(Data?.auth_token ?? "")
         (UIApplication.shared.delegate as! AppDelegate).weaterCalldelegate = self
         bottomConst.constant = tabbarViewHeight
@@ -65,7 +66,6 @@ class HomeViewController: BaseViewController{
         tableDataSourceDelegate(outlet: tableView)
         weatherCollectionView.backgroundColor = .clear
         
-        self.progressPointsLabel.text = "\(Int((DataManager.shared.getUser()?.result?.percentage ?? 0 )*100))/100"
         
         if notification {
             notificationMark.backgroundColor = UIColor.init(red: 196, green: 210, blue: 150, alpha: 1)
@@ -363,8 +363,8 @@ extension HomeViewController: WeatherCallDelegate {
         if self.resultData != nil
         {
             progressBar.progress = Float(self.resultData!.percentage)
-            self.progressPointsLabel.text = "\(self.resultData!.percentage)/100"
             self.setAttributedTextInLable(emailAddress: Data?.email ?? "")
+            self.progressPointsLabel.text = "\(Int((DataManager.shared.getUser()?.result?.percentage ?? 0 )*100))/100"
             
             for commudity in self.resultData!.commodity_farms
             {

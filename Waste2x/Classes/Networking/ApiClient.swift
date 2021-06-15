@@ -109,7 +109,15 @@ class APIClient: APIClientHandler {
         
         
         let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
-        DataManager.shared.getUser()?.result?.isNewUser ?? true ? (_ = sendRequest(APIRoutes.postSupplyProcessDataNewUser , parameters: params ,httpMethod: .post , headers: headers, completionBlock: completionBlock)) : (_ = sendRequest(APIRoutes.postSupplyProcessDataUser , parameters: params ,httpMethod: .post , headers: headers, completionBlock: completionBlock))
+        var API = ""
+        if Global.shared.apiCurve{
+            
+            API = APIRoutes.postSupplyProcessDataUser
+        }
+        else{
+            API = APIRoutes.postSupplyProcessDataNewUser
+        }
+        (_ = sendRequest(API , parameters: params ,httpMethod: .post , headers: headers, completionBlock: completionBlock))
     }
     
     func fetchSitesForHomeData(_ completionBlock: @escaping APIClientCompletionHandler)

@@ -46,7 +46,8 @@ class LoginViewController: BaseViewController {
                     self.navigationController?.pushViewController(codeVerificationVC, animated: true)
                 }
                 else{
-                    return
+                    Utility.showAlertController(self, error?.localizedDescription ?? "Data not loaded")
+                    
                 }
             }
         }

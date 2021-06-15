@@ -35,8 +35,7 @@ class Registration : Mappable {
             if error == nil {
                 let newResult = ["result": result]
                 if let data = Mapper<Registration>().map(JSON: newResult as [String : Any]) {
-                    let convretedData = data.toJSONString()
-                    DataManager.shared.setUser(user: convretedData ?? "")
+                    
                     
                     completion(data, nil, 200)
                 } else {

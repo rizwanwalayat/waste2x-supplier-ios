@@ -16,11 +16,10 @@ class NewsViewController: BaseViewController {
     
     var NewsListModell : [NewsResult]?
     var NewsModell : NewsModel?
+    var played = Bool()
     
     //audio
-    var playerItem:AVPlayerItem?
     var player:AVPlayer?
-    var slider: UISlider?
     
     //MARK: - enums
     enum cellType {
@@ -50,13 +49,32 @@ class NewsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.newsApiCall()
-        startPlayer()
+       
     }
-    func startPlayer() {
-        let url = URL(string: "https://s3.amazonaws.com/kargopolov/kukushka.mp3")
-        let playerItem:AVPlayerItem = AVPlayerItem(url: url!)
-        player = AVPlayer(playerItem: playerItem)
+    @objc func startPlayPause(_ sender:UIButton) {
+        loadRadio(radioURL: NewsModell!.result[sender.tag].fileUrl)
+//        if let cell = tableView.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as? AudioTableViewCell{
+//            cell.playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+//        }
+        played = !played
+        if played
+        {sender.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            player?.play()
+        }
+        else
+        {
+            sender.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            player?.pause()
+        }
     }
+    func loadRadio(radioURL: String) {
+
+            guard let url = URL.init(string: radioURL) else { return }
+            let playerItem = AVPlayerItem.init(url: url)
+            player = AVPlayer.init(playerItem: playerItem)
+        
+        }
+    
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         self.tableView.layer.cornerRadius = 36
@@ -66,6 +84,7 @@ class NewsViewController: BaseViewController {
         self.bottomConst.constant = self.tabbarViewHeight
         
     }
+    
 
 
 
@@ -90,6 +109,9 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
         }
         else if NewsListModell?[indexPath.row].type == cellType.audio.rawValue {
             let cell = tableView.register(AudioTableViewCell.self, indexPath: indexPath)
+            cell.playPauseButton.tag = indexPath.row
+            cell.playPauseButton.addTarget(self, action: #selector(startPlayPause(_:)), for: .touchUpInside)
+            cell.config(data: NewsModell!, index: indexPath.row)
             return cell
         }
         else if NewsListModell?[indexPath.row].type == cellType.blog.rawValue {
@@ -126,7 +148,7 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
         if NewsListModell?[indexPath.row].type == cellType.audio.rawValue{
         if let cell = tableView.cellForRow(at: indexPath) as? AudioTableViewCell
         {
-            cell.config(data: NewsModell!, index: indexPath.row)
+//
         }
             
         }
