@@ -63,6 +63,9 @@ class DataManager {
         }
         return user
     }
+    func deleteUser () {
+         UserDefaults.standard.set(nil, forKey: "user_data")
+    }
     func setWeather (weather: String) {
         UserDefaults.standard.set(weather, forKey: "weather")
     }
@@ -77,9 +80,7 @@ class DataManager {
     }
     
     
-    func deleteUser () {
-         UserDefaults.standard.set(nil, forKey: "user_data")
-    }
+
     
     func setAuthentication (auth: String) {
         UserDefaults.standard.set(auth, forKey: "auth_data")
