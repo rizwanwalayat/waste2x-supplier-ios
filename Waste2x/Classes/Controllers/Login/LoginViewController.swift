@@ -38,7 +38,8 @@ class LoginViewController: BaseViewController {
     //MARK: - IBActions
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        if Utility.isTextFieldHasText(textField: phoneNoTextfield) {
+        if Utility.isTextFieldHasText(textField: phoneNoTextfield)
+        {
             CodeVerification.verificationCode(phoneNumber: phoneNoTextfield.text ?? "") { result, error, status in
                 if error == nil {
                     let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
@@ -56,7 +57,7 @@ extension LoginViewController : UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        if textField.text?.count == 0
+        if textField.text?.count == 0 && string != "+"
         {
             textField.text = "+"
         }

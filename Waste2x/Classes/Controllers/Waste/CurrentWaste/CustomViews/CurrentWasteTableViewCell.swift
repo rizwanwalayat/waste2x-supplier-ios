@@ -29,4 +29,13 @@ class CurrentWasteTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setCellData(_ data : FetchSitesCustomModel)
+    {
+        siteTitleLabel.text = data.farmName
+        siteInfoLabel.text = data.cropType
+        
+        var cropTypeName = data.completeCropType.components(separatedBy: "-").last ?? ""
+        cropTypeName = cropTypeName.trimmingCharacters(in: .whitespaces)
+        wasteTitleLabel.text = cropTypeName
+    }
 }

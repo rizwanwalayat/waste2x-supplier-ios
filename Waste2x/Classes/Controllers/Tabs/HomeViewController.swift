@@ -165,8 +165,13 @@ class HomeViewController: BaseViewController{
     }
     
     @IBAction func viewAllAction(_ sender: Any) {
-        let vc = CurrentWasteViewController(nibName: "CurrentWasteViewController", bundle: nil)
-        self.navigationController?.pushTo(controller: vc)
+        
+        if fetchSitesData.count > 0
+        {
+            let vc = CurrentWasteViewController(nibName: "CurrentWasteViewController", bundle: nil)
+            vc.sitesData = fetchSitesData
+            self.navigationController?.pushTo(controller: vc)
+        }
     }
     
 }
@@ -376,7 +381,7 @@ extension HomeViewController: WeatherCallDelegate {
                         cropTypeName = cropTypeName.trimmingCharacters(in: .whitespaces)
                         
                         let farmsData = FetchSitesCustomModel(farms.name, farms.id
-                                                              , cropTypeName, commudity.crop_type_id ?? 0, commudity.crop_type_image ?? "")
+                                                              , cropTypeName, commudity.crop_type_id ?? 0, commudity.crop_type_image ?? "", commudity.crop_type ?? "")
                         
                         self.fetchSitesData.append(farmsData)
                     }

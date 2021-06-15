@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class SupplyingCollectionViewCell: UICollectionViewCell {
+class SupplyingCollectionViewCell: BaseCollectionViewCell {
     //MARK: - DATA
     struct CellData {
         var imageType: UIImage
@@ -63,73 +63,16 @@ class SupplyingCollectionViewCell: UICollectionViewCell {
     {
         self.titleLabel.text = title
         
-        if imageStr == ""
-        {
-            self.imgView.image = nil
-        }
-        else
-        {
-            
-            if let image = SDImageCache.shared.imageFromCache(forKey: imageStr )
-            {
-                
-                self.imgView.image = image
-            }
-            else
-            {
-                guard let imageUrl = URL(string: imageStr) else { print("URL not created for imagesURL String"); return }
-                
-                self.imgView.sd_setImage(with: imageUrl, placeholderImage: nil,options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, url) in
-                    
-                    if image != nil
-                    {
-                        SDImageCache.shared.store(image, forKey: (imageStr), completion: nil)
-                        self.imgView.image = image
-                    }
-                })
-            }
-        }
+        guard let imageUrl = URL(string: imageStr) else { print("URL not created for imagesURL String"); return }
+        setImage(imageView: self.imgView, url: imageUrl)
     }
     
     func configForForm(_ title :String, _ imageStr : String){
         
         self.titleLabel.text = title
         
-        
-        if imageStr == ""
-        {
-            self.imgView.image = nil
-        }
-        else
-        {
-            
-            if let image = SDImageCache.shared.imageFromCache(forKey: imageStr )
-            {
-                
-                self.imgView.image = image
-            }
-            else
-            {
-                guard let imageUrl = URL(string: imageStr) else { print("URL not created for imagesURL String"); return }
-                
-                self.imgView.sd_setImage(with: imageUrl, placeholderImage: nil,options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, url) in
-                    
-                    if image != nil
-                    {
-                        SDImageCache.shared.store(image, forKey: (imageStr), completion: nil)
-                        self.imgView.image = image
-                    }
-                })
-            }
-        }
-//        if isForLiveStock {
-//
-//        }
-//        else {
-//
-//            self.imgView.image = FormData[index].imageType
-//            self.titleLabel.text = FormData[index].labelTitle
-//        }
+        guard let imageUrl = URL(string: imageStr) else { print("URL not created for imagesURL String"); return }
+        setImage(imageView: self.imgView, url: imageUrl)
     }
     
 
