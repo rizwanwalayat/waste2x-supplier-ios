@@ -136,10 +136,18 @@ extension SupplyingTypeViewController {
                     
                     self.supplyProcessData = response!.result
                     self.collectionViewReload()
+                    
+                    if self.supplyProcessData.count == 0
+                    {
+                        Utility.showAlertController(self, "Token Failed, Data not loaded")
+                        DispatchQueue.main.async {
+                            Utility.homeViewController()
+                        }
+                    }
                 }
                 else
                 {
-                    Utility.showAlertController(self, "Token Failed, Data not loaded")
+                    Utility.showAlertController(self, "Data not loaded")
                     DispatchQueue.main.async {
                         Utility.homeViewController()
                     }

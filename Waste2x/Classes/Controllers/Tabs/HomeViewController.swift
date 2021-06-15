@@ -13,13 +13,10 @@ protocol WeatherCallDelegate {
 }
 var globalObjectHome : HomeViewController?
 class HomeViewController: BaseViewController{
-
     
-    
-    
-
     
     //MARK: - IBOutlets
+    
     @IBOutlet weak var notificationMark: UIView!
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
@@ -32,7 +29,9 @@ class HomeViewController: BaseViewController{
     @IBOutlet weak var homeScrollview : UIScrollView!
     @IBOutlet weak var bottomConst: NSLayoutConstraint!
     
+    
     //MARK: - Variables
+    
     var notification:Bool = true
     var email:String = "Haid3rawan@icloud.com"
     var pendingCollection = true
@@ -43,11 +42,14 @@ class HomeViewController: BaseViewController{
     var images = [#imageLiteral(resourceName: "poultry"),#imageLiteral(resourceName: "bottle"),#imageLiteral(resourceName: "tire"),#imageLiteral(resourceName: "food")]
     var weatherCount  = 5
     var delegate:WeatherCallDelegate?
+    var resultData : HomeResultDataModel?
+    var fetchSitesData = [FetchSitesCustomModel]()
     
     //MARK: - AppCycle
+    
     override func viewDidLoad(){
         super.viewDidLoad()
-        print(Data?.auth_token)
+        print(Data?.auth_token ?? "")
         (UIApplication.shared.delegate as! AppDelegate).weaterCalldelegate = self
         bottomConst.constant = tabbarViewHeight
         globalObjectHome = self
@@ -64,6 +66,7 @@ class HomeViewController: BaseViewController{
         weatherCollectionView.backgroundColor = .clear
         
         self.progressPointsLabel.text = "\(Int((DataManager.shared.getUser()?.result?.percentage ?? 0 )*100))/100"
+        
         if notification {
             notificationMark.backgroundColor = UIColor.init(red: 196, green: 210, blue: 150, alpha: 1)
         }
@@ -80,6 +83,8 @@ class HomeViewController: BaseViewController{
             self.tableViewHeight.constant = self.tableView.contentSize.height
             self.view.layoutIfNeeded()
         }
+        
+        fetchFarmsFromServer()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -107,7 +112,7 @@ class HomeViewController: BaseViewController{
         }
     }
     func moveOn(index: Int){
-        supplierCell?.config(index: index)
+        //supplierCell?.config(index: index)
         indicatorMarker.currentPage = selecetedIndex
         wasteTypeCollectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .right, animated: true)
     }
@@ -176,7 +181,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             return weatherCount
         }
         else{
-            return images.count
+            return fetchSitesData.count
         }
         
     }
@@ -194,7 +199,12 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         else
         {
             let cell = collectionView.register(WasteTypeCollectionViewCell.self, indexPath: indexPath)
-            cell.config(index: indexPath.row)
+            
+            let cellData = fetchSitesData[indexPath.row]
+//            var cropTypeName = cellData.cropType.components(separatedBy: "-").first ?? ""
+//            cropTypeName = cropTypeName.trimmingCharacters(in: .whitespaces)
+            cell.config(cellData.farmName, cellData.cropType , cellData.cropTypeImage)
+            
             return cell
         }
     }
@@ -214,7 +224,8 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         if collectionView == wasteTypeCollectionView{
             collectionView.deselectItem(at: indexPath, animated: true)
             self.indicatorMarker.currentPage = indexPath.row
-            supplierCell?.config(index: indexPath.row)
+            let cellData = fetchSitesData[indexPath.row]
+            supplierCell?.config(cellData.sharedIconUrl)
             if collectionView == wasteTypeCollectionView {
                 let wasteDetails = CurrentWasteViewController(nibName: "CurrentWasteViewController", bundle: nil)
                 self.navigationController?.pushViewController(wasteDetails, animated: true)
@@ -297,7 +308,9 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         
         let indexPath = wasteTypeCollectionView.indexPath(for: cell ?? UICollectionViewCell())
         if let index = indexPath{
-            supplierCell?.config(index: index.row)
+            
+            let cellData = fetchSitesData[index.row]
+            supplierCell?.config(cellData.sharedIconUrl)
         }
         
         if scrollView != self.weatherCollectionView {
@@ -317,5 +330,81 @@ extension HomeViewController: WeatherCallDelegate {
         self.weatherCount = DataManager.shared.getWeather()?.list.count ?? 0
         self.weatherCollectionView.reloadData()
     }
-
+    
+    
+    func fetchFarmsFromServer()
+    {
+        HomeFetchFarmsDataModel.fetchSites { response, error, statusCode in
+            
+            if error != nil
+            {
+                Utility.showAlertController(self, error!.localizedDescription)
+            }
+            
+            if response != nil {
+                
+                if statusCode == 200 {
+                    
+                    self.resultData = response!.result
+                    self.homeDatapopulate()
+                }
+                else
+                {
+                    Utility.showAlertController(self, "Data not fetched")
+                }
+            }
+        }
+    }
+    
+    func homeDatapopulate()
+    {
+        
+        self.fetchSitesData.removeAll()
+        if self.resultData != nil
+        {
+            progressBar.progress = Float(self.resultData!.percentage)
+            self.progressPointsLabel.text = "\(self.resultData!.percentage)/100"
+            self.setAttributedTextInLable(emailAddress: Data?.email ?? "")
+            
+            for commudity in self.resultData!.commodity_farms
+            {
+                if commudity.farms != nil
+                {
+                    for farms in commudity.farms!
+                    {
+                        var cropTypeName = commudity.crop_type?.components(separatedBy: "-").first ?? ""
+                        cropTypeName = cropTypeName.trimmingCharacters(in: .whitespaces)
+                        
+                        let farmsData = FetchSitesCustomModel(farms.name, farms.id
+                                                              , cropTypeName, commudity.crop_type_id ?? 0, commudity.crop_type_image ?? "")
+                        
+                        self.fetchSitesData.append(farmsData)
+                    }
+                }
+            }
+            
+            if self.resultData!.waste_type_questions != nil && self.resultData!.waste_type_questions?.waste_types != nil {
+                
+                for wasteType in self.resultData!.waste_type_questions!.waste_types!
+                {
+                    if let cropTypeNameArray = wasteType.title {
+                        
+                        let cropName = cropTypeNameArray.trimmingCharacters(in: .whitespaces)
+                        
+                        if let row = self.fetchSitesData.firstIndex(where: {$0.cropType == cropName}) {
+                            let objectIndex = self.fetchSitesData[row]
+                            objectIndex.sharedIconUrl = wasteType.share_icon_url ?? ""
+                        }
+                        
+                    }
+                }
+            }
+            
+            self.wasteTypeCollectionView.reloadData()
+        }
+        else
+        {
+            Utility.showAlertController(self, "Invalid token, data not fetched")
+        }
+    }
 }

@@ -42,7 +42,13 @@ class ScheduleOptionsViewController: BaseViewController {
         
         tableview.reloadData()
         DispatchQueue.main.async {
-            self.constTableviewHeight.constant = self.tableview.contentSize.height
+            var tableViewHeight = self.tableview.contentSize.height
+            
+            if tableViewHeight > (UIScreen.main.bounds.height - 100)
+            {
+                tableViewHeight = (UIScreen.main.bounds.height - 100)
+            }
+            self.constTableviewHeight.constant = tableViewHeight
             self.view.layoutIfNeeded()
         }
         

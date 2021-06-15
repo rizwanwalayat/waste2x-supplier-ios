@@ -43,7 +43,7 @@ struct APIRoutes {
     static var fetchSupplyProcessData = "paudapay_us/waste_types/"
     static var postSupplyProcessDataNewUser = "paudapay_us/waste_type_selection_v2/"
     static var postSupplyProcessDataUser = "paudapay_us/create_farm_v2/"
-    
+    static var fetchSitesHomeProcessDataUser = "paudapay_us/fetch_sites/"
     
     
     
