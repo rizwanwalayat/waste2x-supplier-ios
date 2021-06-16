@@ -109,6 +109,7 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
         }
         else if NewsListModell?[indexPath.row].type == cellType.audio.rawValue {
             let cell = tableView.register(AudioTableViewCell.self, indexPath: indexPath)
+            cell.selectionStyle = .none
             cell.playPauseButton.tag = indexPath.row
             cell.playPauseButton.addTarget(self, action: #selector(startPlayPause(_:)), for: .touchUpInside)
             cell.config(data: NewsModell!, index: indexPath.row)
@@ -146,10 +147,10 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if NewsListModell?[indexPath.row].type == cellType.audio.rawValue{
-        if let cell = tableView.cellForRow(at: indexPath) as? AudioTableViewCell
-        {
-//
-        }
+//        if let cell = tableView.cellForRow(at: indexPath) as? AudioTableViewCell
+//        {
+////
+//        }
             
         }
     }
@@ -162,8 +163,8 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
 extension NewsViewController{
     
     func newsApiCall(){
-        NewsModel.NewsApiCall { result, error, status in
-            if status == 200{
+        NewsModel.NewsApiCall { result, error, status,message in
+            if status == true{
                 GCD.async(.Main) {
                     self.NewsModell = result
                     self.NewsListModell = result?.result

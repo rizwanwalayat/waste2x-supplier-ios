@@ -3,8 +3,7 @@ import UIKit
 import Alamofire
 import ObjectMapper
 
-typealias APIClientCompletionHandler = (_ result: AnyObject?, _ error: NSError?,_ statusCode: Int) -> Void
-typealias APIClientCompletionHandler1 = (_ result: [String : Any]?, _ error: NSError?,_ statusCode: Int) -> Void
+typealias APIClientCompletionHandler = (_ result: AnyObject?, _ error: NSError?,_ statusCode: Bool,_ messsage:String) -> Void
 
 enum APIClientHandlerErrorCode: Int {
     case general = 30001
@@ -17,7 +16,9 @@ let APIClientHandlerErrorDomain = ""
 let APIClientHandlerDefaultErrorDescription = "Operation failed" //"Operation failed"
 
 class APIClientHandler: TSAPIClient {
-
+    var status : Bool = true
+    var message : String = ""
+    
     func sendRequestUsingMultipart (_ url: String, parameters: [String : AnyObject]?, httpMethod: HTTPMethod = .post, headers: [String : String]?, completionBlock: @escaping APIClientCompletionHandler) {
         var parameters = parameters
         
@@ -48,10 +49,10 @@ class APIClientHandler: TSAPIClient {
                     
                     switch response.result {
                     case .success(let resultData):
-                        completionBlock(resultData as AnyObject, nil, 200)
+                        completionBlock(resultData as AnyObject, nil, self.status,self.message)
                         
                     case .failure(let error):
-                        completionBlock(error as AnyObject, error as NSError, 200)
+                        completionBlock(error as AnyObject, error as NSError, self.status,self.message)
                     }
                     
                 }
@@ -70,10 +71,10 @@ class APIClientHandler: TSAPIClient {
                 
             case .success(let data):
                 print(data)
-                completionBlock(data as AnyObject, nil, 200)
+                completionBlock(data as AnyObject, nil, self.status,self.message)
             case .failure(let error):
                 print(error.localizedDescription)
-                completionBlock(nil, error as NSError, 404)
+                completionBlock(nil, error as NSError, self.status,self.message)
             }
         }
     }
@@ -104,7 +105,7 @@ class APIClientHandler: TSAPIClient {
                 }
 
                 DispatchQueue.main.async { // Correct
-                    completionBlock(nil, apiError, response?.statusCode ?? 200)
+                    completionBlock(nil, apiError, self.status,self.message)
                 }
 
             } else {
@@ -126,6 +127,7 @@ class APIClientHandler: TSAPIClient {
                     resultData = responseHandler.data
                     if !isError {
                         status  = responseHandler.status
+                        self.status = status
                     }
 
                     if   !isError {
@@ -150,7 +152,7 @@ class APIClientHandler: TSAPIClient {
                     resultError = self.createError(errorMessage)
 
                     DispatchQueue.main.async { // Correct
-                        completionBlock(nil, resultError, response!.statusCode)
+                        completionBlock(nil, resultError, status,message)
                     }
 
                 } else if sendMessage {
@@ -161,13 +163,13 @@ class APIClientHandler: TSAPIClient {
                     }
 
                     DispatchQueue.main.async { // Correct
-                        completionBlock(resultData, resultError, response!.statusCode)
+                        completionBlock(resultData, resultError, status,message)
                     }
  
                 } else {
 
                     DispatchQueue.main.async { // Correct
-                        completionBlock(resultData, nil, response!.statusCode)
+                        completionBlock(resultData, nil, status,message)
                     }
                 }
             }

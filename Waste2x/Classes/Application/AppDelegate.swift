@@ -207,8 +207,8 @@ extension AppDelegate:CLLocationManagerDelegate {
     }
     func weatherAPI(){
         
-        WeatherAPI.WeatherAPICall{ result, error, statusCode in
-            if statusCode == 200{
+        WeatherAPI.WeatherAPICall{ result, error, statusCode,message in
+            if statusCode == true{
                 self.weaterCalldelegate?.Weather()
             }
         }

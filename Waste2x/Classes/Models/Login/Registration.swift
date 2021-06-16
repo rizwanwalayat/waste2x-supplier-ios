@@ -9,8 +9,8 @@
 import Foundation
 import ObjectMapper
 
-typealias RegistrationCompletionHandler = (_ data: Registration?, _ error: Error?, _ status: Int?) -> Void
-typealias RawCompletionHandler = (_ data: AnyObject?, _ error: Error?, _ status: Int?) -> Void
+typealias RegistrationCompletionHandler = (_ data: Registration?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
+typealias RawCompletionHandler = (_ data: AnyObject?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
 
 class Registration : Mappable {
     var success = Bool()
@@ -30,37 +30,37 @@ class Registration : Mappable {
     
     class func verificationCode(phone: String,code: String,latitude: Double,longitude: Double,firebase_token: String,phone_imei: Int,phone_os: String,phone_model: String, _ completion: @escaping RegistrationCompletionHandler) {
         Utility.showLoading()
-        APIClient.shared.userRegistration(phone: phone, code: code, latitude: latitude, longitude: longitude, firebase_token: firebase_token, phone_imei: phone_imei, phone_os: phone_os, phone_model: phone_model) { result, error, status in
+        APIClient.shared.userRegistration(phone: phone, code: code, latitude: latitude, longitude: longitude, firebase_token: firebase_token, phone_imei: phone_imei, phone_os: phone_os, phone_model: phone_model) { result, error, status,message in
             Utility.hideLoading()
             if error == nil {
                 let newResult = ["result": result]
                 if let data = Mapper<Registration>().map(JSON: newResult as [String : Any]) {
                     
                     
-                    completion(data, nil, 200)
+                    completion(data, nil, status,message)
                 } else {
-                    completion(nil, nil, 201)
+                    completion(nil, nil, status,message)
                 }
             } else {
-                 completion(nil, error, 404)
+                 completion(nil, error, status,message)
             }
         }
     }
     class func emailVerification(email: String, _ completion: @escaping RawCompletionHandler) {
         Utility.showLoading()
-        APIClient.shared.emailVerification(email: email) { result, error, status in
+        APIClient.shared.emailVerification(email: email) { result, error, status,message in
             Utility.hideLoading()
             if error == nil {
         
                 if let data = result as AnyObject? {
-                    completion(data, nil, 200)
+                    completion(data, nil, status,message)
                     
                 } else {
-                    completion(nil, nil, 201)
+                    completion(nil, nil, status,message)
                 }
                 
             } else {
-                 completion(nil, error, 404)
+                 completion(nil, error, status,message)
             }
         }
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 import ObjectMapper
-typealias CodeVerificationCompletionHandler = (_ data: CodeVerification?, _ error: Error?, _ status: Int?) -> Void
+typealias CodeVerificationCompletionHandler = (_ data: CodeVerification?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
 class CodeVerification : Mappable {
     var success = Bool()
     var message = ""
@@ -27,19 +27,19 @@ class CodeVerification : Mappable {
     
     class func verificationCode(phoneNumber: String, _ completion: @escaping phoneNoCompletionHandler) {
         Utility.showLoading()
-        APIClient.shared.verificationCode(number: phoneNumber) { result, error, status in
+        APIClient.shared.verificationCode(number: phoneNumber) { result, error, status,message in
             Utility.hideLoading()
             
             if error == nil {
                 let newResult = ["result" : result]
                 if let data = Mapper<PhoneNoDataModel>().map(JSON: newResult as [String : Any]) {
-                    completion(data, nil, 200)
+                    completion(data, nil, status,message)
                 } else {
-                    completion(nil, nil, 201)
+                    completion(nil, nil, status,message)
                 }
                 
             } else {
-                 completion(nil, error, 404)
+                 completion(nil, error, status,message)
             }
         }
     }

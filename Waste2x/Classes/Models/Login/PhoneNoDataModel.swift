@@ -3,7 +3,7 @@
 import Foundation
 import ObjectMapper
 
-typealias phoneNoCompletionHandler = (_ data: PhoneNoDataModel?, _ error: Error?, _ status: Int?) -> Void
+typealias phoneNoCompletionHandler = (_ data: PhoneNoDataModel?, _ error: Error?, _ status: Bool?,_ message:String) -> Void
 
 
 class PhoneNoDataModel : Mappable {

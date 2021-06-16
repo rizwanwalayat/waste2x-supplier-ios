@@ -50,11 +50,11 @@ class LoginCodeVerificationViewController: BaseViewController {
         let code = firstTextField.text! + secondTextField.text! + thirdTextField.text! + fourthTextField.text!
         print(code)
         let os = device.systemVersion
-        Registration.verificationCode(phone: phone, code: code, latitude: Global.shared.current_lat, longitude: Global.shared.current_lng, firebase_token: Global.shared.fireBaseToken, phone_imei: 123456789, phone_os: os, phone_model: model) { result, error, status in
+        Registration.verificationCode(phone: phone, code: code, latitude: Global.shared.current_lat, longitude: Global.shared.current_lng, firebase_token: Global.shared.fireBaseToken, phone_imei: 123456789, phone_os: os, phone_model: model) { result, error, status,message in
             
             if error != nil{
                 
-                Utility.showAlertController(self, error?.localizedDescription ?? "Data not loaded")
+                Utility.showAlertController(self, message)
                 
             }
             
@@ -65,7 +65,7 @@ class LoginCodeVerificationViewController: BaseViewController {
                 self.navigationController?.pushViewController(codeVerificationVC, animated: true)
             }
             else{
-                Utility.showAlertController(self, error?.localizedDescription ?? "Invalid Code")
+                Utility.showAlertController(self, message)
                 
             }
         }

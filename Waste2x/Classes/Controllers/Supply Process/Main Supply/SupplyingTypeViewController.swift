@@ -123,7 +123,7 @@ extension SupplyingTypeViewController {
     
     func fetchDataFromServer()
     {
-        SupplyProcessDataModel.fetchSupplyProcess { response, error, statusCode in
+        SupplyProcessDataModel.fetchSupplyProcess { response, error, statusCode,message in
             
             if error != nil
             {
@@ -132,7 +132,7 @@ extension SupplyingTypeViewController {
             
             if response != nil {
                 
-                if statusCode == 200 {
+                if statusCode == true {
                     
                     self.supplyProcessData = response!.result
                     self.collectionViewReload()

@@ -56,14 +56,14 @@ extension SiteCreatedViewController {
         
         let postDict = postDictData as [String : AnyObject]
         
-        CreateSiteDataModel.postSiteCreateData(params: postDict, { data, error, code in
+        CreateSiteDataModel.postSiteCreateData(params: postDict, { data, error, code,message in
             
             if error != nil
             {
                 self.alertManager("Failed", message: error!.localizedDescription )
             }
             
-            if code == 200 {
+            if code == true {
                 
                 if data != nil {
                     

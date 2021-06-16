@@ -22,8 +22,8 @@ class Global {
     var currentController = ""
     var didRecievedNotiFication = Bool()
     var is_new_user = true
-    var current_lat = Double()
-    var current_lng = Double()
+    var current_lat : Double = 71
+    var current_lng : Double = 35
     var location = CLLocation()
     var fireBaseToken = ""
     var apiCurve = false

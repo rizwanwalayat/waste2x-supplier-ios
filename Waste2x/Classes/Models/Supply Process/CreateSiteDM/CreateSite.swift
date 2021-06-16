@@ -4,7 +4,7 @@ import Foundation
 import ObjectMapper
 
 
-typealias createSiteCompletionHandler = (_ data: CreateSiteDataModel?, _ error: Error?, _ status: Int?) -> Void
+typealias createSiteCompletionHandler = (_ data: CreateSiteDataModel?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
 
 
 class CreateSiteDataModel : Mappable
@@ -31,7 +31,7 @@ class CreateSiteDataModel : Mappable
     
     class func postSiteCreateData(params : [String : AnyObject], _ completion: @escaping createSiteCompletionHandler) {
         Utility.showLoading()
-        APIClient.shared.postSupplyProcessData(params: params, { response, error, code in
+        APIClient.shared.postSupplyProcessData(params: params, { response, error, status,message in
             
             Utility.hideLoading()
             
@@ -39,13 +39,13 @@ class CreateSiteDataModel : Mappable
                 
                 let newResult  = ["result" : response!]
                 if let data = Mapper<CreateSiteDataModel>().map(JSON: newResult as [String : Any] ) {
-                    completion(data, nil, 200)
+                    completion(data, nil, status,message)
                 } else {
-                    completion(nil, nil, 201)
+                    completion(nil, nil, status,message)
                 }
                 
             } else {
-                completion(nil, error, 404)
+                completion(nil, error, status,message)
             }
         })
     }

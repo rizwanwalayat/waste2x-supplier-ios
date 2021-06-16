@@ -28,8 +28,8 @@ class LoginInputEmailViewController: BaseViewController {
     // MARK: - Actions
 
     @IBAction func nextButtonPressed(_ sender: Any) {
-        Registration.emailVerification(email: self.emailAddressTextField.text!) { result, error, status in
-            if status == 200 && DataManager.shared.getUser()?.result?.isNewUser == false {
+        Registration.emailVerification(email: self.emailAddressTextField.text!) { result, error, status,message in
+            if status == true && DataManager.shared.getUser()?.result?.isNewUser == false {
                 
                 
             let slider = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
