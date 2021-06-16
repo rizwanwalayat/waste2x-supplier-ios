@@ -41,14 +41,18 @@ class LoginViewController: BaseViewController {
         if Utility.isTextFieldHasText(textField: phoneNoTextfield)
         {
             CodeVerification.verificationCode(phoneNumber: phoneNoTextfield.text ?? "") { result, error, status in
-                if error == nil {
+                if error != nil {
+                    Utility.showAlertController(self, error?.localizedDescription ?? "Data not loaded")
+                }
+                else if result?.result != nil{
+                    
                     let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
                     codeVerificationVC.phone = self.phoneNoTextfield.text ?? ""
                     self.navigationController?.pushViewController(codeVerificationVC, animated: true)
                 }
-                else{
-                    Utility.showAlertController(self, error?.localizedDescription ?? "Data not loaded")
-                    
+                else
+                {
+                    Utility.showAlertController(self, error?.localizedDescription ?? "request not sent")
                 }
             }
         }

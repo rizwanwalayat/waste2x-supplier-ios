@@ -158,8 +158,6 @@ class HomeViewController: BaseViewController{
         if let slideMenuController = self.slideMenuController() {
             slideMenuController.openLeft()
         }
-        let vc = ScheduleViewController(nibName: "ScheduleViewController", bundle: nil)
-        vc.array = ["ali","haid3r"]
     }
     
     @IBAction func notificationAction(_ sender: Any) {

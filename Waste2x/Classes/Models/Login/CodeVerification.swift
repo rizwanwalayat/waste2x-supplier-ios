@@ -25,14 +25,14 @@ class CodeVerification : Mappable {
         statusCode  <- map["status_code"]
     }
     
-    class func verificationCode(phoneNumber: String, _ completion: @escaping CodeVerificationCompletionHandler) {
+    class func verificationCode(phoneNumber: String, _ completion: @escaping phoneNoCompletionHandler) {
         Utility.showLoading()
         APIClient.shared.verificationCode(number: phoneNumber) { result, error, status in
             Utility.hideLoading()
             
             if error == nil {
                 let newResult = ["result" : result]
-                if let data = Mapper<CodeVerification>().map(JSON: newResult as [String : Any]) {
+                if let data = Mapper<PhoneNoDataModel>().map(JSON: newResult as [String : Any]) {
                     completion(data, nil, 200)
                 } else {
                     completion(nil, nil, 201)

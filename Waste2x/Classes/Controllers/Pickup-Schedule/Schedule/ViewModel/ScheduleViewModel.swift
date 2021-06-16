@@ -18,11 +18,14 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
         print(selectedOption)
         if popupOptionType == .frequency_preodic
         {
+            postDictData["frequency"] = selectedOption
             selectFrequencyPriodicLabel.text = selectedOption
             selectionHandlingsOfViews(selectFrequencyPriodicHolderview, isSelection: true)
         }
         else
         {
+            let selectFarmKey = tempFarmsData[selectedOption] ?? 0
+            postDictData["farm_id"] = selectFarmKey
             selectSiteLabel.text = selectedOption
             selectionHandlingsOfViews(selectSiteHolderview, isSelection: true)
         }
@@ -39,10 +42,24 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
     
     func didSelectDate(dateString: String)
     {
+        let dateToUnix = stringToDateUnix(dateString)
+        postDictData["schedule_time"] = dateToUnix
         selectDateTimeLabel.text = dateString
         selectionHandlingsOfViews(selectDateTimeHolderview, isSelection: true)
     }
     
+    func stringToDateUnix(_ dateStr : String) -> String?
+    {
+        let dateString = "Thu, 22 Oct 2015 07:45:17 +0000"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yyyy - hh:mm a"//"EEE, dd MMM yyyy hh:mm:ss +zzzz"
+        dateFormatter.amSymbol = "AM"
+        dateFormatter.pmSymbol = "PM"
+
+        guard let dateObj = dateFormatter.date(from: dateString) else {return nil}
+        let unix = "\(dateObj.timeIntervalSince1970)"
+        return unix
+    }
     
     // MARK: - WasteDetailLocationViewControllerDelegate Method
     
@@ -63,7 +80,15 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
             var alreadySelectedText = ""
             (selectFrequencyPriodicLabel.text != selectFrequencyPerodicPlaceholder) ? (alreadySelectedText = selectFrequencyPriodicLabel.text ?? "") : (alreadySelectedText = "")
             
-            let regularData = ["Daily", "Weekly", "Monthly"]
+            var regularData = [""]
+            
+            for site in sitesData
+            {
+                let farmName = "\(site.farmName) (\(site.cropType)"
+                regularData.append(farmName)
+                self.tempFarmsData[farmName] = site.farmId
+            }
+            
             let optionsCustompopup               = ScheduleOptionsViewController(nibName: "ScheduleOptionsViewController", bundle: nil)
             optionsCustompopup.modalPresentationStyle = .overFullScreen
             optionsCustompopup.delegate = self

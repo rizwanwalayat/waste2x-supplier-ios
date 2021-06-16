@@ -85,6 +85,7 @@
 		04D053602670858B005458F7 /* SupplySubTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D0535E2670858B005458F7 /* SupplySubTypeViewController.xib */; };
 		04D053642670A978005458F7 /* FormSubTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D053622670A978005458F7 /* FormSubTypesViewController.swift */; };
 		04D053652670A978005458F7 /* FormSubTypesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D053632670A978005458F7 /* FormSubTypesViewController.xib */; };
+		04D8A30F2679C998004BBF9A /* PhoneNoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8A30D2679C998004BBF9A /* PhoneNoDataModel.swift */; };
 		04E6104626725422001E6629 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6104226725421001E6629 /* Questions.swift */; };
 		04E6104726725422001E6629 /* SupplyProcessDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6104326725421001E6629 /* SupplyProcessDataModel.swift */; };
 		04E6104826725422001E6629 /* FetchSupplyProcessResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6104426725422001E6629 /* FetchSupplyProcessResult.swift */; };
@@ -280,6 +281,7 @@
 		04D0535E2670858B005458F7 /* SupplySubTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplySubTypeViewController.xib; sourceTree = "<group>"; };
 		04D053622670A978005458F7 /* FormSubTypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSubTypesViewController.swift; sourceTree = "<group>"; };
 		04D053632670A978005458F7 /* FormSubTypesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormSubTypesViewController.xib; sourceTree = "<group>"; };
+		04D8A30D2679C998004BBF9A /* PhoneNoDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNoDataModel.swift; sourceTree = "<group>"; };
 		04E3D69C265D298C0058528D /* WasteImageDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteImageDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		04E3D69D265D298C0058528D /* WasteImageDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteImageDetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		04E6104226725421001E6629 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
@@ -929,6 +931,7 @@
 		183262722670A38F00F0CCBA /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				04D8A30D2679C998004BBF9A /* PhoneNoDataModel.swift */,
 				183262732670A3A500F0CCBA /* CodeVerification.swift */,
 				183262752670BB8400F0CCBA /* Registration.swift */,
 				18BD84752673770B00B5F797 /* WeatherAPI.swift */,
@@ -1573,6 +1576,7 @@
 				0428F1BF265B8EC5007C51EE /* LoginCodeVerificationViewController.swift in Sources */,
 				181025232657E33A00DEBF7D /* ContainerViewController.swift in Sources */,
 				1893754B266127CB00D55A33 /* NotificationsViewController.swift in Sources */,
+				04D8A30F2679C998004BBF9A /* PhoneNoDataModel.swift in Sources */,
 				043F6BE82677719F000E3C4F /* HomeDataModel.swift in Sources */,
 				04C31D1B2667BBE600A1CF9C /* ScheduleOptionsViewController.swift in Sources */,
 				046528032668F694005F3FB0 /* CalenderPopupViewController.swift in Sources */,

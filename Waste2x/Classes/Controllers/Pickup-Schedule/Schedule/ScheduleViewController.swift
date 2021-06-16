@@ -12,10 +12,10 @@ class ScheduleViewController: BaseViewController {
 
     // MARK: - Local Enums
     
-    enum SelectionType {
+    enum SelectionType : String{
         case none
-        case onePickup
-        case regular
+        case onePickup = "Only one pick-up"
+        case regular = "Regular schedule"
     }
     
     enum PopupType {
@@ -74,7 +74,6 @@ class ScheduleViewController: BaseViewController {
     
     @IBOutlet weak var nextButton : UIButton!
     
-    var array = [String]()
     // MARK: - Declarations
     
     var selectionType = SelectionType.none
@@ -84,11 +83,15 @@ class ScheduleViewController: BaseViewController {
     let selectLocationPlaceHolder = "Select Location"
     let selectFrequencyPerodicPlaceholder = "Select Frequency / Periodic"
     var locationAutoFill = false
+    var sitesData = [FetchSitesCustomModel]()
+    var tempFarmsData = [String : Int]()
+    var postDictData = [String : Any]()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        globalObjectHome?.fetchSitesData
+        
+        sitesData = globalObjectHome?.fetchSitesData ?? [FetchSitesCustomModel]()
         self.view.layoutIfNeeded()
         
     }
@@ -120,6 +123,7 @@ class ScheduleViewController: BaseViewController {
     {
         if allFieldsAuth() {
             
+            postDictData["schedule_type"] = selectionType.rawValue
             let vc = SchedulePlannedViewController(nibName: "SchedulePlannedViewController", bundle: nil)
             navigationController?.pushViewController(vc, animated: true)
         }
