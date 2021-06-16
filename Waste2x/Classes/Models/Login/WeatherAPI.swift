@@ -36,13 +36,13 @@ class WeatherAPI : Mappable {
                 if let data = Mapper<WeatherAPI>().map(JSON: result as! [String : Any]) {
                     let weather = data.toJSONString()
                     DataManager.shared.setWeather(weather: weather ?? "")
-                    completion(data, nil, 200,message)
+                    completion(data, nil, status,message)
                 } else {
-                    completion(nil, nil, 201,message)
+                    completion(nil, nil, status,message)
                 }
                 
             } else {
-                 completion(nil, error, 404,message)
+                 completion(nil, error, status,message)
             }
         }
     }

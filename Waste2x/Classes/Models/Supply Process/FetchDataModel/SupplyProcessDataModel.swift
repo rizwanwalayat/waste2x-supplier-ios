@@ -4,7 +4,7 @@ import Foundation
 import ObjectMapper
 
 
-typealias SupplyProcessCompletionHandler = (_ data: SupplyProcessDataModel?, _ error: Error?, _ status: Int?, _ message:String) -> Void
+typealias SupplyProcessCompletionHandler = (_ data: SupplyProcessDataModel?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
 
 
 class SupplyProcessDataModel : Mappable
@@ -27,7 +27,7 @@ class SupplyProcessDataModel : Mappable
     
     class func fetchSupplyProcess(_ completion: @escaping SupplyProcessCompletionHandler) {
         Utility.showLoading()
-        APIClient.shared.fetchSupplyProcessData { result, error, statusCode,message in
+        APIClient.shared.fetchSupplyProcessData { result, error, status,message in
             
             Utility.hideLoading()
             
@@ -35,13 +35,13 @@ class SupplyProcessDataModel : Mappable
                 
                 let newResult  = ["result" : result!]
                 if let data = Mapper<SupplyProcessDataModel>().map(JSON: newResult as [String : Any] ) {
-                    completion(data, nil, 200,message)
+                    completion(data, nil, status,message)
                 } else {
-                    completion(nil, nil, 201,message)
+                    completion(nil, nil, status,message)
                 }
                 
             } else {
-                 completion(nil, error, 404,message)
+                 completion(nil, error, status,message)
             }
         }
     }

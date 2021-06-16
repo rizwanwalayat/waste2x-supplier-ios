@@ -8,7 +8,7 @@
 
 import Foundation
 import ObjectMapper
-typealias CodeVerificationCompletionHandler = (_ data: CodeVerification?, _ error: Error?, _ status: Int?, _ message:String) -> Void
+typealias CodeVerificationCompletionHandler = (_ data: CodeVerification?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
 class CodeVerification : Mappable {
     var success = Bool()
     var message = ""
@@ -32,14 +32,14 @@ class CodeVerification : Mappable {
             
             if error == nil {
                 let newResult = ["result" : result]
-                if let data = Mapper<CodeVerification>().map(JSON: newResult as [String : Any]) {
-                    completion(data, nil, 200,message)
+                if let data = Mapper<PhoneNoDataModel>().map(JSON: newResult as [String : Any]) {
+                    completion(data, nil, status,message)
                 } else {
-                    completion(nil, nil, 201,message)
+                    completion(nil, nil, status,message)
                 }
                 
             } else {
-                 completion(nil, error, 404,message)
+                 completion(nil, error, status,message)
             }
         }
     }

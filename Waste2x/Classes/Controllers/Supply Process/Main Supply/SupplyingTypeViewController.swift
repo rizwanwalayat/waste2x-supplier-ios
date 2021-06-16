@@ -132,7 +132,7 @@ extension SupplyingTypeViewController {
             
             if response != nil {
                 
-                if statusCode == 200 {
+                if statusCode == true {
                     
                     self.supplyProcessData = response!.result
                     self.collectionViewReload()

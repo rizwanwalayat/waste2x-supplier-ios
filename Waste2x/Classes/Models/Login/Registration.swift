@@ -9,8 +9,8 @@
 import Foundation
 import ObjectMapper
 
-typealias RegistrationCompletionHandler = (_ data: Registration?, _ error: Error?, _ status: Int?, _ message:String) -> Void
-typealias RawCompletionHandler = (_ data: AnyObject?, _ error: Error?, _ status: Int?, _ message:String) -> Void
+typealias RegistrationCompletionHandler = (_ data: Registration?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
+typealias RawCompletionHandler = (_ data: AnyObject?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
 
 class Registration : Mappable {
     var success = Bool()
@@ -37,12 +37,12 @@ class Registration : Mappable {
                 if let data = Mapper<Registration>().map(JSON: newResult as [String : Any]) {
                     
                     
-                    completion(data, nil, 200,message)
+                    completion(data, nil, status,message)
                 } else {
-                    completion(nil, nil, 201,message)
+                    completion(nil, nil, status,message)
                 }
             } else {
-                 completion(nil, error, 404,message)
+                 completion(nil, error, status,message)
             }
         }
     }
@@ -53,14 +53,14 @@ class Registration : Mappable {
             if error == nil {
         
                 if let data = result as AnyObject? {
-                    completion(data, nil, 200,message)
+                    completion(data, nil, status,message)
                     
                 } else {
-                    completion(nil, nil, 201,message)
+                    completion(nil, nil, status,message)
                 }
                 
             } else {
-                 completion(nil, error, 404,message)
+                 completion(nil, error, status,message)
             }
         }
     }

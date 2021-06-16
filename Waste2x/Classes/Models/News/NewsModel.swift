@@ -8,7 +8,7 @@
 
 import Foundation
 import ObjectMapper
-typealias NewsCompletionHandler = (_ data: NewsModel?, _ error: Error?, _ status: Int?, _ message:String) -> Void
+typealias NewsCompletionHandler = (_ data: NewsModel?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
 class NewsModel : Mappable {
     var success = Bool()
     var message = ""
@@ -32,13 +32,13 @@ class NewsModel : Mappable {
             if error == nil {
                 let newResult = ["result":result]
                 if let data = Mapper<NewsModel>().map(JSON: newResult as [String : AnyObject]) {
-                    completion(data, nil, 200,message)
+                    completion(data, nil, status,message)
                 } else {
-                    completion(nil, nil, 201,message)
+                    completion(nil, nil, status,message)
                 }
                 
             } else {
-                 completion(nil, error, 404,message)
+                 completion(nil, error, status,message)
             }
         }
     }

@@ -63,7 +63,7 @@ extension SiteCreatedViewController {
                 self.alertManager("Failed", message: error!.localizedDescription )
             }
             
-            if code == 200 {
+            if code == true {
                 
                 if data != nil {
                     

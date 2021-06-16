@@ -349,7 +349,7 @@ extension HomeViewController: WeatherCallDelegate {
             
             if response != nil {
                 
-                if statusCode == 200 {
+                if statusCode == true {
                     
                     self.resultData = response!.result
                     self.homeDatapopulate()

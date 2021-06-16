@@ -164,7 +164,7 @@ extension NewsViewController{
     
     func newsApiCall(){
         NewsModel.NewsApiCall { result, error, status,message in
-            if status == 200{
+            if status == true{
                 GCD.async(.Main) {
                     self.NewsModell = result
                     self.NewsListModell = result?.result
