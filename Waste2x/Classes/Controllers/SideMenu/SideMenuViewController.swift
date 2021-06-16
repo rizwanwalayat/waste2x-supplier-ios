@@ -17,6 +17,7 @@ class SideMenuViewController: BaseViewController {
     var img = [#imageLiteral(resourceName: "Payment Icons"),#imageLiteral(resourceName: "Calendar")]
     var text = ["Payments","Schedule Pickup"]
     var selectionIndex = -1
+    var paymentModel : PaymentModel?
     
     @IBOutlet weak var headerView: UIView!
     override func viewDidLoad() {
@@ -70,7 +71,8 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
         self.selectionIndex = indexPath.row
         switch indexPath.row {
         case 0:
-            if ((Data?.isNewUser) == true){
+            paymentApi()
+            if self.paymentModel?.result?.details_submitted == false || self.paymentModel?.result == nil {
                 let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
                     navigationController?.pushViewController(vc, animated: true)
                 
@@ -95,3 +97,13 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
     
 }
 
+
+//MARK: - API call
+extension SideMenuViewController{
+    func paymentApi(){
+        PaymentModel.paymentApiFunction{ result, error, status,message in
+            self.paymentModel = result
+            Global.shared.paymentModel = result
+        }
+    }
+}

@@ -8,9 +8,15 @@
 import UIKit
 
 class FaqViewController: BaseViewController {
-
+    
+    
+//MARK: - IBOutlets
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    
+    //MARK: - Variables
+    var faqListModell : [FaqResult]?
+    var faqModelobject : FaqModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,6 +27,14 @@ class FaqViewController: BaseViewController {
         mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         mainView.layer.masksToBounds = true
         globalObjectContainer?.tabbarHiddenView.isHidden = false
+        if Global.shared.faqApiCheck{
+            faqApiCall()
+        }
+        else{
+            self.faqModelobject = Global.shared.faqModel
+            self.faqListModell = Global.shared.faqListModel
+            self.tableView.reloadData()
+        }
         
     }
 
@@ -29,30 +43,33 @@ class FaqViewController: BaseViewController {
 
 //MARK: - Extentions
 extension FaqViewController : UITableViewDelegate,UITableViewDataSource{
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         2
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0
-        {
-            return 3
-        }
-        else
-        {
-            return 5
+        
+        if section == 0 {
+            return faqModelobject?.result?.faqs.count ?? 0
+            
+        } else {
+            return faqModelobject?.result?.other.count ?? 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0
-        {
+        
+        if indexPath.section == 0 {
             let cell = tableView.register(FaqTableViewCell.self, indexPath: indexPath)
+            cell.config(data: faqModelobject!, index: indexPath.row, section: indexPath.section)
             cell.selectionStyle = .none
             return cell
         }
         else
         {
             let cell = tableView.register(FaqTableViewCell.self, indexPath: indexPath)
+            cell.config(data: faqModelobject!, index: indexPath.row, section: indexPath.section)
             cell.selectionStyle = .none
             return cell
         }
@@ -106,5 +123,21 @@ extension FaqViewController : UITableViewDelegate,UITableViewDataSource{
     }
     
 
+}
+
+//MARK: - API Extention
+extension FaqViewController{
+    func faqApiCall(){
+        FaqModel.FaqApiFunction{ result, error, status,message in
+            Global.shared.faqApiCheck = false
+            if status == true{
+                    self.faqModelobject = result
+                    self.faqListModell = result?.result?.faqs
+                    Global.shared.faqModel = result
+                    Global.shared.faqListModel = result?.result?.faqs
+                    self.tableView.reloadData()
+            }
+        }
+    }
 }
 

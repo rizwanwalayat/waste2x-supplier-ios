@@ -27,6 +27,14 @@ class Global {
     var location = CLLocation()
     var fireBaseToken = ""
     var apiCurve = false
+    var faqApiCheck = true
+    var faqModel : FaqModel?
+    var faqListModel : [FaqResult]?
+    var newsModel : NewsModel?
+    var NewsListModell : [NewsResult]?
+    var newsApiCheck = true
+    var paymentModel : PaymentModel?
+    
     
     
     func convertLocationToAddress(location: CLLocation, _ completionHandler: ((Bool, String?) -> Void)?)

@@ -48,7 +48,6 @@ class NewsViewController: BaseViewController {
     var timer : Timer?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.newsApiCall()
        
     }
     @objc func startPlayPause(_ sender:UIButton) {
@@ -82,7 +81,14 @@ class NewsViewController: BaseViewController {
         self.tableView.layer.masksToBounds = true
         globalObjectContainer?.tabbarHiddenView.isHidden = false
         self.bottomConst.constant = self.tabbarViewHeight
-        
+        if Global.shared.newsApiCheck{
+            newsApiCall()
+        }
+        else{
+            self.NewsModell = Global.shared.newsModel
+            self.NewsListModell = Global.shared.NewsListModell
+            self.tableView.reloadData()
+        }
     }
     
 
@@ -164,10 +170,13 @@ extension NewsViewController{
     
     func newsApiCall(){
         NewsModel.NewsApiCall { result, error, status,message in
+            Global.shared.newsApiCheck = false
             if status == true{
                 GCD.async(.Main) {
                     self.NewsModell = result
                     self.NewsListModell = result?.result
+                    Global.shared.newsModel = result
+                    Global.shared.NewsListModell = result?.result
                     self.tableView.reloadData()
                 }
             }

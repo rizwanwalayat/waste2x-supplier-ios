@@ -43,4 +43,15 @@ class FaqTableViewCell: UITableViewCell {
             }
         })
     }
+    func config(data:FaqModel,index:Int,section:Int){
+        if section == 0
+        {
+        self.questionLabel.text = data.result?.faqs[index].question
+        self.answerLabel.text = data.result?.faqs[index].answer
+        }
+        else{
+            self.questionLabel.text = data.result?.other[index].question
+            self.answerLabel.text = data.result?.other[index].answer
+        }
+    }
 }

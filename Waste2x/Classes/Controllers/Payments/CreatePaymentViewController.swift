@@ -21,8 +21,8 @@ class CreatePaymentViewController: BaseViewController {
         mainView.layer.cornerRadius = 36
         mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         mainView.layer.masksToBounds = true
-        self.idTitle.text = Data?.stripe_account_name
-        self.emailTitle.text = Data?.email
+        self.idTitle.text = Global.shared.paymentModel?.result?.accountId
+        self.emailTitle.text = Global.shared.paymentModel?.result?.email
         
     }
     

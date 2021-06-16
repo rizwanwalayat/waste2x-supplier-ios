@@ -25,7 +25,16 @@ class PaymentViewController: BaseViewController {
     }
 
     @IBAction func backAction(_ sender: Any) {
+        
         self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func connectStripeAccount(_ sender: Any) {
+        
+        CreatePaymentModel.CreatePaymentApiFunction{ result, error, status,message in
+            if let url = URL(string: "\(result!.result)") {
+                UIApplication.shared.open(url)
+            }
+        }
     }
     
     

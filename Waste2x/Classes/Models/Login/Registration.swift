@@ -35,8 +35,6 @@ class Registration : Mappable {
             if error == nil {
                 let newResult = ["result": result]
                 if let data = Mapper<Registration>().map(JSON: newResult as [String : Any]) {
-                    
-                    
                     completion(data, nil, status,message)
                 } else {
                     completion(nil, nil, status,message)

@@ -92,7 +92,6 @@
 		04E6104926725422001E6629 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6104526725422001E6629 /* Options.swift */; };
 		18011272266774E5000C7102 /* FaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18011270266774E5000C7102 /* FaqTableViewCell.swift */; };
 		18011273266774E5000C7102 /* FaqTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18011271266774E5000C7102 /* FaqTableViewCell.xib */; };
-		180CD1AF2665048D0092168B /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180CD1AD2665048D0092168B /* PaymentViewController.swift */; };
 		180CD1B02665048D0092168B /* PaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180CD1AE2665048D0092168B /* PaymentViewController.xib */; };
 		181025232657E33A00DEBF7D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181025212657E33A00DEBF7D /* ContainerViewController.swift */; };
 		181025242657E33A00DEBF7D /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181025222657E33A00DEBF7D /* ContainerViewController.xib */; };
@@ -150,7 +149,6 @@
 		18666B2426666175005C1A78 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18666B2226666175005C1A78 /* VideoTableViewCell.xib */; };
 		1869A1BB267788C400BD3612 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869A1BA267788C400BD3612 /* BaseTableViewCell.swift */; };
 		1869A1BD26778A1F00BD3612 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869A1BC26778A1F00BD3612 /* BaseCollectionViewCell.swift */; };
-		186CD718266610C600A1F30F /* CreatePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CD716266610C600A1F30F /* CreatePaymentViewController.swift */; };
 		186CD719266610C600A1F30F /* CreatePaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186CD717266610C600A1F30F /* CreatePaymentViewController.xib */; };
 		18719141266667420050FAAA /* AudioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871913F266667420050FAAA /* AudioTableViewCell.swift */; };
 		18719142266667420050FAAA /* AudioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18719140266667420050FAAA /* AudioTableViewCell.xib */; };
@@ -185,6 +183,12 @@
 		18A849D0265E411F008F77E8 /* WeatherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A849CF265E411F008F77E8 /* WeatherCollectionViewCell.xib */; };
 		18A849D7265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A849D5265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift */; };
 		18A849D8265E48A0008F77E8 /* WasteTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A849D6265E48A0008F77E8 /* WasteTypeCollectionViewCell.xib */; };
+		18ACB7BB2679DE730088307D /* FaqModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ACB7BA2679DE730088307D /* FaqModel.swift */; };
+		18ACB7BE267A23110088307D /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ACB7BD267A23110088307D /* PaymentModel.swift */; };
+		18ACB7C1267A2E2E0088307D /* CreatePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ACB7BF267A2E2E0088307D /* CreatePaymentViewController.swift */; };
+		18ACB7C2267A2E2E0088307D /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ACB7C0267A2E2E0088307D /* PaymentViewController.swift */; };
+		18ACB7C5267A34CD0088307D /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ACB7C4267A34CD0088307D /* NotificationModel.swift */; };
+		18ACB7C7267A36D70088307D /* CreatePayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ACB7C6267A36D70088307D /* CreatePayment.swift */; };
 		18BD8473267337E400B5F797 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD8472267337E400B5F797 /* NewsModel.swift */; };
 		18BD84762673770B00B5F797 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD84752673770B00B5F797 /* WeatherAPI.swift */; };
 		18C11A6C265F9D5F00BC022F /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C11A6A265F9D5F00BC022F /* ContactViewController.swift */; };
@@ -290,7 +294,6 @@
 		04E6104526725422001E6629 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		18011270266774E5000C7102 /* FaqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
 		18011271266774E5000C7102 /* FaqTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaqTableViewCell.xib; sourceTree = "<group>"; };
-		180CD1AD2665048D0092168B /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		180CD1AE2665048D0092168B /* PaymentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentViewController.xib; sourceTree = "<group>"; };
 		181025212657E33A00DEBF7D /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		181025222657E33A00DEBF7D /* ContainerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
@@ -348,7 +351,6 @@
 		18666B2226666175005C1A78 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
 		1869A1BA267788C400BD3612 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		1869A1BC26778A1F00BD3612 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
-		186CD716266610C600A1F30F /* CreatePaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePaymentViewController.swift; sourceTree = "<group>"; };
 		186CD717266610C600A1F30F /* CreatePaymentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePaymentViewController.xib; sourceTree = "<group>"; };
 		1871913F266667420050FAAA /* AudioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTableViewCell.swift; sourceTree = "<group>"; };
 		18719140266667420050FAAA /* AudioTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioTableViewCell.xib; sourceTree = "<group>"; };
@@ -383,6 +385,12 @@
 		18A849CF265E411F008F77E8 /* WeatherCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherCollectionViewCell.xib; sourceTree = "<group>"; };
 		18A849D5265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		18A849D6265E48A0008F77E8 /* WasteTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteTypeCollectionViewCell.xib; sourceTree = "<group>"; };
+		18ACB7BA2679DE730088307D /* FaqModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqModel.swift; sourceTree = "<group>"; };
+		18ACB7BD267A23110088307D /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
+		18ACB7BF267A2E2E0088307D /* CreatePaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePaymentViewController.swift; sourceTree = "<group>"; };
+		18ACB7C0267A2E2E0088307D /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		18ACB7C4267A34CD0088307D /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		18ACB7C6267A36D70088307D /* CreatePayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePayment.swift; sourceTree = "<group>"; };
 		18BD8472267337E400B5F797 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		18BD84752673770B00B5F797 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		18C11A6A265F9D5F00BC022F /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
@@ -453,6 +461,9 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				18ACB7C3267A34BF0088307D /* Notification */,
+				18ACB7BC267A22FA0088307D /* Payment */,
+				18ACB7B92679DE610088307D /* FAQ */,
 				043F6BE62677716A000E3C4F /* Home */,
 				18BD8474267349DB00B5F797 /* News */,
 				048B5FAE267234AD003979DA /* Supply Process */,
@@ -900,9 +911,9 @@
 		180CD1AC2665045E0092168B /* Payments */ = {
 			isa = PBXGroup;
 			children = (
-				180CD1AD2665048D0092168B /* PaymentViewController.swift */,
+				18ACB7BF267A2E2E0088307D /* CreatePaymentViewController.swift */,
+				18ACB7C0267A2E2E0088307D /* PaymentViewController.swift */,
 				180CD1AE2665048D0092168B /* PaymentViewController.xib */,
-				186CD716266610C600A1F30F /* CreatePaymentViewController.swift */,
 				186CD717266610C600A1F30F /* CreatePaymentViewController.xib */,
 			);
 			path = Payments;
@@ -1204,6 +1215,31 @@
 			path = TableViews;
 			sourceTree = "<group>";
 		};
+		18ACB7B92679DE610088307D /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				18ACB7BA2679DE730088307D /* FaqModel.swift */,
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
+		18ACB7BC267A22FA0088307D /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				18ACB7BD267A23110088307D /* PaymentModel.swift */,
+				18ACB7C6267A36D70088307D /* CreatePayment.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		18ACB7C3267A34BF0088307D /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				18ACB7C4267A34CD0088307D /* NotificationModel.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		18BD8474267349DB00B5F797 /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -1472,12 +1508,14 @@
 				04340E96266E439900B5F87C /* MessagesTableViewCell.swift in Sources */,
 				0067A31B252AFC9E00CECA8C /* TimeInterval.swift in Sources */,
 				18A849CD265E37A7008F77E8 /* WeatherCollectionViewCell.swift in Sources */,
+				18ACB7BE267A23110088307D /* PaymentModel.swift in Sources */,
 				0067A318252AFC9E00CECA8C /* UIDevice.swift in Sources */,
 				181025292657E36500DEBF7D /* GCD.swift in Sources */,
+				18ACB7C2267A2E2E0088307D /* PaymentViewController.swift in Sources */,
 				184F51702667AD9700F0328A /* ConfirmPendingTableViewCell.swift in Sources */,
 				04E6104726725422001E6629 /* SupplyProcessDataModel.swift in Sources */,
-				180CD1AF2665048D0092168B /* PaymentViewController.swift in Sources */,
 				043F6BF8267776A2000E3C4F /* HomeResultDataModel.swift in Sources */,
+				18ACB7C7267A36D70088307D /* CreatePayment.swift in Sources */,
 				181025282657E36500DEBF7D /* Global.swift in Sources */,
 				1889607F266E289800061783 /* SupplyDetailTableViewCell.swift in Sources */,
 				18719141266667420050FAAA /* AudioTableViewCell.swift in Sources */,
@@ -1503,6 +1541,7 @@
 				0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */,
 				041D40D126772A65003A0039 /* CreateSite.swift in Sources */,
 				04E6104626725422001E6629 /* Questions.swift in Sources */,
+				18ACB7C5267A34CD0088307D /* NotificationModel.swift in Sources */,
 				1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */,
 				18D1A366266A2B77009CAD26 /* TrackerViewController.swift in Sources */,
 				0428F1CD265BECB5007C51EE /* LoginInputEmailViewController.swift in Sources */,
@@ -1527,7 +1566,6 @@
 				0067A2BC25274C0900CECA8C /* AppDelegate.swift in Sources */,
 				181025402657E48500DEBF7D /* FaqViewController.swift in Sources */,
 				1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */,
-				186CD718266610C600A1F30F /* CreatePaymentViewController.swift in Sources */,
 				043F6BF7267776A2000E3C4F /* HomeOptions.swift in Sources */,
 				0067A2E62529D52B00CECA8C /* Constants.swift in Sources */,
 				0067A317252AFC9E00CECA8C /* UITableView.swift in Sources */,
@@ -1540,6 +1578,7 @@
 				18937566266127F800D55A33 /* NewWasteSizeViewController.swift in Sources */,
 				043F6BFA267776A2000E3C4F /* Commodity_farms.swift in Sources */,
 				0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */,
+				18ACB7C1267A2E2E0088307D /* CreatePaymentViewController.swift in Sources */,
 				183262792670C68A00F0CCBA /* InviteSupplierViewController.swift in Sources */,
 				1849F5A4266FDFD60001B533 /* ContactsFetchViewController.swift in Sources */,
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,
@@ -1562,6 +1601,7 @@
 				183262762670BB8400F0CCBA /* Registration.swift in Sources */,
 				00434544254825AE009A6166 /* DataManager.swift in Sources */,
 				04D053642670A978005458F7 /* FormSubTypesViewController.swift in Sources */,
+				18ACB7BB2679DE730088307D /* FaqModel.swift in Sources */,
 				1810253D2657E48500DEBF7D /* NewsViewController.swift in Sources */,
 				18397DCF2660FD35003DE30C /* LoginViewController.swift in Sources */,
 				00434541254823FE009A6166 /* ApiClientHandler.swift in Sources */,

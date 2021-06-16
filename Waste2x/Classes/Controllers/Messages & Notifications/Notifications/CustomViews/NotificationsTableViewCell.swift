@@ -61,7 +61,6 @@ class NotificationsTableViewCell: UITableViewCell {
         
         switch status {
         case .accepted:
-//            bodyView.tag = 0
             self.notificationTitle.text = notificationTitle
             self.notificationDetailLabel.text = detailText
             self.notificationQuestionLabel.text = questionText
@@ -73,7 +72,6 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationYesButton.setTitle("Yes", for: .normal)
             
         case .rejected:
-//            bodyView.tag = 1
             self.notificationTitle.text = notificationTitle
             self.notificationDetailLabel.text = detailText
             self.notificationQuestionLabel.text = questionText
@@ -85,7 +83,6 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationYesButton.setTitle("Yes", for: .normal)
             
         case .pending:
-//            bodyView.tag = 2
             self.notificationTitle.text = notificationTitle
             self.notificationDetailLabel.text = detailText
             self.notificationQuestionLabel.text = questionText
@@ -97,7 +94,6 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationYesButton.setTitle("Yes", for: .normal)
             
         case .confirmed:
-//            bodyView.tag = 3
             self.notificationTitle.text = notificationTitle
             self.notificationDetailLabel.text = detailText
             self.notificationQuestionLabel.text = questionText
@@ -109,7 +105,6 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationYesButton.setTitle("Check", for: .normal)
             
         case .onway:
-//            bodyView.tag = 4
             self.notificationTitle.text = notificationTitle
             self.notificationDetailLabel.text = detailText
             self.notificationQuestionLabel.text = questionText
@@ -156,6 +151,22 @@ class NotificationsTableViewCell: UITableViewCell {
                 self.expandArrow.image = UIImage(named: "Down-Arrow")
             }
         })
+    }
+    func config(data:NotificationModel,index:Int){
+        self.notificationTitle.text = data.result?.notifications[index].title
+        self.notificationDetailLabel.text = data.result?.notifications[index].message
+        
+        if  data.result?.notifications[index].response == "Yes"{
+            self.notificationStatusHandlings(.accepted, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "Do you want to sell?")
+            
+        }
+        else if data.result?.notifications[index].response == "No"{
+            self.notificationStatusHandlings(.rejected, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "Do you want to sell?")
+        }
+        else {
+            self.notificationStatusHandlings(.pending, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "Do you want to sell?")
+        }
+        
     }
     
 }

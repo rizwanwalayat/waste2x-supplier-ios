@@ -39,6 +39,7 @@ class DataManager {
          UserDefaults.standard.set(nil, forKey: "finger")
     }
     
+    //MARK: - Users Data
     func setUser (user: String) {
         UserDefaults.standard.set(user, forKey: "user_data")
     }
@@ -55,6 +56,24 @@ class DataManager {
          UserDefaults.standard.set(nil, forKey: "user_data")
         
     }
+    
+    //MARK: - ApiData
+    func setFaq (user: String) {
+        UserDefaults.standard.set(user, forKey: "faq")
+    }
+    
+    func getFaq() -> FaqModel? {
+        var faq: FaqModel?
+
+        if UserDefaults.standard.object(forKey: "faq") != nil {
+            faq = Mapper<FaqModel>().map(JSONString:UserDefaults.standard.string(forKey: "faq")!)
+        }
+        return faq
+    }
+    func deleteFaq () {
+         UserDefaults.standard.set(nil, forKey: "faq")
+    }
+    
     func setWeather (weather: String) {
         UserDefaults.standard.set(weather, forKey: "weather")
     }

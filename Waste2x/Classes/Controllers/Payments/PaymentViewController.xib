@@ -118,6 +118,9 @@
                                     <real key="value" value="18"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="connectStripeAccount:" destination="-1" eventType="touchUpInside" id="jp8-cJ-DDr"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
