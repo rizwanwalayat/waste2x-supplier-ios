@@ -38,7 +38,7 @@ class SiteCreatedViewController: BaseViewController {
 
     @IBAction func okayButtonPressed(_ sender: Any) {
         
-        postDataFromServer()
+        postDataToServer()
     }
 }
 
@@ -46,7 +46,7 @@ class SiteCreatedViewController: BaseViewController {
 extension SiteCreatedViewController {
     
     
-    func postDataFromServer()
+    func postDataToServer()
     {
         if Data?.isNewUser ?? true {
             
