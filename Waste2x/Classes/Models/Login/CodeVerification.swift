@@ -25,7 +25,7 @@ class CodeVerification : Mappable {
         statusCode  <- map["status_code"]
     }
     
-    class func verificationCode(phoneNumber: String, _ completion: @escaping CodeVerificationCompletionHandler) {
+    class func verificationCode(phoneNumber: String, _ completion: @escaping phoneNoCompletionHandler) {
         Utility.showLoading()
         APIClient.shared.verificationCode(number: phoneNumber) { result, error, status,message in
             Utility.hideLoading()
