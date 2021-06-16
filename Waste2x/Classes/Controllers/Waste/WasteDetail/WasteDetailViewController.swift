@@ -26,14 +26,24 @@ class WasteDetailViewController: BaseViewController {
     
     @IBOutlet weak var bottomConstraints: NSLayoutConstraint!
     @IBOutlet weak var collectionViewConst: NSLayoutConstraint!
+    @IBOutlet weak var blinderView: UIView!
     
     // MARK: - Declarations
-    var imagesArray               = [UIImage]()
+    var imagesArray = [UIImage]()
+    var farmID = -1
+    var wasteDeatil : WasteDetialResult?
+    var postDictToSaveImage = [String : Any]()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        postDictToSaveImage["latitude"] = Global.shared.current_lat
+        postDictToSaveImage["longitude"] = Global.shared.current_lng
+        postDictToSaveImage["farm_id"] = farmID
+        
         setupviews()
+        self.fetchDataFromServer()
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
@@ -78,7 +88,14 @@ class WasteDetailViewController: BaseViewController {
 
     @objc override func imageSelectedFromGalleryOrCamera(selectedImage:UIImage){
         
-        imagesArray.append(selectedImage)
+        // api call
+        postDictToSaveImage["farm_image"] = selectedImage
+        imageToUpload()
+    }
+    
+    func updateImageLibrary(_ image : UIImage)
+    {
+        imagesArray.append(image)
         collectionviewImages.reloadData()
         if imagesArray.count > 0 && !(collectionViewConst.constant > 0)
         {

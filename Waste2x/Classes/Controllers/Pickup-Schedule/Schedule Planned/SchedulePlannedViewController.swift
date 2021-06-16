@@ -19,11 +19,17 @@ class SchedulePlannedViewController: BaseViewController {
     @IBOutlet weak var okayButton: UIButton!
     
     
+    // MARK: - Varibale
+    
+    var result : ResultPickupSchedule?
+    
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        titleLabel.text = result?.message ?? "Your pickup schedule has been planned!"
         mainBackgroundView.addGradient(colors: [UIColor(hexString: "FDFEFD").cgColor, UIColor(hexString: "F1F5F2").cgColor])
     }
     

@@ -102,6 +102,7 @@ class APIClient: APIClientHandler {
     func fetchSupplyProcessData(_ completionBlock: @escaping APIClientCompletionHandler) {
 //
         let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        print("postSupplyProcessData : \(headers)")
         _ = sendRequest(APIRoutes.fetchSupplyProcessData , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
     
@@ -109,6 +110,7 @@ class APIClient: APIClientHandler {
         
         
         let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        print("postSupplyProcessData : \(headers)")
         var API = ""
         if Global.shared.apiCurve{
             
@@ -123,8 +125,32 @@ class APIClient: APIClientHandler {
     func fetchSitesForHomeData(_ completionBlock: @escaping APIClientCompletionHandler)
     {
         let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
-        print(headers)
+        print("fetchSitesForHomeData : \(headers)")
         _ = sendRequest(APIRoutes.fetchSitesHomeProcessDataUser , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+    }
+    
+    func postPickupScheduleData(params : [String: AnyObject], _ completionBlock: @escaping APIClientCompletionHandler)
+    {
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        print("postPickupScheduleData : \(headers)")
+        _ = sendRequest(APIRoutes.pickupSchedulePostData , parameters: params ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
+    }
+    
+    
+    func fetchWasteDetailData(params : [String: AnyObject],_ completionBlock: @escaping APIClientCompletionHandler) {
+//
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        print("postSupplyProcessData : \(headers)")
+        _ = sendRequest(APIRoutes.wasteDetailData , parameters: params ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
+    }
+    
+    func saveWasteimages(params : [String: AnyObject],_ completionBlock: @escaping APIClientCompletionHandler) {
+//
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        print("postSupplyProcessData : \(headers)")
+        
+        sendRequestUsingMultipart(APIRoutes.wasteDetailImageUpload, parameters: params, headers: headers, completionBlock: completionBlock)
+        
     }
 }
 

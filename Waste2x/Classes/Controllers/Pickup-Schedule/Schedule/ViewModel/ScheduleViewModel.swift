@@ -48,7 +48,7 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
         selectionHandlingsOfViews(selectDateTimeHolderview, isSelection: true)
     }
     
-    func stringToDateUnix(_ dateStr : String) -> String?
+    func stringToDateUnix(_ dateStr : String) -> Double?
     {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM dd, yyyy - hh:mm a"//"EEE, dd MMM yyyy hh:mm:ss +zzzz"
@@ -56,7 +56,7 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
         dateFormatter.pmSymbol = "PM"
 
         guard let dateObj = dateFormatter.date(from: dateStr) else {return nil}
-        let unix = "\(dateObj.timeIntervalSince1970)"
+        let unix = dateObj.timeIntervalSince1970
         return unix
     }
     
@@ -94,7 +94,7 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
             
             for site in sitesData
             {
-                let farmName = "\(site.farmName) (\(site.cropType)"
+                let farmName = "\(site.farmName) (\(site.cropType))"
                 regularData.append(farmName)
                 self.tempFarmsData[farmName] = site.farmId
             }
@@ -314,25 +314,30 @@ extension ScheduleViewController
         
         let postDict = postDictData as [String : AnyObject]
         
-        CreateSiteDataModel.postSiteCreateData(params: postDict, { data, error, code in
+        PickupScheduleDataModel.postPickupScheduleData(params: postDict) { response, error, success,message  in
             
             if error != nil
             {
-                
+                Utility.showAlertController(self, message)
             }
             
-            if code == 200 {
+            if let isSuccess = success  {
                 
-                if data != nil {
+                if isSuccess {
                     
-                   
+                    let vc = SchedulePlannedViewController(nibName: "SchedulePlannedViewController", bundle: nil)
+                    vc.result = response?.result
+                    self.navigationController?.pushViewController(vc, animated: true)
                 }
-                
+                else
+                {
+                    Utility.showAlertController(self, message)
+                }
             }
             else
             {
-                
+                Utility.showAlertController(self, message)
             }
-        })
+        }
     }
 }

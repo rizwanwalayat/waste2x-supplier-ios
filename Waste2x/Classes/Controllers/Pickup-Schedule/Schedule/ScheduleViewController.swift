@@ -124,8 +124,7 @@ class ScheduleViewController: BaseViewController {
         if allFieldsAuth() {
             
             postDictData["schedule_type"] = selectionType.rawValue
-            let vc = SchedulePlannedViewController(nibName: "SchedulePlannedViewController", bundle: nil)
-            navigationController?.pushViewController(vc, animated: true)
+            postDataFromServer()
         }
     }
     

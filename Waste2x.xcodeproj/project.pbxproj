@@ -32,6 +32,8 @@
 		0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A315252AFC9E00CECA8C /* UILabel.swift */; };
 		0067A324252AFC9E00CECA8C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A316252AFC9E00CECA8C /* UIFont.swift */; };
 		0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0067A33A252B91BA00CECA8C /* Assets.xcassets */; };
+		04070D26267A19A700C93981 /* WasteDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04070D25267A19A700C93981 /* WasteDataModel.swift */; };
+		04070D29267A1FC400C93981 /* WasteDetialResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04070D27267A1FC400C93981 /* WasteDetialResult.swift */; };
 		041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041242AA266A05AE00EB1A3F /* DateExtenstion.swift */; };
 		041D40D126772A65003A0039 /* CreateSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D40CF26772A65003A0039 /* CreateSite.swift */; };
 		041D40D226772A65003A0039 /* CreateSiteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D40D026772A65003A0039 /* CreateSiteResult.swift */; };
@@ -226,6 +228,8 @@
 		0067A315252AFC9E00CECA8C /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		0067A316252AFC9E00CECA8C /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		0067A33A252B91BA00CECA8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04070D25267A19A700C93981 /* WasteDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDataModel.swift; sourceTree = "<group>"; };
+		04070D27267A1FC400C93981 /* WasteDetialResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasteDetialResult.swift; sourceTree = "<group>"; };
 		041242AA266A05AE00EB1A3F /* DateExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtenstion.swift; sourceTree = "<group>"; };
 		041D40CF26772A65003A0039 /* CreateSite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSite.swift; sourceTree = "<group>"; };
 		041D40D026772A65003A0039 /* CreateSiteResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSiteResult.swift; sourceTree = "<group>"; };
@@ -455,6 +459,7 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				04070D24267A197700C93981 /* Waste */,
 				047E76822679E8910055292A /* PickupSchedule */,
 				043F6BE62677716A000E3C4F /* Home */,
 				18BD8474267349DB00B5F797 /* News */,
@@ -599,6 +604,15 @@
 				1869A1BC26778A1F00BD3612 /* BaseCollectionViewCell.swift */,
 			);
 			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+		04070D24267A197700C93981 /* Waste */ = {
+			isa = PBXGroup;
+			children = (
+				04070D25267A19A700C93981 /* WasteDataModel.swift */,
+				04070D27267A1FC400C93981 /* WasteDetialResult.swift */,
+			);
+			path = Waste;
 			sourceTree = "<group>";
 		};
 		041242AC266A16D500EB1A3F /* Schedule */ = {
@@ -1479,6 +1493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04070D29267A1FC400C93981 /* WasteDetialResult.swift in Sources */,
 				0067A2DD252753D100CECA8C /* APIService.swift in Sources */,
 				04340E96266E439900B5F87C /* MessagesTableViewCell.swift in Sources */,
 				0067A31B252AFC9E00CECA8C /* TimeInterval.swift in Sources */,
@@ -1498,6 +1513,7 @@
 				04E6104826725422001E6629 /* FetchSupplyProcessResult.swift in Sources */,
 				04D0535F2670858B005458F7 /* SupplySubTypeViewController.swift in Sources */,
 				1810252A2657E36500DEBF7D /* Extentions.swift in Sources */,
+				04070D26267A19A700C93981 /* WasteDataModel.swift in Sources */,
 				183262742670A3A500F0CCBA /* CodeVerification.swift in Sources */,
 				04C31D1226678E1800A1CF9C /* ScheduleViewModel.swift in Sources */,
 				043F6BF5267776A2000E3C4F /* HomeWaste_type_questions.swift in Sources */,

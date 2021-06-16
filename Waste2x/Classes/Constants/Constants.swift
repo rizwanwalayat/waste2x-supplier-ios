@@ -51,6 +51,9 @@ struct APIRoutes {
     static var widthdrawFromDonee = "/api/payments/paypal/donee/withdrawRequest"
     static var getDoneeUserTransactions = "/api/payments/paypal/donee/transactions"
     static var newsUrl = "paudapay_us/fetch_news/"
+    static var pickupSchedulePostData = "paudapay_us/schedule_waste/"
+    static var wasteDetailData = "paudapay_us/details/"
+    static var wasteDetailImageUpload = "http://enmass-cache-programme.appspot.com/cache_api/save_user_activity/"
 }
 struct FireBaseVariables {
     static var fireBaseToken = ""

@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 
-typealias PickupScheduleCompletionHandler = (_ data: PickupScheduleDataModel?, _ error: Error?, _ status: Int?) -> Void
+typealias PickupScheduleCompletionHandler = (_ data: PickupScheduleDataModel?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
 
 
 class PickupScheduleDataModel : Mappable
@@ -18,7 +18,7 @@ class PickupScheduleDataModel : Mappable
     var success = false
     var status_code = -1
     var message = ""
-    var result : ResultSiteCreation?
+    var result : ResultPickupSchedule?
 
     required init?(map: Map) {
 
@@ -35,23 +35,43 @@ class PickupScheduleDataModel : Mappable
     
     class func postPickupScheduleData(params : [String : AnyObject], _ completion: @escaping PickupScheduleCompletionHandler) {
         Utility.showLoading()
-        APIClient.shared.postSupplyProcessData(params: params, { response, error, code in
-            
+        APIClient.shared.postPickupScheduleData(params: params, { response, error, success, message in
+    
             Utility.hideLoading()
             
             if response != nil {
                 
                 let newResult  = ["result" : response!]
                 if let data = Mapper<PickupScheduleDataModel>().map(JSON: newResult as [String : Any] ) {
-                    completion(data, nil, 200)
+                    completion(data, nil, success, message)
                 } else {
-                    completion(nil, nil, 201)
+                    completion(nil,  nil, success, message)
                 }
                 
             } else {
-                completion(nil, error, 404)
+                completion(nil, error, success, message)
             }
         })
     }
 
+}
+
+
+
+class ResultPickupSchedule : Mappable
+{
+    var success = Bool()
+    var status_code = -1
+    var message = ""
+
+    required init?(map: Map) {
+
+    }
+
+    func mapping(map: Map) {
+
+        success <- map["success"]
+        status_code <- map["status_code"]
+        message <- map["message"]
+    }
 }
