@@ -13,23 +13,11 @@ class DataManager {
     
     static let shared = DataManager()
     
-    func setWeatherData(value:AnyObject?,key: String){
-        UserDefaults.standard.set(value, forKey: key)
-    }
-    
+
     func setStringData (value: String, key: String) {
         UserDefaults.standard.set(value, forKey: key)
     }
-    func setUserDict (value: NSDictionary, key: String) {
-        UserDefaults.standard.set(value, forKey: key)
-    }
-    func getUserDict (key: String) -> NSDictionary? {
-        if let dict = UserDefaults.standard.object(forKey: key) as? NSDictionary{
-            return dict
-        }
-        return nil
-    }
-    
+
     func setIntData (value: Int, key: String) {
         UserDefaults.standard.set(value, forKey: key)
     }
@@ -65,6 +53,7 @@ class DataManager {
     }
     func deleteUser () {
          UserDefaults.standard.set(nil, forKey: "user_data")
+        
     }
     func setWeather (weather: String) {
         UserDefaults.standard.set(weather, forKey: "weather")
@@ -123,41 +112,5 @@ class DataManager {
         }
         return items
     }
-    
-    func removeFavoriteId(id: Int) {
-        let newItem = getFavoriteIds()
-        let items = newItem?.filter({$0 != id})
-        //items?.removeFirst()
-        UserDefaults.standard.set(items, forKey: "fav_data")
-    }
-    
-    
-    
-    
-    
-//
-//
-//     func getWeatherData() -> [String : Any]?
-//        {
-//
-//            let savedData = UserDefaults.standard.value(forKey: "weather") as? [String: Any]
-//            if let response = savedData
-//            {
-//                return response
-//            }
-//            else
-//            {
-//                return nil
-//            }
-//        }
-//     func saveWeather (responseDict : [String : Any] )
-//        {
-//            let saveWeather = UserDefaults.standard
-//            saveWeather.set(responseDict, forKey: "weather")
-//        }
-//
-//
-//
-    
     
 }
