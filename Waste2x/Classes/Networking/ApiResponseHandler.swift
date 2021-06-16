@@ -17,12 +17,11 @@ class VTResponseHandler: Mappable {
     }
 
     func mapping(map: Map) {
-        status                     <- (map["response"], transform)
+        status                     <- (map["success"])
         isError                    <- map["error"]
         message                 <- map["message"]
         data                        <- map["result"]
         error                       <- map["error"]
-//        weatherList                 <- map["list"]
         errorDescription    <- map["error_description"]
 
     }

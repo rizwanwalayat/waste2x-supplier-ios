@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import LocalAuthentication
+//import LocalAuthentication
 
 class LoginViewController: BaseViewController {
     
@@ -40,14 +40,15 @@ class LoginViewController: BaseViewController {
     @IBAction func nextButtonPressed(_ sender: Any) {
         if Utility.isTextFieldHasText(textField: phoneNoTextfield)
         {
-            CodeVerification.verificationCode(phoneNumber: phoneNoTextfield.text ?? "") { result, error, status in
+            CodeVerification.verificationCode(phoneNumber: phoneNoTextfield.text ?? "") { result, error, status,message in
+                
                 if error == nil {
                     let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
                     codeVerificationVC.phone = self.phoneNoTextfield.text ?? ""
                     self.navigationController?.pushViewController(codeVerificationVC, animated: true)
                 }
                 else{
-                    Utility.showAlertController(self, error?.localizedDescription ?? "Data not loaded")
+                    Utility.showAlertController(self, message)
                     
                 }
             }

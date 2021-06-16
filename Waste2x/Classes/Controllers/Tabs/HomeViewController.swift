@@ -342,7 +342,7 @@ extension HomeViewController: WeatherCallDelegate {
     
     func fetchFarmsFromServer()
     {
-        HomeFetchFarmsDataModel.fetchSites { response, error, statusCode in
+        HomeFetchFarmsDataModel.fetchSites { response, error, statusCode,message in
             
             if error != nil
             {

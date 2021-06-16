@@ -29,20 +29,20 @@ class WeatherAPI : Mappable {
     
     class func WeatherAPICall(_ completion: @escaping RawCompletionHandler) {
         Utility.showLoading()
-        APIClient.shared.weatherAPi{ result, error, status in
+        APIClient.shared.weatherAPi{ result, error, status,message in
             
             Utility.hideLoading()
             if error == nil {
                 if let data = Mapper<WeatherAPI>().map(JSON: result as! [String : Any]) {
                     let weather = data.toJSONString()
                     DataManager.shared.setWeather(weather: weather ?? "")
-                    completion(data, nil, 200)
+                    completion(data, nil, 200,message)
                 } else {
-                    completion(nil, nil, 201)
+                    completion(nil, nil, 201,message)
                 }
                 
             } else {
-                 completion(nil, error, 404)
+                 completion(nil, error, 404,message)
             }
         }
     }

@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 
-typealias HomeFetchFarmsCompletionHandler = (_ data: HomeFetchFarmsDataModel?, _ error: Error?, _ status: Int?) -> Void
+typealias HomeFetchFarmsCompletionHandler = (_ data: HomeFetchFarmsDataModel?, _ error: Error?, _ status: Int?, _ message:String) -> Void
 
 
 class HomeFetchFarmsDataModel : Mappable
@@ -37,7 +37,7 @@ class HomeFetchFarmsDataModel : Mappable
     
     class func fetchSites( _ completion: @escaping HomeFetchFarmsCompletionHandler) {
         Utility.showLoading()
-        APIClient.shared.fetchSitesForHomeData( { response, error, code in
+        APIClient.shared.fetchSitesForHomeData( { response, error, code,message in
             
             Utility.hideLoading()
             
@@ -45,13 +45,13 @@ class HomeFetchFarmsDataModel : Mappable
                 
                 let newResult  = ["result" : response!]
                 if let data = Mapper<HomeFetchFarmsDataModel>().map(JSON: newResult as [String : Any] ) {
-                    completion(data, nil, 200)
+                    completion(data, nil, 200,message)
                 } else {
-                    completion(nil, nil, 201)
+                    completion(nil, nil, 201,message)
                 }
                 
             } else {
-                completion(nil, error, 404)
+                completion(nil, error, 404,message)
             }
         })
     }

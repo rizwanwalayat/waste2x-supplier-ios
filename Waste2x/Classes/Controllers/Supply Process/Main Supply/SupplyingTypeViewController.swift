@@ -123,7 +123,7 @@ extension SupplyingTypeViewController {
     
     func fetchDataFromServer()
     {
-        SupplyProcessDataModel.fetchSupplyProcess { response, error, statusCode in
+        SupplyProcessDataModel.fetchSupplyProcess { response, error, statusCode,message in
             
             if error != nil
             {
