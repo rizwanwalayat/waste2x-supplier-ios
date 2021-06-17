@@ -186,6 +186,8 @@
 		18A849D0265E411F008F77E8 /* WeatherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A849CF265E411F008F77E8 /* WeatherCollectionViewCell.xib */; };
 		18A849D7265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A849D5265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift */; };
 		18A849D8265E48A0008F77E8 /* WasteTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A849D6265E48A0008F77E8 /* WasteTypeCollectionViewCell.xib */; };
+		18AC70ED267B554200F398A1 /* Pods_Waste2x.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207F74016C0058DAC6E355F9 /* Pods_Waste2x.framework */; };
+		18AC70F2267B5E3E00F398A1 /* NotificationResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC70F1267B5E3E00F398A1 /* NotificationResponceModel.swift */; };
 		18ACB7BB2679DE730088307D /* FaqModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ACB7BA2679DE730088307D /* FaqModel.swift */; };
 		18ACB7BE267A23110088307D /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ACB7BD267A23110088307D /* PaymentModel.swift */; };
 		18ACB7C1267A2E2E0088307D /* CreatePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ACB7BF267A2E2E0088307D /* CreatePaymentViewController.swift */; };
@@ -201,7 +203,6 @@
 		18C5DD7E265FEB7800EE1A2F /* SJCenterFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5DD7D265FEB7800EE1A2F /* SJCenterFlowLayout.swift */; };
 		18D1A366266A2B77009CAD26 /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1A364266A2B77009CAD26 /* TrackerViewController.swift */; };
 		18D1A367266A2B77009CAD26 /* TrackerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D1A365266A2B77009CAD26 /* TrackerViewController.xib */; };
-		2B4247A60172A42769FFE325 /* Pods_Waste2x.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207F74016C0058DAC6E355F9 /* Pods_Waste2x.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -391,6 +392,8 @@
 		18A849CF265E411F008F77E8 /* WeatherCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherCollectionViewCell.xib; sourceTree = "<group>"; };
 		18A849D5265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		18A849D6265E48A0008F77E8 /* WasteTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteTypeCollectionViewCell.xib; sourceTree = "<group>"; };
+		18AC70F0267B562100F398A1 /* Waste2x.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Waste2x.entitlements; sourceTree = "<group>"; };
+		18AC70F1267B5E3E00F398A1 /* NotificationResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationResponceModel.swift; sourceTree = "<group>"; };
 		18ACB7BA2679DE730088307D /* FaqModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqModel.swift; sourceTree = "<group>"; };
 		18ACB7BD267A23110088307D /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
 		18ACB7BF267A2E2E0088307D /* CreatePaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePaymentViewController.swift; sourceTree = "<group>"; };
@@ -406,7 +409,6 @@
 		18C5DD7D265FEB7800EE1A2F /* SJCenterFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJCenterFlowLayout.swift; sourceTree = "<group>"; };
 		18D1A364266A2B77009CAD26 /* TrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
 		18D1A365266A2B77009CAD26 /* TrackerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackerViewController.xib; sourceTree = "<group>"; };
-		18D1A36A266A7AA4009CAD26 /* Waste2x.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Waste2x.entitlements; sourceTree = "<group>"; };
 		207F74016C0058DAC6E355F9 /* Pods_Waste2x.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Waste2x.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4403568D39555D92B00CB323 /* Pods-Waste2x.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waste2x.debug.xcconfig"; path = "Target Support Files/Pods-Waste2x/Pods-Waste2x.debug.xcconfig"; sourceTree = "<group>"; };
 		5D4D23AE5CF86CE8FCB2AEEB /* Pods-Waste2x.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waste2x.release.xcconfig"; path = "Target Support Files/Pods-Waste2x/Pods-Waste2x.release.xcconfig"; sourceTree = "<group>"; };
@@ -417,7 +419,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B4247A60172A42769FFE325 /* Pods_Waste2x.framework in Frameworks */,
+				18AC70ED267B554200F398A1 /* Pods_Waste2x.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +456,7 @@
 		0067A2BA25274C0900CECA8C /* Waste2x */ = {
 			isa = PBXGroup;
 			children = (
-				18D1A36A266A7AA4009CAD26 /* Waste2x.entitlements */,
+				18AC70F0267B562100F398A1 /* Waste2x.entitlements */,
 				0067A305252AF7FA00CECA8C /* Classes */,
 				0067A306252AF82500CECA8C /* Resources */,
 				0067A2C625274C0B00CECA8C /* LaunchScreen.storyboard */,
@@ -1261,6 +1263,7 @@
 			isa = PBXGroup;
 			children = (
 				18ACB7C4267A34CD0088307D /* NotificationModel.swift */,
+				18AC70F1267B5E3E00F398A1 /* NotificationResponceModel.swift */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -1635,6 +1638,7 @@
 				0067A324252AFC9E00CECA8C /* UIFont.swift in Sources */,
 				18C11A70265FA49C00BC022F /* ContactTableViewCell.swift in Sources */,
 				04BD2801266A2589008FC8B4 /* SchedulePlannedViewController.swift in Sources */,
+				18AC70F2267B5E3E00F398A1 /* NotificationResponceModel.swift in Sources */,
 				047E76842679E8A90055292A /* PickupScheduleDataModel.swift in Sources */,
 				0067A322252AFC9E00CECA8C /* UIImage.swift in Sources */,
 				18896077266E1EB800061783 /* SupplyingCollectionViewCell.swift in Sources */,
@@ -1793,7 +1797,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FUDLQH8LBU;
 				INFOPLIST_FILE = Waste2x/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1817,7 +1821,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FUDLQH8LBU;
 				INFOPLIST_FILE = Waste2x/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -41,7 +41,7 @@ struct APIRoutes {
     static var emailVerification = "paudapay_us/verify_email/"
     static var weatherAPi = "https://api.openweathermap.org/data/2.5/forecast?lat=\(Global.shared.current_lat)&lon=\(Global.shared.current_lng)&units=metric&cnt=5&appid=43ac4491d3ab773330ca34850c08ac7d"
     static var fetchSupplyProcessData = "paudapay_us/waste_types/"
-    static var faqUrl = "cache_api/fetch_faqs/1"
+    static var faqUrl = "paudapay_us/fetch_faqs/1"
     static var paymentFetch = ""
     
     
@@ -56,10 +56,12 @@ struct APIRoutes {
     static var newsUrl = "paudapay_us/fetch_news/"
     static var pickupSchedulePostData = "paudapay_us/schedule_waste/"
     static var wasteDetailData = "paudapay_us/details/"
-    static var wasteDetailImageUpload = baseUrl + "cache_api/save_user_activity/"
+    static var wasteDetailImageUpload = baseUrl + "paudapay_us/save_user_activity/"
     static var paymentUrl = "paudapay_us/payments"
     static var createPaymentUrl = "payment_method/api_create_stripe"
-    static var notificationUrl = "cache_api/fetch_notifications/"
+    static var notificationUrl = "paudapay_us/fetch_notifications/"
+    static var notificationResponceUrl = "paudapay_us/send_notification_response/"
+    static var pendingCollectionFetchUrl = "paudapay_us/pending_collections/"
 }
 struct FireBaseVariables {
     static var fireBaseToken = ""

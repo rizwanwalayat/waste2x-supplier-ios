@@ -33,13 +33,13 @@ class HomeViewController: BaseViewController{
     //MARK: - Variables
     
     var notification:Bool = true
-    var email:String = "Haid3rawan@icloud.com"
-    var pendingCollection = false
+    var pendingCollection = true
     var timer: Timer?
     var count = Int()
     var selecetedIndex = 0
+    var index = 0
     var supplierCell: SupplierTableViewCell?
-    var images = [#imageLiteral(resourceName: "poultry"),#imageLiteral(resourceName: "bottle"),#imageLiteral(resourceName: "tire"),#imageLiteral(resourceName: "food")]
+//    var images = [#imageLiteral(resourceName: "poultry"),#imageLiteral(resourceName: "bottle"),#imageLiteral(resourceName: "tire"),#imageLiteral(resourceName: "food")]
     var weatherCount  = 5
     var delegate:WeatherCallDelegate?
     var resultData : HomeResultDataModel?
@@ -57,10 +57,8 @@ class HomeViewController: BaseViewController{
         tableView.reloadData()
         setAttributedTextInLable(emailAddress: DataManager.shared.getUser()?.result?.email ?? "")
         self.indicatorMarker.currentPage = 0
-        indicatorMarker.numberOfPages = images.count
         let progressbarAdjustment = UIScreen.main.bounds.height / 222
         progressBar.transform = CGAffineTransform(scaleX: 1, y: progressbarAdjustment)
-        count = images.count-1
         collectionDataSourceDelegate(outlet: weatherCollectionView)
         collectionDataSourceDelegate(outlet: wasteTypeCollectionView)
         tableDataSourceDelegate(outlet: tableView)
@@ -107,7 +105,7 @@ class HomeViewController: BaseViewController{
             print(selecetedIndex)
             moveOn(index: selecetedIndex)
             selecetedIndex = 0
-            count = images.count-1
+            count = fetchSitesData.count-1
             
         }
     }
@@ -187,6 +185,8 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             return weatherCount
         }
         else{
+            self.count = fetchSitesData.count
+            self.indicatorMarker.numberOfPages = fetchSitesData.count
             return fetchSitesData.count
         }
         
@@ -205,7 +205,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         else
         {
             let cell = collectionView.register(WasteTypeCollectionViewCell.self, indexPath: indexPath)
-            
+            self.index = indexPath.row
             let cellData = fetchSitesData[indexPath.row]
 //            var cropTypeName = cellData.cropType.components(separatedBy: "-").first ?? ""
 //            cropTypeName = cropTypeName.trimmingCharacters(in: .whitespaces)
@@ -243,12 +243,13 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             }
         }
     }
+    
 }
 
 //MARK: - TableView
 extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        if pendingCollection {
+        if ((resultData?.pendingCollection) != nil) {
             return 2
         }
         else{
@@ -271,7 +272,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
             return cell
         }
         
-        else if pendingCollection == true {
+        else if resultData?.pendingCollection == true {
             //tableViewHeight.constant = 400
             let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
             cell.selectionStyle = .none
@@ -314,18 +315,14 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         }
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-       let cell = wasteTypeCollectionView.visibleCells.first
-        
-        let indexPath = wasteTypeCollectionView.indexPath(for: cell ?? UICollectionViewCell())
-        if let index = indexPath{
-            
-            let cellData = fetchSitesData[index.row]
-            supplierCell?.config(cellData.sharedIconUrl)
-        }
         
         if scrollView != self.weatherCollectionView {
-            let index = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
-            self.indicatorMarker.currentPage = index
+            //let index = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+            
+            let currentCenteredPoint = CGPoint(x: scrollView.contentOffset.x + wasteTypeCollectionView.bounds.width, y: scrollView.contentOffset.y + wasteTypeCollectionView.bounds.height/2)
+            if let cell = wasteTypeCollectionView.indexPathForItem(at: currentCenteredPoint) {
+                self.indicatorMarker.currentPage = cell.row - 1
+            }
         }
     }
     
@@ -372,10 +369,11 @@ extension HomeViewController: WeatherCallDelegate {
         self.fetchSitesData.removeAll()
         if self.resultData != nil
         {
+            
             progressBar.progress = Float(self.resultData!.percentage)
             self.setAttributedTextInLable(emailAddress: Data?.email ?? "")
             self.progressPointsLabel.text = "\(Int((DataManager.shared.getUser()?.result?.percentage ?? 0 )*100))/100"
-            
+            tableView.reloadData()
             for commudity in self.resultData!.commodity_farms
             {
                 if commudity.farms != nil

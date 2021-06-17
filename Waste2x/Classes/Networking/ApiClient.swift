@@ -96,9 +96,15 @@ class APIClient: APIClientHandler {
         _ = sendRequest(APIRoutes.createPaymentUrl, parameters: params,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
     func notificationApiCall(_ completionBlock: @escaping APIClientCompletionHandler) {
+        
         let params = [String : AnyObject]()
         let headers = ["Authorization": "token " + "b176b109baf493075207e98b68410e346f6ecb8e"]
         _ = sendRequest(APIRoutes.notificationUrl, parameters: params,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+    }
+    func notifiationResponceApiCall(id: Int,responce:String, _ completionBlock: @escaping APIClientCompletionHandler) {
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        let params = ["notification_id": id,"response":responce] as [String:AnyObject]
+        _ = sendRequest(APIRoutes.notificationResponceUrl , parameters: params as [String : AnyObject],httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
     
     
@@ -110,6 +116,11 @@ class APIClient: APIClientHandler {
         let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
         _ = sendRequest(APIRoutes.faqUrl , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
+    func pendingCollectionApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        _ = sendRequest(APIRoutes.pendingCollectionFetchUrl , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+    }
+    
     func userRegistration(phone: String,code: String,latitude: Double,longitude: Double,firebase_token: String,phone_imei: Int,phone_os: String,phone_model: String, _ completionBlock: @escaping APIClientCompletionHandler) {
         
         let params = ["phone":phone,"code":code,"latitude":latitude,"longitude":longitude,"firebase_token":firebase_token,"phone_imei":phone_imei,"phone_os":phone_os,"phone_model":phone_model] as [String:Any]

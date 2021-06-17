@@ -2,22 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
-	<key>NSHumanReadableCopyright</key>
-	<string></string>
-	<key>CFBundleGetInfoString</key>
-	<string></string>
-	<key>NSContactsUsageDescription</key>
-	<string>Need Contacts to Invite</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
 	<string>Waste2x</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
 	<key>CFBundleIdentifier</key>
-
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
@@ -34,7 +27,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.1093030722260-uvhcaevnjdkqb2pke0tjn5qjfk43ms89</string>
+				<string>com.googleusercontent.apps.993799297878-ombocgq3994ibh0rfbjokraahulugo2s</string>
 			</array>
 		</dict>
 		<dict>
@@ -52,6 +45,8 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>googlechromes</string>
@@ -82,8 +77,12 @@
 </string>
 	<key>NSCameraUsageDescription</key>
 	<string>Uses camera in order to scan QR Code</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Need Contacts to Invite</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>App will use your FaceID to login app.</string>
+	<key>NSHumanReadableCopyright</key>
+	<string></string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location access is required in order to accept payments.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
@@ -102,7 +101,6 @@
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>
-		<string>bluetooth-central</string>
 		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>

@@ -105,23 +105,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // [END register_for_notifications]
     }
     // [START receive_message]
-      func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-        if let messageID = userInfo[gcmMessageIDKey] {
-          print("Message IDwithout completion: \(messageID)")
-        }
-        // Print full message.
-        print(userInfo)
-      }
-      func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
-                       fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        print("recieved")
-        if let messageID = userInfo[gcmMessageIDKey] {
-          print("Message ID: didreceveremote\(messageID)")
-        }
-        print(userInfo)
-        completionHandler(UIBackgroundFetchResult.newData)
-        
-      }
+//      func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+//        if let messageID = userInfo[gcmMessageIDKey] {
+//          print("Message IDwithout completion: \(messageID)")
+//        }
+//        // Print full message.
+//        print(userInfo)
+//      }
+//      func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+//                       fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+//        print("recieved")
+//        if let messageID = userInfo[gcmMessageIDKey] {
+//          print("Message ID: didreceveremote\(messageID)")
+//        }
+//        print(userInfo)
+//        completionHandler(UIBackgroundFetchResult.newData)
+//
+//      }
       // [END receive_message]
       func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("Unable to register for remote notifications: \(error.localizedDescription)")

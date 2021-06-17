@@ -11,6 +11,7 @@ class HomeResultDataModel : Mappable {
 	var phone = ""
 	var waste_type_image = ""
 	var waste_type = ""
+    var pendingCollection = Bool()
     var farmer_medals : HomeFarmer_medals?
     var waste_type_questions : HomeWaste_type_questions?
 
@@ -29,6 +30,7 @@ class HomeResultDataModel : Mappable {
 		waste_type <- map["waste_type"]
 		farmer_medals <- map["farmer_medals"]
 		waste_type_questions <- map["waste_type_questions"]
+        pendingCollection  <- map["pending_collection"]
 	}
 
 }

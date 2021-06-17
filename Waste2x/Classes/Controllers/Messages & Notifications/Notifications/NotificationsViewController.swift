@@ -52,15 +52,25 @@ class NotificationsViewController: BaseViewController {
     @objc func yesButtonPress(sender:UIButton){
         let notifcationDaTag = NotificationModell?.result?.notifications[sender.tag]
         let notificationID = notifcationDaTag?.idd
-        let notificationResponce = notifcationDaTag?.response
+        
+        
+        let notificationResponce = "Yes"
+        NotificationResponceModel.NotificationResponceModelApiFunction(notificationID: notificationID!, notificationResponce: notificationResponce) { result, error, status, message in
+            self.apiCall()
+            
+        }
         
         
     }
     @objc func noButtonPress(sender:UIButton){
         let notifcationDaTag = NotificationModell?.result?.notifications[sender.tag]
         let notificationID = notifcationDaTag?.idd
-        let notificationResponce = notifcationDaTag?.response
         
+        
+        let notificationResponce = "No"
+        NotificationResponceModel.NotificationResponceModelApiFunction(notificationID: notificationID!, notificationResponce: notificationResponce) { result, error, status, message in
+            self.apiCall()
+        }
     }
     
 }
@@ -133,6 +143,13 @@ extension NotificationsViewController{
         NotificationModel.notificationApiFunction { result, eroor, status, message in
             self.NotificationModell = result
             self.notificationsTableview.reloadData()
+            if let cell = self.notificationsTableview.cellForRow(at: IndexPath(row: 0, section: 0)) as? NotificationsTableViewCell{
+                cell.collapse()
+                self.notificationsTableview.beginUpdates()
+                self.notificationsTableview.endUpdates()
+            }
+            
+               
         }
     }
 }

@@ -52,6 +52,7 @@ class SJCenterFlowLayout: UICollectionViewFlowLayout {
     var currentCenteredIndexPath: IndexPath? {
         guard let collectionView = self.collectionView else { return nil }
         let currentCenteredPoint = CGPoint(x: collectionView.contentOffset.x + collectionView.bounds.width, y: collectionView.contentOffset.y + collectionView.bounds.height/2)
+        
         return collectionView.indexPathForItem(at: currentCenteredPoint)
     }
     

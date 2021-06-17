@@ -24,6 +24,7 @@ class NotificationsTableViewCell: UITableViewCell {
     @IBOutlet weak var mainStackview                : UIStackView!
     @IBOutlet weak var headerView                   : UIView!
     @IBOutlet weak var bodyView                     : UIView!
+    @IBOutlet weak var stackViewButton : UIStackView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -68,7 +69,8 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationStatusLabel.textColor = acceptLabelColor
             self.notificationStatusLabel.text      = "Accepted"
             self.notificationStatusImageView.image = acceptImage
-            self.notificationNoButton.isHidden = false
+            self.stackViewButton.isHidden = true
+            self.notificationQuestionLabel.isHidden = true
             self.notificationYesButton.setTitle("Yes", for: .normal)
             
         case .rejected:
@@ -79,7 +81,8 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationStatusLabel.textColor = rejectLabelColor
             self.notificationStatusLabel.text      = "Rejected"
             self.notificationStatusImageView.image = rejectImage
-            self.notificationNoButton.isHidden = false
+            self.stackViewButton.isHidden = true
+            self.notificationQuestionLabel.isHidden = true
             self.notificationYesButton.setTitle("Yes", for: .normal)
             
         case .pending:
@@ -91,6 +94,7 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationStatusLabel.text      = "Pending"
             self.notificationStatusImageView.image = pendingImage
             self.notificationNoButton.isHidden = false
+            self.notificationYesButton.isHidden = false
             self.notificationYesButton.setTitle("Yes", for: .normal)
             
         case .confirmed:
@@ -102,6 +106,7 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationStatusLabel.text      = "Confrimed"
             self.notificationStatusImageView.image = confirmImage
             self.notificationNoButton.isHidden = true
+            self.notificationQuestionLabel.isHidden = true
             self.notificationYesButton.setTitle("Check", for: .normal)
             
         case .onway:
@@ -113,6 +118,7 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationStatusLabel.text      = "On Way"
             self.notificationStatusImageView.image = otwImage
             self.notificationNoButton.isHidden = true
+            self.notificationQuestionLabel.isHidden = true
             self.notificationYesButton.setTitle("Track", for: .normal)
             
         }
@@ -162,6 +168,12 @@ class NotificationsTableViewCell: UITableViewCell {
         }
         else if data.result?.notifications[index].response == "No"{
             self.notificationStatusHandlings(.rejected, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "Do you want to sell?")
+        }
+        else if data.result?.notifications[index].response == "Onway"{
+            self.notificationStatusHandlings(.onway, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "Do you want to sell?")
+        }
+        else if data.result?.notifications[index].response == "Confirmed"{
+            self.notificationStatusHandlings(.onway, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "Do you want to sell?")
         }
         else {
             self.notificationStatusHandlings(.pending, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "Do you want to sell?")

@@ -70,7 +70,7 @@ class APIClientHandler: TSAPIClient {
             switch response.result {
                 
             case .success(let data):
-                print(data)
+//                print(data)
                 completionBlock(data as AnyObject, nil, self.status,self.message)
             case .failure(let error):
                 print(error.localizedDescription)
