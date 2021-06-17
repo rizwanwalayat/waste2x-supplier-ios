@@ -95,10 +95,7 @@ class WasteDetailLocationViewController: BaseViewController {
             // screen is reusing for site Creation add condition for that puropose to set flow of applcation
             if isForSiteCreation {
                 
-                let vc = SiteCreatedViewController(nibName: "SiteCreatedViewController", bundle: nil)
-                vc.modalPresentationStyle = .overFullScreen
-                vc.postDictData = selectionData
-                self.present(vc, animated: true, completion: nil)
+                self.postDataToServer()
             }
             else {
                 
@@ -128,3 +125,62 @@ extension WasteDetailLocationViewController: UITextFieldDelegate
     }
 }
 
+
+// MARK: - API Calls Handlings
+extension WasteDetailLocationViewController {
+    
+    
+    func postDataToServer()
+    {
+        if Global.shared.apiCurve {
+            
+            selectionData["phone"] = Data?.phone ?? ""
+            selectionData["email"] = Data?.email ?? ""
+        }
+        
+        let postDict = selectionData as [String : AnyObject]
+        
+        CreateSiteDataModel.postSiteCreateData(params: postDict, { data, error, code,message in
+            
+            if error != nil
+            {
+                self.alertHandlings(error!.localizedDescription)
+            }
+            
+            if code == true {
+                
+                if data != nil {
+                    
+                    let vc = SiteCreatedViewController(nibName: "SiteCreatedViewController", bundle: nil)
+                    vc.modalPresentationStyle = .overFullScreen
+                    vc.successData = message
+                    self.present(vc, animated: true, completion: nil)
+                }
+                else
+                {
+                    self.alertHandlings(message)
+                }
+            }
+            else
+            {
+                self.alertHandlings(message)
+            }
+        })
+    }
+    
+    func alertHandlings(_ message : String)
+    {
+        let alertController = UIAlertController(title: "Failed", message: message, preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
+            
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Go Home", style: .default, handler: { action in
+            Utility.homeViewController()
+        }))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+}

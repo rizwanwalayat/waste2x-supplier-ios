@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class BaseViewController: UIViewController {
 
@@ -23,5 +24,18 @@ class BaseViewController: UIViewController {
     
     @objc func imageSelectedFromGalleryOrCamera(selectedImage:UIImage){
         
+    }
+    
+    func setImage(imageView:UIImageView,url:URL,placeHolder : String = "dummy")  {
+        imageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        imageView.sd_imageIndicator?.startAnimatingIndicator()
+        imageView.sd_setImage(with: url) { (img, err, cahce, URI) in
+            imageView.sd_imageIndicator?.stopAnimatingIndicator()
+            if err == nil{
+                imageView.image = img
+            }else{
+                imageView.image = UIImage(named: placeHolder)
+            }
+        }
     }
 }

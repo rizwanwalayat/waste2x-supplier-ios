@@ -233,8 +233,12 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             let cellData = fetchSitesData[indexPath.row]
             supplierCell?.config(cellData.sharedIconUrl)
             if collectionView == wasteTypeCollectionView {
-                let wasteDetails = CurrentWasteViewController(nibName: "CurrentWasteViewController", bundle: nil)
-                self.navigationController?.pushViewController(wasteDetails, animated: true)
+//                let wasteDetails = CurrentWasteViewController(nibName: "CurrentWasteViewController", bundle: nil)
+//                self.navigationController?.pushViewController(wasteDetails, animated: true)
+                
+                let vc = WasteDetailViewController(nibName: "WasteDetailViewController", bundle: nil)
+                vc.farmID = fetchSitesData[indexPath.row].farmId
+                self.navigationController?.pushViewController(vc, animated: true)
                 
             }
         }

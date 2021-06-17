@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CurrentWasteTableViewCell: UITableViewCell {
+class CurrentWasteTableViewCell: BaseTableViewCell {
 
     @IBOutlet weak var mainHolderView   : UIView!
     @IBOutlet weak var titleImageview   : UIImageView!
@@ -37,5 +37,8 @@ class CurrentWasteTableViewCell: UITableViewCell {
         var cropTypeName = data.completeCropType.components(separatedBy: "-").last ?? ""
         cropTypeName = cropTypeName.trimmingCharacters(in: .whitespaces)
         wasteTitleLabel.text = cropTypeName
+        
+        guard let imageUrl = URL(string: data.cropTypeImage) else { print("URL not created for imagesURL String"); return }
+        setImage(imageView: titleImageview, url: imageUrl)
     }
 }

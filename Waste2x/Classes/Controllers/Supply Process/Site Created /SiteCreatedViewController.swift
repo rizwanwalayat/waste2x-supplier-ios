@@ -23,7 +23,7 @@ class SiteCreatedViewController: BaseViewController {
     
     // MARK: - Declarations
     
-    var postDictData = [String : Any]()
+    var successData = ""
     
     
     // MARK: - LifeCycle
@@ -31,6 +31,8 @@ class SiteCreatedViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        successData.count > 0 ? (siteCreatedLabel.text = successData) : ( siteCreatedLabel.text = "Your site has been created!")
+        
     }
 
 
@@ -38,55 +40,8 @@ class SiteCreatedViewController: BaseViewController {
 
     @IBAction func okayButtonPressed(_ sender: Any) {
         
-        postDataFromServer()
+        Utility.homeViewController()
     }
 }
 
-// MARK: - API Calls Handlings
-extension SiteCreatedViewController {
-    
-    
-    func postDataFromServer()
-    {
-        if Data?.isNewUser ?? true {
-            
-            postDictData["phone"] = Data?.phone ?? ""
-            postDictData["email"] = Data?.email ?? ""
-        }
-        
-        let postDict = postDictData as [String : AnyObject]
-        
-        CreateSiteDataModel.postSiteCreateData(params: postDict, { data, error, code,message in
-            
-            if error != nil
-            {
-                self.alertManager("Failed", message: error!.localizedDescription )
-            }
-            
-            if code == true {
-                
-                if data != nil {
-                    
-                    self.alertManager("Success", message: "Site created successfully" )
-                }
-                
-            }
-            else
-            {
-                self.alertManager("Failed", message: "Site not created ..!" )
-            }
-        })
-    }
-    
-    
-    func alertManager(_ title : String, message : String)
-    {
-        let alert =  UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { action in
-            
-            Utility.homeViewController()
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
-    }
-}
+

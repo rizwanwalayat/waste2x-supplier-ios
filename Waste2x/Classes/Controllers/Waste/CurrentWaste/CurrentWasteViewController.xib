@@ -16,6 +16,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CurrentWasteViewController" customModule="Waste2x" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundHolderview" destination="AQ2-cA-Gdd" id="sn2-YZ-nis"/>
+                <outlet property="bottomConstOfView" destination="nta-Fb-kQP" id="QlS-Wm-j5X"/>
                 <outlet property="currentWasteTableview" destination="zRc-1y-yDc" id="gEV-0C-Z4D"/>
                 <outlet property="titleLabel" destination="9ch-g4-oa9" id="Kad-iI-qMu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

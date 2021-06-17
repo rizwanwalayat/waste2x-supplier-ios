@@ -48,16 +48,15 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
         selectionHandlingsOfViews(selectDateTimeHolderview, isSelection: true)
     }
     
-    func stringToDateUnix(_ dateStr : String) -> String?
+    func stringToDateUnix(_ dateStr : String) -> Double?
     {
-        let dateString = "Thu, 22 Oct 2015 07:45:17 +0000"
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM dd, yyyy - hh:mm a"//"EEE, dd MMM yyyy hh:mm:ss +zzzz"
         dateFormatter.amSymbol = "AM"
         dateFormatter.pmSymbol = "PM"
 
-        guard let dateObj = dateFormatter.date(from: dateString) else {return nil}
-        let unix = "\(dateObj.timeIntervalSince1970)"
+        guard let dateObj = dateFormatter.date(from: dateStr) else {return nil}
+        let unix = dateObj.timeIntervalSince1970
         return unix
     }
     
@@ -77,17 +76,10 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
         
         case .frequency_preodic:
             
+            let regularData = ["Daily", "Weekly", "Monthly"]
+            
             var alreadySelectedText = ""
             (selectFrequencyPriodicLabel.text != selectFrequencyPerodicPlaceholder) ? (alreadySelectedText = selectFrequencyPriodicLabel.text ?? "") : (alreadySelectedText = "")
-            
-            var regularData = [""]
-            
-            for site in sitesData
-            {
-                let farmName = "\(site.farmName) (\(site.cropType)"
-                regularData.append(farmName)
-                self.tempFarmsData[farmName] = site.farmId
-            }
             
             let optionsCustompopup               = ScheduleOptionsViewController(nibName: "ScheduleOptionsViewController", bundle: nil)
             optionsCustompopup.modalPresentationStyle = .overFullScreen
@@ -98,14 +90,22 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
             
         case .site:
             
+            var regularData = [String]()
+            
+            for site in sitesData
+            {
+                let farmName = "\(site.farmName) (\(site.cropType))"
+                regularData.append(farmName)
+                self.tempFarmsData[farmName] = site.farmId
+            }
+            
             var alreadySelectedText = ""
             (selectSiteLabel.text != selectSitePlaceholder) ? (alreadySelectedText = selectSiteLabel.text ?? "") : (alreadySelectedText = "")
             
-            let siteData = ["Cattle (Site 1)", "Factory (Site 2)", "Tire Dealer (Site 3)"]
             let optionsCustompopup               = ScheduleOptionsViewController(nibName: "ScheduleOptionsViewController", bundle: nil)
             optionsCustompopup.modalPresentationStyle = .overFullScreen
             optionsCustompopup.delegate = self
-            optionsCustompopup.optionsData = siteData
+            optionsCustompopup.optionsData = regularData
             optionsCustompopup.alreadySelectedString = alreadySelectedText
             self.present(optionsCustompopup, animated: false, completion: nil)
         
@@ -305,3 +305,39 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
 }
 
 
+// MARK: - API Calls Handlings
+extension ScheduleViewController
+{
+    
+    func postDataFromServer()
+    {
+        
+        let postDict = postDictData as [String : AnyObject]
+        
+        PickupScheduleDataModel.postPickupScheduleData(params: postDict) { response, error, success,message  in
+            
+            if error != nil
+            {
+                Utility.showAlertController(self, message)
+            }
+            
+            if let isSuccess = success  {
+                
+                if isSuccess {
+                    
+                    let vc = SchedulePlannedViewController(nibName: "SchedulePlannedViewController", bundle: nil)
+                    vc.result = response?.result
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+                else
+                {
+                    Utility.showAlertController(self, message)
+                }
+            }
+            else
+            {
+                Utility.showAlertController(self, message)
+            }
+        }
+    }
+}

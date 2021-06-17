@@ -16,7 +16,7 @@ class CurrentWasteViewController: BaseViewController {
     @IBOutlet weak var currentWasteTableview : UITableView!
     @IBOutlet weak var backgroundHolderview: UIView!
     @IBOutlet weak var titleLabel: UILabel!
-    
+    @IBOutlet weak var bottomConstOfView: NSLayoutConstraint!
     
     // MARK: - Variables
     
@@ -27,6 +27,8 @@ class CurrentWasteViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bottomConstOfView.constant = tabbarViewHeight
         currentWasteTableview.register(UINib(nibName: "CurrentWasteTableViewCell", bundle: nil), forCellReuseIdentifier: "CurrentWasteTableViewCell")
         currentWasteTableview.rowHeight = UITableView.automaticDimension
         currentWasteTableview.estimatedRowHeight = UITableView.automaticDimension
@@ -73,7 +75,8 @@ extension CurrentWasteViewController : UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let codeVerificationVC = WasteDetailViewController(nibName: "WasteDetailViewController", bundle: nil)
-        self.navigationController?.pushViewController(codeVerificationVC, animated: true)
+        let vc = WasteDetailViewController(nibName: "WasteDetailViewController", bundle: nil)
+        vc.farmID = sitesData[indexPath.row].farmId
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

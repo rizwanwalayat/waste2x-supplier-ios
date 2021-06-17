@@ -32,6 +32,8 @@
 		0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A315252AFC9E00CECA8C /* UILabel.swift */; };
 		0067A324252AFC9E00CECA8C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A316252AFC9E00CECA8C /* UIFont.swift */; };
 		0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0067A33A252B91BA00CECA8C /* Assets.xcassets */; };
+		04070D26267A19A700C93981 /* WasteDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04070D25267A19A700C93981 /* WasteDataModel.swift */; };
+		04070D29267A1FC400C93981 /* WasteDetialResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04070D27267A1FC400C93981 /* WasteDetialResult.swift */; };
 		041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041242AA266A05AE00EB1A3F /* DateExtenstion.swift */; };
 		041D40D126772A65003A0039 /* CreateSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D40CF26772A65003A0039 /* CreateSite.swift */; };
 		041D40D226772A65003A0039 /* CreateSiteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D40D026772A65003A0039 /* CreateSiteResult.swift */; };
@@ -60,6 +62,7 @@
 		0463F2E6266E29F300E8924D /* ChatMessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0463F2E4266E29F300E8924D /* ChatMessagesViewController.xib */; };
 		046528032668F694005F3FB0 /* CalenderPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046528012668F694005F3FB0 /* CalenderPopupViewController.swift */; };
 		046528042668F694005F3FB0 /* CalenderPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046528022668F694005F3FB0 /* CalenderPopupViewController.xib */; };
+		047E76842679E8A90055292A /* PickupScheduleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E76832679E8A90055292A /* PickupScheduleDataModel.swift */; };
 		048582C02667BEC70077B42E /* ScheduleOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */; };
 		048582C12667BEC70077B42E /* ScheduleOptionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */; };
 		048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C09E6265E2265003E301F /* ImagePickerVC.swift */; };
@@ -229,6 +232,8 @@
 		0067A315252AFC9E00CECA8C /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		0067A316252AFC9E00CECA8C /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		0067A33A252B91BA00CECA8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04070D25267A19A700C93981 /* WasteDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDataModel.swift; sourceTree = "<group>"; };
+		04070D27267A1FC400C93981 /* WasteDetialResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasteDetialResult.swift; sourceTree = "<group>"; };
 		041242AA266A05AE00EB1A3F /* DateExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtenstion.swift; sourceTree = "<group>"; };
 		041D40CF26772A65003A0039 /* CreateSite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSite.swift; sourceTree = "<group>"; };
 		041D40D026772A65003A0039 /* CreateSiteResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSiteResult.swift; sourceTree = "<group>"; };
@@ -258,6 +263,7 @@
 		0463F2E4266E29F300E8924D /* ChatMessagesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatMessagesViewController.xib; sourceTree = "<group>"; };
 		046528012668F694005F3FB0 /* CalenderPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderPopupViewController.swift; sourceTree = "<group>"; };
 		046528022668F694005F3FB0 /* CalenderPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalenderPopupViewController.xib; sourceTree = "<group>"; };
+		047E76832679E8A90055292A /* PickupScheduleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupScheduleDataModel.swift; sourceTree = "<group>"; };
 		048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleOptionsTableViewCell.xib; sourceTree = "<group>"; };
 		048C09E6265E2265003E301F /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
@@ -461,6 +467,8 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				04070D24267A197700C93981 /* Waste */,
+				047E76822679E8910055292A /* PickupSchedule */,
 				18ACB7C3267A34BF0088307D /* Notification */,
 				18ACB7BC267A22FA0088307D /* Payment */,
 				18ACB7B92679DE610088307D /* FAQ */,
@@ -609,6 +617,15 @@
 			path = BaseClasses;
 			sourceTree = "<group>";
 		};
+		04070D24267A197700C93981 /* Waste */ = {
+			isa = PBXGroup;
+			children = (
+				04070D25267A19A700C93981 /* WasteDataModel.swift */,
+				04070D27267A1FC400C93981 /* WasteDetialResult.swift */,
+			);
+			path = Waste;
+			sourceTree = "<group>";
+		};
 		041242AC266A16D500EB1A3F /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -707,6 +724,14 @@
 				046528022668F694005F3FB0 /* CalenderPopupViewController.xib */,
 			);
 			path = CalenderPopupView;
+			sourceTree = "<group>";
+		};
+		047E76822679E8910055292A /* PickupSchedule */ = {
+			isa = PBXGroup;
+			children = (
+				047E76832679E8A90055292A /* PickupScheduleDataModel.swift */,
+			);
+			path = PickupSchedule;
 			sourceTree = "<group>";
 		};
 		048582BD2667BEAB0077B42E /* Cells */ = {
@@ -1504,6 +1529,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04070D29267A1FC400C93981 /* WasteDetialResult.swift in Sources */,
 				0067A2DD252753D100CECA8C /* APIService.swift in Sources */,
 				04340E96266E439900B5F87C /* MessagesTableViewCell.swift in Sources */,
 				0067A31B252AFC9E00CECA8C /* TimeInterval.swift in Sources */,
@@ -1525,6 +1551,7 @@
 				04E6104826725422001E6629 /* FetchSupplyProcessResult.swift in Sources */,
 				04D0535F2670858B005458F7 /* SupplySubTypeViewController.swift in Sources */,
 				1810252A2657E36500DEBF7D /* Extentions.swift in Sources */,
+				04070D26267A19A700C93981 /* WasteDataModel.swift in Sources */,
 				183262742670A3A500F0CCBA /* CodeVerification.swift in Sources */,
 				04C31D1226678E1800A1CF9C /* ScheduleViewModel.swift in Sources */,
 				043F6BF5267776A2000E3C4F /* HomeWaste_type_questions.swift in Sources */,
@@ -1608,6 +1635,7 @@
 				0067A324252AFC9E00CECA8C /* UIFont.swift in Sources */,
 				18C11A70265FA49C00BC022F /* ContactTableViewCell.swift in Sources */,
 				04BD2801266A2589008FC8B4 /* SchedulePlannedViewController.swift in Sources */,
+				047E76842679E8A90055292A /* PickupScheduleDataModel.swift in Sources */,
 				0067A322252AFC9E00CECA8C /* UIImage.swift in Sources */,
 				18896077266E1EB800061783 /* SupplyingCollectionViewCell.swift in Sources */,
 				0043453F254823FE009A6166 /* ApiResponseHandler.swift in Sources */,
