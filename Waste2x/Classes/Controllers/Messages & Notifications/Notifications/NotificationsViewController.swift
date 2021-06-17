@@ -50,33 +50,17 @@ class NotificationsViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @objc func yesButtonPress(sender:UIButton){
-        switch sender.tag {
-        case 0:
-            print("AcceptedCase Yes")
-        case 1:
-            print("RejectedCase Yes")
-        case 2:
-            print("PendingCase Yes")
-        case 3:
-            print("Check")
-        case 4:
-            let vc = TrackerViewController(nibName: "TrackerViewController", bundle: nil)
-            self.navigationController?.pushTo(controller: vc)
-        default:
-            print("nothing")
-        }
+        let notifcationDaTag = NotificationModell?.result?.notifications[sender.tag]
+        let notificationID = notifcationDaTag?.idd
+        let notificationResponce = notifcationDaTag?.response
+        
+        
     }
     @objc func noButtonPress(sender:UIButton){
-        switch sender.tag {
-        case 0:
-            print("AcceptedCase No")
-        case 1:
-            print("RejectedCase No")
-        case 2:
-            print("PendingCase No")
-        default:
-            print("nothing")
-        }
+        let notifcationDaTag = NotificationModell?.result?.notifications[sender.tag]
+        let notificationID = notifcationDaTag?.idd
+        let notificationResponce = notifcationDaTag?.response
+        
     }
     
 }
