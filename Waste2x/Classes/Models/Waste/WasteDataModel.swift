@@ -10,6 +10,7 @@ import Foundation
 import ObjectMapper
 
 typealias WasteCompletionHandler = (_ data: WasteDataModel?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
+typealias WasteDetailImageUploadCompletionHandler = (_ data: WasteDetailImageUploadDataModel?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
 
 class WasteDataModel : Mappable
 {
@@ -53,7 +54,7 @@ class WasteDataModel : Mappable
     }
     
     
-    class func uploadImage(params : [String:AnyObject], _ completion: @escaping WasteCompletionHandler) {
+    class func uploadImage(params : [String:AnyObject], _ completion: @escaping WasteDetailImageUploadCompletionHandler) {
         Utility.showLoading()
         APIClient.shared.saveWasteimages(params: params, { result, error, success, message in
             
@@ -62,7 +63,28 @@ class WasteDataModel : Mappable
             if result != nil {
                 
                 let newResult  = ["result" : result!]
-                if let data = Mapper<WasteDataModel>().map(JSON: newResult as [String : Any] ) {
+                if let data = Mapper<WasteDetailImageUploadDataModel>().map(JSON: newResult as [String : Any] ) {
+                    completion(data, nil, success,message)
+                } else {
+                    completion(nil, nil, success,message)
+                }
+                
+            } else {
+                 completion(nil, error, success,message)
+            }
+        })
+    }
+    
+    class func updateWasteSize(params : [String:AnyObject], _ completion: @escaping WasteDetailImageUploadCompletionHandler) {
+        Utility.showLoading()
+        APIClient.shared.updateWasteSize(params: params, { result, error, success, message in
+            
+            Utility.hideLoading()
+            
+            if result != nil {
+                
+                let newResult  = ["result" : result!]
+                if let data = Mapper<WasteDetailImageUploadDataModel>().map(JSON: newResult as [String : Any] ) {
                     completion(data, nil, success,message)
                 } else {
                     completion(nil, nil, success,message)

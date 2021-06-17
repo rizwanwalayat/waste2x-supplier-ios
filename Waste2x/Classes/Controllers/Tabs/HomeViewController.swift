@@ -372,7 +372,8 @@ extension HomeViewController: WeatherCallDelegate {
         self.fetchSitesData.removeAll()
         if self.resultData != nil
         {
-            progressBar.progress = Float(self.resultData!.percentage)
+            let progress = Float(self.resultData!.percentage) / 100
+            progressBar.setProgress(progress, animated: true)
             self.setAttributedTextInLable(emailAddress: Data?.email ?? "")
             self.progressPointsLabel.text = "\(Int((DataManager.shared.getUser()?.result?.percentage ?? 0 )*100))/100"
             

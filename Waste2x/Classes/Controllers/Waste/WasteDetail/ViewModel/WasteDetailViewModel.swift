@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 
 // MARK: - Collectionview Delegate and Datasource
@@ -39,7 +40,8 @@ extension WasteDetailViewController : UICollectionViewDelegate, UICollectionView
 extension WasteDetailViewController : NewWasteSizeViewControllerDelegate
 {
     func detailSizeUpdated(_ updatedSize: String) {
-        self.sizeDetailLabel.text = updatedSize
+        postDictToUpdateSize["farm_size"] = updatedSize
+        self.sizeToUpdate()
     }
     
     
@@ -103,6 +105,7 @@ extension WasteDetailViewController {
     
     func dataPopulateInUI()
     {
+        imagesHandlings()
         UIView.animate(withDuration: 0.5, animations: {
             self.blinderView.alpha = 0
         }) { (_) in
@@ -123,6 +126,32 @@ extension WasteDetailViewController {
         }
     }
     
+    func imagesHandlings()
+    {
+        if wasteDeatil != nil {
+            
+            for activityData in wasteDeatil!.activities
+            {
+                self.downloadImageFromServer(activityData.image ?? "") { image, error, success in
+                    
+                    if let wasteImage = image {
+                        
+                        self.updateImageLibrary(wasteImage)
+                    }
+                }
+            }
+        }
+    }
+    
+    func downloadImageFromServer(_ urlStr : String, _ completionHandler : @escaping(_ image : UIImage?, _ error: Error?, _ status: Bool?) -> Void)
+    {
+        guard let imageUrl = URL(string: urlStr) else { print("URL not created for imagesURL String"); return }
+        
+        SDWebImageManager.shared.loadImage(with: imageUrl, options: .avoidAutoSetImage, progress: nil) { image, data, error, type, success, url in
+            
+            completionHandler(image, error, success)
+        }
+    }
     
     func imageToUpload()
     {
@@ -142,6 +171,39 @@ extension WasteDetailViewController {
                         
                         let image = self.postDictToSaveImage["farm_image"] as! UIImage
                         self.updateImageLibrary(image)
+                    }
+                    else
+                    {
+                        Utility.showAlertController(self, "Faild!, \(message)")
+                    }
+                    
+                }
+                else
+                {
+                    Utility.showAlertController(self, "Faild!, \(message)")
+                }
+            }
+        }
+    }
+    
+    func sizeToUpdate()
+    {
+        let postDict =  postDictToUpdateSize as [String : AnyObject]
+        let updateLocalSize = postDictToUpdateSize["farm_size"] as! String
+        WasteDataModel.updateWasteSize(params: postDict) { data, error, success, message in
+            
+            if error != nil
+            {
+                Utility.showAlertController(self, error!.localizedDescription)
+            }
+            
+            if data != nil {
+                
+                if let isSuccess = success {
+                    
+                    if isSuccess {
+                        
+                        self.sizeDetailLabel.text = updateLocalSize
                     }
                     else
                     {
