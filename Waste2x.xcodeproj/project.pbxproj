@@ -45,6 +45,7 @@
 		0428F1CE265BECB5007C51EE /* LoginInputEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0428F1CC265BECB5007C51EE /* LoginInputEmailViewController.xib */; };
 		04340E96266E439900B5F87C /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340E94266E439900B5F87C /* MessagesTableViewCell.swift */; };
 		04340E97266E439900B5F87C /* MessagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04340E95266E439900B5F87C /* MessagesTableViewCell.xib */; };
+		04361BD3267B5BFA008209D4 /* WasteDetailResultImageUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361BD2267B5BFA008209D4 /* WasteDetailResultImageUpload.swift */; };
 		043F6BE82677719F000E3C4F /* HomeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F6BE72677719F000E3C4F /* HomeDataModel.swift */; };
 		043F6BF2267776A2000E3C4F /* HomeFarms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F6BE9267776A1000E3C4F /* HomeFarms.swift */; };
 		043F6BF4267776A2000E3C4F /* HomeFarmer_medals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F6BEB267776A1000E3C4F /* HomeFarmer_medals.swift */; };
@@ -247,6 +248,7 @@
 		0428F1CC265BECB5007C51EE /* LoginInputEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginInputEmailViewController.xib; sourceTree = "<group>"; };
 		04340E94266E439900B5F87C /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
 		04340E95266E439900B5F87C /* MessagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesTableViewCell.xib; sourceTree = "<group>"; };
+		04361BD2267B5BFA008209D4 /* WasteDetailResultImageUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDetailResultImageUpload.swift; sourceTree = "<group>"; };
 		043F6BE72677719F000E3C4F /* HomeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataModel.swift; sourceTree = "<group>"; };
 		043F6BE9267776A1000E3C4F /* HomeFarms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFarms.swift; sourceTree = "<group>"; };
 		043F6BEB267776A1000E3C4F /* HomeFarmer_medals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFarmer_medals.swift; sourceTree = "<group>"; };
@@ -624,6 +626,7 @@
 			children = (
 				04070D25267A19A700C93981 /* WasteDataModel.swift */,
 				04070D27267A1FC400C93981 /* WasteDetialResult.swift */,
+				04361BD2267B5BFA008209D4 /* WasteDetailResultImageUpload.swift */,
 			);
 			path = Waste;
 			sourceTree = "<group>";
@@ -1630,6 +1633,7 @@
 				043F6BF6267776A2000E3C4F /* HomeQuestions.swift in Sources */,
 				183262762670BB8400F0CCBA /* Registration.swift in Sources */,
 				00434544254825AE009A6166 /* DataManager.swift in Sources */,
+				04361BD3267B5BFA008209D4 /* WasteDetailResultImageUpload.swift in Sources */,
 				04D053642670A978005458F7 /* FormSubTypesViewController.swift in Sources */,
 				18ACB7BB2679DE730088307D /* FaqModel.swift in Sources */,
 				1810253D2657E48500DEBF7D /* NewsViewController.swift in Sources */,

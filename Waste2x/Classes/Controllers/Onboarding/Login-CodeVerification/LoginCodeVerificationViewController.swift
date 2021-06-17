@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 
 class LoginCodeVerificationViewController: BaseViewController {
 
@@ -59,10 +60,22 @@ class LoginCodeVerificationViewController: BaseViewController {
             }
             
             else if result?.result != nil {
+                
+                
                 let convretedData = result!.toJSONString()
                 DataManager.shared.setUser(user: convretedData ?? "")
-                let codeVerificationVC = LoginInputEmailViewController(nibName: "LoginInputEmailViewController", bundle: nil)
-                self.navigationController?.pushViewController(codeVerificationVC, animated: true)
+                
+                if DataManager.shared.getUser()?.result?.isNewUser == false {
+                    
+                    let slider = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
+                    self.navigationController?.setViewControllers([slider], animated: true)
+                }
+                else {
+                    
+                    let codeVerificationVC = LoginInputEmailViewController(nibName: "LoginInputEmailViewController", bundle: nil)
+                    self.navigationController?.pushViewController(codeVerificationVC, animated: true)
+                }
+                                
             }
             else{
                 Utility.showAlertController(self, message)

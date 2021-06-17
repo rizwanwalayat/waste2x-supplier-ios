@@ -175,12 +175,19 @@ class APIClient: APIClientHandler {
     }
     
     func saveWasteimages(params : [String: AnyObject],_ completionBlock: @escaping APIClientCompletionHandler) {
-//
+
         let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
         print("postSupplyProcessData : \(headers)")
         
         sendRequestUsingMultipart(APIRoutes.wasteDetailImageUpload, parameters: params, headers: headers, completionBlock: completionBlock)
         
+    }
+    
+    func updateWasteSize(params : [String: AnyObject],_ completionBlock: @escaping APIClientCompletionHandler) {
+//
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        print("postSupplyProcessData : \(headers)")
+        _ = sendRequest(APIRoutes.wasteDetailSizeUpdate , parameters: params ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
 }
 

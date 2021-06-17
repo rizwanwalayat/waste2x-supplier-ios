@@ -29,8 +29,8 @@ class APIClientHandler: TSAPIClient {
                 if key == "farm_image" {
                     let image = value as! UIImage
                     let data = image.jpeg(.lowest)
-                    multipartFormData.append(data!, withName: "image", fileName: "image", mimeType: "image/jpeg")
-                    parameters?.removeValue(forKey: "photo")
+                    multipartFormData.append(data!, withName: "farm_image", fileName: "farm_image1.jpeg", mimeType: "image/jpeg")
+                    parameters?.removeValue(forKey: "farm_image")
                 } else {
                     multipartFormData.append(String(describing: value).data(using: .utf8)!, withName: key)
                 }

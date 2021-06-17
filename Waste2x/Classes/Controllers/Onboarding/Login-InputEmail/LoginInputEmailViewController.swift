@@ -29,11 +29,13 @@ class LoginInputEmailViewController: BaseViewController {
 
     @IBAction func nextButtonPressed(_ sender: Any) {
         Registration.emailVerification(email: self.emailAddressTextField.text!) { result, error, status,message in
-            if status == true && DataManager.shared.getUser()?.result?.isNewUser == false {
-            let slider = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
-                self.navigationController?.setViewControllers([slider], animated: true)
+            
+            if status  == false {
+                
+                Utility.showAlertController(self, message)
             }
-            else{
+            else if DataManager.shared.getUser()?.result?.isNewUser == true && (status == true)
+            {
                 let vc = SupplyingTypeViewController(nibName: "SupplyingTypeViewController", bundle: nil)
                 vc.modalPresentationStyle = .overFullScreen
                 self.present(vc, animated: false, completion: nil)

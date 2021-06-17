@@ -11,7 +11,7 @@ class WasteDetialResult : Mappable
 	var commodity_image = ""
 	var farm_size = -1
 	var address = ""
-	var activities = [String]()
+	var activities = [WasteDetailActivities]()
 
 	required init?(map: Map) {
 
@@ -29,3 +29,23 @@ class WasteDetialResult : Mappable
 	}
 
 }
+
+class WasteDetailActivities : Mappable {
+    var address : String?
+    var image : String?
+    var timestamp : String?
+
+    required init?(map: Map) {
+
+    }
+
+    func mapping(map: Map) {
+
+        address <- map["address"]
+        image <- map["image"]
+        timestamp <- map["timestamp"]
+    }
+}
+
+
+
