@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TwilioChatClient
 
 class ChatMessagesViewController: BaseViewController {
 
@@ -23,8 +24,11 @@ class ChatMessagesViewController: BaseViewController {
     
     var textFildPlaceholder = UIColor(hexString: "9F9F9F")
     var placeHolderText = "Write your message..."
-    var messagesArray = [String]()
     
+    // MARK: Chat variables
+    var client: TwilioChatClient?
+    var channel: TCHChannel?
+    var messages: [TCHMessage] = []
     
     //MARK: - LifeCycle
     
@@ -41,6 +45,9 @@ class ChatMessagesViewController: BaseViewController {
         tableViewMessages.transform          = CGAffineTransform(scaleX: 1, y: -1)
         self.constHeightMessagesTextView.constant = 34
         self.view.layoutIfNeeded()
+        
+        
+        loginToTwillio()
     }
 
 
@@ -59,14 +66,25 @@ class ChatMessagesViewController: BaseViewController {
             return
         }
         
-        messagesArray.append(enterMessageTextView.text)
-        tableViewMessages.reloadData()
-        let indexPath = IndexPath(item: self.messagesArray.count - 1, section: 0)
-        self.tableViewMessages.reloadRows(at: [indexPath], with: .bottom)
+        sendMessage(enterMessageTextView.text!, completion: { (result, _) in
+            if result.isSuccessful() {
+                
+                self.enterMessageTextView.text = ""
+                self.enterMessageTextView.resignFirstResponder()
+                self.constHeightMessagesTextView.constant = 34.0
+            } else {
+                self.showToast(message: "Unable to send message")
+            }
+        })
         
-        enterMessageTextView.text = ""
-        constHeightMessagesTextView.constant = 34.0
-        self.view.layoutIfNeeded()
+//        messagesArray.append(enterMessageTextView.text)
+//        tableViewMessages.reloadData()
+//        let indexPath = IndexPath(item: self.messagesArray.count - 1, section: 0)
+//        self.tableViewMessages.reloadRows(at: [indexPath], with: .bottom)
+//        
+//        enterMessageTextView.text = ""
+//        constHeightMessagesTextView.constant = 34.0
+//        self.view.layoutIfNeeded()
     }
 }
 
@@ -117,17 +135,19 @@ extension ChatMessagesViewController : UITableViewDelegate, UITableViewDataSourc
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return messagesArray.count
+        return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessagesTableViewCell", for: indexPath) as! MessagesTableViewCell
         
-        let arrayIndex  = messagesArray.count - indexPath.row
-        let cellData    = messagesArray[arrayIndex - 1]
+        let message = messages[indexPath.row]
         
-        cell.messageLabel.text = cellData
+//        let arrayIndex  = messagesArray.count - indexPath.row
+//        let cellData    = messagesArray[arrayIndex - 1]
+        
+        cell.messageLabel.text = message.body
         cell.transform  = CGAffineTransform(scaleX: 1, y: -1)
         return cell
     }
