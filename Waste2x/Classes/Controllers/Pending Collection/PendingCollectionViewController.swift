@@ -53,7 +53,7 @@ extension PendingCollectionViewController : UITableViewDelegate,UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if self.pendingCollectionModel![indexPath.row].status == "a"
+        if self.pendingCollectionModel![indexPath.row].status == "Pending"
         {
             let cell = tableView.register(UnconfirmPendingCollectionTableViewCell.self, indexPath: indexPath)
             cell.selectionStyle = .none
@@ -61,7 +61,7 @@ extension PendingCollectionViewController : UITableViewDelegate,UITableViewDataS
             return cell
             
         }
-        else if self.pendingCollectionModel![indexPath.row].status == "b"{
+        else if self.pendingCollectionModel![indexPath.row].status == "Unconfirmed"{
             
             let cell = tableView.register(UnconfirmPendingCollectionTableViewCell.self, indexPath: indexPath)
             cell.selectionStyle = .none
