@@ -291,8 +291,17 @@ Enmass Energy</string>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="activityDate1" destination="WfU-sa-DAg" id="ozo-Uw-ezS"/>
+                <outlet property="activityDate2" destination="P6n-sZ-1I4" id="o8L-FR-zjT"/>
+                <outlet property="activityDate3" destination="eJB-8Y-had" id="msT-56-KpT"/>
+                <outlet property="activityDate4" destination="lY0-RS-7Ip" id="YMd-nk-8K6"/>
+                <outlet property="addressLabel" destination="o9e-uu-tIT" id="TkY-YE-XyV"/>
                 <outlet property="checkButton" destination="YRw-Ro-Gg5" id="SU2-sJ-moZ"/>
+                <outlet property="dateLabel" destination="B0d-GO-xhV" id="kzl-h2-Adz"/>
+                <outlet property="farmLabel" destination="JbW-dP-3SI" id="KI1-5y-fJu"/>
                 <outlet property="hiddenView" destination="9IQ-an-3bU" id="xTK-OX-0BA"/>
+                <outlet property="scheduleLabel" destination="DZg-OA-UOe" id="eeh-Sk-F0k"/>
+                <outlet property="stepperView" destination="Rey-bq-Tcf" id="i7t-2B-TWb"/>
                 <outletCollection property="daysLabel" destination="WfU-sa-DAg" collectionClass="NSMutableArray" id="sJl-9D-YZS"/>
                 <outletCollection property="daysLabel" destination="P6n-sZ-1I4" collectionClass="NSMutableArray" id="gdG-Ew-v8d"/>
                 <outletCollection property="daysLabel" destination="eJB-8Y-had" collectionClass="NSMutableArray" id="0ee-fF-5VF"/>

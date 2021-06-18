@@ -49,7 +49,7 @@ been created!</string>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jvU-hH-xPU" userLabel="imageHolderView">
                             <rect key="frame" x="57" y="363" width="300" height="170"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Site-Icon" translatesAutoresizingMaskIntoConstraints="NO" id="dAx-9B-Yoa">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="dAx-9B-Yoa">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="170"/>
                                 </imageView>
                             </subviews>
@@ -133,7 +133,7 @@ been created!</string>
         </view>
     </objects>
     <resources>
-        <image name="Site-Icon" width="297" height="203"/>
+        <image name="Icon" width="297" height="203"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

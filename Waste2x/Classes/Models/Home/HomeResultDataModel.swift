@@ -30,7 +30,8 @@ class HomeResultDataModel : Mappable {
 		waste_type <- map["waste_type"]
 		farmer_medals <- map["farmer_medals"]
 		waste_type_questions <- map["waste_type_questions"]
-        pendingCollection  <- map["pending_collection"]
+        pendingCollection <- map["pending_collection"]
+        
 	}
 
 }

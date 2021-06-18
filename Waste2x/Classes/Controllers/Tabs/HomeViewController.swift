@@ -33,13 +33,7 @@ class HomeViewController: BaseViewController{
     //MARK: - Variables
     
     var notification:Bool = true
-    var pendingCollection = true
-    var timer: Timer?
-    var count = Int()
-    var selecetedIndex = 0
-    var index = 0
     var supplierCell: SupplierTableViewCell?
-//    var images = [#imageLiteral(resourceName: "poultry"),#imageLiteral(resourceName: "bottle"),#imageLiteral(resourceName: "tire"),#imageLiteral(resourceName: "food")]
     var weatherCount  = 5
     var delegate:WeatherCallDelegate?
     var resultData : HomeResultDataModel?
@@ -54,9 +48,7 @@ class HomeViewController: BaseViewController{
         (UIApplication.shared.delegate as! AppDelegate).weaterCalldelegate = self
         bottomConst.constant = tabbarViewHeight
         globalObjectHome = self
-        tableView.reloadData()
         setAttributedTextInLable(emailAddress: DataManager.shared.getUser()?.result?.email ?? "")
-        self.indicatorMarker.currentPage = 0
         let progressbarAdjustment = UIScreen.main.bounds.height / 222
         progressBar.transform = CGAffineTransform(scaleX: 1, y: progressbarAdjustment)
         collectionDataSourceDelegate(outlet: weatherCollectionView)
@@ -76,7 +68,6 @@ class HomeViewController: BaseViewController{
         wasteTypeCollectionView.contentInset  = .zero
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.reloadData()
         DispatchQueue.main.async {
             self.tableViewHeight.constant = self.tableView.contentSize.height
             self.view.layoutIfNeeded()
@@ -86,35 +77,12 @@ class HomeViewController: BaseViewController{
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        weatherCollectionView.reloadData()
-        tableView.reloadData()
+//        weatherCollectionView.reloadData()
+//        tableView.reloadData()
     }
     
     
-    //MARK: - Logic For Slider
-    
-    @objc func slideToNext() {
-        if count > 0  {
-            print(selecetedIndex)
-            moveOn(index: selecetedIndex)
-            selecetedIndex = selecetedIndex + 1
-            count = count - 1
 
-        }
-        else {
-            print(selecetedIndex)
-            moveOn(index: selecetedIndex)
-            selecetedIndex = 0
-            count = fetchSitesData.count-1
-            
-        }
-    }
-    func moveOn(index: Int){
-        //supplierCell?.config(index: index)
-        indicatorMarker.currentPage = selecetedIndex
-        wasteTypeCollectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .right, animated: true)
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(true)
         self.navigationController?.navigationBar.isHidden = true
@@ -185,7 +153,6 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             return weatherCount
         }
         else{
-            self.count = fetchSitesData.count
             self.indicatorMarker.numberOfPages = fetchSitesData.count
             return fetchSitesData.count
         }
@@ -205,10 +172,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         else
         {
             let cell = collectionView.register(WasteTypeCollectionViewCell.self, indexPath: indexPath)
-            self.index = indexPath.row
             let cellData = fetchSitesData[indexPath.row]
-//            var cropTypeName = cellData.cropType.components(separatedBy: "-").first ?? ""
-//            cropTypeName = cropTypeName.trimmingCharacters(in: .whitespaces)
             cell.config(cellData.farmName, cellData.cropType , cellData.cropTypeImage)
             
             return cell
@@ -233,9 +197,6 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             let cellData = fetchSitesData[indexPath.row]
             supplierCell?.config(cellData.sharedIconUrl)
             if collectionView == wasteTypeCollectionView {
-//                let wasteDetails = CurrentWasteViewController(nibName: "CurrentWasteViewController", bundle: nil)
-//                self.navigationController?.pushViewController(wasteDetails, animated: true)
-                
                 let vc = WasteDetailViewController(nibName: "WasteDetailViewController", bundle: nil)
                 vc.farmID = fetchSitesData[indexPath.row].farmId
                 self.navigationController?.pushViewController(vc, animated: true)
@@ -248,23 +209,39 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
 
 //MARK: - TableView
 extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        if ((resultData?.pendingCollection) != nil) {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if resultData?.pendingCollection ?? false {
             return 2
         }
         else{
             return 1
         }
-        
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.section == 1 {
+        if indexPath.row == 0 {
+            
+            if resultData?.pendingCollection == true {
+                let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
+                cell.selectionStyle = .none
+                cell.pendingCOllectionConfig()
+                return cell
+            }
+            else {
+                
+                //tableViewHeight.constant = homeScrollview.bounds.height * 0.341297//200 // 0.341297
+                let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
+                cell.selectionStyle = .none
+                supplierCell = cell
+                cell.imgHeight.constant = cell.frame.height * 0.7
+                return cell
+            }
+        }
+        
+        if indexPath.row == 1 {
             //tableViewHeight.constant = 400
             let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
             supplierCell = cell
@@ -272,37 +249,27 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
             return cell
         }
         
-        else if resultData?.pendingCollection == true {
-            //tableViewHeight.constant = 400
-            let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
-            cell.selectionStyle = .none
-            cell.pendingCOllectionConfig()
-            return cell
-        }
-        
-        else {
-            //tableViewHeight.constant = homeScrollview.bounds.height * 0.341297//200 // 0.341297
-            let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
-            cell.selectionStyle = .none
-            supplierCell = cell
-            cell.imgHeight.constant = cell.frame.height * 0.7
-            return cell
-        }
-        
+        let cell = UITableViewCell()
+        return cell
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return pendingCollection ? (tableView.frame.height / 2) : tableView.frame.height
-//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.section == 0{
-        if pendingCollection
+        if indexPath.row == 0{
+            if resultData?.pendingCollection == true
         {
             let vc = PendingCollectionViewController(nibName: "PendingCollectionViewController", bundle: nil)
             self.navigationController?.pushTo(controller: vc)
         }
+            else
+            {
+                let text = "Invite Supplieer."
+                let textToShare = [ text ]
+                let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+                activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+                activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
+                self.present(activityViewController, animated: true, completion: nil)
+            }
         }
         else
         {
@@ -373,7 +340,13 @@ extension HomeViewController: WeatherCallDelegate {
             progressBar.setProgress(progress, animated: true)
             self.setAttributedTextInLable(emailAddress: Data?.email ?? "")
             self.progressPointsLabel.text = "\(Int((DataManager.shared.getUser()?.result?.percentage ?? 0 )*100))/100"
+//            resultData?.pendingCollection = false
             tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableViewHeight.constant = self.tableView.contentSize.height
+                self.view.layoutIfNeeded()
+            }
+            
             for commudity in self.resultData!.commodity_farms
             {
                 if commudity.farms != nil

@@ -14,10 +14,7 @@ class WasteTypeCollectionViewCell: BaseCollectionViewCell {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    
-    var title = ["site 1","site 2","site 3","site 4"]
-    var descrip = ["Cattle","Factory","Tire Dealer","Restaurent"]
-    var images = [#imageLiteral(resourceName: "poultry"),#imageLiteral(resourceName: "bottle"),#imageLiteral(resourceName: "tire"),#imageLiteral(resourceName: "food")]
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }

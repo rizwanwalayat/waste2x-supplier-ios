@@ -51,7 +51,7 @@ extension ContactsFetchViewController : UITableViewDelegate,UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.register(ContactFetchTableViewCell.self, indexPath: indexPath)
         cell.textLabel?.text = contacts[indexPath.row].givenName
-        let phone = contacts[indexPath.row].phoneNumbers
+        let phone = contacts[indexPath.row]
         cell.selectionStyle = .none
         return cell
         

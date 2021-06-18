@@ -31,7 +31,7 @@
 		0067A322252AFC9E00CECA8C /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A314252AFC9E00CECA8C /* UIImage.swift */; };
 		0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A315252AFC9E00CECA8C /* UILabel.swift */; };
 		0067A324252AFC9E00CECA8C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A316252AFC9E00CECA8C /* UIFont.swift */; };
-		0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0067A33A252B91BA00CECA8C /* Assets.xcassets */; };
+		0067A33B252B91BA00CECA8C /* w.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0067A33A252B91BA00CECA8C /* w.xcassets */; };
 		04070D26267A19A700C93981 /* WasteDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04070D25267A19A700C93981 /* WasteDataModel.swift */; };
 		04070D29267A1FC400C93981 /* WasteDetialResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04070D27267A1FC400C93981 /* WasteDetialResult.swift */; };
 		041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041242AA266A05AE00EB1A3F /* DateExtenstion.swift */; };
@@ -141,6 +141,7 @@
 		1849F5A5266FDFD60001B533 /* ContactsFetchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1849F5A3266FDFD60001B533 /* ContactsFetchViewController.xib */; };
 		1849F5A9266FE32F0001B533 /* ContactFetchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1849F5A7266FE32F0001B533 /* ContactFetchTableViewCell.swift */; };
 		1849F5AA266FE32F0001B533 /* ContactFetchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1849F5A8266FE32F0001B533 /* ContactFetchTableViewCell.xib */; };
+		184E8E48267C6AEA00EAD050 /* PendingCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184E8E47267C6AEA00EAD050 /* PendingCollectionModel.swift */; };
 		184F51672667A46400F0328A /* PendingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F51652667A46400F0328A /* PendingCollectionViewController.swift */; };
 		184F51682667A46400F0328A /* PendingCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184F51662667A46400F0328A /* PendingCollectionViewController.xib */; };
 		184F51702667AD9700F0328A /* ConfirmPendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F516E2667AD9700F0328A /* ConfirmPendingTableViewCell.swift */; };
@@ -233,7 +234,7 @@
 		0067A314252AFC9E00CECA8C /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		0067A315252AFC9E00CECA8C /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		0067A316252AFC9E00CECA8C /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
-		0067A33A252B91BA00CECA8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0067A33A252B91BA00CECA8C /* w.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = w.xcassets; sourceTree = "<group>"; };
 		04070D25267A19A700C93981 /* WasteDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDataModel.swift; sourceTree = "<group>"; };
 		04070D27267A1FC400C93981 /* WasteDetialResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasteDetialResult.swift; sourceTree = "<group>"; };
 		041242AA266A05AE00EB1A3F /* DateExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtenstion.swift; sourceTree = "<group>"; };
@@ -270,9 +271,6 @@
 		048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleOptionsTableViewCell.xib; sourceTree = "<group>"; };
 		048C09E6265E2265003E301F /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
-		04969272265CFCB10081E875 /* WasteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDetailViewController.swift; sourceTree = "<group>"; };
-		04969273265CFCB10081E875 /* WasteDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteDetailViewController.xib; sourceTree = "<group>"; };
-		04B20E8B265D36EA0081E7C0 /* WasteDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDetailViewModel.swift; sourceTree = "<group>"; };
 		04BD27FF266A2589008FC8B4 /* SchedulePlannedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePlannedViewController.swift; sourceTree = "<group>"; };
 		04BD2800266A2589008FC8B4 /* SchedulePlannedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchedulePlannedViewController.xib; sourceTree = "<group>"; };
 		04C2361B2669224600A27B78 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -295,8 +293,6 @@
 		04D053622670A978005458F7 /* FormSubTypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSubTypesViewController.swift; sourceTree = "<group>"; };
 		04D053632670A978005458F7 /* FormSubTypesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormSubTypesViewController.xib; sourceTree = "<group>"; };
 		04D8A30D2679C998004BBF9A /* PhoneNoDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNoDataModel.swift; sourceTree = "<group>"; };
-		04E3D69C265D298C0058528D /* WasteImageDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteImageDetailCollectionViewCell.swift; sourceTree = "<group>"; };
-		04E3D69D265D298C0058528D /* WasteImageDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteImageDetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		04E6104226725421001E6629 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		04E6104326725421001E6629 /* SupplyProcessDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupplyProcessDataModel.swift; sourceTree = "<group>"; };
 		04E6104426725422001E6629 /* FetchSupplyProcessResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchSupplyProcessResult.swift; sourceTree = "<group>"; };
@@ -348,6 +344,7 @@
 		1849F5A3266FDFD60001B533 /* ContactsFetchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsFetchViewController.xib; sourceTree = "<group>"; };
 		1849F5A7266FE32F0001B533 /* ContactFetchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFetchTableViewCell.swift; sourceTree = "<group>"; };
 		1849F5A8266FE32F0001B533 /* ContactFetchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactFetchTableViewCell.xib; sourceTree = "<group>"; };
+		184E8E47267C6AEA00EAD050 /* PendingCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingCollectionModel.swift; sourceTree = "<group>"; };
 		184F51652667A46400F0328A /* PendingCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingCollectionViewController.swift; sourceTree = "<group>"; };
 		184F51662667A46400F0328A /* PendingCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PendingCollectionViewController.xib; sourceTree = "<group>"; };
 		184F516E2667AD9700F0328A /* ConfirmPendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPendingTableViewCell.swift; sourceTree = "<group>"; };
@@ -471,6 +468,7 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				184E8E46267C6ACD00EAD050 /* Pending Collection */,
 				04070D24267A197700C93981 /* Waste */,
 				047E76822679E8910055292A /* PickupSchedule */,
 				18ACB7C3267A34BF0088307D /* Notification */,
@@ -576,7 +574,7 @@
 			isa = PBXGroup;
 			children = (
 				18397E032660FF47003DE30C /* Foonts */,
-				0067A33A252B91BA00CECA8C /* Assets.xcassets */,
+				0067A33A252B91BA00CECA8C /* w.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1003,11 +1001,6 @@
 		18397DC32660FA73003DE30C /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				04B20E8B265D36EA0081E7C0 /* WasteDetailViewModel.swift */,
-				04969272265CFCB10081E875 /* WasteDetailViewController.swift */,
-				04E3D69C265D298C0058528D /* WasteImageDetailCollectionViewCell.swift */,
-				04969273265CFCB10081E875 /* WasteDetailViewController.xib */,
-				04E3D69D265D298C0058528D /* WasteImageDetailCollectionViewCell.xib */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -1083,6 +1076,14 @@
 				1849F5A8266FE32F0001B533 /* ContactFetchTableViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		184E8E46267C6ACD00EAD050 /* Pending Collection */ = {
+			isa = PBXGroup;
+			children = (
+				184E8E47267C6AEA00EAD050 /* PendingCollectionModel.swift */,
+			);
+			path = "Pending Collection";
 			sourceTree = "<group>";
 		};
 		184F51642667A42600F0328A /* Pending Collection */ = {
@@ -1425,7 +1426,7 @@
 				18397E1C2660FF54003DE30C /* Poppins-Medium.ttf in Resources */,
 				18A849D8265E48A0008F77E8 /* WasteTypeCollectionViewCell.xib in Resources */,
 				1893754A266127CB00D55A33 /* NotificationsViewController.xib in Resources */,
-				0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */,
+				0067A33B252B91BA00CECA8C /* w.xcassets in Resources */,
 				0428F1CE265BECB5007C51EE /* LoginInputEmailViewController.xib in Resources */,
 				18397E202660FF54003DE30C /* OFL.txt in Resources */,
 				18506D81265D45EB00018707 /* SideMenuItemsTableViewCell.xib in Resources */,
@@ -1588,6 +1589,7 @@
 				04C82E182664BCCB00D52947 /* WasteDetailViewModel.swift in Sources */,
 				00434540254823FE009A6166 /* ApiClient.swift in Sources */,
 				0043453E254823FE009A6166 /* TSAPIClient.swift in Sources */,
+				184E8E48267C6AEA00EAD050 /* PendingCollectionModel.swift in Sources */,
 				0067A31E252AFC9E00CECA8C /* UIButton.swift in Sources */,
 				18719145266667550050FAAA /* DetailTableViewCell.swift in Sources */,
 				04C31D092667744400A1CF9C /* ScheduleViewController.swift in Sources */,

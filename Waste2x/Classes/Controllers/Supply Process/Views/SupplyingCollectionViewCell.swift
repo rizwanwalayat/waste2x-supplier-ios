@@ -10,43 +10,8 @@ import UIKit
 import SDWebImage
 
 class SupplyingCollectionViewCell: BaseCollectionViewCell {
-    //MARK: - DATA
-    struct CellData {
-        var imageType: UIImage
-        var labelTitle = String()
-        
-        
-        
-    }
-    
-    let FormData: [CellData] = [
-        CellData(imageType: #imageLiteral(resourceName: "Lump"), labelTitle: "Lump"),
-        CellData(imageType: #imageLiteral(resourceName: "Loose"), labelTitle: "Loose"),
-        CellData(imageType: #imageLiteral(resourceName: "Densified"), labelTitle: "Densified"),
-        CellData(imageType: #imageLiteral(resourceName: "Baled"), labelTitle: "Baled"),
-        CellData(imageType: #imageLiteral(resourceName: "Lump"), labelTitle: "Lump"),
-        CellData(imageType: #imageLiteral(resourceName: "Loose"), labelTitle: "Loose"),
-        CellData(imageType: #imageLiteral(resourceName: "Densified"), labelTitle: "Densified"),
-        CellData(imageType: #imageLiteral(resourceName: "Baled"), labelTitle: "Baled")
-    ]
-//    let SupplyingType: [CellData] = [
-//        CellData(imageType: #imageLiteral(resourceName: "Crop Icon"), labelTitle: "Crop Waste"),
-//        CellData(imageType: #imageLiteral(resourceName: "bottle"), labelTitle: "Plastic Waste"),
-//        CellData(imageType: #imageLiteral(resourceName: "food"), labelTitle: "Food Waste"),
-//        CellData(imageType: #imageLiteral(resourceName: "Livestock Icon"), labelTitle: "LiveStock\nWaste"),
-//        CellData(imageType: #imageLiteral(resourceName: "Cans"), labelTitle: "Inorganic\nWaste"),
-//        CellData(imageType: #imageLiteral(resourceName: "Recycle Bin Icon"), labelTitle: "Other \nInorganic \nWaste"),
-//        CellData(imageType: #imageLiteral(resourceName: "tire"), labelTitle: "Tire Waste")
-//    ]
-    
-    let formLivestockData : [CellData] = [
-        
-        CellData(imageType: #imageLiteral(resourceName: "poultry"), labelTitle: "Poultry"),
-        CellData(imageType: #imageLiteral(resourceName: "Hogs Icon"), labelTitle: "Hogs"),
-        CellData(imageType: #imageLiteral(resourceName: "Cattle"), labelTitle: "Cattle")
-    ]
-    
-    
+    //MARK: - IBOutlets
+
     
     @IBOutlet weak var mainViewSelection: UIView!
     @IBOutlet weak var imgView: UIImageView!

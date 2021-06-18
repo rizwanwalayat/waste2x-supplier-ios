@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -47,29 +48,47 @@
                                                 <color key="textColor" red="0.45882352939999999" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Pj-kf-69f">
-                                                <rect key="frame" x="262" y="10" width="130" height="25"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5O-0u-chJ">
+                                                <rect key="frame" x="277.33333333333331" y="5" width="114.66666666666669" height="20"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unconfirmed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YV-0X-gza">
+                                                        <rect key="frame" x="5" y="0.3333333333333357" width="90.666666666666671" height="19.666666666666668"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pending" translatesAutoresizingMaskIntoConstraints="NO" id="qMe-qQ-Jzk">
+                                                        <rect key="frame" x="97.666666666666686" y="2.6666666666666643" width="15" height="15"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="15" id="Dcz-eu-ZaU"/>
+                                                            <constraint firstAttribute="height" constant="15" id="nBX-7j-1it"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" name="bgColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="130" id="YdQ-cV-5zm"/>
+                                                    <constraint firstItem="qMe-qQ-Jzk" firstAttribute="leading" secondItem="7YV-0X-gza" secondAttribute="trailing" constant="2" id="Qpm-nf-zYo"/>
+                                                    <constraint firstItem="7YV-0X-gza" firstAttribute="leading" secondItem="H5O-0u-chJ" secondAttribute="leading" constant="5" id="ZT1-Xr-Ezv"/>
+                                                    <constraint firstItem="qMe-qQ-Jzk" firstAttribute="centerY" secondItem="H5O-0u-chJ" secondAttribute="centerY" id="mXU-fi-Hf5"/>
+                                                    <constraint firstAttribute="trailing" secondItem="qMe-qQ-Jzk" secondAttribute="trailing" constant="2" id="nNs-XZ-KhY"/>
+                                                    <constraint firstItem="7YV-0X-gza" firstAttribute="centerY" secondItem="H5O-0u-chJ" secondAttribute="centerY" id="oc9-HB-pno"/>
+                                                    <constraint firstAttribute="height" constant="20" id="zRp-9X-egD"/>
                                                 </constraints>
-                                                <inset key="titleEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="110" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Unconfirmed" image="Pending" backgroundImage="grayrect">
-                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <state key="selected" title="Unconfirmed" image="Pending" backgroundImage="grayrect">
-                                                    <color key="titleColor" red="0.45882352939999999" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                            </button>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="H5O-0u-chJ" secondAttribute="trailing" constant="10" id="2ES-qE-1Of"/>
                                             <constraint firstAttribute="bottom" secondItem="drN-11-N8q" secondAttribute="bottom" constant="20" id="56X-rE-4Y2"/>
+                                            <constraint firstItem="H5O-0u-chJ" firstAttribute="top" secondItem="kNS-YM-8ut" secondAttribute="top" constant="5" id="5dL-7c-oZx"/>
                                             <constraint firstItem="eBs-dR-f2K" firstAttribute="leading" secondItem="kNS-YM-8ut" secondAttribute="leading" constant="25" id="Gjh-sr-vTL"/>
                                             <constraint firstItem="eBs-dR-f2K" firstAttribute="top" secondItem="kNS-YM-8ut" secondAttribute="top" constant="10" id="QwS-RU-gty"/>
                                             <constraint firstItem="drN-11-N8q" firstAttribute="top" secondItem="eBs-dR-f2K" secondAttribute="bottom" constant="10" id="gbf-Qi-AhK"/>
-                                            <constraint firstAttribute="trailing" secondItem="8Pj-kf-69f" secondAttribute="trailing" constant="10" id="nqL-pF-U57"/>
-                                            <constraint firstItem="8Pj-kf-69f" firstAttribute="top" secondItem="kNS-YM-8ut" secondAttribute="top" constant="10" id="sAK-FA-MCT"/>
                                             <constraint firstItem="drN-11-N8q" firstAttribute="leading" secondItem="kNS-YM-8ut" secondAttribute="leading" constant="25" id="wkt-Jy-l4G"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -174,7 +193,15 @@ California, United State</string>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="addressLabel" destination="5jg-6T-ryY" id="rY3-vm-JOV"/>
+                <outlet property="dateLabel" destination="33P-Cx-oa3" id="SaQ-Cv-EgO"/>
+                <outlet property="farmLabel" destination="eBs-dR-f2K" id="n1R-5b-fqI"/>
                 <outlet property="hiddenView" destination="IkS-uk-Oov" id="y4F-fS-FrI"/>
+                <outlet property="locationLabel" destination="5jg-6T-ryY" id="cJm-I9-7zU"/>
+                <outlet property="scheduleLabel" destination="drN-11-N8q" id="ejU-mw-6uA"/>
+                <outlet property="statusImage" destination="qMe-qQ-Jzk" id="DGf-ih-CMq"/>
+                <outlet property="statusLabel" destination="7YV-0X-gza" id="rSu-4H-fMs"/>
+                <outlet property="statusView" destination="H5O-0u-chJ" id="jc1-SF-XMo"/>
             </connections>
             <point key="canvasLocation" x="-189.85507246376812" y="-27.717391304347828"/>
         </tableViewCell>
@@ -182,8 +209,10 @@ California, United State</string>
     <resources>
         <image name="Pending" width="16" height="16"/>
         <image name="calendar-dates" width="16" height="16"/>
-        <image name="grayrect" width="100" height="25"/>
         <image name="pin" width="15" height="18"/>
+        <namedColor name="bgColor">
+            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="0.92799997329711914" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

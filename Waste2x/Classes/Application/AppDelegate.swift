@@ -10,7 +10,7 @@ import UIKit
 import IQKeyboardManagerSwift
 import ObjectMapper
 import Firebase
-import netfox
+//import netfox
 import FirebaseMessaging
 import GoogleMaps
 import GooglePlaces
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var weaterCalldelegate:WeatherCallDelegate?
     var locationManager = CLLocationManager()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        NFX.sharedInstance().start()
+//        NFX.sharedInstance().start()
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 30
@@ -183,6 +183,7 @@ extension AppDelegate : MessagingDelegate {
         }
     
     }
+    
     
 }
     

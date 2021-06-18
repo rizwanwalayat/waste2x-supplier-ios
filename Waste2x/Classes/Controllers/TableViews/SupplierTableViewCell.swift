@@ -17,7 +17,6 @@ class SupplierTableViewCell: BaseTableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var imgHeight: NSLayoutConstraint!
     @IBOutlet weak var imgEqualizerConstraint: NSLayoutConstraint!
-    var images = [#imageLiteral(resourceName: "Garbage Man Illustration"),#imageLiteral(resourceName: "factory Worker"),#imageLiteral(resourceName: "Farmer"),#imageLiteral(resourceName: "foodfix")]
     
     var pendingCollectionCheck = Bool()
     override func awakeFromNib() {

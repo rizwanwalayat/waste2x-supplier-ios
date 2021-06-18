@@ -20,6 +20,7 @@ class HomeFetchFarmsDataModel : Mappable
     var success = false
     var status_code = -1
     var message = ""
+    var pendingCollection = Bool()
     var result : HomeResultDataModel?
 
     required init?(map: Map) {
@@ -31,6 +32,7 @@ class HomeFetchFarmsDataModel : Mappable
         success <- map["success"]
         status_code <- map["status_code"]
         message <- map["message"]
+        pendingCollection  <- map["pending_collection"]
         result <- map["result"]
     }
     
@@ -38,7 +40,6 @@ class HomeFetchFarmsDataModel : Mappable
     class func fetchSites( _ completion: @escaping HomeFetchFarmsCompletionHandler) {
         Utility.showLoading()
         APIClient.shared.fetchSitesForHomeData( { response, error, status,message in
-            
             Utility.hideLoading()
             
             if response != nil {
