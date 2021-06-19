@@ -18,7 +18,7 @@ class SideMenuViewController: BaseViewController {
     var text = ["Payments","Schedule Pickup"]
     var selectionIndex = -1
     var paymentModel : PaymentModel?
-    
+    var reload = -1
     @IBOutlet weak var headerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,16 +71,9 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
         self.selectionIndex = indexPath.row
         switch indexPath.row {
         case 0:
+            
             paymentApi()
-            if self.paymentModel?.result?.details_submitted == false || self.paymentModel?.result == nil {
-                let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
-                    navigationController?.pushViewController(vc, animated: true)
-                
-            }
-            else{
-                let vc = CreatePaymentViewController(nibName: "CreatePaymentViewController", bundle: nil)
-                    navigationController?.pushViewController(vc, animated: true)
-            }
+
         case 1:
             let vc = ScheduleViewController(nibName: "ScheduleViewController", bundle: nil)
             navigationController?.pushViewController(vc, animated: true)
@@ -102,8 +95,24 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
 extension SideMenuViewController{
     func paymentApi(){
         PaymentModel.paymentApiFunction{ result, error, status,message in
-            self.paymentModel = result
             Global.shared.paymentModel = result
+            if result?.result != nil{
+                if result?.result?.details_submitted == true {
+                    let vc = CreatePaymentViewController(nibName: "CreatePaymentViewController", bundle: nil)
+                self.navigationController?.pushViewController(vc, animated: true)
+                    
+                }
+                else{
+                    let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
+            else{
+                let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+
         }
     }
 }

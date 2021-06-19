@@ -340,7 +340,6 @@ extension HomeViewController: WeatherCallDelegate {
             progressBar.setProgress(progress, animated: true)
             self.setAttributedTextInLable(emailAddress: Data?.email ?? "")
             self.progressPointsLabel.text = "\(Int((DataManager.shared.getUser()?.result?.percentage ?? 0 )*100))/100"
-//            resultData?.pendingCollection = false
             tableView.reloadData()
             DispatchQueue.main.async {
                 self.tableViewHeight.constant = self.tableView.contentSize.height

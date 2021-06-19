@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+ platform :ios, '12.1'
 
 target 'Waste2x' do
   
@@ -11,7 +11,7 @@ target 'Waste2x' do
   #pod 'Firebase/Core'
   #pod 'Firebase/Auth'
   pod 'Firebase/Messaging'
-  pod 'SDWebImage', '~> 5.0'
+  #pod 'SDWebImage', '~> 5.0'
   #pod 'netfox'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
@@ -20,6 +20,6 @@ target 'Waste2x' do
   pod 'StepIndicator', '~> 1.0.8'
   #pod 'StepperView','~> 1.6.6'
   pod 'SDWebImage'
-  pod 'youtube-ios-player-helper', '~> 0.1'
+  #pod 'youtube-ios-player-helper', '~> 0.1'
   pod 'Firebase/Analytics'
 end
