@@ -52,6 +52,8 @@ class UnconfirmPendingCollectionTableViewCell: UITableViewCell {
             
         }
         self.dateLabel.text = data[index].scheduleDate
+        self.addressLabel.text = data[index].address
+        
         
         
         

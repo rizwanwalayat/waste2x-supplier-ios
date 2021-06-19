@@ -391,7 +391,6 @@
 		18A849CF265E411F008F77E8 /* WeatherCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherCollectionViewCell.xib; sourceTree = "<group>"; };
 		18A849D5265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		18A849D6265E48A0008F77E8 /* WasteTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteTypeCollectionViewCell.xib; sourceTree = "<group>"; };
-		18AC70F0267B562100F398A1 /* Waste2x.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Waste2x.entitlements; sourceTree = "<group>"; };
 		18AC70F1267B5E3E00F398A1 /* NotificationResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationResponceModel.swift; sourceTree = "<group>"; };
 		18ACB7BA2679DE730088307D /* FaqModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqModel.swift; sourceTree = "<group>"; };
 		18ACB7BD267A23110088307D /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
@@ -455,7 +454,6 @@
 		0067A2BA25274C0900CECA8C /* Waste2x */ = {
 			isa = PBXGroup;
 			children = (
-				18AC70F0267B562100F398A1 /* Waste2x.entitlements */,
 				0067A305252AF7FA00CECA8C /* Classes */,
 				0067A306252AF82500CECA8C /* Resources */,
 				0067A2C625274C0B00CECA8C /* LaunchScreen.storyboard */,

@@ -21,4 +21,5 @@ target 'Waste2x' do
   #pod 'StepperView','~> 1.6.6'
   pod 'SDWebImage'
   pod 'youtube-ios-player-helper', '~> 0.1'
+  pod 'Firebase/Analytics'
 end
