@@ -18,7 +18,7 @@ class CreatePaymentViewController: BaseViewController {
         super.viewDidLoad()
             
             self.idTitle.text = Global.shared.paymentModel?.result?.accountId
-            self.emailTitle.text = Global.shared.paymentModel?.result?.accountId
+            self.emailTitle.text = Global.shared.paymentModel?.result?.email
         
     }
     override func viewWillAppear(_ animated: Bool) {
