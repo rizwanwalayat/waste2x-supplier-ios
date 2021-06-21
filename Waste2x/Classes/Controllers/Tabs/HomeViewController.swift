@@ -77,6 +77,9 @@ class HomeViewController: BaseViewController{
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        self.weatherCollectionView.reloadData()
+        Global.shared.jump = 0
 //        weatherCollectionView.reloadData()
 //        tableView.reloadData()
     }
@@ -162,10 +165,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == weatherCollectionView{
             let cell = collectionView.register(WeatherCollectionViewCell.self, indexPath: indexPath)
-            let weatherTemp = DataManager.shared.getWeather()?.list[indexPath.row].main?.temp ?? 00
-            cell.tempratureLabel.text = "\(weatherTemp.shortValue)°" + ""
-               
-            cell.config()
+            cell.config(index: indexPath.row)
             return cell
             
         }
@@ -302,7 +302,9 @@ extension HomeViewController: WeatherCallDelegate {
 
     func Weather() {
         self.weatherCount = DataManager.shared.getWeather()?.list.count ?? 0
+        Global.shared.jump = 0
         self.weatherCollectionView.reloadData()
+        
     }
     
     
@@ -339,7 +341,7 @@ extension HomeViewController: WeatherCallDelegate {
             let progress = Float(self.resultData!.percentage) / 100
             progressBar.setProgress(progress, animated: true)
             self.setAttributedTextInLable(emailAddress: Data?.email ?? "")
-            self.progressPointsLabel.text = "\(Int((DataManager.shared.getUser()?.result?.percentage ?? 0 )*100))/100"
+            self.progressPointsLabel.text = "\(Int((DataManager.shared.getUser()?.result?.percentage ?? 0 )*100))/1000"
             tableView.reloadData()
             DispatchQueue.main.async {
                 self.tableViewHeight.constant = self.tableView.contentSize.height

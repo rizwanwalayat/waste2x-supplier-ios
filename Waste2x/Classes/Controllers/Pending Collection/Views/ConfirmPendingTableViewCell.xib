@@ -110,6 +110,7 @@ California, United State</string>
                                             <constraint firstItem="JbW-dP-3SI" firstAttribute="leading" secondItem="UWY-RP-FgK" secondAttribute="leading" constant="25" id="mI6-wF-O24"/>
                                             <constraint firstAttribute="trailing" secondItem="YRw-Ro-Gg5" secondAttribute="trailing" constant="10" id="oqy-0v-WWW"/>
                                             <constraint firstItem="B0d-GO-xhV" firstAttribute="leading" secondItem="ALW-l6-1CT" secondAttribute="trailing" constant="20" id="pbp-aE-O69"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="o9e-uu-tIT" secondAttribute="trailing" constant="10" id="qcf-5c-jno"/>
                                             <constraint firstItem="ALW-l6-1CT" firstAttribute="leading" secondItem="UWY-RP-FgK" secondAttribute="leading" constant="25" id="woZ-Wp-vL1"/>
                                             <constraint firstItem="qXY-Bb-dxN" firstAttribute="leading" secondItem="UWY-RP-FgK" secondAttribute="leading" constant="10" id="xGX-Ql-0QL"/>
                                             <constraint firstItem="YRw-Ro-Gg5" firstAttribute="top" secondItem="UWY-RP-FgK" secondAttribute="top" constant="25" id="ywe-JC-noi"/>
@@ -202,7 +203,7 @@ Enmass Energy</string>
                                                         <integer key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="currentStep">
-                                                        <integer key="value" value="1"/>
+                                                        <integer key="value" value="0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
                                                         <color key="value" systemColor="systemYellowColor"/>

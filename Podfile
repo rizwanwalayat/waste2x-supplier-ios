@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
- platform :ios, '12.1'
+# platform :ios, '12.1'
 
 target 'Waste2x' do
   
@@ -8,18 +8,16 @@ target 'Waste2x' do
   pod 'NVActivityIndicatorView'
   pod 'Alamofire', '~> 4.2'
   pod 'IQKeyboardManagerSwift'
-  #pod 'Firebase/Core'
+#  pod 'Firebase/Core'
   #pod 'Firebase/Auth'
   pod 'Firebase/Messaging'
-  #pod 'SDWebImage', '~> 5.0'
   #pod 'netfox'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'SlideMenuControllerSwift'
   pod 'FSCalendar'
   pod 'StepIndicator', '~> 1.0.8'
-  #pod 'StepperView','~> 1.6.6'
   pod 'SDWebImage'
-  #pod 'youtube-ios-player-helper', '~> 0.1'
-  pod 'Firebase/Analytics'
+  pod "YoutubePlayer-in-WKWebView"
+  pod 'GeoFire'
 end

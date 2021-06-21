@@ -45,7 +45,9 @@ class ConfirmPendingTableViewCell: UITableViewCell {
     
     //MARK: - Functions
     func confirmConfig(data:[PendingCollectionResultResponce],index:Int){
-//        let arrayCount = data[index].history.count
+        if data[index].history.count > 0{
+            
+        }
         
         self.farmLabel.text = data[index].farm
         if data[index].frequency == "" {
@@ -57,26 +59,27 @@ class ConfirmPendingTableViewCell: UITableViewCell {
             
         }
         self.dateLabel.text = data[index].scheduleDate
-        
+        self.addressLabel.text = data[index].address
         //MARK: - Stepper
+
         
         for (indexNew, _) in data[index].history.enumerated() {
             
-            if data[index].history[indexNew].status != "Pending" && indexNew == 0 {
+            if data[index].history[indexNew].status == "Pending"{
                 
                 self.activityDate1.text = data[index].history[indexNew].activityDate
                 self.stepperView.currentStep = 0
             }
             
-            else if data[index].history[indexNew].status != "Confirmed" && indexNew == 1 {
+            else if data[index].history[indexNew].status == "Confirmed"{
                 self.activityDate2.text = data[index].history[indexNew].activityDate
                 self.stepperView.currentStep = 1
             }
-            else if data[index].history[indexNew].status != "" && indexNew == 2 {
+            else if data[index].history[indexNew].status == "Picked"{
                 self.activityDate3.text = data[index].history[indexNew].activityDate
                 self.stepperView.currentStep = 2
             }
-            else if data[index].history[indexNew].status != "" && indexNew == 3 {
+            else {
                 self.activityDate4.text = data[index].history[indexNew].activityDate
                 self.stepperView.currentStep = 3
             }

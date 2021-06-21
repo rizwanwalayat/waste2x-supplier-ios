@@ -178,6 +178,7 @@ extension AppDelegate:CLLocationManagerDelegate {
         WeatherAPI.WeatherAPICall{ result, error, statusCode,message in
             if statusCode == true{
                 self.weaterCalldelegate?.Weather()
+                
             }
         }
     }

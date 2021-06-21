@@ -54,12 +54,14 @@ class WeatherListResponce : Mappable {
     var dt = Int()
     var main : WeatherListMainResponce?
     var weather : WeatherListWeatherResponce?
+    var dtTxt = String()
     required init?(map: Map) { }
 
     func mapping(map: Map) {
         dt <- map["dt"]
         main <- map["main"]
         weather <- map["weather"]
+        dtTxt <- map["dt_txt"]
     }
 }
 class WeatherCityResponce : Mappable {

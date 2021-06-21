@@ -34,6 +34,7 @@ class Global {
     var NewsListModell : [NewsResult]?
     var newsApiCheck = true
     var paymentModel : PaymentModel?
+    var jump  =  0
     
     
     

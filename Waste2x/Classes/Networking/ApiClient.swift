@@ -80,6 +80,11 @@ class APIClient: APIClientHandler {
         print("WeatherAPI",APIRoutes.weatherAPi)
         rawRequest(url: APIRoutes.weatherAPi, method: .get, parameters: params, headers: nil, completionBlock: completionBlock)
     }
+    func googleLocationPolyLineAPi( _ completionBlock: @escaping APIClientCompletionHandler) {
+        let params = [String:AnyObject]()
+        print("WeatherAPI",APIRoutes.weatherAPi)
+        rawRequest(url: APIRoutes.polyLineUrl, method: .get, parameters: params, headers: nil, completionBlock: completionBlock)
+    }
     func NewsApiCall(_ completionBlock: @escaping APIClientCompletionHandler) {
         let params = [String : AnyObject]()
         let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]

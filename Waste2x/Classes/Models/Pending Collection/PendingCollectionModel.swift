@@ -75,6 +75,7 @@ class PendingCollectionResultResponce : Mappable {
         frequency <- map["frequency"]
         scheduleDate <- map["schedule_date"]
         address <- map["address"]
+        history <- map["history"]
         
         
     }

@@ -29,7 +29,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0i-v2-AmC">
                         <rect key="frame" x="15" y="20" width="481" height="416"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fb-wb-fhU">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fb-wb-fhU" customClass="WKYTPlayerView">
                                 <rect key="frame" x="0.0" y="0.0" width="481" height="346"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -91,9 +91,8 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="descriptionLabel" destination="5R7-Qs-nH2" id="diS-YZ-2LQ"/>
-                <outlet property="playerView" destination="8fb-wb-fhU" id="BzR-Qf-Eig"/>
+                <outlet property="playerView" destination="8fb-wb-fhU" id="2Ui-pe-YCf"/>
                 <outlet property="titleLabel" destination="KVV-xx-IDy" id="GyW-FL-8Kj"/>
-                <outlet property="videoView" destination="8fb-wb-fhU" id="H0S-1r-r5i"/>
             </connections>
             <point key="canvasLocation" x="-58.695652173913047" y="116.51785714285714"/>
         </tableViewCell>

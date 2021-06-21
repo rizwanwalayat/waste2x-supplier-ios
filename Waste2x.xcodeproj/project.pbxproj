@@ -31,7 +31,7 @@
 		0067A322252AFC9E00CECA8C /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A314252AFC9E00CECA8C /* UIImage.swift */; };
 		0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A315252AFC9E00CECA8C /* UILabel.swift */; };
 		0067A324252AFC9E00CECA8C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A316252AFC9E00CECA8C /* UIFont.swift */; };
-		0067A33B252B91BA00CECA8C /* w.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0067A33A252B91BA00CECA8C /* w.xcassets */; };
+		0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0067A33A252B91BA00CECA8C /* Assets.xcassets */; };
 		04070D26267A19A700C93981 /* WasteDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04070D25267A19A700C93981 /* WasteDataModel.swift */; };
 		04070D29267A1FC400C93981 /* WasteDetialResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04070D27267A1FC400C93981 /* WasteDetialResult.swift */; };
 		041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041242AA266A05AE00EB1A3F /* DateExtenstion.swift */; };
@@ -184,6 +184,7 @@
 		1893756F266127F800D55A33 /* CurrentWasteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18937561266127F800D55A33 /* CurrentWasteViewController.xib */; };
 		189782FA265D3479008FD5E3 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189782F8265D3479008FD5E3 /* SideMenuViewController.swift */; };
 		189782FD265D35CF008FD5E3 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189782FC265D35CF008FD5E3 /* SideMenuViewController.xib */; };
+		18A7148E2680782000007ECB /* PolyLineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7148D2680782000007ECB /* PolyLineModel.swift */; };
 		18A849CD265E37A7008F77E8 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A849CB265E37A7008F77E8 /* WeatherCollectionViewCell.swift */; };
 		18A849D0265E411F008F77E8 /* WeatherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A849CF265E411F008F77E8 /* WeatherCollectionViewCell.xib */; };
 		18A849D7265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A849D5265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift */; };
@@ -234,7 +235,7 @@
 		0067A314252AFC9E00CECA8C /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		0067A315252AFC9E00CECA8C /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		0067A316252AFC9E00CECA8C /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
-		0067A33A252B91BA00CECA8C /* w.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = w.xcassets; sourceTree = "<group>"; };
+		0067A33A252B91BA00CECA8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04070D25267A19A700C93981 /* WasteDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDataModel.swift; sourceTree = "<group>"; };
 		04070D27267A1FC400C93981 /* WasteDetialResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasteDetialResult.swift; sourceTree = "<group>"; };
 		041242AA266A05AE00EB1A3F /* DateExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtenstion.swift; sourceTree = "<group>"; };
@@ -387,6 +388,7 @@
 		18937561266127F800D55A33 /* CurrentWasteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrentWasteViewController.xib; sourceTree = "<group>"; };
 		189782F8265D3479008FD5E3 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		189782FC265D35CF008FD5E3 /* SideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
+		18A7148D2680782000007ECB /* PolyLineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolyLineModel.swift; sourceTree = "<group>"; };
 		18A849CB265E37A7008F77E8 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		18A849CF265E411F008F77E8 /* WeatherCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherCollectionViewCell.xib; sourceTree = "<group>"; };
 		18A849D5265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteTypeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -466,6 +468,7 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				18A7148C2680780E00007ECB /* Tracking */,
 				184E8E46267C6ACD00EAD050 /* Pending Collection */,
 				04070D24267A197700C93981 /* Waste */,
 				047E76822679E8910055292A /* PickupSchedule */,
@@ -572,7 +575,7 @@
 			isa = PBXGroup;
 			children = (
 				18397E032660FF47003DE30C /* Foonts */,
-				0067A33A252B91BA00CECA8C /* w.xcassets */,
+				0067A33A252B91BA00CECA8C /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1222,6 +1225,14 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
+		18A7148C2680780E00007ECB /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				18A7148D2680782000007ECB /* PolyLineModel.swift */,
+			);
+			path = Tracking;
+			sourceTree = "<group>";
+		};
 		18A849C9265E36FF008F77E8 /* CollectionViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -1325,8 +1336,8 @@
 				0067A2B525274C0900CECA8C /* Frameworks */,
 				0067A2B625274C0900CECA8C /* Resources */,
 				1163EE37254AAA2E00D47148 /* ShellScript */,
-				E806D53081E4280022BFCD4E /* [CP] Embed Pods Frameworks */,
-				2D63D2564E4556372F481650 /* [CP] Copy Pods Resources */,
+				8FDD299B97C22457BDD6B87A /* [CP] Embed Pods Frameworks */,
+				518CF689A5DA2AAE4EE0EF45 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1424,7 +1435,7 @@
 				18397E1C2660FF54003DE30C /* Poppins-Medium.ttf in Resources */,
 				18A849D8265E48A0008F77E8 /* WasteTypeCollectionViewCell.xib in Resources */,
 				1893754A266127CB00D55A33 /* NotificationsViewController.xib in Resources */,
-				0067A33B252B91BA00CECA8C /* w.xcassets in Resources */,
+				0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */,
 				0428F1CE265BECB5007C51EE /* LoginInputEmailViewController.xib in Resources */,
 				18397E202660FF54003DE30C /* OFL.txt in Resources */,
 				18506D81265D45EB00018707 /* SideMenuItemsTableViewCell.xib in Resources */,
@@ -1471,7 +1482,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
-		2D63D2564E4556372F481650 /* [CP] Copy Pods Resources */ = {
+		518CF689A5DA2AAE4EE0EF45 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1510,7 +1521,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E806D53081E4280022BFCD4E /* [CP] Embed Pods Frameworks */ = {
+		8FDD299B97C22457BDD6B87A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1649,6 +1660,7 @@
 				0043453F254823FE009A6166 /* ApiResponseHandler.swift in Sources */,
 				04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */,
 				0067A31F252AFC9E00CECA8C /* UIViewController.swift in Sources */,
+				18A7148E2680782000007ECB /* PolyLineModel.swift in Sources */,
 				0428F1BF265B8EC5007C51EE /* LoginCodeVerificationViewController.swift in Sources */,
 				181025232657E33A00DEBF7D /* ContainerViewController.swift in Sources */,
 				1893754B266127CB00D55A33 /* NotificationsViewController.swift in Sources */,

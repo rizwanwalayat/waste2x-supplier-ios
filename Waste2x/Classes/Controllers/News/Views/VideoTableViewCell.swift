@@ -9,12 +9,13 @@
 import UIKit
 import AVFoundation
 import AVKit
+import YoutubePlayer_in_WKWebView
 
 class VideoTableViewCell: BaseTableViewCell {
-    @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var playerView: UIView!
+    @IBOutlet weak var playerView: WKYTPlayerView!
+    
     var player: AVPlayer!
     var playerViewController: AVPlayerViewController!
     override func awakeFromNib() {
@@ -32,8 +33,17 @@ class VideoTableViewCell: BaseTableViewCell {
         self.titleLabel.text = data.result[index].title
         self.descriptionLabel.text = self.dateCalculate(date: data.result[index].date_published)
         print(data.result[index].fileUrl)
-//        self.playerView.load(withVideoId: data.result[index].fileUrl);
+        self.playerView.load(withVideoId: data.result[index].fileUrl)
+        playerView.delegate = self
     }
     
     
+}
+
+
+extension VideoTableViewCell: WKYTPlayerViewDelegate{
+    func playerViewDidBecomeReady(_ playerView: WKYTPlayerView) {
+        
+//        playerView.playVideo()
+    }
 }

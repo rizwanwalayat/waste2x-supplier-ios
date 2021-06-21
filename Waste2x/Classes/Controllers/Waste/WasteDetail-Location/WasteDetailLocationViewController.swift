@@ -52,9 +52,11 @@ class WasteDetailLocationViewController: BaseViewController {
             constBottom.constant = tabbarViewHeight+15
             
         }
+        
         mapView.layer.cornerRadius = 36
         mapView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         mapView.layer.masksToBounds = true
+        mapView.clear()
         
     }
     

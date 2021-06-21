@@ -17,9 +17,38 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+
     }
-    func config()
+    func config(index:Int)
     {
+        
+
+        if Global.shared.jump < 40 {
+            self.dayLabel.text = dateCalculate(date: DataManager.shared.getWeather()?.list[Global.shared.jump].dtTxt ?? "")
+            let weatherTemp = DataManager.shared.getWeather()?.list[Global.shared.jump].main?.temp ?? 00
+            self.tempratureLabel.text = "\(weatherTemp.shortValue)°" + ""
+            Global.shared.jump = Global.shared.jump+8
+        }
+        
+        
+            
     }
+    func dateCalculate(date:String) -> String{
+        var DateForConvert = date
+        //APi date
+        if let dotRange = date.range(of: " ") {
+            DateForConvert.removeSubrange(dotRange.lowerBound..<DateForConvert.endIndex)
+        }
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd"
+
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "MMM d, yyyy"
+
+        let date: NSDate? = dateFormatterGet.date(from: DateForConvert) as NSDate?
+        return dateFormatterPrint.string(from: date! as Date)
+}
+    
+    
 
 }

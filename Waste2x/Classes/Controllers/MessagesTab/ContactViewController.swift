@@ -49,6 +49,11 @@ extension ContactViewController : UITableViewDelegate,UITableViewDataSource{
             globalObjectContainer?.tabbarHiddenView.isHidden = true
             self.navigationController?.pushViewController(vc, animated: true)
         }
+        if indexPath.row == 1{
+            let vc = TrackerViewController(nibName: "TrackerViewController", bundle: nil)
+            globalObjectContainer?.tabbarHiddenView.isHidden = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     
