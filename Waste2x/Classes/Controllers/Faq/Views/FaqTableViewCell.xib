@@ -88,13 +88,13 @@
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lPt-MN-9aY">
                                 <rect key="frame" x="12" y="312.5" width="435" height="0.5"/>
-                                <color key="backgroundColor" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="9Qw-1s-UBN"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lPt-MN-9aY" firstAttribute="leading" secondItem="suU-Ey-tl7" secondAttribute="leading" constant="12" id="2E5-x0-dYr"/>
                             <constraint firstAttribute="trailing" secondItem="vfE-e8-3AY" secondAttribute="trailing" constant="16" id="2Kv-1x-TSN"/>

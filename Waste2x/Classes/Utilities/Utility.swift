@@ -159,36 +159,29 @@ struct NetworkingConnection {
             view.removeFromSuperview()
         })
     }
-    
     @objc class func showLoading(offSet: CGFloat = 0, isVisible: Bool = true) {
-        
-        if let _ = kApplicationWindow?.viewWithTag(9000) {
-            return
-        }
+            
+            if let _ = kApplicationWindow?.viewWithTag(9000) {
+                return
+            }
 
-        let superView = UIView(frame: CGRect(x: 0, y: 0 - offSet, width: kApplicationWindow?.frame.width ?? 0.0, height: kApplicationWindow?.frame.height ?? 0.0))
-        let activityIndicator = NVActivityIndicatorView(frame: CGRect(x: superView.frame.width/2 - 32.5, y: superView.frame.height/2 - 32.5, width: 65, height: 65))
-        let iconImageView = UIImageView(frame: CGRect(x: superView.frame.width/2 - 32.5, y: superView.frame.height/2 - 32.5, width: 65, height: 65))
-        //iconImageView.image = #imageLiteral(resourceName: "loaderLogo")
-        
-        if isVisible {
-            superView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
-            activityIndicator.color = #colorLiteral(red: 0, green: 0.7189504504, blue: 0.9383158684, alpha: 1)
-        
-        } else {
-            superView.backgroundColor = .clear
-            activityIndicator.color = .clear
+            let superView = UIView(frame: CGRect(x: 0, y: 0 - offSet, width: kApplicationWindow?.frame.width ?? 0.0, height: kApplicationWindow?.frame.height ?? 0.0))
+            let iconImageView = UIImageView(frame: CGRect(x: superView.frame.width/2 - 32.5, y: superView.frame.height/2 - 32.5, width: 65, height: 65))
+            iconImageView.image = #imageLiteral(resourceName: "poultry")
+            
+            if isVisible {
+                superView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+            
+            } else {
+                superView.backgroundColor = .clear
+            }
+            
+            superView.tag = 9000
+            iconImageView.rotate()
+            superView.addSubview(iconImageView)
+            superView.bringSubviewToFront(iconImageView)
+            kApplicationWindow?.addSubview(superView)
         }
-        
-        superView.tag = 9000
-        activityIndicator.type = .circleStrokeSpin
-        activityIndicator.startAnimating()
-        superView.addSubview(iconImageView)
-        superView.addSubview(activityIndicator)
-        superView.bringSubviewToFront(activityIndicator)
-        superView.bringSubviewToFront(iconImageView)
-        kApplicationWindow?.addSubview(superView)
-    }
     
     @objc class func hideLoading() {
         if let activityView = kApplicationWindow?.viewWithTag(9000) {
@@ -293,4 +286,15 @@ struct NetworkingConnection {
         return decoded
     }
     
+}
+extension UIImageView {
+    
+    func rotate() {
+        let rotation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotation.toValue = NSNumber(value: Double.pi / 2)
+        rotation.duration = 1
+        rotation.isCumulative = true
+        rotation.repeatCount = Float.greatestFiniteMagnitude
+        self.layer.add(rotation, forKey: "rotationAnimation")
+    }
 }

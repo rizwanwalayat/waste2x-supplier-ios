@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FIC-ma-YrW">
-                        <rect key="frame" x="20" y="10" width="372" height="89"/>
+                        <rect key="frame" x="30" y="10" width="352" height="89"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGE-UQ-BpB">
                                 <rect key="frame" x="20" y="32" width="20" height="25"/>
@@ -35,7 +35,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuP-Nr-BD6">
-                                <rect key="frame" x="60" y="10" width="302" height="69"/>
+                                <rect key="frame" x="60" y="10" width="282" height="69"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -58,10 +58,10 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="FIC-ma-YrW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="6rg-vo-dvH"/>
+                    <constraint firstItem="FIC-ma-YrW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="6rg-vo-dvH"/>
                     <constraint firstItem="FIC-ma-YrW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Qfi-1j-0AT"/>
                     <constraint firstAttribute="bottom" secondItem="FIC-ma-YrW" secondAttribute="bottom" constant="10" id="TII-4W-A4v"/>
-                    <constraint firstAttribute="trailing" secondItem="FIC-ma-YrW" secondAttribute="trailing" constant="20" id="fO6-Kn-hNl"/>
+                    <constraint firstAttribute="trailing" secondItem="FIC-ma-YrW" secondAttribute="trailing" constant="30" id="fO6-Kn-hNl"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

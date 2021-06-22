@@ -54,9 +54,9 @@ Asked Questions</string>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FpN-gt-qF7">
                     <rect key="frame" x="0.0" y="180" width="375" height="572"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="zaN-ds-4o4">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="572"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="zaN-ds-4o4">
+                            <rect key="frame" x="15" y="0.0" width="345" height="572"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="YoB-sP-Jhd"/>
                                 <outlet property="delegate" destination="-1" id="qYh-YQ-shC"/>
@@ -66,9 +66,9 @@ Asked Questions</string>
                     <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="zaN-ds-4o4" firstAttribute="top" secondItem="FpN-gt-qF7" secondAttribute="top" id="EpO-AI-5i1"/>
-                        <constraint firstItem="zaN-ds-4o4" firstAttribute="leading" secondItem="FpN-gt-qF7" secondAttribute="leading" id="HJX-rB-H6h"/>
+                        <constraint firstItem="zaN-ds-4o4" firstAttribute="leading" secondItem="FpN-gt-qF7" secondAttribute="leading" constant="15" id="HJX-rB-H6h"/>
                         <constraint firstAttribute="bottom" secondItem="zaN-ds-4o4" secondAttribute="bottom" id="rPe-96-mL4"/>
-                        <constraint firstAttribute="trailing" secondItem="zaN-ds-4o4" secondAttribute="trailing" id="z9O-0r-hEb"/>
+                        <constraint firstAttribute="trailing" secondItem="zaN-ds-4o4" secondAttribute="trailing" constant="15" id="z9O-0r-hEb"/>
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FAQ Women" translatesAutoresizingMaskIntoConstraints="NO" id="ADF-5s-9lS">

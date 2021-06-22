@@ -20,6 +20,7 @@ class TrackerViewController: BaseViewController {
     var destinationLat = 31.4504
     var destinationLng = 73.1350
     var timer = Timer()
+    var ref: DatabaseReference!
     let geofireRef = Database.database().reference().child("dispatch_id")
     @IBOutlet weak var kmLabel: UILabel!
     @IBOutlet weak var mainView: UIView!
@@ -29,10 +30,9 @@ class TrackerViewController: BaseViewController {
     @IBOutlet weak var timeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        ref = Database.database().reference()
         initializeTheLocationManager()
-//        let geofireRef = Database.database().reference().child("dispatch_id")
-//
+
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +43,7 @@ class TrackerViewController: BaseViewController {
         globalObjectContainer?.tabbarHiddenView.isHidden = true
         
     }
+
     
     //MARK: - Functions
     
@@ -52,8 +53,34 @@ class TrackerViewController: BaseViewController {
             locationManager.startUpdatingLocation()
         
         }
+    func markerUpdate(s_lat : Double,s_lon:Double,d_lat:Double,d_lon:Double){
+
+        // MARK: Marker for source location
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: s_lat, longitude: s_lon)
+        marker.title = "Starting"
+        marker.icon = UIImage (named: "startmark")
+        
+                
+                
+        // MARK: Marker for destination location
+        let marker1 = GMSMarker()
+        marker1.position = CLLocationCoordinate2D(latitude: d_lat, longitude: d_lon)
+        marker1.title = "Ending"
+        marker1.icon = UIImage (named: "endmark")
+        
+        
+        DispatchQueue.main.async {
+            marker.map = self.mapView
+            marker1.map = self.mapView
+//            marker.map?.clear()
+//            marker1.map?.clear()
+//            mapView.clear()
+
+            }
+    }
     
-    func fetchDate(Starting : String,Ending : String,s_lat : Double,s_lon:Double,d_lat:Double,d_lon:Double)
+    func fetchDate(Starting : String,Ending : String)
     {   mapView.clear()
         print(Starting,Ending)
         APIRoutes.polyLineUrl = "https://maps.googleapis.com/maps/api/directions/json?origin=\(Starting)&destination=\(Ending)&mode=driving&key=\(googleAPIKey)"
@@ -69,8 +96,9 @@ class TrackerViewController: BaseViewController {
                 let points = item.overviewPolyline?.points
                 let path = GMSPath.init(fromEncodedPath: points ?? "")
                 let polyline = GMSPolyline.init(path: path)
-                polyline.strokeColor = .systemBlue
+                polyline.strokeColor = UIColor(named: "lineColor")!
                 polyline.strokeWidth = 5
+                polyline.geodesic = true
                 polyline.map = self.mapView
                 
             }
@@ -78,28 +106,10 @@ class TrackerViewController: BaseViewController {
             }
             
         }
-        // MARK: Marker for source location
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: s_lat, longitude: s_lon)
-        marker.title = "Starting"
-        marker.icon = UIImage (named: "startmark")
-        marker.map = self.mapView
-                
-                
-        // MARK: Marker for destination location
-        let marker1 = GMSMarker()
-        marker1.position = CLLocationCoordinate2D(latitude: d_lat, longitude: d_lon)
-        marker1.title = "Ending"
-        marker1.icon = UIImage (named: "endmark")
-        marker1.map = self.mapView
+
+    }
+    @objc func document(notification: Notification) {
         
-        
-        let camera = GMSCameraPosition(target: marker.position, zoom: 15)
-        
-        
-        DispatchQueue.main.async {
-                self.mapView.animate(to: camera)
-            }
     }
     
     //MARK: - IBOutlets
@@ -122,10 +132,51 @@ extension TrackerViewController:CLLocationManagerDelegate{
         self.currentLat = location.latitude
         self.currentLon = location.longitude
         self.currentLocation = "\(String(location.latitude)),\(String(location.longitude))"
-        self.fetchDate(Starting: self.currentLocation, Ending: self.endingLocation, s_lat: self.destinationLat, s_lon: self.destinationLng, d_lat: self.currentLat, d_lon: self.currentLon)
+        if Global.shared.latlngCheck{
+            self.fetchDate(Starting: self.currentLocation, Ending: self.endingLocation)
+            Global.shared.latlngCheck = false
+            let cam = GMSCameraPosition(latitude: self.destinationLat, longitude: self.destinationLng, zoom: 15)
+            DispatchQueue.main.async {
+                    self.mapView.animate(to: cam)
+                }
+            self.locationManager.startUpdatingLocation()
+            
+        }
+
+        
+        
+        markerUpdate(s_lat: self.destinationLat, s_lon: self.destinationLng, d_lat: self.currentLat, d_lon: self.currentLon)
+        
+        //MARK: - testing
+        let geoFire = GeoFire(firebaseRef: geofireRef)
+//                geoFire.setLocation(CLLocation(latitude: 35.7853889, longitude: -100.4056973), forKey: "50") { (error) in
+//                  if (error != nil) {
+//                    print("error")
+//                  } else {
+//                    print("Saved location successfully!")
+//                  }
+//                }
+        
+        
+        //MARK: - Geofire
+        
+        
+        
+
+        geoFire.getLocationForKey("12") { locationsss, error in
+            if error == nil {
+                self.destinationLat =  (locationsss?.coordinate.latitude)!
+                self.destinationLng =  (locationsss?.coordinate.longitude)!
+                self.endingLocation = "\((locationsss?.coordinate.latitude)!),\((locationsss?.coordinate.longitude)!)"
+                self.markerUpdate(s_lat: self.destinationLat, s_lon: self.destinationLng, d_lat: self.currentLat, d_lon: self.currentLon)
+            }
+        }
+        
+        
         self.locationManager.stopUpdatingLocation()
         
     }
+    
     
 }
 

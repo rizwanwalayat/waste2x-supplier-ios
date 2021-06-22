@@ -499,8 +499,6 @@
 				04E3D69A265D29330058528D /* Waste */,
 				0067A2DE2527549400CECA8C /* Onboarding */,
 				18C11A69265F9D3C00BC022F /* MessagesTab */,
-				18A849CA265E370B008F77E8 /* TableViews */,
-				18A849C9265E36FF008F77E8 /* CollectionViews */,
 				189782F7265D3466008FD5E3 /* SideMenu */,
 				1810252C2657E48500DEBF7D /* Tabs */,
 				181025202657E31B00DEBF7D /* Home */,
@@ -960,6 +958,8 @@
 		1810252C2657E48500DEBF7D /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				18A849CA265E370B008F77E8 /* TableViews */,
+				18A849C9265E36FF008F77E8 /* CollectionViews */,
 				1810252F2657E48500DEBF7D /* MessagesViewController.xib */,
 				181025312657E48500DEBF7D /* MessagesViewController.swift */,
 				181025352657E48500DEBF7D /* HomeViewController.xib */,

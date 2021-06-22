@@ -9,10 +9,11 @@
 import UIKit
 
 class SideMenuViewController: BaseViewController {
+    
+    
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var phoneNumberLabel: UILabel!
-    
     //MARK: - Variables
     var img = [#imageLiteral(resourceName: "Payment Icons"),#imageLiteral(resourceName: "Calendar")]
     var text = ["Payments","Schedule Pickup"]
@@ -22,8 +23,6 @@ class SideMenuViewController: BaseViewController {
     @IBOutlet weak var headerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
@@ -93,18 +92,20 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
 
 //MARK: - API call
 extension SideMenuViewController{
+    
+    
     func paymentApi(){
         PaymentModel.paymentApiFunction{ result, error, status,message in
             Global.shared.paymentModel = result
             if result?.result != nil{
                 if result?.result?.details_submitted == true {
                     let vc = CreatePaymentViewController(nibName: "CreatePaymentViewController", bundle: nil)
-                self.navigationController?.pushViewController(vc, animated: true)
+                    HomeViewController().navigationController?.pushViewController(vc, animated: true)
                     
                 }
                 else{
                     let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
-                    self.navigationController?.pushViewController(vc, animated: true)
+                    HomeViewController().navigationController?.pushViewController(vc, animated: true)
                 }
             }
             else{

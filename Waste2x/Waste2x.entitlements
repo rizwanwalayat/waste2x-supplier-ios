@@ -4,5 +4,9 @@
 <dict>
 	<key>aps-environment</key>
 	<string>development</string>
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>https://enmass-cache-programme.appspot.com/payment_method/stripe_return_for_app/*</string>
+	</array>
 </dict>
 </plist>

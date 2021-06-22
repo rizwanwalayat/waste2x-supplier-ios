@@ -9,7 +9,7 @@
 import UIKit
 
 class BaseNavigationViewController: UINavigationController {
-    weak var containerController : UIViewController?
+//    weak var containerController : UIViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true

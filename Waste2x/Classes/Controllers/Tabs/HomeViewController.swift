@@ -8,6 +8,10 @@
 import UIKit
 import Alamofire
 import ObjectMapper
+protocol PaymentDelegate {
+    func newPayment()
+    func exsitingPayment()
+}
 protocol WeatherCallDelegate {
     func Weather()
 }
@@ -36,20 +40,21 @@ class HomeViewController: BaseViewController{
     var supplierCell: SupplierTableViewCell?
     var weatherCount  = 5
     var delegate:WeatherCallDelegate?
+    var paymentDelegate:PaymentDelegate?
     var resultData : HomeResultDataModel?
     var fetchSitesData = [FetchSitesCustomModel]()
+    var index = 0
     
     //MARK: - AppCycle
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        
         print(Data?.auth_token ?? "")
         (UIApplication.shared.delegate as! AppDelegate).weaterCalldelegate = self
         bottomConst.constant = tabbarViewHeight
         globalObjectHome = self
         setAttributedTextInLable(emailAddress: DataManager.shared.getUser()?.result?.email ?? "")
-        let progressbarAdjustment = UIScreen.main.bounds.height / 222
+        let progressbarAdjustment = UIScreen.main.bounds.height / 200
         progressBar.transform = CGAffineTransform(scaleX: 1, y: progressbarAdjustment)
         collectionDataSourceDelegate(outlet: weatherCollectionView)
         collectionDataSourceDelegate(outlet: wasteTypeCollectionView)
@@ -68,18 +73,18 @@ class HomeViewController: BaseViewController{
         wasteTypeCollectionView.contentInset  = .zero
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
-        DispatchQueue.main.async {
-            self.tableViewHeight.constant = self.tableView.contentSize.height
-            self.view.layoutIfNeeded()
-        }
+//        DispatchQueue.main.async {
+//            self.tableViewHeight.constant = self.tableView.contentSize.height
+//            self.view.layoutIfNeeded()
+//        }
         
         fetchFarmsFromServer()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.weatherCollectionView.reloadData()
-        Global.shared.jump = 0
+//        self.weatherCollectionView.reloadData()
+//        Global.shared.jump = 0
 //        weatherCollectionView.reloadData()
 //        tableView.reloadData()
     }
@@ -88,6 +93,10 @@ class HomeViewController: BaseViewController{
 
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(true)
+        self.weatherCollectionView.reloadData()
+        Global.shared.jump = 0
+//        weatherCollectionView.reloadData()
+//        tableView.reloadData()
         self.navigationController?.navigationBar.isHidden = true
         globalObjectContainer?.tabbarHiddenView.isHidden = false
     }
@@ -228,6 +237,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
                 let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
                 cell.selectionStyle = .none
                 cell.pendingCOllectionConfig()
+                
                 return cell
             }
             else {
@@ -245,6 +255,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
             //tableViewHeight.constant = 400
             let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
             supplierCell = cell
+//            cell.config(resultData?.waste_type_questions?.waste_types?[self.index].share_icon_url ?? "")
             cell.selectionStyle = .none
             return cell
         }
@@ -284,28 +295,29 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         if scrollView != self.weatherCollectionView {
-            //let index = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
-            
             let currentCenteredPoint = CGPoint(x: scrollView.contentOffset.x + wasteTypeCollectionView.bounds.width, y: scrollView.contentOffset.y + wasteTypeCollectionView.bounds.height/2)
             if let cell = wasteTypeCollectionView.indexPathForItem(at: currentCenteredPoint) {
                 self.indicatorMarker.currentPage = cell.row - 1
+                self.index = cell.row - 1
+                tableView.reloadData()
             }
         }
     }
     
 }
-
+//MARK: - Navigation
 
 //MARK: - API calls
 extension HomeViewController: WeatherCallDelegate {
     
 
     func Weather() {
-        self.weatherCount = DataManager.shared.getWeather()?.list.count ?? 0
         Global.shared.jump = 0
         self.weatherCollectionView.reloadData()
         
     }
+    
+    
     
     
     func fetchFarmsFromServer()

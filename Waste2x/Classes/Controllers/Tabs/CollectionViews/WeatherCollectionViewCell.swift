@@ -44,9 +44,14 @@ class WeatherCollectionViewCell: UICollectionViewCell {
 
         let dateFormatterPrint = DateFormatter()
         dateFormatterPrint.dateFormat = "MMM d, yyyy"
-
-        let date: NSDate? = dateFormatterGet.date(from: DateForConvert) as NSDate?
-        return dateFormatterPrint.string(from: date! as Date)
+        
+        if let date: NSDate = dateFormatterGet.date(from: DateForConvert) as NSDate?{
+            return dateFormatterPrint.string(from: date  as Date)
+        }
+        else {
+            return ""
+        }
+        
 }
     
     

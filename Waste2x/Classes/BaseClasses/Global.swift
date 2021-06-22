@@ -35,6 +35,7 @@ class Global {
     var newsApiCheck = true
     var paymentModel : PaymentModel?
     var jump  =  0
+    var latlngCheck = true
     
     
     
