@@ -9,28 +9,9 @@
 import UIKit
 
 var kApplicationWindow = Utility.getAppDelegate()!.window
-var skipButtonTapped = false
-var retryButtonPressed = false
-var uiButtonColor = false
-var backButtonTapped = false
-var backOnRetryTapped = false
-var notificationButton = false
-var tapValidate = false
-var tapToCancel = false
 var googleAPIKey = "AIzaSyBp9ntlNiyAFvV8qxdXrBvBAOz_xasmvS0"
-var apiRequestObject: [String: String] = [:]
-
-enum PaymentMethod {
-    case paypal
-    case venmo
-    case creditCard
-}
 
 
-enum UserType: String {
-    case donor = "1"
-    case donee = "0"
-}
 
 
 struct APIRoutes {

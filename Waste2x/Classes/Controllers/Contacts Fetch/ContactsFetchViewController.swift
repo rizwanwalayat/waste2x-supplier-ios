@@ -11,10 +11,12 @@ import Contacts
 
 class ContactsFetchViewController: BaseViewController {
     var contacts = [CNContact]()
+    var abc = [CNLabeledValue<CNPhoneNumber>]()
     var tableViewIndex = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        globalObjectContainer?.tabbarHiddenView.isHidden = true
         let contactStore = CNContactStore()
         let keys = [
                 CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
@@ -28,19 +30,25 @@ class ContactsFetchViewController: BaseViewController {
                 // Array containing all unified contacts from everywhere
                 self.contacts.append(contact)
                 for phoneNumber in contact.phoneNumbers {
-                    if let number = phoneNumber.value as? CNPhoneNumber,
-                       let label = phoneNumber.label {
-                        let localizedLabel = CNLabeledValue<CNPhoneNumber>.localizedString(forLabel: label)
-                        print("\(contact.givenName) \(contact.familyName) tel:\(localizedLabel) -- \(number.stringValue), email: \(contact.emailAddresses)")
-                    }
+                    let number = phoneNumber.value
+                        print("\(contact.givenName) -- \(number.stringValue)")
                 }
-//                print(self.contacts)
             }
         } catch {
             print("unable to fetch contacts")
         }
         
     }
+    func contactPicker(picker: ContactsFetchViewController, didSelectContactProperty contactProperty: CNContactProperty) -> UIImage {
+       let contact = contactProperty.contact
+       if contact.imageDataAvailable {
+          // there is an image for this contact
+        return UIImage(data: contact.thumbnailImageData!)!
+          // Do what ever you want with the contact image below
+       }
+        return UIImage(named: "noor")!
+    }
+
 
 }
 extension ContactsFetchViewController : UITableViewDelegate,UITableViewDataSource{
@@ -50,8 +58,18 @@ extension ContactsFetchViewController : UITableViewDelegate,UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.register(ContactFetchTableViewCell.self, indexPath: indexPath)
-        cell.textLabel?.text = contacts[indexPath.row].givenName
-        let phone = contacts[indexPath.row]
+        
+
+
+        
+            cell.imgView?.image = contactPicker(picker: ContactsFetchViewController(), didSelectContactProperty: CNContactProperty())
+        cell.nameLabel.text = contacts[indexPath.row].givenName
+        for phoneNumber in contacts[indexPath.row].phoneNumbers {
+            let number = phoneNumber.value
+            cell.numberLabel.text = number.stringValue
+            print("\(contacts[indexPath.row].givenName) -- \(number.stringValue)")
+        }
+        
         cell.selectionStyle = .none
         return cell
         
@@ -59,6 +77,9 @@ extension ContactsFetchViewController : UITableViewDelegate,UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         self.tableViewIndex = indexPath.row
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        80
     }
     
 }

@@ -136,8 +136,8 @@ extension WasteDetailLocationViewController {
     {
         if Global.shared.apiCurve {
             
-            selectionData["phone"] = Data?.phone ?? ""
-            selectionData["email"] = Data?.email ?? ""
+            selectionData["phone"] = userData?.phone ?? ""
+            selectionData["email"] = userData?.email ?? ""
         }
         
         let postDict = selectionData as [String : AnyObject]

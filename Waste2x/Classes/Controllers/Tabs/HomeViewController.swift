@@ -49,7 +49,7 @@ class HomeViewController: BaseViewController{
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        print(Data?.auth_token ?? "")
+        print(userData?.auth_token ?? "")
         (UIApplication.shared.delegate as! AppDelegate).weaterCalldelegate = self
         bottomConst.constant = tabbarViewHeight
         globalObjectHome = self
@@ -284,12 +284,17 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         }
         else
         {
-            let text = "Invite Supplieer."
-            let textToShare = [ text ]
-            let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
-            activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
-            activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
-            self.present(activityViewController, animated: true, completion: nil)
+            
+//            let text = "Invite Supplieer."
+//            let textToShare = [ text ]
+//            let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+//            activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+//            activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
+            //            self.present(vc, animated: true, completion: nil)
+            let vc = InviteSupplierViewController(nibName: "InviteSupplierViewController", bundle: nil)
+            self.navigationController?.pushTo(controller: vc)
+            
+
         }
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -352,7 +357,7 @@ extension HomeViewController: WeatherCallDelegate {
         {
             let progress = Float(self.resultData!.percentage) / 100
             progressBar.setProgress(progress, animated: true)
-            self.setAttributedTextInLable(emailAddress: Data?.email ?? "")
+            self.setAttributedTextInLable(emailAddress: userData?.email ?? "")
             self.progressPointsLabel.text = "\(Int((DataManager.shared.getUser()?.result?.percentage ?? 0 )*100))/1000"
             tableView.reloadData()
             DispatchQueue.main.async {

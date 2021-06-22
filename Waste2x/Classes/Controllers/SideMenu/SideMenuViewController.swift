@@ -29,7 +29,7 @@ class SideMenuViewController: BaseViewController {
         headerView.layer.cornerRadius = 30
         headerView.layer.maskedCorners = [.layerMaxXMaxYCorner]
         headerView.layer.masksToBounds = true
-        self.phoneNumberLabel.text = self.Data?.phone
+        self.phoneNumberLabel.text = self.userData?.phone
         
     }
     //MARK: - Action Buttons

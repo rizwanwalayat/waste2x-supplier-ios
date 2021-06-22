@@ -26,6 +26,11 @@ class InviteSupplierViewController: BaseViewController {
         bottomConstraints.constant = tabbarViewHeight
         
     }
+    @IBAction func inviteAction(_ sender: Any) {
+        let vc = ContactsFetchViewController(nibName: "ContactsFetchViewController", bundle: nil)
+        self.navigationController?.pushTo(controller: vc)
+        
+    }
     
 
     
