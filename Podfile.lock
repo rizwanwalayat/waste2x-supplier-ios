@@ -77,6 +77,8 @@ PODS:
   - SDWebImage/Core (5.11.1)
   - SlideMenuControllerSwift (4.0.0)
   - StepIndicator (1.0.8)
+  - StepperView (1.6.6)
+  - TwilioChatClient (2.6.6)
   - youtube-ios-player-helper (0.1.6)
 
 DEPENDENCIES:
@@ -92,6 +94,8 @@ DEPENDENCIES:
   - SDWebImage (~> 5.0)
   - SlideMenuControllerSwift
   - StepIndicator (~> 1.0.8)
+  - StepperView (~> 1.6.6)
+  - TwilioChatClient (~> 2.6.6)
   - youtube-ios-player-helper (~> 0.1)
 
 SPEC REPOS:
@@ -116,6 +120,8 @@ SPEC REPOS:
     - SDWebImage
     - SlideMenuControllerSwift
     - StepIndicator
+    - StepperView
+    - TwilioChatClient
     - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
@@ -139,8 +145,10 @@ SPEC CHECKSUMS:
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
   StepIndicator: 748b293f671355b021253f82031ac002f153dc81
+  StepperView: a8b9fc8c18d9050090c900e9fe13c73ab8fe97b3
+  TwilioChatClient: 23168c2df8e306da1cedcad1d60ba69862235358
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: b447c4d9e1f7ba85439bbb411354701de03d1cf0
+PODFILE CHECKSUM: a40352f7d593544a1b90e54cd847a73e823d942d
 
 COCOAPODS: 1.10.1

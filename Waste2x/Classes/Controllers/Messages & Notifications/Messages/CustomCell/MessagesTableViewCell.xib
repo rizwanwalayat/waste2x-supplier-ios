@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,26 +17,23 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="300" id="KGk-i7-Jjw" customClass="MessagesTableViewCell" customModule="Waste2x" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="343" height="300"/>
+            <rect key="frame" x="0.0" y="0.0" width="534" height="300"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="343" height="300"/>
+                <rect key="frame" x="0.0" y="0.0" width="534" height="300"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3K-gd-b9s">
-                        <rect key="frame" x="20" y="6" width="303" height="288"/>
+                        <rect key="frame" x="87" y="6" width="427" height="288"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="08.31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHZ-mq-gHV">
-                                <rect key="frame" x="260" y="269" width="27" height="14"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="27" id="rgN-3n-jmz"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="08.31" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHZ-mq-gHV">
+                                <rect key="frame" x="15" y="128" width="396" height="155"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3v-oZ-9LS">
-                                <rect key="frame" x="20" y="15" width="220" height="258"/>
+                                <rect key="frame" x="20" y="15" width="387" height="98"/>
                                 <string key="text">Can you show me benefit of 
 supplying our waste into your apps?Can you show me benefit of supplying our waste into your apps?ssaashjfgsjkhfgjhsdgfhjsdagfjhgjhdsgfjhsgdsjhgfdshjgfjhsdgfjhgsdjhfsdjhafjhdsgfjhgsdjhfgjhsdgfjhsdgfgsdjhf</string>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
@@ -46,11 +44,44 @@ supplying our waste into your apps?Can you show me benefit of supplying our wast
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="a3v-oZ-9LS" firstAttribute="top" secondItem="g3K-gd-b9s" secondAttribute="top" constant="15" id="11j-NH-Dgy"/>
-                            <constraint firstAttribute="bottom" secondItem="a3v-oZ-9LS" secondAttribute="bottom" constant="15" id="6GD-eG-waf"/>
+                            <constraint firstItem="fHZ-mq-gHV" firstAttribute="leading" secondItem="g3K-gd-b9s" secondAttribute="leading" constant="15" id="7dy-rE-fAC"/>
                             <constraint firstAttribute="bottom" secondItem="fHZ-mq-gHV" secondAttribute="bottom" constant="5" id="EfL-uL-Tyi"/>
                             <constraint firstAttribute="trailing" secondItem="fHZ-mq-gHV" secondAttribute="trailing" constant="16" id="HWp-Lg-6hP"/>
-                            <constraint firstItem="fHZ-mq-gHV" firstAttribute="leading" secondItem="a3v-oZ-9LS" secondAttribute="trailing" constant="20" id="QsU-Gc-itx"/>
+                            <constraint firstItem="fHZ-mq-gHV" firstAttribute="top" secondItem="a3v-oZ-9LS" secondAttribute="bottom" constant="15" id="SOG-22-5kL"/>
                             <constraint firstItem="a3v-oZ-9LS" firstAttribute="leading" secondItem="g3K-gd-b9s" secondAttribute="leading" constant="20" id="VsV-Ky-zKb"/>
+                            <constraint firstAttribute="trailing" secondItem="a3v-oZ-9LS" secondAttribute="trailing" constant="20" id="ddV-pp-IFn"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5PO-it-m4B" userLabel="ReceiverView">
+                        <rect key="frame" x="20" y="6" width="427" height="288"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="08.31" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUA-LP-QTg">
+                                <rect key="frame" x="16" y="50" width="395" height="233"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
+                                <color key="textColor" name="bgColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Can you show " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iww-az-HJV">
+                                <rect key="frame" x="20" y="15" width="387" height="20"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="themeColor"/>
+                        <constraints>
+                            <constraint firstItem="IUA-LP-QTg" firstAttribute="top" secondItem="Iww-az-HJV" secondAttribute="bottom" constant="15" id="6cv-bf-b16"/>
+                            <constraint firstAttribute="trailing" secondItem="IUA-LP-QTg" secondAttribute="trailing" constant="16" id="MbU-vp-Kcd"/>
+                            <constraint firstAttribute="bottom" secondItem="IUA-LP-QTg" secondAttribute="bottom" constant="5" id="chi-Ob-Tfd"/>
+                            <constraint firstItem="Iww-az-HJV" firstAttribute="leading" secondItem="5PO-it-m4B" secondAttribute="leading" constant="20" id="cvS-Zj-lHY"/>
+                            <constraint firstAttribute="trailing" secondItem="Iww-az-HJV" secondAttribute="trailing" constant="20" id="ezF-Ba-UfJ"/>
+                            <constraint firstItem="Iww-az-HJV" firstAttribute="top" secondItem="5PO-it-m4B" secondAttribute="top" constant="15" id="qiG-tH-y4U"/>
+                            <constraint firstItem="IUA-LP-QTg" firstAttribute="leading" secondItem="5PO-it-m4B" secondAttribute="leading" constant="16" id="vjY-NM-cd4"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -61,22 +92,37 @@ supplying our waste into your apps?Can you show me benefit of supplying our wast
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="g3K-gd-b9s" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="8N0-C9-CAG"/>
                     <constraint firstAttribute="bottom" secondItem="g3K-gd-b9s" secondAttribute="bottom" constant="6" id="OPT-Ed-Qlw"/>
+                    <constraint firstItem="5PO-it-m4B" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="RZO-Vq-ar3"/>
                     <constraint firstItem="g3K-gd-b9s" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="dpX-vH-Ome"/>
+                    <constraint firstAttribute="bottom" secondItem="5PO-it-m4B" secondAttribute="bottom" constant="6" id="mjW-FZ-Pyc"/>
+                    <constraint firstItem="5PO-it-m4B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="rHe-hG-Z2O"/>
                     <constraint firstAttribute="trailing" secondItem="g3K-gd-b9s" secondAttribute="trailing" constant="20" id="xMU-r2-Q5r"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="5PO-it-m4B" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" multiplier="0.8" id="Qla-ny-mOl"/>
+                <constraint firstItem="g3K-gd-b9s" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" multiplier="0.8" id="jrr-JW-XFa"/>
+            </constraints>
             <connections>
                 <outlet property="mainHolderview" destination="g3K-gd-b9s" id="8PK-kz-wzE"/>
                 <outlet property="messageLabel" destination="a3v-oZ-9LS" id="5jB-Wg-gUv"/>
+                <outlet property="receiverHolderView" destination="5PO-it-m4B" id="FPD-TC-TV8"/>
+                <outlet property="receiverMessageLabel" destination="Iww-az-HJV" id="HYY-9L-B1L"/>
+                <outlet property="receiverTimeLabel" destination="IUA-LP-QTg" id="4Q9-b5-GZn"/>
                 <outlet property="timeLabel" destination="fHZ-mq-gHV" id="uC6-vT-gGL"/>
             </connections>
-            <point key="canvasLocation" x="109.42028985507247" y="156.69642857142856"/>
+            <point key="canvasLocation" x="247.82608695652175" y="156.69642857142856"/>
         </tableViewCell>
     </objects>
     <resources>
+        <namedColor name="bgColor">
+            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="0.92799997329711914" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="themeColor">
+            <color red="0.45899999141693115" green="0.57999998331069946" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

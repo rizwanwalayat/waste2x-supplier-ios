@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,6 +22,8 @@
             <connections>
                 <outlet property="constHeightMessagesTextView" destination="9l2-rT-nwr" id="tpG-vt-0JX"/>
                 <outlet property="enterMessageTextView" destination="wfi-v1-Owi" id="MpZ-Wu-CWO"/>
+                <outlet property="sendIndicator" destination="lJv-mR-1ax" id="Nmx-LG-8TK"/>
+                <outlet property="sendbutton" destination="y21-us-C4N" id="2kR-wC-5gn"/>
                 <outlet property="tableViewMessages" destination="3Va-3t-tbD" id="Gc6-vr-NHI"/>
                 <outlet property="titleLabel" destination="myO-oj-yNZ" id="nvw-to-UrK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -32,13 +35,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2s-Pz-XU8" userLabel="HeaderView">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="101.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G6I-Va-BeY">
-                            <rect key="frame" x="0.0" y="44" width="414" height="57.5"/>
+                            <rect key="frame" x="0.0" y="44" width="414" height="53"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuV-3x-VKW">
-                                    <rect key="frame" x="30" y="18" width="22" height="22"/>
+                                    <rect key="frame" x="30" y="15.5" width="22" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="IuV-3x-VKW" secondAttribute="height" multiplier="1:1" id="LB6-Yb-Y8V"/>
                                         <constraint firstAttribute="height" constant="22" id="xSg-X5-lQP"/>
@@ -49,7 +52,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myO-oj-yNZ">
-                                    <rect key="frame" x="153" y="16" width="108.5" height="25.5"/>
+                                    <rect key="frame" x="158.5" y="16" width="97.5" height="21"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -73,11 +76,15 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFD-7O-eVd">
-                    <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
+                    <rect key="frame" x="0.0" y="97" width="414" height="799"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMb-kr-q2u">
-                            <rect key="frame" x="18" y="716.5" width="378" height="58"/>
+                            <rect key="frame" x="18" y="721" width="378" height="58"/>
                             <subviews>
+                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="lJv-mR-1ax">
+                                    <rect key="frame" x="339" y="19" width="20" height="20"/>
+                                    <color key="color" name="themeColor"/>
+                                </activityIndicatorView>
                                 <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y21-us-C4N">
                                     <rect key="frame" x="324" y="4" width="50" height="50"/>
                                     <constraints>
@@ -109,8 +116,10 @@
                                 <constraint firstItem="y21-us-C4N" firstAttribute="leading" secondItem="wfi-v1-Owi" secondAttribute="trailing" constant="12" id="8fW-K4-2hD"/>
                                 <constraint firstItem="wfi-v1-Owi" firstAttribute="top" secondItem="rMb-kr-q2u" secondAttribute="top" constant="12" id="9Of-Bz-JQg"/>
                                 <constraint firstAttribute="bottom" secondItem="wfi-v1-Owi" secondAttribute="bottom" constant="12" id="GYX-CZ-HRs"/>
-                                <constraint firstItem="y21-us-C4N" firstAttribute="centerY" secondItem="rMb-kr-q2u" secondAttribute="centerY" id="fTm-A2-c34"/>
+                                <constraint firstItem="lJv-mR-1ax" firstAttribute="centerY" secondItem="y21-us-C4N" secondAttribute="centerY" id="glc-kc-USV"/>
+                                <constraint firstAttribute="bottom" secondItem="y21-us-C4N" secondAttribute="bottom" constant="4" id="tpn-7b-Rwn"/>
                                 <constraint firstItem="wfi-v1-Owi" firstAttribute="leading" secondItem="rMb-kr-q2u" secondAttribute="leading" constant="12" id="vH2-x2-ebZ"/>
+                                <constraint firstItem="lJv-mR-1ax" firstAttribute="centerX" secondItem="y21-us-C4N" secondAttribute="centerX" id="wJz-oC-y3Q"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -119,7 +128,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Va-3t-tbD">
-                            <rect key="frame" x="0.0" y="26" width="414" height="670.5"/>
+                            <rect key="frame" x="0.0" y="26" width="414" height="675"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -158,6 +167,9 @@
     <resources>
         <image name="Arrow Left" width="10" height="18"/>
         <image name="Send" width="56" height="56"/>
+        <namedColor name="themeColor">
+            <color red="0.45899999141693115" green="0.57999998331069946" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

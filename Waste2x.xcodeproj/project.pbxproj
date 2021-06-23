@@ -35,6 +35,9 @@
 		04070D26267A19A700C93981 /* WasteDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04070D25267A19A700C93981 /* WasteDataModel.swift */; };
 		04070D29267A1FC400C93981 /* WasteDetialResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04070D27267A1FC400C93981 /* WasteDetialResult.swift */; };
 		041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041242AA266A05AE00EB1A3F /* DateExtenstion.swift */; };
+		0418C8F7267C7B9C008A0F1F /* ChatMessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418C8F6267C7B9C008A0F1F /* ChatMessagesViewModel.swift */; };
+		0418C8FA267C7D67008A0F1F /* MessagesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418C8F9267C7D67008A0F1F /* MessagesDataModel.swift */; };
+		0418C8FC267C8C15008A0F1F /* MessagesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418C8FB267C8C15008A0F1F /* MessagesResult.swift */; };
 		041D40D126772A65003A0039 /* CreateSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D40CF26772A65003A0039 /* CreateSite.swift */; };
 		041D40D226772A65003A0039 /* CreateSiteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D40D026772A65003A0039 /* CreateSiteResult.swift */; };
 		0428F1BF265B8EC5007C51EE /* LoginCodeVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1BD265B8EC5007C51EE /* LoginCodeVerificationViewController.swift */; };
@@ -63,6 +66,7 @@
 		0463F2E6266E29F300E8924D /* ChatMessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0463F2E4266E29F300E8924D /* ChatMessagesViewController.xib */; };
 		046528032668F694005F3FB0 /* CalenderPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046528012668F694005F3FB0 /* CalenderPopupViewController.swift */; };
 		046528042668F694005F3FB0 /* CalenderPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046528022668F694005F3FB0 /* CalenderPopupViewController.xib */; };
+		047DA71B26809635009D0B02 /* TwillioChatDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DA71A26809635009D0B02 /* TwillioChatDataModel.swift */; };
 		047E76842679E8A90055292A /* PickupScheduleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E76832679E8A90055292A /* PickupScheduleDataModel.swift */; };
 		048582C02667BEC70077B42E /* ScheduleOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */; };
 		048582C12667BEC70077B42E /* ScheduleOptionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */; };
@@ -238,6 +242,9 @@
 		04070D25267A19A700C93981 /* WasteDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDataModel.swift; sourceTree = "<group>"; };
 		04070D27267A1FC400C93981 /* WasteDetialResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasteDetialResult.swift; sourceTree = "<group>"; };
 		041242AA266A05AE00EB1A3F /* DateExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtenstion.swift; sourceTree = "<group>"; };
+		0418C8F6267C7B9C008A0F1F /* ChatMessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessagesViewModel.swift; sourceTree = "<group>"; };
+		0418C8F9267C7D67008A0F1F /* MessagesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesDataModel.swift; sourceTree = "<group>"; };
+		0418C8FB267C8C15008A0F1F /* MessagesResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesResult.swift; sourceTree = "<group>"; };
 		041D40CF26772A65003A0039 /* CreateSite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSite.swift; sourceTree = "<group>"; };
 		041D40D026772A65003A0039 /* CreateSiteResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSiteResult.swift; sourceTree = "<group>"; };
 		0428F1BD265B8EC5007C51EE /* LoginCodeVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCodeVerificationViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +274,7 @@
 		0463F2E4266E29F300E8924D /* ChatMessagesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatMessagesViewController.xib; sourceTree = "<group>"; };
 		046528012668F694005F3FB0 /* CalenderPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderPopupViewController.swift; sourceTree = "<group>"; };
 		046528022668F694005F3FB0 /* CalenderPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalenderPopupViewController.xib; sourceTree = "<group>"; };
+		047DA71A26809635009D0B02 /* TwillioChatDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwillioChatDataModel.swift; sourceTree = "<group>"; };
 		047E76832679E8A90055292A /* PickupScheduleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupScheduleDataModel.swift; sourceTree = "<group>"; };
 		048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleOptionsTableViewCell.xib; sourceTree = "<group>"; };
@@ -468,6 +476,7 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0418C8F8267C7D34008A0F1F /* Messages */,
 				184E8E46267C6ACD00EAD050 /* Pending Collection */,
 				04070D24267A197700C93981 /* Waste */,
 				047E76822679E8910055292A /* PickupSchedule */,
@@ -640,6 +649,24 @@
 			path = Schedule;
 			sourceTree = "<group>";
 		};
+		0418C8F5267C7B89008A0F1F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0418C8F6267C7B9C008A0F1F /* ChatMessagesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0418C8F8267C7D34008A0F1F /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				0418C8F9267C7D67008A0F1F /* MessagesDataModel.swift */,
+				0418C8FB267C8C15008A0F1F /* MessagesResult.swift */,
+				047DA71A26809635009D0B02 /* TwillioChatDataModel.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
 		041D40CE26772A27003A0039 /* CreateSiteDM */ = {
 			isa = PBXGroup;
 			children = (
@@ -713,6 +740,7 @@
 		0463F2E2266E29E200E8924D /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				0418C8F5267C7B89008A0F1F /* ViewModel */,
 				0463F2E3266E29F300E8924D /* ChatMessagesViewController.swift */,
 				0463F2E4266E29F300E8924D /* ChatMessagesViewController.xib */,
 				04340E93266E437700B5F87C /* CustomCell */,
@@ -1552,6 +1580,7 @@
 				181025282657E36500DEBF7D /* Global.swift in Sources */,
 				1889607F266E289800061783 /* SupplyDetailTableViewCell.swift in Sources */,
 				18719141266667420050FAAA /* AudioTableViewCell.swift in Sources */,
+				0418C8FC267C8C15008A0F1F /* MessagesResult.swift in Sources */,
 				18397DCD2660FD35003DE30C /* LoginViewModel.swift in Sources */,
 				04E6104926725422001E6629 /* Options.swift in Sources */,
 				18666B2326666175005C1A78 /* VideoTableViewCell.swift in Sources */,
@@ -1565,6 +1594,7 @@
 				04C2361C2669224600A27B78 /* Array.swift in Sources */,
 				1850CEF9265E5491001F5E92 /* SupplierTableViewCell.swift in Sources */,
 				0067A2E32529D2CD00CECA8C /* Utility.swift in Sources */,
+				0418C8FA267C7D67008A0F1F /* MessagesDataModel.swift in Sources */,
 				187D756F266E0816007811C4 /* SupplyingTypeViewController.swift in Sources */,
 				1869A1BB267788C400BD3612 /* BaseTableViewCell.swift in Sources */,
 				0428F1C6265BC9EC007C51EE /* UINavigationController.swift in Sources */,
@@ -1598,10 +1628,12 @@
 				0067A31C252AFC9E00CECA8C /* UITextField.swift in Sources */,
 				1869A1BD26778A1F00BD3612 /* BaseCollectionViewCell.swift in Sources */,
 				18506D80265D45EB00018707 /* SideMenuItemsTableViewCell.swift in Sources */,
+				0418C8F7267C7B9C008A0F1F /* ChatMessagesViewModel.swift in Sources */,
 				0067A2BC25274C0900CECA8C /* AppDelegate.swift in Sources */,
 				181025402657E48500DEBF7D /* FaqViewController.swift in Sources */,
 				1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */,
 				043F6BF7267776A2000E3C4F /* HomeOptions.swift in Sources */,
+				047DA71B26809635009D0B02 /* TwillioChatDataModel.swift in Sources */,
 				0067A2E62529D52B00CECA8C /* Constants.swift in Sources */,
 				0067A317252AFC9E00CECA8C /* UITableView.swift in Sources */,
 				0463F2DE266E08CC00E8924D /* RewardViewController.swift in Sources */,
