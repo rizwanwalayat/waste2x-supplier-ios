@@ -32,10 +32,10 @@ class MessagesDataModel : Mappable
     }
     
     
-    class func fetchTwillioAccessToken(params : [String:AnyObject], _ completion: @escaping MessagesCompletionHandler) {
+    class func fetchTwillioAccessToken(_ completion: @escaping MessagesCompletionHandler) {
         
         Utility.showLoading()
-        APIClient.shared.fetchTwillioAccessToken(params: params, { result, error, success, message in
+        APIClient.shared.fetchTwillioAccessToken( { result, error, success, message in
             
             Utility.hideLoading()
             

@@ -66,6 +66,7 @@
 		0463F2E6266E29F300E8924D /* ChatMessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0463F2E4266E29F300E8924D /* ChatMessagesViewController.xib */; };
 		046528032668F694005F3FB0 /* CalenderPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046528012668F694005F3FB0 /* CalenderPopupViewController.swift */; };
 		046528042668F694005F3FB0 /* CalenderPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046528022668F694005F3FB0 /* CalenderPopupViewController.xib */; };
+		047DA71B26809635009D0B02 /* TwillioChatDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DA71A26809635009D0B02 /* TwillioChatDataModel.swift */; };
 		047E76842679E8A90055292A /* PickupScheduleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E76832679E8A90055292A /* PickupScheduleDataModel.swift */; };
 		048582C02667BEC70077B42E /* ScheduleOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */; };
 		048582C12667BEC70077B42E /* ScheduleOptionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */; };
@@ -272,6 +273,7 @@
 		0463F2E4266E29F300E8924D /* ChatMessagesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatMessagesViewController.xib; sourceTree = "<group>"; };
 		046528012668F694005F3FB0 /* CalenderPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderPopupViewController.swift; sourceTree = "<group>"; };
 		046528022668F694005F3FB0 /* CalenderPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalenderPopupViewController.xib; sourceTree = "<group>"; };
+		047DA71A26809635009D0B02 /* TwillioChatDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwillioChatDataModel.swift; sourceTree = "<group>"; };
 		047E76832679E8A90055292A /* PickupScheduleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupScheduleDataModel.swift; sourceTree = "<group>"; };
 		048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleOptionsTableViewCell.xib; sourceTree = "<group>"; };
@@ -662,6 +664,7 @@
 			children = (
 				0418C8F9267C7D67008A0F1F /* MessagesDataModel.swift */,
 				0418C8FB267C8C15008A0F1F /* MessagesResult.swift */,
+				047DA71A26809635009D0B02 /* TwillioChatDataModel.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -1628,6 +1631,7 @@
 				181025402657E48500DEBF7D /* FaqViewController.swift in Sources */,
 				1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */,
 				043F6BF7267776A2000E3C4F /* HomeOptions.swift in Sources */,
+				047DA71B26809635009D0B02 /* TwillioChatDataModel.swift in Sources */,
 				0067A2E62529D52B00CECA8C /* Constants.swift in Sources */,
 				0067A317252AFC9E00CECA8C /* UITableView.swift in Sources */,
 				0463F2DE266E08CC00E8924D /* RewardViewController.swift in Sources */,

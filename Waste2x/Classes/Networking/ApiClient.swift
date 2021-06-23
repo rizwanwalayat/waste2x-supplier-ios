@@ -191,14 +191,14 @@ class APIClient: APIClientHandler {
     }
     
     
-    func fetchTwillioAccessToken(params : [String: AnyObject], _ completionBlock: @escaping APIClientCompletionHandler)
+    func fetchTwillioAccessToken(_ completionBlock: @escaping APIClientCompletionHandler)
     {
         let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
         
         print("fetchTwillioAccessToken : \(headers)")
-        let phone = params["identity"] as! String
+        let phone = DataManager.shared.getUser()?.result?.phone ?? ""
         let url = "paudapay_us/fetch_twilio_access_token/identity=\(phone)"
-        _ = sendRequest(url , parameters: params ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+        _ = sendRequest(url , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
 }
 
