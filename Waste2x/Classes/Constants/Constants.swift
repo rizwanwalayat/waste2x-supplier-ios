@@ -40,6 +40,7 @@ struct APIRoutes {
     static var wasteDetailData = "paudapay_us/details/"
     static var wasteDetailImageUpload = baseUrl + "paudapay_us/save_user_activity/"
     static var wasteDetailSizeUpdate = "paudapay_us/update_site/"
+    static var wasteDetailLocationUpdate = "paudapay_us/update_farm_address/"
     static var paymentUrl = "paudapay_us/payments"
     static var createPaymentUrl = "payment_method/api_create_stripe"
     static var notificationUrl = "paudapay_us/fetch_notifications/"

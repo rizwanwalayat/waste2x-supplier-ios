@@ -3,6 +3,7 @@ import Foundation
 import ObjectMapper
 
 class ResultSiteCreation : Mappable {
+    var farmName = ""
 	var user = -1
 	var waste_id = -1
 	var farmer_medals = ""
@@ -16,6 +17,7 @@ class ResultSiteCreation : Mappable {
 
 	func mapping(map: Map) {
 
+        farmName <- map["farm_name"]
 		user <- map["user"]
 		waste_id <- map["waste_id"]
 		farmer_medals <- map["farmer_medals"]

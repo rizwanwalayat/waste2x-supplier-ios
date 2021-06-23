@@ -92,6 +92,8 @@ class ScheduleViewController: BaseViewController {
         super.viewDidLoad()
         
         sitesData = globalObjectHome?.fetchSitesData ?? [FetchSitesCustomModel]()
+        selectionType = .onePickup
+        pickupTypeHandlings(selectionType: selectionType)
         self.view.layoutIfNeeded()
         
     }

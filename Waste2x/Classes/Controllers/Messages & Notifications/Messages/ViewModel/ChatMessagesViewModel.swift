@@ -37,13 +37,13 @@ extension ChatMessagesViewController{
                     }
                     else
                     {
-                        Utility.showAlertController(self, "Faild!, \(message)")
+                        Utility.showAlertController(self, "Failed!, \(message)")
                     }
                     
                 }
                 else
                 {
-                    Utility.showAlertController(self, "Faild!, \(message)")
+                    Utility.showAlertController(self, "Failed!, \(message)")
                 }
             }
         }
@@ -68,7 +68,7 @@ extension ChatMessagesViewController{
                 }
                 else
                 {
-                    Utility.showAlertController(self, "Faild!, \(message)")
+                    Utility.showAlertController(self, "Failed!, \(message)")
                 }
                 
             }

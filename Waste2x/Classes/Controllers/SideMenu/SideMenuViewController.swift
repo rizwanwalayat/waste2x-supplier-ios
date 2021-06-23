@@ -97,23 +97,8 @@ extension SideMenuViewController{
     func paymentApi(){
         PaymentModel.paymentApiFunction{ result, error, status,message in
             Global.shared.paymentModel = result
-            if result?.result != nil{
-                if result?.result?.details_submitted == true {
-                    let vc = CreatePaymentViewController(nibName: "CreatePaymentViewController", bundle: nil)
-                    HomeViewController().navigationController?.pushViewController(vc, animated: true)
-                    
-                }
-                else{
-                    let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
-                    HomeViewController().navigationController?.pushViewController(vc, animated: true)
-                }
-            }
-            else{
-                let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-            
-
+            let objectDict = ["result" : result]
+            NotificationCenter.default.post(name: Notification.Name("NavigateToPayment"), object: nil, userInfo: objectDict as [AnyHashable : Any])
         }
     }
 }

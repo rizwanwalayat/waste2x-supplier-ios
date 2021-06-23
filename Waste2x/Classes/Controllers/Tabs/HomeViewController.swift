@@ -88,9 +88,48 @@ class HomeViewController: BaseViewController{
 //        Global.shared.jump = 0
 //        weatherCollectionView.reloadData()
 //        tableView.reloadData()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.pushToPaymentScreen(notification:)),
+            name: Notification.Name("NavigateToPayment"),
+            object: nil)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self)
+    }
     
+    @objc private func pushToPaymentScreen(notification: NSNotification){
+        
+        if let slideMenuController = self.slideMenuController() {
+            slideMenuController.closeLeft()
+        }
+        
+        if let object = notification.userInfo {
+            if let result = object["result"] as? PaymentModel
+            {
+                if result.result != nil{
+                    
+                    if result.result?.details_submitted == true {
+                        let vc = CreatePaymentViewController(nibName: "CreatePaymentViewController", bundle: nil)
+                        self.navigationController?.pushViewController(vc, animated: true)
+                        
+                    }
+                    else{
+                        let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                }
+                else{
+                    let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
+        }
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(true)

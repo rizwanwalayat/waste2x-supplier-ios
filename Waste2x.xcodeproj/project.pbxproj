@@ -67,6 +67,11 @@
 		046528042668F694005F3FB0 /* CalenderPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046528022668F694005F3FB0 /* CalenderPopupViewController.xib */; };
 		047DA71B26809635009D0B02 /* TwillioChatDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DA71A26809635009D0B02 /* TwillioChatDataModel.swift */; };
 		047E76842679E8A90055292A /* PickupScheduleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E76832679E8A90055292A /* PickupScheduleDataModel.swift */; };
+		047E83D1268320FA006A0F18 /* WasteDetailLocationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E83D0268320FA006A0F18 /* WasteDetailLocationDataModel.swift */; };
+		047E83D8268338DD006A0F18 /* LocationPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047E83D3268338DD006A0F18 /* LocationPickerViewController.xib */; };
+		047E83D9268338DD006A0F18 /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E83D4268338DD006A0F18 /* LocationPickerViewController.swift */; };
+		047E83DA268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E83D6268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.swift */; };
+		047E83DB268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047E83D7268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.xib */; };
 		048582C02667BEC70077B42E /* ScheduleOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */; };
 		048582C12667BEC70077B42E /* ScheduleOptionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */; };
 		048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C09E6265E2265003E301F /* ImagePickerVC.swift */; };
@@ -276,6 +281,11 @@
 		046528022668F694005F3FB0 /* CalenderPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalenderPopupViewController.xib; sourceTree = "<group>"; };
 		047DA71A26809635009D0B02 /* TwillioChatDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwillioChatDataModel.swift; sourceTree = "<group>"; };
 		047E76832679E8A90055292A /* PickupScheduleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupScheduleDataModel.swift; sourceTree = "<group>"; };
+		047E83D0268320FA006A0F18 /* WasteDetailLocationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDetailLocationDataModel.swift; sourceTree = "<group>"; };
+		047E83D3268338DD006A0F18 /* LocationPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationPickerViewController.xib; sourceTree = "<group>"; };
+		047E83D4268338DD006A0F18 /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
+		047E83D6268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleLocationAutoCompleteTableViewCell.swift; sourceTree = "<group>"; };
+		047E83D7268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoogleLocationAutoCompleteTableViewCell.xib; sourceTree = "<group>"; };
 		048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleOptionsTableViewCell.xib; sourceTree = "<group>"; };
 		048C09E6265E2265003E301F /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
@@ -633,6 +643,7 @@
 				04070D25267A19A700C93981 /* WasteDataModel.swift */,
 				04070D27267A1FC400C93981 /* WasteDetialResult.swift */,
 				04361BD2267B5BFA008209D4 /* WasteDetailResultImageUpload.swift */,
+				047E83D0268320FA006A0F18 /* WasteDetailLocationDataModel.swift */,
 			);
 			path = Waste;
 			sourceTree = "<group>";
@@ -764,6 +775,25 @@
 			path = PickupSchedule;
 			sourceTree = "<group>";
 		};
+		047E83D2268338DC006A0F18 /* LocationPicker */ = {
+			isa = PBXGroup;
+			children = (
+				047E83D3268338DD006A0F18 /* LocationPickerViewController.xib */,
+				047E83D4268338DD006A0F18 /* LocationPickerViewController.swift */,
+				047E83D5268338DD006A0F18 /* cell */,
+			);
+			path = LocationPicker;
+			sourceTree = "<group>";
+		};
+		047E83D5268338DD006A0F18 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				047E83D6268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.swift */,
+				047E83D7268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		048582BD2667BEAB0077B42E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -787,6 +817,7 @@
 			children = (
 				048C09E6265E2265003E301F /* ImagePickerVC.swift */,
 				04629D2526664D86008A6A3A /* CustomProgressbar.swift */,
+				047E83D2268338DC006A0F18 /* LocationPicker */,
 			);
 			path = CommonClasses;
 			sourceTree = "<group>";
@@ -1420,6 +1451,7 @@
 				04C54DC3266F571500DE4F05 /* AmountWasteViewController.xib in Resources */,
 				186CD719266610C600A1F30F /* CreatePaymentViewController.xib in Resources */,
 				0463F2E6266E29F300E8924D /* ChatMessagesViewController.xib in Resources */,
+				047E83DB268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.xib in Resources */,
 				18397E272660FF54003DE30C /* Poppins-Italic.ttf in Resources */,
 				18937548266127CB00D55A33 /* NotificationsTableViewCell.xib in Resources */,
 				048582C12667BEC70077B42E /* ScheduleOptionsTableViewCell.xib in Resources */,
@@ -1478,6 +1510,7 @@
 				18397DCE2660FD35003DE30C /* LoginViewController.xib in Resources */,
 				18397E182660FF54003DE30C /* Poppins-ThinItalic.ttf in Resources */,
 				04D053602670858B005458F7 /* SupplySubTypeViewController.xib in Resources */,
+				047E83D8268338DD006A0F18 /* LocationPickerViewController.xib in Resources */,
 				1810253E2657E48500DEBF7D /* FaqViewController.xib in Resources */,
 				181025382657E48500DEBF7D /* NewsViewController.xib in Resources */,
 				18397E1B2660FF54003DE30C /* Poppins-Light.ttf in Resources */,
@@ -1611,9 +1644,11 @@
 				18342C77266E436E00A678D3 /* FormOfWasteViewController.swift in Sources */,
 				1893756E266127F800D55A33 /* CurrentWasteTableViewCell.swift in Sources */,
 				041D40D226772A65003A0039 /* CreateSiteResult.swift in Sources */,
+				047E83DA268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.swift in Sources */,
 				0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */,
 				041D40D126772A65003A0039 /* CreateSite.swift in Sources */,
 				04E6104626725422001E6629 /* Questions.swift in Sources */,
+				047E83D1268320FA006A0F18 /* WasteDetailLocationDataModel.swift in Sources */,
 				18ACB7C5267A34CD0088307D /* NotificationModel.swift in Sources */,
 				1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */,
 				18D1A366266A2B77009CAD26 /* TrackerViewController.swift in Sources */,
@@ -1687,6 +1722,7 @@
 				04BD2801266A2589008FC8B4 /* SchedulePlannedViewController.swift in Sources */,
 				18AC70F2267B5E3E00F398A1 /* NotificationResponceModel.swift in Sources */,
 				047E76842679E8A90055292A /* PickupScheduleDataModel.swift in Sources */,
+				047E83D9268338DD006A0F18 /* LocationPickerViewController.swift in Sources */,
 				0067A322252AFC9E00CECA8C /* UIImage.swift in Sources */,
 				18896077266E1EB800061783 /* SupplyingCollectionViewCell.swift in Sources */,
 				0043453F254823FE009A6166 /* ApiResponseHandler.swift in Sources */,

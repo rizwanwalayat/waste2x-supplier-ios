@@ -145,7 +145,7 @@ extension WasteDetailLocationViewController : CLLocationManagerDelegate, GMSMapV
 }
 
 
-// MARK: - GMSAutocomplete Delegate Methods
+// MARK: - GMSAutocompleteViewControllerDelegate methods
 extension WasteDetailLocationViewController: GMSAutocompleteViewControllerDelegate {
 
   // Handle the user's selection.

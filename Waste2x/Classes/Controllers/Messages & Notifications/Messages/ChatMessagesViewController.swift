@@ -8,6 +8,7 @@
 
 import UIKit
 import TwilioChatClient
+import IQKeyboardManagerSwift
 
 class ChatMessagesViewController: BaseViewController {
 
@@ -20,12 +21,13 @@ class ChatMessagesViewController: BaseViewController {
     @IBOutlet weak var tableViewMessages: UITableView!
     @IBOutlet weak var sendbutton: UIButton!
     @IBOutlet weak var sendIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var bottomConstOfView: NSLayoutConstraint!
     
     
     //MARK: - Declarations
     
     var textFildPlaceholder = UIColor(hexString: "9F9F9F")
-    var placeHolderText = "Write your message..."
+    var placeHolderText = "write message"
     //var refreshControl = UIRefreshControl()
     
     
@@ -39,8 +41,28 @@ class ChatMessagesViewController: BaseViewController {
         enterMessageTextView.textColor  = textFildPlaceholder
         tableViewsIntegrations()
         (TwillioChatDataModel.shared.messages.count == 0) ? (loginToTwillio()) : (TwillioChatDataModel.shared.delegate = self)
+        
+        NotificationCenter.default.addObserver(self,
+               selector: #selector(self.keyboardNotification(notification:)),
+               name: UIResponder.keyboardWillChangeFrameNotification,
+               object: nil)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        IQKeyboardManager.shared.enable = false
+        IQKeyboardManager.shared.enableAutoToolbar = false
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        IQKeyboardManager.shared.enableAutoToolbar = true
+        IQKeyboardManager.shared.enable = true
+        NotificationCenter.default.removeObserver(self)
+    }
 
     //MARK: - Actions
     
@@ -54,6 +76,7 @@ class ChatMessagesViewController: BaseViewController {
         
         if enterMessageTextView.text == "" || enterMessageTextView.text == placeHolderText
         {
+            self.enterMessageTextView.resignFirstResponder()
             return
         }
         
@@ -64,13 +87,18 @@ class ChatMessagesViewController: BaseViewController {
             self.sendbutton.isHidden = false
             self.sendIndicator.stopAnimating()
             
-            if result.isSuccessful() {
+            if result != nil {
                 
-                self.enterMessageTextView.text = ""
-                self.enterMessageTextView.resignFirstResponder()
-                self.constHeightMessagesTextView.constant = 34.0
-                self.view.layoutIfNeeded()
+                if result!.isSuccessful() {
+                    
+                    self.enterMessageTextView.text = ""
+                    self.enterMessageTextView.resignFirstResponder()
+                    self.constHeightMessagesTextView.constant = 34.0
+                    self.view.layoutIfNeeded()
+                }
             } else {
+                
+                self.enterMessageTextView.resignFirstResponder()
                 self.showToast(message: "Unable to send message")
             }
         }
@@ -81,21 +109,34 @@ class ChatMessagesViewController: BaseViewController {
         tableViewMessages.register(UINib(nibName: "MessagesTableViewCell", bundle: nil), forCellReuseIdentifier: "MessagesTableViewCell")
         tableViewMessages.rowHeight = UITableView.automaticDimension
         tableViewMessages.estimatedRowHeight = UITableView.automaticDimension
-        tableViewMessages.transform          = CGAffineTransform(scaleX: 1, y: -1)
+        tableViewMessages.transform = CGAffineTransform(scaleX: 1, y: -1)
+        tableViewMessages.keyboardDismissMode = .interactive
         self.constHeightMessagesTextView.constant = 34
-//        refreshControl.tintColor       = UIColor.appColor
-//        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
-//        tableViewMessages.addSubview(refreshControl)
         self.view.layoutIfNeeded()
     }
     
-    @objc func refresh(_ sender: AnyObject) {
+    @objc func keyboardNotification(notification: NSNotification) {
+        guard let userInfo = notification.userInfo else { return }
         
-        /// code for pagination
-        if TwillioChatDataModel.shared.messages.count >= TwillioChatDataModel.shared.messagesPage * TwillioChatDataModel.shared.messagesPageCount
-        {
-            TwillioChatDataModel.shared.fetchMoreMesseges()
+        let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        let endFrameY = endFrame?.origin.y ?? 0
+        let duration:TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+        let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+        let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
+    
+        if endFrameY >= UIScreen.main.bounds.size.height {
+            self.bottomConstOfView?.constant = 0.0
+        } else {
+            self.bottomConstOfView?.constant = endFrame?.size.height ?? 0.0
         }
+        
+        UIView.animate(
+            withDuration: duration,
+            delay: TimeInterval(0),
+            options: animationCurve,
+            animations: { self.view.layoutIfNeeded() },
+            completion: nil)
     }
     
 }
