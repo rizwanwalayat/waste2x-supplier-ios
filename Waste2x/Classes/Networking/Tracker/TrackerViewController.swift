@@ -14,12 +14,13 @@ class TrackerViewController: BaseViewController {
 //MARK: - Variables
     var locationManager = CLLocationManager()
     var currentLocation = ""
-    var endingLocation = "31.4504,73.1350"
+    var endingLocation = ""
     var currentLat = Double()
     var currentLon = Double()
-    var destinationLat = 31.4504
-    var destinationLng = 73.1350
+    var destinationLat = Double()
+    var destinationLng = Double()
     var timer = Timer()
+    var trackID = 1
     var ref: DatabaseReference!
     let geofireRef = Database.database().reference().child("dispatch_id")
     @IBOutlet weak var kmLabel: UILabel!
@@ -73,9 +74,6 @@ class TrackerViewController: BaseViewController {
         DispatchQueue.main.async {
             marker.map = self.mapView
             marker1.map = self.mapView
-//            marker.map?.clear()
-//            marker1.map?.clear()
-//            mapView.clear()
 
             }
     }
@@ -128,53 +126,47 @@ class TrackerViewController: BaseViewController {
 extension TrackerViewController:CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("lcoation delegate call")
-        let location = locationManager.location!.coordinate
-        self.currentLat = location.latitude
-        self.currentLon = location.longitude
-        self.currentLocation = "\(String(location.latitude)),\(String(location.longitude))"
-        if Global.shared.latlngCheck{
-            self.fetchDate(Starting: self.currentLocation, Ending: self.endingLocation)
-            Global.shared.latlngCheck = false
-            let cam = GMSCameraPosition(latitude: self.destinationLat, longitude: self.destinationLng, zoom: 15)
-            DispatchQueue.main.async {
-                    self.mapView.animate(to: cam)
+        
+        geofireRef.child("\(trackID)").getData { error, data in
+            if error == nil{
+            //MARK: - For fireBase Location
+                let lastChildData = data.children.allObjects.last as? DataSnapshot
+                let value = lastChildData?.value! as! [String:Any]
+                let lat = value["lat"]!
+                let lng = value["lon"]!
+                self.destinationLat = lat as! Double
+                self.destinationLng = lng as! Double
+                self.endingLocation = "\(self.destinationLat),\(self.destinationLng)"
+                
+            //MARK: - for Current Location
+                let location = self.locationManager.location!.coordinate
+                self.currentLat = location.latitude
+                self.currentLon = location.longitude
+                self.currentLocation = "\(String(location.latitude)),\(String(location.longitude))"
+                
+                
+                //MARK: - PolyLine Draw
+                if Global.shared.latlngCheck{
+                    
+                    self.fetchDate(Starting: self.currentLocation, Ending: self.endingLocation)
+                    Global.shared.latlngCheck = false
+                    let cam = GMSCameraPosition(latitude: self.destinationLat, longitude: self.destinationLng, zoom: 15)
+                    DispatchQueue.main.async {
+                            self.mapView.animate(to: cam)
+                        }
+                    
                 }
-            self.locationManager.startUpdatingLocation()
-            
-        }
-
-        
-        
-        markerUpdate(s_lat: self.destinationLat, s_lon: self.destinationLng, d_lat: self.currentLat, d_lon: self.currentLon)
-        
-        //MARK: - testing
-        let geoFire = GeoFire(firebaseRef: geofireRef)
-//                geoFire.setLocation(CLLocation(latitude: 35.7853889, longitude: -100.4056973), forKey: "50") { (error) in
-//                  if (error != nil) {
-//                    print("error")
-//                  } else {
-//                    print("Saved location successfully!")
-//                  }
-//                }
-        
-        
-        //MARK: - Geofire
-        
-        
-        
-
-        geoFire.getLocationForKey("12") { locationsss, error in
-            if error == nil {
-                self.destinationLat =  (locationsss?.coordinate.latitude)!
-                self.destinationLng =  (locationsss?.coordinate.longitude)!
-                self.endingLocation = "\((locationsss?.coordinate.latitude)!),\((locationsss?.coordinate.longitude)!)"
-                self.markerUpdate(s_lat: self.destinationLat, s_lon: self.destinationLng, d_lat: self.currentLat, d_lon: self.currentLon)
+            }
+            else {
+                self.navigationController?.popViewController(animated: true)
             }
         }
         
+
+        //MARK: -  Marker Draw
+        self.markerUpdate(s_lat: self.currentLat, s_lon: self.currentLon, d_lat: self.destinationLat, d_lon: self.destinationLng)
         
-        self.locationManager.stopUpdatingLocation()
-        
+
     }
     
     

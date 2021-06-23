@@ -173,7 +173,7 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationStatusHandlings(.onway, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "Do you want to sell?")
         }
         else if data.result?.notifications[index].response == "Confirmed"{
-            self.notificationStatusHandlings(.onway, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "Do you want to sell?")
+            self.notificationStatusHandlings(.confirmed, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "Do you want to sell?")
         }
         else {
             self.notificationStatusHandlings(.pending, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "Do you want to sell?")

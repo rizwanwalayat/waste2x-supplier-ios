@@ -50,23 +50,29 @@ class NotificationsViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @objc func yesButtonPress(sender:UIButton){
-        let notifcationDaTag = NotificationModell?.result?.notifications[sender.tag]
-        let notificationID = notifcationDaTag?.idd
-        
-        
-        let notificationResponce = "Yes"
-        NotificationResponceModel.NotificationResponceModelApiFunction(notificationID: notificationID!, notificationResponce: notificationResponce) { result, error, status, message in
-            self.apiCall()
+        if sender.title(for: .normal) == "Check"{
+            
+            let vc = DetailedPendingCollectionViewController(nibName: "DetailedPendingCollectionViewController", bundle: nil)
+            vc.id = NotificationModell?.result?.notifications[sender.tag].pendingCollectionId ?? 0
+            self.navigationController?.pushTo(controller: vc)
             
         }
+        else if sender.title(for: .normal) == "Pending" {
+            let notifcationDaTag = NotificationModell?.result?.notifications[sender.tag]
+            let notificationID = notifcationDaTag?.idd
+            let notificationResponce = "Yes"
+            NotificationResponceModel.NotificationResponceModelApiFunction(notificationID: notificationID!, notificationResponce: notificationResponce) { result, error, status, message in
+                self.apiCall()
+                
+            }
+        }
+
         
         
     }
     @objc func noButtonPress(sender:UIButton){
         let notifcationDaTag = NotificationModell?.result?.notifications[sender.tag]
         let notificationID = notifcationDaTag?.idd
-        
-        
         let notificationResponce = "No"
         NotificationResponceModel.NotificationResponceModelApiFunction(notificationID: notificationID!, notificationResponce: notificationResponce) { result, error, status, message in
             self.apiCall()

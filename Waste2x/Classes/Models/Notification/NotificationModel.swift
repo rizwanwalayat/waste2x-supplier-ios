@@ -63,6 +63,7 @@ class NotificationResultList : Mappable {
     var message = ""
     var response = ""
     var createdAt = ""
+    var pendingCollectionId = Int()
 
     required init?(map: Map) { }
 
@@ -72,5 +73,7 @@ class NotificationResultList : Mappable {
         message <- map["message"]
         response <- map["response"]
         createdAt <- map["created_at"]
+        pendingCollectionId <- map["pending_collection_id"]
+        
     }
 }

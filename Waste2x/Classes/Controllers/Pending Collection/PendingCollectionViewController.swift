@@ -14,6 +14,7 @@ class PendingCollectionViewController: BaseViewController {
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bottomConst: NSLayoutConstraint!
     
     
     //MARK: - Variables
@@ -32,7 +33,7 @@ class PendingCollectionViewController: BaseViewController {
         mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         mainView.layer.masksToBounds = true
         globalObjectContainer?.tabbarHiddenView.isHidden = false
-        
+        bottomConst.constant = self.tabbarViewHeight
         
     }
     

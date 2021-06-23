@@ -60,9 +60,6 @@
                                                 <state key="selected" title="Unconfirmed" image="Pending" backgroundImage="grayrect">
                                                     <color key="titleColor" red="0.45882352939999999" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="checkButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MdR-5u-hYk"/>
-                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXY-Bb-dxN">
                                                 <rect key="frame" x="10" y="560.5" width="314" height="1"/>
@@ -297,7 +294,6 @@ Enmass Energy</string>
                 <outlet property="activityDate3" destination="eJB-8Y-had" id="msT-56-KpT"/>
                 <outlet property="activityDate4" destination="lY0-RS-7Ip" id="YMd-nk-8K6"/>
                 <outlet property="addressLabel" destination="o9e-uu-tIT" id="TkY-YE-XyV"/>
-                <outlet property="checkButton" destination="YRw-Ro-Gg5" id="SU2-sJ-moZ"/>
                 <outlet property="dateLabel" destination="B0d-GO-xhV" id="kzl-h2-Adz"/>
                 <outlet property="farmLabel" destination="JbW-dP-3SI" id="KI1-5y-fJu"/>
                 <outlet property="hiddenView" destination="9IQ-an-3bU" id="xTK-OX-0BA"/>

@@ -9,6 +9,7 @@
 import Foundation
 import ObjectMapper
 typealias PendingCollectionCompletionHandler = (_ data: PendingCollectionModel?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
+typealias PendingCollectionDetailCompletionHandler = (_ data: PendingCollectionDetailModel?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
 class PendingCollectionModel : Mappable {
     var success = Bool()
     var message = ""
@@ -63,7 +64,7 @@ class PendingCollectionResultResponce : Mappable {
     required init?(map: Map) { }
 
     func mapping(map: Map) {
-
+        id <- map["id"]
         pendingCollection <- map["pending_collections"]
         supplierNumber <-    map["supplier"]
         farm <- map["farm"]
@@ -97,4 +98,43 @@ class PendingCollectionResultHistory : Mappable {
         
         
     }
+}
+
+//MARK: - Detailed Pending Collection
+
+class PendingCollectionDetailModel : Mappable {
+    var success = Bool()
+    var message = ""
+    var result = [PendingCollectionResultResponce]()
+    var statusCode = Int()
+
+    required init?(map: Map) { }
+
+    func mapping(map: Map) {
+
+        success   <- map["success"]
+        message <- map["message"]
+        result    <- map["result"]
+        statusCode  <- map["status_code"]
+    }
+    
+    class func pendingCollectionApiCall(id: Int, _ completion: @escaping PendingCollectionDetailCompletionHandler) {
+        Utility.showLoading()
+        APIClient.shared.pendingResponceApiCall(id: id) { result, error, status, message in
+            Utility.hideLoading()
+            if error == nil {
+                let newResult = ["result":result]
+                if let data = Mapper<PendingCollectionDetailModel>().map(JSON: newResult as [String : AnyObject]) {
+                    completion(data, nil, status,message)
+                } else {
+                    completion(nil, nil, status,message)
+                }
+                
+            } else {
+                 completion(nil, error, status,message)
+            }
+        }
+        
+        }
+
 }

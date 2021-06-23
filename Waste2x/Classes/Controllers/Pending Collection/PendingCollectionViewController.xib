@@ -17,6 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PendingCollectionViewController" customModule="Waste2x" customModuleProvider="target">
             <connections>
+                <outlet property="bottomConst" destination="yTU-fH-MX3" id="2fd-NF-1uq"/>
                 <outlet property="mainView" destination="5AZ-B2-jks" id="VLx-L7-H3g"/>
                 <outlet property="tableView" destination="au2-E6-m96" id="d50-yX-hLy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -72,7 +73,7 @@
                     <rect key="frame" x="0.0" y="97" width="414" height="799"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="au2-E6-m96">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="719"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="799"/>
                             <color key="backgroundColor" name="bgColor"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="mte-6U-KWb"/>
@@ -85,8 +86,13 @@
                         <constraint firstAttribute="trailing" secondItem="au2-E6-m96" secondAttribute="trailing" id="0yE-hz-hza"/>
                         <constraint firstItem="au2-E6-m96" firstAttribute="top" secondItem="5AZ-B2-jks" secondAttribute="top" id="fZr-Ax-rZb"/>
                         <constraint firstItem="au2-E6-m96" firstAttribute="leading" secondItem="5AZ-B2-jks" secondAttribute="leading" id="uSt-J5-dLc"/>
-                        <constraint firstAttribute="bottom" secondItem="au2-E6-m96" secondAttribute="bottom" constant="80" id="yTU-fH-MX3"/>
+                        <constraint firstAttribute="bottom" secondItem="au2-E6-m96" secondAttribute="bottom" id="yTU-fH-MX3"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

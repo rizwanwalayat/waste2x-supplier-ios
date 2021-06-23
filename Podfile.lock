@@ -104,8 +104,8 @@ DEPENDENCIES:
   - SDWebImage
   - SlideMenuControllerSwift
   - StepIndicator (~> 1.0.8)
-  - YoutubePlayer-in-WKWebView
   - TwilioChatClient (~> 2.6.6)
+  - YoutubePlayer-in-WKWebView
 
 SPEC REPOS:
   trunk:
@@ -161,6 +161,7 @@ SPEC CHECKSUMS:
   StepIndicator: 748b293f671355b021253f82031ac002f153dc81
   TwilioChatClient: 23168c2df8e306da1cedcad1d60ba69862235358
   YoutubePlayer-in-WKWebView: cfbf46da51d7370662a695a8f351e5fa1d3e1008
-PODFILE CHECKSUM: 84f81bee9d1a1a1eebba933f8507dd2a3113079b
+
+PODFILE CHECKSUM: 3f3d769ac906bb7a4b5479d9a55c37e8dbc98e9e
 
 COCOAPODS: 1.10.1

@@ -73,11 +73,10 @@ class HomeViewController: BaseViewController{
         wasteTypeCollectionView.contentInset  = .zero
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
-//        DispatchQueue.main.async {
-//            self.tableViewHeight.constant = self.tableView.contentSize.height
-//            self.view.layoutIfNeeded()
-//        }
-        
+        DispatchQueue.main.async {
+            self.tableViewHeight.constant = self.tableView.contentSize.height
+            self.view.layoutIfNeeded()
+        }
         fetchFarmsFromServer()
         loginToTwillio()
     }
@@ -285,13 +284,6 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         }
         else
         {
-            
-//            let text = "Invite Supplieer."
-//            let textToShare = [ text ]
-//            let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
-//            activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
-//            activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
-            //            self.present(vc, animated: true, completion: nil)
             let vc = InviteSupplierViewController(nibName: "InviteSupplierViewController", bundle: nil)
             self.navigationController?.pushTo(controller: vc)
             

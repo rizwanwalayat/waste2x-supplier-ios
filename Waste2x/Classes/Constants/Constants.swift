@@ -46,6 +46,7 @@ struct APIRoutes {
     static var notificationResponceUrl = "paudapay_us/send_notification_response/"
     static var pendingCollectionFetchUrl = "paudapay_us/pending_collections/"
     static var fetchTwillioAccessToken = "paudapay_us/fetch_twilio_access_token/"
+    static var pendingDetailUrl = "paudapay_us/pending_collection_detail/"
 }
 struct FireBaseVariables {
     static var fireBaseToken = ""

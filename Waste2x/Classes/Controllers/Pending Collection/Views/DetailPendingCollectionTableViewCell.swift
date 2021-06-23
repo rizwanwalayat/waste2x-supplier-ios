@@ -1,16 +1,14 @@
 //
-//  PendingTableViewCell.swift
+//  DetailPendingCollectionTableViewCell.swift
 //  Waste2x
 //
-//  Created by HaiDer's Macbook Pro on 02/06/2021.
+//  Created by HaiDer's Macbook Pro on 23/06/2021.
 //  Copyright © 2021 codesrbit. All rights reserved.
 //
 
 import UIKit
 import StepIndicator
-class ConfirmPendingTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var hiddenView: UIView!
+class DetailPendingCollectionTableViewCell: BaseTableViewCell {
     @IBOutlet var daysLabel : [UIView]!
     @IBOutlet weak var farmLabel: UILabel!
     @IBOutlet weak var scheduleLabel: UILabel!
@@ -22,9 +20,11 @@ class ConfirmPendingTableViewCell: UITableViewCell {
     @IBOutlet weak var activityDate3: UILabel!
     @IBOutlet weak var activityDate4: UILabel!
     
+    @IBOutlet weak var hiddenView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        self.hiddenView.isHidden = true
         for dayLbl in daysLabel
         {
             dayLbl.sizeToFit()
@@ -33,59 +33,57 @@ class ConfirmPendingTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-    }
-    
-    
-    //MARK: - Functions
-    func confirmConfig(data:[PendingCollectionResultResponce],index:Int){
-        if data[index].history.count > 0{
-            
-        }
         
-        self.farmLabel.text = data[index].farm
-        if data[index].frequency == "" {
-            self.scheduleLabel.text = data[index].schedule_type
+    }
+    func confirmConfig(data:PendingCollectionResultResponce){
+        
+        self.farmLabel.text = data.farm
+        if data.frequency == "" {
+            self.scheduleLabel.text = data.schedule_type
         }
         
         else{
-            self.scheduleLabel.text = data[index].schedule_type + " (\(data[index].frequency))"
+            self.scheduleLabel.text = data.schedule_type + " (\(data.frequency))"
             
         }
-        self.dateLabel.text = data[index].scheduleDate
-        self.addressLabel.text = data[index].address
+        self.dateLabel.text = data.scheduleDate
+        self.addressLabel.text = data.address
+        
         //MARK: - Stepper
 
-        
-        for (indexNew, _) in data[index].history.enumerated() {
-            
-            if data[index].history[indexNew].status == "Pending"{
+        self.hiddenView.isHidden = true
+        if data.history.count > 0 {
+            self.hiddenView.isHidden = false
+            if  data.history.count == 1 && data.history[0].status == "Pending"{
                 
-                self.activityDate1.text = data[index].history[indexNew].activityDate
+                self.activityDate1.text = data.history[0].activityDate
                 self.stepperView.currentStep = 0
             }
             
-            else if data[index].history[indexNew].status == "Confirmed"{
-                self.activityDate2.text = data[index].history[indexNew].activityDate
+            else if data.history.count == 2 && data.history[1].status == "Confirmed"{
+                self.activityDate2.text = data.history[1].activityDate
                 self.stepperView.currentStep = 1
             }
-            else if data[index].history[indexNew].status == "Picked"{
-                self.activityDate3.text = data[index].history[indexNew].activityDate
+            else if data.history.count == 3 && data.history[2].status == "Picked"{
+                self.activityDate3.text = data.history[2].activityDate
                 self.stepperView.currentStep = 2
             }
-            else {
-                self.activityDate4.text = data[index].history[indexNew].activityDate
+            else if data.history.count == 4 && data.history[2].status == "Delivered"{
+                self.activityDate4.text = data.history[3].activityDate
                 self.stepperView.currentStep = 3
             }
         }
         
     }
     func expandCollapseView(index:Int) {
-        self.hiddenView.isHidden = !self.hiddenView.isHidden
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
             self.layoutIfNeeded()}, completion: { finished in
                 print("Expand \(index)")
         })
     }
 
+        
+        
+    
+    
 }

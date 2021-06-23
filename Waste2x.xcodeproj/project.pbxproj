@@ -117,6 +117,10 @@
 		183262762670BB8400F0CCBA /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183262752670BB8400F0CCBA /* Registration.swift */; };
 		183262792670C68A00F0CCBA /* InviteSupplierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183262772670C68A00F0CCBA /* InviteSupplierViewController.swift */; };
 		1832627A2670C68A00F0CCBA /* InviteSupplierViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183262782670C68A00F0CCBA /* InviteSupplierViewController.xib */; };
+		1832D24C268326AE0032F755 /* DetailedPendingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832D24A268326AE0032F755 /* DetailedPendingCollectionViewController.swift */; };
+		1832D24D268326AE0032F755 /* DetailedPendingCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1832D24B268326AE0032F755 /* DetailedPendingCollectionViewController.xib */; };
+		1832D25026832DC20032F755 /* DetailPendingCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832D24E26832DC20032F755 /* DetailPendingCollectionTableViewCell.swift */; };
+		1832D25126832DC20032F755 /* DetailPendingCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1832D24F26832DC20032F755 /* DetailPendingCollectionTableViewCell.xib */; };
 		18342C77266E436E00A678D3 /* FormOfWasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18342C75266E436E00A678D3 /* FormOfWasteViewController.swift */; };
 		18342C78266E436E00A678D3 /* FormOfWasteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18342C76266E436E00A678D3 /* FormOfWasteViewController.xib */; };
 		18397DCD2660FD35003DE30C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18397DCA2660FD35003DE30C /* LoginViewModel.swift */; };
@@ -325,6 +329,10 @@
 		183262752670BB8400F0CCBA /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		183262772670C68A00F0CCBA /* InviteSupplierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteSupplierViewController.swift; sourceTree = "<group>"; };
 		183262782670C68A00F0CCBA /* InviteSupplierViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InviteSupplierViewController.xib; sourceTree = "<group>"; };
+		1832D24A268326AE0032F755 /* DetailedPendingCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPendingCollectionViewController.swift; sourceTree = "<group>"; };
+		1832D24B268326AE0032F755 /* DetailedPendingCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedPendingCollectionViewController.xib; sourceTree = "<group>"; };
+		1832D24E26832DC20032F755 /* DetailPendingCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPendingCollectionTableViewCell.swift; sourceTree = "<group>"; };
+		1832D24F26832DC20032F755 /* DetailPendingCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPendingCollectionTableViewCell.xib; sourceTree = "<group>"; };
 		18342C75266E436E00A678D3 /* FormOfWasteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormOfWasteViewController.swift; sourceTree = "<group>"; };
 		18342C76266E436E00A678D3 /* FormOfWasteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormOfWasteViewController.xib; sourceTree = "<group>"; };
 		18397DCA2660FD35003DE30C /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -498,7 +506,6 @@
 				1849F5A1266FDFB90001B533 /* Contacts Fetch */,
 				0463F2DB266E08A900E8924D /* Reward */,
 				187D756C266E07E9007811C4 /* Supply Process */,
-				18D1A363266A2B51009CAD26 /* Tracker */,
 				04C31D062667731100A1CF9C /* Pickup-Schedule */,
 				184F51642667A42600F0328A /* Pending Collection */,
 				1801126D2667746D000C7102 /* Faq */,
@@ -526,6 +533,7 @@
 		0067A2DB252753BF00CECA8C /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				18D1A363266A2B51009CAD26 /* Tracker */,
 				0043453C254823FE009A6166 /* ApiClient.swift */,
 				0043453D254823FE009A6166 /* ApiClientHandler.swift */,
 				0043453B254823FE009A6166 /* ApiResponseHandler.swift */,
@@ -1121,6 +1129,8 @@
 				184F516D2667AD6B00F0328A /* Views */,
 				184F51652667A46400F0328A /* PendingCollectionViewController.swift */,
 				184F51662667A46400F0328A /* PendingCollectionViewController.xib */,
+				1832D24A268326AE0032F755 /* DetailedPendingCollectionViewController.swift */,
+				1832D24B268326AE0032F755 /* DetailedPendingCollectionViewController.xib */,
 			);
 			path = "Pending Collection";
 			sourceTree = "<group>";
@@ -1132,6 +1142,8 @@
 				184F516F2667AD9700F0328A /* ConfirmPendingTableViewCell.xib */,
 				188B36D12668C95A0036B412 /* UnconfirmPendingCollectionTableViewCell.swift */,
 				188B36D22668C95A0036B412 /* UnconfirmPendingCollectionTableViewCell.xib */,
+				1832D24E26832DC20032F755 /* DetailPendingCollectionTableViewCell.swift */,
+				1832D24F26832DC20032F755 /* DetailPendingCollectionTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1445,9 +1457,11 @@
 				18342C78266E436E00A678D3 /* FormOfWasteViewController.xib in Resources */,
 				18A849D0265E411F008F77E8 /* WeatherCollectionViewCell.xib in Resources */,
 				18666B2426666175005C1A78 /* VideoTableViewCell.xib in Resources */,
+				1832D25126832DC20032F755 /* DetailPendingCollectionTableViewCell.xib in Resources */,
 				04340E97266E439900B5F87C /* MessagesTableViewCell.xib in Resources */,
 				04BD2802266A2589008FC8B4 /* SchedulePlannedViewController.xib in Resources */,
 				04D053652670A978005458F7 /* FormSubTypesViewController.xib in Resources */,
+				1832D24D268326AE0032F755 /* DetailedPendingCollectionViewController.xib in Resources */,
 				18397E212660FF54003DE30C /* Poppins-Regular.ttf in Resources */,
 				189782FD265D35CF008FD5E3 /* SideMenuViewController.xib in Resources */,
 				046528042668F694005F3FB0 /* CalenderPopupViewController.xib in Resources */,
@@ -1665,12 +1679,14 @@
 				18011272266774E5000C7102 /* FaqTableViewCell.swift in Sources */,
 				0067A31A252AFC9E00CECA8C /* UICollectionView.swift in Sources */,
 				0067A320252AFC9E00CECA8C /* UIView.swift in Sources */,
+				1832D25026832DC20032F755 /* DetailPendingCollectionTableViewCell.swift in Sources */,
 				18937549266127CB00D55A33 /* NotificationsTableViewCell.swift in Sources */,
 				1810253B2657E48500DEBF7D /* MessagesViewController.swift in Sources */,
 				0067A31D252AFC9E00CECA8C /* UISlider.swift in Sources */,
 				04C82E1A2664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift in Sources */,
 				043F6BF9267776A2000E3C4F /* HomeWaste_types.swift in Sources */,
 				048582C02667BEC70077B42E /* ScheduleOptionsTableViewCell.swift in Sources */,
+				1832D24C268326AE0032F755 /* DetailedPendingCollectionViewController.swift in Sources */,
 				18BD84762673770B00B5F797 /* WeatherAPI.swift in Sources */,
 				041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */,
 				043F6BF6267776A2000E3C4F /* HomeQuestions.swift in Sources */,

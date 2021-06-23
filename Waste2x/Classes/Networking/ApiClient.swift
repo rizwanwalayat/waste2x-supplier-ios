@@ -103,13 +103,18 @@ class APIClient: APIClientHandler {
     func notificationApiCall(_ completionBlock: @escaping APIClientCompletionHandler) {
         
         let params = [String : AnyObject]()
-        let headers = ["Authorization": "token " + "b176b109baf493075207e98b68410e346f6ecb8e"]
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
         _ = sendRequest(APIRoutes.notificationUrl, parameters: params,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
     func notifiationResponceApiCall(id: Int,responce:String, _ completionBlock: @escaping APIClientCompletionHandler) {
         let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
         let params = ["notification_id": id,"response":responce] as [String:AnyObject]
         _ = sendRequest(APIRoutes.notificationResponceUrl , parameters: params as [String : AnyObject],httpMethod: .post , headers: headers, completionBlock: completionBlock)
+    }
+    func pendingResponceApiCall(id: Int,_ completionBlock: @escaping APIClientCompletionHandler) {
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        let params = ["pending_collection_id": id] as [String:AnyObject]
+        _ = sendRequest(APIRoutes.pendingDetailUrl , parameters: params as [String : AnyObject],httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
     
     

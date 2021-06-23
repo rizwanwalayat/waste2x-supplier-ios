@@ -160,14 +160,14 @@ struct NetworkingConnection {
         })
     }
     @objc class func showLoading(offSet: CGFloat = 0, isVisible: Bool = true) {
-            
+        DispatchQueue.main.async {
             if let _ = kApplicationWindow?.viewWithTag(9000) {
                 return
             }
 
             let superView = UIView(frame: CGRect(x: 0, y: 0 - offSet, width: kApplicationWindow?.frame.width ?? 0.0, height: kApplicationWindow?.frame.height ?? 0.0))
             let iconImageView = UIImageView(frame: CGRect(x: superView.frame.width/2 - 32.5, y: superView.frame.height/2 - 32.5, width: 65, height: 65))
-            iconImageView.image = #imageLiteral(resourceName: "poultry")
+            iconImageView.image = UIImage(named: "loading")
             
             if isVisible {
                 superView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
@@ -181,6 +181,8 @@ struct NetworkingConnection {
             superView.addSubview(iconImageView)
             superView.bringSubviewToFront(iconImageView)
             kApplicationWindow?.addSubview(superView)
+        }
+
         }
     
     @objc class func hideLoading() {
