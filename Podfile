@@ -8,7 +8,6 @@ target 'Waste2x' do
   pod 'NVActivityIndicatorView'
   pod 'Alamofire', '~> 4.2'
   pod 'IQKeyboardManagerSwift'
-#  pod 'Firebase/Core'
   #pod 'Firebase/Auth'
   pod 'Firebase/Messaging'
   #pod 'netfox'
@@ -20,4 +19,5 @@ target 'Waste2x' do
   pod 'SDWebImage'
   pod "YoutubePlayer-in-WKWebView"
   pod 'GeoFire'
+  pod 'TwilioChatClient', '~> 2.6.6'
 end

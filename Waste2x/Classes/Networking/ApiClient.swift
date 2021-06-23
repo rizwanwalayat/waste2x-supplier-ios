@@ -175,14 +175,14 @@ class APIClient: APIClientHandler {
     func fetchWasteDetailData(params : [String: AnyObject],_ completionBlock: @escaping APIClientCompletionHandler) {
 //
         let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
-        print("postSupplyProcessData : \(headers)")
+        print("fetchWasteDetailData : \(headers)")
         _ = sendRequest(APIRoutes.wasteDetailData , parameters: params ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
     
     func saveWasteimages(params : [String: AnyObject],_ completionBlock: @escaping APIClientCompletionHandler) {
 
         let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
-        print("postSupplyProcessData : \(headers)")
+        print("saveWasteimages : \(headers)")
         
         sendRequestUsingMultipart(APIRoutes.wasteDetailImageUpload, parameters: params, headers: headers, completionBlock: completionBlock)
         
@@ -191,8 +191,19 @@ class APIClient: APIClientHandler {
     func updateWasteSize(params : [String: AnyObject],_ completionBlock: @escaping APIClientCompletionHandler) {
 //
         let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
-        print("postSupplyProcessData : \(headers)")
+        print("updateWasteSize : \(headers)")
         _ = sendRequest(APIRoutes.wasteDetailSizeUpdate , parameters: params ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
+    }
+    
+    
+    func fetchTwillioAccessToken(_ completionBlock: @escaping APIClientCompletionHandler)
+    {
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        
+        print("fetchTwillioAccessToken : \(headers)")
+        let phone = DataManager.shared.getUser()?.result?.phone ?? ""
+        let url = "paudapay_us/fetch_twilio_access_token/identity=\(phone)"
+        _ = sendRequest(url , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
 }
 

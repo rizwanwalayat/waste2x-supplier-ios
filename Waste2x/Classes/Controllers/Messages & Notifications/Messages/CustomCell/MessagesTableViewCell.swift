@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TwilioChatClient
 
 class MessagesTableViewCell: UITableViewCell {
 
@@ -14,6 +15,9 @@ class MessagesTableViewCell: UITableViewCell {
     @IBOutlet weak var mainHolderview : UIView!
     @IBOutlet weak var messageLabel : UILabel!
     @IBOutlet weak var timeLabel : UILabel!
+    @IBOutlet weak var receiverHolderView: UIView!
+    @IBOutlet weak var receiverTimeLabel: UILabel!
+    @IBOutlet weak var receiverMessageLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,4 +30,29 @@ class MessagesTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    func messagesHandling(_ cellData : TCHMessage)
+    {
+        receiverHolderView.isHidden = true
+        mainHolderview.isHidden = true
+        messageLabel.text = cellData.body
+        timeLabel.text = cellData.timestampAsDate?.dateToString("HH:MM a")
+        receiverMessageLabel.text = cellData.body
+        receiverTimeLabel.text = cellData.timestampAsDate?.dateToString("HH:MM a")
+        
+        self.transform  = CGAffineTransform(scaleX: 1, y: -1)
+        
+        if let author = cellData.author?.trimmingCharacters(in: .whitespaces).uppercased(), let phone = DataManager.shared.getUser()?.result?.phone.trimmingCharacters(in: .whitespaces).uppercased() {
+            
+            let authorPhone = author.split(separator: "=").last ?? ""
+            if authorPhone == phone
+            {
+                mainHolderview.isHidden = false
+            }
+            else
+            {
+                receiverHolderView.isHidden = false
+            }
+        }
+    }
 }
