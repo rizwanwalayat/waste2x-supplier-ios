@@ -72,7 +72,7 @@
                             <rect key="frame" x="103.66666666666669" y="153.33333333333331" width="207" height="253.66666666666669"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIt-vo-ex8">
-                            <rect key="frame" x="43.666666666666657" y="682.33333333333337" width="327" height="58"/>
+                            <rect key="frame" x="43.666666666666657" y="672" width="327" height="68.333333333333371"/>
                             <state key="normal" image="Invite"/>
                             <connections>
                                 <action selector="inviteAction:" destination="-1" eventType="touchUpInside" id="fkB-7R-V6I"/>
@@ -86,7 +86,7 @@
                         <constraint firstItem="ejY-NI-YSr" firstAttribute="centerX" secondItem="2M6-An-Lk1" secondAttribute="centerX" id="JOX-fc-rbu"/>
                         <constraint firstItem="QIt-vo-ex8" firstAttribute="centerX" secondItem="2M6-An-Lk1" secondAttribute="centerX" id="SRZ-I8-b7n"/>
                         <constraint firstItem="ejY-NI-YSr" firstAttribute="centerY" secondItem="2M6-An-Lk1" secondAttribute="centerY" constant="-100" id="SSs-P8-8y3"/>
-                        <constraint firstItem="QIt-vo-ex8" firstAttribute="height" secondItem="2M6-An-Lk1" secondAttribute="height" multiplier="0.0762656" id="Vmf-5k-Rmt"/>
+                        <constraint firstItem="QIt-vo-ex8" firstAttribute="height" secondItem="2M6-An-Lk1" secondAttribute="height" multiplier="0.09" id="Vmf-5k-Rmt"/>
                         <constraint firstItem="ejY-NI-YSr" firstAttribute="width" secondItem="2M6-An-Lk1" secondAttribute="width" multiplier="0.5" id="ZEW-qV-z7C"/>
                         <constraint firstItem="QIt-vo-ex8" firstAttribute="width" secondItem="2M6-An-Lk1" secondAttribute="width" multiplier="0.789855" id="pad-n3-t6h"/>
                         <constraint firstItem="QIt-vo-ex8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ejY-NI-YSr" secondAttribute="bottom" constant="20" id="vmk-k4-ETT"/>
