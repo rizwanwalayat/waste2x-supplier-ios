@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import GoogleMaps
 
 extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, CalenderPopupViewControllerDelegate, WasteDetailLocationViewControllerDelegate
 {
@@ -66,6 +67,11 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
         
         selectLocationLabel.text = address
         selectionHandlingsOfViews(selectLocationHolderview, isSelection: true)
+    }
+    
+    func selectedLatitudeLongitude(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+        
+        print("Latitude : \(latitude), Longitude : \(longitude)")
     }
     
     // MARK: - Custom Methods Method
@@ -142,9 +148,9 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
         selectFrequencyPriodicLabel.text = selectFrequencyPerodicPlaceholder
         selectDateTimeLabel.text = selectDateTimePlaceholder
         self.locationAutoFill ? print("Nothing") : (selectLocationLabel.text = selectLocationPlaceHolder)
-        selectionHandlingsOfViews(selectSiteHolderview, isSelection: false)
-        selectionHandlingsOfViews(selectFrequencyPriodicHolderview, isSelection: false)
-        selectionHandlingsOfViews(selectDateTimeHolderview, isSelection: false)
+        selectionHandlingsOfViews(selectSiteHolderview, isSelection: true)
+        selectionHandlingsOfViews(selectFrequencyPriodicHolderview, isSelection: true)
+        selectionHandlingsOfViews(selectDateTimeHolderview, isSelection: true)
         self.locationAutoFill ? print("Nothing") : selectionHandlingsOfViews(selectLocationHolderview, isSelection: false)
         
         let lableUnselectHexCode = "A09F9F"
@@ -199,6 +205,9 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
             //hideAnimated(in: stackview, selectFrequencyPriodicHolderview, selectDateTimeHolderview)
             showAnimated(in: stackview, selectFrequencyPriodicHolderview)
             showAnimated(in: stackview, selectDateTimeHolderview)
+            selectionHandlingsOfViews(selectSiteHolderview, isSelection: false)
+            selectionHandlingsOfViews(selectFrequencyPriodicHolderview, isSelection: false)
+            selectionHandlingsOfViews(selectDateTimeHolderview, isSelection: false)
         }
     }
     

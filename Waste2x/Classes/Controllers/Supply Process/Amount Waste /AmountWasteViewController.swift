@@ -78,7 +78,8 @@ class AmountWasteViewController: BaseViewController {
                 postDict = ["waste_type_questions" : jsonStr]
             }
 
-            let vc = WasteDetailLocationViewController(nibName: "WasteDetailLocationViewController", bundle: nil)
+            //let vc = WasteDetailLocationViewController(nibName: "WasteDetailLocationViewController", bundle: nil)
+            let vc            = LocationPickerViewController(nibName: "LocationPickerViewController", bundle: nil)
             vc.isForSiteCreation = true
             vc.selectionData = postDict
             vc.modalPresentationStyle = .overFullScreen

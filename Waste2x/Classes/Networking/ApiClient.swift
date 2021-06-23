@@ -200,6 +200,13 @@ class APIClient: APIClientHandler {
         _ = sendRequest(APIRoutes.wasteDetailSizeUpdate , parameters: params ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
     
+    func updateWasteLocation(params : [String: AnyObject],_ completionBlock: @escaping APIClientCompletionHandler) {
+
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        print("updateWasteSize : \(headers)")
+        _ = sendRequest(APIRoutes.wasteDetailLocationUpdate , parameters: params ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
+    }
+    
     
     func fetchTwillioAccessToken(_ completionBlock: @escaping APIClientCompletionHandler)
     {

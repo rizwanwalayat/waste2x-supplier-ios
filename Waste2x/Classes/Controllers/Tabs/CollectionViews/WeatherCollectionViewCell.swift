@@ -23,7 +23,7 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     {
         
 
-        if Global.shared.jump < 40 {
+        if Global.shared.jump < 40 && (DataManager.shared.getWeather()?.list.count ?? 0) > Global.shared.jump {
             self.dayLabel.text = dateCalculate(date: DataManager.shared.getWeather()?.list[Global.shared.jump].dtTxt ?? "")
             let weatherTemp = DataManager.shared.getWeather()?.list[Global.shared.jump].main?.temp ?? 00
             self.tempratureLabel.text = "\(weatherTemp.shortValue)°" + ""

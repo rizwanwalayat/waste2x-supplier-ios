@@ -26,12 +26,17 @@ class NewWasteSizeViewController: BaseViewController {
     
     var delegate             : NewWasteSizeViewControllerDelegate?
     var isNeedToCallDelegate = false
+    var lastSelectedSize = ""
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.popupView.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
+        if lastSelectedSize.count > 0
+        {
+            sizeTextField.text = lastSelectedSize
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {

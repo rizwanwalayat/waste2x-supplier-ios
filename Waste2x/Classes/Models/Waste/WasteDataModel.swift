@@ -11,6 +11,7 @@ import ObjectMapper
 
 typealias WasteCompletionHandler = (_ data: WasteDataModel?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
 typealias WasteDetailImageUploadCompletionHandler = (_ data: WasteDetailImageUploadDataModel?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
+typealias WasteDetailLocationCompletionHandler = (_ data: WasteDetailLocationDataModel?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
 
 class WasteDataModel : Mappable
 {
@@ -85,6 +86,27 @@ class WasteDataModel : Mappable
                 
                 let newResult  = ["result" : result!]
                 if let data = Mapper<WasteDetailImageUploadDataModel>().map(JSON: newResult as [String : Any] ) {
+                    completion(data, nil, success,message)
+                } else {
+                    completion(nil, nil, success,message)
+                }
+                
+            } else {
+                 completion(nil, error, success,message)
+            }
+        })
+    }
+    
+    class func updateWasteLocation(params : [String:AnyObject], _ completion: @escaping WasteDetailLocationCompletionHandler) {
+        Utility.showLoading()
+        APIClient.shared.updateWasteLocation(params: params, { result, error, success, message in
+            
+            Utility.hideLoading()
+            
+            if result != nil {
+                
+                let newResult  = ["result" : result!]
+                if let data = Mapper<WasteDetailLocationDataModel>().map(JSON: newResult as [String : Any] ) {
                     completion(data, nil, success,message)
                 } else {
                     completion(nil, nil, success,message)

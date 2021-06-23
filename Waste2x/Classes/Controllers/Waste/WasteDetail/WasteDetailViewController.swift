@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class WasteDetailViewController: BaseViewController {
 
@@ -29,11 +30,13 @@ class WasteDetailViewController: BaseViewController {
     @IBOutlet weak var blinderView: UIView!
     
     // MARK: - Declarations
-    var imagesArray = [UIImage]()
+    var imagesDataArray = [ImagesCollectionViewData]() //[UIImage]()
     var farmID = -1
     var wasteDeatil : WasteDetialResult?
     var postDictToSaveImage = [String : Any]()
     var postDictToUpdateSize = [String : Any]()
+    var postDictToUpdateLocation = [String : Any]()
+    var updatedSelectedAddress = ""
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -43,6 +46,7 @@ class WasteDetailViewController: BaseViewController {
         postDictToSaveImage["longitude"] = Global.shared.current_lng
         postDictToSaveImage["farm_id"] = farmID
         postDictToUpdateSize["farm_id"] = farmID
+        postDictToUpdateLocation["farm_id"] = farmID
         
         setupviews()
         self.fetchDataFromServer()
@@ -65,12 +69,14 @@ class WasteDetailViewController: BaseViewController {
         let custompopup                      = NewWasteSizeViewController(nibName: "NewWasteSizeViewController", bundle: nil)
         custompopup.modalPresentationStyle   = .overFullScreen
         custompopup.delegate                 = self
+        custompopup.lastSelectedSize         = sizeDetailLabel.text ?? ""
         self.present(custompopup, animated: false, completion: nil)
     }
     
     @IBAction func editAddressButton(_ sender : UIButton)
     {
-        let wasteDetailLocation            = WasteDetailLocationViewController(nibName: "WasteDetailLocationViewController", bundle: nil)
+        //let wasteDetailLocation            = WasteDetailLocationViewController(nibName: "WasteDetailLocationViewController", bundle: nil)
+        let wasteDetailLocation            = LocationPickerViewController(nibName: "LocationPickerViewController", bundle: nil)
         wasteDetailLocation.delegate       = self
         self.navigationController?.pushViewController(wasteDetailLocation, animated: true)
     }
@@ -79,6 +85,12 @@ class WasteDetailViewController: BaseViewController {
         
         ImagePickerVC.shared.showImagePickerFromVC(fromVC: self)
     }
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 
     @objc override func imageSelectedFromGalleryOrCamera(selectedImage:UIImage){
         
@@ -87,11 +99,12 @@ class WasteDetailViewController: BaseViewController {
         imageToUpload()
     }
     
-    func updateImageLibrary(_ image : UIImage)
+    func updateImageLibrary(_ image : UIImage, time : String)
     {
-        imagesArray.append(image)
+        let imageData = ImagesCollectionViewData(image, time)
+        imagesDataArray.append(imageData)
         collectionviewImages.reloadData()
-        if imagesArray.count > 0 && !(collectionViewConst.constant > 0)
+        if imagesDataArray.count > 0 && !(collectionViewConst.constant > 0)
         {
             self.collectionViewConst.constant = 145
             UIView.animate(withDuration: 0.3,
@@ -106,10 +119,64 @@ class WasteDetailViewController: BaseViewController {
             })
         }
         
-        let indexPath = IndexPath(item: imagesArray.count - 1, section: 0)
+        let indexPath = IndexPath(item: imagesDataArray.count - 1, section: 0)
         collectionviewImages.scrollToItem(at: indexPath, at: .right, animated: true)
     }
     
+    
+    func convertLocationToAddress(location: CLLocationCoordinate2D, _ completionHandler: ((Bool, String?) -> Void)?)
+    {
+        
+        let geoCoder = CLGeocoder()
+        let location = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+            
+            // Place details
+            var address = ""
+            var placeMark: CLPlacemark!
+            placeMark = placemarks?[0]
+            
+            // Location name
+//            if let locationName = placeMark.location {
+//                print(locationName)
+//                address = "\(locationName)"
+//            }
+            // Street address
+            if let street = placeMark.thoroughfare {
+                print(street)
+                address = "\(street)"
+            }
+            // City
+            if let city = placeMark.locality {
+                print(city)
+                address = "\(address), \(city)"
+            }
+            // State
+            if let state = placeMark.administrativeArea {
+                print(state)
+                address = "\(address), \(state)"
+            }
+            // Zip code
+            if let zipCode = placeMark.postalCode {
+                print(zipCode)
+                address = "\(address), \(zipCode)"
+            }
+            // Country
+            if let country = placeMark.country {
+                print(country)
+                address = "\(address), \(country)."
+            }
+            
+            if !Utility.isBlankString(text: address) {
+                completionHandler!(true, address)
+            }
+            else
+            {
+                completionHandler!(false, nil)
+            }
+        })
+        
+    }
 }
 
 

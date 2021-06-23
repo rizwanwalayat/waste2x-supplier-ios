@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SDWebImage
+import GoogleMaps
 
 
 // MARK: - Collectionview Delegate and Datasource
@@ -16,14 +17,16 @@ extension WasteDetailViewController : UICollectionViewDelegate, UICollectionView
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return imagesArray.count
+        return imagesDataArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WasteImageDetailCollectionViewCell", for: indexPath) as! WasteImageDetailCollectionViewCell
         
-        cell.titleImageview.image = imagesArray[indexPath.row]
+        let cellData = imagesDataArray[indexPath.row]
+        cell.titleImageview.image = cellData.image
+        cell.dateLabel.text = cellData.time
         
         return cell
     }
@@ -50,10 +53,40 @@ extension WasteDetailViewController : NewWasteSizeViewControllerDelegate
 
 // MARK: - WasteDetailLocationViewControllerDelegate
 extension WasteDetailViewController : WasteDetailLocationViewControllerDelegate {
+    func selectedLatitudeLongitude(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+        
+        print("Latitude : \(latitude), Longitude : \(longitude)")
+        
+        postDictToUpdateLocation["latitude"] = latitude
+        postDictToUpdateLocation["longitude"] = longitude
+        
+        self.addressToUpdate()
+    }
+    
     func selectedLocationDetail(address: String) {
         
-        addressLabel.text = address
+        updatedSelectedAddress = address
     }
+}
+
+extension WasteDetailViewController : LocationPickerViewControllerDelegate
+{
+    func didSelectLocation(locationAddress: String, coordinates: CLLocationCoordinate2D, city: String, state: String) {
+        
+        convertLocationToAddress(location: coordinates) { isSuccess, address in
+            if isSuccess {
+                
+                self.updatedSelectedAddress = address ?? ""
+            }
+        }
+        
+        postDictToUpdateLocation["latitude"] = coordinates.latitude
+        postDictToUpdateLocation["longitude"] = coordinates.longitude
+        
+        self.addressToUpdate()
+    }
+    
+    
 }
 
 
@@ -86,18 +119,18 @@ extension WasteDetailViewController {
                         }
                         else
                         {
-                            Utility.showAlertController(self, "Faild!, \(message)")
+                            Utility.showAlertController(self, "Failed!, \(message)")
                         }
                     }
                     else
                     {
-                        Utility.showAlertController(self, "Faild!, \(message)")
+                        Utility.showAlertController(self, "Failed!, \(message)")
                     }
                     
                 }
                 else
                 {
-                    Utility.showAlertController(self, "Faild!, \(message)")
+                    Utility.showAlertController(self, "Failed!, \(message)")
                 }
             }
         }
@@ -136,7 +169,7 @@ extension WasteDetailViewController {
                     
                     if let wasteImage = image {
                         
-                        self.updateImageLibrary(wasteImage)
+                        self.updateImageLibrary(wasteImage, time: activityData.timestamp)
                     }
                 }
             }
@@ -170,17 +203,18 @@ extension WasteDetailViewController {
                     if isSuccess {
                         
                         let image = self.postDictToSaveImage["farm_image"] as! UIImage
-                        self.updateImageLibrary(image)
+                        let date = Date().dateToString("yyyy-mm-dd")
+                        self.updateImageLibrary(image, time: date)
                     }
                     else
                     {
-                        Utility.showAlertController(self, "Faild!, \(message)")
+                        Utility.showAlertController(self, "Failed!, \(message)")
                     }
                     
                 }
                 else
                 {
-                    Utility.showAlertController(self, "Faild!, \(message)")
+                    Utility.showAlertController(self, "Failed!, \(message)")
                 }
             }
         }
@@ -207,13 +241,49 @@ extension WasteDetailViewController {
                     }
                     else
                     {
-                        Utility.showAlertController(self, "Faild!, \(message)")
+                        Utility.showAlertController(self, "Failed!, \(message)")
                     }
                     
                 }
                 else
                 {
-                    Utility.showAlertController(self, "Faild!, \(message)")
+                    Utility.showAlertController(self, "Failed!, \(message)")
+                }
+            }
+        }
+    }
+    
+    func addressToUpdate()
+    {
+        let postDict =  postDictToUpdateLocation as [String : AnyObject]
+        WasteDataModel.updateWasteLocation(params: postDict) { data, error, success, message in
+            
+            if error != nil
+            {
+                Utility.showAlertController(self, error!.localizedDescription)
+            }
+            
+            if data != nil {
+                
+                if let isSuccess = success {
+                    
+                    if isSuccess {
+                        
+                        self.showToast(message: message)
+                        if self.updatedSelectedAddress.count > 0 {
+                            
+                            self.addressLabel.text = self.updatedSelectedAddress
+                        }
+                    }
+                    else
+                    {
+                        Utility.showAlertController(self, "Failed!, \(message)")
+                    }
+                    
+                }
+                else
+                {
+                    Utility.showAlertController(self, "Failed!, \(message)")
                 }
             }
         }

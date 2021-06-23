@@ -31,9 +31,9 @@ class WasteDetialResult : Mappable
 }
 
 class WasteDetailActivities : Mappable {
-    var address : String?
-    var image : String?
-    var timestamp : String?
+    var address = ""
+    var image = ""
+    var timestamp = ""
 
     required init?(map: Map) {
 
@@ -47,5 +47,19 @@ class WasteDetailActivities : Mappable {
     }
 }
 
+
+class ImagesCollectionViewData : NSObject
+{
+    var image = UIImage()
+    var time = ""
+    
+    override init() {
+        super.init()
+    }
+    init(_ image : UIImage, _ time : String) {
+        self.image = image
+        self.time = time
+    }
+}
 
 

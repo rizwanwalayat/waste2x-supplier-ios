@@ -38,12 +38,16 @@ class TwillioChatDataModel: NSObject {
     }
     
     func sendMessage(_ messageText: String,
-                     completion: @escaping (TCHResult, TCHMessage?) -> Void) {
+                     completion: @escaping (TCHResult?, TCHMessage?) -> Void) {
         if let messages = self.channel?.messages {
             let messageOptions = TCHMessageOptions().withBody(messageText)
             messages.sendMessage(with: messageOptions, completion: { (result, message) in
                 completion(result, message)
             })
+        }
+        else {
+            
+            completion(nil, nil)
         }
     }
     
@@ -72,6 +76,7 @@ class TwillioChatDataModel: NSObject {
     
     private func createChannel(_ completion: @escaping (Bool, TCHChannel?) -> Void) {
         guard let client = client, let channelsList = client.channelsList() else {
+            
             return
         }
         

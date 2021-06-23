@@ -13,6 +13,8 @@ import GooglePlaces
 protocol WasteDetailLocationViewControllerDelegate {
     
     func selectedLocationDetail(address : String)
+    func selectedLatitudeLongitude(latitude: CLLocationDegrees, longitude : CLLocationDegrees)
+    
 }
 class WasteDetailLocationViewController: BaseViewController {
 
@@ -91,7 +93,7 @@ class WasteDetailLocationViewController: BaseViewController {
                 }
             }
             
-            
+            delegate?.selectedLatitudeLongitude(latitude: currentLocation!.coordinate.latitude, longitude: currentLocation!.coordinate.longitude)
             selectionData["latitude"] = currentLocation!.coordinate.latitude
             selectionData["longitude"] = currentLocation!.coordinate.longitude
             // screen is reusing for site Creation add condition for that puropose to set flow of applcation
@@ -122,8 +124,12 @@ class WasteDetailLocationViewController: BaseViewController {
 
 extension WasteDetailLocationViewController: UITextFieldDelegate
 {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return true
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        textField.resignFirstResponder()
+        let acController = GMSAutocompleteViewController()
+        acController.delegate = self
+        present(acController, animated: true, completion: nil)
     }
 }
 
@@ -186,3 +192,5 @@ extension WasteDetailLocationViewController {
     }
     
 }
+
+
