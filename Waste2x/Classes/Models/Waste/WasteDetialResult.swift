@@ -12,6 +12,8 @@ class WasteDetialResult : Mappable
 	var farm_size = -1
 	var address = ""
 	var activities = [WasteDetailActivities]()
+    var latitude = Double()
+    var longitude = Double()
 
 	required init?(map: Map) {
 
@@ -26,6 +28,8 @@ class WasteDetialResult : Mappable
 		farm_size <- map["farm_size"]
 		address <- map["address"]
 		activities <- map["activities"]
+        latitude <- map["latitude"]
+        longitude <- map["longitude"]
 	}
 
 }
