@@ -25,6 +25,7 @@ class FaqViewController: BaseViewController {
         super .viewWillAppear(animated)
         mainView.layer.cornerRadius = 36
         mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        mainView.backgroundColor = UIColor.init(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
         mainView.layer.masksToBounds = true
         globalObjectContainer?.tabbarHiddenView.isHidden = false
         if Global.shared.faqApiCheck{

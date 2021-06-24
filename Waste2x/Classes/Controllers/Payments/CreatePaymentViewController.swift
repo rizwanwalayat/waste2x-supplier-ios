@@ -12,6 +12,7 @@ class CreatePaymentViewController: BaseViewController {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var idTitle: UITextField!
     @IBOutlet weak var emailTitle: UITextField!
+    @IBOutlet weak var bottomConst: NSLayoutConstraint!
     var id : String?
     var email : String?
     override func viewDidLoad() {
@@ -27,6 +28,7 @@ class CreatePaymentViewController: BaseViewController {
         mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         mainView.layer.masksToBounds = true
         globalObjectContainer?.tabbarHiddenView.isHidden = false
+        bottomConst.constant = tabbarViewHeight
         
 
     }

@@ -78,7 +78,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="KcA-O6-dG5" firstAttribute="top" secondItem="aUd-Gm-vcf" secondAttribute="bottom" id="P8m-qJ-xVO"/>
                                     <constraint firstAttribute="trailing" secondItem="KcA-O6-dG5" secondAttribute="trailing" id="UlE-nT-lA7"/>
@@ -88,13 +88,13 @@
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lPt-MN-9aY">
                                 <rect key="frame" x="12" y="312.5" width="435" height="0.5"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="9Qw-1s-UBN"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lPt-MN-9aY" firstAttribute="leading" secondItem="suU-Ey-tl7" secondAttribute="leading" constant="12" id="2E5-x0-dYr"/>
                             <constraint firstAttribute="trailing" secondItem="vfE-e8-3AY" secondAttribute="trailing" constant="16" id="2Kv-1x-TSN"/>

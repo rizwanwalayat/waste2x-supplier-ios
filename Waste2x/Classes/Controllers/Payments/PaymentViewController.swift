@@ -11,6 +11,7 @@ import UIKit
 class PaymentViewController: BaseViewController {
 
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var bottomConst: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,7 +23,7 @@ class PaymentViewController: BaseViewController {
         mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         mainView.layer.masksToBounds = true
         globalObjectContainer?.tabbarHiddenView.isHidden = false
-        
+        bottomConst.constant = tabbarViewHeight
     }
 
     @IBAction func backAction(_ sender: Any) {

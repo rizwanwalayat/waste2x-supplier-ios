@@ -78,6 +78,7 @@ class NewsViewController: BaseViewController {
         super .viewWillAppear(animated)
         self.tableView.layer.cornerRadius = 36
         self.tableView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        tableView.backgroundColor = UIColor.init(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
         self.tableView.layer.masksToBounds = true
         globalObjectContainer?.tabbarHiddenView.isHidden = false
         self.bottomConst.constant = self.tabbarViewHeight

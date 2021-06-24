@@ -34,10 +34,10 @@
 		</dict>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>deeplink</string>
+			<string>paudapay</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>deeplink</string>
+				<string>paudapay</string>
 			</array>
 		</dict>
 	</array>

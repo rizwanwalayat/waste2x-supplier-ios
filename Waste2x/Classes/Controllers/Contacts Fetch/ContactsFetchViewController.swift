@@ -10,6 +10,7 @@ import UIKit
 import Contacts
 
 class ContactsFetchViewController: BaseViewController {
+    @IBOutlet weak var mainView: UIView!
     var contacts = [CNContact]()
     var abc = [CNLabeledValue<CNPhoneNumber>]()
     var tableViewIndex = -1
@@ -38,6 +39,9 @@ class ContactsFetchViewController: BaseViewController {
             print("unable to fetch contacts")
         }
         
+    }
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     func contactPicker(picker: ContactsFetchViewController, didSelectContactProperty contactProperty: CNContactProperty) -> UIImage {
        let contact = contactProperty.contact

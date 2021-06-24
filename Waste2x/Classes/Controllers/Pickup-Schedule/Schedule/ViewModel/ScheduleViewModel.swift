@@ -57,7 +57,7 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
         dateFormatter.pmSymbol = "PM"
 
         guard let dateObj = dateFormatter.date(from: dateStr) else {return nil}
-        let unix = dateObj.timeIntervalSince1970
+        let unix = dateObj.timeIntervalSince1970*1000
         return unix
     }
     
