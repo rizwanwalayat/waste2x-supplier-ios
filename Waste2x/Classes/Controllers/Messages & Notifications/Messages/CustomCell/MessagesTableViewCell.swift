@@ -36,9 +36,9 @@ class MessagesTableViewCell: UITableViewCell {
         receiverHolderView.isHidden = true
         mainHolderview.isHidden = true
         messageLabel.text = cellData.body
-        timeLabel.text = cellData.timestampAsDate?.dateToString("HH:MM a")
+        timeLabel.text = cellData.timestampAsDate?.dateToString("HH:MM")
         receiverMessageLabel.text = cellData.body
-        receiverTimeLabel.text = cellData.timestampAsDate?.dateToString("HH:MM a")
+        receiverTimeLabel.text = cellData.timestampAsDate?.dateToString("HH:MM")
         
         self.transform  = CGAffineTransform(scaleX: 1, y: -1)
         
@@ -54,5 +54,12 @@ class MessagesTableViewCell: UITableViewCell {
                 receiverHolderView.isHidden = false
             }
         }
+    }
+    
+    func timeStampStringToTimeReturn(_ timeStamp : String) -> String?
+    {
+        let dateTime = timeStamp.stringToDate("yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+        let dateString = dateTime?.dateToString("HH:MM")
+        return dateString
     }
 }

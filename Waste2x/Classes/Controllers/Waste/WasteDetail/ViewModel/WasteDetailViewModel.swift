@@ -65,7 +65,7 @@ extension WasteDetailViewController : WasteDetailLocationViewControllerDelegate 
     
     func selectedLocationDetail(address: String) {
         
-        updatedSelectedAddress = address
+        print(address)
     }
 }
 
@@ -76,7 +76,7 @@ extension WasteDetailViewController : LocationPickerViewControllerDelegate
         convertLocationToAddress(location: coordinates) { isSuccess, address in
             if isSuccess {
                 
-                self.updatedSelectedAddress = address ?? ""
+                print(address ?? "")
             }
         }
         
@@ -203,7 +203,7 @@ extension WasteDetailViewController {
                     if isSuccess {
                         
                         let image = self.postDictToSaveImage["farm_image"] as! UIImage
-                        let date = Date().dateToString("yyyy-mm-dd")
+                        let date = Date().dateToString("yyyy-MM-dd")
                         self.updateImageLibrary(image, time: date)
                     }
                     else
@@ -269,10 +269,12 @@ extension WasteDetailViewController {
                     
                     if isSuccess {
                         
-                        self.showToast(message: message)
-                        if self.updatedSelectedAddress.count > 0 {
-                            
-                            self.addressLabel.text = self.updatedSelectedAddress
+                       // self.showToast(message: message)
+                        if let address = data?.result{
+                            if address.count > 0{
+                                
+                                self.addressLabel.text = address
+                            }
                         }
                     }
                     else

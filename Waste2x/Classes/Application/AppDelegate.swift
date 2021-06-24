@@ -61,6 +61,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         initializeLocationManager()
         return true
     }
+    
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        TwillioChatDataModel.shared.shutdown()
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        TwillioChatDataModel.shared.shutdown()
+    }
+    
+    
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
 
         if let messageID = userInfo[gcmMessageIDKey] {

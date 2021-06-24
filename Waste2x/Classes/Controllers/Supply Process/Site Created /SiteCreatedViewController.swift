@@ -44,6 +44,12 @@ class SiteCreatedViewController: BaseViewController {
             }
         }
         
+        if SupplyingTypeViewController.selectedImageIcon.count > 0
+        {
+            guard let imageUrl = URL(string: SupplyingTypeViewController.selectedImageIcon) else { print("URL not created for imagesURL String"); return }
+            setImage(imageView: siteImageView, url: imageUrl)
+        }
+        
     }
 
 
