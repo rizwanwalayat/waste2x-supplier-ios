@@ -12,9 +12,9 @@ import Contacts
 class ContactsFetchViewController: BaseViewController {
     @IBOutlet weak var mainView: UIView!
     var contacts = [CNContact]()
-    var abc = [CNLabeledValue<CNPhoneNumber>]()
     var tableViewIndex = -1
-    
+    var number = ""
+    var name = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         globalObjectContainer?.tabbarHiddenView.isHidden = true
@@ -47,10 +47,21 @@ class ContactsFetchViewController: BaseViewController {
        let contact = contactProperty.contact
        if contact.imageDataAvailable {
           // there is an image for this contact
-        return UIImage(data: contact.thumbnailImageData!)!
+        return UIImage(data: contact.imageData!)!
           // Do what ever you want with the contact image below
        }
-        return UIImage(named: "noor")!
+        return UIImage(named: "defaultUser")!
+    }
+    @objc func actionApi(_ sender:UIButton){
+        
+        
+        for phoneNumber in contacts[sender.tag].phoneNumbers {
+            let number = phoneNumber.value
+            self.number = number.stringValue
+        }
+        self.name = "\(contacts[sender.tag].givenName)"
+        
+        
     }
 
 
@@ -62,17 +73,15 @@ extension ContactsFetchViewController : UITableViewDelegate,UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.register(ContactFetchTableViewCell.self, indexPath: indexPath)
-        
-
-
-        
-            cell.imgView?.image = contactPicker(picker: ContactsFetchViewController(), didSelectContactProperty: CNContactProperty())
+        cell.imgView?.image = contactPicker(picker: ContactsFetchViewController(), didSelectContactProperty: CNContactProperty())
         cell.nameLabel.text = contacts[indexPath.row].givenName
         for phoneNumber in contacts[indexPath.row].phoneNumbers {
             let number = phoneNumber.value
             cell.numberLabel.text = number.stringValue
             print("\(contacts[indexPath.row].givenName) -- \(number.stringValue)")
         }
+        cell.inviteButton.tag = indexPath.row
+        cell.inviteButton.addTarget(self, action: #selector(actionApi(_:)), for: .touchUpInside)
         
         cell.selectionStyle = .none
         return cell
@@ -80,7 +89,6 @@ extension ContactsFetchViewController : UITableViewDelegate,UITableViewDataSourc
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.tableViewIndex = indexPath.row
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         80

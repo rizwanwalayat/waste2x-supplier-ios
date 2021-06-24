@@ -28,4 +28,7 @@ class ContactFetchTableViewCell: UITableViewCell {
     @IBAction func inviteAction(_ sender: Any) {
         
     }
+    func config(index:Int){
+        
+    }
 }
