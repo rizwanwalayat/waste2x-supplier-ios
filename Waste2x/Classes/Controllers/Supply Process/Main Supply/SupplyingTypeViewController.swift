@@ -23,6 +23,7 @@ class SupplyingTypeViewController: BaseViewController {
     @IBOutlet weak var constCollectionViewHeigh: NSLayoutConstraint!
     @IBOutlet weak var mainViewwithNavBar: UIView!
 
+    static var selectedImageIcon = ""
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -60,6 +61,7 @@ class SupplyingTypeViewController: BaseViewController {
         
         if supplyProcessData.count > 0 {
             
+            SupplyingTypeViewController.selectedImageIcon = supplyProcessData[collectionViewIndex].icon_url
             selectionData["waste_type"] = supplyProcessData[collectionViewIndex].title
             let vc = SupplySubTypeViewController(nibName: "SupplySubTypeViewController", bundle: nil)
             vc.modalPresentationStyle = .overFullScreen

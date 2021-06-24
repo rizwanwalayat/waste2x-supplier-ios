@@ -32,7 +32,8 @@ class LocationPickerViewController: BaseViewController {
     weak var delegate: LocationPickerViewControllerDelegate?
     var isForSiteCreation = false
     var selectionData = [String : Any]()
-    
+    var pLatitude : Double?
+    var pLongitude : Double?
     
     //MARK: - Outlets
     @IBOutlet weak var mapsView: GMSMapView!
@@ -53,6 +54,16 @@ class LocationPickerViewController: BaseViewController {
             
         }
         setupView()
+        
+        
+        if pLatitude != nil && pLongitude != nil {
+            
+            let coordinates = CLLocationCoordinate2DMake(pLatitude!, pLongitude!)
+            locationManager.stopUpdatingLocation()
+            mapsView.camera = GMSCameraPosition(target: coordinates, zoom: 15, bearing: 0, viewingAngle: 0)
+            myPositionMarker.position = coordinates
+            getAddressFromLatLon()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -270,10 +281,13 @@ extension LocationPickerViewController: CLLocationManagerDelegate {
             return
         }
         
-        locationManager.stopUpdatingLocation()
-        mapsView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
-        myPositionMarker.position = location.coordinate
-        getAddressFromLatLon()
+        if pLatitude == nil
+        {
+            locationManager.stopUpdatingLocation()
+            mapsView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+            myPositionMarker.position = location.coordinate
+            getAddressFromLatLon()
+        }
     }
 }
 

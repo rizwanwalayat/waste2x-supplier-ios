@@ -83,14 +83,21 @@ class CalenderPopupViewController: BaseViewController {
     // MARK: - Actions
     @IBAction func upButtonPressed(_ sender: Any) {
         
-        let indexArray = timesSchadules.indexes(of: timeLabel.text ?? "")
-        let index = (indexArray.first ?? 0) + 1
+//        let indexArray = timesSchadules.indexes(of: timeLabel.text ?? "")
+//        let index = (indexArray.first ?? 0) + 1
+//
+//        if index < timesSchadules.count
+//        {
+//            timeLabel.text = timesSchadules[index]
+//        }
+    
         
-        if index < timesSchadules.count
-        {
-            timeLabel.text = timesSchadules[index]
-        }
-        
+        let optionsCustompopup               = ScheduleOptionsViewController(nibName: "ScheduleOptionsViewController", bundle: nil)
+        optionsCustompopup.modalPresentationStyle = .overFullScreen
+        optionsCustompopup.delegate = self
+        optionsCustompopup.optionsData = timesSchadules
+        optionsCustompopup.alreadySelectedString = timeLabel.text ?? ""
+        self.present(optionsCustompopup, animated: false, completion: nil)
     }
     
     @IBAction func downButtonPressed(_ sender: Any) {
@@ -143,4 +150,19 @@ extension CalenderPopupViewController : FSCalendarDelegate
         hidePopup()
         delegate?.didSelectDate(dateString: selectedString)
     }
+}
+
+extension CalenderPopupViewController : ScheduleOptionsViewControllerDelegate
+{
+    func didSelectOption(_ selectedOption: String) {
+        
+        timeLabel.text = selectedOption
+    }
+    
+    func didDismiss() {
+        
+        print("dismiss")
+    }
+    
+    
 }

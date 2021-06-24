@@ -145,7 +145,7 @@ extension TwillioChatDataModel : TwilioChatClientDelegate
                 return
             }
             
-            checkChannelCreation { (_, channel) in
+            checkChannelCreation { (result , channel) in
                 if let channel = channel {
                     self.joinChannel(channel)
                 } else {

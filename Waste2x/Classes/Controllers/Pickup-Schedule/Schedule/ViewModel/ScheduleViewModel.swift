@@ -311,6 +311,21 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
             return false
         }
     }
+    
+    func googleMapCurrentLocation()
+    {
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.distanceFilter = 50
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+            locationManager.delegate = self
+        }else{
+            print("Internet Error")
+        }
+    }
 }
 
 
@@ -348,5 +363,30 @@ extension ScheduleViewController
                 Utility.showAlertController(self, message)
             }
         }
+    }
+}
+
+extension ScheduleViewController : CLLocationManagerDelegate
+{
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        if let location = locations.last
+        {
+            
+            Global.shared.location = location
+            Global.shared.current_lat = location.coordinate.latitude
+            Global.shared.current_lng = location.coordinate.longitude
+            
+            Global.shared.convertLocationToAddress(location: Global.shared.location) { (success, address) in
+                if success
+                {
+                    self.selectLocationLabel.text =  address ?? ""
+                    self.selectionHandlingsOfViews(self.selectLocationHolderview, isSelection: true)
+                    self.locationAutoFill = true
+                }
+            }
+            
+        }
+        locationManager.stopUpdatingLocation()
     }
 }
