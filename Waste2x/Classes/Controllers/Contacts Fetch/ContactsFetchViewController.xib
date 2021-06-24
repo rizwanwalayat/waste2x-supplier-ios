@@ -17,6 +17,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactsFetchViewController" customModule="Waste2x" customModuleProvider="target">
             <connections>
                 <outlet property="mainView" destination="puJ-RS-ZkW" id="UDh-re-lVc"/>
+                <outlet property="tableView" destination="81H-Es-lQr" id="8mp-31-sge"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

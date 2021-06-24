@@ -166,6 +166,7 @@
 		18666B2426666175005C1A78 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18666B2226666175005C1A78 /* VideoTableViewCell.xib */; };
 		1869A1BB267788C400BD3612 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869A1BA267788C400BD3612 /* BaseTableViewCell.swift */; };
 		1869A1BD26778A1F00BD3612 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869A1BC26778A1F00BD3612 /* BaseCollectionViewCell.swift */; };
+		186ACE832684F5CB00646E32 /* ContactSendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186ACE822684F5CB00646E32 /* ContactSendModel.swift */; };
 		186CD719266610C600A1F30F /* CreatePaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186CD717266610C600A1F30F /* CreatePaymentViewController.xib */; };
 		18719141266667420050FAAA /* AudioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871913F266667420050FAAA /* AudioTableViewCell.swift */; };
 		18719142266667420050FAAA /* AudioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18719140266667420050FAAA /* AudioTableViewCell.xib */; };
@@ -383,6 +384,7 @@
 		18666B2226666175005C1A78 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
 		1869A1BA267788C400BD3612 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		1869A1BC26778A1F00BD3612 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		186ACE822684F5CB00646E32 /* ContactSendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSendModel.swift; sourceTree = "<group>"; };
 		186CD717266610C600A1F30F /* CreatePaymentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePaymentViewController.xib; sourceTree = "<group>"; };
 		1871913F266667420050FAAA /* AudioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTableViewCell.swift; sourceTree = "<group>"; };
 		18719140266667420050FAAA /* AudioTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioTableViewCell.xib; sourceTree = "<group>"; };
@@ -494,6 +496,7 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				186ACE812684F58200646E32 /* Contacts */,
 				0418C8F8267C7D34008A0F1F /* Messages */,
 				18A7148C2680780E00007ECB /* Tracking */,
 				184E8E46267C6ACD00EAD050 /* Pending Collection */,
@@ -1198,6 +1201,14 @@
 			path = News;
 			sourceTree = "<group>";
 		};
+		186ACE812684F58200646E32 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				186ACE822684F5CB00646E32 /* ContactSendModel.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
 		187D756C266E07E9007811C4 /* Supply Process */ = {
 			isa = PBXGroup;
 			children = (
@@ -1684,6 +1695,7 @@
 				184F51672667A46400F0328A /* PendingCollectionViewController.swift in Sources */,
 				048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */,
 				0067A31C252AFC9E00CECA8C /* UITextField.swift in Sources */,
+				186ACE832684F5CB00646E32 /* ContactSendModel.swift in Sources */,
 				1869A1BD26778A1F00BD3612 /* BaseCollectionViewCell.swift in Sources */,
 				18506D80265D45EB00018707 /* SideMenuItemsTableViewCell.swift in Sources */,
 				0418C8F7267C7B9C008A0F1F /* ChatMessagesViewModel.swift in Sources */,

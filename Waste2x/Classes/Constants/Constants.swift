@@ -48,6 +48,8 @@ struct APIRoutes {
     static var pendingCollectionFetchUrl = "paudapay_us/pending_collections/"
     static var fetchTwillioAccessToken = "paudapay_us/fetch_twilio_access_token/"
     static var pendingDetailUrl = "paudapay_us/pending_collection_detail/"
+    static var contacFetchUrl = "paudapay_us/invited_suppliers/"
+    static var contacSendUrl = "paudapay_us/invite_supplier/"
 }
 struct FireBaseVariables {
     static var fireBaseToken = ""
