@@ -50,7 +50,13 @@ extension ContactViewController : UITableViewDelegate,UITableViewDataSource{
             self.navigationController?.pushViewController(vc, animated: true)
         }
         if indexPath.row == 1{
+            
+//            if let url = URL(string: "tel://04238108788"),
+//            UIApplication.shared.canOpenURL(url) {
+//            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//            }
             let vc = TrackerViewController(nibName: "TrackerViewController", bundle: nil)
+            vc.trackID  = 12
             globalObjectContainer?.tabbarHiddenView.isHidden = true
             self.navigationController?.pushViewController(vc, animated: true)
         }

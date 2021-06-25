@@ -33,6 +33,7 @@ class TrackerViewController: BaseViewController {
         super.viewDidLoad()
         ref = Database.database().reference()
         initializeTheLocationManager()
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
 
         
     }
@@ -74,7 +75,7 @@ class TrackerViewController: BaseViewController {
         DispatchQueue.main.async {
             marker.map = self.mapView
             marker1.map = self.mapView
-
+            
             }
     }
     
@@ -106,10 +107,35 @@ class TrackerViewController: BaseViewController {
         }
 
     }
-    @objc func document(notification: Notification) {
+    @objc func timerAction() {
+        geofireRef.child("\(trackID)").getData { error, data in
+            if error == nil{
+                //MARK: - For fireBase Location Again
+                
+                    let lastChildData = data.children.allObjects.first as? DataSnapshot
+                    let value = lastChildData?.value! as! [String:Any]
+                    let lat = value["lat"]!
+                    let lng = value["lon"]!
+                    self.destinationLat = lat as! Double
+                    self.destinationLng = lng as! Double
+                    self.endingLocation = "\(self.destinationLat),\(self.destinationLng)"
+                //MARK: -  Marker Draw again
+                // MARK: Marker for destination location
+                let marker1 = GMSMarker()
+                marker1.position = CLLocationCoordinate2D(latitude: self.destinationLat, longitude: self.destinationLng)
+                marker1.title = "Ending"
+                marker1.icon = UIImage (named: "endmark")
+                
+                    self.markerUpdate(s_lat: self.destinationLat, s_lon: self.destinationLng, d_lat: self.currentLat, d_lon: self.currentLon)
+//                let cam = GMSCameraPosition(latitude: self.destinationLat, longitude: self.destinationLng, zoom: 15)
+//                    DispatchQueue.main.async {
+//                        self.mapView.animate(to: cam)
+//                    }
+            }
+        }
         
     }
-    
+//
     //MARK: - IBOutlets
     
     @IBAction func backAction(_ sender: Any) {
@@ -129,31 +155,41 @@ extension TrackerViewController:CLLocationManagerDelegate{
         
         geofireRef.child("\(trackID)").getData { error, data in
             if error == nil{
-            //MARK: - For fireBase Location
-                let lastChildData = data.children.allObjects.last as? DataSnapshot
-                let value = lastChildData?.value! as! [String:Any]
-                let lat = value["lat"]!
-                let lng = value["lon"]!
-                self.destinationLat = lat as! Double
-                self.destinationLng = lng as! Double
-                self.endingLocation = "\(self.destinationLat),\(self.destinationLng)"
+
                 
-            //MARK: - for Current Location
+                //MARK: - for Current Location
+                
                 let location = self.locationManager.location!.coordinate
                 self.currentLat = location.latitude
                 self.currentLon = location.longitude
                 self.currentLocation = "\(String(location.latitude)),\(String(location.longitude))"
                 
+                //MARK: - For fireBase Location
+                
+                    let lastChildData = data.children.allObjects.first as? DataSnapshot
+                    let value = lastChildData?.value! as! [String:Any]
+                    let lat = value["lat"]!
+                    let lng = value["lon"]!
+                    self.destinationLat = lat as! Double
+                    self.destinationLng = lng as! Double
+                    self.endingLocation = "\(self.destinationLat),\(self.destinationLng)"
+                
                 
                 //MARK: - PolyLine Draw
-                if Global.shared.latlngCheck{
                     
+                if Global.shared.latlngCheck{
+                    self.mapView.clear()
                     self.fetchDate(Starting: self.currentLocation, Ending: self.endingLocation)
                     Global.shared.latlngCheck = false
                     let cam = GMSCameraPosition(latitude: self.destinationLat, longitude: self.destinationLng, zoom: 15)
+                    
+                    
+                //MARK: -  Marker Draw
+        
+                    self.markerUpdate(s_lat: self.destinationLat, s_lon: self.destinationLng, d_lat: self.currentLat, d_lon: self.currentLon)
                     DispatchQueue.main.async {
-                            self.mapView.animate(to: cam)
-                        }
+                        self.mapView.animate(to: cam)
+                    }
                     
                 }
             }
@@ -161,11 +197,7 @@ extension TrackerViewController:CLLocationManagerDelegate{
                 self.navigationController?.popViewController(animated: true)
             }
         }
-        
-
-        //MARK: -  Marker Draw
-        self.markerUpdate(s_lat: self.currentLat, s_lon: self.currentLon, d_lat: self.destinationLat, d_lon: self.destinationLng)
-        
+        self.locationManager.stopUpdatingLocation()
 
     }
     

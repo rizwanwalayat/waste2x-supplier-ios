@@ -8,9 +8,15 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactsFetchViewController" customModule="Waste2x" customModuleProvider="target">
             <connections>
+                <outlet property="mainView" destination="puJ-RS-ZkW" id="UDh-re-lVc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,27 +25,86 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="81H-Es-lQr">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Syf-3z-jw7" userLabel="NavBar">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="101.5"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ze-4e-Kt8">
+                            <rect key="frame" x="0.0" y="44" width="414" height="57.5"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jst-1r-cEf">
+                                    <rect key="frame" x="30" y="18" width="22" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="22" id="CSP-La-CIU"/>
+                                        <constraint firstAttribute="width" secondItem="Jst-1r-cEf" secondAttribute="height" multiplier="1:1" id="qeP-TX-54m"/>
+                                    </constraints>
+                                    <state key="normal" image="Arrow Left"/>
+                                    <connections>
+                                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="gwe-Yj-A1L"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invite Supplier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQ4-ng-KTf">
+                                    <rect key="frame" x="20" y="16" width="374" height="25.5"/>
+                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="GQ4-ng-KTf" firstAttribute="top" secondItem="9ze-4e-Kt8" secondAttribute="top" constant="16" id="4tC-bt-RAp"/>
+                                <constraint firstItem="Jst-1r-cEf" firstAttribute="centerY" secondItem="GQ4-ng-KTf" secondAttribute="centerY" id="MOO-i7-Ohg"/>
+                                <constraint firstAttribute="bottom" secondItem="GQ4-ng-KTf" secondAttribute="bottom" constant="16" id="jCA-wS-N4K"/>
+                                <constraint firstItem="GQ4-ng-KTf" firstAttribute="centerX" secondItem="9ze-4e-Kt8" secondAttribute="centerX" id="jPf-ej-yC7"/>
+                                <constraint firstAttribute="trailing" secondItem="GQ4-ng-KTf" secondAttribute="trailing" constant="20" id="pEx-8e-YTU"/>
+                                <constraint firstItem="Jst-1r-cEf" firstAttribute="leading" secondItem="9ze-4e-Kt8" secondAttribute="leading" constant="30" id="st1-hh-rKQ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.45882352939999999" green="0.58039215690000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="9ze-4e-Kt8" secondAttribute="bottom" id="aQr-q6-OjK"/>
+                        <constraint firstItem="9ze-4e-Kt8" firstAttribute="leading" secondItem="Syf-3z-jw7" secondAttribute="leading" id="kHq-BO-dQU"/>
+                        <constraint firstAttribute="trailing" secondItem="9ze-4e-Kt8" secondAttribute="trailing" id="rh2-zf-YKx"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="puJ-RS-ZkW">
+                    <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="81H-Es-lQr">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="794.5"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="rXO-NV-NSb"/>
+                                <outlet property="delegate" destination="-1" id="WAK-qd-2ue"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="rXO-NV-NSb"/>
-                        <outlet property="delegate" destination="-1" id="WAK-qd-2ue"/>
-                    </connections>
-                </tableView>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="81H-Es-lQr" secondAttribute="bottom" id="Cza-wu-Lca"/>
+                        <constraint firstAttribute="trailing" secondItem="81H-Es-lQr" secondAttribute="trailing" id="OpS-Rs-hQt"/>
+                        <constraint firstItem="81H-Es-lQr" firstAttribute="leading" secondItem="puJ-RS-ZkW" secondAttribute="leading" id="S6I-Bm-7p4"/>
+                        <constraint firstItem="81H-Es-lQr" firstAttribute="top" secondItem="puJ-RS-ZkW" secondAttribute="top" id="fsn-ho-ryp"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="81H-Es-lQr" secondAttribute="bottom" id="T2l-dB-8rA"/>
-                <constraint firstItem="81H-Es-lQr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="am5-DE-egR"/>
-                <constraint firstItem="81H-Es-lQr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bME-fl-Ong"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="81H-Es-lQr" secondAttribute="trailing" id="daz-Kv-hhv"/>
+                <constraint firstAttribute="trailing" secondItem="puJ-RS-ZkW" secondAttribute="trailing" id="6nm-36-Axc"/>
+                <constraint firstItem="puJ-RS-ZkW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AWf-cR-KUr"/>
+                <constraint firstItem="Syf-3z-jw7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GN6-Vh-NYS"/>
+                <constraint firstItem="puJ-RS-ZkW" firstAttribute="top" secondItem="Syf-3z-jw7" secondAttribute="bottom" id="ORI-Ea-XUW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Syf-3z-jw7" secondAttribute="trailing" id="S1n-aG-JbT"/>
+                <constraint firstItem="9ze-4e-Kt8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Yad-0G-edZ"/>
+                <constraint firstAttribute="bottom" secondItem="puJ-RS-ZkW" secondAttribute="bottom" id="cAY-Ah-DRw"/>
+                <constraint firstItem="Syf-3z-jw7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="f2L-34-oPP"/>
             </constraints>
-            <point key="canvasLocation" x="48" y="87"/>
+            <point key="canvasLocation" x="47.826086956521742" y="86.383928571428569"/>
         </view>
     </objects>
     <resources>
+        <image name="Arrow Left" width="10" height="18"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

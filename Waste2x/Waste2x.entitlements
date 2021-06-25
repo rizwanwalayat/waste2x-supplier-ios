@@ -6,7 +6,7 @@
 	<string>development</string>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>https://enmass-cache-programme.appspot.com/payment_method/stripe_return_for_app/*</string>
+		<string>applinks:enmass-cache-programme.appspot.com</string>
 	</array>
 </dict>
 </plist>
