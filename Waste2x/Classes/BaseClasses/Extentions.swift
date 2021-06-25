@@ -95,8 +95,8 @@ extension Double {
 extension Date {
     func returnDate()->String{
         let formatter = DateFormatter.init()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+        formatter.dateFormat = "MMM d, yyyy"
         formatter.locale = NSLocale(localeIdentifier: "UTC") as Locale
-        return formatter.string(from: self) ?? ""
+        return formatter.string(from: self) 
     }
 }

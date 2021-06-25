@@ -14,7 +14,7 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var tempratureLabel: UILabel!
     @IBOutlet weak var cloudImgView: UIImageView!
     @IBOutlet weak var dayLabel: UILabel!
-    
+    let date = Date.init()
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -22,14 +22,23 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     func config(index:Int)
     {
         
-
+        if index == 0{
+            if Global.shared.jump < 40 && (DataManager.shared.getWeather()?.list.count ?? 0) > Global.shared.jump {
+                self.dayLabel.text = dateCalculate(date: DataManager.shared.getWeather()?.list[Global.shared.jump].dtTxt ?? "")
+                let weatherTemp = DataManager.shared.getWeather()?.list[Global.shared.jump].main?.temp ?? 00
+                self.tempratureLabel.text = "\(weatherTemp.shortValue)°" + ""
+                Global.shared.jump = Global.shared.jump+8
+            }
+        }
+        else {
+//            mainView.backgroundColor = UIColor.init(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.05)
         if Global.shared.jump < 40 && (DataManager.shared.getWeather()?.list.count ?? 0) > Global.shared.jump {
             self.dayLabel.text = dateCalculate(date: DataManager.shared.getWeather()?.list[Global.shared.jump].dtTxt ?? "")
             let weatherTemp = DataManager.shared.getWeather()?.list[Global.shared.jump].main?.temp ?? 00
             self.tempratureLabel.text = "\(weatherTemp.shortValue)°" + ""
             Global.shared.jump = Global.shared.jump+8
         }
-        
+        }
         
             
     }

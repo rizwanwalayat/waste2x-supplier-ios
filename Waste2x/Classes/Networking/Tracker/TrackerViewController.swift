@@ -8,7 +8,7 @@
 
 import UIKit
 import GoogleMaps
-import GeoFire
+import FirebaseDatabase
 
 class TrackerViewController: BaseViewController {
 //MARK: - Variables
@@ -21,8 +21,7 @@ class TrackerViewController: BaseViewController {
     var destinationLng = Double()
     var timer = Timer()
     var trackID = 1
-    var ref: DatabaseReference!
-    let geofireRef = Database.database().reference().child("dispatch_id")
+    let dataBase = Database.database().reference().child("dispatch_id")
     @IBOutlet weak var kmLabel: UILabel!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var mapView: GMSMapView!
@@ -31,7 +30,6 @@ class TrackerViewController: BaseViewController {
     @IBOutlet weak var timeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref = Database.database().reference()
         initializeTheLocationManager()
         timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
 
@@ -108,7 +106,7 @@ class TrackerViewController: BaseViewController {
 
     }
     @objc func timerAction() {
-        geofireRef.child("\(trackID)").getData { error, data in
+        dataBase.child("\(trackID)").getData { error, data in
             if error == nil{
                 //MARK: - For fireBase Location Again
                 
@@ -153,7 +151,7 @@ extension TrackerViewController:CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("lcoation delegate call")
         
-        geofireRef.child("\(trackID)").getData { error, data in
+        dataBase.child("\(trackID)").getData { error, data in
             if error == nil{
 
                 

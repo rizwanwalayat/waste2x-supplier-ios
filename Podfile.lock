@@ -38,12 +38,6 @@ PODS:
     - GoogleUtilities/Reachability (~> 7.0)
     - GoogleUtilities/UserDefaults (~> 7.0)
   - FSCalendar (2.8.2)
-  - GeoFire (4.2.0):
-    - GeoFire/Database (= 4.2.0)
-  - GeoFire/Database (4.2.0):
-    - Firebase/Database (~> 7.8.0)
-    - GeoFire/Utils
-  - GeoFire/Utils (4.2.0)
   - GoogleDataTransport (8.4.0):
     - GoogleUtilities/Environment (~> 7.2)
     - nanopb (~> 2.30908.0)
@@ -93,9 +87,9 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.2)
+  - Firebase/Database
   - Firebase/Messaging
   - FSCalendar
-  - GeoFire
   - GoogleMaps
   - GooglePlaces
   - IQKeyboardManagerSwift
@@ -118,7 +112,6 @@ SPEC REPOS:
     - FirebaseInstanceID
     - FirebaseMessaging
     - FSCalendar
-    - GeoFire
     - GoogleDataTransport
     - GoogleMaps
     - GooglePlaces
@@ -145,7 +138,6 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: ad5135045a498d7775903efd39762d2cdfa1be27
   FirebaseMessaging: 1d5cac3728c042d3d4700ecb56bbac893660a963
   FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
-  GeoFire: 4a0d0c1d3e635278f3d95c1dc33ddaec858c64f7
   GoogleDataTransport: cd9db2180fcecd8da1b561aea31e3e56cf834aa7
   GoogleMaps: 600e5e69bdf7f4ed7cac4d6aa96c7ec08a5aa254
   GooglePlaces: 5d87ca13ed98b7a937e0d8bc7026f718c7263271
@@ -162,6 +154,6 @@ SPEC CHECKSUMS:
   TwilioChatClient: 23168c2df8e306da1cedcad1d60ba69862235358
   YoutubePlayer-in-WKWebView: cfbf46da51d7370662a695a8f351e5fa1d3e1008
 
-PODFILE CHECKSUM: 3f3d769ac906bb7a4b5479d9a55c37e8dbc98e9e
+PODFILE CHECKSUM: 24f9c74b1a5931fba7cbc2fafadea37660ee0343
 
 COCOAPODS: 1.10.1

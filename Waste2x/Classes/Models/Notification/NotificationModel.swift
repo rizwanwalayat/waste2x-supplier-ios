@@ -64,6 +64,9 @@ class NotificationResultList : Mappable {
     var response = ""
     var createdAt = ""
     var pendingCollectionId = Int()
+    var latitude = Double()
+    var longitude = Double()
+    var dispatchId = Int()
 
     required init?(map: Map) { }
 
@@ -74,6 +77,9 @@ class NotificationResultList : Mappable {
         response <- map["response"]
         createdAt <- map["created_at"]
         pendingCollectionId <- map["pending_collection_id"]
+        latitude <- map["latitude"]
+        longitude <- map["longitude"]
+        dispatchId <- map["dispatch_id"]
         
     }
 }

@@ -59,9 +59,7 @@ class ContactsFetchViewController: BaseViewController {
     func contactPicker(picker: ContactsFetchViewController, didSelectContactProperty contactProperty: CNContactProperty) -> UIImage {
        let contact = contactProperty.contact
        if contact.imageDataAvailable {
-          // there is an image for this contact
         return UIImage(data: contact.imageData!)!
-          // Do what ever you want with the contact image below
        }
         return UIImage(named: "defaultUser")!
     }
@@ -92,7 +90,7 @@ extension ContactsFetchViewController : UITableViewDelegate,UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.register(ContactFetchTableViewCell.self, indexPath: indexPath)
         self.cellConfig(cell: cell, indexPath: indexPath)
-//        cell.config(index: indexPath.row,data:self.dataModel,contacts:contacts)
+        cell.config(index: indexPath.row,data:self.dataModel,contacts:contacts)
         cell.selectionStyle = .none
         return cell
         
