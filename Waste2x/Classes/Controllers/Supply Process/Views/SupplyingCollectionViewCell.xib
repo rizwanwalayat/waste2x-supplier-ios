@@ -48,6 +48,9 @@ waste</string>
                                 <color key="textColor" red="0.21568627450980393" green="0.20784313725490194" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Half Circle" translatesAutoresizingMaskIntoConstraints="NO" id="oMV-ME-ANu">
+                                <rect key="frame" x="0.0" y="198" width="326" height="132"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274509803915" green="0.96862745098039216" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -58,10 +61,14 @@ waste</string>
                             <constraint firstAttribute="trailing" secondItem="G5W-kj-bXD" secondAttribute="trailing" constant="20" id="Sgx-yI-Jry"/>
                             <constraint firstItem="G5W-kj-bXD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="MPB-5W-s7x" secondAttribute="bottom" constant="10" id="U3s-zw-JjY"/>
                             <constraint firstItem="ScH-os-6NJ" firstAttribute="leading" secondItem="zrT-Wb-s3c" secondAttribute="leading" id="V6Z-hd-9Ew"/>
+                            <constraint firstItem="oMV-ME-ANu" firstAttribute="height" secondItem="zrT-Wb-s3c" secondAttribute="height" multiplier="0.4" id="dJf-jX-oWs"/>
+                            <constraint firstAttribute="trailing" secondItem="oMV-ME-ANu" secondAttribute="trailing" id="eC2-k8-v1t"/>
                             <constraint firstAttribute="bottom" secondItem="ScH-os-6NJ" secondAttribute="bottom" constant="-30" id="euk-Rk-Ig4"/>
+                            <constraint firstItem="oMV-ME-ANu" firstAttribute="leading" secondItem="zrT-Wb-s3c" secondAttribute="leading" id="gKz-jN-hRp"/>
                             <constraint firstItem="MPB-5W-s7x" firstAttribute="centerX" secondItem="zrT-Wb-s3c" secondAttribute="centerX" id="hNy-mp-t69"/>
                             <constraint firstAttribute="trailing" secondItem="ScH-os-6NJ" secondAttribute="trailing" id="hTR-7b-FYO"/>
                             <constraint firstAttribute="bottom" secondItem="G5W-kj-bXD" secondAttribute="bottom" constant="11" id="ieE-av-2ox"/>
+                            <constraint firstAttribute="bottom" secondItem="oMV-ME-ANu" secondAttribute="bottom" id="pfJ-tD-UWD"/>
                             <constraint firstItem="MPB-5W-s7x" firstAttribute="width" secondItem="zrT-Wb-s3c" secondAttribute="width" multiplier="0.5" id="xGo-Ot-U7R"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -69,6 +76,11 @@ waste</string>
                                 <real key="value" value="20"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ScH-os-6NJ"/>
+                            </mask>
+                        </variation>
                     </view>
                 </subviews>
             </view>
@@ -91,6 +103,7 @@ waste</string>
     </objects>
     <resources>
         <image name="32887180" width="800" height="563"/>
+        <image name="Half Circle" width="127" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
