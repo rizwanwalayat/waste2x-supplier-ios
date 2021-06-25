@@ -22,12 +22,12 @@ class InviteSupplierViewController: BaseViewController {
         mainView.layer.cornerRadius = 36
         mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         mainView.layer.masksToBounds = true
-        mainView.backgroundColor = UIColor.init(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
         globalObjectContainer?.tabbarHiddenView.isHidden = false
         bottomConstraints.constant = tabbarViewHeight
         
     }
     @IBAction func inviteAction(_ sender: Any) {
+
         let vc = ContactsFetchViewController(nibName: "ContactsFetchViewController", bundle: nil)
         self.navigationController?.pushTo(controller: vc)
         

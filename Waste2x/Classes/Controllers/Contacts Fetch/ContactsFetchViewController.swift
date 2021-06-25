@@ -11,12 +11,16 @@ import Contacts
 
 class ContactsFetchViewController: BaseViewController {
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var tableView: UITableView!
     var contacts = [CNContact]()
     var tableViewIndex = -1
     var number = ""
     var name = ""
+    var dataModel = [ContactFetchModelResult]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.apiCall()
         globalObjectContainer?.tabbarHiddenView.isHidden = true
         let contactStore = CNContactStore()
         let keys = [
@@ -30,6 +34,7 @@ class ContactsFetchViewController: BaseViewController {
                     (contact, stop) in
                 // Array containing all unified contacts from everywhere
                 self.contacts.append(contact)
+                self.tableView.reloadData()
                 for phoneNumber in contact.phoneNumbers {
                     let number = phoneNumber.value
                         print("\(contact.givenName) -- \(number.stringValue)")
@@ -40,15 +45,21 @@ class ContactsFetchViewController: BaseViewController {
         }
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        mainView.layer.cornerRadius = 36
+        mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        mainView.layer.masksToBounds = true
+        globalObjectContainer?.tabbarHiddenView.isHidden = true
+        
+    }
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     func contactPicker(picker: ContactsFetchViewController, didSelectContactProperty contactProperty: CNContactProperty) -> UIImage {
        let contact = contactProperty.contact
        if contact.imageDataAvailable {
-          // there is an image for this contact
         return UIImage(data: contact.imageData!)!
-          // Do what ever you want with the contact image below
        }
         return UIImage(named: "defaultUser")!
     }
@@ -60,7 +71,12 @@ class ContactsFetchViewController: BaseViewController {
             self.number = number.stringValue
         }
         self.name = "\(contacts[sender.tag].givenName)"
-        
+        ContactSendModel.contactSendApiCall(name: self.name, number: self.number) { result, error, status, message in
+            if error == nil{
+                print(result?.result?.inviteId ?? "Noting",result?.result?.inviteTo ?? "Noting")
+                self.apiCall()
+            }
+        }
         
     }
 
@@ -73,16 +89,8 @@ extension ContactsFetchViewController : UITableViewDelegate,UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.register(ContactFetchTableViewCell.self, indexPath: indexPath)
-        cell.imgView?.image = contactPicker(picker: ContactsFetchViewController(), didSelectContactProperty: CNContactProperty())
-        cell.nameLabel.text = contacts[indexPath.row].givenName
-        for phoneNumber in contacts[indexPath.row].phoneNumbers {
-            let number = phoneNumber.value
-            cell.numberLabel.text = number.stringValue
-            print("\(contacts[indexPath.row].givenName) -- \(number.stringValue)")
-        }
-        cell.inviteButton.tag = indexPath.row
-        cell.inviteButton.addTarget(self, action: #selector(actionApi(_:)), for: .touchUpInside)
-        
+        self.cellConfig(cell: cell, indexPath: indexPath)
+        cell.config(index: indexPath.row,data:self.dataModel,contacts:contacts)
         cell.selectionStyle = .none
         return cell
         
@@ -92,6 +100,28 @@ extension ContactsFetchViewController : UITableViewDelegate,UITableViewDataSourc
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         80
+    }
+    
+    //MARK: - Cell Function
+    func cellConfig(cell:ContactFetchTableViewCell,indexPath:IndexPath){
+        cell.imgView?.image = contactPicker(picker: ContactsFetchViewController(), didSelectContactProperty: CNContactProperty())
+        cell.nameLabel.text = contacts[indexPath.row].givenName
+        for phoneNumber in contacts[indexPath.row].phoneNumbers {
+            let number = phoneNumber.value
+            cell.numberLabel.text = number.stringValue
+        }
+        cell.inviteButton.tag = indexPath.row
+        cell.inviteButton.addTarget(self, action: #selector(actionApi(_:)), for: .touchUpInside)
+    }
+    
+}
+extension ContactsFetchViewController{
+    func apiCall(){
+        ContactFetchModel.contactFetchApiCall { result, error, status, message in
+            self.dataModel = result!.result
+            self.tableView.reloadData()
+            print(self.dataModel.count)
+        }
     }
     
 }

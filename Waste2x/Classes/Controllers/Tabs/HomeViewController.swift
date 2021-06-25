@@ -33,6 +33,7 @@ class HomeViewController: BaseViewController{
     @IBOutlet weak var homeScrollview : UIScrollView!
     @IBOutlet weak var bottomConst: NSLayoutConstraint!
     
+    @IBOutlet weak var mainView: UIScrollView!
     
     //MARK: - Variables
     
@@ -85,7 +86,7 @@ class HomeViewController: BaseViewController{
         
 //        self.weatherCollectionView.reloadData()
 //        Global.shared.jump = 0
-//        weatherCollectionView.reloadData()
+        weatherCollectionView.reloadData()
 //        tableView.reloadData()
         
         NotificationCenter.default.addObserver(
@@ -119,12 +120,12 @@ class HomeViewController: BaseViewController{
                     }
                     else{
                         let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
-                        self.navigationController?.pushViewController(vc, animated: true)
+                        self.navigationController?.pushViewController(vc, animated: false)
                     }
                 }
                 else{
                     let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
-                    self.navigationController?.pushViewController(vc, animated: true)
+                    self.navigationController?.pushViewController(vc, animated: false)
                 }
             }
         }
@@ -132,10 +133,13 @@ class HomeViewController: BaseViewController{
 
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(true)
+        mainView.layer.cornerRadius = 36
+        mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        mainView.layer.masksToBounds = true
         self.weatherCollectionView.reloadData()
         Global.shared.jump = 0
-//        weatherCollectionView.reloadData()
-//        tableView.reloadData()
+        weatherCollectionView.reloadData()
+        tableView.reloadData()
         self.navigationController?.navigationBar.isHidden = true
         globalObjectContainer?.tabbarHiddenView.isHidden = false
     }
@@ -211,12 +215,14 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == weatherCollectionView{
+        if collectionView == weatherCollectionView {
             let cell = collectionView.register(WeatherCollectionViewCell.self, indexPath: indexPath)
             cell.config(index: indexPath.row)
-            return cell
+                return cell
             
         }
+            
+        
         else
         {
             let cell = collectionView.register(WasteTypeCollectionViewCell.self, indexPath: indexPath)
@@ -313,7 +319,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         }
             else
             {
-                let text = "Invite Supplieer."
+                let text = "Invite Supplier."
                 let textToShare = [ text ]
                 let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
                 activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
@@ -325,8 +331,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         {
 //            let vc = InviteSupplierViewController(nibName: "InviteSupplierViewController", bundle: nil)
 //            self.navigationController?.pushTo(controller: vc)
-            
-            let text = "Invite Supplieer."
+            let text = "Invite Supplier."
             let textToShare = [ text ]
             let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
             activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash

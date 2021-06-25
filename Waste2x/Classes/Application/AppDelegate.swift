@@ -61,6 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         initializeLocationManager()
         return true
     }
+
     
     
     func applicationDidEnterBackground(_ application: UIApplication) {

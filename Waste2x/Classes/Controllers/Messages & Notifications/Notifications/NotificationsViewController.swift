@@ -50,13 +50,22 @@ class NotificationsViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @objc func yesButtonPress(sender:UIButton){
-        if sender.title(for: .normal) == "Check"{
+        if sender.title(for: .normal) == "Check" {
             
             let vc = DetailedPendingCollectionViewController(nibName: "DetailedPendingCollectionViewController", bundle: nil)
             vc.id = NotificationModell?.result?.notifications[sender.tag].pendingCollectionId ?? 0
             self.navigationController?.pushTo(controller: vc)
             
         }
+        else if sender.title(for: .normal) == "On Way" {
+            
+            let vc = TrackerViewController(nibName: "TrackerViewController", bundle: nil)
+                vc.trackID  = NotificationModell?.result?.notifications[sender.tag].dispatchId ?? 0
+                globalObjectContainer?.tabbarHiddenView.isHidden = true
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
+        
         else if sender.title(for: .normal) == "Pending" {
             let notifcationDaTag = NotificationModell?.result?.notifications[sender.tag]
             let notificationID = notifcationDaTag?.idd
@@ -66,9 +75,6 @@ class NotificationsViewController: BaseViewController {
                 
             }
         }
-
-        
-        
     }
     @objc func noButtonPress(sender:UIButton){
         let notifcationDaTag = NotificationModell?.result?.notifications[sender.tag]

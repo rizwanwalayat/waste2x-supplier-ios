@@ -130,6 +130,16 @@ class APIClient: APIClientHandler {
         let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
         _ = sendRequest(APIRoutes.pendingCollectionFetchUrl , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
+    func contactFetchApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        _ = sendRequest(APIRoutes.contacFetchUrl , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+    }
+    func contactSendApiFunctionCall(name: String,number: String, _ completionBlock: @escaping APIClientCompletionHandler) {
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        let params = ["contact_name":name,"contact_number":number] as [String:Any]
+        _ = sendRequest(APIRoutes.contacSendUrl , parameters: params as [String : AnyObject],httpMethod: .post , headers: headers, completionBlock: completionBlock)
+    }
+    
     
     func userRegistration(phone: String,code: String,latitude: Double,longitude: Double,firebase_token: String,phone_imei: Int,phone_os: String,phone_model: String, _ completionBlock: @escaping APIClientCompletionHandler) {
         

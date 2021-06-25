@@ -91,7 +91,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.45882352941176469" green="0.58039215686274503" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.52725833649999998" green="0.64092010259999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="35h-7u-orj" secondAttribute="trailing" id="DjK-we-197"/>
                 <constraint firstItem="hrk-sz-6SJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FDP-iQ-M38"/>
