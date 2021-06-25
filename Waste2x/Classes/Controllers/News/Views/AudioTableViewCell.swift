@@ -14,6 +14,8 @@ class AudioTableViewCell: UITableViewCell {
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var progressbar: UISlider!
     
     var played = Bool()
     override func awakeFromNib() {

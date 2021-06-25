@@ -203,7 +203,7 @@ extension WasteDetailViewController {
                     if isSuccess {
                         
                         let image = self.postDictToSaveImage["farm_image"] as! UIImage
-                        let date = Date().dateToString("yyyy-MM-dd")
+                        let date = Date().dateToString("MMMM dd, yyyy")
                         self.updateImageLibrary(image, time: date)
                     }
                     else

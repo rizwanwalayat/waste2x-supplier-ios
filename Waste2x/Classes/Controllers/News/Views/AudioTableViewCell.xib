@@ -4,25 +4,31 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="109" id="KGk-i7-Jjw" customClass="AudioTableViewCell" customModule="Waste2x" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="412" height="109"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="103" id="KGk-i7-Jjw" customClass="AudioTableViewCell" customModule="Waste2x" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="412" height="103"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="412" height="109"/>
+                <rect key="frame" x="0.0" y="0.0" width="412" height="103"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FIC-ma-YrW">
-                        <rect key="frame" x="30" y="10" width="352" height="89"/>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FIC-ma-YrW">
+                        <rect key="frame" x="15" y="20" width="382" height="83"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGE-UQ-BpB">
-                                <rect key="frame" x="20" y="32" width="20" height="25"/>
+                                <rect key="frame" x="20" y="43" width="20" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="6Le-vy-FjR"/>
                                     <constraint firstAttribute="height" constant="25" id="iEL-1F-wWL"/>
@@ -34,21 +40,33 @@
                                     <action selector="playPauseAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="j76-cf-BaJ"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="3pA-pL-Nsd">
+                                <rect key="frame" x="16" y="45" width="20" height="20"/>
+                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuP-Nr-BD6">
-                                <rect key="frame" x="60" y="10" width="282" height="69"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="60" y="10" width="312" height="20"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bb7-sW-WV3">
+                                <rect key="frame" x="58" y="40" width="306" height="32"/>
+                                <color key="minimumTrackTintColor" name="themeColor"/>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="AuP-Nr-BD6" secondAttribute="trailing" constant="10" id="GRD-Km-NhS"/>
-                            <constraint firstAttribute="bottom" secondItem="AuP-Nr-BD6" secondAttribute="bottom" constant="10" id="P2p-GG-lll"/>
+                            <constraint firstItem="3pA-pL-Nsd" firstAttribute="centerY" secondItem="rGE-UQ-BpB" secondAttribute="centerY" id="HH7-od-IT4"/>
+                            <constraint firstItem="bb7-sW-WV3" firstAttribute="top" secondItem="AuP-Nr-BD6" secondAttribute="bottom" constant="10" id="Kqg-Zh-X8Y"/>
+                            <constraint firstItem="3pA-pL-Nsd" firstAttribute="centerX" secondItem="rGE-UQ-BpB" secondAttribute="centerX" id="V4i-8i-Muj"/>
+                            <constraint firstItem="bb7-sW-WV3" firstAttribute="centerY" secondItem="rGE-UQ-BpB" secondAttribute="centerY" id="duF-Y6-WiL"/>
                             <constraint firstItem="AuP-Nr-BD6" firstAttribute="top" secondItem="FIC-ma-YrW" secondAttribute="top" constant="10" id="iI0-Ig-V5c"/>
+                            <constraint firstAttribute="trailing" secondItem="bb7-sW-WV3" secondAttribute="trailing" constant="20" id="iMp-iJ-QQx"/>
+                            <constraint firstItem="bb7-sW-WV3" firstAttribute="leading" secondItem="rGE-UQ-BpB" secondAttribute="trailing" constant="20" id="j6A-SD-65H"/>
                             <constraint firstItem="AuP-Nr-BD6" firstAttribute="leading" secondItem="rGE-UQ-BpB" secondAttribute="trailing" constant="20" id="pra-8v-rwr"/>
                             <constraint firstItem="rGE-UQ-BpB" firstAttribute="leading" secondItem="FIC-ma-YrW" secondAttribute="leading" constant="20" id="qIK-zN-q4L"/>
-                            <constraint firstItem="rGE-UQ-BpB" firstAttribute="centerY" secondItem="FIC-ma-YrW" secondAttribute="centerY" id="tib-Th-rmZ"/>
+                            <constraint firstAttribute="bottom" secondItem="rGE-UQ-BpB" secondAttribute="bottom" constant="15" id="rTY-BZ-aqS"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -58,24 +76,29 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="FIC-ma-YrW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="6rg-vo-dvH"/>
-                    <constraint firstItem="FIC-ma-YrW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Qfi-1j-0AT"/>
-                    <constraint firstAttribute="bottom" secondItem="FIC-ma-YrW" secondAttribute="bottom" constant="10" id="TII-4W-A4v"/>
-                    <constraint firstAttribute="trailing" secondItem="FIC-ma-YrW" secondAttribute="trailing" constant="30" id="fO6-Kn-hNl"/>
+                    <constraint firstItem="FIC-ma-YrW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="6rg-vo-dvH"/>
+                    <constraint firstItem="FIC-ma-YrW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="Qfi-1j-0AT"/>
+                    <constraint firstAttribute="bottom" secondItem="FIC-ma-YrW" secondAttribute="bottom" id="TII-4W-A4v"/>
+                    <constraint firstAttribute="trailing" secondItem="FIC-ma-YrW" secondAttribute="trailing" constant="15" id="fO6-Kn-hNl"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="activityIndicator" destination="3pA-pL-Nsd" id="hM4-bw-Qqa"/>
                 <outlet property="playPauseButton" destination="rGE-UQ-BpB" id="sz5-Yr-Zso"/>
+                <outlet property="progressbar" destination="bb7-sW-WV3" id="L7d-Gh-P00"/>
                 <outlet property="titleLabel" destination="AuP-Nr-BD6" id="KPj-4l-f7o"/>
             </connections>
-            <point key="canvasLocation" x="-17.39130434782609" y="84.709821428571431"/>
+            <point key="canvasLocation" x="-17.39130434782609" y="82.700892857142847"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="pause" width="292" height="300"/>
         <image name="play" width="314" height="302"/>
+        <namedColor name="themeColor">
+            <color red="0.45899999141693115" green="0.57999998331069946" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

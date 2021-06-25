@@ -323,9 +323,15 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         }
         else
         {
-            let vc = InviteSupplierViewController(nibName: "InviteSupplierViewController", bundle: nil)
-            self.navigationController?.pushTo(controller: vc)
+//            let vc = InviteSupplierViewController(nibName: "InviteSupplierViewController", bundle: nil)
+//            self.navigationController?.pushTo(controller: vc)
             
+            let text = "Invite Supplieer."
+            let textToShare = [ text ]
+            let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+            activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
+            self.present(activityViewController, animated: true, completion: nil)
 
         }
     }
