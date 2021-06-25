@@ -22,6 +22,7 @@
                 <outlet property="bottomConst" destination="ydK-LX-bcs" id="Fo0-4g-y3F"/>
                 <outlet property="homeScrollview" destination="IAV-u5-OWe" id="DUY-Fd-QDV"/>
                 <outlet property="indicatorMarker" destination="y16-Fi-04U" id="PqN-5g-MDC"/>
+                <outlet property="mainView" destination="IAV-u5-OWe" id="QXM-Ps-Kuw"/>
                 <outlet property="notificationMark" destination="kdn-zJ-hxw" id="JIM-qW-2a7"/>
                 <outlet property="progressBar" destination="0lV-ZR-g59" id="j0O-Ta-Y0y"/>
                 <outlet property="progressPointsLabel" destination="mM2-0H-XPb" id="4xW-ZM-T0x"/>
@@ -300,7 +301,7 @@
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.39341643450000002" green="0.51449376339999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="IAV-u5-OWe" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="1Ff-dF-5vw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9R3-FT-6xv" secondAttribute="trailing" id="Du3-u5-F8q"/>

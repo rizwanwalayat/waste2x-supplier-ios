@@ -24,6 +24,8 @@ class PaymentViewController: BaseViewController {
         mainView.layer.masksToBounds = true
         globalObjectContainer?.tabbarHiddenView.isHidden = false
         bottomConst.constant = tabbarViewHeight
+        
+        
     }
 
     @IBAction func backAction(_ sender: Any) {
@@ -31,7 +33,7 @@ class PaymentViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func connectStripeAccount(_ sender: Any) {
-        
+        Utility.homeViewController()
         CreatePaymentModel.CreatePaymentApiFunction{ result, error, status,message in
             if let url = URL(string: "\(result!.result)") {
                 UIApplication.shared.open(url)

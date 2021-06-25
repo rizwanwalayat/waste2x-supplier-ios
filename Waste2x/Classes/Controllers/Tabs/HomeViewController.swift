@@ -33,6 +33,7 @@ class HomeViewController: BaseViewController{
     @IBOutlet weak var homeScrollview : UIScrollView!
     @IBOutlet weak var bottomConst: NSLayoutConstraint!
     
+    @IBOutlet weak var mainView: UIScrollView!
     
     //MARK: - Variables
     
@@ -119,12 +120,12 @@ class HomeViewController: BaseViewController{
                     }
                     else{
                         let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
-                        self.navigationController?.pushViewController(vc, animated: true)
+                        self.navigationController?.pushViewController(vc, animated: false)
                     }
                 }
                 else{
                     let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
-                    self.navigationController?.pushViewController(vc, animated: true)
+                    self.navigationController?.pushViewController(vc, animated: false)
                 }
             }
         }
@@ -132,6 +133,9 @@ class HomeViewController: BaseViewController{
 
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(true)
+        mainView.layer.cornerRadius = 36
+        mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        mainView.layer.masksToBounds = true
         self.weatherCollectionView.reloadData()
         Global.shared.jump = 0
         weatherCollectionView.reloadData()
