@@ -14,6 +14,20 @@ class DataManager {
     static let shared = DataManager()
     
 
+    func setWasteType (value : String)
+    {
+        UserDefaults.standard.set(value, forKey: "crop_type")
+    }
+    
+    func getWasteType () -> String
+    {
+        var type = ""
+        if UserDefaults.standard.string(forKey: "crop_type") != nil {
+            type = UserDefaults.standard.string(forKey: "crop_type")!
+        }
+        return type
+    }
+    
     func setStringData (value: String, key: String) {
         UserDefaults.standard.set(value, forKey: key)
     }

@@ -389,6 +389,7 @@ extension HomeViewController: WeatherCallDelegate {
                 self.view.layoutIfNeeded()
             }
             
+            DataManager.shared.setWasteType(value: self.resultData!.commodity_farms.first?.crop_type ?? "")
             for commudity in self.resultData!.commodity_farms
             {
                 if commudity.farms != nil

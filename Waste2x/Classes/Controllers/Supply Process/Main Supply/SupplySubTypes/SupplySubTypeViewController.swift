@@ -32,7 +32,7 @@ class SupplySubTypeViewController: BaseViewController {
     var currentPositionTouched : CGPoint?
     var optionsCount = 0
     var selectionData = [String : Any]()
-    
+    var isDismissable = false
     
     // MARK: - Lifecycle
     
@@ -167,7 +167,10 @@ class SupplySubTypeViewController: BaseViewController {
     
     @IBAction func backgroundButtonPressed(_ sender: Any) {
         
-        hideView(false)
+        if isDismissable {
+            
+            hideView(false)
+        }
     }
     
 }

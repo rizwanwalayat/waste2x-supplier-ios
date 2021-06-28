@@ -120,11 +120,6 @@ class NewsViewController: BaseViewController {
 //            audioPlayer?.currentTime = TimeInterval(self.progressbar?.value ?? 0.0)
 //            audioPlayer?.prepareToPlay()
 //            audioPlayer?.play()
-//
-//            let objDict : [String : Any] = ["index" : lastPlayingIndex,
-//                           "pValue": Float(audioPlayer?.currentTime ?? 0.0),
-//                           "mValue" : Float(self.audioPlayer?.duration ?? 0.0)]
-//            NotificationCenter.default.post(name: Notification.Name("progressbarValue"), object: nil, userInfo: objDict as [AnyHashable : Any])
 //        }
 //        else
 //        {
