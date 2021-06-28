@@ -90,7 +90,12 @@ class SupplyingTypeViewController: BaseViewController {
         vc.supplyProcessQuestions = questions
         vc.selectionData = selectionData
         vc.isDismissable = isdismissable
-        self.present(vc, animated: false, completion: nil)
+        if Global.shared.apiCurve {
+            vc.modalPresentationStyle = .fullScreen
+            vc.view.backgroundColor = .white
+            
+        }
+        self.present(vc, animated: true, completion: nil)
     }
     
 }

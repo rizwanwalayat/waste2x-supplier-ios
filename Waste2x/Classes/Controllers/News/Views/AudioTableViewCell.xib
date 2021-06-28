@@ -44,13 +44,13 @@
                                 <rect key="frame" x="16" y="45" width="20" height="20"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuP-Nr-BD6">
-                                <rect key="frame" x="60" y="10" width="312" height="20"/>
+                                <rect key="frame" x="60" y="10" width="312" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bb7-sW-WV3">
-                                <rect key="frame" x="58" y="40" width="306" height="32"/>
+                            <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bb7-sW-WV3">
+                                <rect key="frame" x="58" y="36.5" width="306" height="39"/>
                                 <color key="minimumTrackTintColor" name="themeColor"/>
                             </slider>
                         </subviews>
