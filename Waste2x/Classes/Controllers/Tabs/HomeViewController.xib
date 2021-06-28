@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19115.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -227,7 +227,7 @@
                     <rect key="frame" x="0.0" y="241.66666666666666" width="414" height="494.33333333333337"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eR6-Va-5fB">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="394.33333333333331"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="395.33333333333331"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kc3-On-fte">
                                     <rect key="frame" x="29.999999999999993" y="25.000000000000028" width="108.33333333333331" height="21"/>
@@ -259,13 +259,13 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <pageControl hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="y16-Fi-04U">
-                                    <rect key="frame" x="147" y="168.00000000000003" width="120.33333333333331" height="26.333333333333343"/>
+                                    <rect key="frame" x="125.33333333333333" y="168.00000000000003" width="163.33333333333337" height="27.333333333333343"/>
                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="currentPageIndicatorTintColor" red="0.43137254899999999" green="0.54901960780000003" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </pageControl>
                                 <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pka-2w-Hhg">
-                                    <rect key="frame" x="0.0" y="194.33333333333337" width="414" height="200"/>
+                                    <rect key="frame" x="0.0" y="195.33333333333337" width="414" height="200"/>
                                     <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="200" id="ggk-Ym-Ask"/>
@@ -301,7 +301,7 @@
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.39341643450000002" green="0.51449376339999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="IAV-u5-OWe" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="1Ff-dF-5vw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9R3-FT-6xv" secondAttribute="trailing" id="Du3-u5-F8q"/>

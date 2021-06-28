@@ -54,7 +54,7 @@ class HomeViewController: BaseViewController{
         (UIApplication.shared.delegate as! AppDelegate).weaterCalldelegate = self
         bottomConst.constant = tabbarViewHeight
         globalObjectHome = self
-        setAttributedTextInLable(emailAddress: DataManager.shared.getUser()?.result?.email ?? "")
+        welcomeLabel.attributedText =  setAttributedTextInLable(boldString: "Hello ,", emailAddress: DataManager.shared.getUser()?.result?.email ?? "")
         let progressbarAdjustment = UIScreen.main.bounds.height / 200
         progressBar.transform = CGAffineTransform(scaleX: 1, y: progressbarAdjustment)
         collectionDataSourceDelegate(outlet: weatherCollectionView)
@@ -80,15 +80,11 @@ class HomeViewController: BaseViewController{
         }
         fetchFarmsFromServer()
         loginToTwillio()
+        Global.shared.jump = 0
+        self.weatherCollectionView.reloadData()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-//        self.weatherCollectionView.reloadData()
-//        Global.shared.jump = 0
-        weatherCollectionView.reloadData()
-//        tableView.reloadData()
-        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.pushToPaymentScreen(notification:)),
@@ -101,6 +97,7 @@ class HomeViewController: BaseViewController{
         
         NotificationCenter.default.removeObserver(self)
     }
+    
     
     @objc private func pushToPaymentScreen(notification: NSNotification){
         
@@ -136,10 +133,6 @@ class HomeViewController: BaseViewController{
         mainView.layer.cornerRadius = 36
         mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         mainView.layer.masksToBounds = true
-        self.weatherCollectionView.reloadData()
-        Global.shared.jump = 0
-        weatherCollectionView.reloadData()
-        tableView.reloadData()
         self.navigationController?.navigationBar.isHidden = true
         globalObjectContainer?.tabbarHiddenView.isHidden = false
     }
@@ -157,20 +150,7 @@ class HomeViewController: BaseViewController{
         
     }
     
-    func setAttributedTextInLable(emailAddress :String)
-    {
-        let boldfont       = UIFont(name: "Poppins-Bold", size: 18) ?? UIFont.systemFont(ofSize: 18, weight: .semibold)
-        let activityAttribute   = [ NSAttributedString.Key.font: boldfont, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: "ffffff")]
-        let nameAttrString      = NSMutableAttributedString(string: "Hello, ", attributes: activityAttribute)
-        
-        let emailFont            = UIFont(name: "Poppins", size: 18) ?? UIFont.systemFont(ofSize: 18)
-        let nameAttribute       = [ NSAttributedString.Key.font: emailFont, NSAttributedString.Key.foregroundColor: UIColor.init(hexString: "ffffff")]
-        let activityAttrString  = NSAttributedString(string: emailAddress, attributes: nameAttribute)
-        
-        nameAttrString.append(activityAttrString)
-        
-        welcomeLabel.attributedText = nameAttrString
-    }
+
 
     
     //MARK: - ActionButtons
@@ -219,15 +199,19 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             let cell = collectionView.register(WeatherCollectionViewCell.self, indexPath: indexPath)
             cell.config(index: indexPath.row)
                 return cell
-            
         }
             
-        
         else
         {
             let cell = collectionView.register(WasteTypeCollectionViewCell.self, indexPath: indexPath)
             let cellData = fetchSitesData[indexPath.row]
             cell.config(cellData.farmName, cellData.cropType , cellData.cropTypeImage)
+            let currentCenteredPoint = CGPoint(x: wasteTypeCollectionView.contentOffset.x + wasteTypeCollectionView.bounds.width, y: wasteTypeCollectionView.contentOffset.y + wasteTypeCollectionView.bounds.height/2)
+            if let cell = wasteTypeCollectionView.indexPathForItem(at: currentCenteredPoint) {
+                self.indicatorMarker.currentPage = cell.row - 1 
+                self.index = cell.row - 1
+            }
+
             
             return cell
         }
@@ -343,12 +327,12 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         if scrollView != self.weatherCollectionView {
-            let currentCenteredPoint = CGPoint(x: scrollView.contentOffset.x + wasteTypeCollectionView.bounds.width, y: scrollView.contentOffset.y + wasteTypeCollectionView.bounds.height/2)
-            if let cell = wasteTypeCollectionView.indexPathForItem(at: currentCenteredPoint) {
-                self.indicatorMarker.currentPage = cell.row - 1
-                self.index = cell.row - 1
-                tableView.reloadData()
-            }
+//            let currentCenteredPoint = CGPoint(x: scrollView.contentOffset.x + wasteTypeCollectionView.bounds.width, y: scrollView.contentOffset.y + wasteTypeCollectionView.bounds.height/2)
+//            if let cell = wasteTypeCollectionView.indexPathForItem(at: currentCenteredPoint) {
+//                self.indicatorMarker.currentPage = cell.row - 1
+//                self.index = cell.row - 1
+//                tableView.reloadData()
+//            }
         }
     }
     
@@ -360,8 +344,6 @@ extension HomeViewController: WeatherCallDelegate {
     
 
     func Weather() {
-        Global.shared.jump = 0
-        self.weatherCollectionView.reloadData()
         
     }
     
@@ -400,9 +382,8 @@ extension HomeViewController: WeatherCallDelegate {
         {
             let progress = Float(self.resultData!.percentage) / 100
             progressBar.setProgress(progress, animated: true)
-            self.setAttributedTextInLable(emailAddress: userData?.email ?? "")
+            self.welcomeLabel.attributedText =  self.setAttributedTextInLable(boldString: "Hello, ", emailAddress: userData?.email ?? "")
             self.progressPointsLabel.text = "\(Int((DataManager.shared.getUser()?.result?.percentage ?? 0 )*100))/1000"
-            tableView.reloadData()
             DispatchQueue.main.async {
                 self.tableViewHeight.constant = self.tableView.contentSize.height
                 self.view.layoutIfNeeded()
@@ -448,6 +429,7 @@ extension HomeViewController: WeatherCallDelegate {
         {
             Utility.showAlertController(self, "Invalid token, data not fetched")
         }
+        self.tableView.reloadData()
     }
     
     // code for load all messages

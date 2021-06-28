@@ -78,6 +78,7 @@ class APIClient: APIClientHandler {
     func weatherAPi( _ completionBlock: @escaping APIClientCompletionHandler) {
         let params = [String:AnyObject]()
         print("WeatherAPI",APIRoutes.weatherAPi)
+        print("Weather one call api",APIRoutes.weatherAPi)
         rawRequest(url: APIRoutes.weatherAPi, method: .get, parameters: params, headers: nil, completionBlock: completionBlock)
     }
     func googleLocationPolyLineAPi( _ completionBlock: @escaping APIClientCompletionHandler) {

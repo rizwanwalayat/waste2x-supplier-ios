@@ -26,16 +26,47 @@ class WeatherCollectionViewCell: UICollectionViewCell {
             if Global.shared.jump < 40 && (DataManager.shared.getWeather()?.list.count ?? 0) > Global.shared.jump {
                 self.dayLabel.text = dateCalculate(date: DataManager.shared.getWeather()?.list[Global.shared.jump].dtTxt ?? "")
                 let weatherTemp = DataManager.shared.getWeather()?.list[Global.shared.jump].main?.temp ?? 00
+                if weatherTemp < 30{
+                    if #available(iOS 13.0, *) {
+                        self.cloudImgView.image = UIImage(systemName: "cloud.rain")
+                        self.cloudImgView.tintColor = UIColor(named: "themeColor")
+                        
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                }
+                else if weatherTemp >= 35{
+                    self.cloudImgView.image = UIImage(named: "greensunny")
+                }
+                else{
+                    self.cloudImgView.image = UIImage(named: "Line")
+                }
                 self.tempratureLabel.text = "\(weatherTemp.shortValue)°" + ""
                 Global.shared.jump = Global.shared.jump+8
             }
         }
         else {
-//            mainView.backgroundColor = UIColor.init(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.05)
+            mainView.backgroundColor = UIColor.init(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.05)
         if Global.shared.jump < 40 && (DataManager.shared.getWeather()?.list.count ?? 0) > Global.shared.jump {
             self.dayLabel.text = dateCalculate(date: DataManager.shared.getWeather()?.list[Global.shared.jump].dtTxt ?? "")
             let weatherTemp = DataManager.shared.getWeather()?.list[Global.shared.jump].main?.temp ?? 00
+            if weatherTemp < 30{
+                if #available(iOS 13.0, *) {
+                    self.cloudImgView.image = UIImage(systemName: "cloud.rain")
+                    self.cloudImgView.tintColor = .white
+                    
+                } else {
+                    // Fallback on earlier versions
+                }
+            }
+            else if weatherTemp >= 35{
+                self.cloudImgView.image = UIImage(named: "whitesunny")
+            }
+            else{
+                self.cloudImgView.image = UIImage(named: "whitecloud")
+            }
             self.tempratureLabel.text = "\(weatherTemp.shortValue)°" + ""
+            self.tempratureLabel.textColor = .white
             Global.shared.jump = Global.shared.jump+8
         }
         }
