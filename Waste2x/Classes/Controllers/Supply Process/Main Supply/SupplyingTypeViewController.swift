@@ -31,6 +31,20 @@ class SupplyingTypeViewController: BaseViewController {
         
         fetchDataFromServer()
         
+        if Global.shared.apiCurve && supplyProcessData.count > 0
+        {
+            let wasteType = DataManager.shared.getWasteType()
+            let wasteString = wasteType.split(separator: "-").first?.trimmingCharacters(in: .whitespaces)
+            
+            for waste in supplyProcessData{
+                if waste.title.trimmingCharacters(in: .whitespaces) == wasteString
+                {
+                    selectionData["waste_type"] = waste.title
+                    pushToNextController(false, questions: waste.questions)
+                }
+            }
+        }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
@@ -62,14 +76,21 @@ class SupplyingTypeViewController: BaseViewController {
         if supplyProcessData.count > 0 {
             
             SupplyingTypeViewController.selectedImageIcon = supplyProcessData[collectionViewIndex].icon_url
+            
             selectionData["waste_type"] = supplyProcessData[collectionViewIndex].title
-            let vc = SupplySubTypeViewController(nibName: "SupplySubTypeViewController", bundle: nil)
-            vc.modalPresentationStyle = .overFullScreen
-            vc.supplyProcessQuestions = supplyProcessData[collectionViewIndex].questions
-            vc.selectionData = selectionData
-            self.present(vc, animated: false, completion: nil)
+            pushToNextController(true, questions: supplyProcessData[collectionViewIndex].questions)
         }
         
+    }
+    
+    func pushToNextController(_ isdismissable : Bool, questions: [QuestionsSuppyProcess])
+    {
+        let vc = SupplySubTypeViewController(nibName: "SupplySubTypeViewController", bundle: nil)
+        vc.modalPresentationStyle = .overFullScreen
+        vc.supplyProcessQuestions = questions
+        vc.selectionData = selectionData
+        vc.isDismissable = isdismissable
+        self.present(vc, animated: false, completion: nil)
     }
     
 }
@@ -146,6 +167,22 @@ extension SupplyingTypeViewController {
                             Utility.homeViewController()
                         }
                     }
+                    
+                    if Global.shared.apiCurve && self.supplyProcessData.count > 0{
+                        
+                        let wasteType = DataManager.shared.getWasteType()
+                        let wasteString = wasteType.split(separator: "-").first?.trimmingCharacters(in: .whitespaces)
+                        
+                        for waste in self.supplyProcessData{
+                            if waste.title.trimmingCharacters(in: .whitespaces) == wasteString
+                            {
+                                self.selectionData["waste_type"] = waste.title
+                                self.pushToNextController(false, questions: waste.questions)
+                            }
+                        }
+                    }
+                    
+                    
                 }
                 else
                 {

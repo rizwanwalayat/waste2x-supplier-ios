@@ -53,7 +53,8 @@ class NewsResult : Mappable {
     var fileUrl = ""
     var date_published = ""
     var picture = ""
-
+    var isSongPlaying = false
+    var isSongLoading = false
 
     required init?(map: Map) { }
 

@@ -16,11 +16,9 @@ class NewsViewController: BaseViewController {
     
     var NewsListModell : [NewsResult]?
     var NewsModell : NewsModel?
-    var played = Bool()
     var progressbar : UISlider?
     var previousPlayingFileName = ""
-    var buttonImage = UIImage()
-    var isSongLoading = false
+    var lastPlayingIndex = -1
     
     //audio
     var audioPlayer : AVAudioPlayer?
@@ -62,7 +60,7 @@ class NewsViewController: BaseViewController {
         tableView.backgroundColor = UIColor.init(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
         self.tableView.layer.masksToBounds = true
         globalObjectContainer?.tabbarHiddenView.isHidden = false
-        self.bottomConst.constant = self.tabbarViewHeight
+        self.bottomConst.constant = self.tabbarViewHeight + 10
         if Global.shared.newsApiCheck{
             newsApiCall()
         }
@@ -76,56 +74,58 @@ class NewsViewController: BaseViewController {
 
     @objc func startPlayPause(_ sender:UIButton)
     {
-        played = !played
+        NewsModell!.result[sender.tag].isSongPlaying = !NewsModell!.result[sender.tag].isSongPlaying
+        let isPlaying = NewsModell!.result[sender.tag].isSongPlaying
         
         let urlString = NewsModell!.result[sender.tag].fileUrl
                 
+        if lastPlayingIndex != sender.tag && lastPlayingIndex != -1
+        {
+            NewsModell!.result[lastPlayingIndex].isSongPlaying = false
+            NewsModell!.result[lastPlayingIndex].isSongLoading = false
+        }
+        
         if urlString == previousPlayingFileName{
             
-            if played
+            if isPlaying
             {
                 audioPlayer?.prepareToPlay()
                 audioPlayer?.play()
-                DispatchQueue.main.async {
-                    
-                    self.buttonImage = #imageLiteral(resourceName: "pause")
-                    sender.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
-                    if let cell = self.tableView.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as? AudioTableViewCell {
-                        
-                        cell.progressbar.maximumValue = Float(self.audioPlayer?.duration ?? 0.0)
-                        cell.progressbar.value = 0.0
-                        self.progressbar = cell.progressbar
-                        // code for handle slider control
-                        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
-                    }
-                }
                 
             }
             else
             {
-                self.buttonImage = #imageLiteral(resourceName: "play")
-                sender.setImage(#imageLiteral(resourceName: "play"), for: .normal)
                 audioPlayer?.pause()
             }
         }
         else
         {
-            sender.setImage(#imageLiteral(resourceName: "play"), for: .normal)
             audioPlayer?.pause()
             audioPlayer = nil
             previousPlayingFileName = urlString
+            lastPlayingIndex = sender.tag
             guard let url = URL.init(string: urlString) else { return }
             self.downloadFileFromURL(url: url, senderButton: sender)
         }
 
+        tableView.reloadData()
     }
     
     @objc func sliderValueChange(_ sender : UISlider)
     {
-        audioPlayer?.stop()
-        audioPlayer?.currentTime = TimeInterval(self.progressbar?.value ?? 0.0)
-        audioPlayer?.prepareToPlay()
-        audioPlayer?.play()
+        return 
+//        if sender.tag == lastPlayingIndex {
+//
+//            audioPlayer?.stop()
+//            audioPlayer?.currentTime = TimeInterval(self.progressbar?.value ?? 0.0)
+//            audioPlayer?.prepareToPlay()
+//            audioPlayer?.play()
+//        }
+//        else
+//        {
+//
+//            return
+//        }
     }
     
     @objc func updateTime(_ timer: Timer) {
@@ -134,31 +134,81 @@ class NewsViewController: BaseViewController {
         
         progressbar?.value = Float(audioPlayer?.currentTime ?? 0.0)
         
+        let objDict : [String : Any] = ["index" : lastPlayingIndex,
+                       "pValue": Float(audioPlayer?.currentTime ?? 0.0),
+                       "mValue" : Float(self.audioPlayer?.duration ?? 0.0)]
+        NotificationCenter.default.post(name: Notification.Name("progressbarValue"), object: nil, userInfo: objDict as [AnyHashable : Any])
+        
     }
     
     
     func downloadFileFromURL(url:URL, senderButton : UIButton){
 
-        let cell = self.tableView.cellForRow(at: IndexPath(row: senderButton.tag, section: 0)) as? AudioTableViewCell
-        isSongLoading = true
-        cell?.activityIndicator.startAnimating()
-        cell?.playPauseButton.isHidden = true
-        var downloadTask:URLSessionDownloadTask
-        downloadTask = URLSession.shared.downloadTask(with: url, completionHandler: { downloadedUrl, response, error in
-
-            self.isSongLoading = false
+        // then lets create your document folder url
+        let documentsDirectoryURL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        
+        // lets create your destination file url
+        let destinationUrl = documentsDirectoryURL.appendingPathComponent(url.lastPathComponent)
+        print(destinationUrl)
+        
+        if url.pathExtension != "mp3"
+        {
+            NewsModell!.result[lastPlayingIndex].isSongPlaying = false
+            NewsModell!.result[lastPlayingIndex].isSongLoading = false
+            Utility.showAlertController(self, "file is not in correct formet , this file is in \(url.pathExtension) format.")
+            return
+        }
+        
+        NewsModell!.result[senderButton.tag].isSongLoading = true
+        
+        if FileManager.default.fileExists(atPath: destinationUrl.path) {
+            print("The file already exists at path")
+            
             DispatchQueue.main.async {
-                cell?.activityIndicator.stopAnimating()
-                cell?.playPauseButton.isHidden = false
+                self.NewsModell!.result[senderButton.tag].isSongLoading = false
+                self.handlePlayPause(destinationUrl, senderButton: senderButton)
             }
-           
-            if let urlDownloaded = downloadedUrl {
-                
-                self.handlePlayPause(urlDownloaded, senderButton: senderButton)
-                
-            }
-        })
-        downloadTask.resume()
+            
+        } else {
+            
+            // you can use NSURLSession.sharedSession to download the data asynchronously
+            URLSession.shared.downloadTask(with: url, completionHandler: { (location, response, error) -> Void in
+                guard let location = location, error == nil else { return }
+                do {
+                    // after downloading your file you need to move it to your destination url
+                    try FileManager.default.moveItem(at: location, to: destinationUrl)
+                    print("File moved to documents folder")
+                    
+                    DispatchQueue.main.async {
+                        self.NewsModell!.result[senderButton.tag].isSongLoading = false
+                        self.handlePlayPause(destinationUrl, senderButton: senderButton)
+                    }
+                   
+                    
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
+            }).resume()
+        }
+        
+            
+        
+
+        
+//        var downloadTask:URLSessionDownloadTask
+//        downloadTask = URLSession.shared.downloadTask(with: url, completionHandler: { downloadedUrl, response, error in
+//
+//            DispatchQueue.main.async {
+//                self.NewsModell!.result[senderButton.tag].isSongLoading = false
+//            }
+//
+//            if let urlDownloaded = downloadedUrl {
+//
+//                self.handlePlayPause(urlDownloaded, senderButton: senderButton)
+//
+//            }
+//        })
+//        downloadTask.resume()
     }
     
     func handlePlayPause(_ url : URL, senderButton : UIButton)
@@ -166,38 +216,25 @@ class NewsViewController: BaseViewController {
         do {
             
             audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.prepareToPlay()
+            audioPlayer?.play()
+            Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
+//            if let cell = self.tableView.cellForRow(at: IndexPath(row: senderButton.tag, section: 0)) as? AudioTableViewCell {
+//
+//                cell.progressbar.maximumValue = Float(self.audioPlayer?.duration ?? 0.0)
+//                cell.progressbar.value = 0.0
+//                self.progressbar = cell.progressbar
+//                self.progressbar?.tag = senderButton.tag
+//                // code for handle slider control
+//            }
             
-            if played
-            {
-                audioPlayer?.prepareToPlay()
-                audioPlayer?.play()
-                DispatchQueue.main.async {
-                    
-                    senderButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
-                    if let cell = self.tableView.cellForRow(at: IndexPath(row: senderButton.tag, section: 0)) as? AudioTableViewCell {
-                        
-                        cell.progressbar.maximumValue = Float(self.audioPlayer?.duration ?? 0.0)
-                        cell.progressbar.value = 0.0
-                        self.progressbar = cell.progressbar
-                        // code for handle slider control
-                        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
-                    }
-                }
-                
-            }
-            else
-            {
-                DispatchQueue.main.async {
-                    
-                    senderButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
-                    self.audioPlayer?.pause()
-                }
-            }
         }
         catch
         {
             print(error)
         }
+        
+        tableView.reloadData()
     }
 }
 
@@ -226,18 +263,29 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
             cell.progressbar.tag = indexPath.row
             cell.progressbar.addTarget(self, action: #selector(sliderValueChange(_:)), for: .valueChanged)
             cell.config(data: NewsModell!, index: indexPath.row)
+            cell.currentIndex = indexPath.row
             
-            if NewsModell!.result[indexPath.row].fileUrl == previousPlayingFileName
-            {
-                cell.playPauseButton.setImage(buttonImage, for: .normal)
-                cell.progressbar.value = Float(audioPlayer?.currentTime ?? 0.0)
-                isSongLoading ? cell.activityIndicator.startAnimating() : cell.activityIndicator.stopAnimating()
+            if self.NewsModell!.result[indexPath.row].isSongPlaying {
                 
+                cell.playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+                cell.progressbar.value = Float(audioPlayer?.currentTime ?? 0.0)
+                
+                if self.NewsModell!.result[indexPath.row].isSongLoading {
+                    cell.activityIndicator.startAnimating()
+                    cell.playPauseButton.isHidden = true
+                }
+                else {
+                    
+                    cell.activityIndicator.stopAnimating()
+                    cell.playPauseButton.isHidden = false
+                }
             }
-            else
-            {
-                cell.progressbar.value = 0.0
+            else {
+                
                 cell.playPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+                cell.progressbar.value = 0.0
+                cell.activityIndicator.stopAnimating()
+                cell.playPauseButton.isHidden = false
             }
             
             return cell
