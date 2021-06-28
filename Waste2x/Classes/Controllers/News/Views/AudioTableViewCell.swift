@@ -17,10 +17,15 @@ class AudioTableViewCell: UITableViewCell {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var progressbar: UISlider!
     
-    var played = Bool()
+    var currentIndex = 0
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.progressValueChange(notification:)),
+            name: Notification.Name("progressbarValue"),
+            object: nil)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -36,7 +41,24 @@ class AudioTableViewCell: UITableViewCell {
         
     }
     
-    
+    @objc private func progressValueChange(notification: NSNotification){
+        
+        if let object = notification.userInfo as? [String : Any] {
+            
+            guard let index = object["index"] as? Int else { return }
+            guard let pValue = object["pValue"] as? Float else { return }
+            guard let mValue = object["mValue"] as? Float else { return }
+            if currentIndex == index
+            {
+                progressbar.maximumValue = mValue
+                progressbar.value = pValue
+            }
+            else
+            {
+                progressbar.value = 0.0
+            }
+        }
+    }
     
     
 }
