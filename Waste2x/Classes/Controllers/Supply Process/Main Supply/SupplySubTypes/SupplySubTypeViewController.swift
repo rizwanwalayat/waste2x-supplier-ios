@@ -171,6 +171,10 @@ class SupplySubTypeViewController: BaseViewController {
             
             hideView(false)
         }
+        else
+        {
+            Utility.homeViewController()
+        }
     }
     
 }

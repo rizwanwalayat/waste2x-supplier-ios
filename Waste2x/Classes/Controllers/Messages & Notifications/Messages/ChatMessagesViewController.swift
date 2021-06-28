@@ -16,6 +16,7 @@ class ChatMessagesViewController: BaseViewController {
     //MARK: - Outlets
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var enterMessageTextView: UITextView!
     @IBOutlet weak var constHeightMessagesTextView: NSLayoutConstraint!
     @IBOutlet weak var tableViewMessages: UITableView!
@@ -53,6 +54,11 @@ class ChatMessagesViewController: BaseViewController {
         
         IQKeyboardManager.shared.enable = false
         IQKeyboardManager.shared.enableAutoToolbar = false
+        
+        mainView.layer.cornerRadius = 36
+        mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        mainView.layer.masksToBounds = true
+        globalObjectContainer?.tabbarHiddenView.isHidden = true
     }
     
     

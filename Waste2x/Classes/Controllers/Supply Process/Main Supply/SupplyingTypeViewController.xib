@@ -25,7 +25,6 @@
                 <outlet property="collectionView" destination="XFa-v4-Cym" id="wa3-ID-9cb"/>
                 <outlet property="constCollectionViewHeigh" destination="4l3-s6-Pk3" id="MTn-G2-wBx"/>
                 <outlet property="mainViewwithNavBar" destination="jgv-SW-lGF" id="HcX-5m-8RZ"/>
-                <outlet property="nextButtonBottomConstraints" destination="tRI-L3-mWg" id="rfg-r9-wwU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -195,13 +194,13 @@ supplying?</string>
                 <constraint firstItem="jgv-SW-lGF" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.121511" id="R0C-FW-cg3"/>
                 <constraint firstItem="zsp-1j-duO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="THz-QT-5n9"/>
                 <constraint firstItem="zsp-1j-duO" firstAttribute="top" secondItem="Nyd-xN-F3z" secondAttribute="bottom" constant="20" id="Uia-9N-vba"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zsp-1j-duO" secondAttribute="bottom" constant="20" id="WT0-Gq-1xL"/>
                 <constraint firstItem="Nyd-xN-F3z" firstAttribute="top" secondItem="jgv-SW-lGF" secondAttribute="bottom" id="aWN-IJ-G5G"/>
                 <constraint firstItem="Nyd-xN-F3z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="btp-sj-Kau"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jgv-SW-lGF" secondAttribute="trailing" id="fPV-TS-lfO"/>
                 <constraint firstItem="jgv-SW-lGF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hqv-wW-TZ3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zsp-1j-duO" secondAttribute="trailing" constant="25" id="j3q-ml-9zQ"/>
                 <constraint firstItem="Nyd-xN-F3z" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="m76-pQ-4SC"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zsp-1j-duO" secondAttribute="bottom" constant="20" id="tRI-L3-mWg"/>
                 <constraint firstItem="jgv-SW-lGF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="w0g-Gu-9HR"/>
             </constraints>
             <point key="canvasLocation" x="-55.072463768115945" y="57.589285714285708"/>

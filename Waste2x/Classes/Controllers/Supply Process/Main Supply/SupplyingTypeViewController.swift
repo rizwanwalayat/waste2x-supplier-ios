@@ -83,6 +83,12 @@ class SupplyingTypeViewController: BaseViewController {
         
     }
     
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        
+        Utility.homeViewController()
+        
+    }
+    
     func pushToNextController(_ isdismissable : Bool, questions: [QuestionsSuppyProcess])
     {
         let vc = SupplySubTypeViewController(nibName: "SupplySubTypeViewController", bundle: nil)
@@ -90,11 +96,6 @@ class SupplyingTypeViewController: BaseViewController {
         vc.supplyProcessQuestions = questions
         vc.selectionData = selectionData
         vc.isDismissable = isdismissable
-        if Global.shared.apiCurve {
-            vc.modalPresentationStyle = .fullScreen
-            vc.view.backgroundColor = .white
-            
-        }
         self.present(vc, animated: true, completion: nil)
     }
     

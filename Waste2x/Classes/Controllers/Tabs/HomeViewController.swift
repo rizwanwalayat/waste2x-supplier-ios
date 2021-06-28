@@ -79,7 +79,6 @@ class HomeViewController: BaseViewController{
             self.view.layoutIfNeeded()
         }
         fetchFarmsFromServer()
-        loginToTwillio()
         Global.shared.jump = 0
         self.weatherCollectionView.reloadData()
     }
@@ -431,28 +430,5 @@ extension HomeViewController: WeatherCallDelegate {
             Utility.showAlertController(self, "Invalid token, data not fetched")
         }
         self.tableView.reloadData()
-    }
-    
-    // code for load all messages
-    func loginToTwillio()
-    {
-        MessagesDataModel.fetchTwillioAccessToken() { dataResponse, error, success, message  in
-            
-            if dataResponse != nil {
-                
-                if let isSuccess = success {
-                    
-                    if isSuccess {
-                        
-                        if let token = dataResponse?.result?.access_token {
-                            
-                            TwillioChatDataModel.shared.loginToTwillio(with: token)
-                    
-                        }
-                    }
-                }
-                
-            }
-        }
     }
 }

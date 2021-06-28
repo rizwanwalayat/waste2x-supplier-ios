@@ -15,12 +15,16 @@
         <array key="Poppins-Regular.ttf">
             <string>Poppins-Regular</string>
         </array>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AmountWasteViewController" customModule="Waste2x" customModuleProvider="target">
             <connections>
                 <outlet property="NumberOfTonsFieldHolderView" destination="ezT-Gy-zas" id="vHA-iy-RUD"/>
                 <outlet property="amountLabel" destination="JPh-bc-nbp" id="EMj-Wi-tB7"/>
+                <outlet property="cancelButton" destination="i0F-Vp-ZXh" id="elp-8g-Bmm"/>
                 <outlet property="formLabel" destination="Zfu-SP-E7H" id="sbk-mv-ebX"/>
                 <outlet property="nextButton" destination="1Vc-ts-Hv6" id="bw1-tS-0p0"/>
                 <outlet property="numberOfTonsHolderView" destination="c4r-Un-Kub" id="fkQ-Ij-6bI"/>
@@ -193,6 +197,49 @@
                         <constraint firstItem="Gzo-wJ-bsV" firstAttribute="leading" secondItem="c4r-Un-Kub" secondAttribute="leading" constant="16" id="ybX-G5-UbU"/>
                     </constraints>
                 </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cu2-jO-Elm">
+                    <rect key="frame" x="25" y="738" width="364" height="118"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vc-ts-Hv6">
+                            <rect key="frame" x="0.0" y="0.0" width="364" height="58"/>
+                            <color key="backgroundColor" red="0.49019607840000001" green="0.61568627450000002" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="58" id="oSM-Tg-wjn"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
+                            <state key="normal" title="Next">
+                                <color key="titleColor" red="1" green="0.97647058819999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="18"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="nextButtonPressed:" destination="-1" eventType="touchUpInside" id="tA0-CL-WeG"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0F-Vp-ZXh">
+                            <rect key="frame" x="0.0" y="66" width="364" height="52"/>
+                            <color key="backgroundColor" red="0.83921568629999999" green="0.82352941180000006" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="52" id="32w-S1-T7I"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
+                            <state key="normal" title="Cancel">
+                                <color key="titleColor" red="0.58039215690000001" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="-1" eventType="touchUpInside" id="gCW-rc-JvQ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JuC-zd-Scv" userLabel="TonsPerMonthView">
                     <rect key="frame" x="25" y="339.5" width="364" height="94.5"/>
                     <subviews>
@@ -266,41 +313,22 @@
                         <constraint firstItem="Yol-0d-fbj" firstAttribute="top" secondItem="69m-hj-ZtB" secondAttribute="bottom" constant="16" id="zeP-ZD-lH4"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vc-ts-Hv6">
-                    <rect key="frame" x="25" y="798" width="364" height="58"/>
-                    <color key="backgroundColor" red="0.49019607840000001" green="0.61568627450000002" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="58" id="oSM-Tg-wjn"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
-                    <state key="normal" title="Next">
-                        <color key="titleColor" red="1" green="0.97647058819999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="18"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="nextButtonPressed:" destination="-1" eventType="touchUpInside" id="tA0-CL-WeG"/>
-                    </connections>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="cu2-jO-Elm" secondAttribute="bottom" constant="40" id="1Vy-lx-J0D"/>
                 <constraint firstItem="sMI-WJ-F46" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.121511" id="9Sp-vN-m5c"/>
                 <constraint firstItem="sMI-WJ-F46" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ADJ-q4-VTB"/>
-                <constraint firstAttribute="bottom" secondItem="1Vc-ts-Hv6" secondAttribute="bottom" constant="40" id="RhW-f9-Pr3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cu2-jO-Elm" secondAttribute="trailing" constant="25" id="Oh3-Qy-I62"/>
                 <constraint firstItem="sMI-WJ-F46" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Trr-VZ-Z9b"/>
                 <constraint firstItem="JuC-zd-Scv" firstAttribute="leading" secondItem="c4r-Un-Kub" secondAttribute="leading" id="U2I-MT-z3d"/>
                 <constraint firstItem="JuC-zd-Scv" firstAttribute="top" secondItem="c4r-Un-Kub" secondAttribute="bottom" constant="40" id="Ufy-vi-hMK"/>
-                <constraint firstItem="1Vc-ts-Hv6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="Yro-Rv-zf6"/>
                 <constraint firstItem="c4r-Un-Kub" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="bqF-Lj-O7f"/>
                 <constraint firstItem="c4r-Un-Kub" firstAttribute="top" secondItem="sMI-WJ-F46" secondAttribute="bottom" constant="40" id="gEd-dd-TcC"/>
                 <constraint firstItem="JuC-zd-Scv" firstAttribute="trailing" secondItem="c4r-Un-Kub" secondAttribute="trailing" id="i4g-nM-4Xt"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1Vc-ts-Hv6" secondAttribute="trailing" constant="25" id="l7B-hM-meA"/>
                 <constraint firstItem="sMI-WJ-F46" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="wxn-fy-j7h"/>
+                <constraint firstItem="cu2-jO-Elm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="y8r-Qn-Mlh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="c4r-Un-Kub" secondAttribute="trailing" constant="25" id="zdW-l2-mIG"/>
             </constraints>
             <point key="canvasLocation" x="89.855072463768124" y="70.982142857142847"/>

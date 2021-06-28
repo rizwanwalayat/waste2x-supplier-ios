@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -23,6 +22,7 @@
                 <outlet property="bottomConstOfView" destination="Wfp-wS-T5x" id="c2p-uf-v9x"/>
                 <outlet property="constHeightMessagesTextView" destination="9l2-rT-nwr" id="tpG-vt-0JX"/>
                 <outlet property="enterMessageTextView" destination="wfi-v1-Owi" id="MpZ-Wu-CWO"/>
+                <outlet property="mainView" destination="ZFD-7O-eVd" id="c7M-Jb-muF"/>
                 <outlet property="sendIndicator" destination="lJv-mR-1ax" id="Nmx-LG-8TK"/>
                 <outlet property="sendbutton" destination="y21-us-C4N" id="2kR-wC-5gn"/>
                 <outlet property="tableViewMessages" destination="3Va-3t-tbD" id="Gc6-vr-NHI"/>
@@ -76,7 +76,7 @@
                         <constraint firstItem="G6I-Va-BeY" firstAttribute="leading" secondItem="a2s-Pz-XU8" secondAttribute="leading" id="TVH-NY-2hZ"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFD-7O-eVd">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFD-7O-eVd">
                     <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMb-kr-q2u">
@@ -128,10 +128,10 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Va-3t-tbD">
-                            <rect key="frame" x="0.0" y="26" width="414" height="670.5"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Va-3t-tbD">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="696.5"/>
+                            <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <color key="sectionIndexBackgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="8AX-X1-baJ"/>
                                 <outlet property="delegate" destination="-1" id="H5N-sJ-uEQ"/>
@@ -142,7 +142,7 @@
                     <constraints>
                         <constraint firstItem="rMb-kr-q2u" firstAttribute="leading" secondItem="ZFD-7O-eVd" secondAttribute="leading" constant="18" id="VsJ-gr-Mtu"/>
                         <constraint firstAttribute="bottom" secondItem="rMb-kr-q2u" secondAttribute="bottom" constant="20" id="Yke-X5-iWK"/>
-                        <constraint firstItem="3Va-3t-tbD" firstAttribute="top" secondItem="ZFD-7O-eVd" secondAttribute="top" constant="26" id="ZzC-D2-ZAl"/>
+                        <constraint firstItem="3Va-3t-tbD" firstAttribute="top" secondItem="ZFD-7O-eVd" secondAttribute="top" id="ZzC-D2-ZAl"/>
                         <constraint firstAttribute="trailing" secondItem="3Va-3t-tbD" secondAttribute="trailing" id="hAm-yP-nVv"/>
                         <constraint firstItem="3Va-3t-tbD" firstAttribute="leading" secondItem="ZFD-7O-eVd" secondAttribute="leading" id="o7k-Wz-wtv"/>
                         <constraint firstAttribute="trailing" secondItem="rMb-kr-q2u" secondAttribute="trailing" constant="18" id="o8K-ZF-jMp"/>
@@ -151,7 +151,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" red="0.52725833649999998" green="0.64092010259999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="a2s-Pz-XU8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Swe-ka-V3S"/>
                 <constraint firstAttribute="bottom" secondItem="ZFD-7O-eVd" secondAttribute="bottom" id="Wfp-wS-T5x"/>
@@ -171,8 +171,5 @@
         <namedColor name="themeColor">
             <color red="0.45899999141693115" green="0.57999998331069946" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

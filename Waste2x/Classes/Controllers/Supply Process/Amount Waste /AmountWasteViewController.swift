@@ -29,6 +29,7 @@ class AmountWasteViewController: BaseViewController {
     @IBOutlet weak var numberOfTonsPerMonthFieldHolderView: UIView!
     @IBOutlet weak var tons_MonthsLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     
     // MARK: - Declarations
@@ -42,6 +43,7 @@ class AmountWasteViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        Global.shared.apiCurve ? (cancelButton.isHidden = false) : (cancelButton.isHidden = true)
         tempArray = supplyProcessQuestions
         
         
@@ -85,6 +87,12 @@ class AmountWasteViewController: BaseViewController {
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
         }
+    }
+    
+    
+    @IBAction func cancelButtonPressed(_ sender: UIButton)
+    {
+        Utility.homeViewController()
     }
 }
 

@@ -23,7 +23,7 @@ class FormOfWasteViewController: BaseViewController {
     @IBOutlet weak var constHeightOfCollection : NSLayoutConstraint!
     @IBOutlet weak var collectionView : UICollectionView!
     @IBOutlet weak var questionLabel: UILabel!
-    
+    @IBOutlet weak var cancelButton: UIButton!
     
     //MARK: - Declarations
     
@@ -35,6 +35,7 @@ class FormOfWasteViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Global.shared.apiCurve ? (cancelButton.isHidden = false) : (cancelButton.isHidden = true)
         collectionView.reloadData()
         DispatchQueue.main.async {
             self.constHeightOfCollection.constant = self.collectionView.contentSize.height
@@ -60,6 +61,12 @@ class FormOfWasteViewController: BaseViewController {
         vc.supplyProcessQuestions = tempArray
         vc.selectionData = selectionData
         self.present(vc, animated: false, completion: nil)
+    }
+    
+    
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        
+        Utility.homeViewController()
     }
     
 
