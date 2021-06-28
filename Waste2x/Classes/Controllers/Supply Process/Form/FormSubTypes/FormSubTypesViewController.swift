@@ -188,7 +188,7 @@ extension FormSubTypesViewController : UITableViewDelegate,UITableViewDataSource
             confirmCell.selection(index: indexPath.row)
         }
         self.tabaleViewIndex = indexPath.row
-        tableView.reloadData()
+//        tableView.reloadData()
     }
     
 }
@@ -206,7 +206,7 @@ extension FormSubTypesViewController
     
     @objc func panGestureAction(_ panGesture: UIPanGestureRecognizer) {
         let translation = panGesture.translation(in: view)
-        
+
         if panGesture.state == .began {
             originalPosition = view.center
             currentPositionTouched = panGesture.location(in: view)
@@ -225,7 +225,7 @@ extension FormSubTypesViewController
             }
         } else if panGesture.state == .ended {
             let velocity = panGesture.velocity(in: view)
-            
+
             if velocity.y >= 1000 {
                 UIView.animate(withDuration: 0.2
                     , animations: {

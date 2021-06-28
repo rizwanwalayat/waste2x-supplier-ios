@@ -31,19 +31,19 @@ class SupplyingTypeViewController: BaseViewController {
         
         fetchDataFromServer()
         
-        if Global.shared.apiCurve && supplyProcessData.count > 0
-        {
-            let wasteType = DataManager.shared.getWasteType()
-            let wasteString = wasteType.split(separator: "-").first?.trimmingCharacters(in: .whitespaces)
-            
-            for waste in supplyProcessData{
-                if waste.title.trimmingCharacters(in: .whitespaces) == wasteString
-                {
-                    selectionData["waste_type"] = waste.title
-                    pushToNextController(false, questions: waste.questions)
-                }
-            }
-        }
+//        if Global.shared.apiCurve && supplyProcessData.count > 0
+//        {
+//            let wasteType = DataManager.shared.getWasteType()
+//            let wasteString = wasteType.split(separator: "-").first?.trimmingCharacters(in: .whitespaces)
+//
+//            for waste in supplyProcessData{
+//                if waste.title.trimmingCharacters(in: .whitespaces) == wasteString
+//                {
+//                    selectionData["waste_type"] = waste.title
+//                    pushToNextController(false, questions: waste.questions)
+//                }
+//            }
+//        }
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -174,19 +174,19 @@ extension SupplyingTypeViewController {
                         }
                     }
                     
-                    if Global.shared.apiCurve && self.supplyProcessData.count > 0{
-                        
-                        let wasteType = DataManager.shared.getWasteType()
-                        let wasteString = wasteType.split(separator: "-").first?.trimmingCharacters(in: .whitespaces)
-                        
-                        for waste in self.supplyProcessData{
-                            if waste.title.trimmingCharacters(in: .whitespaces) == wasteString
-                            {
-                                self.selectionData["waste_type"] = waste.title
-                                self.pushToNextController(false, questions: waste.questions)
-                            }
-                        }
-                    }
+//                    if Global.shared.apiCurve && self.supplyProcessData.count > 0{
+//                        
+//                        let wasteType = DataManager.shared.getWasteType()
+//                        let wasteString = wasteType.split(separator: "-").first?.trimmingCharacters(in: .whitespaces)
+//                        
+//                        for waste in self.supplyProcessData{
+//                            if waste.title.trimmingCharacters(in: .whitespaces) == wasteString
+//                            {
+//                                self.selectionData["waste_type"] = waste.title
+//                                self.pushToNextController(false, questions: waste.questions)
+//                            }
+//                        }
+//                    }
                     
                     
                 }

@@ -35,7 +35,7 @@ class FormOfWasteViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Global.shared.apiCurve ? (cancelButton.isHidden = false) : (cancelButton.isHidden = true)
+//        Global.shared.apiCurve ? (cancelButton.isHidden = false) : (cancelButton.isHidden = true)
         collectionView.reloadData()
         DispatchQueue.main.async {
             self.constHeightOfCollection.constant = self.collectionView.contentSize.height

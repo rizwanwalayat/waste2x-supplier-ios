@@ -36,7 +36,6 @@ class ChatMessagesViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         enterMessageTextView.text       = placeHolderText
         enterMessageTextView.textColor  = textFildPlaceholder

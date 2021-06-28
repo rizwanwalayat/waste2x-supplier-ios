@@ -43,7 +43,7 @@ class AmountWasteViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        Global.shared.apiCurve ? (cancelButton.isHidden = false) : (cancelButton.isHidden = true)
+//        Global.shared.apiCurve ? (cancelButton.isHidden = false) : (cancelButton.isHidden = true)
         tempArray = supplyProcessQuestions
         
         
