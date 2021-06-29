@@ -57,7 +57,7 @@ class NotificationsViewController: BaseViewController {
             self.navigationController?.pushTo(controller: vc)
             
         }
-        else if sender.title(for: .normal) == "On Way" {
+        else if sender.title(for: .normal) == "Track" {
             
             let vc = TrackerViewController(nibName: "TrackerViewController", bundle: nil)
                 vc.trackID  = NotificationModell?.result?.notifications[sender.tag].dispatchId ?? 0
