@@ -31,19 +31,19 @@ class SupplyingTypeViewController: BaseViewController {
         
         fetchDataFromServer()
         
-        if Global.shared.apiCurve && supplyProcessData.count > 0
-        {
-            let wasteType = DataManager.shared.getWasteType()
-            let wasteString = wasteType.split(separator: "-").first?.trimmingCharacters(in: .whitespaces)
-
-            for waste in supplyProcessData{
-                if waste.title.trimmingCharacters(in: .whitespaces) == wasteString
-                {
-                    selectionData["waste_type"] = waste.title
-                    pushToNextController(false, questions: waste.questions)
-                }
-            }
-        }
+//        if Global.shared.apiCurve && supplyProcessData.count > 0
+//        {
+//            let wasteType = DataManager.shared.getWasteType()
+//            let wasteString = wasteType.split(separator: "-").first?.trimmingCharacters(in: .whitespaces)
+//
+//            for waste in supplyProcessData{
+//                if waste.title.trimmingCharacters(in: .whitespaces) == wasteString
+//                {
+//                    selectionData["waste_type"] = waste.title
+//                    pushToNextController(false, questions: waste.questions)
+//                }
+//            }
+//        }
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -136,11 +136,11 @@ extension SupplyingTypeViewController : UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.collectionViewIndex = indexPath.row
-        collectionView.reloadData()
         if let confirmCell = collectionView.cellForItem(at: indexPath) as? SupplyingCollectionViewCell
         {
             confirmCell.selection(index: indexPath.row)
         }
+        collectionView.reloadData()
     }
     
 }

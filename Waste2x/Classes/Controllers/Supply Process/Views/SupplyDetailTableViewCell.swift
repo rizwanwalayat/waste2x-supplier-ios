@@ -19,7 +19,7 @@ class SupplyDetailTableViewCell: BaseTableViewCell {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
     
-    
+    var tabaleViewIndex = 0
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,7 +32,14 @@ class SupplyDetailTableViewCell: BaseTableViewCell {
         // Configure the view for the selected state
     }
     func selection(index:Int){
-        
+//                    if self.tabaleViewIndex == index {
+//                        mainView.borderColor = UIColor(named: "themeColor")
+//                        mainView.borderWidth = 2
+//                    }
+//                    else {
+//                        mainView.borderColor = .clear
+//                        mainView.borderWidth = 0
+//                    }
     }
     func configForType(_ title : String, _ imageStr : String){
         self.labelTitle.text = title

@@ -99,4 +99,10 @@ extension Date {
         formatter.locale = NSLocale(localeIdentifier: "UTC") as Locale
         return formatter.string(from: self) 
     }
+    func returnTime()->String{
+        let formatter = DateFormatter.init()
+        formatter.dateFormat = "MMM d, yyyy HH:MM"
+        formatter.locale = NSLocale(localeIdentifier: "UTC") as Locale
+        return formatter.string(from: self)
+    }
 }

@@ -27,13 +27,13 @@
                         <rect key="frame" x="87" y="6" width="427" height="288"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="08.31" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHZ-mq-gHV">
-                                <rect key="frame" x="15" y="128" width="396" height="155"/>
+                                <rect key="frame" x="15" y="112" width="396" height="171"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3v-oZ-9LS">
-                                <rect key="frame" x="20" y="15" width="387" height="98"/>
+                                <rect key="frame" x="20" y="15" width="387" height="82"/>
                                 <string key="text">Can you show me benefit of 
 supplying our waste into your apps?Can you show me benefit of supplying our waste into your apps?ssaashjfgsjkhfgjhsdgfhjsdagfjhgjhdsgfjhsgdsjhgfdshjgfjhsdgfjhgsdjhfsdjhafjhdsgfjhgsdjhfgjhsdgfjhsdgfgsdjhf</string>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
@@ -61,13 +61,13 @@ supplying our waste into your apps?Can you show me benefit of supplying our wast
                         <rect key="frame" x="20" y="6" width="427" height="288"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="08.31" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUA-LP-QTg">
-                                <rect key="frame" x="16" y="50" width="395" height="233"/>
+                                <rect key="frame" x="16" y="46.5" width="395" height="236.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
                                 <color key="textColor" name="bgColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Can you show " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iww-az-HJV">
-                                <rect key="frame" x="20" y="15" width="387" height="20"/>
+                                <rect key="frame" x="20" y="15" width="387" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>

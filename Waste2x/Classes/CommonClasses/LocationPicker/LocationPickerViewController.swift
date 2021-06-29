@@ -54,8 +54,10 @@ class LocationPickerViewController: BaseViewController {
             
         }
         setupView()
-        
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if pLatitude != nil && pLongitude != nil {
             
             let coordinates = CLLocationCoordinate2DMake(pLatitude!, pLongitude!)
@@ -64,10 +66,6 @@ class LocationPickerViewController: BaseViewController {
             myPositionMarker.position = coordinates
             getAddressFromLatLon()
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -76,7 +76,7 @@ class HomeViewController: BaseViewController{
         tableView.rowHeight = UITableView.automaticDimension
         DispatchQueue.main.async {
             self.tableViewHeight.constant = self.tableView.contentSize.height
-            self.view.layoutIfNeeded()
+            self.tableView.layoutIfNeeded()
         }
         fetchFarmsFromServer()
         Global.shared.jump = 0
@@ -385,7 +385,7 @@ extension HomeViewController: WeatherCallDelegate {
             self.progressPointsLabel.text = "\(Int((DataManager.shared.getUser()?.result?.percentage ?? 0 )*100))/1000"
             DispatchQueue.main.async {
                 self.tableViewHeight.constant = self.tableView.contentSize.height
-                self.view.layoutIfNeeded()
+                self.tableView.layoutIfNeeded()
             }
             
             DataManager.shared.setWasteType(value: self.resultData!.commodity_farms.first?.crop_type ?? "")

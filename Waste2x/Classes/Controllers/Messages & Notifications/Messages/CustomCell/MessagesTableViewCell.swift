@@ -36,12 +36,10 @@ class MessagesTableViewCell: UITableViewCell {
         receiverHolderView.isHidden = true
         mainHolderview.isHidden = true
         messageLabel.text = cellData.body
-        timeLabel.text = cellData.timestampAsDate?.dateToString("HH:MM")
+        timeLabel.text = cellData.timestampAsDate?.dateToString("HH:mm")
         receiverMessageLabel.text = cellData.body
-        receiverTimeLabel.text = cellData.timestampAsDate?.dateToString("HH:MM")
-        
+        receiverTimeLabel.text = cellData.timestampAsDate?.dateToString("HH:mm")
         self.transform  = CGAffineTransform(scaleX: 1, y: -1)
-        
         if let author = cellData.author?.trimmingCharacters(in: .whitespaces).uppercased(), let phone = DataManager.shared.getUser()?.result?.phone.trimmingCharacters(in: .whitespaces).uppercased() {
             
             let authorPhone = author.split(separator: "=").last ?? ""
@@ -59,7 +57,10 @@ class MessagesTableViewCell: UITableViewCell {
     func timeStampStringToTimeReturn(_ timeStamp : String) -> String?
     {
         let dateTime = timeStamp.stringToDate("yyyy-MM-dd'T'HH:mm:ss.SSSZ")
-        let dateString = dateTime?.dateToString("HH:MM")
+        let dateString = dateTime?.dateToString("HH:mm")
         return dateString
+    }
+    func date(){
+        
     }
 }

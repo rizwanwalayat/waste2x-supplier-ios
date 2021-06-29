@@ -42,7 +42,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3B-0t-oFY" userLabel="mainHolderView">
-                    <rect key="frame" x="0.0" y="386" width="414" height="510"/>
+                    <rect key="frame" x="0.0" y="896" width="414" height="510"/>
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfx-Vz-FhI">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="428"/>
@@ -130,7 +130,7 @@
                 <constraint firstItem="aGC-bd-pUu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9KW-Pf-WG2"/>
                 <constraint firstAttribute="bottom" secondItem="aGC-bd-pUu" secondAttribute="bottom" id="Fzg-RH-rFO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b3B-0t-oFY" secondAttribute="trailing" id="Hsi-vK-Zde"/>
-                <constraint firstItem="b3B-0t-oFY" firstAttribute="top" secondItem="aGC-bd-pUu" secondAttribute="bottom" constant="-510" id="UHY-pm-t0d"/>
+                <constraint firstItem="b3B-0t-oFY" firstAttribute="top" secondItem="aGC-bd-pUu" secondAttribute="bottom" id="UHY-pm-t0d"/>
                 <constraint firstItem="aGC-bd-pUu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iUb-IQ-oCz"/>
             </constraints>
             <point key="canvasLocation" x="3" y="71"/>
