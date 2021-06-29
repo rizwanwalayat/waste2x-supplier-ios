@@ -60,7 +60,7 @@ class NotificationsViewController: BaseViewController {
         else if sender.title(for: .normal) == "Track" {
             
             let vc = TrackerViewController(nibName: "TrackerViewController", bundle: nil)
-                vc.trackID  = NotificationModell?.result?.notifications[sender.tag].dispatchId ?? 0
+//                vc.trackID  = NotificationModell?.result?.notifications[sender.tag].dispatchId ?? 0
                 globalObjectContainer?.tabbarHiddenView.isHidden = true
             self.navigationController?.pushViewController(vc, animated: true)
             

@@ -150,7 +150,7 @@ class TrackerViewController: BaseViewController {
 extension TrackerViewController:CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("lcoation delegate call")
-        
+        if locations.last?.coordinate != nil{
         dataBase.child("\(trackID)").getData { error, data in
             if error == nil{
 
@@ -191,10 +191,14 @@ extension TrackerViewController:CLLocationManagerDelegate{
                     
                 }
             }
+            
+        }
+            
+        }
             else {
                 self.navigationController?.popViewController(animated: true)
             }
-        }
+        
         self.locationManager.stopUpdatingLocation()
 
     }

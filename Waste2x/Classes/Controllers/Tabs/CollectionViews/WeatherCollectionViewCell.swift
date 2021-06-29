@@ -26,16 +26,16 @@ class WeatherCollectionViewCell: UICollectionViewCell {
             if Global.shared.jump < 40 && (DataManager.shared.getWeather()?.list.count ?? 0) > Global.shared.jump {
                 self.dayLabel.text = dateCalculate(date: DataManager.shared.getWeather()?.list[Global.shared.jump].dtTxt ?? "")
                 let weatherTemp = DataManager.shared.getWeather()?.list[Global.shared.jump].main?.temp ?? 00
-                if weatherTemp < 30{
+                if weatherTemp <= 30{
                     if #available(iOS 13.0, *) {
                         self.cloudImgView.image = UIImage(systemName: "cloud.rain")
                         self.cloudImgView.tintColor = UIColor(named: "themeColor")
                         
                     } else {
-                        // Fallback on earlier versions
+                        self.cloudImgView.image = UIImage(named: "Line")
                     }
                 }
-                else if weatherTemp >= 35{
+                else if weatherTemp > 30{
                     self.cloudImgView.image = UIImage(named: "greensunny")
                 }
                 else{
@@ -50,16 +50,16 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         if Global.shared.jump < 40 && (DataManager.shared.getWeather()?.list.count ?? 0) > Global.shared.jump {
             self.dayLabel.text = dateCalculate(date: DataManager.shared.getWeather()?.list[Global.shared.jump].dtTxt ?? "")
             let weatherTemp = DataManager.shared.getWeather()?.list[Global.shared.jump].main?.temp ?? 00
-            if weatherTemp < 30{
+            if weatherTemp <= 30{
                 if #available(iOS 13.0, *) {
                     self.cloudImgView.image = UIImage(systemName: "cloud.rain")
                     self.cloudImgView.tintColor = .white
                     
                 } else {
-                    // Fallback on earlier versions
+                    self.cloudImgView.image = UIImage(named: "whitecloud")
                 }
             }
-            else if weatherTemp >= 35{
+            else if weatherTemp > 30{
                 self.cloudImgView.image = UIImage(named: "whitesunny")
             }
             else{
