@@ -79,7 +79,8 @@ extension WasteDetailViewController : LocationPickerViewControllerDelegate
                 print(address ?? "")
             }
         }
-        
+        latitude = coordinates.latitude
+        longitude = coordinates.longitude
         postDictToUpdateLocation["latitude"] = coordinates.latitude
         postDictToUpdateLocation["longitude"] = coordinates.longitude
         
@@ -138,6 +139,9 @@ extension WasteDetailViewController {
     
     func dataPopulateInUI()
     {
+        latitude = wasteDeatil?.latitude ?? 0.0
+        longitude = wasteDeatil?.longitude ?? 0.0
+        
         imagesHandlings()
         UIView.animate(withDuration: 0.5, animations: {
             self.blinderView.alpha = 0

@@ -33,7 +33,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x1m-F4-IAC">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1m-F4-IAC">
                     <rect key="frame" x="0.0" y="154" width="414" height="561"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhZ-TM-gPJ" userLabel="MainView">
@@ -211,6 +211,7 @@
             <constraints>
                 <constraint firstItem="x1m-F4-IAC" firstAttribute="top" secondItem="O3i-KB-Z8y" secondAttribute="bottom" id="A6l-LR-CaK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="O3i-KB-Z8y" secondAttribute="trailing" id="H7q-Qd-B2e"/>
+                <constraint firstItem="zjz-9b-hzQ" firstAttribute="top" secondItem="x1m-F4-IAC" secondAttribute="bottom" constant="20" id="L1e-tu-SKg"/>
                 <constraint firstItem="zjz-9b-hzQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="MWa-fY-rki"/>
                 <constraint firstItem="O3i-KB-Z8y" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Xjo-IU-jTA"/>
                 <constraint firstItem="O3i-KB-Z8y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hfY-aW-akq"/>

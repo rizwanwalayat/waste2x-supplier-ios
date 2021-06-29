@@ -22,6 +22,7 @@ class SupplyingTypeViewController: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var constCollectionViewHeigh: NSLayoutConstraint!
     @IBOutlet weak var mainViewwithNavBar: UIView!
+    @IBOutlet weak var blindersView: UIView!
 
     static var selectedImageIcon = ""
     
@@ -30,20 +31,6 @@ class SupplyingTypeViewController: BaseViewController {
         super.viewDidLoad()
         
         fetchDataFromServer()
-        
-//        if Global.shared.apiCurve && supplyProcessData.count > 0
-//        {
-//            let wasteType = DataManager.shared.getWasteType()
-//            let wasteString = wasteType.split(separator: "-").first?.trimmingCharacters(in: .whitespaces)
-//
-//            for waste in supplyProcessData{
-//                if waste.title.trimmingCharacters(in: .whitespaces) == wasteString
-//                {
-//                    selectionData["waste_type"] = waste.title
-//                    pushToNextController(false, questions: waste.questions)
-//                }
-//            }
-//        }
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -96,7 +83,7 @@ class SupplyingTypeViewController: BaseViewController {
         vc.supplyProcessQuestions = questions
         vc.selectionData = selectionData
         vc.isDismissable = isdismissable
-        self.present(vc, animated: true, completion: nil)
+        self.present(vc, animated: false, completion: nil)
     }
     
 }
@@ -186,6 +173,10 @@ extension SupplyingTypeViewController {
                                 self.pushToNextController(false, questions: waste.questions)
                             }
                         }
+                    }
+                    else
+                    {
+                        self.blindersView.isHidden = true
                     }
                     
                     

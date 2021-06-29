@@ -275,7 +275,7 @@ extension LocationPickerViewController: CLLocationManagerDelegate {
     // 6
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        guard let location = locations.first else {
+        guard let location = locations.last else {
             return
         }
         

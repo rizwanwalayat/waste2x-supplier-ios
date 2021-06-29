@@ -17,6 +17,7 @@ class ContactsFetchViewController: BaseViewController {
     var number = ""
     var name = ""
     var dataModel = [ContactFetchModelResult]()
+    var invitedIndexs = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,9 +90,19 @@ extension ContactsFetchViewController : UITableViewDelegate,UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.register(ContactFetchTableViewCell.self, indexPath: indexPath)
-        self.cellConfig(cell: cell, indexPath: indexPath)
-        cell.config(index: indexPath.row,data:self.dataModel,contacts:contacts)
         cell.selectionStyle = .none
+        
+        self.cellConfig(cell: cell, indexPath: indexPath)
+//        cell.config(index: indexPath.row,data:self.dataModel,contacts:contacts)
+        
+        if self.invitedIndexs.contains(indexPath.row) {
+            cell.inviteButton.makeEnableForContactsScreen(value: false)
+        }
+        else
+        {
+            cell.inviteButton.makeEnableForContactsScreen(value: true)
+        }
+        
         return cell
         
     }
@@ -119,8 +130,24 @@ extension ContactsFetchViewController{
     func apiCall(){
         ContactFetchModel.contactFetchApiCall { result, error, status, message in
             self.dataModel = result!.result
-            self.tableView.reloadData()
             print(self.dataModel.count)
+            
+            var invitedCounterIndexValue = 0
+            if self.dataModel.count > 0 {
+                for contact in self.contacts
+                {
+                    for i in self.dataModel {
+                        if i.contactName == contact.givenName{
+                            self.invitedIndexs.append(invitedCounterIndexValue)
+                        }
+                    }
+                    
+                    invitedCounterIndexValue = invitedCounterIndexValue + 1
+                }
+            }
+            
+            self.tableView.reloadData()
+            
         }
     }
     

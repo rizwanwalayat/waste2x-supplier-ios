@@ -49,6 +49,15 @@ class FormOfWasteViewController: BaseViewController {
         
         var questionsArray = selectionData["question_responses"] as! [String]
         let selectedOption = supplyProcessQuestions.first?.options[collectionViewIndex].title ?? ""
+        
+        for question in questionsArray
+        {
+            if supplyProcessQuestions.first!.options.contains(where: { $0.title == question })
+            {
+                questionsArray.removeAll { $0 == question }
+            }
+        }
+        
         questionsArray.append(selectedOption)
         selectionData["question_responses"] = questionsArray
         
