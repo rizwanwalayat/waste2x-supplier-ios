@@ -30,18 +30,18 @@ class ContactFetchTableViewCell: UITableViewCell {
     func config(index:Int,data:[ContactFetchModelResult],contacts:[CNContact]){
         print(data.count)
         if data.count > 0 {
-        for i in data {
-            
-            for contact in contacts {
-                if i.contactName == contact.givenName{
-                    self.inviteButton.makeEnable(value: false)
-                    
-                }
-                else{
-                    self.inviteButton.makeEnable(value: true)
+            for i in data {
+                
+                for contact in contacts {
+                    if i.contactName == contact.givenName{
+                        self.inviteButton.makeEnable(value: false)
+                        
+                    }
+                    else{
+                        self.inviteButton.makeEnable(value: true)
+                    }
                 }
             }
-        }
         }
 //        for _ in contacts {
 //            if inviteButton.tag == 0 {

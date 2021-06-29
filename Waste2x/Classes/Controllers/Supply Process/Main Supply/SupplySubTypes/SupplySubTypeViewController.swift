@@ -66,7 +66,7 @@ class SupplySubTypeViewController: BaseViewController {
         super.viewDidAppear(animated)
         
         
-        self.heightOfHiddenView = self.dataContentView.bounds.height
+        self.heightOfHiddenView = self.dataContentView.bounds.height + 82 // 82 is margin of bottom button
         let estimatedMaxScreenHeight = UIScreen.main.bounds.height - 100 // coz have to give minimum margin from top
         if self.heightOfHiddenView > estimatedMaxScreenHeight {
             self.heightOfHiddenView = estimatedMaxScreenHeight

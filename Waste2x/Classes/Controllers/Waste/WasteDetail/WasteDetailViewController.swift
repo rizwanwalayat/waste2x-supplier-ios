@@ -36,6 +36,8 @@ class WasteDetailViewController: BaseViewController {
     var postDictToSaveImage = [String : Any]()
     var postDictToUpdateSize = [String : Any]()
     var postDictToUpdateLocation = [String : Any]()
+    var latitude = 0.0
+    var longitude = 0.0
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -77,8 +79,8 @@ class WasteDetailViewController: BaseViewController {
         //let wasteDetailLocation            = WasteDetailLocationViewController(nibName: "WasteDetailLocationViewController", bundle: nil)
         let wasteDetailLocation            = LocationPickerViewController(nibName: "LocationPickerViewController", bundle: nil)
         wasteDetailLocation.delegate = self
-        wasteDetailLocation.pLatitude = wasteDeatil?.latitude
-        wasteDetailLocation.pLongitude = wasteDeatil?.longitude
+        wasteDetailLocation.pLatitude = latitude
+        wasteDetailLocation.pLongitude = longitude
         self.navigationController?.pushViewController(wasteDetailLocation, animated: true)
     }
     

@@ -130,6 +130,7 @@ class FormSubTypesViewController: BaseViewController {
             }
             else
             {
+                
                 self.dismiss(animated: false, completion: nil)
             }
         })
@@ -188,7 +189,7 @@ extension FormSubTypesViewController : UITableViewDelegate,UITableViewDataSource
             confirmCell.selection(index: indexPath.row)
         }
         self.tabaleViewIndex = indexPath.row
-//        tableView.reloadData()
+        tableView.reloadData()
     }
     
 }
