@@ -30,8 +30,8 @@ class TrackerViewController: BaseViewController {
     @IBOutlet weak var timeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        initializeTheLocationManager()
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+
+//        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
 
         
     }
@@ -41,6 +41,7 @@ class TrackerViewController: BaseViewController {
         mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         mainView.layer.masksToBounds = true
         globalObjectContainer?.tabbarHiddenView.isHidden = true
+        initializeTheLocationManager()
         
     }
 
@@ -150,54 +151,57 @@ class TrackerViewController: BaseViewController {
 extension TrackerViewController:CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("lcoation delegate call")
-        if locations.last?.coordinate != nil{
-        dataBase.child("\(trackID)").getData { error, data in
-            if error == nil{
-
-                
-                //MARK: - for Current Location
-                
-                let location = self.locationManager.location!.coordinate
-                self.currentLat = location.latitude
-                self.currentLon = location.longitude
-                self.currentLocation = "\(String(location.latitude)),\(String(location.longitude))"
-                
-                //MARK: - For fireBase Location
-                
-                    let lastChildData = data.children.allObjects.first as? DataSnapshot
-                    let value = lastChildData?.value! as! [String:Any]
-                    let lat = value["lat"]!
-                    let lng = value["lon"]!
-                    self.destinationLat = lat as! Double
-                    self.destinationLng = lng as! Double
-                    self.endingLocation = "\(self.destinationLat),\(self.destinationLng)"
-                
-                
-                //MARK: - PolyLine Draw
-                    
-                if Global.shared.latlngCheck{
-                    self.mapView.clear()
-                    self.fetchDate(Starting: self.currentLocation, Ending: self.endingLocation)
-                    Global.shared.latlngCheck = false
-                    let cam = GMSCameraPosition(latitude: self.destinationLat, longitude: self.destinationLng, zoom: 15)
-                    
-                    
-                //MARK: -  Marker Draw
         
-                    self.markerUpdate(s_lat: self.destinationLat, s_lon: self.destinationLng, d_lat: self.currentLat, d_lon: self.currentLon)
-                    DispatchQueue.main.async {
-                        self.mapView.animate(to: cam)
-                    }
+        delegateForttracking()
+        
+        func delegateForttracking(){
+            dataBase.child("\(trackID)").getData { error, data in
+                if error == nil{
+
                     
+                    //MARK: - for Current Location
+                    
+                    let location = self.locationManager.location!.coordinate
+                    self.currentLat = location.latitude
+                    self.currentLon = location.longitude
+                    self.currentLocation = "\(String(location.latitude)),\(String(location.longitude))"
+                    
+                    //MARK: - For fireBase Location
+                    
+                        let lastChildData = data.children.allObjects.last as? DataSnapshot
+                        let value = lastChildData?.value! as! [String:Any]
+                        let lat = value["lat"]!
+                        let lng = value["lon"]!
+                        self.destinationLat = lat as! Double
+                        self.destinationLng = lng as! Double
+                        self.endingLocation = "\(self.destinationLat),\(self.destinationLng)"
+                    
+                    
+                    //MARK: - PolyLine Draw
+                        
+                    if Global.shared.latlngCheck{
+                        self.mapView.clear()
+                        self.fetchDate(Starting: self.currentLocation, Ending: self.endingLocation)
+//                        Global.shared.latlngCheck = false
+                        let cam = GMSCameraPosition(latitude: self.destinationLat, longitude: self.destinationLng, zoom: 15)
+                        
+                        
+                    //MARK: -  Marker Draw
+            
+                        self.markerUpdate(s_lat: self.destinationLat, s_lon: self.destinationLng, d_lat: self.currentLat, d_lon: self.currentLon)
+                        DispatchQueue.main.async {
+                            self.mapView.animate(to: cam)
+                        }
+                        
+                    }
                 }
+                else {
+                    self.navigationController?.popViewController(animated: true)
+                }
+                
             }
-            
         }
-            
-        }
-            else {
-                self.navigationController?.popViewController(animated: true)
-            }
+
         
         self.locationManager.stopUpdatingLocation()
 

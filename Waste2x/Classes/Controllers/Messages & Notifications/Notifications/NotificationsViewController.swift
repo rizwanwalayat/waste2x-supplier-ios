@@ -50,13 +50,14 @@ class NotificationsViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @objc func yesButtonPress(sender:UIButton){
+        if NotificationModell?.result != nil{
         if sender.title(for: .normal) == "Check" {
-            
+
             let vc = DetailedPendingCollectionViewController(nibName: "DetailedPendingCollectionViewController", bundle: nil)
             vc.id = NotificationModell?.result?.notifications[sender.tag].pendingCollectionId ?? 0
             self.navigationController?.pushTo(controller: vc)
-            
-        }
+            }
+        
         else if sender.title(for: .normal) == "Track" {
             
             let vc = TrackerViewController(nibName: "TrackerViewController", bundle: nil)
@@ -66,7 +67,7 @@ class NotificationsViewController: BaseViewController {
             
         }
         
-        else if sender.title(for: .normal) == "Pending" {
+        else if sender.title(for: .normal) == "Yes" {
             let notifcationDaTag = NotificationModell?.result?.notifications[sender.tag]
             let notificationID = notifcationDaTag?.idd
             let notificationResponce = "Yes"
@@ -75,14 +76,21 @@ class NotificationsViewController: BaseViewController {
                 
             }
         }
+            
+        }
     }
     @objc func noButtonPress(sender:UIButton){
+        if NotificationModell?.result != nil{
         let notifcationDaTag = NotificationModell?.result?.notifications[sender.tag]
         let notificationID = notifcationDaTag?.idd
-        let notificationResponce = "No"
-        NotificationResponceModel.NotificationResponceModelApiFunction(notificationID: notificationID!, notificationResponce: notificationResponce) { result, error, status, message in
+        let notificationResponceNo = "No"
+        NotificationResponceModel.NotificationResponceModelApiFunction(notificationID: notificationID!, notificationResponce: notificationResponceNo) { result, error, status, message in
             self.apiCall()
+            
         }
+            
+        }
+        
     }
     
 }
@@ -97,6 +105,7 @@ extension NotificationsViewController : UITableViewDelegate, UITableViewDataSour
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationsTableViewCell", for: indexPath) as! NotificationsTableViewCell
         cell.notificationYesButton.tag = indexPath.row
+        cell.notificationNoButton.tag = indexPath.row
         cell.notificationYesButton.addTarget(self, action: #selector(yesButtonPress(sender:)), for: .touchUpInside)
         cell.notificationNoButton.addTarget(self, action: #selector(noButtonPress(sender:)), for: .touchUpInside)
         cell.config(data: NotificationModell!, index: indexPath.row)

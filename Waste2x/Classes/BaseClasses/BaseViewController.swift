@@ -42,7 +42,7 @@ class BaseViewController: UIViewController {
     func showToast(message : String) {
 
        
-        let toastLabel = UILabel(frame: CGRect(x: (self.view.frame.size.width/2) - 75  , y: (self.view.frame.size.height/2) - 17.5, width: 150, height: 35))
+        let toastLabel = UILabel(frame: CGRect(x: 20 , y:ScreenSize.SCREEN_HEIGHT/2, width: ScreenSize.SCREEN_WIDTH-20, height: 40))
         toastLabel.backgroundColor = UIColor.appColor
         toastLabel.textColor = UIColor.white
         var font = UIFont()
@@ -63,7 +63,7 @@ class BaseViewController: UIViewController {
         toastLabel.clipsToBounds  =  true
         toastLabel.numberOfLines  =  2
         self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 5.0, delay: 0.1, options: .curveEaseOut, animations: {
              toastLabel.alpha = 0.0
         }, completion: {(isCompleted) in
             toastLabel.removeFromSuperview()

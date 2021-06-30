@@ -50,6 +50,7 @@ struct APIRoutes {
     static var pendingDetailUrl = "paudapay_us/pending_collection_detail/"
     static var contacFetchUrl = "paudapay_us/invited_suppliers/"
     static var contacSendUrl = "paudapay_us/invite_supplier/"
+    static var siteDeleteSendUrl = "paudapay_us/delete_site/"
 }
 struct FireBaseVariables {
     static var fireBaseToken = ""

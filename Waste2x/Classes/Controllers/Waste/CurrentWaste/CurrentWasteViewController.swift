@@ -54,29 +54,58 @@ class CurrentWasteViewController: BaseViewController {
 
 extension CurrentWasteViewController : UITableViewDelegate, UITableViewDataSource
 {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+    func numberOfSections(in tableView: UITableView) -> Int {
         return sitesData.count
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CurrentWasteTableViewCell", for: indexPath) as! CurrentWasteTableViewCell
         
-        let cellData = sitesData[indexPath.row]
+        let cellData = sitesData[indexPath.section]
         cell.setCellData(cellData)
         
         return cell
+    }
+    // Set the spacing between sections
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
+    // Make the background color show through
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+//            sitesData.remove(at: indexPath.section)
+//            tableView.deleteSections([indexPath.section], with: .fade)
+            APIClient.shared.deleteSiteApiFunctionCall(id: sitesData[indexPath.section].farmId, resone: "I don't Want This Site Any More") { result, error, status, message in
+                if error == nil{
+                self.showAlert(title: "Request has Been Submited" , message: "")
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let vc = WasteDetailViewController(nibName: "WasteDetailViewController", bundle: nil)
-        vc.farmID = sitesData[indexPath.row].farmId
+        vc.farmID = sitesData[indexPath.section].farmId
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

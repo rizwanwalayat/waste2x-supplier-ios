@@ -140,6 +140,11 @@ class APIClient: APIClientHandler {
         let params = ["contact_name":name,"contact_number":number] as [String:Any]
         _ = sendRequest(APIRoutes.contacSendUrl , parameters: params as [String : AnyObject],httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
+    func deleteSiteApiFunctionCall(id: Int, resone: String, _ completionBlock: @escaping APIClientCompletionHandler) {
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        let params = ["farm_id":id,"reason":resone] as [String:Any]
+        _ = sendRequest(APIRoutes.siteDeleteSendUrl , parameters: params as [String : AnyObject],httpMethod: .post , headers: headers, completionBlock: completionBlock)
+    }
     
     
     func userRegistration(phone: String,code: String,latitude: Double,longitude: Double,firebase_token: String,phone_imei: Int,phone_os: String,phone_model: String, _ completionBlock: @escaping APIClientCompletionHandler) {

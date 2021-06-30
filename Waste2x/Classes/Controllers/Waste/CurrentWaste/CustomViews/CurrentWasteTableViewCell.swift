@@ -21,6 +21,7 @@ class CurrentWasteTableViewCell: BaseTableViewCell {
         super.awakeFromNib()
         
         mainHolderView.dropShadow(color: UIColor(hexString: "969696", alpha: 1), opacity: 0.15, offSet: CGSize(width: -1, height: 1), radius: 3, scale: true)
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -28,7 +29,6 @@ class CurrentWasteTableViewCell: BaseTableViewCell {
 
         // Configure the view for the selected state
     }
-    
     func setCellData(_ data : FetchSitesCustomModel)
     {
         siteTitleLabel.text = data.farmName

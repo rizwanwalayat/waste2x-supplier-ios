@@ -1282,8 +1282,8 @@
 			isa = PBXGroup;
 			children = (
 				1893755D266127F800D55A33 /* CurrentWasteViewController.swift */,
-				1893755E266127F800D55A33 /* CustomViews */,
 				18937561266127F800D55A33 /* CurrentWasteViewController.xib */,
+				1893755E266127F800D55A33 /* CustomViews */,
 			);
 			path = CurrentWaste;
 			sourceTree = "<group>";

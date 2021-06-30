@@ -85,6 +85,7 @@ extension DetailedPendingCollectionViewController{
     func apiCall(){
         if self.id != 0{
             PendingCollectionModel.pendingCollectionApiCall { result, error, status, message in
+                if error == nil{
                 for item in result!.result{
                     print(item.id)
                     if self.id == item.id{
@@ -93,6 +94,8 @@ extension DetailedPendingCollectionViewController{
                         break
                     }
                 }
+                }
+                
             }
             
         }
