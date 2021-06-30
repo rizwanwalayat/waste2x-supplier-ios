@@ -44,6 +44,9 @@
                                         <constraint firstAttribute="width" secondItem="kCq-ju-vpb" secondAttribute="height" multiplier="1:1" id="Eab-5v-9rc"/>
                                     </constraints>
                                     <state key="normal" image="Arrow Left"/>
+                                    <connections>
+                                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="hrt-fH-DiI"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invite Supplier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJ5-il-Djq">
                                     <rect key="frame" x="20" y="15.999999999999998" width="388" height="25.333333333333329"/>

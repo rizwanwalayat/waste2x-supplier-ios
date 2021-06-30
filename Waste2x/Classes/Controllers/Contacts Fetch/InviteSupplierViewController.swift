@@ -33,6 +33,10 @@ class InviteSupplierViewController: BaseViewController {
         
     }
     
+    @IBAction func backButtonPressed(_ sender : UIButton)
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
 
     
 }

@@ -75,13 +75,29 @@ class ContactsFetchViewController: BaseViewController {
         ContactSendModel.contactSendApiCall(name: self.name, number: self.number) { result, error, status, message in
             if error == nil{
                 print(result?.result?.inviteId ?? "Noting",result?.result?.inviteTo ?? "Noting")
-                self.apiCall()
+                self.presentUIActivityControl()
+                self.invitedIndexs.append(sender.tag)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
+                //self.apiCall()
             }
         }
         
     }
 
 
+    func presentUIActivityControl()
+    {
+        let text = "Invite Supplier."
+        let textToShare = [ text ]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
 }
 extension ContactsFetchViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -97,10 +113,12 @@ extension ContactsFetchViewController : UITableViewDelegate,UITableViewDataSourc
         
         if self.invitedIndexs.contains(indexPath.row) {
             cell.inviteButton.makeEnableForContactsScreen(value: false)
+            cell.inviteButton.setTitle("invited", for: .normal)
         }
         else
         {
             cell.inviteButton.makeEnableForContactsScreen(value: true)
+            cell.inviteButton.setTitle("invite", for: .normal)
         }
         
         return cell

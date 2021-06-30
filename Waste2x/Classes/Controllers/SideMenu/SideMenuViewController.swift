@@ -37,10 +37,27 @@ class SideMenuViewController: BaseViewController {
     
     @IBAction func logoutButtonAction(_ sender: Any) {
         print("LogOut")
-        DataManager.shared.deleteUser()
-        Global.shared.apiCurve = false
-        let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
-        self.navigationController?.setViewControllers([vc], animated: true)
+        
+        let alertVc = UIAlertController(title: "Logout", message: "Are you sure want to logout?", preferredStyle: .alert)
+        
+        let image = UIImage(named: "appIcon")
+        let imageView = UIImageView(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
+        imageView.image = image
+        imageView.cornerRadius = 4
+        imageView.clipsToBounds = true
+        alertVc.view.addSubview(imageView)
+        
+        alertVc.setValue(image, forKey: "image")
+        alertVc.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { action in
+            
+            DataManager.shared.deleteUser()
+            Global.shared.apiCurve = false
+            let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
+            self.navigationController?.setViewControllers([vc], animated: true)
+        }))
+        alertVc.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alertVc, animated: true, completion: nil)
+        
     }
     @IBAction func logOutAction(_ sender: Any) {
         

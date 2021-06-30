@@ -22,7 +22,7 @@ class NewsViewController: BaseViewController {
     
     //audio
     var audioPlayer : AVAudioPlayer?
-    
+    var timer : Timer?
     //MARK: - enums
     enum cellType {
         case video
@@ -47,7 +47,8 @@ class NewsViewController: BaseViewController {
     
     //MARK: - Variables
     var category = cellType.video.rawValue
-    var timer : Timer?
+    var timerTest : Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -71,6 +72,11 @@ class NewsViewController: BaseViewController {
         }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        audioPlayer?.stop()
+    }
 
     @objc func startPlayPause(_ sender:UIButton)
     {
@@ -100,10 +106,6 @@ class NewsViewController: BaseViewController {
         }
         else
         {
-            audioPlayer?.pause()
-            audioPlayer = nil
-            previousPlayingFileName = urlString
-            lastPlayingIndex = sender.tag
             guard let url = URL.init(string: urlString) else { return }
             self.downloadFileFromURL(url: url, senderButton: sender)
         }
@@ -113,20 +115,30 @@ class NewsViewController: BaseViewController {
     
     @objc func sliderValueChange(_ sender : UISlider)
     {
-        return 
-//        if sender.tag == lastPlayingIndex {
-//
-//            audioPlayer?.stop()
-//            audioPlayer?.currentTime = TimeInterval(self.progressbar?.value ?? 0.0)
-//            audioPlayer?.prepareToPlay()
-//            audioPlayer?.play()
-//        }
-//        else
-//        {
-//
-//            return
-//        }
+       // return
+        if sender.tag == lastPlayingIndex
+        {
+            audioPlayer?.stop()
+            audioPlayer?.currentTime = TimeInterval(self.progressbar?.value ?? 0.0)
+            audioPlayer?.prepareToPlay()
+            audioPlayer?.play()
+        }
+        else
+        {
+            return
+        }
     }
+    
+    @objc func sliderEnter(_ sender : UISlider)
+    {
+       print("enter slider")
+    }
+    
+    @objc func sliderExit(_ sender : UISlider)
+    {
+       print("Exit slider")
+    }
+    
     
     @objc func updateTime(_ timer: Timer) {
         
@@ -158,6 +170,11 @@ class NewsViewController: BaseViewController {
             Utility.showAlertController(self, "file is not in correct formet , this file is in \(url.pathExtension) format.")
             return
         }
+        
+        audioPlayer?.stop()
+        audioPlayer = nil
+        previousPlayingFileName = url.absoluteString
+        lastPlayingIndex = senderButton.tag
         
         NewsModell!.result[senderButton.tag].isSongLoading = true
         
@@ -218,7 +235,9 @@ class NewsViewController: BaseViewController {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
             audioPlayer?.prepareToPlay()
             audioPlayer?.play()
-            Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
+            startTimer()
+//            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
+            
 //            if let cell = self.tableView.cellForRow(at: IndexPath(row: senderButton.tag, section: 0)) as? AudioTableViewCell {
 //
 //                cell.progressbar.maximumValue = Float(self.audioPlayer?.duration ?? 0.0)
@@ -235,6 +254,21 @@ class NewsViewController: BaseViewController {
         }
         
         tableView.reloadData()
+    }
+    
+    func startTimer ()
+    {
+      timerTest =  Timer.scheduledTimer(
+          timeInterval: TimeInterval(1.0),
+          target      : self,
+          selector    : #selector(self.updateTime(_:)),
+          userInfo    : nil,
+          repeats     : true)
+    }
+    
+    func stopTimerTest() {
+      timerTest?.invalidate()
+      timerTest = nil
     }
 }
 
@@ -262,8 +296,11 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
             cell.playPauseButton.addTarget(self, action: #selector(startPlayPause(_:)), for: .touchUpInside)
             cell.progressbar.tag = indexPath.row
             cell.progressbar.addTarget(self, action: #selector(sliderValueChange(_:)), for: .valueChanged)
+            cell.progressbar.addTarget(self, action: #selector(sliderEnter(_:)), for: .editingDidEnd)
+            cell.progressbar.addTarget(self, action: #selector(sliderExit(_:)), for: .touchDragExit)
             cell.config(data: NewsModell!, index: indexPath.row)
             cell.currentIndex = indexPath.row
+            
             
             if self.NewsModell!.result[indexPath.row].isSongPlaying {
                 
