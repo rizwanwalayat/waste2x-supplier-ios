@@ -90,13 +90,31 @@ extension CurrentWasteViewController : UITableViewDelegate, UITableViewDataSourc
         if editingStyle == .delete {
 //            sitesData.remove(at: indexPath.section)
 //            tableView.deleteSections([indexPath.section], with: .fade)
-            APIClient.shared.deleteSiteApiFunctionCall(id: sitesData[indexPath.section].farmId, resone: "I don't Want This Site Any More") { result, error, status, message in
-                if error == nil{
-                self.showAlert(title: "Request has Been Submited" , message: "")
+            
+            let alertVc = UIAlertController(title: "Delete", message: "Are you sure want to delete?", preferredStyle: .alert)
+            
+            let image = UIImage(named: "appIcon")
+            let imageView = UIImageView(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
+            imageView.image = image
+            imageView.cornerRadius = 4
+            imageView.clipsToBounds = true
+            alertVc.view.addSubview(imageView)
+            
+            alertVc.setValue(image, forKey: "image")
+            alertVc.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                Utility.showLoading()
+                APIClient.shared.deleteSiteApiFunctionCall(id: self.sitesData[indexPath.section].farmId, resone: "I don't Want This Site Any More") { result, error, status, message in
+                    Utility.hideLoading()
+                    if error == nil{
+                        
+                    self.showToast(message: "Request has Been Submited")
+                        
+                    }
                     
                 }
-                
-            }
+            }))
+            alertVc.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            self.present(alertVc, animated: true, completion: nil)
             
         }
         

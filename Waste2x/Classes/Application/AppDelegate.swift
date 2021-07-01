@@ -14,6 +14,7 @@ import Firebase
 import FirebaseMessaging
 import GoogleMaps
 import GooglePlaces
+import UserNotifications
 
 let gcmMessageIDKey = "gcm.message_id"
 
@@ -126,9 +127,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("Unable to register for remote notifications: \(error.localizedDescription)")
       }
-      func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        print("APNs token retrieved: \(deviceToken)")
-      }
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+      Messaging.messaging().apnsToken = deviceToken
+    }
 
     
     
@@ -199,7 +201,9 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     }
     print(userInfo)
     completionHandler([[.alert, .sound]])
+    
   }
+
 
   func userNotificationCenter(_ center: UNUserNotificationCenter,
                               didReceive response: UNNotificationResponse,
@@ -210,7 +214,8 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
       print("Message ID: \(messageID)")
     }
     print(userInfo)
-
+    NotificationCenter.default.post(name: Notification.Name("notification"), object: nil)
+    
     completionHandler()
   }
 }
