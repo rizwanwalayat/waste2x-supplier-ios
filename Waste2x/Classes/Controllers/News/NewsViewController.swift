@@ -115,42 +115,17 @@ class NewsViewController: BaseViewController {
     
     @objc func sliderValueChange(_ sender : UISlider, event: UIEvent)
     {
-        if let touchEvent = event.allTouches?.first {
-            
-            switch touchEvent.phase {
-            case .began:
-                
-                audioPlayer?.stop()
-                stopTimer()
-                print("******************************************* Begin Timer *********************")
-                
-            case .moved:
-            
-                print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& Move Timer &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
-                 if sender.tag == lastPlayingIndex
-                 {
-                     
-                     audioPlayer?.currentTime = TimeInterval(self.progressbar?.value ?? 0.0)
-                     
-                 }
-                 else
-                 {
-                     return
-                 }
-                
-            case .ended:
-                
-                print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% End Timer %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
-                startTimer()
-                audioPlayer?.prepareToPlay()
-                audioPlayer?.play()
-                
-            default:
-                break
-            }
+        if sender.tag == lastPlayingIndex
+        {
+            audioPlayer?.currentTime = TimeInterval(self.progressbar?.value ?? 0.0)
+            startTimer()
+            audioPlayer?.prepareToPlay()
+            audioPlayer?.play()
         }
-        
-       
+        else
+        {
+            return
+        }
     }
     
     @objc func updateTime(_ timer: Timer) {
@@ -163,7 +138,6 @@ class NewsViewController: BaseViewController {
                        "pValue": Float(audioPlayer?.currentTime ?? 0.0),
                        "mValue" : Float(self.audioPlayer?.duration ?? 0.0)]
         NotificationCenter.default.post(name: Notification.Name("progressbarValue"), object: nil, userInfo: objDict as [AnyHashable : Any])
-        tableView.reloadData()
     }
     
     
@@ -179,9 +153,11 @@ class NewsViewController: BaseViewController {
         
         if url.pathExtension != "mp3"
         {
-            lastPlayingIndex = senderButton.tag
-            NewsModell!.result[lastPlayingIndex].isSongPlaying = false
-            NewsModell!.result[lastPlayingIndex].isSongLoading = false
+            if lastPlayingIndex > NewsModell!.result.count {
+                
+                NewsModell!.result[lastPlayingIndex].isSongPlaying = false
+                NewsModell!.result[lastPlayingIndex].isSongLoading = false
+            }
             Utility.showAlertController(self, "file is not in correct formet , this file is in \(url.pathExtension) format.")
             return
         }
@@ -319,7 +295,6 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
                 
                 cell.playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
                 cell.progressbar.value = Float(audioPlayer?.currentTime ?? 0.0)
-                cell.progressbar.isUserInteractionEnabled = true
                 if self.NewsModell!.result[indexPath.row].isSongLoading {
                     cell.activityIndicator.startAnimating()
                     cell.playPauseButton.isHidden = true
@@ -334,7 +309,6 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
                 
                 cell.playPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
                 cell.progressbar.value = 0.0
-                cell.progressbar.isUserInteractionEnabled = false
                 cell.activityIndicator.stopAnimating()
                 cell.playPauseButton.isHidden = false
             }
