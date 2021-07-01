@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
         <array key="Poppins-SemiBold.ttf">
             <string>Poppins-SemiBold</string>
         </array>
@@ -17,6 +20,7 @@
             <connections>
                 <outlet property="bottomConst" destination="Yoi-Md-SUo" id="czK-Qj-K3d"/>
                 <outlet property="mainHolderView" destination="dWG-nN-ocd" id="Mk8-31-2ZM"/>
+                <outlet property="noNotificationLabel" destination="x9E-fK-3Vn" id="gsC-12-y90"/>
                 <outlet property="notificationsTableview" destination="dWW-NK-aB1" id="SKe-oA-txf"/>
                 <outlet property="titleLabel" destination="XZV-WQ-ova" id="rI7-CY-tlv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -81,12 +85,21 @@
                                 <outlet property="delegate" destination="-1" id="aEi-Bh-K5g"/>
                             </connections>
                         </tableView>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Notifications Found ... !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9E-fK-3Vn">
+                            <rect key="frame" x="20" y="386" width="374" height="22.5"/>
+                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="dWW-NK-aB1" secondAttribute="trailing" id="V2q-30-kzF"/>
                         <constraint firstAttribute="bottom" secondItem="dWW-NK-aB1" secondAttribute="bottom" id="Yoi-Md-SUo"/>
+                        <constraint firstItem="x9E-fK-3Vn" firstAttribute="leading" secondItem="dWG-nN-ocd" secondAttribute="leading" constant="20" id="ZAg-nL-cE4"/>
                         <constraint firstItem="dWW-NK-aB1" firstAttribute="leading" secondItem="dWG-nN-ocd" secondAttribute="leading" id="gTv-b5-fXZ"/>
+                        <constraint firstAttribute="trailing" secondItem="x9E-fK-3Vn" secondAttribute="trailing" constant="20" id="iTH-v6-W7P"/>
+                        <constraint firstItem="x9E-fK-3Vn" firstAttribute="centerY" secondItem="dWG-nN-ocd" secondAttribute="centerY" id="ilJ-Id-gfG"/>
                         <constraint firstItem="dWW-NK-aB1" firstAttribute="top" secondItem="dWG-nN-ocd" secondAttribute="top" id="x9s-ZC-Q21"/>
                     </constraints>
                 </view>

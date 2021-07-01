@@ -48,15 +48,20 @@ class AudioTableViewCell: UITableViewCell {
             guard let index = object["index"] as? Int else { return }
             guard let pValue = object["pValue"] as? Float else { return }
             guard let mValue = object["mValue"] as? Float else { return }
-            if currentIndex == index
-            {
+            if progressbar.isUserInteractionEnabled {
+                
                 progressbar.maximumValue = mValue
                 progressbar.value = pValue
             }
-            else
-            {
-                progressbar.value = 0.0
-            }
+//            if currentIndex == index
+//            {
+//                progressbar.maximumValue = mValue
+//                progressbar.value = pValue
+//            }
+//            else
+//            {
+//                progressbar.value = 0.0
+//            }
         }
     }
     
