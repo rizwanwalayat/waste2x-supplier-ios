@@ -113,44 +113,57 @@ class NewsViewController: BaseViewController {
         tableView.reloadData()
     }
     
-    @objc func sliderValueChange(_ sender : UISlider)
+    @objc func sliderValueChange(_ sender : UISlider, event: UIEvent)
     {
-       // return
-        if sender.tag == lastPlayingIndex
-        {
-            audioPlayer?.stop()
-            audioPlayer?.currentTime = TimeInterval(self.progressbar?.value ?? 0.0)
-            audioPlayer?.prepareToPlay()
-            audioPlayer?.play()
+        if let touchEvent = event.allTouches?.first {
+            
+            switch touchEvent.phase {
+            case .began:
+                
+                audioPlayer?.stop()
+                stopTimer()
+                print("******************************************* Begin Timer *********************")
+                
+            case .moved:
+            
+                print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& Move Timer &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+                 if sender.tag == lastPlayingIndex
+                 {
+                     
+                     audioPlayer?.currentTime = TimeInterval(self.progressbar?.value ?? 0.0)
+                     
+                 }
+                 else
+                 {
+                     return
+                 }
+                
+            case .ended:
+                
+                print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% End Timer %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+                startTimer()
+                audioPlayer?.prepareToPlay()
+                audioPlayer?.play()
+                
+            default:
+                break
+            }
         }
-        else
-        {
-            return
-        }
+        
+       
     }
-    
-    @objc func sliderEnter(_ sender : UISlider)
-    {
-       print("enter slider")
-    }
-    
-    @objc func sliderExit(_ sender : UISlider)
-    {
-       print("Exit slider")
-    }
-    
     
     @objc func updateTime(_ timer: Timer) {
         
         // slider current value
         
-        progressbar?.value = Float(audioPlayer?.currentTime ?? 0.0)
+        //progressbar?.value = Float(audioPlayer?.currentTime ?? 0.0)
         
         let objDict : [String : Any] = ["index" : lastPlayingIndex,
                        "pValue": Float(audioPlayer?.currentTime ?? 0.0),
                        "mValue" : Float(self.audioPlayer?.duration ?? 0.0)]
         NotificationCenter.default.post(name: Notification.Name("progressbarValue"), object: nil, userInfo: objDict as [AnyHashable : Any])
-        
+        tableView.reloadData()
     }
     
     
@@ -163,8 +176,10 @@ class NewsViewController: BaseViewController {
         let destinationUrl = documentsDirectoryURL.appendingPathComponent(url.lastPathComponent)
         print(destinationUrl)
         
+        
         if url.pathExtension != "mp3"
         {
+            lastPlayingIndex = senderButton.tag
             NewsModell!.result[lastPlayingIndex].isSongPlaying = false
             NewsModell!.result[lastPlayingIndex].isSongLoading = false
             Utility.showAlertController(self, "file is not in correct formet , this file is in \(url.pathExtension) format.")
@@ -266,7 +281,7 @@ class NewsViewController: BaseViewController {
           repeats     : true)
     }
     
-    func stopTimerTest() {
+    func stopTimer() {
       timerTest?.invalidate()
       timerTest = nil
     }
@@ -295,9 +310,7 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
             cell.playPauseButton.tag = indexPath.row
             cell.playPauseButton.addTarget(self, action: #selector(startPlayPause(_:)), for: .touchUpInside)
             cell.progressbar.tag = indexPath.row
-            cell.progressbar.addTarget(self, action: #selector(sliderValueChange(_:)), for: .valueChanged)
-            cell.progressbar.addTarget(self, action: #selector(sliderEnter(_:)), for: .editingDidEnd)
-            cell.progressbar.addTarget(self, action: #selector(sliderExit(_:)), for: .touchDragExit)
+            cell.progressbar.addTarget(self, action: #selector(sliderValueChange(_:event:)), for: .valueChanged)
             cell.config(data: NewsModell!, index: indexPath.row)
             cell.currentIndex = indexPath.row
             
@@ -306,7 +319,7 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
                 
                 cell.playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
                 cell.progressbar.value = Float(audioPlayer?.currentTime ?? 0.0)
-                
+                cell.progressbar.isUserInteractionEnabled = true
                 if self.NewsModell!.result[indexPath.row].isSongLoading {
                     cell.activityIndicator.startAnimating()
                     cell.playPauseButton.isHidden = true
@@ -321,6 +334,7 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
                 
                 cell.playPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
                 cell.progressbar.value = 0.0
+                cell.progressbar.isUserInteractionEnabled = false
                 cell.activityIndicator.stopAnimating()
                 cell.playPauseButton.isHidden = false
             }

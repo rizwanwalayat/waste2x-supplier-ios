@@ -16,7 +16,7 @@ class NotificationsViewController: BaseViewController {
     @IBOutlet weak var mainHolderView: UIView!
     @IBOutlet weak var notificationsTableview : UITableView!
     @IBOutlet weak var bottomConst : NSLayoutConstraint!
-    
+    @IBOutlet weak var noNotificationLabel : UILabel!
     
     // MARK: - Declarations
     
@@ -170,7 +170,14 @@ extension NotificationsViewController{
                 self.notificationsTableview.endUpdates()
             }
             
-               
+            if (result?.result?.notifications.count ?? 0) > 0
+            {
+                self.noNotificationLabel.isHidden = true
+            }
+            else
+            {
+                self.noNotificationLabel.isHidden = false
+            }
         }
     }
 }
