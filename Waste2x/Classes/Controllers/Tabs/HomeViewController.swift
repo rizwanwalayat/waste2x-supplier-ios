@@ -50,6 +50,7 @@ class HomeViewController: BaseViewController{
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.notification(notification:)), name: Notification.Name("notification"), object: nil)
         print(userData?.auth_token ?? "")
         (UIApplication.shared.delegate as! AppDelegate).weaterCalldelegate = self
         bottomConst.constant = tabbarViewHeight
@@ -98,6 +99,12 @@ class HomeViewController: BaseViewController{
     }
     
     
+    //MARK: - OBJC Function
+    
+    @objc func notification(notification : Notification){
+        let notification = NotificationsViewController(nibName: "NotificationsViewController", bundle: nil)
+        self.navigationController?.pushViewController(notification, animated: true)
+    }
     @objc private func pushToPaymentScreen(notification: NSNotification){
         
         if let slideMenuController = self.slideMenuController() {
