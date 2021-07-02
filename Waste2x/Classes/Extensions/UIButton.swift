@@ -36,10 +36,10 @@ extension UIButton
         self.isEnabled = value
         if value {
             self.backgroundColor = UIColor.appColor
-//            self.titleLabel?.textColor = UIColor.white
+            self.titleLabel?.textColor = UIColor.white
         } else {
             self.backgroundColor = UIColor(hexString: "DADADA")
-//            self.titleLabel?.textColor = UIColor(hexString: "A09F9F")
+            self.titleLabel?.textColor = UIColor(hexString: "A09F9F")
         }
     }
 }

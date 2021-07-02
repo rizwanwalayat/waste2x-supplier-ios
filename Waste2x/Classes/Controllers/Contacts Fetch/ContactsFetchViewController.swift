@@ -126,13 +126,11 @@ extension ContactsFetchViewController : UITableViewDelegate,UITableViewDataSourc
         if self.invitedIndexs.contains(indexPath.row) {
             cell.inviteButton.makeEnableForContactsScreen(value: false)
             cell.inviteButton.setTitle("invited", for: .normal)
-            cell.inviteButton.titleLabel?.textColor = .white
         }
         else
         {
             cell.inviteButton.makeEnableForContactsScreen(value: true)
             cell.inviteButton.setTitle("invite", for: .normal)
-            cell.inviteButton.titleLabel?.textColor = UIColor(hexString: "A09F9F")
         }
         
         return cell
