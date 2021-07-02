@@ -51,7 +51,11 @@ class NewsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    @objc func refresh(_ sender: AnyObject) {
+        self.newsApiCall()
     }
     
     override func viewWillAppear(_ animated: Bool) {

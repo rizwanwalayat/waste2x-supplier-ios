@@ -31,7 +31,12 @@ class NotificationsViewController: BaseViewController {
         notificationsTableview.rowHeight = UITableView.automaticDimension
         notificationsTableview.estimatedRowHeight = UITableView.automaticDimension
         bottomConst.constant = tabbarViewHeight
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        notificationsTableview.addSubview(refreshControl)
         self.view.layoutIfNeeded()
+    }
+    @objc func refresh(_ sender: AnyObject) {
+        self.apiCall()
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)

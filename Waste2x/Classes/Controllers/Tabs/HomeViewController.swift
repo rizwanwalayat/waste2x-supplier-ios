@@ -259,7 +259,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         if resultData?.pendingCollection ?? false {
             return 2
         }
-        else{
+        else {
             return 1
         }
     }
@@ -290,7 +290,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
             //tableViewHeight.constant = 400
             let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
             supplierCell = cell
-//            cell.config(resultData?.waste_type_questions?.waste_types?[self.index].share_icon_url ?? "")
+            cell.config(resultData?.waste_type_questions?.waste_types?[3].share_icon_url ?? "")
             cell.selectionStyle = .none
             return cell
         }
@@ -333,7 +333,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
     }
     
 }
-//MARK: - Navigation
+
 
 //MARK: - API calls
 extension HomeViewController: WeatherCallDelegate {

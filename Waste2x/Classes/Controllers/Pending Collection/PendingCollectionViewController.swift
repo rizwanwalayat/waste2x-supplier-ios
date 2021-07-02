@@ -25,6 +25,12 @@ class PendingCollectionViewController: BaseViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.apiCall()
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    @objc func refresh(_ sender: AnyObject) {
         self.apiCall()
     }
     override func viewWillAppear(_ animated: Bool) {

@@ -19,7 +19,12 @@ class FaqViewController: BaseViewController {
     var faqModelobject : FaqModel?
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
         
+    }
+    @objc func refresh(_ sender: AnyObject) {
+        self.faqApiCall()
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)

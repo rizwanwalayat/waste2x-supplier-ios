@@ -24,7 +24,7 @@ class ConfirmPendingTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        self.hiddenView.isHidden = true
         for dayLbl in daysLabel
         {
             dayLbl.sizeToFit()

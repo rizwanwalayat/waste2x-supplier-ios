@@ -32,7 +32,12 @@ class CurrentWasteViewController: BaseViewController {
         currentWasteTableview.register(UINib(nibName: "CurrentWasteTableViewCell", bundle: nil), forCellReuseIdentifier: "CurrentWasteTableViewCell")
         currentWasteTableview.rowHeight = UITableView.automaticDimension
         currentWasteTableview.estimatedRowHeight = UITableView.automaticDimension
+//        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+//        currentWasteTableview.addSubview(refreshControl)
     }
+//    @objc func refresh(_ sender: AnyObject) {
+//        self.getResponce()
+//    }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
 

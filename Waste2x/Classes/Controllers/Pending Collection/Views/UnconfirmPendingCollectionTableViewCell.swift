@@ -19,6 +19,7 @@ class UnconfirmPendingCollectionTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.hiddenView.isHidden = true
         // Initialization code
     }
 
