@@ -13,9 +13,6 @@ class UnconfirmPendingCollectionTableViewCell: UITableViewCell {
     @IBOutlet weak var hiddenView: UIView!
     @IBOutlet weak var farmLabel: UILabel!
     @IBOutlet weak var scheduleLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var statusImage: UIImageView!
-    @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -38,10 +35,10 @@ class UnconfirmPendingCollectionTableViewCell: UITableViewCell {
         })
     }
     func pendingConfig(data:[PendingCollectionResultResponce],index:Int){
-        self.statusLabel.text = data[index].status
-        self.statusLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        self.statusImage.image = UIImage(named: "Pending-Icon")
-        self.statusView.backgroundColor = .clear
+//        self.statusLabel.text = data[index].status
+//        self.statusLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+//        self.statusImage.image = UIImage(named: "Pending-Icon")
+//        self.statusView.backgroundColor = .clear
         self.farmLabel.text = data[index].farm
         if data[index].frequency == "" {
             self.scheduleLabel.text = data[index].schedule_type
@@ -59,8 +56,9 @@ class UnconfirmPendingCollectionTableViewCell: UITableViewCell {
         
     }
     func unConfirmedConfig(data:[PendingCollectionResultResponce],index:Int){
-        self.statusLabel.text = data[index].status
-        self.statusImage.image = UIImage(named: "Pending")
+//        self.statusLabel.text = data[index].status
+//        self.statusImage.image = UIImage(named: "Pending")
+        
         self.farmLabel.text = data[index].farm
         self.scheduleLabel.text = data[index].schedule_type + " (\(data[index].frequency))"
         if data[index].frequency == "" {
@@ -72,7 +70,7 @@ class UnconfirmPendingCollectionTableViewCell: UITableViewCell {
             
         }
         self.dateLabel.text = data[index].scheduleDate
-        
+        self.addressLabel.text = data[index].address
     }
     
 }

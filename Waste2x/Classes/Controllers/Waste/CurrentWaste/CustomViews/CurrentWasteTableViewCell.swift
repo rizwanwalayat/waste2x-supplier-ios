@@ -20,7 +20,7 @@ class CurrentWasteTableViewCell: BaseTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        mainHolderView.dropShadow(color: UIColor(hexString: "969696", alpha: 1), opacity: 0.15, offSet: CGSize(width: -1, height: 1), radius: 3, scale: true)
+//        mainHolderView.dropShadow(color: UIColor(hexString: "969696", alpha: 1), opacity: 0.15, offSet: CGSize(width: -1, height: 1), radius: 3, scale: true)
 
     }
 

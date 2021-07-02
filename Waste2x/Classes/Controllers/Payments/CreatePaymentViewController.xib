@@ -19,8 +19,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreatePaymentViewController" customModule="Waste2x" customModuleProvider="target">
             <connections>
                 <outlet property="bottomConst" destination="Uen-qD-yEh" id="UI5-Gv-xBa"/>
+                <outlet property="emailStackView" destination="OxH-Zm-Oxh" id="KKz-sa-eWL"/>
                 <outlet property="emailTitle" destination="crQ-cg-a9W" id="D3G-xA-ZGe"/>
                 <outlet property="idTitle" destination="FS0-kO-uzb" id="XqP-um-KT1"/>
+                <outlet property="informationText" destination="aJC-SC-AeT" id="knu-UE-lHg"/>
                 <outlet property="mainView" destination="veq-BJ-fXd" id="lvg-aQ-cCM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
