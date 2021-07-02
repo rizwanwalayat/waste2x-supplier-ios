@@ -66,36 +66,44 @@ class ContactsFetchViewController: BaseViewController {
     }
     @objc func actionApi(_ sender:UIButton){
         
-        
-        for phoneNumber in contacts[sender.tag].phoneNumbers {
-            let number = phoneNumber.value
-            self.number = number.stringValue
-        }
-        self.name = "\(contacts[sender.tag].givenName)"
-        ContactSendModel.contactSendApiCall(name: self.name, number: self.number) { result, error, status, message in
-            if error == nil{
-                print(result?.result?.inviteId ?? "Noting",result?.result?.inviteTo ?? "Noting")
-                self.presentUIActivityControl()
-                self.invitedIndexs.append(sender.tag)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-                
-                //self.apiCall()
-            }
-        }
-        
+        self.presentUIActivityControl(sender.tag)
     }
 
 
-    func presentUIActivityControl()
+    func presentUIActivityControl(_ index : Int)
     {
         let text = "Invite Supplier."
         let textToShare = [ text ]
         let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        activityViewController.completionWithItemsHandler = { activity, success, items, error in
+            if (success || activity != nil) && error == nil {
+                
+                print(activity, items)
+                
+                for phoneNumber in self.contacts[index].phoneNumbers {
+                    let number = phoneNumber.value
+                    self.number = number.stringValue
+                }
+                self.name = "\(self.contacts[index].givenName)"
+                ContactSendModel.contactSendApiCall(name: self.name, number: self.number) { result, error, status, message in
+                    if error == nil{
+                        print(result?.result?.inviteId ?? "Noting",result?.result?.inviteTo ?? "Noting")
+                        
+                        self.invitedIndexs.append(index)
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                        
+                    }
+                }
+            }
+        }
+        
         activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
         self.present(activityViewController, animated: true, completion: nil)
+        
     }
     
 }
