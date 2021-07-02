@@ -290,7 +290,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
             //tableViewHeight.constant = 400
             let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
             supplierCell = cell
-            cell.config(resultData?.waste_type_questions?.waste_types?[3].share_icon_url ?? "")
+//            cell.config(resultData?.waste_type_questions?.waste_types?[3].share_icon_url ?? "")
             cell.selectionStyle = .none
             return cell
         }

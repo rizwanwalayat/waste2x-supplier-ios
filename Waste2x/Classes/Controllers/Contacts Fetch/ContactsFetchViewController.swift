@@ -78,9 +78,14 @@ class ContactsFetchViewController: BaseViewController {
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         
         activityViewController.completionWithItemsHandler = { activity, success, items, error in
-            if (success || activity != nil) && error == nil {
+            if success == true && activity != nil && error == nil {
                 
-                print(activity, items)
+                print(activity!,success)
+                let activityName = activity!.rawValue.split(separator: ".")
+                if activityName.count >= 3
+                {
+                    print("Invited By ",activityName[2])
+                }
                 
                 for phoneNumber in self.contacts[index].phoneNumbers {
                     let number = phoneNumber.value
@@ -117,16 +122,17 @@ extension ContactsFetchViewController : UITableViewDelegate,UITableViewDataSourc
         cell.selectionStyle = .none
         
         self.cellConfig(cell: cell, indexPath: indexPath)
-//        cell.config(index: indexPath.row,data:self.dataModel,contacts:contacts)
         
         if self.invitedIndexs.contains(indexPath.row) {
             cell.inviteButton.makeEnableForContactsScreen(value: false)
             cell.inviteButton.setTitle("invited", for: .normal)
+            cell.inviteButton.titleLabel?.textColor = .white
         }
         else
         {
             cell.inviteButton.makeEnableForContactsScreen(value: true)
             cell.inviteButton.setTitle("invite", for: .normal)
+            cell.inviteButton.titleLabel?.textColor = UIColor(hexString: "A09F9F")
         }
         
         return cell
