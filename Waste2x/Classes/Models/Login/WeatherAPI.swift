@@ -3,7 +3,7 @@
 //  Waste2x
 //
 //  Created by HaiDer's Macbook Pro on 11/06/2021.
-//  Copyright © 2021 codesrbit. All rights reserved.
+//  Copyright © 2021 Haider Awan. All rights reserved.
 //
 
 import Foundation
