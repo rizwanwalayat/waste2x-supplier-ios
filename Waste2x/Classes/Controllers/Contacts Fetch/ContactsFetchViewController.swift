@@ -78,7 +78,7 @@ class ContactsFetchViewController: BaseViewController {
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         
         activityViewController.completionWithItemsHandler = { activity, success, items, error in
-            if success || activity != nil || error == nil{
+            if (success || activity != nil) && error == nil {
                 
                 print(activity, items)
                 
