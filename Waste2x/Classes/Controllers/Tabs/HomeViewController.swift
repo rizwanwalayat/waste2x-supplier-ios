@@ -75,10 +75,6 @@ class HomeViewController: BaseViewController{
         wasteTypeCollectionView.contentInset  = .zero
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
-        DispatchQueue.main.async {
-            self.tableViewHeight.constant = self.tableView.contentSize.height
-            self.tableView.layoutIfNeeded()
-        }
         fetchFarmsFromServer()
         Global.shared.jump = 0
         self.weatherCollectionView.reloadData()
@@ -216,6 +212,9 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             if let cell = wasteTypeCollectionView.indexPathForItem(at: currentCenteredPoint) {
                 self.indicatorMarker.currentPage = cell.row - 1 
                 self.index = cell.row - 1
+                
+                let cellData = fetchSitesData[cell.row - 1]
+                supplierCell?.config(cellData.sharedIconUrl)
             }
 
             
@@ -238,8 +237,6 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         if collectionView == wasteTypeCollectionView{
             collectionView.deselectItem(at: indexPath, animated: true)
             self.indicatorMarker.currentPage = indexPath.row
-            let cellData = fetchSitesData[indexPath.row]
-            supplierCell?.config(cellData.sharedIconUrl)
             if collectionView == wasteTypeCollectionView {
                 let vc = WasteDetailViewController(nibName: "WasteDetailViewController", bundle: nil)
                 vc.farmID = fetchSitesData[indexPath.row].farmId
@@ -380,12 +377,8 @@ extension HomeViewController: WeatherCallDelegate {
             progressBar.setProgress(progress, animated: true)
             self.welcomeLabel.attributedText =  self.setAttributedTextInLable(boldString: "Hello, ", emailAddress: userData?.email ?? "")
             self.progressPointsLabel.text = "\(Int((DataManager.shared.getUser()?.result?.percentage ?? 0 )*100))/1000"
-            DispatchQueue.main.async {
-                self.tableViewHeight.constant = self.tableView.contentSize.height
-                self.tableView.layoutIfNeeded()
-            }
-            
             DataManager.shared.setWasteType(value: self.resultData!.commodity_farms.first?.crop_type ?? "")
+            
             for commudity in self.resultData!.commodity_farms
             {
                 if commudity.farms != nil
@@ -421,11 +414,16 @@ extension HomeViewController: WeatherCallDelegate {
             }
             
             self.wasteTypeCollectionView.reloadData()
+            self.tableView.reloadData()
+            
+            DispatchQueue.main.async {
+                self.tableViewHeight.constant = self.tableView.contentSize.height
+                self.tableView.layoutIfNeeded()
+            }
         }
         else
         {
             Utility.showAlertController(self, "Invalid token, data not fetched")
         }
-        self.tableView.reloadData()
     }
 }
