@@ -44,11 +44,12 @@ class LoginViewController: BaseViewController {
                 
                 if error == nil {
                     let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
-                    codeVerificationVC.phone = self.phoneNoTextfield.text ?? ""
+                    Global.shared.phoneNumber = self.phoneNoTextfield.text ?? ""
                     self.navigationController?.pushViewController(codeVerificationVC, animated: true)
                 }
-                else{
-                    Utility.showAlertController(self, message)
+                else {
+                    
+                    Utility.showAlertController(self, error!.localizedDescription)
                     
                 }
             }

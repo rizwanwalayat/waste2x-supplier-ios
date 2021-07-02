@@ -36,6 +36,7 @@ class Global {
     var paymentModel : PaymentModel?
     var jump  =  0
     var latlngCheck = true
+    var phoneNumber = ""
     
     
     
