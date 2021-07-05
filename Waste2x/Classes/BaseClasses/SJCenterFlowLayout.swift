@@ -156,7 +156,7 @@ private extension SJCenterFlowLayout {
         
         let yInset = (collectionSize.height - self.itemSize.height) / 2
         let xInset = (collectionSize.width - self.itemSize.width) / 2
-        self.sectionInset = UIEdgeInsets.init(top: yInset, left: 30, bottom: yInset, right: 30)
+        self.sectionInset = UIEdgeInsets.init(top: yInset, left: 50, bottom: yInset, right: 30)
         
         let side = isHorizontal ? self.itemSize.width : self.itemSize.height
         var scale: CGFloat = 1.0
