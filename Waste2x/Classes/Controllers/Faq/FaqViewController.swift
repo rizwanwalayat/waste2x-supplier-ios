@@ -25,6 +25,7 @@ class FaqViewController: BaseViewController {
     }
     @objc func refresh(_ sender: AnyObject) {
         self.faqApiCall()
+        refreshControl.endRefreshing()
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)

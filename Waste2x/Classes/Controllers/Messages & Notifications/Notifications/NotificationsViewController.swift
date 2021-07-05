@@ -37,6 +37,7 @@ class NotificationsViewController: BaseViewController {
     }
     @objc func refresh(_ sender: AnyObject) {
         self.apiCall()
+        refreshControl.endRefreshing()
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)

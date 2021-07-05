@@ -56,6 +56,7 @@ class NewsViewController: BaseViewController {
     }
     @objc func refresh(_ sender: AnyObject) {
         self.newsApiCall()
+        refreshControl.endRefreshing()
     }
     
     override func viewWillAppear(_ animated: Bool) {
