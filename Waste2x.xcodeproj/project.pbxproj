@@ -190,6 +190,12 @@
 		1893756F266127F800D55A33 /* CurrentWasteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18937561266127F800D55A33 /* CurrentWasteViewController.xib */; };
 		189782FA265D3479008FD5E3 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189782F8265D3479008FD5E3 /* SideMenuViewController.swift */; };
 		189782FD265D35CF008FD5E3 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189782FC265D35CF008FD5E3 /* SideMenuViewController.xib */; };
+		18A579B9269320070067952F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A579B8269320070067952F /* DataManager.swift */; };
+		18A579BB269320230067952F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A579BA269320230067952F /* Constants.swift */; };
+		18A579BE269321690067952F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A579BD269321690067952F /* ApiClient.swift */; };
+		18A579C02693218F0067952F /* ApiClientHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A579BF2693218F0067952F /* ApiClientHandler.swift */; };
+		18A579C2269321A60067952F /* ApiResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A579C1269321A60067952F /* ApiResponseHandler.swift */; };
+		18A579C4269321C40067952F /* FileTSAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A579C3269321C40067952F /* FileTSAPIClient.swift */; };
 		18A7148E2680782000007ECB /* PolyLineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7148D2680782000007ECB /* PolyLineModel.swift */; };
 		18A849CD265E37A7008F77E8 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A849CB265E37A7008F77E8 /* WeatherCollectionViewCell.swift */; };
 		18A849D0265E411F008F77E8 /* WeatherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A849CF265E411F008F77E8 /* WeatherCollectionViewCell.xib */; };
@@ -400,6 +406,12 @@
 		18937561266127F800D55A33 /* CurrentWasteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrentWasteViewController.xib; sourceTree = "<group>"; };
 		189782F8265D3479008FD5E3 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		189782FC265D35CF008FD5E3 /* SideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
+		18A579B8269320070067952F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		18A579BA269320230067952F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		18A579BD269321690067952F /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		18A579BF2693218F0067952F /* ApiClientHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientHandler.swift; sourceTree = "<group>"; };
+		18A579C1269321A60067952F /* ApiResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponseHandler.swift; sourceTree = "<group>"; };
+		18A579C3269321C40067952F /* FileTSAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTSAPIClient.swift; sourceTree = "<group>"; };
 		18A7148D2680782000007ECB /* PolyLineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolyLineModel.swift; sourceTree = "<group>"; };
 		18A849CB265E37A7008F77E8 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		18A849CF265E411F008F77E8 /* WeatherCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -541,6 +553,8 @@
 		0067A305252AF7FA00CECA8C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				18A579BC2693204A0067952F /* Network */,
+				18A579B526931F940067952F /* DataManger */,
 				0067A2D225274C6E00CECA8C /* Application */,
 				0067A2CF25274C4800CECA8C /* Models */,
 				0067A2D025274C5100CECA8C /* Controllers */,
@@ -1251,6 +1265,26 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
+		18A579B526931F940067952F /* DataManger */ = {
+			isa = PBXGroup;
+			children = (
+				18A579B8269320070067952F /* DataManager.swift */,
+				18A579BA269320230067952F /* Constants.swift */,
+			);
+			path = DataManger;
+			sourceTree = "<group>";
+		};
+		18A579BC2693204A0067952F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				18A579BD269321690067952F /* ApiClient.swift */,
+				18A579BF2693218F0067952F /* ApiClientHandler.swift */,
+				18A579C1269321A60067952F /* ApiResponseHandler.swift */,
+				18A579C3269321C40067952F /* FileTSAPIClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		18A7148C2680780E00007ECB /* Tracking */ = {
 			isa = PBXGroup;
 			children = (
@@ -1586,6 +1620,8 @@
 				184F51702667AD9700F0328A /* ConfirmPendingTableViewCell.swift in Sources */,
 				04E6104726725422001E6629 /* SupplyProcessDataModel.swift in Sources */,
 				043F6BF8267776A2000E3C4F /* HomeResultDataModel.swift in Sources */,
+				18A579B9269320070067952F /* DataManager.swift in Sources */,
+				18A579C02693218F0067952F /* ApiClientHandler.swift in Sources */,
 				18ACB7C7267A36D70088307D /* CreatePayment.swift in Sources */,
 				181025282657E36500DEBF7D /* Global.swift in Sources */,
 				1889607F266E289800061783 /* SupplyDetailTableViewCell.swift in Sources */,
@@ -1611,6 +1647,7 @@
 				18342C77266E436E00A678D3 /* FormOfWasteViewController.swift in Sources */,
 				1893756E266127F800D55A33 /* CurrentWasteTableViewCell.swift in Sources */,
 				041D40D226772A65003A0039 /* CreateSiteResult.swift in Sources */,
+				18A579BE269321690067952F /* ApiClient.swift in Sources */,
 				047E83DA268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.swift in Sources */,
 				0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */,
 				041D40D126772A65003A0039 /* CreateSite.swift in Sources */,
@@ -1623,6 +1660,7 @@
 				18C5DD7E265FEB7800EE1A2F /* SJCenterFlowLayout.swift in Sources */,
 				043F6BF4267776A2000E3C4F /* HomeFarmer_medals.swift in Sources */,
 				043F6BF2267776A2000E3C4F /* HomeFarms.swift in Sources */,
+				18A579C2269321A60067952F /* ApiResponseHandler.swift in Sources */,
 				1893756C266127F800D55A33 /* CurrentWasteViewController.swift in Sources */,
 				1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */,
 				18C11A6C265F9D5F00BC022F /* ContactViewController.swift in Sources */,
@@ -1645,6 +1683,7 @@
 				043F6BF7267776A2000E3C4F /* HomeOptions.swift in Sources */,
 				047DA71B26809635009D0B02 /* TwillioChatDataModel.swift in Sources */,
 				0067A317252AFC9E00CECA8C /* UITableView.swift in Sources */,
+				18A579C4269321C40067952F /* FileTSAPIClient.swift in Sources */,
 				0463F2DE266E08CC00E8924D /* RewardViewController.swift in Sources */,
 				0463F2E5266E29F300E8924D /* ChatMessagesViewController.swift in Sources */,
 				18A849D7265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift in Sources */,
@@ -1659,6 +1698,7 @@
 				1849F5A4266FDFD60001B533 /* ContactsFetchViewController.swift in Sources */,
 				0067A319252AFC9E00CECA8C /* Int.swift in Sources */,
 				188B36D32668C95A0036B412 /* UnconfirmPendingCollectionTableViewCell.swift in Sources */,
+				18A579BB269320230067952F /* Constants.swift in Sources */,
 				048C09F0265E5FDE003E301F /* CodeVerificationViewModel.swift in Sources */,
 				0067A321252AFC9E00CECA8C /* String.swift in Sources */,
 				1849F5A9266FE32F0001B533 /* ContactFetchTableViewCell.swift in Sources */,
