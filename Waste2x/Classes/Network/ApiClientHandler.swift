@@ -100,7 +100,7 @@ class APIClientHandler: TSAPIClient {
                     apiError = self.createErrorWithErrorCode(APIClientHandlerErrorCode.invalidToken.rawValue, andErrorInfo: userInfo)
                     
                 } else {
-                    let userInfo : [String: Any] = [NSLocalizedDescriptionKey : "Connecting to network ...."]
+                    let userInfo : [String: Any] = [NSLocalizedDescriptionKey : "Server Did Not Respond \ntry after some time ...."]
                     apiError = self.createErrorWithErrorCode(APIClientHandlerErrorCode.timeOut.rawValue, andErrorInfo: userInfo)
                 }
 

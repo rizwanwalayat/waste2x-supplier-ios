@@ -15,7 +15,7 @@ var googleAPIKey = "AIzaSyBp9ntlNiyAFvV8qxdXrBvBAOz_xasmvS0"
 
 
 struct APIRoutes {
-    static var baseUrl = "http://enmass-cache-programme.appspot.com/"
+    static var baseUrl = "https://cache-admin-panel-production.appspot.com/"
     static var imageBaseUrl = "/api/shared/user/userImage"
     static var login = "paudapay_us/send_code/"
     static var registration = "paudapay_us/registration/"
