@@ -45,6 +45,8 @@ class SJCenterFlowLayout: UICollectionViewFlowLayout {
             return self.itemSize.width + self.minimumLineSpacing
         case .vertical:
             return self.itemSize.height + self.minimumLineSpacing
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -130,6 +132,8 @@ class SJCenterFlowLayout: UICollectionViewFlowLayout {
             proposedContentOffset = CGPoint(x: collectionView.contentOffset.x, y: pageOffset)
             shouldAnimate = abs(collectionView.contentOffset.y - pageOffset) > 1 ? animated : false
             break
+        @unknown default:
+            fatalError()
         }
         collectionView.setContentOffset(proposedContentOffset, animated: shouldAnimate)
     }
