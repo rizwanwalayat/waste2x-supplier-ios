@@ -78,7 +78,7 @@ email address</string>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cj-uk-JEc">
                                     <rect key="frame" x="25" y="224.5" width="364" height="58"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Phone-icon" translatesAutoresizingMaskIntoConstraints="NO" id="oQ2-FD-HOY">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail" translatesAutoresizingMaskIntoConstraints="NO" id="oQ2-FD-HOY">
                                             <rect key="frame" x="18" y="19" width="20" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="oQ2-FD-HOY" secondAttribute="height" multiplier="1:1" id="e6w-Gx-hJF"/>
@@ -174,9 +174,9 @@ email address</string>
         </view>
     </objects>
     <resources>
-        <image name="Phone-icon" width="20" height="20"/>
         <image name="arrow-back" width="10.5" height="18.5"/>
         <image name="arrow-right" width="10" height="18"/>
+        <image name="mail" width="18.5" height="15"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
