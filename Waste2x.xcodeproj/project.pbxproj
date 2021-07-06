@@ -168,7 +168,6 @@
 		1875BC90265690DA00147EB8 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */; };
 		187D756F266E0816007811C4 /* SupplyingTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D756D266E0816007811C4 /* SupplyingTypeViewController.swift */; };
 		187D7570266E0816007811C4 /* SupplyingTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187D756E266E0816007811C4 /* SupplyingTypeViewController.xib */; };
-		18827937267E01D7001AB637 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18827936267E01D7001AB637 /* GoogleService-Info.plist */; };
 		18896077266E1EB800061783 /* SupplyingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18896075266E1EB800061783 /* SupplyingCollectionViewCell.swift */; };
 		18896078266E1EB800061783 /* SupplyingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18896076266E1EB800061783 /* SupplyingCollectionViewCell.xib */; };
 		1889607F266E289800061783 /* SupplyDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1889607D266E289800061783 /* SupplyDetailTableViewCell.swift */; };
@@ -218,6 +217,7 @@
 		18C5DD7E265FEB7800EE1A2F /* SJCenterFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5DD7D265FEB7800EE1A2F /* SJCenterFlowLayout.swift */; };
 		18D1A366266A2B77009CAD26 /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1A364266A2B77009CAD26 /* TrackerViewController.swift */; };
 		18D1A367266A2B77009CAD26 /* TrackerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D1A365266A2B77009CAD26 /* TrackerViewController.xib */; };
+		18FB2B962694A1FE006C6AE1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18FB2B952694A1FE006C6AE1 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -384,7 +384,6 @@
 		1875BC8F265690D900147EB8 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		187D756D266E0816007811C4 /* SupplyingTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplyingTypeViewController.swift; sourceTree = "<group>"; };
 		187D756E266E0816007811C4 /* SupplyingTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplyingTypeViewController.xib; sourceTree = "<group>"; };
-		18827936267E01D7001AB637 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18896075266E1EB800061783 /* SupplyingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplyingCollectionViewCell.swift; sourceTree = "<group>"; };
 		18896076266E1EB800061783 /* SupplyingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplyingCollectionViewCell.xib; sourceTree = "<group>"; };
 		1889607D266E289800061783 /* SupplyDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplyDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -433,6 +432,7 @@
 		18C5DD7D265FEB7800EE1A2F /* SJCenterFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJCenterFlowLayout.swift; sourceTree = "<group>"; };
 		18D1A364266A2B77009CAD26 /* TrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
 		18D1A365266A2B77009CAD26 /* TrackerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackerViewController.xib; sourceTree = "<group>"; };
+		18FB2B952694A1FE006C6AE1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		207F74016C0058DAC6E355F9 /* Pods_Waste2x.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Waste2x.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4403568D39555D92B00CB323 /* Pods-Waste2x.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waste2x.debug.xcconfig"; path = "Target Support Files/Pods-Waste2x/Pods-Waste2x.debug.xcconfig"; sourceTree = "<group>"; };
 		5D4D23AE5CF86CE8FCB2AEEB /* Pods-Waste2x.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waste2x.release.xcconfig"; path = "Target Support Files/Pods-Waste2x/Pods-Waste2x.release.xcconfig"; sourceTree = "<group>"; };
@@ -475,8 +475,8 @@
 				0067A305252AF7FA00CECA8C /* Classes */,
 				0067A306252AF82500CECA8C /* Resources */,
 				0067A2C625274C0B00CECA8C /* LaunchScreen.storyboard */,
-				18827936267E01D7001AB637 /* GoogleService-Info.plist */,
 				0067A2C925274C0B00CECA8C /* Info.plist */,
+				18FB2B952694A1FE006C6AE1 /* GoogleService-Info.plist */,
 			);
 			path = Waste2x;
 			sourceTree = "<group>";
@@ -1486,8 +1486,8 @@
 				18397E212660FF54003DE30C /* Poppins-Regular.ttf in Resources */,
 				189782FD265D35CF008FD5E3 /* SideMenuViewController.xib in Resources */,
 				046528042668F694005F3FB0 /* CalenderPopupViewController.xib in Resources */,
-				18827937267E01D7001AB637 /* GoogleService-Info.plist in Resources */,
 				1810253F2657E48500DEBF7D /* HomeViewController.xib in Resources */,
+				18FB2B962694A1FE006C6AE1 /* GoogleService-Info.plist in Resources */,
 				18397E282660FF54003DE30C /* Poppins-MediumItalic.ttf in Resources */,
 				18397E192660FF54003DE30C /* Poppins-ExtraLightItalic.ttf in Resources */,
 				181025242657E33A00DEBF7D /* ContainerViewController.xib in Resources */,
@@ -1891,7 +1891,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.enmass.buycycle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enmassenergy.waste2x;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -1916,7 +1916,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.enmass.buycycle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enmassenergy.waste2x;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

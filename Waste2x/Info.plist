@@ -26,10 +26,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.enmass.buycycle</string>
+			<string>com.enmassenergy.waste2x</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.1093030722260-uvhcaevnjdkqb2pke0tjn5qjfk43ms89</string>
+				<string>com.googleusercontent.apps.1093030722260-8l62ct8ir86kddotfpduhj1ed34cdsfe</string>
 			</array>
 		</dict>
 		<dict>

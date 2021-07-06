@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1093030722260-uvhcaevnjdkqb2pke0tjn5qjfk43ms89.apps.googleusercontent.com</string>
+	<string>1093030722260-8l62ct8ir86kddotfpduhj1ed34cdsfe.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1093030722260-uvhcaevnjdkqb2pke0tjn5qjfk43ms89</string>
+	<string>com.googleusercontent.apps.1093030722260-8l62ct8ir86kddotfpduhj1ed34cdsfe</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>1093030722260-0e1q5450m7pjplg84qq16aogg5s6v4pt.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
@@ -15,23 +15,23 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.enmass.buycycle</string>
+	<string>com.enmassenergy.waste2x</string>
 	<key>PROJECT_ID</key>
 	<string>cache-admin-panel-production</string>
 	<key>STORAGE_BUCKET</key>
 	<string>cache-admin-panel-production.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1093030722260:ios:3c1abfc8d692000dd0d941</string>
+	<string>1:1093030722260:ios:1ab4bd703e89d22cd0d941</string>
 	<key>DATABASE_URL</key>
 	<string>https://cache-admin-panel-production.firebaseio.com</string>
 </dict>
