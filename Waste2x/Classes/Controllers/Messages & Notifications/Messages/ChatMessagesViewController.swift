@@ -28,7 +28,7 @@ class ChatMessagesViewController: BaseViewController {
     //MARK: - Declarations
     
     var textFildPlaceholder = UIColor(hexString: "9F9F9F")
-    var placeHolderText = "write message"
+    var placeHolderText = "Write message"
     //var refreshControl = UIRefreshControl()
     
     

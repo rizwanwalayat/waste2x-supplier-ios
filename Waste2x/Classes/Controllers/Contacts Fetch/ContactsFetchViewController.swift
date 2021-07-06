@@ -72,7 +72,7 @@ class ContactsFetchViewController: BaseViewController {
 
     func presentUIActivityControl(_ index : Int)
     {
-        let text = "https://apps.apple.com/us/app/waste2x/id1573107040"
+        let text = "https://apps.apple.com/us/app/waste2x/id1575381203"
         let textToShare = [ text ]
         let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
