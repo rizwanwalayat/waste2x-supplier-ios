@@ -37,7 +37,7 @@ class Global {
     var jump  =  0
     var latlngCheck = true
     var phoneNumber = ""
-    
+    var nootification = false
     
     
     

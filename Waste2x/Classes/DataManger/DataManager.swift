@@ -35,6 +35,12 @@ class DataManager {
     func setIntData (value: Int, key: String) {
         UserDefaults.standard.set(value, forKey: key)
     }
+    func setBoolData (value: Bool, key: String) {
+        UserDefaults.standard.set(value, forKey: key)
+    }
+    func getBoolData(key: String) -> Bool {
+        return UserDefaults.standard.bool(forKey: key)
+    }
     
     func setFinger (enable: Bool) {
         UserDefaults.standard.set(enable, forKey: "finger")

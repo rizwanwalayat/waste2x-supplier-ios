@@ -66,17 +66,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         loginToTwillio()
+        Global.shared.nootification =  DataManager.shared.getBoolData(key: "globalNotification")
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        
-        
+        Global.shared.nootification =  DataManager.shared.getBoolData(key: "globalNotification")
     }
     func applicationDidEnterBackground(_ application: UIApplication) {
+        Global.shared.nootification =  DataManager.shared.getBoolData(key: "globalNotification")
         TwillioChatDataModel.shared.shutdown()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
+        Global.shared.nootification =  DataManager.shared.getBoolData(key: "globalNotification")
         TwillioChatDataModel.shared.shutdown()
     }
     

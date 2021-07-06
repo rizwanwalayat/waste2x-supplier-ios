@@ -36,8 +36,6 @@ class HomeViewController: BaseViewController{
     @IBOutlet weak var mainView: UIScrollView!
     
     //MARK: - Variables
-    
-    var notification:Bool = true
     var supplierCell: SupplierTableViewCell?
     var weatherCount  = 5
     var delegate:WeatherCallDelegate?
@@ -51,7 +49,18 @@ class HomeViewController: BaseViewController{
     override func viewDidLoad(){
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.notification(notification:)), name: Notification.Name("notification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.notificationIconGreen(notifications:)), name: Notification.Name("point"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.notificationIconWhite(notifications:)), name: Notification.Name("notpoint"), object: nil)
         print(userData?.auth_token ?? "")
+//        DataManager.shared.setBoolData(value: Global.shared.nootification, key: "globalNotification")
+        Global.shared.nootification = DataManager.shared.getBoolData(key: "globalNotification")
+        if Global.shared.nootification {
+            notificationMark.backgroundColor = UIColor.init(red: 196, green: 210, blue: 150, alpha: 1)
+        }
+        else
+        {
+            notificationMark.backgroundColor = .clear
+        }
         (UIApplication.shared.delegate as! AppDelegate).weaterCalldelegate = self
         bottomConst.constant = tabbarViewHeight
         globalObjectHome = self
@@ -62,16 +71,6 @@ class HomeViewController: BaseViewController{
         collectionDataSourceDelegate(outlet: wasteTypeCollectionView)
         tableDataSourceDelegate(outlet: tableView)
         weatherCollectionView.backgroundColor = .clear
-        
-        
-        if notification {
-            notificationMark.backgroundColor = UIColor.init(red: 196, green: 210, blue: 150, alpha: 1)
-        }
-        else
-        {
-            notificationMark.backgroundColor = .clear
-        }
-        
         wasteTypeCollectionView.contentInset  = .zero
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
@@ -100,6 +99,29 @@ class HomeViewController: BaseViewController{
     @objc func notification(notification : Notification){
         let notification = NotificationsViewController(nibName: "NotificationsViewController", bundle: nil)
         self.navigationController?.pushViewController(notification, animated: true)
+    }
+    @objc func notificationIconGreen(notifications : Notification){
+        Global.shared.nootification = true
+        DataManager.shared.setBoolData(value: Global.shared.nootification, key: "globalNotification")
+        
+        if Global.shared.nootification {
+            notificationMark.backgroundColor = UIColor.init(red: 196, green: 210, blue: 150, alpha: 1)
+        }
+        else
+        {
+            notificationMark.backgroundColor = .clear
+        }
+    }
+    @objc func notificationIconWhite(notifications : Notification){
+        Global.shared.nootification = false
+        DataManager.shared.setBoolData(value: Global.shared.nootification, key: "globalNotification")
+        if Global.shared.nootification {
+            notificationMark.backgroundColor = UIColor.init(red: 196, green: 210, blue: 150, alpha: 1)
+        }
+        else
+        {
+            notificationMark.backgroundColor = .clear
+        }
     }
     @objc private func pushToPaymentScreen(notification: NSNotification){
         
