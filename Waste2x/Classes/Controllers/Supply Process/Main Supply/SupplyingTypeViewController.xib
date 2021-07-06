@@ -117,7 +117,7 @@
                         <constraint firstAttribute="trailing" secondItem="1yJ-ni-2oi" secondAttribute="trailing" constant="50" id="vlZ-IS-tSs"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nyd-xN-F3z">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyd-xN-F3z">
                     <rect key="frame" x="0.0" y="173" width="414" height="597"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zla-H5-iqN" userLabel="Main">
