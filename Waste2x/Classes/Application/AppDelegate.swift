@@ -199,6 +199,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     if let messageID = userInfo[gcmMessageIDKey] {
       print("Message ID: \(messageID)")
     }
+    NotificationCenter.default.post(name: Notification.Name("point"), object: nil)
     print(userInfo)
     completionHandler([[.alert, .sound]])
     
@@ -215,7 +216,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     }
     print(userInfo)
     NotificationCenter.default.post(name: Notification.Name("notification"), object: nil)
-    
+    NotificationCenter.default.post(name: Notification.Name("point"), object: nil)
     completionHandler()
   }
 }
