@@ -20,6 +20,8 @@ class SideMenuViewController: BaseViewController {
     var selectionIndex = -1
     var paymentModel : PaymentModel?
     var reload = -1
+    var timerTest : Timer?
+    var counter = 0
     @IBOutlet weak var headerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,11 +51,7 @@ class SideMenuViewController: BaseViewController {
         
         alertVc.setValue(image, forKey: "image")
         alertVc.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { action in
-            
-            DataManager.shared.deleteUser()
-            Global.shared.apiCurve = false
-            let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
-            self.navigationController?.setViewControllers([vc], animated: true)
+            self.startTimer()
         }))
         alertVc.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alertVc, animated: true, completion: nil)
@@ -63,6 +61,36 @@ class SideMenuViewController: BaseViewController {
         
     }
     
+    func startTimer ()
+    {
+        Utility.showLoading()
+        counter = 0
+        timerTest =  Timer.scheduledTimer(
+            timeInterval: TimeInterval(1.0),
+            target      : self,
+            selector    : #selector(self.updateTime(_:)),
+            userInfo    : nil,
+            repeats     : true)
+    }
+    
+    func stopTimer() {
+        timerTest?.invalidate()
+        timerTest = nil
+        DataManager.shared.deleteUser()
+        Global.shared.apiCurve = false
+        let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        self.navigationController?.setViewControllers([vc], animated: true)
+        Utility.hideLoading()
+
+    }
+    @objc func updateTime(_ timer: Timer) {
+        counter = counter+1
+        if counter == 1 || counter > 1 {
+            
+            stopTimer()
+            
+        }
+    }
     
 }
 

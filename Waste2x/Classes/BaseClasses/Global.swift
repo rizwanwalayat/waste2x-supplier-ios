@@ -40,6 +40,7 @@ class Global {
     
     
     
+    
     func convertLocationToAddress(location: CLLocation, _ completionHandler: ((Bool, String?) -> Void)?)
     {
         

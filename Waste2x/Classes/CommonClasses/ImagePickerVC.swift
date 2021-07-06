@@ -37,6 +37,7 @@ class ImagePickerVC : NSObject , UIImagePickerControllerDelegate , UINavigationC
         alertController.addAction(galleryButton)
         alertController.addAction(cameraButton)
         alertController.addAction(cancelButton)
+        sourceVC.popoverPresentationController?.sourceView = sourceVC.view
         sourceVC.present(alertController, animated: true, completion: nil)
         
     }
