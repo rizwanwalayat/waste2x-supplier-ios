@@ -120,5 +120,7 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+    <key>NSUserTrackingUsageDescription</key>
+    <string>Track for your site location for picking Wastes</string>
 </dict>
 </plist>
