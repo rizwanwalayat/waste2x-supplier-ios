@@ -51,7 +51,7 @@ extension ContactViewController : UITableViewDelegate,UITableViewDataSource{
         }
         if indexPath.row == 1{
             
-            if let url = URL(string: "tel://+14238108788"),
+            if let url = URL(string: "tel://+17652318920"),
             UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
