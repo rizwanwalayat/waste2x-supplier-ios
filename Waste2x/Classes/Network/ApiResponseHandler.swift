@@ -8,7 +8,7 @@ class VTResponseHandler: Mappable {
 
     var status = false
     var isError = false
-    var message = ""
+    var message = "Try Again"
     var data: AnyObject? // data can be nil
     var error = ""
     var errorDescription: String?
