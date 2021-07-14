@@ -19,6 +19,23 @@ class DataManager {
         UserDefaults.standard.set(value, forKey: "crop_type")
     }
     
+    
+    func setUserEmail (value : String)
+    {
+        UserDefaults.standard.set(value, forKey: "user_email")
+    }
+    
+    func getUserEmail() -> String
+    {
+        if let email = UserDefaults.standard.string(forKey: "user_email"){
+            return email
+        }
+        else
+        {
+            return ""
+        }
+    }
+    
     func getWasteType () -> String
     {
         var type = ""

@@ -51,7 +51,8 @@ class LoginCodeVerificationViewController: BaseViewController {
         let code = firstTextField.text! + secondTextField.text! + thirdTextField.text! + fourthTextField.text!
         print(code)
         let os = device.systemVersion
-        Registration.verificationCode(phone: Global.shared.phoneNumber, code: code, latitude: Global.shared.current_lat, longitude: Global.shared.current_lng, firebase_token: Global.shared.fireBaseToken, phone_imei: 123456789, phone_os: os, phone_model: model) { result, error, status,message in
+        let deviceID = UIDevice.current.identifierForVendor!.uuidString
+        Registration.verificationCode(phone: Global.shared.phoneNumber, code: code, latitude: Global.shared.current_lat, longitude: Global.shared.current_lng, firebase_token: Global.shared.fireBaseToken, phone_imei: deviceID, phone_os: os, phone_model: model) { result, error, status,message in
             
             if error != nil{
                 
@@ -64,7 +65,7 @@ class LoginCodeVerificationViewController: BaseViewController {
                 
                 let convretedData = result!.toJSONString()
                 DataManager.shared.setUser(user: convretedData ?? "")
-                
+                DataManager.shared.setUserEmail(value: result?.result?.email ?? "")
                 if DataManager.shared.getUser()?.result?.isNewUser == false {
                     
                     let slider = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())

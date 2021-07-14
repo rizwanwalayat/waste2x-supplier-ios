@@ -36,6 +36,7 @@ class LoginInputEmailViewController: BaseViewController {
             }
             else if DataManager.shared.getUser()?.result?.isNewUser == true && (status == true)
             {
+                DataManager.shared.setUserEmail(value: self.emailAddressTextField.text!)
                 let vc = SupplyingTypeViewController(nibName: "SupplyingTypeViewController", bundle: nil)
                 vc.modalPresentationStyle = .overFullScreen
                 self.present(vc, animated: false, completion: nil)

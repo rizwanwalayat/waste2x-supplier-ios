@@ -326,11 +326,11 @@ extension LocationPickerViewController
 {
     func postDataToServer()
     {
-        if Global.shared.apiCurve {
-            
-            selectionData["phone"] = userData?.phone ?? ""
-            selectionData["email"] = userData?.email ?? ""
-        }
+//        if Global.shared.apiCurve {
+//
+//        }
+        
+        selectionData["email"] = DataManager.shared.getUserEmail()
         
         let postDict = selectionData as [String : AnyObject]
         

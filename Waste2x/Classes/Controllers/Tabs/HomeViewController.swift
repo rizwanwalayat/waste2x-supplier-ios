@@ -397,7 +397,7 @@ extension HomeViewController: WeatherCallDelegate {
         {
             let progress = Float(self.resultData!.percentage) / 100
             progressBar.setProgress(progress, animated: true)
-            self.welcomeLabel.attributedText =  self.setAttributedTextInLable(boldString: "Hello, ", emailAddress: userData?.email ?? "")
+            self.welcomeLabel.attributedText =  self.setAttributedTextInLable(boldString: "Hello, ", emailAddress: DataManager.shared.getUserEmail() )
             self.progressPointsLabel.text = "\(DataManager.shared.getUser()?.result?.percentage.shortValue ?? "")/100"
             DataManager.shared.setWasteType(value: self.resultData!.commodity_farms.first?.crop_type ?? "")
             

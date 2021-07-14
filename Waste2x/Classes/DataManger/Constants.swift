@@ -12,10 +12,12 @@ var kApplicationWindow = Utility.getAppDelegate()!.window
 var googleAPIKey = "AIzaSyBp9ntlNiyAFvV8qxdXrBvBAOz_xasmvS0"
 
 
-
+//"https://enmass-cache-programme.appspot.com/"
+//"https://cache-admin-panel-production.appspot.com/"
+//"https://app.enmassenergy.com/"
 
 struct APIRoutes {
-    static var baseUrl = "https://cache-admin-panel-production.appspot.com/"
+    static var baseUrl = "https://app.enmassenergy.com/"
     static var imageBaseUrl = "/api/shared/user/userImage"
     static var login = "paudapay_us/send_code/"
     static var registration = "paudapay_us/registration/"

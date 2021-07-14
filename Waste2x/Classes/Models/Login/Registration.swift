@@ -28,7 +28,7 @@ class Registration : Mappable {
         statusCode  <- map["status_code"]
     }
     
-    class func verificationCode(phone: String,code: String,latitude: Double,longitude: Double,firebase_token: String,phone_imei: Int,phone_os: String,phone_model: String, _ completion: @escaping RegistrationCompletionHandler) {
+    class func verificationCode(phone: String,code: String,latitude: Double,longitude: Double,firebase_token: String,phone_imei: String,phone_os: String,phone_model: String, _ completion: @escaping RegistrationCompletionHandler) {
         Utility.showLoading()
         APIClient.shared.userRegistration(phone: phone, code: code, latitude: latitude, longitude: longitude, firebase_token: firebase_token, phone_imei: phone_imei, phone_os: phone_os, phone_model: phone_model) { result, error, status,message in
             Utility.hideLoading()

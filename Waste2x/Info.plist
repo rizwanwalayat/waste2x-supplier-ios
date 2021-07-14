@@ -87,8 +87,6 @@
 	<string>access</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>access</string>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>Track for your site location for picking Wastes</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Poppins-Black.ttf</string>
