@@ -50,6 +50,8 @@ class SiteCreatedViewController: BaseViewController {
             setImage(imageView: siteImageView, url: imageUrl)
         }
         
+        // save user data 
+        DataManager.shared.setIfUserLoggedInSuccessFully()
     }
 
 

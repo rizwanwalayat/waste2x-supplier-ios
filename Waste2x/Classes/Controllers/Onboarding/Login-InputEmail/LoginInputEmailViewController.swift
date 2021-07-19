@@ -41,6 +41,10 @@ class LoginInputEmailViewController: BaseViewController {
                 vc.modalPresentationStyle = .overFullScreen
                 self.present(vc, animated: false, completion: nil)
             }
+            else
+            {
+                Utility.showAlertController(self, message)
+            }
         }
 
     }
@@ -49,22 +53,14 @@ class LoginInputEmailViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-}
-
-//MARK: - TextField Delegate Methods
-
-extension LoginInputEmailViewController: UITextFieldDelegate
-{
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    @IBAction func textFieldValueCanged(_ sender: Any) {
         
-        if Utility.isValidEmail(emailStr: textField.text ?? "") {
+        if Utility.isValidEmail(emailStr: emailAddressTextField.text ?? "") {
             nextButton.makeEnable(value: true)
         }
         else
         {
             nextButton.makeEnable(value: false)
         }
-        
-        return true
     }
 }

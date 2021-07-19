@@ -123,8 +123,16 @@ class SupplySubTypeViewController: BaseViewController {
             
             if forNavigate {
                 
+                let wasteType = self.selectionData["waste_type"] as? String
+                let selectionTitle = self.supplyProcessQuestions.first?.options[self.tabaleViewIndex].title ?? ""
+                let tempArrays = ["Hogs", "Cattle"]
+                
                 // in this condition we are judge if more then 3 question then questions will be related to forms other wise question will be related to tons
-                if self.optionsCount > 3 {
+                if wasteType == "Livestock Waste" && tempArrays.contains(selectionTitle) {
+                    
+                    self.moveToAmountController()
+                }
+                else if self.optionsCount > 3 {
                     
                     // removing first because we have already used this first option, in next screen we will again use first option again
                     
@@ -135,15 +143,10 @@ class SupplySubTypeViewController: BaseViewController {
                     vc.supplyProcessQuestions = tempArray
                     vc.selectionData = self.selectionData
                     self.present(vc, animated: true, completion: nil)
-                    
-                }else
+                }
+                else
                 {
-                    
-                    let vc = AmountWasteViewController(nibName: "AmountWasteViewController", bundle: nil)
-                    vc.modalPresentationStyle = .overFullScreen
-                    vc.supplyProcessQuestions = self.supplyProcessQuestions
-                    vc.selectionData = self.selectionData
-                    self.present(vc, animated: true, completion: nil)
+                    self.moveToAmountController()
                 }
             }
             else
@@ -153,6 +156,14 @@ class SupplySubTypeViewController: BaseViewController {
         })
     }
     
+    func moveToAmountController()
+    {
+        let vc = AmountWasteViewController(nibName: "AmountWasteViewController", bundle: nil)
+        vc.modalPresentationStyle = .overFullScreen
+        vc.supplyProcessQuestions = self.supplyProcessQuestions
+        vc.selectionData = self.selectionData
+        self.present(vc, animated: true, completion: nil)
+    }
     
     // MARK: - Actions
     

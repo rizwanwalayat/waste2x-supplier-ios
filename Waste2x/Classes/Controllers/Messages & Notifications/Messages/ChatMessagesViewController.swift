@@ -40,7 +40,7 @@ class ChatMessagesViewController: BaseViewController {
         enterMessageTextView.text       = placeHolderText
         enterMessageTextView.textColor  = textFildPlaceholder
         tableViewsIntegrations()
-        (TwillioChatDataModel.shared.messages.count == 0) ? (loginToTwillio()) : (TwillioChatDataModel.shared.delegate = self)
+        (TwillioChatDataModel.shared.client == nil) ? (loginToTwillio()) : (TwillioChatDataModel.shared.delegate = self)
         
         NotificationCenter.default.addObserver(self,
                selector: #selector(self.keyboardNotification(notification:)),
