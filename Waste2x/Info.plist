@@ -67,26 +67,16 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>This app uses Bluetooth to connect to supported card readers.
-</string>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>Bluetooth access is required in order to connect to supported card readers.
-</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Uses camera in order to scan QR Code</string>
+	<string>Uses camera in order to take waste and site photos</string>
 	<key>NSContactsUsageDescription</key>
-	<string>Need Contacts to Invite</string>
-	<key>NSFaceIDUsageDescription</key>
-	<string>App will use your FaceID to login app.</string>
-	<key>NSHumanReadableCopyright</key>
-	<string></string>
+	<string>Contacts require to invite others to this application in order to take bonus</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Location access is required in order to accept payments.</string>
+	<string>Location access is required to track your site location for picking-up wastes from you</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>access</string>
+	<string>Photo access required to upload waste and site photos</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>access</string>
+	<string>Photo access required to upload waste and site photos</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Poppins-Black.ttf</string>
@@ -110,13 +100,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
