@@ -97,7 +97,7 @@ class SideMenuViewController: BaseViewController {
 //MARK: - Extentions
 extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -123,6 +123,10 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
         case 1:
             let vc = ScheduleViewController(nibName: "ScheduleViewController", bundle: nil)
             navigationController?.pushViewController(vc, animated: true)
+            
+        case 2:
+            guard let url = URL(string: "https://enmassenergy.com/waste2x-privacy/") else { return }
+            UIApplication.shared.open(url)
         default:
             print("none")
         }

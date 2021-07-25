@@ -126,10 +126,6 @@ class TrackerViewController: BaseViewController {
                 marker1.icon = UIImage (named: "endmark")
                 
                     self.markerUpdate(s_lat: self.destinationLat, s_lon: self.destinationLng, d_lat: self.currentLat, d_lon: self.currentLon)
-//                let cam = GMSCameraPosition(latitude: self.destinationLat, longitude: self.destinationLng, zoom: 15)
-//                    DispatchQueue.main.async {
-//                        self.mapView.animate(to: cam)
-//                    }
             }
         }
         

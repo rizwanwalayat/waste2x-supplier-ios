@@ -61,9 +61,7 @@ class SupplyingTypeViewController: BaseViewController {
     @IBAction func nextAction(_ sender: Any) {
         
         if supplyProcessData.count > 0 {
-            
             SupplyingTypeViewController.selectedImageIcon = supplyProcessData[collectionViewIndex].icon_url
-            
             selectionData["waste_type"] = supplyProcessData[collectionViewIndex].title
             pushToNextController(true, questions: supplyProcessData[collectionViewIndex].questions)
         }
