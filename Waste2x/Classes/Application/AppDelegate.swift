@@ -48,24 +48,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
 
         // [END register_for_notifications]
-        if DataManager.shared.getUser() == nil
+        if DataManager.shared.isUserLoggedIn()
         {
-            Utility.loginRootViewController()
+            Utility.homeViewController()
         }
         else
         {
-            Utility.homeViewController()
+            Utility.loginRootViewController()
         }
         GMSServices.provideAPIKey(googleAPIKey)
         GMSPlacesClient.provideAPIKey(googleAPIKey)
         GMSAutocompleteViewControllerHandling()
         initializeLocationManager()
-        loginToTwillio()
         return true
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        loginToTwillio()
         Global.shared.nootification =  DataManager.shared.getBoolData(key: "globalNotification")
     }
     
@@ -80,29 +78,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         Global.shared.nootification =  DataManager.shared.getBoolData(key: "globalNotification")
         TwillioChatDataModel.shared.shutdown()
-    }
-    
-    // code for load all messages
-    func loginToTwillio()
-    {
-        MessagesDataModel.fetchTwillioAccessToken() { dataResponse, error, success, message  in
-            
-            if dataResponse != nil {
-                
-                if let isSuccess = success {
-                    
-                    if isSuccess {
-                        
-                        if let token = dataResponse?.result?.access_token {
-                            
-                            TwillioChatDataModel.shared.loginToTwillio(with: token)
-                    
-                        }
-                    }
-                }
-                
-            }
-        }
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {

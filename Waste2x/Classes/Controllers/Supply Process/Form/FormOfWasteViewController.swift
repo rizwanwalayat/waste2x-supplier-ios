@@ -67,8 +67,9 @@ class FormOfWasteViewController: BaseViewController {
         
         let vc = FormSubTypesViewController(nibName: "FormSubTypesViewController", bundle: nil)
         vc.modalPresentationStyle = .overFullScreen
-        vc.supplyProcessQuestions = tempArray
+        vc.questions = tempArray
         vc.selectionData = selectionData
+        vc.selectionOption = selectedOption
         self.present(vc, animated: false, completion: nil)
     }
     

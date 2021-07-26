@@ -77,6 +77,7 @@ class SideMenuViewController: BaseViewController {
         timerTest?.invalidate()
         timerTest = nil
         DataManager.shared.deleteUser()
+        DataManager.shared.setIfUserLoggedOutSuccessFully()
         Global.shared.apiCurve = false
         let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
         self.navigationController?.setViewControllers([vc], animated: true)

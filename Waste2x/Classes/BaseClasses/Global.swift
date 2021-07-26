@@ -38,7 +38,7 @@ class Global {
     var latlngCheck = true
     var phoneNumber = ""
     var nootification = false
-    
+    var userResponseJsonString = ""
     
     
     func convertLocationToAddress(location: CLLocation, _ completionHandler: ((Bool, String?) -> Void)?)

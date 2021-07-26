@@ -22,6 +22,7 @@ class DataManager {
     
     func setUserEmail (value : String)
     {
+        UserDefaults.standard.set(nil, forKey: "user_email")
         UserDefaults.standard.set(value, forKey: "user_email")
     }
     
@@ -79,6 +80,22 @@ class DataManager {
     //MARK: - Users Data
     func setUser (user: String) {
         UserDefaults.standard.set(user, forKey: "user_data")
+    }
+    
+    func setIfUserLoggedInSuccessFully()
+    {
+        UserDefaults.standard.set(true, forKey: "user_Loggedin")
+    }
+    
+    func setIfUserLoggedOutSuccessFully()
+    {
+        UserDefaults.standard.set(false, forKey: "user_Loggedin")
+    }
+    
+    func isUserLoggedIn() -> Bool {
+        
+        let isUserLoggedIn = UserDefaults.standard.bool(forKey: "user_Loggedin")
+        return isUserLoggedIn
     }
     
     func getUser() -> Registration? {

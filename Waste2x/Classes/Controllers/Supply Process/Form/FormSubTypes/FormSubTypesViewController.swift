@@ -27,13 +27,14 @@ class FormSubTypesViewController: BaseViewController {
     
     var heightOfHiddenView : CGFloat = 0.0
     var tabaleViewIndex = 0
-    var supplyProcessQuestions = [QuestionsSuppyProcess]()
-    
+    var questions = [QuestionsSuppyProcess]()
+    var questionsOptions = [OptionsSupplyProcess]()
     var panGestureRecognizer : UIPanGestureRecognizer?
     var originalPosition : CGPoint?
     var currentPositionTouched : CGPoint?
     
     var selectionData = [String: Any]()
+    var selectionOption = ""
     
     // MARK: - LifeCycle
     
@@ -44,8 +45,18 @@ class FormSubTypesViewController: BaseViewController {
         self.tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
         tableView.reloadData()
         
-        formOfWasteLabel.text =  supplyProcessQuestions.first?.title ?? ""
+        formOfWasteLabel.text =  questions.first?.title ?? ""
         tabGestureInit()
+        
+        questionsOptions = questions.first?.options ?? []
+        
+        let wasteType = self.selectionData["waste_type"] as? String
+        if wasteType == "Livestock Waste"{
+            
+            liveStockHandlings()
+        }
+        
+        
     }
 
     override func viewWillDisappear(_ animated: Bool)
@@ -123,7 +134,7 @@ class FormSubTypesViewController: BaseViewController {
                 
                 let vc = AmountWasteViewController(nibName: "AmountWasteViewController", bundle: nil)
                 vc.modalPresentationStyle = .overFullScreen
-                vc.supplyProcessQuestions = self.supplyProcessQuestions
+                vc.supplyProcessQuestions = self.questions
                 vc.selectionData = self.selectionData
                 self.present(vc, animated: true, completion: nil)
 
@@ -141,7 +152,7 @@ class FormSubTypesViewController: BaseViewController {
     @IBAction func nextButtonPressed(_ sender: Any) {
         
         var questionsArray = selectionData["question_responses"] as! [String]
-        let selectedOption = supplyProcessQuestions.first?.options[tabaleViewIndex].title ?? ""
+        let selectedOption = questionsOptions[tabaleViewIndex].title
         questionsArray.append(selectedOption)
         selectionData["question_responses"] = questionsArray
         
@@ -152,6 +163,40 @@ class FormSubTypesViewController: BaseViewController {
         
         hideView(false)
     }
+    
+    func liveStockHandlings()
+    {
+        let tempArray = questionsOptions
+        questionsOptions.removeAll()
+        
+        if selectionOption == "Chicken"
+        {
+            let tobeSavedItems = ["Broiler", "Roaster", "Breeder"]
+            
+            for item in tobeSavedItems
+            {
+                if let idx = tempArray.firstIndex(where: { $0.title == item })
+                {
+                    questionsOptions.append(tempArray[idx])
+                }
+            }
+        }
+        
+        else if selectionOption == "Turkey"
+        {
+            let tobeSavedItems = ["Grower", "Breeder"]
+            
+            for item in tobeSavedItems
+            {
+                if let idx = tempArray.firstIndex(where: { $0.title == item })
+                {
+                    questionsOptions.append(tempArray[idx])
+                }
+            }
+        }
+        
+        self.tableView.reloadData()
+    }
 }
 
 
@@ -159,16 +204,16 @@ class FormSubTypesViewController: BaseViewController {
 
 extension FormSubTypesViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return supplyProcessQuestions.first?.options.count ?? 0
+        return questionsOptions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.register(SupplyDetailTableViewCell.self, indexPath: indexPath)
         cell.selectionStyle = .none
         
-        let cellData = supplyProcessQuestions.first?.options[indexPath.item]
+        let cellData = questionsOptions[indexPath.row]
         
-        cell.configForGrade(cellData?.title ?? "", imageStr: cellData?.icon_url ?? "")
+        cell.configForGrade(cellData.title , imageStr: cellData.icon_url)
         if tabaleViewIndex == indexPath.row {
             cell.mainView.borderColor = UIColor(named: "themeColor")
             cell.mainView.borderWidth = 2

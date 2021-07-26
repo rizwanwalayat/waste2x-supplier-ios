@@ -91,6 +91,7 @@ email address</string>
                                             <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="18"/>
                                             <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             <connections>
+                                                <action selector="textFieldValueCanged:" destination="-1" eventType="editingChanged" id="Ek9-EK-9Ir"/>
                                                 <outlet property="delegate" destination="-1" id="JkG-2J-eQI"/>
                                             </connections>
                                         </textField>
