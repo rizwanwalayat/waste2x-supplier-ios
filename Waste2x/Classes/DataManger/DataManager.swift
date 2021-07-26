@@ -87,6 +87,11 @@ class DataManager {
         UserDefaults.standard.set(true, forKey: "user_Loggedin")
     }
     
+    func setIfUserLoggedOutSuccessFully()
+    {
+        UserDefaults.standard.set(false, forKey: "user_Loggedin")
+    }
+    
     func isUserLoggedIn() -> Bool {
         
         let isUserLoggedIn = UserDefaults.standard.bool(forKey: "user_Loggedin")
