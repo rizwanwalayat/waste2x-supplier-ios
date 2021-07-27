@@ -70,7 +70,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Uses camera in order to take waste and site photos</string>
 	<key>NSContactsUsageDescription</key>
-	<string>access contacts to invite supplier to join W2X app we keep your invited contact information only to give reward to you if they join network.</string>
+	<string>We need to access your contacts to upload it on the server to give you reward by inviting supplier.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location access is required to track your site location for picking-up wastes from you</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
