@@ -36,7 +36,7 @@
                                     <constraint firstAttribute="width" constant="80" id="WzG-NK-jCF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
-                                <state key="normal" title="Invited">
+                                <state key="normal" title="Invite">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <state key="selected" title="Invited"/>

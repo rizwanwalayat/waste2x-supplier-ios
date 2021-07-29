@@ -40,7 +40,7 @@ class SupplierTableViewCell: BaseTableViewCell {
         self.imgHeight.constant = self.frame.height * 0.5//100
         self.imgEqualizerConstraint.constant = 0
         self.titleLabel.text = "Pending \nCollection"
-        self.descriptionLabel.text = "You have pickup schdule\n time to be confirmed."
+        self.descriptionLabel.text = "You have pickup schedule\n times to be confirmed."
     }
     
 }
