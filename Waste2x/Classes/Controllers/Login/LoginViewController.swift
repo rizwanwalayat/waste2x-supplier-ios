@@ -40,7 +40,26 @@ class LoginViewController: BaseViewController {
     @IBAction func nextButtonPressed(_ sender: Any) {
         if Utility.isTextFieldHasText(textField: phoneNoTextfield)
         {
-            CodeVerification.verificationCode(phoneNumber: phoneNoTextfield.text ?? "") { result, error, status,message in
+            if !phoneNoTextfield.text!.contains("+"){
+                
+            
+                CodeVerification.verificationCode(phoneNumber: "+1" + phoneNoTextfield.text!) { result, error, status,message in
+                
+                if error == nil {
+                    let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
+                    Global.shared.phoneNumber = "+1" + self.phoneNoTextfield.text!
+                    self.navigationController?.pushViewController(codeVerificationVC, animated: true)
+                }
+                else {
+                    
+                    Utility.showAlertController(self, error!.localizedDescription)
+                    
+                }
+            }
+                
+            }
+            else {
+                CodeVerification.verificationCode(phoneNumber: phoneNoTextfield.text!) { result, error, status,message in
                 
                 if error == nil {
                     let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
@@ -53,9 +72,12 @@ class LoginViewController: BaseViewController {
                     
                 }
             }
+                }
+                
+            }
         }
     }
-    }
+    
 extension LoginViewController : UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -65,7 +87,7 @@ extension LoginViewController : UITextFieldDelegate {
 //            textField.text = "+"
 //        }
         
-        if textField.text!.count > 0
+        if textField.text!.count > 5
         {
             nextButton.makeEnable(value: true)
         }
