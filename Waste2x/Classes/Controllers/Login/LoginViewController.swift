@@ -60,10 +60,10 @@ extension LoginViewController : UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        if textField.text?.count == 0 && string != "+"
-        {
-            textField.text = "+"
-        }
+//        if textField.text?.count == 0 && string != "+"
+//        {
+//            textField.text = "+"
+//        }
         
         if textField.text!.count > 0
         {

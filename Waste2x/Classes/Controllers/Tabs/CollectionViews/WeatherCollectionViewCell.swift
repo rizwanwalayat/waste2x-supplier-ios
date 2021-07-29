@@ -25,7 +25,9 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         if index == 0{
             if Global.shared.jump < 40 && (DataManager.shared.getWeather()?.list.count ?? 0) > Global.shared.jump {
                 self.dayLabel.text = dateCalculate(date: DataManager.shared.getWeather()?.list[Global.shared.jump].dtTxt ?? "")
+                
                 let weatherTemp = DataManager.shared.getWeather()?.list[Global.shared.jump].main?.temp ?? 00
+                let faranhiet = (weatherTemp * 9/5) + 32
                 if weatherTemp <= 30{
                     if #available(iOS 13.0, *) {
                         self.cloudImgView.image = UIImage(systemName: "cloud.rain")
@@ -41,7 +43,7 @@ class WeatherCollectionViewCell: UICollectionViewCell {
                 else{
                     self.cloudImgView.image = UIImage(named: "Line")
                 }
-                self.tempratureLabel.text = "\(weatherTemp.shortValue)°" + ""
+                self.tempratureLabel.text = "\(faranhiet.shortValue)°" + ""
                 Global.shared.jump = Global.shared.jump+8
             }
         }
@@ -50,6 +52,7 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         if Global.shared.jump < 40 && (DataManager.shared.getWeather()?.list.count ?? 0) > Global.shared.jump {
             self.dayLabel.text = dateCalculate(date: DataManager.shared.getWeather()?.list[Global.shared.jump].dtTxt ?? "")
             let weatherTemp = DataManager.shared.getWeather()?.list[Global.shared.jump].main?.temp ?? 00
+            let faranhiet = (weatherTemp * 9/5) + 32
             if weatherTemp <= 30{
                 if #available(iOS 13.0, *) {
                     self.cloudImgView.image = UIImage(systemName: "cloud.rain")
@@ -65,7 +68,7 @@ class WeatherCollectionViewCell: UICollectionViewCell {
             else{
                 self.cloudImgView.image = UIImage(named: "whitecloud")
             }
-            self.tempratureLabel.text = "\(weatherTemp.shortValue)°" + ""
+            self.tempratureLabel.text = "\(faranhiet.shortValue)°" + ""
             self.tempratureLabel.textColor = .white
             Global.shared.jump = Global.shared.jump+8
         }

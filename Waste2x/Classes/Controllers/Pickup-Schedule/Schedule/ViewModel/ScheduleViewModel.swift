@@ -52,9 +52,10 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
     func stringToDateUnix(_ dateStr : String) -> Double?
     {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM dd, yyyy - hh:mm a"//"EEE, dd MMM yyyy hh:mm:ss +zzzz"
+        dateFormatter.dateFormat = "MMM dd, yyyy - hh:mm a"
         dateFormatter.amSymbol = "AM"
         dateFormatter.pmSymbol = "PM"
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
 
         guard let dateObj = dateFormatter.date(from: dateStr) else {return nil}
         let unix = dateObj.timeIntervalSince1970*1000

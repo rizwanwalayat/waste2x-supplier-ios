@@ -85,7 +85,7 @@ email address</string>
                                                 <constraint firstAttribute="width" constant="20" id="moq-OV-jb9"/>
                                             </constraints>
                                         </imageView>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="hello@alterises.co" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H8w-qr-Zhp">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="name@email.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H8w-qr-Zhp">
                                             <rect key="frame" x="48" y="14" width="306" height="30"/>
                                             <color key="textColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="18"/>
