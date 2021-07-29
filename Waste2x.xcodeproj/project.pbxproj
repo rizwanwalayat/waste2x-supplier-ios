@@ -1882,7 +1882,7 @@
 				CODE_SIGN_ENTITLEMENTS = Waste2x/Waste2x.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FUDLQH8LBU;
 				INFOPLIST_FILE = Waste2x/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -1890,7 +1890,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.enmassenergy.waste2x;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1907,7 +1907,7 @@
 				CODE_SIGN_ENTITLEMENTS = Waste2x/Waste2x.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FUDLQH8LBU;
 				INFOPLIST_FILE = Waste2x/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -1915,7 +1915,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.enmassenergy.waste2x;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
