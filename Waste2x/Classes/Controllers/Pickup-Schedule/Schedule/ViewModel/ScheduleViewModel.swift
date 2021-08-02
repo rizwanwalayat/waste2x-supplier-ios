@@ -28,6 +28,7 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
             let selectFarmKey = tempFarmsData[selectedOption] ?? 0
             postDictData["farm_id"] = selectFarmKey
             selectSiteLabel.text = selectedOption
+            selectLocationLabel.text = "\(selectedOption) location selected"
             selectionHandlingsOfViews(selectSiteHolderview, isSelection: true)
         }
         
@@ -108,6 +109,7 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
             
             var alreadySelectedText = ""
             (selectSiteLabel.text != selectSitePlaceholder) ? (alreadySelectedText = selectSiteLabel.text ?? "") : (alreadySelectedText = "")
+//            (selectLocationLabel.text != selectSitePlaceholder) ? (alreadySelectedText = selectLocationLabel.text ?? "") : (alreadySelectedText = "")
             
             let optionsCustompopup               = ScheduleOptionsViewController(nibName: "ScheduleOptionsViewController", bundle: nil)
             optionsCustompopup.modalPresentationStyle = .overFullScreen
@@ -368,25 +370,26 @@ extension ScheduleViewController
 }
 
 extension ScheduleViewController : CLLocationManagerDelegate
+//extension ScheduleViewController
 {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
+
         if let location = locations.last
         {
-            
+
             Global.shared.location = location
             Global.shared.current_lat = location.coordinate.latitude
             Global.shared.current_lng = location.coordinate.longitude
-            
+
             Global.shared.convertLocationToAddress(location: Global.shared.location) { (success, address) in
                 if success
                 {
-                    self.selectLocationLabel.text =  address ?? ""
+                    self.selectLocationLabel.text =  "Select site for location"
                     self.selectionHandlingsOfViews(self.selectLocationHolderview, isSelection: true)
                     self.locationAutoFill = true
                 }
             }
-            
+
         }
         locationManager.stopUpdatingLocation()
     }
