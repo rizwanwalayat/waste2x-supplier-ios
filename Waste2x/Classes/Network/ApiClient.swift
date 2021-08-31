@@ -230,7 +230,7 @@ class APIClient: APIClientHandler {
         
         print("fetchTwillioAccessToken : \(headers)")
         let phone = DataManager.shared.getUser()?.result?.phone ?? ""
-        let url = "paudapay_us/fetch_twilio_access_token/identity=\(phone)"
+        let url = "paudapay_us/fetch_twilio_access_token/identity\(phone)"
         _ = sendRequest(url , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
 }
