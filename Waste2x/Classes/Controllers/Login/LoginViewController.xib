@@ -75,12 +75,13 @@ phone number</string>
                                                 <constraint firstAttribute="width" secondItem="cf8-Ou-EdP" secondAttribute="height" multiplier="1:1" id="mw3-SJ-Auq"/>
                                             </constraints>
                                         </imageView>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="+62 812 345 678" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jft-uV-ElE">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="2812 345 678" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jft-uV-ElE">
                                             <rect key="frame" x="48" y="14" width="306" height="30"/>
                                             <color key="textColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="18"/>
                                             <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                             <connections>
+                                                <action selector="phoneTextFieldValueCanged:" destination="-1" eventType="editingChanged" id="7su-Sa-esf"/>
                                                 <outlet property="delegate" destination="-1" id="J0y-rv-OyJ"/>
                                             </connections>
                                         </textField>
