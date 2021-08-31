@@ -42,7 +42,9 @@ class TrackerViewController: BaseViewController {
         mainView.layer.masksToBounds = true
         globalObjectContainer?.tabbarHiddenView.isHidden = true
         initializeTheLocationManager()
-        
+        dataBase.child("\(trackID)").observe(.childAdded) { [weak self] DataSnapshot in
+            print(DataSnapshot)
+        }
     }
 
     
