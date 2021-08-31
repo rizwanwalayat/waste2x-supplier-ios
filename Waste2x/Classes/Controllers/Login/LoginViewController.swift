@@ -18,7 +18,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var nextButton           : UIButton!
     
     //MARK:- Variables
-   
+    
     
     
     //MARK: - Lifecycle
@@ -26,6 +26,7 @@ class LoginViewController: BaseViewController {
         super.viewDidLoad()
         setupView()
         self.navigationController?.navigationBar.isHidden = true
+        phoneNoTextfield.text = "+1"
     }
     
     
@@ -42,52 +43,45 @@ class LoginViewController: BaseViewController {
         {
             if !phoneNoTextfield.text!.contains("+"){
                 
-            
-                CodeVerification.verificationCode(phoneNumber: "+1" + phoneNoTextfield.text!) { result, error, status,message in
                 
-                if error == nil {
-                    let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
-                    Global.shared.phoneNumber = "+1" + self.phoneNoTextfield.text!
-                    self.navigationController?.pushViewController(codeVerificationVC, animated: true)
-                }
-                else {
+                CodeVerification.verificationCode(phoneNumber: "+1" + phoneNoTextfield.text!) { result, error, status,message in
                     
-                    Utility.showAlertController(self, error!.localizedDescription)
-                    
+                    if error == nil {
+                        let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
+                        Global.shared.phoneNumber = self.phoneNoTextfield.text!
+                        self.navigationController?.pushViewController(codeVerificationVC, animated: true)
+                    }
+                    else {
+                        
+                        Utility.showAlertController(self, error!.localizedDescription)
+                        
+                    }
                 }
-            }
                 
             }
             else {
                 CodeVerification.verificationCode(phoneNumber: phoneNoTextfield.text!) { result, error, status,message in
-                
-                if error == nil {
-                    let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
-                    Global.shared.phoneNumber = self.phoneNoTextfield.text ?? ""
-                    self.navigationController?.pushViewController(codeVerificationVC, animated: true)
-                }
-                else {
                     
-                    Utility.showAlertController(self, error!.localizedDescription)
-                    
+                    if error == nil {
+                        let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
+                        Global.shared.phoneNumber = self.phoneNoTextfield.text ?? ""
+                        self.navigationController?.pushViewController(codeVerificationVC, animated: true)
+                    }
+                    else {
+                        
+                        Utility.showAlertController(self, error!.localizedDescription)
+                        
+                    }
                 }
             }
-                }
-                
-            }
+            
         }
     }
     
-extension LoginViewController : UITextFieldDelegate {
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    @IBAction func phoneTextFieldValueCanged(_ sender: Any) {
         
-//        if textField.text?.count == 0 && string != "+"
-//        {
-//            textField.text = "+"
-//        }
-        
-        if textField.text!.count > 5
+        if phoneNoTextfield.text!.count > 2
         {
             nextButton.makeEnable(value: true)
         }
@@ -95,6 +89,18 @@ extension LoginViewController : UITextFieldDelegate {
         {
             nextButton.makeEnable(value: false)
         }
+    }
+}
+    
+extension LoginViewController : UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if string == "" && (textField.text!.count < 3)
+        {
+           return false
+        }
+        
         return true
     }
 }
