@@ -30,6 +30,7 @@ class CalenderPopupViewController: BaseViewController {
     var delegate : CalenderPopupViewControllerDelegate?
     var alreadySelectedDateTime = ""
     var lastSelectedDate = Date()
+    var dateSelected : String?
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -56,6 +57,7 @@ class CalenderPopupViewController: BaseViewController {
     {
         let stringArray = alreadySelectedDateTime.components(separatedBy: "-")
         guard let dateString = stringArray.first else {return }
+        self.dateSelected = dateString
         guard let date = dateString.stringToDate("MMM dd, yyyy") else {return }
         calenderview.select(date, scrollToDate: true)
         
@@ -157,6 +159,10 @@ extension CalenderPopupViewController : ScheduleOptionsViewControllerDelegate
     func didSelectOption(_ selectedOption: String) {
         
         timeLabel.text = selectedOption
+        if dateSelected != nil && (dateSelected?.count ?? 0) > 0 {
+            let selectedString = "\(dateSelected!) - \(timeLabel.text ?? "")"
+            delegate?.didSelectDate(dateString: selectedString)
+        }
     }
     
     func didDismiss() {

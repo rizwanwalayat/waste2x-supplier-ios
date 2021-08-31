@@ -26,16 +26,13 @@ class LoginCodeVerificationViewController: BaseViewController {
     
     //MARK: - Variables
     let device = UIDevice()
-//    var phone = ""
     let model = UIDevice.modelName
-    
-    var enteredPhoneNumber = ""
     
     //MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setAttributedTextInLable(phoneNo: enteredPhoneNumber)
+        setAttributedTextInLable(phoneNo: Global.shared.phoneNumber)
         nextButton.makeEnable(value: false)
         firstTextField.becomeFirstResponder()
     }

@@ -48,6 +48,7 @@ class HomeViewController: BaseViewController{
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        weatherCollectionView.reloadData()
         NotificationCenter.default.addObserver(self, selector: #selector(self.notification(notification:)), name: Notification.Name("notification"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.notificationIconGreen(notifications:)), name: Notification.Name("point"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.notificationIconWhite(notifications:)), name: Notification.Name("notpoint"), object: nil)
@@ -252,7 +253,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == weatherCollectionView {
-            return CGSize(width: (weatherCollectionView.frame.width )/6, height: weatherCollectionView.frame.height)
+            return CGSize(width: (weatherCollectionView.bounds.width )/6, height: weatherCollectionView.bounds.height)
         }
         else{
             return CGSize(width: (wasteTypeCollectionView.bounds.width - 100), height: wasteTypeCollectionView.bounds.height)

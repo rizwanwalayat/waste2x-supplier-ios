@@ -48,7 +48,7 @@
                                         <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="hrt-fH-DiI"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invite Supplier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJ5-il-Djq">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invite Suppliers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJ5-il-Djq">
                                     <rect key="frame" x="20" y="15.999999999999998" width="388" height="25.333333333333329"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -81,7 +81,16 @@
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIt-vo-ex8">
                             <rect key="frame" x="45" y="722.33333333333326" width="338" height="82.333333333333371"/>
-                            <state key="normal" image="Invite"/>
+                            <color key="backgroundColor" red="0.49019607843137253" green="0.61568627450980395" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="20"/>
+                            <state key="normal" title="Invite from Contacts">
+                                <color key="titleColor" red="1" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="18"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="inviteAction:" destination="-1" eventType="touchUpInside" id="fkB-7R-V6I"/>
                             </connections>
@@ -137,7 +146,6 @@ and get 5$ on your payment</string>
     </objects>
     <resources>
         <image name="Arrow Left" width="10" height="18"/>
-        <image name="Invite" width="327" height="58"/>
         <image name="invite" width="254" height="243.66667175292969"/>
     </resources>
 </document>

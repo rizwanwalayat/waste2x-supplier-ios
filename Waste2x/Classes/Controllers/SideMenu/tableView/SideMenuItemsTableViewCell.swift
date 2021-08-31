@@ -17,7 +17,7 @@ class SideMenuItemsTableViewCell: UITableViewCell {
     
     //MARK: - Variables
     var img = [#imageLiteral(resourceName: "Payment Icons"),#imageLiteral(resourceName: "Calendar"),#imageLiteral(resourceName: "ufaq")]
-    var text = ["Payments","Schedule Pickup","Privacy Policy"]
+    var text = ["Payments","Collection Availability","Privacy Policy"]
     override func awakeFromNib() {
         super.awakeFromNib()
         
