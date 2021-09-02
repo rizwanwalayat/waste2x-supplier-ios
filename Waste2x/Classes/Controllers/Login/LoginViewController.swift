@@ -81,7 +81,7 @@ class LoginViewController: BaseViewController {
     
     @IBAction func phoneTextFieldValueCanged(_ sender: Any) {
         
-        if phoneNoTextfield.text!.count > 2
+        if phoneNoTextfield.text!.count > 0
         {
             nextButton.makeEnable(value: true)
         }
@@ -96,10 +96,10 @@ extension LoginViewController : UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        if string == "" && (textField.text!.count < 3)
-        {
-           return false
-        }
+//        if string == "" && (textField.text!.count < 3)
+//        {
+//           return false
+//        }
         
         return true
     }
