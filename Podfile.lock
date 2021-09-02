@@ -1,6 +1,6 @@
 PODS:
-  - ADCountryPicker (2.1.0)
   - Alamofire (4.9.1)
+  - Columbus (1.6.0)
   - Firebase/CoreOnly (7.8.1):
     - FirebaseCore (= 7.8.0)
   - Firebase/Database (7.8.1):
@@ -87,8 +87,8 @@ PODS:
   - YoutubePlayer-in-WKWebView (0.3.5)
 
 DEPENDENCIES:
-  - ADCountryPicker (~> 2.1.0)
   - Alamofire (~> 4.2)
+  - Columbus
   - Firebase/Database
   - Firebase/Messaging
   - FSCalendar
@@ -105,8 +105,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - ADCountryPicker
     - Alamofire
+    - Columbus
     - Firebase
     - FirebaseCore
     - FirebaseCoreDiagnostics
@@ -132,8 +132,8 @@ SPEC REPOS:
     - YoutubePlayer-in-WKWebView
 
 SPEC CHECKSUMS:
-  ADCountryPicker: 502cee76a30ea1c3834eb0df170ce635691655c9
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Columbus: f2c8196333df5b07edae00a3831f2d86c47a06ba
   Firebase: d59ad4129167f9f0d2a4f6c1f0c462254b6002c8
   FirebaseCore: 049029df3096e5c118917029be7da75ee16f3b1b
   FirebaseCoreDiagnostics: 68ad972f99206cef818230f3f3179d52ccfb7f8c
@@ -158,6 +158,6 @@ SPEC CHECKSUMS:
   TwilioChatClient: 23168c2df8e306da1cedcad1d60ba69862235358
   YoutubePlayer-in-WKWebView: cfbf46da51d7370662a695a8f351e5fa1d3e1008
 
-PODFILE CHECKSUM: 4c026d2453b418f74e33cb3754bd3d52a355c55f
+PODFILE CHECKSUM: 0478aabf1602a0895129ccaabafb3f44da567ede
 
-COCOAPODS: 1.11.0.rc.1
+COCOAPODS: 1.11.0.beta.2

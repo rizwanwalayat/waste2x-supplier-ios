@@ -69,6 +69,7 @@
 		048582C12667BEC70077B42E /* ScheduleOptionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */; };
 		048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C09E6265E2265003E301F /* ImagePickerVC.swift */; };
 		048C09F0265E5FDE003E301F /* CodeVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C7265BD9AE007C51EE /* CodeVerificationViewModel.swift */; };
+		04941FFC26E10CBA0026D64A /* CountryPickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04941FFB26E10CBA0026D64A /* CountryPickerConfig.swift */; };
 		04BD2801266A2589008FC8B4 /* SchedulePlannedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD27FF266A2589008FC8B4 /* SchedulePlannedViewController.swift */; };
 		04BD2802266A2589008FC8B4 /* SchedulePlannedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BD2800266A2589008FC8B4 /* SchedulePlannedViewController.xib */; };
 		04C2361C2669224600A27B78 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2361B2669224600A27B78 /* Array.swift */; };
@@ -285,6 +286,7 @@
 		048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleOptionsTableViewCell.xib; sourceTree = "<group>"; };
 		048C09E6265E2265003E301F /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
+		04941FFB26E10CBA0026D64A /* CountryPickerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountryPickerConfig.swift; path = ../../../../../../CountryPickerConfig.swift; sourceTree = "<group>"; };
 		04BD27FF266A2589008FC8B4 /* SchedulePlannedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePlannedViewController.swift; sourceTree = "<group>"; };
 		04BD2800266A2589008FC8B4 /* SchedulePlannedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchedulePlannedViewController.xib; sourceTree = "<group>"; };
 		04C2361B2669224600A27B78 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -795,6 +797,7 @@
 			children = (
 				048C09E6265E2265003E301F /* ImagePickerVC.swift */,
 				04629D2526664D86008A6A3A /* CustomProgressbar.swift */,
+				04941FFB26E10CBA0026D64A /* CountryPickerConfig.swift */,
 				047E83D2268338DC006A0F18 /* LocationPicker */,
 			);
 			path = CommonClasses;
@@ -1715,6 +1718,7 @@
 				1832D24C268326AE0032F755 /* DetailedPendingCollectionViewController.swift in Sources */,
 				18BD84762673770B00B5F797 /* WeatherAPI.swift in Sources */,
 				041242AB266A05AE00EB1A3F /* DateExtenstion.swift in Sources */,
+				04941FFC26E10CBA0026D64A /* CountryPickerConfig.swift in Sources */,
 				043F6BF6267776A2000E3C4F /* HomeQuestions.swift in Sources */,
 				183262762670BB8400F0CCBA /* Registration.swift in Sources */,
 				04361BD3267B5BFA008209D4 /* WasteDetailResultImageUpload.swift in Sources */,

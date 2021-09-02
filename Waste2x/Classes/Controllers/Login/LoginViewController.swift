@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ADCountryPicker
+import Columbus
 //import LocalAuthentication
 
 class LoginViewController: BaseViewController {
@@ -20,17 +20,12 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var countryFlagImgView: UIImageView!
     @IBOutlet weak var countryDialCodeLbl: UILabel!
     
-    //MARK:- Variables
-    var picker = ADCountryPicker()
-
-    
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         self.navigationController?.navigationBar.isHidden = true
-        setupCountryPicker()
     }
     
     
@@ -78,73 +73,15 @@ class LoginViewController: BaseViewController {
     }
     @IBAction func countryCodeBtnPressed(_ sender: Any) {
 
-        self.present(picker, animated: true, completion: nil)
-
-    }
-}
-    
-extension LoginViewController : UITextFieldDelegate {
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-//        if string == "" && (textField.text!.count < 3)
-//        {
-//           return false
-//        }
-        
-        return true
-    }
-}
-
-extension LoginViewController: ADCountryPickerDelegate {
-    func countryPicker(_ picker: ADCountryPicker, didSelectCountryWithName name: String, code: String, dialCode: String) {
-        picker.dismiss(animated: true, completion: nil)
-        if let flagImage = picker.getFlag(countryCode: code){
-            countryFlagImgView.image = flagImage
+        let countryPicker = CountryPickerViewController(config: CountryPickerConfig(),
+                                                        initialCountryCode: "US") { (country) in
+            
+            self.dismiss(animated: true) {
+                self.countryFlagImgView.image = country.flagIcon
+                self.countryDialCodeLbl.text = "+\(country.dialingCode)"
+            }
         }
-        else if code == "US" {
-            countryFlagImgView.image = UIImage(named: "US Flag Local")
-        }
-        countryDialCodeLbl.text = dialCode
-    }
-    
-    func setupCountryPicker(){
-        picker.delegate = self
-        picker.showCallingCodes = true
-        picker.defaultCountryCode = "US"
+        present(countryPicker, animated: true)
+
     }
 }
-
-
-
-
-//enum BiometricType {
-//    case none
-//    case touchID
-//    case faceID
-//}
-//
-//var biometricType: BiometricType {
-//    get {
-//        let context = LAContext()
-//        var error: NSError?
-//
-//        guard context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
-//            print(error?.localizedDescription ?? "")
-//            return .none
-//        }
-//
-//        if #available(iOS 11.0, *) {
-//            switch context.biometryType {
-//            case .none:
-//                return .none
-//            case .touchID:
-//                return .touchID
-//            case .faceID:
-//                return .faceID
-//            }
-//        } else {
-//            return  .touchID
-//        }
-//    }
-//}
