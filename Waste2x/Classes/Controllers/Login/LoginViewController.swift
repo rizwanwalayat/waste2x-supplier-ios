@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ADCountryPicker
 //import LocalAuthentication
 
 class LoginViewController: BaseViewController {
@@ -16,9 +17,12 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var weWillSendYouLabel   : UILabel!
     @IBOutlet weak var phoneNoTextfield     : UITextField!
     @IBOutlet weak var nextButton           : UIButton!
+    @IBOutlet weak var countryFlagImgView: UIImageView!
+    @IBOutlet weak var countryDialCodeLbl: UILabel!
     
     //MARK:- Variables
-    
+    var picker = ADCountryPicker()
+
     
     
     //MARK: - Lifecycle
@@ -26,7 +30,7 @@ class LoginViewController: BaseViewController {
         super.viewDidLoad()
         setupView()
         self.navigationController?.navigationBar.isHidden = true
-        phoneNoTextfield.text = "+1"
+        setupCountryPicker()
     }
     
     
@@ -41,26 +45,10 @@ class LoginViewController: BaseViewController {
     @IBAction func nextButtonPressed(_ sender: Any) {
         if Utility.isTextFieldHasText(textField: phoneNoTextfield)
         {
-            if !phoneNoTextfield.text!.contains("+"){
-                
-                
-                CodeVerification.verificationCode(phoneNumber: "+1" + phoneNoTextfield.text!) { result, error, status,message in
-                    
-                    if error == nil {
-                        let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
-                        Global.shared.phoneNumber = self.phoneNoTextfield.text!
-                        self.navigationController?.pushViewController(codeVerificationVC, animated: true)
-                    }
-                    else {
-                        
-                        Utility.showAlertController(self, error!.localizedDescription)
-                        
-                    }
-                }
-                
-            }
-            else {
-                CodeVerification.verificationCode(phoneNumber: phoneNoTextfield.text!) { result, error, status,message in
+            let completePhoneNo = "\(countryDialCodeLbl.text ?? "")\(phoneNoTextfield.text ?? "")"
+            
+            
+                CodeVerification.verificationCode(phoneNumber: completePhoneNo) { result, error, status,message in
                     
                     if error == nil {
                         let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
@@ -73,8 +61,6 @@ class LoginViewController: BaseViewController {
                         
                     }
                 }
-            }
-            
         }
     }
     
@@ -90,6 +76,11 @@ class LoginViewController: BaseViewController {
             nextButton.makeEnable(value: false)
         }
     }
+    @IBAction func countryCodeBtnPressed(_ sender: Any) {
+
+        self.present(picker, animated: true, completion: nil)
+
+    }
 }
     
 extension LoginViewController : UITextFieldDelegate {
@@ -102,6 +93,25 @@ extension LoginViewController : UITextFieldDelegate {
 //        }
         
         return true
+    }
+}
+
+extension LoginViewController: ADCountryPickerDelegate {
+    func countryPicker(_ picker: ADCountryPicker, didSelectCountryWithName name: String, code: String, dialCode: String) {
+        picker.dismiss(animated: true, completion: nil)
+        if let flagImage = picker.getFlag(countryCode: code){
+            countryFlagImgView.image = flagImage
+        }
+        else if code == "US" {
+            countryFlagImgView.image = UIImage(named: "US Flag Local")
+        }
+        countryDialCodeLbl.text = dialCode
+    }
+    
+    func setupCountryPicker(){
+        picker.delegate = self
+        picker.showCallingCodes = true
+        picker.defaultCountryCode = "US"
     }
 }
 

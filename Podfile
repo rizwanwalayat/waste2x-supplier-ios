@@ -18,4 +18,5 @@ target 'Waste2x' do
   pod "YoutubePlayer-in-WKWebView"
   pod 'TwilioChatClient', '~> 2.6.6'
   pod 'Firebase/Database'
+  pod 'ADCountryPicker'
 end
