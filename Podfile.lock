@@ -87,7 +87,7 @@ PODS:
   - YoutubePlayer-in-WKWebView (0.3.5)
 
 DEPENDENCIES:
-  - ADCountryPicker
+  - ADCountryPicker (~> 2.1.0)
   - Alamofire (~> 4.2)
   - Firebase/Database
   - Firebase/Messaging
@@ -158,6 +158,6 @@ SPEC CHECKSUMS:
   TwilioChatClient: 23168c2df8e306da1cedcad1d60ba69862235358
   YoutubePlayer-in-WKWebView: cfbf46da51d7370662a695a8f351e5fa1d3e1008
 
-PODFILE CHECKSUM: ea999352eb3214be5e248e9a4acff056859a81f8
+PODFILE CHECKSUM: 4c026d2453b418f74e33cb3754bd3d52a355c55f
 
 COCOAPODS: 1.11.0.rc.1

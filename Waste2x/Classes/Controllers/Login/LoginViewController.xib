@@ -44,7 +44,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKd-k8-BJB">
-                                    <rect key="frame" x="30" y="88" width="157" height="56"/>
+                                    <rect key="frame" x="30" y="88" width="181.5" height="67.5"/>
                                     <string key="text">Enter your 
 phone number</string>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="24"/>
@@ -63,16 +63,16 @@ phone number</string>
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will send you confirmation code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fG-1r-sjk">
-                                    <rect key="frame" x="30" y="161" width="222" height="16.5"/>
+                                    <rect key="frame" x="30" y="172.5" width="249" height="20"/>
                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                     <color key="textColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEo-I0-gDL" userLabel="Phone Field">
-                                    <rect key="frame" x="126.5" y="225.5" width="262.5" height="58"/>
+                                    <rect key="frame" x="124.5" y="240.5" width="264.5" height="58"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="2812 345 678" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jft-uV-ElE">
-                                            <rect key="frame" x="10" y="14" width="242.5" height="30"/>
+                                            <rect key="frame" x="10" y="14" width="244.5" height="30"/>
                                             <color key="textColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="18"/>
                                             <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
@@ -120,7 +120,7 @@ phone number</string>
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQD-tX-DYz" userLabel="Country Code">
-                                    <rect key="frame" x="30" y="225.5" width="91.5" height="58"/>
+                                    <rect key="frame" x="30" y="240.5" width="89.5" height="58"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="US Flag Local" translatesAutoresizingMaskIntoConstraints="NO" id="75B-RS-b0H" userLabel="Country Flag">
                                             <rect key="frame" x="10" y="16" width="26" height="26"/>
@@ -130,13 +130,13 @@ phone number</string>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ooc-2M-twV">
-                                            <rect key="frame" x="44" y="18.5" width="19" height="21.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <rect key="frame" x="44" y="19.5" width="17" height="19.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dropdown Filled" translatesAutoresizingMaskIntoConstraints="NO" id="khl-fN-3uF">
-                                            <rect key="frame" x="71" y="21" width="10.5" height="16"/>
+                                            <rect key="frame" x="69" y="21" width="10.5" height="16"/>
                                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="16" id="Eet-tB-wjZ"/>
@@ -144,7 +144,7 @@ phone number</string>
                                             </constraints>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7OX-2Z-vMB">
-                                            <rect key="frame" x="0.0" y="0.0" width="91.5" height="58"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="89.5" height="58"/>
                                             <connections>
                                                 <action selector="countryCodeBtnPressed:" destination="-1" eventType="touchUpInside" id="MLN-Ke-LCS"/>
                                             </connections>
