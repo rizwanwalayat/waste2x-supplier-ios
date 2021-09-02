@@ -73,7 +73,9 @@ class APIClient: APIClientHandler {
     
     func verificationCode(number: String, _ completionBlock: @escaping APIClientCompletionHandler) {
         let params = ["phone": number] as [String:String]
-        _ = sendRequest(APIRoutes.login , parameters: params as [String : AnyObject],httpMethod: .post , headers: nil, completionBlock: completionBlock)
+        
+        let headers = ["Cookie": ""]
+        _ = sendRequest(APIRoutes.login , parameters: params as [String : AnyObject],httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
     func weatherAPi( _ completionBlock: @escaping APIClientCompletionHandler) {
         let params = [String:AnyObject]()
@@ -121,7 +123,9 @@ class APIClient: APIClientHandler {
     
     func emailVerification(email: String, _ completionBlock: @escaping APIClientCompletionHandler) {
         let params = ["email": email] as [String:String]
-        _ = sendRequest(APIRoutes.emailVerification , parameters: params as [String : AnyObject],httpMethod: .post , headers: nil, completionBlock: completionBlock)
+        
+        let headers = ["Cookie": ""]
+        _ = sendRequest(APIRoutes.emailVerification , parameters: params as [String : AnyObject],httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
     func FaqApiFunctionCall(_ completionBlock: @escaping APIClientCompletionHandler) {
         let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
@@ -150,7 +154,9 @@ class APIClient: APIClientHandler {
     func userRegistration(phone: String,code: String,latitude: Double,longitude: Double,firebase_token: String,phone_imei: String,phone_os: String,phone_model: String, _ completionBlock: @escaping APIClientCompletionHandler) {
         
         let params = ["phone":phone,"code":code,"latitude":latitude,"longitude":longitude,"firebase_token":firebase_token,"phone_imei":phone_imei,"phone_os":phone_os,"phone_model":phone_model] as [String:Any]
-        _ = sendRequest(APIRoutes.registration , parameters: params as [String : AnyObject],httpMethod: .post , headers: nil, completionBlock: completionBlock)
+        
+        let headers = ["Cookie": ""]
+        _ = sendRequest(APIRoutes.registration , parameters: params as [String : AnyObject],httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
     
     // NH : for fetch data for supply process
