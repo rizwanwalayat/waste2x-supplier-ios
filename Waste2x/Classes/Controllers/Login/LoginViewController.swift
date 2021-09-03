@@ -47,7 +47,7 @@ class LoginViewController: BaseViewController {
                     
                     if error == nil {
                         let codeVerificationVC = LoginCodeVerificationViewController(nibName: "LoginCodeVerificationViewController", bundle: nil)
-                        Global.shared.phoneNumber = self.phoneNoTextfield.text ?? ""
+                        Global.shared.phoneNumber = completePhoneNo
                         self.navigationController?.pushViewController(codeVerificationVC, animated: true)
                     }
                     else {
