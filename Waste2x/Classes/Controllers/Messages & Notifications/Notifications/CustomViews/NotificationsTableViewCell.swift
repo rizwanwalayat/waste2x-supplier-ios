@@ -25,6 +25,7 @@ class NotificationsTableViewCell: UITableViewCell {
     @IBOutlet weak var headerView                   : UIView!
     @IBOutlet weak var bodyView                     : UIView!
     @IBOutlet weak var stackViewButton : UIStackView!
+    @IBOutlet weak var statusholderView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -59,6 +60,8 @@ class NotificationsTableViewCell: UITableViewCell {
         let otwStatusColor = UIColor(hexString: "7D9D15", alpha: 0.15)
         let otwLabelColor  = UIColor(hexString: "7D9D15")
         let otwImage       = UIImage(named: "Otw-Icon")
+        
+        self.statusholderView.isHidden = false
         
         switch status {
         case .accepted:
@@ -114,6 +117,7 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationYesButton.setTitle("Check", for: .normal)
             
         case .onway:
+            
             self.notificationTitle.text = notificationTitle
             self.notificationDetailLabel.text = detailText
             self.notificationQuestionLabel.text = questionText
@@ -127,6 +131,21 @@ class NotificationsTableViewCell: UITableViewCell {
             self.stackViewButton.isHidden = false
             self.notificationYesButton.setTitle("Track", for: .normal)
             
+        case .paid:
+            
+            self.notificationTitle.text = notificationTitle
+            self.notificationDetailLabel.text = detailText
+            self.notificationQuestionLabel.text = questionText
+            self.notificationStatusHolderView.backgroundColor = otwStatusColor
+            self.notificationStatusLabel.textColor = otwLabelColor
+            self.notificationStatusLabel.text      = "Paid"
+            self.notificationStatusImageView.image = otwImage
+            self.statusholderView.isHidden = true
+            self.notificationYesButton.isHidden = false
+            self.notificationNoButton.isHidden = true
+            self.notificationQuestionLabel.isHidden = true
+            self.stackViewButton.isHidden = false
+            self.notificationYesButton.setTitle("View Stripe Account", for: .normal)
         }
     }
     
@@ -182,6 +201,9 @@ class NotificationsTableViewCell: UITableViewCell {
             else if data.result?.notifications[index].response == "Confirmed"{
                 self.notificationStatusHandlings(.confirmed, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "Do you want to sell?")
             }
+            else if data.result?.notifications[index].response == "Paid" {
+                self.notificationStatusHandlings(.paid, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "")
+            }
             else {
                 self.notificationStatusHandlings(.pending, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "Do you want to sell?")
             }
@@ -198,4 +220,5 @@ enum NotificationStatus {
     case pending
     case confirmed
     case onway
+    case paid
 }

@@ -51,6 +51,17 @@ struct NetworkingConnection {
         kApplicationWindow?.rootViewController = slideMenuController
         kApplicationWindow?.makeKeyAndVisible()
     }
+    
+    class func setupHomeAsRootAndNavigateToNotificationViewController() {
+        let slideMenuController = SlideMenuController(mainViewController: HomeViewController(), leftMenuViewController: SideMenuViewController())
+        let notificationViewController = NotificationsViewController()
+        let navigationController = BaseNavigationViewController()
+        navigationController.viewControllers = [slideMenuController, notificationViewController]
+        navigationController.navigationBar.isHidden = true
+        kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)
+        kApplicationWindow?.rootViewController = navigationController
+        kApplicationWindow?.makeKeyAndVisible()
+    }
 
     class func autoLogin() {
         

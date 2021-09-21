@@ -168,34 +168,34 @@ extension AppDelegate : MessagingDelegate {
 extension AppDelegate : UNUserNotificationCenterDelegate {
 
   // Receive displayed notifications for iOS 10 devices.
-  func userNotificationCenter(_ center: UNUserNotificationCenter,
-                              willPresent notification: UNNotification,
-    withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-    let userInfo = notification.request.content.userInfo
-
-    if let messageID = userInfo[gcmMessageIDKey] {
-      print("Message ID: \(messageID)")
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let userInfo = notification.request.content.userInfo
+        
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+        NotificationCenter.default.post(name: Notification.Name("point"), object: nil)
+        print(userInfo)
+        completionHandler([[.alert, .sound]])
     }
-    NotificationCenter.default.post(name: Notification.Name("point"), object: nil)
-    print(userInfo)
-    completionHandler([[.alert, .sound]])
-    
-  }
 
-
-  func userNotificationCenter(_ center: UNUserNotificationCenter,
-                              didReceive response: UNNotificationResponse,
-                              withCompletionHandler completionHandler: @escaping () -> Void) {
-    let userInfo = response.notification.request.content.userInfo
-
-    if let messageID = userInfo[gcmMessageIDKey] {
-      print("Message ID: \(messageID)")
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+        print(userInfo)
+        NotificationCenter.default.post(name: Notification.Name("notification"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name("point"), object: nil)
+        completionHandler()
+        
+        Utility.setupHomeAsRootAndNavigateToNotificationViewController()
     }
-    print(userInfo)
-    NotificationCenter.default.post(name: Notification.Name("notification"), object: nil)
-    NotificationCenter.default.post(name: Notification.Name("point"), object: nil)
-    completionHandler()
-  }
 }
 // [END ios_10_message_handling]
     

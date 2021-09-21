@@ -42,7 +42,6 @@ class NotificationsViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         globalObjectContainer?.tabbarHiddenView.isHidden = false
-        
         mainHolderView.layer.cornerRadius = 36
         mainHolderView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         mainHolderView.layer.masksToBounds = true
@@ -80,6 +79,11 @@ class NotificationsViewController: BaseViewController {
             NotificationResponceModel.NotificationResponceModelApiFunction(notificationID: notificationID!, notificationResponce: notificationResponce) { result, error, status, message in
                 self.apiCall()
                 
+            }
+        }
+        else if sender.title(for: .normal) == "View Stripe Account" {
+            if let url = URL(string: "https://dashboard.stripe.com/login") {
+                UIApplication.shared.open(url)
             }
         }
             
@@ -171,16 +175,17 @@ extension NotificationsViewController{
         NotificationModel.notificationApiFunction { result, error, status, message in
             self.NotificationModell = result
             self.notificationsTableview.reloadData()
-            if let cell = self.notificationsTableview.cellForRow(at: IndexPath(row: 0, section: 0)) as? NotificationsTableViewCell{
-                cell.collapse()
-                self.notificationsTableview.beginUpdates()
-                self.notificationsTableview.endUpdates()
-            }
-            
             if (result?.result?.notifications.count ?? 0) > 0
             {
                 NotificationCenter.default.post(name: Notification.Name("notpoint"), object: nil)
                 self.noNotificationLabel.isHidden = true
+                
+                if let cell = self.notificationsTableview.cellForRow(at: IndexPath(row: 0, section: 0)) as? NotificationsTableViewCell{
+                    cell.expand()
+                    self.selectedIndex = IndexPath(row: 0, section: 0)
+                    self.notificationsTableview.beginUpdates()
+                    self.notificationsTableview.endUpdates()
+                }
             }
             else
             {
