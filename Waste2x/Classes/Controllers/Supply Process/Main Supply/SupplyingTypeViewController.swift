@@ -81,6 +81,7 @@ class SupplyingTypeViewController: BaseViewController {
         vc.supplyProcessQuestions = questions
         vc.selectionData = selectionData
         vc.isDismissable = isdismissable
+        vc.transitioningDelegate = self
         self.present(vc, animated: false, completion: nil)
     }
     
@@ -189,4 +190,15 @@ extension SupplyingTypeViewController {
             }
         }
     }
+}
+
+extension SupplyingTypeViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+       
+        if Global.shared.apiCurve {
+            Utility.homeViewController()
+        }
+        return nil
+    }
+    
 }
