@@ -34,7 +34,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWY-uf-7zd" customClass="GMSMapView">
-                    <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
+                    <rect key="frame" x="0.0" y="101.5" width="414" height="651.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bap-yq-2Vo" userLabel="NavBar">
@@ -166,9 +166,9 @@ California, United State</string>
                 <constraint firstAttribute="trailing" secondItem="bap-yq-2Vo" secondAttribute="trailing" id="6Xc-Gb-OqQ"/>
                 <constraint firstItem="aWY-uf-7zd" firstAttribute="top" secondItem="bap-yq-2Vo" secondAttribute="bottom" id="E2Z-aM-aAG"/>
                 <constraint firstItem="7sL-z1-GjB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="EIS-YL-EOJ"/>
-                <constraint firstAttribute="bottom" secondItem="aWY-uf-7zd" secondAttribute="bottom" id="EgL-lM-ZXc"/>
                 <constraint firstItem="aWY-uf-7zd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="a70-uH-GRK"/>
                 <constraint firstItem="0kN-sf-AdF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iCx-a3-0nS"/>
+                <constraint firstItem="aWY-uf-7zd" firstAttribute="bottom" secondItem="0kN-sf-AdF" secondAttribute="top" id="sX8-0T-Msf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aWY-uf-7zd" secondAttribute="trailing" id="scu-Vn-V2s"/>
                 <constraint firstAttribute="bottom" secondItem="0kN-sf-AdF" secondAttribute="bottom" id="t6P-z0-zf9"/>
                 <constraint firstItem="bap-yq-2Vo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="v7x-c8-Wth"/>
