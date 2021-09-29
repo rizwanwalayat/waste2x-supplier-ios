@@ -97,7 +97,7 @@ class ScheduleViewController: BaseViewController {
 //        globalObjectHome?.fetchSitesData[0].farmId
         selectionType = .onePickup
         pickupTypeHandlings(selectionType: selectionType)
-        googleMapCurrentLocation()
+        //googleMapCurrentLocation()
         self.view.layoutIfNeeded()
         
     }

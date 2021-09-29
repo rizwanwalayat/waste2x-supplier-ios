@@ -30,6 +30,7 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
             selectSiteLabel.text = selectedOption
             selectLocationLabel.text = "\(selectedOption) location selected"
             selectionHandlingsOfViews(selectSiteHolderview, isSelection: true)
+            selectionHandlingsOfViews(selectLocationHolderview, isSelection: true)
         }
         
         popupOptionType = .none
@@ -151,9 +152,10 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
         selectFrequencyPriodicLabel.text = selectFrequencyPerodicPlaceholder
         selectDateTimeLabel.text = selectDateTimePlaceholder
         self.locationAutoFill ? print("Nothing") : (selectLocationLabel.text = selectLocationPlaceHolder)
-        selectionHandlingsOfViews(selectSiteHolderview, isSelection: true)
-        selectionHandlingsOfViews(selectFrequencyPriodicHolderview, isSelection: true)
-        selectionHandlingsOfViews(selectDateTimeHolderview, isSelection: true)
+        selectionHandlingsOfViews(selectSiteHolderview, isSelection: false)
+        selectionHandlingsOfViews(selectFrequencyPriodicHolderview, isSelection: false)
+        selectionHandlingsOfViews(selectDateTimeHolderview, isSelection: false)
+        selectionHandlingsOfViews(selectLocationHolderview, isSelection: false)
         self.locationAutoFill ? print("Nothing") : selectionHandlingsOfViews(selectLocationHolderview, isSelection: false)
         
         let lableUnselectHexCode = "A09F9F"
