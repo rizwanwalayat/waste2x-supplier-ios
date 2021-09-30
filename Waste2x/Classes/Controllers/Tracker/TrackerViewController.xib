@@ -34,7 +34,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWY-uf-7zd" customClass="GMSMapView">
-                    <rect key="frame" x="0.0" y="101.5" width="414" height="651.5"/>
+                    <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bap-yq-2Vo" userLabel="NavBar">
@@ -79,7 +79,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0kN-sf-AdF" userLabel="BottomView">
-                    <rect key="frame" x="0.0" y="753" width="414" height="143"/>
+                    <rect key="frame" x="0.0" y="896" width="414" height="143"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Car Pickup" translatesAutoresizingMaskIntoConstraints="NO" id="HyR-zL-SXv">
                             <rect key="frame" x="15" y="15" width="98.5" height="119"/>
@@ -170,7 +170,7 @@ California, United State</string>
                 <constraint firstItem="0kN-sf-AdF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iCx-a3-0nS"/>
                 <constraint firstItem="aWY-uf-7zd" firstAttribute="bottom" secondItem="0kN-sf-AdF" secondAttribute="top" id="sX8-0T-Msf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aWY-uf-7zd" secondAttribute="trailing" id="scu-Vn-V2s"/>
-                <constraint firstAttribute="bottom" secondItem="0kN-sf-AdF" secondAttribute="bottom" id="t6P-z0-zf9"/>
+                <constraint firstAttribute="bottom" secondItem="0kN-sf-AdF" secondAttribute="bottom" constant="-143" id="t6P-z0-zf9"/>
                 <constraint firstItem="bap-yq-2Vo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="v7x-c8-Wth"/>
                 <constraint firstItem="0kN-sf-AdF" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="zng-BB-pWz"/>
                 <constraint firstItem="bap-yq-2Vo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zrP-K0-ZNX"/>

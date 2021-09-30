@@ -32,6 +32,8 @@ class TrackerViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.mapView.delegate = self
+        bottomConst.constant = -mainView.bounds.height
+        self.view.layoutIfNeeded()
         self.endingLocation = "\(self.endingLat),\(self.endingLng)"
         
     }
@@ -62,6 +64,19 @@ class TrackerViewController: BaseViewController {
     }
     
     
+    func showDetailsMarker() {
+        if bottomConst.constant != 0 {
+            
+            bottomConst.constant = 0
+
+            UIView.animate(withDuration: 0.2,
+                       delay: 0,
+                       options: UIView.AnimationOptions.curveEaseInOut,
+                       animations: { () -> Void in
+                        self.view.layoutIfNeeded()
+            })
+        }
+    }
     
     func markerUpdate(s_lat : Double,s_lon:Double,d_lat:Double,d_lon:Double){
         
@@ -98,6 +113,7 @@ class TrackerViewController: BaseViewController {
                     self.addressLabel.text = item?.legs[0].end_address
                     self.timeLabel.text = item?.legs[0].duration?.text
                     self.kmLabel.text = item?.legs[0].distance?.text
+                    self.showDetailsMarker()
                     let points = item?.overviewPolyline?.points
                     let path = GMSPath.init(fromEncodedPath: points ?? "")
                     let polyline = GMSPolyline.init(path: path)

@@ -220,7 +220,6 @@
 		18FB2B962694A1FE006C6AE1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18FB2B952694A1FE006C6AE1 /* GoogleService-Info.plist */; };
 		9694C16126E25C2A00159A1C /* CountryPickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694C16026E25C2900159A1C /* CountryPickerConfig.swift */; };
 		96E8A8352705AD7700F03A34 /* Waste2xTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8A8342705AD7700F03A34 /* Waste2xTests.swift */; };
-		96E8A83D2705AE2F00F03A34 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 96E8A83C2705AE2F00F03A34 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -450,10 +449,10 @@
 		4403568D39555D92B00CB323 /* Pods-Waste2x.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waste2x.debug.xcconfig"; path = "Target Support Files/Pods-Waste2x/Pods-Waste2x.debug.xcconfig"; sourceTree = "<group>"; };
 		5D4D23AE5CF86CE8FCB2AEEB /* Pods-Waste2x.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waste2x.release.xcconfig"; path = "Target Support Files/Pods-Waste2x/Pods-Waste2x.release.xcconfig"; sourceTree = "<group>"; };
 		9694C16026E25C2900159A1C /* CountryPickerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerConfig.swift; sourceTree = "<group>"; };
+		96B24AD427061DB500DF6621 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		96E8A8322705AD7700F03A34 /* Waste2xTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Waste2xTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E8A8342705AD7700F03A34 /* Waste2xTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waste2xTests.swift; sourceTree = "<group>"; };
 		96E8A8362705AD7700F03A34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96E8A83C2705AE2F00F03A34 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -478,7 +477,7 @@
 		0067A2AF25274C0900CECA8C = {
 			isa = PBXGroup;
 			children = (
-				96E8A83C2705AE2F00F03A34 /* README.md */,
+				96B24AD427061DB500DF6621 /* README.md */,
 				0067A2BA25274C0900CECA8C /* Waste2x */,
 				96E8A8332705AD7700F03A34 /* Waste2xTests */,
 				0067A2B925274C0900CECA8C /* Products */,
@@ -1537,7 +1536,6 @@
 				04C82E192664BCCB00D52947 /* WasteImageDetailCollectionViewCell.xib in Resources */,
 				04C31D0A2667744400A1CF9C /* ScheduleViewController.xib in Resources */,
 				18342C78266E436E00A678D3 /* FormOfWasteViewController.xib in Resources */,
-				96E8A83D2705AE2F00F03A34 /* README.md in Resources */,
 				18A849D0265E411F008F77E8 /* WeatherCollectionViewCell.xib in Resources */,
 				18666B2426666175005C1A78 /* VideoTableViewCell.xib in Resources */,
 				1832D25126832DC20032F755 /* DetailPendingCollectionTableViewCell.xib in Resources */,

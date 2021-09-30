@@ -19,6 +19,7 @@ var googleAPIKey = "AIzaSyBp9ntlNiyAFvV8qxdXrBvBAOz_xasmvS0"
 struct APIRoutes {
 //    static var baseUrl = "https://app.enmassenergy.com/" //Live
     static var baseUrl = "https://enmass-cache-programme.appspot.com/" //Stagging
+
     
     
     static var imageBaseUrl = "/api/shared/user/userImage"
