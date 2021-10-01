@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import Waste2x
 
 class Waste2xTests: XCTestCase {
 
@@ -18,10 +19,34 @@ class Waste2xTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    func testSignupSendCodeAPI() throws {
+                let phone: String = "+17743777019"
+                let digitsCharacter = CharacterSet.decimalDigits
+                
+                let promise = expectation(description: "Status Code: 200")
+            
+                CodeVerification.verificationCode(phoneNumber: phone) { result, error, status, message in
+                    
+                    XCTAssert(status ==  true && error == nil, "Data Returned with Error")
+                    
+                    guard let code = result
+                    else {
+                        XCTFail("Expected non-nil code ")
+                        return
+                    }
+                    
+//                      XCTAssert(code.count == 4 && CharacterSet(charactersIn: code).isSubset(of: digitsCharacter), "Expected 4 Digit Code")
+                    
+                    promise.fulfill()
+                }
+                
+                waitForExpectations(timeout: 10) { error in
+                    if let _ = error {
+                        XCTFail("Timeout")
+                    }
+                }
+        }
+
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
