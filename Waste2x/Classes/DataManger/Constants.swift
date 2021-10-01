@@ -19,7 +19,7 @@ var googleAPIKey = "AIzaSyBp9ntlNiyAFvV8qxdXrBvBAOz_xasmvS0"
 struct APIRoutes {
 //    static var baseUrl = "https://app.enmassenergy.com/" //Live
     static var baseUrl = "https://enmass-cache-programme.appspot.com/" //Stagging
-    
+//    static var baseUrl = "https://4b8ee84a0a8574.localhost.run/"
     
     static var imageBaseUrl = "/api/shared/user/userImage"
     static var login = "paudapay_us/send_code/"
