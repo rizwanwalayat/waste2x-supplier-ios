@@ -32,6 +32,8 @@ class TrackerViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.mapView.delegate = self
+        bottomConst.constant = -mainView.bounds.height
+        self.view.layoutIfNeeded()
         self.endingLocation = "\(self.endingLat),\(self.endingLng)"
         
     }
@@ -58,9 +60,23 @@ class TrackerViewController: BaseViewController {
     func loadMap() {
         self.mapView.clear()
         self.fetchGoogleMapData(Starting: self.startingLocation, Ending: self.endingLocation)
+        self.markerUpdate(s_lat: self.startingLat, s_lon: self.startingLon, d_lat: self.endingLat, d_lon: self.endingLng)
     }
     
     
+    func showDetailsMarker() {
+        if bottomConst.constant != 0 {
+            
+            bottomConst.constant = 0
+
+            UIView.animate(withDuration: 0.2,
+                       delay: 0,
+                       options: UIView.AnimationOptions.curveEaseInOut,
+                       animations: { () -> Void in
+                        self.view.layoutIfNeeded()
+            })
+        }
+    }
     
     func markerUpdate(s_lat : Double,s_lon:Double,d_lat:Double,d_lon:Double){
         
@@ -94,29 +110,28 @@ class TrackerViewController: BaseViewController {
         PolyLineAPIModel.PolyLineAPICall { jsonData, error, status, message in
             if jsonData?.routes != nil{
                 let item = jsonData!.routes.first
-                self.addressLabel.text = item?.legs[0].end_address
-                self.timeLabel.text = item?.legs[0].duration?.text
-                self.kmLabel.text = item?.legs[0].distance?.text
-                let points = item?.overviewPolyline?.points
-                let path = GMSPath.init(fromEncodedPath: points ?? "")
-                let polyline = GMSPolyline.init(path: path)
-                polyline.strokeColor = UIColor(named: "lineColor")!
-                polyline.strokeWidth = 5
-                polyline.geodesic = true
-                polyline.map = self.mapView
-                
-                
-                DispatchQueue.main.async {
-                    //                        if (self.zoom == nil) {
-                    let bounds = GMSCoordinateBounds(path: path!)
-                    self.mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50.0))
-                    //                        } else {
-                    //                            self.mapView.animate(toZoom: self.zoom!)
-                    //
-                    //                        }
-                }
-                
-                self.markerUpdate(s_lat: self.startingLat, s_lon: self.startingLon, d_lat: self.endingLat, d_lon: self.endingLng)
+                    self.addressLabel.text = item?.legs[0].end_address
+                    self.timeLabel.text = item?.legs[0].duration?.text
+                    self.kmLabel.text = item?.legs[0].distance?.text
+                    self.showDetailsMarker()
+                    let points = item?.overviewPolyline?.points
+                    let path = GMSPath.init(fromEncodedPath: points ?? "")
+                    let polyline = GMSPolyline.init(path: path)
+                    polyline.strokeColor = UIColor(named: "lineColor")!
+                    polyline.strokeWidth = 5
+                    polyline.geodesic = true
+                    polyline.map = self.mapView
+                    
+                    
+                    DispatchQueue.main.async {
+//                        if (self.zoom == nil) {
+                            let bounds = GMSCoordinateBounds(path: path!)
+                            self.mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50.0))
+//                        } else {
+//                            self.mapView.animate(toZoom: self.zoom!)
+//
+//                        }
+                    }
                 
             }
         }

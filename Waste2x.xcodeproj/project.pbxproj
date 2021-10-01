@@ -219,7 +219,18 @@
 		18D1A367266A2B77009CAD26 /* TrackerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D1A365266A2B77009CAD26 /* TrackerViewController.xib */; };
 		18FB2B962694A1FE006C6AE1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18FB2B952694A1FE006C6AE1 /* GoogleService-Info.plist */; };
 		9694C16126E25C2A00159A1C /* CountryPickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694C16026E25C2900159A1C /* CountryPickerConfig.swift */; };
+		96E8A8352705AD7700F03A34 /* Waste2xTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8A8342705AD7700F03A34 /* Waste2xTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		96E8A8372705AD7700F03A34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0067A2B025274C0900CECA8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0067A2B725274C0900CECA8C;
+			remoteInfo = Waste2x;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0067A2B825274C0900CECA8C /* Waste2x.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waste2x.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -438,6 +449,10 @@
 		4403568D39555D92B00CB323 /* Pods-Waste2x.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waste2x.debug.xcconfig"; path = "Target Support Files/Pods-Waste2x/Pods-Waste2x.debug.xcconfig"; sourceTree = "<group>"; };
 		5D4D23AE5CF86CE8FCB2AEEB /* Pods-Waste2x.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waste2x.release.xcconfig"; path = "Target Support Files/Pods-Waste2x/Pods-Waste2x.release.xcconfig"; sourceTree = "<group>"; };
 		9694C16026E25C2900159A1C /* CountryPickerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerConfig.swift; sourceTree = "<group>"; };
+		96B24AD427061DB500DF6621 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		96E8A8322705AD7700F03A34 /* Waste2xTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Waste2xTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96E8A8342705AD7700F03A34 /* Waste2xTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waste2xTests.swift; sourceTree = "<group>"; };
+		96E8A8362705AD7700F03A34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,13 +464,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96E8A82F2705AD7700F03A34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		0067A2AF25274C0900CECA8C = {
 			isa = PBXGroup;
 			children = (
+				96B24AD427061DB500DF6621 /* README.md */,
 				0067A2BA25274C0900CECA8C /* Waste2x */,
+				96E8A8332705AD7700F03A34 /* Waste2xTests */,
 				0067A2B925274C0900CECA8C /* Products */,
 				8492EB8B64134913AA029EFA /* Pods */,
 				18397DC32660FA73003DE30C /* Recovered References */,
@@ -467,6 +491,7 @@
 			isa = PBXGroup;
 			children = (
 				0067A2B825274C0900CECA8C /* Waste2x.app */,
+				96E8A8322705AD7700F03A34 /* Waste2xTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1379,6 +1404,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		96E8A8332705AD7700F03A34 /* Waste2xTests */ = {
+			isa = PBXGroup;
+			children = (
+				96E8A8342705AD7700F03A34 /* Waste2xTests.swift */,
+				96E8A8362705AD7700F03A34 /* Info.plist */,
+			);
+			path = Waste2xTests;
+			sourceTree = "<group>";
+		};
 		9EDEABE62EF43A3B83192BB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1411,18 +1445,40 @@
 			productReference = 0067A2B825274C0900CECA8C /* Waste2x.app */;
 			productType = "com.apple.product-type.application";
 		};
+		96E8A8312705AD7700F03A34 /* Waste2xTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96E8A83B2705AD7700F03A34 /* Build configuration list for PBXNativeTarget "Waste2xTests" */;
+			buildPhases = (
+				96E8A82E2705AD7700F03A34 /* Sources */,
+				96E8A82F2705AD7700F03A34 /* Frameworks */,
+				96E8A8302705AD7700F03A34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96E8A8382705AD7700F03A34 /* PBXTargetDependency */,
+			);
+			name = Waste2xTests;
+			productName = Waste2xTests;
+			productReference = 96E8A8322705AD7700F03A34 /* Waste2xTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		0067A2B025274C0900CECA8C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1160;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = codesrbit;
 				TargetAttributes = {
 					0067A2B725274C0900CECA8C = {
 						CreatedOnToolsVersion = 11.6;
+					};
+					96E8A8312705AD7700F03A34 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 0067A2B725274C0900CECA8C;
 					};
 				};
 			};
@@ -1440,6 +1496,7 @@
 			projectRoot = "";
 			targets = (
 				0067A2B725274C0900CECA8C /* Waste2x */,
+				96E8A8312705AD7700F03A34 /* Waste2xTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1526,6 +1583,13 @@
 				18719146266667550050FAAA /* DetailTableViewCell.xib in Resources */,
 				187D7570266E0816007811C4 /* SupplyingTypeViewController.xib in Resources */,
 				18397E232660FF54003DE30C /* Poppins-Bold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96E8A8302705AD7700F03A34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1750,7 +1814,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96E8A82E2705AD7700F03A34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96E8A8352705AD7700F03A34 /* Waste2xTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		96E8A8382705AD7700F03A34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0067A2B725274C0900CECA8C /* Waste2x */;
+			targetProxy = 96E8A8372705AD7700F03A34 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0067A2C625274C0B00CECA8C /* LaunchScreen.storyboard */ = {
@@ -1928,6 +2008,50 @@
 			};
 			name = Release;
 		};
+		96E8A8392705AD7700F03A34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FUDLQH8LBU;
+				INFOPLIST_FILE = Waste2xTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.enmassenergy.transit.Waste2xTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Waste2x.app/Waste2x";
+			};
+			name = Debug;
+		};
+		96E8A83A2705AD7700F03A34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FUDLQH8LBU;
+				INFOPLIST_FILE = Waste2xTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.enmassenergy.transit.Waste2xTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Waste2x.app/Waste2x";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1945,6 +2069,15 @@
 			buildConfigurations = (
 				0067A2CD25274C0B00CECA8C /* Debug */,
 				0067A2CE25274C0B00CECA8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96E8A83B2705AD7700F03A34 /* Build configuration list for PBXNativeTarget "Waste2xTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96E8A8392705AD7700F03A34 /* Debug */,
+				96E8A83A2705AD7700F03A34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
