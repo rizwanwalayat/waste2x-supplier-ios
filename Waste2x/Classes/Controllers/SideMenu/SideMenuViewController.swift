@@ -57,9 +57,10 @@ class SideMenuViewController: BaseViewController {
         self.present(alertVc, animated: true, completion: nil)
         
     }
-    @IBAction func logOutAction(_ sender: Any) {
-        
-    }
+// Commented by Rizwan as this seemed like a duplicated IBAction
+//    @IBAction func logOutAction(_ sender: Any) {
+//
+//    }
     
     func startTimer ()
     {
@@ -77,6 +78,7 @@ class SideMenuViewController: BaseViewController {
         timerTest?.invalidate()
         timerTest = nil
         DataManager.shared.deleteUser()
+        TwillioChatDataModel.shared.shutdown()
         DataManager.shared.setIfUserLoggedOutSuccessFully()
         Global.shared.apiCurve = false
         let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)

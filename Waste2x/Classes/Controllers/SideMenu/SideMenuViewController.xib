@@ -100,7 +100,6 @@
                                 <color key="titleColor" systemColor="labelColor"/>
                             </state>
                             <connections>
-                                <action selector="logOutAction:" destination="-1" eventType="touchUpInside" id="nQk-Pg-s8k"/>
                                 <action selector="logoutButtonAction:" destination="-1" eventType="touchUpInside" id="17I-tC-ha3"/>
                             </connections>
                         </button>
