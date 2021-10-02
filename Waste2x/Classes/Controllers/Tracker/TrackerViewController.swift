@@ -54,6 +54,11 @@ class TrackerViewController: BaseViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        dataBase.child("\(trackID)").removeAllObservers()
+    }
     
     //MARK: - Functions
     

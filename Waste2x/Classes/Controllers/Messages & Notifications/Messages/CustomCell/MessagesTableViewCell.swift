@@ -43,7 +43,7 @@ class MessagesTableViewCell: UITableViewCell {
         if let author = cellData.author?.trimmingCharacters(in: .whitespaces).uppercased(), let phone = DataManager.shared.getUser()?.result?.phone.trimmingCharacters(in: .whitespaces).uppercased() {
             
             let authorPhone = author.split(separator: "=").last ?? ""
-            if authorPhone == phone
+            if authorPhone.contains(phone)
             {
                 mainHolderview.isHidden = false
             }
