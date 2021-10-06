@@ -105,7 +105,7 @@ class PendingCollectionResultHistory : Mappable {
 class PendingCollectionDetailModel : Mappable {
     var success = Bool()
     var message = ""
-    var result = [PendingCollectionResultResponce]()
+    var result : PendingCollectionResultResponce?
     var statusCode = Int()
 
     required init?(map: Map) { }

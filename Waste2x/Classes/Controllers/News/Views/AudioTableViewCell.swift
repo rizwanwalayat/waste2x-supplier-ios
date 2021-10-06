@@ -21,6 +21,7 @@ class AudioTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        progressbar.setThumbImage(UIImage(named: "dummy"), for: .normal)
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.progressValueChange(notification:)),

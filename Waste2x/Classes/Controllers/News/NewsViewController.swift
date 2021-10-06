@@ -81,15 +81,34 @@ class NewsViewController: BaseViewController {
         super.viewDidDisappear(animated)
         
         audioPlayer?.stop()
+        let isSongPlaying = NewsModell!.result.filter { $0.isSongPlaying == true }
+        let isSongLoading = NewsModell!.result.filter { $0.isSongLoading == true }
+        
+        for item in isSongPlaying {
+            item.isSongPlaying = false
+        }
+        
+        for item in isSongLoading {
+            item.isSongLoading = false
+        }
+
     }
 
     @objc func startPlayPause(_ sender:UIButton)
     {
+        let urlString = NewsModell!.result[sender.tag].fileUrl
+        guard let url = URL.init(string: urlString) else { return }
+        
+        if url.pathExtension != "mp3"
+        {
+            Utility.showAlertController(self, "file is not in correct formet , this file is in \(url.pathExtension) format.")
+            return
+        }
+        
         NewsModell!.result[sender.tag].isSongPlaying = !NewsModell!.result[sender.tag].isSongPlaying
         let isPlaying = NewsModell!.result[sender.tag].isSongPlaying
-        
-        let urlString = NewsModell!.result[sender.tag].fileUrl
                 
+        // for handlings last playing, if its playing then stop this and change icon
         if lastPlayingIndex != sender.tag && lastPlayingIndex != -1
         {
             NewsModell!.result[lastPlayingIndex].isSongPlaying = false
@@ -111,7 +130,6 @@ class NewsViewController: BaseViewController {
         }
         else
         {
-            guard let url = URL.init(string: urlString) else { return }
             self.downloadFileFromURL(url: url, senderButton: sender)
         }
 
@@ -156,17 +174,6 @@ class NewsViewController: BaseViewController {
         print(destinationUrl)
         
         
-        if url.pathExtension != "mp3"
-        {
-            if lastPlayingIndex > NewsModell!.result.count {
-                
-                NewsModell!.result[lastPlayingIndex].isSongPlaying = false
-                NewsModell!.result[lastPlayingIndex].isSongLoading = false
-            }
-            Utility.showAlertController(self, "file is not in correct formet , this file is in \(url.pathExtension) format.")
-            return
-        }
-        
         audioPlayer?.stop()
         audioPlayer = nil
         previousPlayingFileName = url.absoluteString
@@ -204,24 +211,6 @@ class NewsViewController: BaseViewController {
             }).resume()
         }
         
-            
-        
-
-        
-//        var downloadTask:URLSessionDownloadTask
-//        downloadTask = URLSession.shared.downloadTask(with: url, completionHandler: { downloadedUrl, response, error in
-//
-//            DispatchQueue.main.async {
-//                self.NewsModell!.result[senderButton.tag].isSongLoading = false
-//            }
-//
-//            if let urlDownloaded = downloadedUrl {
-//
-//                self.handlePlayPause(urlDownloaded, senderButton: senderButton)
-//
-//            }
-//        })
-//        downloadTask.resume()
     }
     
     func handlePlayPause(_ url : URL, senderButton : UIButton)
@@ -232,16 +221,6 @@ class NewsViewController: BaseViewController {
             audioPlayer?.prepareToPlay()
             audioPlayer?.play()
             startTimer()
-//            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
-            
-//            if let cell = self.tableView.cellForRow(at: IndexPath(row: senderButton.tag, section: 0)) as? AudioTableViewCell {
-//
-//                cell.progressbar.maximumValue = Float(self.audioPlayer?.duration ?? 0.0)
-//                cell.progressbar.value = 0.0
-//                self.progressbar = cell.progressbar
-//                self.progressbar?.tag = senderButton.tag
-//                // code for handle slider control
-//            }
             
         }
         catch

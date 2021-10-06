@@ -88,16 +88,21 @@ extension DetailedPendingCollectionViewController : UITableViewDelegate,UITableV
 extension DetailedPendingCollectionViewController{
     func apiCall(){
         if self.id != 0{
-            PendingCollectionModel.pendingCollectionApiCall { result, error, status, message in
+            PendingCollectionDetailModel.pendingCollectionApiCall(id: self.id) { result, error, status, message in
                 if error == nil{
-                for item in result!.result{
-                    print(item.id)
-                    if self.id == item.id{
-                        self.data = item
+                    
+                    if let resultData = result{
+                        self.data = resultData.result
                         self.tableView.reloadData()
-                        break
                     }
-                }
+//                for item in result!.result{
+//                    print(item.id)
+//                    if self.id == item.id{
+//                        self.data = item
+//                        self.tableView.reloadData()
+//                        break
+//                    }
+//                }
                 }
                 
             }
