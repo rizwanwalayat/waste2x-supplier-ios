@@ -33,6 +33,10 @@
 		0418C8FC267C8C15008A0F1F /* MessagesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418C8FB267C8C15008A0F1F /* MessagesResult.swift */; };
 		041D40D126772A65003A0039 /* CreateSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D40CF26772A65003A0039 /* CreateSite.swift */; };
 		041D40D226772A65003A0039 /* CreateSiteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D40D026772A65003A0039 /* CreateSiteResult.swift */; };
+		04287966270DAF7800808FB4 /* ScheduleRegularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04287964270DAF7800808FB4 /* ScheduleRegularViewController.swift */; };
+		04287967270DAF7800808FB4 /* ScheduleRegularViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04287965270DAF7800808FB4 /* ScheduleRegularViewController.xib */; };
+		0428796B270DB69100808FB4 /* DaysNameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04287969270DB69100808FB4 /* DaysNameCollectionViewCell.swift */; };
+		0428796C270DB69100808FB4 /* DaysNameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0428796A270DB69100808FB4 /* DaysNameCollectionViewCell.xib */; };
 		0428F1BF265B8EC5007C51EE /* LoginCodeVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1BD265B8EC5007C51EE /* LoginCodeVerificationViewController.swift */; };
 		0428F1C0265B8EC5007C51EE /* LoginCodeVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0428F1BE265B8EC5007C51EE /* LoginCodeVerificationViewController.xib */; };
 		0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C1265BC124007C51EE /* UIColorExtensions.swift */; };
@@ -261,6 +265,10 @@
 		0418C8FB267C8C15008A0F1F /* MessagesResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesResult.swift; sourceTree = "<group>"; };
 		041D40CF26772A65003A0039 /* CreateSite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSite.swift; sourceTree = "<group>"; };
 		041D40D026772A65003A0039 /* CreateSiteResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSiteResult.swift; sourceTree = "<group>"; };
+		04287964270DAF7800808FB4 /* ScheduleRegularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRegularViewController.swift; sourceTree = "<group>"; };
+		04287965270DAF7800808FB4 /* ScheduleRegularViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleRegularViewController.xib; sourceTree = "<group>"; };
+		04287969270DB69100808FB4 /* DaysNameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysNameCollectionViewCell.swift; sourceTree = "<group>"; };
+		0428796A270DB69100808FB4 /* DaysNameCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaysNameCollectionViewCell.xib; sourceTree = "<group>"; };
 		0428F1BD265B8EC5007C51EE /* LoginCodeVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCodeVerificationViewController.swift; sourceTree = "<group>"; };
 		0428F1BE265B8EC5007C51EE /* LoginCodeVerificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginCodeVerificationViewController.xib; sourceTree = "<group>"; };
 		0428F1C1265BC124007C51EE /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
@@ -691,6 +699,25 @@
 			path = CreateSiteDM;
 			sourceTree = "<group>";
 		};
+		04287963270DAF2400808FB4 /* ScheduleRegular */ = {
+			isa = PBXGroup;
+			children = (
+				04287964270DAF7800808FB4 /* ScheduleRegularViewController.swift */,
+				04287965270DAF7800808FB4 /* ScheduleRegularViewController.xib */,
+				04287968270DB67000808FB4 /* DaysCell */,
+			);
+			path = ScheduleRegular;
+			sourceTree = "<group>";
+		};
+		04287968270DB67000808FB4 /* DaysCell */ = {
+			isa = PBXGroup;
+			children = (
+				04287969270DB69100808FB4 /* DaysNameCollectionViewCell.swift */,
+				0428796A270DB69100808FB4 /* DaysNameCollectionViewCell.xib */,
+			);
+			path = DaysCell;
+			sourceTree = "<group>";
+		};
 		0428F1BC265B8019007C51EE /* Login-CodeVerification */ = {
 			isa = PBXGroup;
 			children = (
@@ -851,6 +878,7 @@
 			children = (
 				04BD27FE266A2569008FC8B4 /* Schedule Planned */,
 				041242AC266A16D500EB1A3F /* Schedule */,
+				04287963270DAF2400808FB4 /* ScheduleRegular */,
 			);
 			path = "Pickup-Schedule";
 			sourceTree = "<group>";
@@ -1530,6 +1558,8 @@
 				1832627A2670C68A00F0CCBA /* InviteSupplierViewController.xib in Resources */,
 				18D1A367266A2B77009CAD26 /* TrackerViewController.xib in Resources */,
 				18719142266667420050FAAA /* AudioTableViewCell.xib in Resources */,
+				04287967270DAF7800808FB4 /* ScheduleRegularViewController.xib in Resources */,
+				0428796C270DB69100808FB4 /* DaysNameCollectionViewCell.xib in Resources */,
 				18397E262660FF54003DE30C /* Poppins-SemiBold.ttf in Resources */,
 				1850CEFA265E5491001F5E92 /* SupplierTableViewCell.xib in Resources */,
 				181025392657E48500DEBF7D /* MessagesViewController.xib in Resources */,
@@ -1704,6 +1734,7 @@
 				04C31D1226678E1800A1CF9C /* ScheduleViewModel.swift in Sources */,
 				043F6BF5267776A2000E3C4F /* HomeWaste_type_questions.swift in Sources */,
 				04C2361C2669224600A27B78 /* Array.swift in Sources */,
+				04287966270DAF7800808FB4 /* ScheduleRegularViewController.swift in Sources */,
 				1850CEF9265E5491001F5E92 /* SupplierTableViewCell.swift in Sources */,
 				0067A2E32529D2CD00CECA8C /* Utility.swift in Sources */,
 				0418C8FA267C7D67008A0F1F /* MessagesDataModel.swift in Sources */,
@@ -1721,6 +1752,7 @@
 				04E6104626725422001E6629 /* Questions.swift in Sources */,
 				047E83D1268320FA006A0F18 /* WasteDetailLocationDataModel.swift in Sources */,
 				18ACB7C5267A34CD0088307D /* NotificationModel.swift in Sources */,
+				0428796B270DB69100808FB4 /* DaysNameCollectionViewCell.swift in Sources */,
 				1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */,
 				18D1A366266A2B77009CAD26 /* TrackerViewController.swift in Sources */,
 				0428F1CD265BECB5007C51EE /* LoginInputEmailViewController.swift in Sources */,

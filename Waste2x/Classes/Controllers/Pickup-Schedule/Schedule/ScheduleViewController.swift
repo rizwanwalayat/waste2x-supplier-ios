@@ -120,11 +120,15 @@ class ScheduleViewController: BaseViewController {
         
     @IBAction func nextButtonPressed(_ sender: UIButton)
     {
-        if allFieldsAuth() {
-            
-            postDictData["schedule_type"] = selectionType.rawValue
-            postDataFromServer()
-        }
+        
+        let vc = ScheduleRegularViewController(nibName: "ScheduleRegularViewController", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+//        if allFieldsAuth() {
+//            
+//            postDictData["schedule_type"] = selectionType.rawValue
+//            postDataFromServer()
+//        }
     }
     
     @IBAction func selectLocationButtonPressed(_ sender: Any) {

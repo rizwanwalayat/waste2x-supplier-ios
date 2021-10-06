@@ -88,7 +88,7 @@ extension ChatMessagesViewController{
         
         let bottomMessageIndex = IndexPath(row: 0,
                                            section: 0)
-        tableViewMessages.scrollToRow(at: bottomMessageIndex, at: .bottom, animated: true)
+        tableViewMessages.scrollToRow(at: bottomMessageIndex, at: .top, animated: true)
     }
 }
 
