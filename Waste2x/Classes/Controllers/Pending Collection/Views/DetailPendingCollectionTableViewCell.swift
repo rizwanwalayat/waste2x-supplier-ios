@@ -29,6 +29,7 @@ class DetailPendingCollectionTableViewCell: BaseTableViewCell {
         {
             dayLbl.sizeToFit()
         }
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -54,21 +55,21 @@ class DetailPendingCollectionTableViewCell: BaseTableViewCell {
         self.hiddenView.isHidden = true
         if data.history.count > 0 {
             self.hiddenView.isHidden = false
-            if  data.history.count == 1 && data.history[0].status == "Pending"{
+            if  data.history.count > 0{
                 
                 self.activityDate1.text = data.history[0].activityDate
                 self.stepperView.currentStep = 0
             }
             
-            else if data.history.count == 2 && data.history[1].status == "Confirmed"{
+            if data.history.count > 1 {
                 self.activityDate2.text = data.history[1].activityDate
                 self.stepperView.currentStep = 1
             }
-            else if data.history.count == 3 && data.history[2].status == "Picked"{
+            if data.history.count > 2 {
                 self.activityDate3.text = data.history[2].activityDate
                 self.stepperView.currentStep = 2
             }
-            else if data.history.count == 4 && data.history[2].status == "Delivered"{
+            if data.history.count > 3 {
                 self.activityDate4.text = data.history[3].activityDate
                 self.stepperView.currentStep = 3
             }

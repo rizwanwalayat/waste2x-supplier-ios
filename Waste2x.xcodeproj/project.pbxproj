@@ -594,6 +594,7 @@
 				0067A2CF25274C4800CECA8C /* Models */,
 				0067A2D025274C5100CECA8C /* Controllers */,
 				0067A308252AFC5000CECA8C /* Extensions */,
+				04C31D172667BB3600A1CF9C /* CustomViews */,
 				00B01EA9252E0F4000BF0637 /* BaseClasses */,
 				0067A2E12529D2A600CECA8C /* Utilities */,
 				048C09E5265E223E003E301F /* CommonClasses */,
@@ -667,7 +668,6 @@
 				04C31D072667744400A1CF9C /* ScheduleViewController.swift */,
 				04C31D082667744400A1CF9C /* ScheduleViewController.xib */,
 				04C31D1026678D6F00A1CF9C /* ViewModel */,
-				04C31D172667BB3600A1CF9C /* CustomViews */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -1998,7 +1998,7 @@
 				CODE_SIGN_ENTITLEMENTS = Waste2x/Waste2x.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = FUDLQH8LBU;
 				INFOPLIST_FILE = Waste2x/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -2023,7 +2023,7 @@
 				CODE_SIGN_ENTITLEMENTS = Waste2x/Waste2x.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = FUDLQH8LBU;
 				INFOPLIST_FILE = Waste2x/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;

@@ -150,7 +150,7 @@ extension WasteDetailViewController {
         }
         siteTitleLabel.text = wasteDeatil?.farm_name ?? ""
         siteDetailLabel.text = wasteDeatil?.commodity ?? ""
-        sizeDetailLabel.text = "\(wasteDeatil?.farm_size ?? 0)"
+        sizeDetailLabel.text = wasteDeatil?.farm_size ?? "0"
         addressLabel.text = wasteDeatil?.address ?? ""
         if (wasteDeatil?.commodity_image.count ?? 0) > 1 {
             

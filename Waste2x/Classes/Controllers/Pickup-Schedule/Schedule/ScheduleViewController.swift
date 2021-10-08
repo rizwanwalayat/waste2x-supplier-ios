@@ -88,6 +88,7 @@ class ScheduleViewController: BaseViewController {
     var tempFarmsData = [String : Int]()
     var postDictData = [String : Any]()
     var locationManager = CLLocationManager()
+    var wasteDeatil : WasteDetialResult?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -95,7 +96,7 @@ class ScheduleViewController: BaseViewController {
         
         sitesData = globalObjectHome?.fetchSitesData ?? [FetchSitesCustomModel]()
 //        globalObjectHome?.fetchSitesData[0].farmId
-        selectionType = .onePickup
+        selectionType = .regular
         pickupTypeHandlings(selectionType: selectionType)
         //googleMapCurrentLocation()
         self.view.layoutIfNeeded()
@@ -120,15 +121,17 @@ class ScheduleViewController: BaseViewController {
         
     @IBAction func nextButtonPressed(_ sender: UIButton)
     {
-        
-        let vc = ScheduleRegularViewController(nibName: "ScheduleRegularViewController", bundle: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-//        if allFieldsAuth() {
-//            
+        if allFieldsAuth() {
+            
+            let vc = ScheduleRegularViewController(nibName: "ScheduleRegularViewController", bundle: nil)
+            vc.selectedFrequency = selectFrequencyPriodicLabel.text ?? ""
+            vc.postDict = postDictData
+            self.navigationController?.pushViewController(vc, animated: true)
+
+            
 //            postDictData["schedule_type"] = selectionType.rawValue
 //            postDataFromServer()
-//        }
+        }
     }
     
     @IBAction func selectLocationButtonPressed(_ sender: Any) {
@@ -164,14 +167,14 @@ class ScheduleViewController: BaseViewController {
     
     @IBAction func regularScheduleButtonPressed(_ sender: Any) {
         
-        (selectionType != .regular) ? (selectionType = .regular) : (selectionType = .none)
-        pickupTypeHandlings(selectionType: selectionType)
+//        (selectionType != .regular) ? (selectionType = .regular) : (selectionType = .none)
+//        pickupTypeHandlings(selectionType: selectionType)
     }
     
     @IBAction func onePickupButtonPressed(_ sender: Any) {
         
-        (selectionType != .onePickup) ? (selectionType = .onePickup) : (selectionType = .none)
-        pickupTypeHandlings(selectionType: selectionType)
+//        (selectionType != .onePickup) ? (selectionType = .onePickup) : (selectionType = .none)
+//        pickupTypeHandlings(selectionType: selectionType)
      
     }
     

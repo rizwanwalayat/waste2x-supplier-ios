@@ -9,7 +9,7 @@ class WasteDetialResult : Mappable
 	var farm_name = ""
 	var commodity = ""
 	var commodity_image = ""
-	var farm_size = -1
+	var farm_size = ""
 	var address = ""
 	var activities = [WasteDetailActivities]()
     var latitude = Double()

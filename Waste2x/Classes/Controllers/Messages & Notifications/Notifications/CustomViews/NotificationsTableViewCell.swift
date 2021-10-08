@@ -146,6 +146,22 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationQuestionLabel.isHidden = true
             self.stackViewButton.isHidden = false
             self.notificationYesButton.setTitle("View Stripe Account", for: .normal)
+            
+        case .completed:
+            
+            self.notificationTitle.text = notificationTitle
+            self.notificationDetailLabel.text = detailText
+            self.notificationQuestionLabel.text = questionText
+            self.notificationStatusHolderView.backgroundColor = confirmStatusColor
+            self.notificationStatusLabel.textColor = confirmLabelColor
+            self.notificationStatusLabel.text      = "Completed"
+            self.notificationStatusImageView.image = confirmImage
+            self.stackViewButton.isHidden = false
+            self.notificationYesButton.isHidden = true
+            self.notificationNoButton.isHidden = true
+            self.stackViewButton.isHidden = true
+            self.notificationQuestionLabel.isHidden = true
+    
         }
     }
     
@@ -204,6 +220,9 @@ class NotificationsTableViewCell: UITableViewCell {
             else if data.result?.notifications[index].response == "Paid" {
                 self.notificationStatusHandlings(.paid, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "")
             }
+            else if data.result?.notifications[index].response == "Completed" {
+                self.notificationStatusHandlings(.completed, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "")
+            }
             else {
                 self.notificationStatusHandlings(.pending, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "Do you want to sell?")
             }
@@ -221,4 +240,5 @@ enum NotificationStatus {
     case confirmed
     case onway
     case paid
+    case completed
 }

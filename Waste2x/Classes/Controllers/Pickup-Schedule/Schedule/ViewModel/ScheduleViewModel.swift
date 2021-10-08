@@ -28,9 +28,8 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
             let selectFarmKey = tempFarmsData[selectedOption] ?? 0
             postDictData["farm_id"] = selectFarmKey
             selectSiteLabel.text = selectedOption
-            selectLocationLabel.text = "\(selectedOption) location selected"
             selectionHandlingsOfViews(selectSiteHolderview, isSelection: true)
-            selectionHandlingsOfViews(selectLocationHolderview, isSelection: true)
+            self.fetchDataFromServer(selectFarmKey)
         }
         
         popupOptionType = .none
@@ -43,10 +42,11 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
     
     // MARK: - CalenderPopupViewControllerDelegate Method
     
-    func didSelectDate(dateString: String)
+    func didSelectDateString(dateString: String)
     {
         let dateToUnix = stringToDateUnix(dateString)
         postDictData["schedule_time"] = dateToUnix
+        
         selectDateTimeLabel.text = dateString
         selectionHandlingsOfViews(selectDateTimeHolderview, isSelection: true)
     }
@@ -296,25 +296,33 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
     
     func allFieldsAuth() -> Bool
     {
-        switch selectionType {
         
-        case .none:
-            return false
-        case .regular:
-            
-            if selectFrequencyPriodicLabel.text != selectFrequencyPerodicPlaceholder && selectSiteLabel.text != selectSitePlaceholder && selectDateTimeLabel.text != selectDateTimePlaceholder && selectLocationLabel.text != selectLocationPlaceHolder
-            {
-                return true
-            }
-            return false
-        case .onePickup:
-            
-            if selectSiteLabel.text != selectSitePlaceholder && selectDateTimeLabel.text != selectDateTimePlaceholder && selectLocationLabel.text != selectLocationPlaceHolder
-            {
-                return true
-            }
-            return false
+        if selectFrequencyPriodicLabel.text != selectFrequencyPerodicPlaceholder && selectSiteLabel.text != selectSitePlaceholder && selectLocationLabel.text != selectLocationPlaceHolder
+        {
+            return true
         }
+        Utility.showAlertController(self, "Please fill all fields")
+        return false
+        
+//        switch selectionType {
+//
+//        case .none:
+//            return false
+//        case .regular:
+//
+//            if selectFrequencyPriodicLabel.text != selectFrequencyPerodicPlaceholder && selectSiteLabel.text != selectSitePlaceholder && selectDateTimeLabel.text != selectDateTimePlaceholder && selectLocationLabel.text != selectLocationPlaceHolder
+//            {
+//                return true
+//            }
+//            return false
+//        case .onePickup:
+//
+//            if selectSiteLabel.text != selectSitePlaceholder && selectDateTimeLabel.text != selectDateTimePlaceholder && selectLocationLabel.text != selectLocationPlaceHolder
+//            {
+//                return true
+//            }
+//            return false
+//        }
     }
     
     func googleMapCurrentLocation()
@@ -366,6 +374,49 @@ extension ScheduleViewController
             else
             {
                 Utility.showAlertController(self, message)
+            }
+        }
+    }
+    
+    fileprivate func fetchDataFromServer(_ farmID: Int)
+    {
+        let farmData = ["farm_id" : farmID] as [String : AnyObject]
+        
+        WasteDataModel.fetchWasteDetail(params: farmData) { response, error, success, message in
+            
+            
+            if error != nil
+            {
+                Utility.showAlertController(self, error!.localizedDescription)
+            }
+            
+            if response != nil {
+                
+                if let isSuccess = success {
+                    
+                    if isSuccess {
+                        
+                        if let result = response?.result {
+                            
+                            self.wasteDeatil = result
+                            self.selectLocationLabel.text = self.wasteDeatil?.address ?? ""
+                            self.selectionHandlingsOfViews(self.selectLocationHolderview, isSelection: true)
+                        }
+                        else
+                        {
+                            Utility.showAlertController(self, "Failed!, \(message)")
+                        }
+                    }
+                    else
+                    {
+                        Utility.showAlertController(self, "Failed!, \(message)")
+                    }
+                    
+                }
+                else
+                {
+                    Utility.showAlertController(self, "Failed!, \(message)")
+                }
             }
         }
     }
