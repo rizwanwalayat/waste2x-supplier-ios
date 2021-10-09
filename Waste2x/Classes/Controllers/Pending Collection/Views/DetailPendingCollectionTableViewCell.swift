@@ -71,7 +71,7 @@ class DetailPendingCollectionTableViewCell: BaseTableViewCell {
             }
             if data.history.count > 3 {
                 self.activityDate4.text = data.history[3].activityDate
-                self.stepperView.currentStep = 3
+                self.stepperView.currentStep = 4
             }
         }
         
