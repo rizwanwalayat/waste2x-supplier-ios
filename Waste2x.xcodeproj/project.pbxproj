@@ -222,6 +222,7 @@
 		18D1A366266A2B77009CAD26 /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1A364266A2B77009CAD26 /* TrackerViewController.swift */; };
 		18D1A367266A2B77009CAD26 /* TrackerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D1A365266A2B77009CAD26 /* TrackerViewController.xib */; };
 		18FB2B962694A1FE006C6AE1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18FB2B952694A1FE006C6AE1 /* GoogleService-Info.plist */; };
+		96726C872711C1EE00F071E8 /* Waste2xAfterSigninTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96726C862711C1EE00F071E8 /* Waste2xAfterSigninTests.swift */; };
 		9694C16126E25C2A00159A1C /* CountryPickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694C16026E25C2900159A1C /* CountryPickerConfig.swift */; };
 		96E8A8352705AD7700F03A34 /* Waste2xTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8A8342705AD7700F03A34 /* Waste2xTests.swift */; };
 /* End PBXBuildFile section */
@@ -456,6 +457,7 @@
 		207F74016C0058DAC6E355F9 /* Pods_Waste2x.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Waste2x.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4403568D39555D92B00CB323 /* Pods-Waste2x.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waste2x.debug.xcconfig"; path = "Target Support Files/Pods-Waste2x/Pods-Waste2x.debug.xcconfig"; sourceTree = "<group>"; };
 		5D4D23AE5CF86CE8FCB2AEEB /* Pods-Waste2x.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waste2x.release.xcconfig"; path = "Target Support Files/Pods-Waste2x/Pods-Waste2x.release.xcconfig"; sourceTree = "<group>"; };
+		96726C862711C1EE00F071E8 /* Waste2xAfterSigninTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waste2xAfterSigninTests.swift; sourceTree = "<group>"; };
 		9694C16026E25C2900159A1C /* CountryPickerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerConfig.swift; sourceTree = "<group>"; };
 		96B24AD427061DB500DF6621 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		96E8A8322705AD7700F03A34 /* Waste2xTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Waste2xTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1435,6 +1437,7 @@
 		96E8A8332705AD7700F03A34 /* Waste2xTests */ = {
 			isa = PBXGroup;
 			children = (
+				96726C862711C1EE00F071E8 /* Waste2xAfterSigninTests.swift */,
 				96E8A8342705AD7700F03A34 /* Waste2xTests.swift */,
 				96E8A8362705AD7700F03A34 /* Info.plist */,
 			);
@@ -1851,6 +1854,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96E8A8352705AD7700F03A34 /* Waste2xTests.swift in Sources */,
+				96726C872711C1EE00F071E8 /* Waste2xAfterSigninTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
