@@ -20,7 +20,7 @@ class Waste2xTests: XCTestCase {
     }
 
     func testSignupSendCodeAPI() throws {
-                let phone: String = "+17743777019"
+                let phone: String = "+10000030"
                 let digitsCharacter = CharacterSet.decimalDigits
                 
                 let promise = expectation(description: "Status Code: 200")
@@ -29,14 +29,14 @@ class Waste2xTests: XCTestCase {
                     
                     XCTAssert(status ==  true && error == nil, "Data Returned with Error")
                     
-                    guard let code = result
+                    guard let code = result?.result?.code
                     else {
                         XCTFail("Expected non-nil code ")
                         return
                     }
                     
-//                      XCTAssert(code.count == 4 && CharacterSet(charactersIn: code).isSubset(of: digitsCharacter), "Expected 4 Digit Code")
-                    
+                    let num = "\(code)"
+                    XCTAssert(num.count == 4 && CharacterSet(charactersIn: num).isSubset(of: digitsCharacter), "Expected 4 Digit Code")
                     promise.fulfill()
                 }
                 
@@ -48,11 +48,6 @@ class Waste2xTests: XCTestCase {
         }
 
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+
 
 }
