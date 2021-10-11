@@ -20,34 +20,30 @@ class Waste2xTests: XCTestCase {
     }
 
     func testSignupSendCodeAPI() throws {
-                let phone: String = "+10000030"
-                let digitsCharacter = CharacterSet.decimalDigits
-                
-                let promise = expectation(description: "Status Code: 200")
+        let phone: String = "+10000030"
+        let digitsCharacter = CharacterSet.decimalDigits
+        
+        let promise = expectation(description: "Status Code: 200")
+        
+        CodeVerification.verificationCode(phoneNumber: phone) { result, error, status, message in
             
-                CodeVerification.verificationCode(phoneNumber: phone) { result, error, status, message in
-                    
-                    XCTAssert(status ==  true && error == nil, "Data Returned with Error")
-                    
-                    guard let code = result?.result?.code
-                    else {
-                        XCTFail("Expected non-nil code ")
-                        return
-                    }
-                    
-                    let num = "\(code)"
-                    XCTAssert(num.count == 4 && CharacterSet(charactersIn: num).isSubset(of: digitsCharacter), "Expected 4 Digit Code")
-                    promise.fulfill()
-                }
-                
-                waitForExpectations(timeout: 10) { error in
-                    if let _ = error {
-                        XCTFail("Timeout")
-                    }
-                }
+            XCTAssert(status ==  true && error == nil, "Data Returned with Error")
+            
+            guard let code = result?.result?.code
+            else {
+                XCTFail("Expected non-nil code ")
+                return
+            }
+            
+            let num = "\(code)"
+            XCTAssert(num.count == 4 && CharacterSet(charactersIn: num).isSubset(of: digitsCharacter), "Expected 4 Digit Code")
+            promise.fulfill()
         }
-
-
-
-
+        
+        waitForExpectations(timeout: 10) { error in
+            if let _ = error {
+                XCTFail("Timeout")
+            }
+        }
+    }
 }
