@@ -21,7 +21,7 @@ class TrackerViewController: BaseViewController {
     var endingLng = Double()
     var zoom: Float?
     var timer = Timer()
-    var trackID = 1
+    var trackID = -1
     let dataBase = Database.database().reference().child("dispatch_id")
     @IBOutlet weak var kmLabel: UILabel!
     @IBOutlet weak var mainView: UIView!
@@ -44,12 +44,37 @@ class TrackerViewController: BaseViewController {
         mainView.layer.masksToBounds = true
         globalObjectContainer?.tabbarHiddenView.isHidden = true
         
-        dataBase.child("\(trackID)").observe(.childAdded) { DataSnapshot in
-            if let location = DataSnapshot.value as? [String: Any] {
-                self.startingLat = location["lat"] as? Double ?? 0.00
-                self.startingLon = location["lon"] as? Double ?? 0.00
-                self.startingLocation = "\(self.startingLat),\(self.startingLon)"
-                self.loadMap()
+        if trackID == -1 {
+            showAlertForHandlings("dispatchId not found")
+            return
+        }
+        else {
+            
+            Utility.showLoading()
+            dataBase.getData { error, snapShot in
+                
+                Utility.hideLoading()
+                if snapShot.hasChildren() && error == nil {
+                    if snapShot.hasChild("\(self.trackID)") {
+                        
+                        self.dataBase.child("\(self.trackID)").observe(.childAdded) { DataSnapshot in
+                            if let location = DataSnapshot.value as? [String: Any] {
+                                self.startingLat = location["lat"] as? Double ?? 0.00
+                                self.startingLon = location["lon"] as? Double ?? 0.00
+                                self.startingLocation = "\(self.startingLat),\(self.startingLon)"
+                                self.loadMap()
+                            }
+                        }
+                    }
+                    else
+                    {
+                        self.showAlertForHandlings("No record found till now in firebase database again \(self.trackID) dispatchId against")
+                    }
+                }
+                else {
+                    
+                    self.showAlertForHandlings(error?.localizedDescription ?? "something went wrong, please try again later")
+                }
             }
         }
     }
@@ -61,6 +86,15 @@ class TrackerViewController: BaseViewController {
     }
     
     //MARK: - Functions
+    
+    fileprivate func showAlertForHandlings(_ string: String)
+    {
+        let alert = UIAlertController(title: "Error", message: string, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { action in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     func loadMap() {
         self.mapView.clear()
