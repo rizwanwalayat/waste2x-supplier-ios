@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import Waste2x
+@testable import TwilioChatClient
 
 class Waste2xAfterSigninTests: XCTestCase {
 
@@ -73,6 +74,108 @@ class Waste2xAfterSigninTests: XCTestCase {
             {
                 XCTFail("Expected non-nil result")
                 return
+            }
+            
+            promise.fulfill()
+            
+            self.waitForExpectations(timeout: 10) { error in
+                if let _ = error {
+                    XCTFail("Timeout")
+                }
+            }
+        }
+    }
+    
+    func testFAQsAPI() throws {
+        
+        let promise = expectation(description: "Status Code: 200")
+        
+        FaqModel.FaqApiFunction { result, error, status,message in
+            
+            XCTAssert(status == true && error == nil, "Data returned with error, \(message)")
+            
+            guard let result = result?.result else
+            {
+                XCTFail("Expected non-nil result")
+                return
+            }
+            
+            promise.fulfill()
+            
+            self.waitForExpectations(timeout: 10) { error in
+                if let _ = error {
+                    XCTFail("Timeout")
+                }
+            }
+        }
+    }
+    
+    func testPaymentAPI() throws {
+        
+        let promise = expectation(description: "Status Code: 200")
+        
+        PaymentModel.paymentApiFunction { result, error, status,message in
+            
+            XCTAssert(status == true && error == nil, "Data returned with error, \(message)")
+            
+            guard let result = result?.result else
+            {
+                XCTFail("Expected non-nil result")
+                return
+            }
+            
+            promise.fulfill()
+            
+            self.waitForExpectations(timeout: 10) { error in
+                if let _ = error {
+                    XCTFail("Timeout")
+                }
+            }
+        }
+    }
+    
+    func testPaymentAPI() throws {
+        
+        let promise = expectation(description: "Status Code: 200")
+        
+        PaymentModel.paymentApiFunction { result, error, status,message in
+            
+            XCTAssert(status == true && error == nil, "Data returned with error, \(message)")
+            
+            guard let result = result?.result else
+            {
+                XCTFail("Expected non-nil result")
+                return
+            }
+            
+            promise.fulfill()
+            
+            self.waitForExpectations(timeout: 10) { error in
+                if let _ = error {
+                    XCTFail("Timeout")
+                }
+            }
+        }
+    }
+    
+    func testMessagestAPIToFetchAccessToken() throws {
+        
+        let promise = expectation(description: "Status Code: 200")
+        
+        MessagesDataModel.fetchTwillioAccessToken { result, error, status,message in
+            
+            XCTAssert(status == true && error == nil, "Data returned with error, \(message)")
+            
+            guard let resultData = result?.result, let accessToken = resultData.access_token else
+            {
+                XCTFail("Expected non-nil result")
+                return
+            }
+            
+            TwilioChatClient.chatClient(withToken: accessToken, properties: nil,
+                                        delegate: nil) { (result, chatClient) in
+                
+                XCTAssert(result.isSuccessful() && chatClient != nil, "Data returned with error, \(message)")
             }
             
             promise.fulfill()
