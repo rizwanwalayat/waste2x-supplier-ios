@@ -40,5 +40,21 @@ Google Maps is already integrated. Its API Key is assigned `googleAPIKey` in `Co
 
 In a few mintues, the App should be available under the TestFlight section on [App Store Connect](https://appstoreconnect.apple.com/ 'App Store Connect') for Beta Testing and Publishing to the App Store.
 
-#  <#Title#>
+## TEST CASES
+The Test Cases are placed in the target `Waste2xTests`
+
+#### Test Cases
+The API Tests have 2 class files: 1 is for onBoarding process test cases and the others which can be run after user has logged in and requires auth_token:
+##### Onboarding Tests
+`Waste2xOnboardingTests`
+##### Tests after Log-In
+`Waste2xAfterSigninTests`
+To run these tests that require a logged-in user, the user AuthToken should be set in the `setUpWithError()` function.
+Atleast the token value following `auth_token` needs to be updated, alternatively the complete `Registration` result model converted into JSONString can updated here. 
+e.g.
+```bash
+DataManager.shared.setUser(user: "{\"success\":false,\"result\":{\"percentage\":1.776,\"waste_types\":[],\"email\":\"asad.mukhtarrrrr@phaedrasolutions.com\",\"code\":\"\",\"waste_id\":1,\"is_new_user\":false,\"phone\":\"+10000060\",\"auth_token\":\"3c5dde6a8a5eced578960b6fe35641df13f42d98\",\"farm_exist\":true,\"farmer_medals\":0,\"stripe_account_name\":\"None\",\"stars_earned\":8},\"message\":\"\",\"status_code\":[\"\"]}")
+```
+
+
 

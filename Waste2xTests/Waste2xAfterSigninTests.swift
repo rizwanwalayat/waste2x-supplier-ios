@@ -8,14 +8,13 @@
 
 import XCTest
 @testable import Waste2x
-@testable import TwilioChatClient
 
 class Waste2xAfterSigninTests: XCTestCase {
 
     override func setUpWithError() throws {
         
         DataManager.shared.setUser(user: "{\"success\":false,\"result\":{\"percentage\":1.776,\"waste_types\":[],\"email\":\"asad.mukhtarrrrr@phaedrasolutions.com\",\"code\":\"\",\"waste_id\":1,\"is_new_user\":false,\"phone\":\"+10000060\",\"auth_token\":\"3c5dde6a8a5eced578960b6fe35641df13f42d98\",\"farm_exist\":true,\"farmer_medals\":0,\"stripe_account_name\":\"None\",\"stars_earned\":8},\"message\":\"\",\"status_code\":[\"\"]}")
-        // alteast the token value following auth_token needs to be updated, otherwise the complete result model converted into JSONString can updated here
+        // alteast the token value following auth_token needs to be updated, alternatively the complete result model converted into JSONString can updated here
     }
 
     override func tearDownWithError() throws {
@@ -100,7 +99,7 @@ class Waste2xAfterSigninTests: XCTestCase {
         PaymentModel.paymentApiFunction { result, error, status,message in
             
             XCTAssert(status == true && error == nil, "Data returned with error, \(message ?? "")")
-            XCTAssertNotNil(result?.result, "Expected non-nil result")
+           
             
             promise.fulfill()
             
@@ -142,7 +141,7 @@ class Waste2xAfterSigninTests: XCTestCase {
 //    func testTwilioChatClient() throws {
 //        TwilioChatClient.chatClient(withToken: accessToken, properties: nil,
 //                                    delegate: nil) { (result, chatClient) in
-//            
+//
 //            XCTAssert(result.isSuccessful() && chatClient != nil, "Data returned with error, \(message)")
 //        }
 //    }

@@ -1,5 +1,5 @@
 //
-//  Waste2xTests.swift
+//  Waste2xOnboardingTests.swift
 //  Waste2xTests
 //
 //  Created by Phaedra Solutions  on 30/09/2021.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import Waste2x
 
-class Waste2xTests: XCTestCase {
+class Waste2xOnboardingTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
