@@ -64,7 +64,7 @@ class LoginCodeVerificationViewController: BaseViewController {
                 DataManager.shared.setUser(user: convretedData ?? "")
                 DataManager.shared.setUserEmail(value: result?.result?.email ?? "")
                 if DataManager.shared.getUser()?.result?.isNewUser == false {
-                    
+                    DataManager.shared.setIfUserLoggedInSuccessFully()
                     let slider = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
                     self.navigationController?.setViewControllers([slider], animated: true)
                 }
