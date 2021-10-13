@@ -17,8 +17,8 @@ var googleAPIKey = "AIzaSyBp9ntlNiyAFvV8qxdXrBvBAOz_xasmvS0"
 //"https://app.enmassenergy.com/"
 
 struct APIRoutes {
-    static var baseUrl = "https://app.enmassenergy.com/" //Live
-//    static var baseUrl = "https://enmass-cache-programme.appspot.com/" //Stagging
+//    static var baseUrl = "https://app.enmassenergy.com/" //Live
+    static var baseUrl = "https://enmass-cache-programme.appspot.com/" //Stagging
 //    static var baseUrl = "https://1f3a8819c21e6d.localhost.run/" //Local
     
 
