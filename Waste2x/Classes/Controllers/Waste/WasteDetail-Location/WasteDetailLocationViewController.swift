@@ -185,7 +185,10 @@ extension WasteDetailLocationViewController {
         }))
         
         alertController.addAction(UIAlertAction(title: "Go Home", style: .default, handler: { action in
-            Utility.homeViewController()
+            
+            
+            Global.shared.apiCurve ? Utility.homeViewController() : Utility.loginRootViewController()
+            
         }))
         
         self.present(alertController, animated: true, completion: nil)
