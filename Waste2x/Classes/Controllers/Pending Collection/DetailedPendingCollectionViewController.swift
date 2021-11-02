@@ -35,8 +35,8 @@ class DetailedPendingCollectionViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-
-
+    
+    
 }
 //MARK: - TableView
 
@@ -45,19 +45,25 @@ extension DetailedPendingCollectionViewController : UITableViewDelegate,UITableV
         if data == nil {
             return 0
         } else {
-            return 1
+            return 2
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.register(DetailPendingCollectionTableViewCell.self, indexPath: indexPath)
-        if data != nil{
-            cell.confirmConfig(data: data!)
+        if indexPath.row == 0 {
+                    let cell = tableView.register(DetailPendingCollectionTableViewCell.self, indexPath: indexPath)
+            if data != nil{
+                cell.confirmConfig(data: data!)
+            }
+            
+            cell.selectionStyle = .none
+            return cell
+        } else {
+            
+            let cell = tableView.register(MessagePendingCollectionTableViewCell.self, indexPath: indexPath)
+            return cell
+      
         }
-
-        cell.selectionStyle = .none
-        return cell
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -95,14 +101,14 @@ extension DetailedPendingCollectionViewController{
                         self.data = resultData.result
                         self.tableView.reloadData()
                     }
-//                for item in result!.result{
-//                    print(item.id)
-//                    if self.id == item.id{
-//                        self.data = item
-//                        self.tableView.reloadData()
-//                        break
-//                    }
-//                }
+                    //                for item in result!.result{
+                    //                    print(item.id)
+                    //                    if self.id == item.id{
+                    //                        self.data = item
+                    //                        self.tableView.reloadData()
+                    //                        break
+                    //                    }
+                    //                }
                 }
                 
             }
