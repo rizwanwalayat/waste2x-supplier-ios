@@ -10,17 +10,23 @@ import UIKit
 
 
 class DetailedPendingCollectionViewController: BaseViewController {
+    
     @IBOutlet weak var bottomConst: NSLayoutConstraint!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    
     var data : PendingCollectionResultResponce?
     var id = Int()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorStyle = .none
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         self.apiCall()
         
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         mainView.layer.cornerRadius = 36
@@ -29,8 +35,8 @@ class DetailedPendingCollectionViewController: BaseViewController {
         globalObjectContainer?.tabbarHiddenView.isHidden = true
         bottomConst.constant = 0
         
-        
     }
+    
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -51,7 +57,7 @@ extension DetailedPendingCollectionViewController : UITableViewDelegate,UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-                    let cell = tableView.register(DetailPendingCollectionTableViewCell.self, indexPath: indexPath)
+            let cell = tableView.register(DetailPendingCollectionTableViewCell.self, indexPath: indexPath)
             if data != nil{
                 cell.confirmConfig(data: data!)
             }
@@ -61,23 +67,16 @@ extension DetailedPendingCollectionViewController : UITableViewDelegate,UITableV
         } else {
             
             let cell = tableView.register(MessagePendingCollectionTableViewCell.self, indexPath: indexPath)
+            cell.messageCustomerBtn.addTarget(self, action: #selector(messageCustomerBtnPressed), for: .touchUpInside)
+            cell.selectionStyle = .none
+
             return cell
-      
+            
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if data != nil {
-            if self.data!.history.count == 0{
-                return self.tableView.frame.height/2
-            }
-            else{
-                return self.tableView.frame.height
-            }
-        }
-        else{
-            return self.tableView.frame.height/2
-        }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -86,7 +85,18 @@ extension DetailedPendingCollectionViewController : UITableViewDelegate,UITableV
     
 }
 
+// MARK: - Cell Actions
 
+extension DetailedPendingCollectionViewController {
+    @objc func messageCustomerBtnPressed(){
+        let vc = ChatMessagesViewController(nibName: "ChatMessagesViewController", bundle: nil)
+        
+        vc.identity = "\(DataManager.shared.getUser()?.result?.phone ?? "")_\(self.data?.customer_phone ?? "")"
+        globalObjectContainer?.tabbarHiddenView.isHidden = true
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+}
 
 
 //MARK: - API Call

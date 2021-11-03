@@ -46,6 +46,7 @@ extension ContactViewController : UITableViewDelegate,UITableViewDataSource{
         if indexPath.row == 0
         {
             let vc = ChatMessagesViewController(nibName: "ChatMessagesViewController", bundle: nil)
+            vc.identity = "\(DataManager.shared.getUser()?.result?.phone ?? "")"
             globalObjectContainer?.tabbarHiddenView.isHidden = true
             self.navigationController?.pushViewController(vc, animated: true)
         }

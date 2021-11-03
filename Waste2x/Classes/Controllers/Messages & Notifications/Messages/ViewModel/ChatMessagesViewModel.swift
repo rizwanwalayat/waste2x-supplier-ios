@@ -13,14 +13,18 @@ import TwilioChatClient
 // MARK: - Twillio Chat Messages Handlings
 extension ChatMessagesViewController{
     
-    func loginToTwillio()
+    func loginToTwillio(identity: String)
     {
+        Utility.showLoading()
+
         TwillioChatDataModel.shared.delegate = self
-        MessagesDataModel.fetchTwillioAccessToken() { dataResponse, error, success, message  in
+        MessagesDataModel.fetchTwillioAccessToken(identity: identity) { dataResponse, error, success, message  in
             
             if error != nil
             {
+                
                 Utility.showAlertController(self, error!.localizedDescription)
+                Utility.hideLoading()
             }
             
             if dataResponse != nil {
@@ -31,27 +35,31 @@ extension ChatMessagesViewController{
                         
                         if let token = dataResponse?.result?.access_token {
                             
-                            TwillioChatDataModel.shared.loginToTwillio(with: token)
-                    
+                            TwillioChatDataModel.shared.loginToTwillio(with: token, identity: identity)
+                            Utility.hideLoading()
                         }
                     }
                     else
                     {
                         Utility.showAlertController(self, "Failed!, \(message)")
+                        Utility.hideLoading()
+
                     }
                     
                 }
                 else
                 {
                     Utility.showAlertController(self, "Failed!, \(message)")
+                    Utility.hideLoading()
+
                 }
             }
         }
     }
     
-    private func refreshAccessToken() {
+    private func refreshAccessToken(identity: String) {
         
-        MessagesDataModel.fetchTwillioAccessToken() { dataResponse, error, success, message  in
+        MessagesDataModel.fetchTwillioAccessToken(identity: identity) { dataResponse, error, success, message  in
             
             guard dataResponse != nil else {
                print("Error retrieving token: \(error.debugDescription)")
@@ -62,7 +70,7 @@ extension ChatMessagesViewController{
                 if isSuccess {
                     
                     if let token = dataResponse?.result?.access_token {
-                        TwillioChatDataModel.shared.loginToTwillio(with: token)
+                        TwillioChatDataModel.shared.loginToTwillio(with: token, identity: identity)
                 
                     }
                 }
@@ -113,7 +121,7 @@ extension ChatMessagesViewController : TwillioChatDataModelDelegate
     
     func tokeExpired() {
         
-        refreshAccessToken()
+//        refreshAccessToken()
     }
     
     

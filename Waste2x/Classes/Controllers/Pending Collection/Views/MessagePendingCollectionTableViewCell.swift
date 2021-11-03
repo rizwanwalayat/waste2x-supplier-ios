@@ -10,6 +10,7 @@ import UIKit
 
 class MessagePendingCollectionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var messageCustomerBtn: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +21,6 @@ class MessagePendingCollectionTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
     
 }

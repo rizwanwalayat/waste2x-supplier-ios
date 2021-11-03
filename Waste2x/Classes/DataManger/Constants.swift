@@ -19,7 +19,7 @@ var googleAPIKey = "AIzaSyBp9ntlNiyAFvV8qxdXrBvBAOz_xasmvS0"
 struct APIRoutes {
 //    static var baseUrl = "https://app.enmassenergy.com/" //Live
     static var baseUrl = "https://enmass-cache-programme.appspot.com/" //Stagging
-//    static var baseUrl = "https://1f3a8819c21e6d.localhost.run/" //Local
+//    static var baseUrl = "https://08189b6fd19fe5.lhr.domains/" //Local
     
 
     
@@ -54,11 +54,11 @@ struct APIRoutes {
     static var notificationUrl = "paudapay_us/fetch_notifications/"
     static var notificationResponceUrl = "paudapay_us/send_notification_response/"
     static var pendingCollectionFetchUrl = "paudapay_us/pending_collections/"
-    static var fetchTwillioAccessToken = "paudapay_us/fetch_twilio_access_token/"
     static var pendingDetailUrl = "paudapay_us/pending_collection_detail/"
     static var contacFetchUrl = "paudapay_us/invited_suppliers/"
     static var contacSendUrl = "paudapay_us/invite_supplier/"
     static var siteDeleteSendUrl = "paudapay_us/delete_site/"
+    static var fetchTwilioTokenUrl = "paudapay_us/fetch_twilio_access_token/"
 }
 struct FireBaseVariables {
     static var fireBaseToken = ""
