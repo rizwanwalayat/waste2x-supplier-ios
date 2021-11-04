@@ -160,16 +160,17 @@ extension SupplyingTypeViewController {
                         }
                     }
                     
-                    if Global.shared.apiCurve && self.supplyProcessData.count > 0{
+                    let wasteType = DataManager.shared.getWasteType().trimmingCharacters(in: .whitespaces)
+                    if Global.shared.apiCurve && self.supplyProcessData.count > 0 && wasteType.count > 0{
                         
-                        let wasteType = DataManager.shared.getWasteType()
-                        let wasteString = wasteType.split(separator: "-").first?.trimmingCharacters(in: .whitespaces)
+//                        let wasteString = wasteType.split(separator: "-").first?.trimmingCharacters(in: .whitespaces)
                         
                         for waste in self.supplyProcessData{
-                            if waste.title.trimmingCharacters(in: .whitespaces) == wasteString
+                            if waste.title.trimmingCharacters(in: .whitespaces) == wasteType
                             {
                                 self.selectionData["waste_type"] = waste.title
                                 self.pushToNextController(false, questions: waste.questions)
+                                break
                             }
                         }
                     }

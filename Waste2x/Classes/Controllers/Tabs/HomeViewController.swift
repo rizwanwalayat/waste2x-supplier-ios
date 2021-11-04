@@ -177,7 +177,18 @@ class HomeViewController: BaseViewController{
         
     }
     
+    fileprivate func showPopupToCreateSite()
+    {
+        let custompopup = CreateSitePopupViewController(nibName: "CreateSitePopupViewController", bundle: nil)
+        custompopup.modalPresentationStyle   = .overFullScreen
+        custompopup.createSitePressed = {
+            
+            let vc = SupplyingTypeViewController(nibName: "SupplyingTypeViewController", bundle: nil)
+            self.navigationController?.setViewControllers([vc], animated: true)
 
+        }
+        self.present(custompopup, animated: false, completion: nil)
+    }
 
     
     //MARK: - ActionButtons
@@ -402,7 +413,13 @@ extension HomeViewController: WeatherCallDelegate {
             progressBar.setProgress(progress, animated: true)
             self.welcomeLabel.attributedText =  self.setAttributedTextInLable(boldString: "Hello, ", emailAddress: DataManager.shared.getUserEmail() )
             self.progressPointsLabel.text = "\(DataManager.shared.getUser()?.result?.percentage.shortValue ?? "")/100"
-            DataManager.shared.setWasteType(value: self.resultData!.commodity_farms.first?.crop_type ?? "")
+            DataManager.shared.setWasteType(value: self.resultData!.waste_type)
+            
+            // if commodity_farms is empty then will move to create site button
+            if self.resultData!.commodity_farms.count == 0 {
+                self.showPopupToCreateSite()
+                return
+            }
             
             for commudity in self.resultData!.commodity_farms
             {
