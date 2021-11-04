@@ -36,7 +36,6 @@ extension ChatMessagesViewController{
                         if let token = dataResponse?.result?.access_token {
                             
                             TwillioChatDataModel.shared.loginToTwillio(with: token, identity: identity)
-                            Utility.hideLoading()
                         }
                     }
                     else
