@@ -223,6 +223,8 @@
 		18D1A367266A2B77009CAD26 /* TrackerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D1A365266A2B77009CAD26 /* TrackerViewController.xib */; };
 		18FB2B962694A1FE006C6AE1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18FB2B952694A1FE006C6AE1 /* GoogleService-Info.plist */; };
 		96726C872711C1EE00F071E8 /* Waste2xAfterSigninTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96726C862711C1EE00F071E8 /* Waste2xAfterSigninTests.swift */; };
+		96774D96273177C100B513CB /* MessagePendingCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96774D94273177C100B513CB /* MessagePendingCollectionTableViewCell.swift */; };
+		96774D97273177C100B513CB /* MessagePendingCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96774D95273177C100B513CB /* MessagePendingCollectionTableViewCell.xib */; };
 		9694C16126E25C2A00159A1C /* CountryPickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694C16026E25C2900159A1C /* CountryPickerConfig.swift */; };
 		96E8A8352705AD7700F03A34 /* Waste2xOnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8A8342705AD7700F03A34 /* Waste2xOnboardingTests.swift */; };
 /* End PBXBuildFile section */
@@ -458,6 +460,8 @@
 		4403568D39555D92B00CB323 /* Pods-Waste2x.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waste2x.debug.xcconfig"; path = "Target Support Files/Pods-Waste2x/Pods-Waste2x.debug.xcconfig"; sourceTree = "<group>"; };
 		5D4D23AE5CF86CE8FCB2AEEB /* Pods-Waste2x.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waste2x.release.xcconfig"; path = "Target Support Files/Pods-Waste2x/Pods-Waste2x.release.xcconfig"; sourceTree = "<group>"; };
 		96726C862711C1EE00F071E8 /* Waste2xAfterSigninTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waste2xAfterSigninTests.swift; sourceTree = "<group>"; };
+		96774D94273177C100B513CB /* MessagePendingCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePendingCollectionTableViewCell.swift; sourceTree = "<group>"; };
+		96774D95273177C100B513CB /* MessagePendingCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagePendingCollectionTableViewCell.xib; sourceTree = "<group>"; };
 		9694C16026E25C2900159A1C /* CountryPickerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerConfig.swift; sourceTree = "<group>"; };
 		96B24AD427061DB500DF6621 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		96E8A8322705AD7700F03A34 /* Waste2xTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Waste2xTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1194,6 +1198,8 @@
 				188B36D22668C95A0036B412 /* UnconfirmPendingCollectionTableViewCell.xib */,
 				1832D24E26832DC20032F755 /* DetailPendingCollectionTableViewCell.swift */,
 				1832D24F26832DC20032F755 /* DetailPendingCollectionTableViewCell.xib */,
+				96774D94273177C100B513CB /* MessagePendingCollectionTableViewCell.swift */,
+				96774D95273177C100B513CB /* MessagePendingCollectionTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1556,6 +1562,7 @@
 				18397E1D2660FF54003DE30C /* Poppins-SemiBoldItalic.ttf in Resources */,
 				188B36D42668C95A0036B412 /* UnconfirmPendingCollectionTableViewCell.xib in Resources */,
 				1893756F266127F800D55A33 /* CurrentWasteViewController.xib in Resources */,
+				96774D97273177C100B513CB /* MessagePendingCollectionTableViewCell.xib in Resources */,
 				1893756D266127F800D55A33 /* CurrentWasteTableViewCell.xib in Resources */,
 				184F51682667A46400F0328A /* PendingCollectionViewController.xib in Resources */,
 				1832627A2670C68A00F0CCBA /* InviteSupplierViewController.xib in Resources */,
@@ -1842,6 +1849,7 @@
 				04D8A30F2679C998004BBF9A /* PhoneNoDataModel.swift in Sources */,
 				043F6BE82677719F000E3C4F /* HomeDataModel.swift in Sources */,
 				04C31D1B2667BBE600A1CF9C /* ScheduleOptionsViewController.swift in Sources */,
+				96774D96273177C100B513CB /* MessagePendingCollectionTableViewCell.swift in Sources */,
 				046528032668F694005F3FB0 /* CalenderPopupViewController.swift in Sources */,
 				189782FA265D3479008FD5E3 /* SideMenuViewController.swift in Sources */,
 				04C82E1C2664BCCB00D52947 /* WasteDetailViewController.swift in Sources */,

@@ -59,6 +59,7 @@ class PendingCollectionResultResponce : Mappable {
     var frequency = ""
     var scheduleDate = ""
     var address = ""
+    var customer_phone = ""
     var history = [PendingCollectionResultHistory]()
 
     required init?(map: Map) { }
@@ -76,6 +77,7 @@ class PendingCollectionResultResponce : Mappable {
         frequency <- map["frequency"]
         scheduleDate <- map["schedule_date"]
         address <- map["address"]
+        customer_phone <- map["customer_phone"]
         history <- map["history"]
         
         

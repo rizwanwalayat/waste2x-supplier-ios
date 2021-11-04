@@ -28,12 +28,14 @@ class TwillioChatDataModel: NSObject {
     var delegate : TwillioChatDataModelDelegate?
     var messagesPage = 1
     var messagesPageCount = 50
+    var identity: String?
     
-    func loginToTwillio(with token : String)
+    func loginToTwillio(with token : String, identity: String)
     {
         TwilioChatClient.chatClient(withToken: token, properties: nil,
                                     delegate: self) { (result, chatClient) in
             self.client = chatClient
+            self.identity = identity
         }
     }
     
@@ -57,8 +59,7 @@ class TwillioChatDataModel: NSObject {
             return
         }
         
-        let phoneNo = DataManager.shared.getUser()?.result?.phone ?? ""
-        channelsList.channel(withSidOrUniqueName: phoneNo, completion: { (result, channel) in
+        channelsList.channel(withSidOrUniqueName: self.identity ?? "", completion: { (result, channel) in
             completion(result, channel)
         })
     }
@@ -80,9 +81,8 @@ class TwillioChatDataModel: NSObject {
             return
         }
         
-        let phoneNo = DataManager.shared.getUser()?.result?.phone ?? ""
         let options: [String: Any] = [
-            TCHChannelOptionUniqueName: phoneNo
+            TCHChannelOptionUniqueName: self.identity ?? ""
             ]
         channelsList.createChannel(options: options, completion: { channelResult, channel in
             if channelResult.isSuccessful() {

@@ -29,6 +29,7 @@ class ChatMessagesViewController: BaseViewController {
     
     var textFildPlaceholder = UIColor(hexString: "9F9F9F")
     var placeHolderText = "Write message"
+    var identity: String = ""
     //var refreshControl = UIRefreshControl()
     
     
@@ -40,7 +41,8 @@ class ChatMessagesViewController: BaseViewController {
         enterMessageTextView.text       = placeHolderText
         enterMessageTextView.textColor  = textFildPlaceholder
         tableViewsIntegrations()
-        (TwillioChatDataModel.shared.client == nil) ? (loginToTwillio()) : (TwillioChatDataModel.shared.delegate = self)
+
+        loginToTwillio(identity: identity)
         
         NotificationCenter.default.addObserver(self,
                selector: #selector(self.keyboardNotification(notification:)),

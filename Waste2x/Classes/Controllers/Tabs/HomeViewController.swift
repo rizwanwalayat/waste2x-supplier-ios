@@ -79,11 +79,7 @@ class HomeViewController: BaseViewController{
         Global.shared.jump = 0
         self.weatherCollectionView.reloadData()
         
-        // twillio reload
-        if TwillioChatDataModel.shared.client == nil
-        {
-            self.loginToTwillio()
-        }
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -456,26 +452,4 @@ extension HomeViewController: WeatherCallDelegate {
         }
     }
     
-    // code for load all messages
-    func loginToTwillio()
-    {
-        MessagesDataModel.fetchTwillioAccessToken() { dataResponse, error, success, message  in
-            
-            if dataResponse != nil {
-                
-                if let isSuccess = success {
-                    
-                    if isSuccess {
-                        
-                        if let token = dataResponse?.result?.access_token {
-                            
-                            TwillioChatDataModel.shared.loginToTwillio(with: token)
-                    
-                        }
-                    }
-                }
-                
-            }
-        }
-    }
 }

@@ -230,14 +230,12 @@ class APIClient: APIClientHandler {
     }
     
     
-    func fetchTwillioAccessToken(_ completionBlock: @escaping APIClientCompletionHandler)
+    func fetchTwillioAccessToken(identity: String, _ completionBlock: @escaping APIClientCompletionHandler)
     {
         let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
         
         print("fetchTwillioAccessToken : \(headers)")
-        let phone = DataManager.shared.getUser()?.result?.phone ?? ""
-        let url = "paudapay_us/fetch_twilio_access_token/identity\(phone)"
-        _ = sendRequest(url , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+        _ = sendRequest("\(APIRoutes.fetchTwilioTokenUrl)\(identity)", parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
 }
 
