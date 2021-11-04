@@ -116,10 +116,11 @@ class TwillioChatDataModel: NSObject {
                         
                         self.messages = lastMessages
                         self.delegate?.reloadAllMessages()
+                        Utility.hideLoading()
                     }
                 }
             }
-        }
+        } 
     }
     
     func fetchMoreMesseges()
@@ -154,11 +155,13 @@ extension TwillioChatDataModel : TwilioChatClientDelegate
                     self.createChannel { (success, channel) in
                         if success, let channel = channel {
                             self.joinChannel(channel)
+                            Utility.hideLoading()
                         }
                     }
                 }
                 self.delegate?.connectCompleted()
                 self.fetchLastMessages()
+
             }
             
         case .failed:

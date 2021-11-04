@@ -65,10 +65,11 @@ class ChatMessagesViewController: BaseViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        TwillioChatDataModel.shared.shutdown()
         IQKeyboardManager.shared.enableAutoToolbar = true
         IQKeyboardManager.shared.enable = true
         NotificationCenter.default.removeObserver(self)
+        
     }
 
     //MARK: - Actions
