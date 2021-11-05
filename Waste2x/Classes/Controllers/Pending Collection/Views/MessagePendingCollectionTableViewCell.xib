@@ -24,6 +24,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="XUQ-ft-pYt"/>
                         </constraints>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="Message" imagePadding="10">
                             <attributedString key="attributedTitle">
