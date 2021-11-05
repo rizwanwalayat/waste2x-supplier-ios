@@ -113,30 +113,30 @@ class Waste2xAfterSigninTests: XCTestCase {
     
 
     
-    func testMessagestAPIToFetchAccessToken() throws {
-        
-        let promise = expectation(description: "Status Code: 200")
-        
-        MessagesDataModel.fetchTwillioAccessToken { result, error, status,message in
-            
-            XCTAssert(status == true && error == nil, "Data returned with error, \(message)")
-            
-            guard let resultData = result?.result, let accessToken = resultData.access_token else
-            {
-                XCTFail("Expected non-nil result")
-                return
-            }
-            promise.fulfill()
-
-          
-        }
-        
-        self.waitForExpectations(timeout: 10) { error in
-            if let _ = error {
-                XCTFail("Timeout")
-            }
-        }
-    }
+//    func testMessagestAPIToFetchAccessToken() throws {
+//        
+//        let promise = expectation(description: "Status Code: 200")
+//        
+//        MessagesDataModel.fetchTwillioAccessToken { result, error, status,message in
+//            
+//            XCTAssert(status == true && error == nil, "Data returned with error, \(message)")
+//            
+//            guard let resultData = result?.result, let accessToken = resultData.access_token else
+//            {
+//                XCTFail("Expected non-nil result")
+//                return
+//            }
+//            promise.fulfill()
+//
+//          
+//        }
+//        
+//        self.waitForExpectations(timeout: 10) { error in
+//            if let _ = error {
+//                XCTFail("Timeout")
+//            }
+//        }
+//    }
     
 //    func testTwilioChatClient() throws {
 //        TwilioChatClient.chatClient(withToken: accessToken, properties: nil,

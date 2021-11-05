@@ -183,6 +183,7 @@ class HomeViewController: BaseViewController{
         custompopup.modalPresentationStyle   = .overFullScreen
         custompopup.createSitePressed = {
             
+            Global.shared.apiCurve = true
             let vc = SupplyingTypeViewController(nibName: "SupplyingTypeViewController", bundle: nil)
             self.navigationController?.setViewControllers([vc], animated: true)
 
