@@ -68,9 +68,14 @@ class TwillioChatDataModel: NSObject {
         self.channel = channel
         if channel.status == .joined {
             print("Current user already exists in channel")
+            self.delegate?.connectCompleted()
+            self.fetchLastMessages()
+            
         } else {
             channel.join(completion: { result in
                 print("Result of channel join: \(result.resultText ?? "No Result")")
+                self.delegate?.connectCompleted()
+                self.fetchLastMessages()
             })
         }
     }
@@ -155,13 +160,9 @@ extension TwillioChatDataModel : TwilioChatClientDelegate
                     self.createChannel { (success, channel) in
                         if success, let channel = channel {
                             self.joinChannel(channel)
-                            Utility.hideLoading()
                         }
                     }
                 }
-                self.delegate?.connectCompleted()
-                self.fetchLastMessages()
-
             }
             
         case .failed:

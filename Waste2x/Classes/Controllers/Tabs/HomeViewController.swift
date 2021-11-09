@@ -414,8 +414,9 @@ extension HomeViewController: WeatherCallDelegate {
             progressBar.setProgress(progress, animated: true)
             self.welcomeLabel.attributedText =  self.setAttributedTextInLable(boldString: "Hello, ", emailAddress: DataManager.shared.getUserEmail() )
             self.progressPointsLabel.text = "\(DataManager.shared.getUser()?.result?.percentage.shortValue ?? "")/100"
-            DataManager.shared.setWasteType(value: self.resultData!.waste_type)
             
+            
+            DataManager.shared.setWasteType(value: self.resultData!.waste_type)
             // if commodity_farms is empty then will move to create site button
             if self.resultData!.commodity_farms.count == 0 {
                 self.showPopupToCreateSite()
