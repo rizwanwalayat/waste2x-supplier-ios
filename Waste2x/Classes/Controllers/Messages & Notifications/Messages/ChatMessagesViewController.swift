@@ -42,6 +42,7 @@ class ChatMessagesViewController: BaseViewController {
         enterMessageTextView.textColor  = textFildPlaceholder
         tableViewsIntegrations()
 
+        identity.contains("_") ? (titleLabel.text = "Message Customer") : (titleLabel.text = "Message us")
         loginToTwillio(identity: identity)
         
         NotificationCenter.default.addObserver(self,
