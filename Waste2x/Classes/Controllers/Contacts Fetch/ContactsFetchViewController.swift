@@ -12,7 +12,13 @@ import Contacts
 class ContactsFetchViewController: BaseViewController {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    var contacts = [CNContact]()
+    @IBOutlet weak var searchBar: UISearchBar!
+    var contacts = [CNContact]() {
+        didSet {
+            filteredContacts = contacts
+        }
+    }
+    var filteredContacts = [CNContact]()
     var tableViewIndex = -1
     var number = ""
     var name = ""
@@ -22,6 +28,7 @@ class ContactsFetchViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.apiCall()
+        searchBar.delegate = self
         globalObjectContainer?.tabbarHiddenView.isHidden = true
         let contactStore = CNContactStore()
         let keys = [
@@ -30,6 +37,8 @@ class ContactsFetchViewController: BaseViewController {
                         CNContactEmailAddressesKey
                 ] as [Any]
         let request = CNContactFetchRequest(keysToFetch: keys as! [CNKeyDescriptor])
+        request.sortOrder = CNContactSortOrder.givenName
+
         do {
             try contactStore.enumerateContacts(with: request){
                     (contact, stop) in
@@ -87,11 +96,11 @@ class ContactsFetchViewController: BaseViewController {
                     print("Invited By ",activityName[2])
                 }
                 
-                for phoneNumber in self.contacts[index].phoneNumbers {
+                for phoneNumber in self.filteredContacts[index].phoneNumbers {
                     let number = phoneNumber.value
                     self.number = number.stringValue
                 }
-                self.name = "\(self.contacts[index].givenName)"
+                self.name = "\(self.filteredContacts[index].givenName)"
                 ContactSendModel.contactSendApiCall(name: self.name, number: self.number) { result, error, status, message in
                     if error == nil{
                         print(result?.result?.inviteId ?? "Noting",result?.result?.inviteTo ?? "Noting")
@@ -114,7 +123,7 @@ class ContactsFetchViewController: BaseViewController {
 }
 extension ContactsFetchViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contacts.count
+        return filteredContacts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -146,8 +155,8 @@ extension ContactsFetchViewController : UITableViewDelegate,UITableViewDataSourc
     //MARK: - Cell Function
     func cellConfig(cell:ContactFetchTableViewCell,indexPath:IndexPath){
         cell.imgView?.image = contactPicker(picker: ContactsFetchViewController(), didSelectContactProperty: CNContactProperty())
-        cell.nameLabel.text = contacts[indexPath.row].givenName
-        for phoneNumber in contacts[indexPath.row].phoneNumbers {
+        cell.nameLabel.text = filteredContacts[indexPath.row].givenName
+        for phoneNumber in filteredContacts[indexPath.row].phoneNumbers {
             let number = phoneNumber.value
             cell.numberLabel.text = number.stringValue
         }
@@ -156,6 +165,7 @@ extension ContactsFetchViewController : UITableViewDelegate,UITableViewDataSourc
     }
     
 }
+
 extension ContactsFetchViewController{
     func apiCall(){
         ContactFetchModel.contactFetchApiCall { result, error, status, message in
@@ -164,7 +174,7 @@ extension ContactsFetchViewController{
             
             var invitedCounterIndexValue = 0
             if self.dataModel.count > 0 {
-                for contact in self.contacts
+                for contact in self.filteredContacts
                 {
                     for i in self.dataModel {
                         if i.contactName == contact.givenName{
@@ -181,6 +191,16 @@ extension ContactsFetchViewController{
         }
     }
     
+}
+extension ContactsFetchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+     
+        filteredContacts = searchText == "" ? contacts : contacts.filter { contact in
+            return contact.givenName.lowercased().contains(searchText.lowercased())
+        }
+        tableView.reloadData()
+        
+    }
 }
 
 
