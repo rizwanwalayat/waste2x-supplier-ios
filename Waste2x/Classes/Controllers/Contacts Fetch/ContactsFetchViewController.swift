@@ -29,6 +29,8 @@ class ContactsFetchViewController: BaseViewController {
         super.viewDidLoad()
         self.apiCall()
         searchBar.delegate = self
+        tableView.keyboardDismissMode = .onDrag
+
         globalObjectContainer?.tabbarHiddenView.isHidden = true
         let contactStore = CNContactStore()
         let keys = [
