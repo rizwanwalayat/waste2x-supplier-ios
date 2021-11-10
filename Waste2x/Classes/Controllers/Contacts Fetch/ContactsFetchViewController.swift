@@ -157,7 +157,7 @@ extension ContactsFetchViewController : UITableViewDelegate,UITableViewDataSourc
     //MARK: - Cell Function
     func cellConfig(cell:ContactFetchTableViewCell,indexPath:IndexPath){
         cell.imgView?.image = contactPicker(picker: ContactsFetchViewController(), didSelectContactProperty: CNContactProperty())
-        cell.nameLabel.text = filteredContacts[indexPath.row].givenName
+        cell.nameLabel.text = "\(filteredContacts[indexPath.row].givenName) \(filteredContacts[indexPath.row].familyName)"
         for phoneNumber in filteredContacts[indexPath.row].phoneNumbers {
             let number = phoneNumber.value
             cell.numberLabel.text = number.stringValue
@@ -198,7 +198,9 @@ extension ContactsFetchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
      
         filteredContacts = searchText == "" ? contacts : contacts.filter { contact in
-            return contact.givenName.lowercased().contains(searchText.lowercased())
+            let fullName = "\(contact.givenName) \(contact.familyName)"
+            return fullName.lowercased().hasPrefix(searchText.lowercased())
+//            contains(searchText.lowercased())
         }
         tableView.reloadData()
         
