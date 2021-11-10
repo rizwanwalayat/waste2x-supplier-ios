@@ -290,34 +290,34 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if resultData?.pendingCollection ?? false {
-            return 2
-        }
-        else {
-            return 1
-        }
+        return 2
+//        if resultData?.pendingCollection ?? false {
+//        }
+//        else {
+//            return 1
+//        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
             
-            if resultData?.pendingCollection == true {
-                let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
-                cell.selectionStyle = .none
-                cell.pendingCOllectionConfig()
-                
-                return cell
-            }
-            else {
-                
-                //tableViewHeight.constant = homeScrollview.bounds.height * 0.341297//200 // 0.341297
-                let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
-                cell.selectionStyle = .none
-                supplierCell = cell
-                cell.imgHeight.constant = cell.frame.height * 0.7
-                return cell
-            }
+            let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
+            cell.selectionStyle = .none
+            cell.pendingCOllectionConfig()
+            
+            return cell
+//            if resultData?.pendingCollection == true {
+//            }
+//            else {
+//
+//                //tableViewHeight.constant = homeScrollview.bounds.height * 0.341297//200 // 0.341297
+//                let cell = tableView.register(SupplierTableViewCell.self, indexPath: indexPath)
+//                cell.selectionStyle = .none
+//                supplierCell = cell
+//                cell.imgHeight.constant = cell.frame.height * 0.7
+//                return cell
+//            }
         }
         
         if indexPath.row == 1 {
@@ -335,17 +335,18 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.row == 0{
-            if resultData?.pendingCollection == true
+        if indexPath.row == 0
         {
             let vc = PendingCollectionViewController(nibName: "PendingCollectionViewController", bundle: nil)
             self.navigationController?.pushTo(controller: vc)
-        }
-            else
-            {
-                let vc = InviteSupplierViewController(nibName: "InviteSupplierViewController", bundle: nil)
-                self.navigationController?.pushTo(controller: vc)
-            }
+//            if resultData?.pendingCollection == true
+//            {
+//            }
+//            else
+//            {
+//                let vc = InviteSupplierViewController(nibName: "InviteSupplierViewController", bundle: nil)
+//                self.navigationController?.pushTo(controller: vc)
+//            }
         }
         else
         {
