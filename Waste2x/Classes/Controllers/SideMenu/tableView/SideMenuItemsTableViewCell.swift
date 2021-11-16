@@ -14,10 +14,6 @@ class SideMenuItemsTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var selectionView: UIView!
     
-    
-    //MARK: - Variables
-    var img = [#imageLiteral(resourceName: "Payment Icons"),#imageLiteral(resourceName: "Calendar"),#imageLiteral(resourceName: "ufaq")]
-    var text = ["Payments","Collection Availability","Privacy Policy"]
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -27,9 +23,10 @@ class SideMenuItemsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func config(index:Int) {
-        self.imgView.image = img[index]
-        self.nameLabel.text = text[index]
+    func config(item :SideMenuItems) {
+        
+        self.imgView.image = item.selectedImage
+        self.nameLabel.text = item.rawValue
     }
     
 }

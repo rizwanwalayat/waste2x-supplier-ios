@@ -75,7 +75,7 @@ class ContainerViewController: BaseViewController {
     }
     @IBAction func didTapAddWaste(_ sender: Any) {
         Global.shared.apiCurve = true
-        nav.viewControllers = [SupplyingTypeViewController()]
+        nav.viewControllers = [ScheduleViewController()]
         activeViewController = self.nav
         messagesHoverView.isHidden = true
         faqHoverView.isHidden = true

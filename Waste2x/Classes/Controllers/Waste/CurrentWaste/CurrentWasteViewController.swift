@@ -28,6 +28,7 @@ class CurrentWasteViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        sitesData = globalObjectHome?.fetchSitesData ?? [FetchSitesCustomModel]()
         bottomConstOfView.constant = tabbarViewHeight
         currentWasteTableview.register(UINib(nibName: "CurrentWasteTableViewCell", bundle: nil), forCellReuseIdentifier: "CurrentWasteTableViewCell")
         currentWasteTableview.rowHeight = UITableView.automaticDimension

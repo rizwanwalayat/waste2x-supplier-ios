@@ -10,13 +10,13 @@ import UIKit
 
 class SideMenuViewController: BaseViewController {
     
-    
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     //MARK: - Variables
-    var img = [#imageLiteral(resourceName: "Payment Icons"),#imageLiteral(resourceName: "Calendar")]
-    var text = ["Payments","Collection Availability"]
+//    var img = [#imageLiteral(resourceName: "Payment Icons"),#imageLiteral(resourceName: "site-icon"),#imageLiteral(resourceName: "inviteSupplier-icon"),#imageLiteral(resourceName: "ufaq")]
+//    var textArray = ["Payments","Sites", "Invite Suppliers", "Privacy Policy"]
+    var menuArray = [SideMenuItems.payment, SideMenuItems.sites, SideMenuItems.inviteSupplier, SideMenuItems.privacyPolicy]
     var selectionIndex = -1
     var paymentModel : PaymentModel?
     var reload = -1
@@ -100,7 +100,7 @@ class SideMenuViewController: BaseViewController {
 //MARK: - Extentions
 extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return menuArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -111,7 +111,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
         else {
             cell.selectionView.isHidden = true
         }
-        cell.config(index: indexPath.row)
+        cell.config(item: menuArray[indexPath.row])
         return cell
         
     }
@@ -124,14 +124,19 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
             paymentApi()
 
         case 1:
-            let vc = ScheduleViewController(nibName: "ScheduleViewController", bundle: nil)
-            navigationController?.pushViewController(vc, animated: true)
+//            let vc = ScheduleViewController(nibName: "ScheduleViewController", bundle: nil)
+//            navigationController?.pushViewController(vc, animated: true)
+            let vc = CurrentWasteViewController(nibName: "CurrentWasteViewController", bundle: nil)
+            self.navigationController?.pushTo(controller: vc)
             
         case 2:
+
+            let vc = InviteSupplierViewController(nibName: "InviteSupplierViewController", bundle: nil)
+            self.navigationController?.pushTo(controller: vc)
+            
+        default:
             guard let url = URL(string: "https://enmassenergy.com/waste2x-privacy/") else { return }
             UIApplication.shared.open(url)
-        default:
-            print("none")
         }
         self.tableView.reloadData()
     }
@@ -153,6 +158,28 @@ extension SideMenuViewController{
             Global.shared.paymentModel = result
             let objectDict = ["result" : result]
             NotificationCenter.default.post(name: Notification.Name("NavigateToPayment"), object: nil, userInfo: objectDict as [AnyHashable : Any])
+        }
+    }
+}
+
+enum SideMenuItems : String {
+    
+    case payment = "Payments"
+    case sites =  "Sites"
+    case inviteSupplier =  "Invite Suppliers"
+    case privacyPolicy =  "Privacy Policy"
+    
+    var selectedImage: UIImage {
+        
+        switch self {
+        case .payment:
+            return #imageLiteral(resourceName: "Payment Icons")
+        case .sites:
+            return #imageLiteral(resourceName: "site-icon")
+        case .inviteSupplier:
+            return #imageLiteral(resourceName: "inviteSupplier-icon")
+        case .privacyPolicy:
+            return #imageLiteral(resourceName: "ufaq")
         }
     }
 }
