@@ -105,12 +105,12 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.register(SideMenuItemsTableViewCell.self, indexPath: indexPath)
-        if selectionIndex == indexPath.row {
-            cell.selectionView.isHidden = false
-        }
-        else {
+//        if selectionIndex == indexPath.row {
+//            cell.selectionView.isHidden = false
+//        }
+//        else {
             cell.selectionView.isHidden = true
-        }
+//        }
         cell.config(item: menuArray[indexPath.row])
         return cell
         
@@ -128,7 +128,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
 //            navigationController?.pushViewController(vc, animated: true)
             let vc = CurrentWasteViewController(nibName: "CurrentWasteViewController", bundle: nil)
             self.navigationController?.pushTo(controller: vc)
-            
+                        
         case 2:
 
             let vc = InviteSupplierViewController(nibName: "InviteSupplierViewController", bundle: nil)

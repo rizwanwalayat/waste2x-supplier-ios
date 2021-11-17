@@ -29,7 +29,7 @@ class CurrentWasteViewController: BaseViewController {
         super.viewDidLoad()
         
         sitesData = globalObjectHome?.fetchSitesData ?? [FetchSitesCustomModel]()
-        bottomConstOfView.constant = tabbarViewHeight
+//        bottomConstOfView.constant = tabbarViewHeight
         currentWasteTableview.register(UINib(nibName: "CurrentWasteTableViewCell", bundle: nil), forCellReuseIdentifier: "CurrentWasteTableViewCell")
         currentWasteTableview.rowHeight = UITableView.automaticDimension
         currentWasteTableview.estimatedRowHeight = UITableView.automaticDimension
@@ -52,6 +52,11 @@ class CurrentWasteViewController: BaseViewController {
 
     @IBAction func backButtonPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func newSiteBtnPressed(_ sender: Any) {
+        let vc = SupplyingTypeViewController(nibName: "SupplyingTypeViewController", bundle: nil)
+        self.navigationController?.pushTo(controller: vc)
     }
 }
 

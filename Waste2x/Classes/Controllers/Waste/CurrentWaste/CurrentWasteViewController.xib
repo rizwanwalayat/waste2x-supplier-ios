@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
         <array key="Poppins-SemiBold.ttf">
             <string>Poppins-SemiBold</string>
         </array>
@@ -44,8 +47,8 @@
                                         <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="EFE-4z-P5o"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Waste" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ch-g4-oa9">
-                                    <rect key="frame" x="140.5" y="16" width="133.5" height="25.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ch-g4-oa9">
+                                    <rect key="frame" x="185" y="16" width="44" height="25.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -72,7 +75,7 @@
                     <rect key="frame" x="0.0" y="103.5" width="414" height="792.5"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zRc-1y-yDc">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="782.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="701"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="scrollIndicatorInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -81,13 +84,35 @@
                                 <outlet property="delegate" destination="-1" id="vTd-jo-hjA"/>
                             </connections>
                         </tableView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMa-cJ-L4z">
+                            <rect key="frame" x="30" y="716" width="354" height="58"/>
+                            <color key="backgroundColor" red="0.49019607840000001" green="0.61568627450000002" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="58" id="a7v-Dk-Lwk"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
+                            <state key="normal" title="New Site">
+                                <color key="titleColor" red="1" green="0.97647058819999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="18"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="newSiteBtnPressed:" destination="-1" eventType="touchUpInside" id="kAm-i9-Qlb"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="lMa-cJ-L4z" firstAttribute="leading" secondItem="AQ2-cA-Gdd" secondAttribute="leading" constant="30" id="0oa-yQ-VFA"/>
+                        <constraint firstItem="lMa-cJ-L4z" firstAttribute="top" secondItem="zRc-1y-yDc" secondAttribute="bottom" constant="15" id="3t5-CJ-qdA"/>
                         <constraint firstAttribute="trailing" secondItem="zRc-1y-yDc" secondAttribute="trailing" id="TbI-8q-tID"/>
-                        <constraint firstAttribute="bottom" secondItem="zRc-1y-yDc" secondAttribute="bottom" constant="10" id="YZs-zJ-0q7"/>
                         <constraint firstItem="zRc-1y-yDc" firstAttribute="leading" secondItem="AQ2-cA-Gdd" secondAttribute="leading" id="el6-Ly-wPF"/>
+                        <constraint firstAttribute="trailing" secondItem="lMa-cJ-L4z" secondAttribute="trailing" constant="30" id="is6-Uj-ts7"/>
                         <constraint firstItem="zRc-1y-yDc" firstAttribute="top" secondItem="AQ2-cA-Gdd" secondAttribute="top" id="u7V-WT-SPs"/>
+                        <constraint firstAttribute="bottom" secondItem="lMa-cJ-L4z" secondAttribute="bottom" constant="18.5" id="w5O-1d-JLG"/>
                     </constraints>
                 </view>
             </subviews>
@@ -103,7 +128,7 @@
                 <constraint firstItem="AQ2-cA-Gdd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vpH-3p-4ka"/>
                 <constraint firstItem="y3g-ZN-Fqb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vxF-Tv-jDL"/>
             </constraints>
-            <point key="canvasLocation" x="91" y="88"/>
+            <point key="canvasLocation" x="89.855072463768124" y="87.723214285714278"/>
         </view>
     </objects>
     <resources>

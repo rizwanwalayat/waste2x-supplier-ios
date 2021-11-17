@@ -73,19 +73,20 @@ class ContainerViewController: BaseViewController {
         buttonDeselect(button: newsButton)
         
     }
-    @IBAction func didTapAddWaste(_ sender: Any) {
+    @IBAction func didTapPlus(_ sender: Any) {
         Global.shared.apiCurve = true
-        nav.viewControllers = [ScheduleViewController()]
+        nav.viewControllers = [HomeViewController(), ScheduleViewController()]
         activeViewController = self.nav
         messagesHoverView.isHidden = true
         faqHoverView.isHidden = true
         newsHoverView.isHidden = true
         homeHoverView.isHidden = true
-        buttonSelect(button: addButton)
-        buttonDeselect(button: messagesButton)
-        buttonDeselect(button: homeButton)
-        buttonDeselect(button: faqButton)
-        buttonDeselect(button: newsButton)
+        tabbarHiddenView.isHidden = true
+//        buttonSelect(button: addButton)
+//        buttonDeselect(button: messagesButton)
+//        buttonDeselect(button: homeButton)
+//        buttonDeselect(button: faqButton)
+//        buttonDeselect(button: newsButton)
     }
     
     @IBAction func didTapFaq(_ sender: Any) {
