@@ -36,7 +36,7 @@ class ContainerViewController: BaseViewController {
         newsHoverView.isHidden = true
         homeButton.isSelected = true
         homeHoverView.isHidden = false
-        nav.viewControllers = [HomeViewController()]
+        nav.viewControllers = [HomeNewViewController()]
         activeViewController = self.nav
         self.tabbarHiddenView.isHidden = false
         
@@ -46,7 +46,7 @@ class ContainerViewController: BaseViewController {
     //MARK: - Actions
     
     @IBAction func didTapHome(_ sender: Any) {
-        nav.viewControllers = [HomeViewController()]
+        nav.viewControllers = [HomeNewViewController()]
         activeViewController = self.nav
         messagesHoverView.isHidden = true
         faqHoverView.isHidden = true
@@ -75,7 +75,7 @@ class ContainerViewController: BaseViewController {
     }
     @IBAction func didTapPlus(_ sender: Any) {
         Global.shared.apiCurve = true
-        nav.viewControllers = [HomeViewController(), ScheduleViewController()]
+        nav.viewControllers = [HomeNewViewController(), ScheduleViewController()]
         activeViewController = self.nav
         messagesHoverView.isHidden = true
         faqHoverView.isHidden = true
