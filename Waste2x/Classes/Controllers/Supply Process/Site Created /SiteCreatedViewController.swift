@@ -70,7 +70,19 @@ class SiteCreatedViewController: BaseViewController {
 
     @IBAction func okayButtonPressed(_ sender: Any) {
         
-        Utility.homeViewController()
+//        let vc = WasteDetailViewController(nibName: "WasteDetailViewController", bundle: nil)
+//        vc.farmID = createSiteDataModel?.result?.waste_id ?? 0
+//        self.navigationController?.pushViewController(vc, animated: true)
+        FetchSitesDataModel.shared.reloadData()
+        if createSiteDataModel?.result?.waste_id != -1 {
+            
+            Utility.SitesDetailViewController(createSiteDataModel?.result?.waste_id ?? 0)
+        }
+        else {
+            Utility.CurrentSitesViewController()
+            //Utility.showAlertController(self, "Sites Id not fetched!")
+        }
+        
     }
 }
 

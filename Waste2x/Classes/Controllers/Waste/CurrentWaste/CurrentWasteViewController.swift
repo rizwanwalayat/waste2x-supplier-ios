@@ -28,7 +28,7 @@ class CurrentWasteViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sitesData = globalObjectHome?.fetchSitesData ?? [FetchSitesCustomModel]()
+        sitesData = FetchSitesDataModel.shared.sites()
 //        bottomConstOfView.constant = tabbarViewHeight
         currentWasteTableview.register(UINib(nibName: "CurrentWasteTableViewCell", bundle: nil), forCellReuseIdentifier: "CurrentWasteTableViewCell")
         currentWasteTableview.rowHeight = UITableView.automaticDimension
@@ -55,6 +55,7 @@ class CurrentWasteViewController: BaseViewController {
     }
     
     @IBAction func newSiteBtnPressed(_ sender: Any) {
+        Global.shared.apiCurve = true
         let vc = SupplyingTypeViewController(nibName: "SupplyingTypeViewController", bundle: nil)
         self.navigationController?.pushTo(controller: vc)
     }

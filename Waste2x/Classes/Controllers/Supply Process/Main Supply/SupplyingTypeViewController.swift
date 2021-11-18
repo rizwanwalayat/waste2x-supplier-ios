@@ -70,7 +70,7 @@ class SupplyingTypeViewController: BaseViewController {
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
         
-        Utility.homeViewController()
+        Utility.CurrentSitesViewController()
         
     }
     
@@ -156,7 +156,7 @@ extension SupplyingTypeViewController {
                     {
                         Utility.showAlertController(self, "Token Failed, Data not loaded")
                         DispatchQueue.main.async {
-                            Utility.homeViewController()
+                            Utility.CurrentSitesViewController()
                         }
                     }
                     
@@ -185,7 +185,7 @@ extension SupplyingTypeViewController {
                 {
                     Utility.showAlertController(self, "Data not loaded")
                     DispatchQueue.main.async {
-                        Utility.homeViewController()
+                        Utility.CurrentSitesViewController()
                     }
                 }
             }
@@ -197,7 +197,7 @@ extension SupplyingTypeViewController: UIViewControllerTransitioningDelegate {
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
        
         if Global.shared.apiCurve {
-            Utility.homeViewController()
+            Utility.CurrentSitesViewController()
         }
         return nil
     }

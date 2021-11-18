@@ -92,7 +92,7 @@ class AmountWasteViewController: BaseViewController {
     
     @IBAction func cancelButtonPressed(_ sender: UIButton)
     {
-        Utility.homeViewController()
+        Utility.CurrentSitesViewController()
     }
 }
 

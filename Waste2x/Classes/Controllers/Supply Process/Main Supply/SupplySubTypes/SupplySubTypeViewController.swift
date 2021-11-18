@@ -184,7 +184,7 @@ class SupplySubTypeViewController: BaseViewController {
         }
         else
         {
-            Utility.homeViewController()
+            Utility.CurrentSitesViewController()
         }
     }
     

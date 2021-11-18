@@ -15,7 +15,6 @@ protocol PaymentDelegate {
 protocol WeatherCallDelegate {
     func Weather()
 }
-var globalObjectHome : HomeViewController?
 class HomeViewController: BaseViewController{
     
     
@@ -40,8 +39,6 @@ class HomeViewController: BaseViewController{
     var weatherCount  = 5
     var delegate:WeatherCallDelegate?
     var paymentDelegate:PaymentDelegate?
-    var resultData : HomeResultDataModel?
-    var fetchSitesData = [FetchSitesCustomModel]()
     var index = 0
     
     //MARK: - AppCycle
@@ -64,7 +61,6 @@ class HomeViewController: BaseViewController{
         }
         (UIApplication.shared.delegate as! AppDelegate).weaterCalldelegate = self
         bottomConst.constant = tabbarViewHeight
-        globalObjectHome = self
         welcomeLabel.attributedText =  setAttributedTextInLable(boldString: "Hello ,", emailAddress: DataManager.shared.getUser()?.result?.email ?? "")
         let progressbarAdjustment = UIScreen.main.bounds.height / 200
         progressBar.transform = CGAffineTransform(scaleX: 1, y: progressbarAdjustment)
@@ -207,10 +203,9 @@ class HomeViewController: BaseViewController{
     
     @IBAction func viewAllAction(_ sender: Any) {
         
-        if fetchSitesData.count > 0
+        if FetchSitesDataModel.shared.sites().count > 0
         {
             let vc = CurrentWasteViewController(nibName: "CurrentWasteViewController", bundle: nil)
-            vc.sitesData = fetchSitesData
             self.navigationController?.pushTo(controller: vc)
         }
     }
@@ -227,8 +222,8 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             return weatherCount
         }
         else{
-            self.indicatorMarker.numberOfPages = fetchSitesData.count
-            return fetchSitesData.count
+            self.indicatorMarker.numberOfPages = FetchSitesDataModel.shared.sites().count
+            return FetchSitesDataModel.shared.sites().count
         }
         
     }
@@ -243,14 +238,14 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         else
         {
             let cell = collectionView.register(WasteTypeCollectionViewCell.self, indexPath: indexPath)
-            let cellData = fetchSitesData[indexPath.row]
+            let cellData = FetchSitesDataModel.shared.sites()[indexPath.row]
             cell.config(cellData.farmName, cellData.cropType , cellData.cropTypeImage)
             let currentCenteredPoint = CGPoint(x: wasteTypeCollectionView.contentOffset.x + wasteTypeCollectionView.bounds.width, y: wasteTypeCollectionView.contentOffset.y + wasteTypeCollectionView.bounds.height/2)
             if let cell = wasteTypeCollectionView.indexPathForItem(at: currentCenteredPoint) {
                 self.indicatorMarker.currentPage = cell.row - 1 
                 self.index = cell.row - 1
                 
-                let cellData = fetchSitesData[cell.row - 1]
+                let cellData = FetchSitesDataModel.shared.sites()[cell.row - 1]
                 supplierCell?.config(cellData.sharedIconUrl)
             }
 
@@ -276,7 +271,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             self.indicatorMarker.currentPage = indexPath.row
             if collectionView == wasteTypeCollectionView {
                 let vc = WasteDetailViewController(nibName: "WasteDetailViewController", bundle: nil)
-                vc.farmID = fetchSitesData[indexPath.row].farmId
+                vc.farmID = FetchSitesDataModel.shared.sites()[indexPath.row].farmId
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             }
@@ -371,105 +366,22 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
 
 
 //MARK: - API calls
-extension HomeViewController: WeatherCallDelegate {
+extension HomeViewController: WeatherCallDelegate, FetchSitesDataModelDelegate {
+        
+    func fetchFarmsFromServer()
+    {
+        FetchSitesDataModel.shared.reloadData()
+        FetchSitesDataModel.shared.delegate = self
+        
+    }
     
-
+    //  delegate methods
+    
     func Weather() {
         
     }
     
-    
-    
-    
-    func fetchFarmsFromServer()
-    {
-        HomeFetchFarmsDataModel.fetchSites { response, error, statusCode,message in
-            
-            if error != nil
-            {
-                Utility.showAlertController(self, error!.localizedDescription)
-            }
-            
-            if response != nil {
-                
-                if statusCode == true {
-                    
-                    self.resultData = response!.result
-                    self.homeDatapopulate()
-                }
-                else
-                {
-                    Utility.showAlertController(self, "Data not fetched")
-                }
-            }
-        }
+    func sitesEmpty() {
+        self.showPopupToCreateSite()
     }
-    
-    func homeDatapopulate()
-    {
-        
-        self.fetchSitesData.removeAll()
-        if self.resultData != nil
-        {
-            let progress = Float(self.resultData!.percentage) / 100
-            progressBar.setProgress(progress, animated: true)
-            self.welcomeLabel.attributedText =  self.setAttributedTextInLable(boldString: "Hello, ", emailAddress: DataManager.shared.getUserEmail() )
-            self.progressPointsLabel.text = "\(DataManager.shared.getUser()?.result?.percentage.shortValue ?? "")/100"
-            
-            
-            DataManager.shared.setWasteType(value: self.resultData!.waste_type)
-            // if commodity_farms is empty then will move to create site button
-            if self.resultData!.commodity_farms.count == 0 {
-                self.showPopupToCreateSite()
-                return
-            }
-            
-            for commudity in self.resultData!.commodity_farms
-            {
-                if commudity.farms != nil
-                {
-                    for farms in commudity.farms!
-                    {
-                        var cropTypeName = commudity.crop_type?.components(separatedBy: "-").first ?? ""
-                        cropTypeName = cropTypeName.trimmingCharacters(in: .whitespaces)
-                        
-                        let farmsData = FetchSitesCustomModel(farms.name, farms.id
-                                                              , cropTypeName, commudity.crop_type_id ?? 0, commudity.crop_type_image ?? "", commudity.crop_type ?? "")
-                        
-                        self.fetchSitesData.append(farmsData)
-                    }
-                }
-            }
-            
-            if self.resultData!.waste_type_questions != nil && self.resultData!.waste_type_questions?.waste_types != nil {
-                
-                for wasteType in self.resultData!.waste_type_questions!.waste_types!
-                {
-                    if let cropTypeNameArray = wasteType.title {
-                        
-                        let cropName = cropTypeNameArray.trimmingCharacters(in: .whitespaces)
-                        
-                        if let row = self.fetchSitesData.firstIndex(where: {$0.cropType == cropName}) {
-                            let objectIndex = self.fetchSitesData[row]
-                            objectIndex.sharedIconUrl = wasteType.share_icon_url ?? ""
-                        }
-                        
-                    }
-                }
-            }
-            
-            self.wasteTypeCollectionView.reloadData()
-            self.tableView.reloadData()
-            
-            DispatchQueue.main.async {
-                self.tableViewHeight.constant = self.tableView.contentSize.height
-                self.tableView.layoutIfNeeded()
-            }
-        }
-        else
-        {
-            Utility.showAlertController(self, "Invalid token, data not fetched")
-        }
-    }
-    
 }

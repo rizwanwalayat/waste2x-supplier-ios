@@ -45,10 +45,27 @@ struct NetworkingConnection {
         kApplicationWindow?.makeKeyAndVisible()
     }
     
-    class func setupHomeAsRootViewController () {
-        let slideMenuController = SlideMenuController(mainViewController: HomeViewController(), leftMenuViewController: SideMenuViewController())
+    class func SitesDetailViewController (_ farmId: Int) {
+        let slider = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
+        let currentWasteViewController = CurrentWasteViewController()
+        let wasteDetailViewController = WasteDetailViewController()
+        wasteDetailViewController.farmID = farmId
+        let navigationController = BaseNavigationViewController()
+        navigationController.viewControllers = [slider, currentWasteViewController, wasteDetailViewController]
+        navigationController.navigationBar.isHidden = true
         kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)
-        kApplicationWindow?.rootViewController = slideMenuController
+        kApplicationWindow?.rootViewController = navigationController
+        kApplicationWindow?.makeKeyAndVisible()
+    }
+    
+    class func CurrentSitesViewController () {
+        let slider = SlideMenuController(mainViewController: ContainerViewController(), leftMenuViewController: SideMenuViewController())
+        let currentWasteViewController = CurrentWasteViewController()
+        let navigationController = BaseNavigationViewController()
+        navigationController.viewControllers = [slider, currentWasteViewController]
+        navigationController.navigationBar.isHidden = true
+        kApplicationWindow = UIWindow(frame: UIScreen.main.bounds)
+        kApplicationWindow?.rootViewController = navigationController
         kApplicationWindow?.makeKeyAndVisible()
     }
     
@@ -69,7 +86,7 @@ struct NetworkingConnection {
             loginRootViewController()
 
         } else {
-           setupHomeAsRootViewController()
+            homeViewController()
         }
     }
     

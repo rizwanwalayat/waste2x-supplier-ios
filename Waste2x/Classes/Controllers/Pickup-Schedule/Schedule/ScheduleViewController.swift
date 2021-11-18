@@ -94,7 +94,7 @@ class ScheduleViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sitesData = globalObjectHome?.fetchSitesData ?? [FetchSitesCustomModel]()
+        sitesData = FetchSitesDataModel.shared.sites()
 //        globalObjectHome?.fetchSitesData[0].farmId
         selectionType = .regular
         pickupTypeHandlings(selectionType: selectionType)

@@ -76,7 +76,7 @@ class FormOfWasteViewController: BaseViewController {
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
         
-        Utility.homeViewController()
+        Utility.CurrentSitesViewController()
     }
     
 

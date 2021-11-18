@@ -373,7 +373,7 @@ extension LocationPickerViewController
         }))
         
         alertController.addAction(UIAlertAction(title: "Go Home", style: .default, handler: { action in
-            Utility.homeViewController()
+            Utility.CurrentSitesViewController()
         }))
         
         self.present(alertController, animated: true, completion: nil)
