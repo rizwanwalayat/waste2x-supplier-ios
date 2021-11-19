@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,21 +37,21 @@
                                 <rect key="frame" x="20" y="20" width="369" height="417"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kNS-YM-8ut">
-                                        <rect key="frame" x="0.0" y="0.0" width="369" height="283.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="369" height="85"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Factory" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBs-dR-f2K">
-                                                <rect key="frame" x="25" y="9.9999999999999982" width="194" height="25.333333333333329"/>
+                                                <rect key="frame" x="25" y="10" width="194" height="21"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Regular Schedule (Monthly)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drN-11-N8q">
-                                                <rect key="frame" x="25" y="45.333333333333314" width="194.33333333333334" height="218"/>
+                                                <rect key="frame" x="25" y="41" width="172.33333333333334" height="24"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                 <color key="textColor" red="0.45882352939999999" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wxj-yV-omy">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wxj-yV-omy">
                                                 <rect key="frame" x="229" y="10" width="130" height="25"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -90,7 +91,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IkS-uk-Oov" userLabel="HiddenView">
-                                        <rect key="frame" x="0.0" y="293.33333333333331" width="369" height="123.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="95" width="369" height="322"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBs-rL-MSO" userLabel="Line">
                                                 <rect key="frame" x="20" y="0.0" width="329" height="1"/>
@@ -100,28 +101,30 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwf-ge-NMa">
-                                                <rect key="frame" x="0.0" y="11" width="369" height="102.66666666666667"/>
+                                                <rect key="frame" x="0.0" y="11" width="369" height="301"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar-dates" translatesAutoresizingMaskIntoConstraints="NO" id="BWC-Lg-umf">
-                                                        <rect key="frame" x="20" y="8.3333333333333712" width="16" height="16"/>
+                                                        <rect key="frame" x="20" y="111.33333333333331" width="16" height="16"/>
+                                                        <color key="tintColor" name="themeColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="16" id="h27-gr-yyO"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="09:00 AM - April 14" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33P-Cx-oa3">
-                                                        <rect key="frame" x="56" y="5.0000000000000018" width="145" height="22.666666666666671"/>
+                                                        <rect key="frame" x="56" y="5" width="138.66666666666666" height="228.66666666666666"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="o5t-pi-6Ka">
-                                                        <rect key="frame" x="20" y="61.333333333333371" width="15" height="18"/>
+                                                        <rect key="frame" x="20" y="263.33333333333331" width="15" height="18"/>
+                                                        <color key="tintColor" name="themeColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="15" id="3O4-Mr-IlB"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jg-6T-ryY">
-                                                        <rect key="frame" x="54.999999999999986" y="47.666666666666686" width="195.66666666666663" height="45"/>
+                                                        <rect key="frame" x="55" y="253.66666666666671" width="176" height="37.333333333333343"/>
                                                         <string key="text">Google - Mountain View,
 California, United State</string>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
@@ -207,6 +210,9 @@ California, United State</string>
         <image name="calendar-dates" width="16" height="16"/>
         <image name="grayrect" width="100" height="25"/>
         <image name="pin" width="15" height="18"/>
+        <namedColor name="themeColor">
+            <color red="0.45899999141693115" green="0.57999998331069946" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -23,7 +23,11 @@ class DetailedPendingCollectionViewController: BaseViewController {
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
-        self.apiCall()
+        
+        if data == nil
+        {
+            self.apiCall()
+        }
         
     }
     

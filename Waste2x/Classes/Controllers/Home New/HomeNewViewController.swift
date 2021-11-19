@@ -10,30 +10,57 @@ import UIKit
 
 class HomeNewViewController: BaseViewController {
     
+    // MARK: - Local Enum for statues
+    
+    enum PendingCollectionStatues : String {
+        case pending = "Pending"
+        case upcoming = "Upcoming"
+        case completed = "Completed"
+        
+        var backendValue : String {
+            switch self {
+            case .pending:
+                return "Draft"
+            case .upcoming:
+                return "In Transit"
+            case .completed:
+                return "Completed"
+            }
+        }
+    }
+    
+    
     //MARK: - IBOutlets
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomConst: NSLayoutConstraint!
-    
+    @IBOutlet weak var tabsHolderView: UIView!
     @IBOutlet weak var upcomingTab: UIView!
     @IBOutlet weak var pendingTab: UIView!
     @IBOutlet weak var declinedTab: UIView!
     @IBOutlet weak var completedTab: UIView!
     
+    
     //MARK: - Variables
+    
     var tabs = [UIView]()
-    var count = 2
-//    var confirm = true
     var pendingCollectionModel : [PendingCollectionResultResponce]?
+    var visiableCollectionsArray = [PendingCollectionResultResponce]()
+    var allStatus : [PendingCollectionStatues] = [.upcoming, .pending, .completed]
+    var selectedTab = PendingCollectionStatues.upcoming
+    
     //MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.apiCall()
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         tableView.addSubview(refreshControl)
+        tabsHolderView.cornerRadius = 8
     }
+    
     @objc func refresh(_ sender: AnyObject) {
         self.apiCall()
         refreshControl.endRefreshing()
@@ -45,10 +72,11 @@ class HomeNewViewController: BaseViewController {
         mainView.layer.masksToBounds = true
         globalObjectContainer?.tabbarHiddenView.isHidden = false
         bottomConst.constant = self.tabbarViewHeight
+        self.navigationController?.navigationBar.isHidden = true
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        tabs = [upcomingTab, pendingTab, declinedTab, completedTab]
+        tabs = [upcomingTab, pendingTab, completedTab]
     }
 
     //MARK: - IBActions
@@ -61,10 +89,29 @@ class HomeNewViewController: BaseViewController {
         for i in 0..<tabs.count {
             selectionHandlingsOfViews(tabs[i], isSelection: i == sender.tag)
         }
+        if pendingCollectionModel != nil {
+            selectedTab = allStatus[sender.tag]
+            
+            visiableCollectionsArray.removeAll()
+            visiableCollectionsArray = pendingCollectionModel!.filter { $0.status == selectedTab.backendValue}
+            tableView.reloadData()
+        }
+    }
+    
+    @IBAction func sideMenuAction(_ sender: Any) {
+        
+        if let slideMenuController = self.slideMenuController() {
+            slideMenuController.openLeft()
+        }
+    }
+    
+    @IBAction func notificationAction(_ sender: Any) {
+        let notification = NotificationsViewController(nibName: "NotificationsViewController", bundle: nil)
+        self.navigationController?.pushViewController(notification, animated: true)
     }
     
     // MARK: - Tabs Handling
-    func selectionHandlingsOfViews(_ holderView : UIView, isSelection : Bool)
+    fileprivate func selectionHandlingsOfViews(_ holderView : UIView, isSelection : Bool)
     {
         let selectedImageColor = "007F97"
         let unSelectedImageColor = "B9B7C1"
@@ -100,7 +147,7 @@ class HomeNewViewController: BaseViewController {
         else {
             holderView.animateBorderColor(toColor: UIColor(hexString: unSelectedBorderColor), duration: 0.1)
             holderView.borderWidth = 0
-            holderView.backgroundColor = UIColor(hexString: unSelectedBackground)
+            holderView.backgroundColor = .clear// UIColor(hexString: unSelectedBackground)
         }
         
     }
@@ -112,43 +159,46 @@ class HomeNewViewController: BaseViewController {
 
 extension HomeNewViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.pendingCollectionModel?.count ?? 0
+        return visiableCollectionsArray.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if self.pendingCollectionModel![indexPath.row].status == "Pending"
-        {
-            let cell = tableView.register(UnconfirmPendingCollectionTableViewCell.self, indexPath: indexPath)
-            cell.selectionStyle = .none
-            cell.unConfirmedConfig(data: pendingCollectionModel!, index: indexPath.row)
-            return cell
-            
-        }
-        else {
-            
-            let cell = tableView.register(ConfirmPendingTableViewCell.self, indexPath: indexPath)
-            cell.confirmConfig(data: pendingCollectionModel!, index: indexPath.row)
-            return cell
-            
-        }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+//        if self.pendingCollectionModel![indexPath.row].status == "Pending"
+//        {
+//            let cell = tableView.register(UnconfirmPendingCollectionTableViewCell.self, indexPath: indexPath)
+//            cell.selectionStyle = .none
+//            cell.unConfirmedConfig(data: pendingCollectionModel!, index: indexPath.row)
+//            return cell
+//
+//        }
+//        else {
+//        }
+        let cell = tableView.register(ConfirmPendingTableViewCell.self, indexPath: indexPath)
+        cell.confirmConfig(data: pendingCollectionModel!, index: indexPath.row)
+        return cell
         
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        if let confirmCell = tableView.cellForRow(at: indexPath) as? ConfirmPendingTableViewCell
-        {
-            confirmCell.expandCollapseView(index: indexPath.row)
-        }
-        if let UnConfirmcell = tableView.cellForRow(at: indexPath) as? UnconfirmPendingCollectionTableViewCell
-        {
-            UnConfirmcell.expandCollapseView(index: indexPath.row)
-        }
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        if let confirmCell = tableView.cellForRow(at: indexPath) as? ConfirmPendingTableViewCell
+//        {
+//            confirmCell.expandCollapseView(index: indexPath.row)
+//        }
+//        if let UnConfirmcell = tableView.cellForRow(at: indexPath) as? UnconfirmPendingCollectionTableViewCell
+//        {
+//            UnConfirmcell.expandCollapseView(index: indexPath.row)
+//        }
+//
+//        tableView.beginUpdates()
+//        tableView.endUpdates()
         
-        tableView.beginUpdates()
-        tableView.endUpdates()
+        let vc = DetailedPendingCollectionViewController(nibName: "DetailedPendingCollectionViewController", bundle: nil)
+        vc.data = visiableCollectionsArray[indexPath.row]
+        self.navigationController?.pushTo(controller: vc)
     }
     
 }
@@ -163,7 +213,9 @@ extension HomeNewViewController{
             
             if error == nil{
                 
+                self.visiableCollectionsArray.removeAll()
                 self.pendingCollectionModel = result?.result
+                self.visiableCollectionsArray = self.pendingCollectionModel!.filter { $0.status == self.selectedTab.backendValue}
                 self.tableView.reloadData()
             }
             

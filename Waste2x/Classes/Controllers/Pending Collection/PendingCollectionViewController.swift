@@ -65,7 +65,7 @@ extension PendingCollectionViewController : UITableViewDelegate,UITableViewDataS
         {
             let cell = tableView.register(UnconfirmPendingCollectionTableViewCell.self, indexPath: indexPath)
             cell.selectionStyle = .none
-            cell.unConfirmedConfig(data: pendingCollectionModel!, index: indexPath.row)
+            cell.unConfirmedConfig(data: pendingCollectionModel![indexPath.row])
             return cell
             
         }

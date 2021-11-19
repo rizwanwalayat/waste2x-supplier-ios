@@ -35,43 +35,43 @@ class UnconfirmPendingCollectionTableViewCell: UITableViewCell {
                 print("Expand \(index)")
         })
     }
-    func pendingConfig(data:[PendingCollectionResultResponce],index:Int){
+    func pendingConfig(data:PendingCollectionResultResponce){
 //        self.statusLabel.text = data[index].status
 //        self.statusLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 //        self.statusImage.image = UIImage(named: "Pending-Icon")
 //        self.statusView.backgroundColor = .clear
-        self.farmLabel.text = data[index].farm
-        if data[index].frequency == "" {
-            self.scheduleLabel.text = data[index].schedule_type
+        self.farmLabel.text = data.farm
+        if data.frequency == "" {
+            self.scheduleLabel.text = data.schedule_type
         }
         
         else{
-            self.scheduleLabel.text = data[index].schedule_type + " (\(data[index].frequency))"
+            self.scheduleLabel.text = data.schedule_type + " (\(data.frequency))"
             
         }
-        self.dateLabel.text = data[index].scheduleDate
-        self.addressLabel.text = data[index].address
+        self.dateLabel.text = data.scheduleDate
+        self.addressLabel.text = data.address
         
         
         
         
     }
-    func unConfirmedConfig(data:[PendingCollectionResultResponce],index:Int){
+    func unConfirmedConfig(data:PendingCollectionResultResponce){
 //        self.statusLabel.text = data[index].status
 //        self.statusImage.image = UIImage(named: "Pending")
         
-        self.farmLabel.text = data[index].farm
-        self.scheduleLabel.text = data[index].schedule_type + " (\(data[index].frequency))"
-        if data[index].frequency == "" {
-            self.scheduleLabel.text = data[index].schedule_type
+        self.farmLabel.text = data.farm
+        self.scheduleLabel.text = data.schedule_type + " (\(data.frequency))"
+        if data.frequency == "" {
+            self.scheduleLabel.text = data.schedule_type
         }
         
         else{
-            self.scheduleLabel.text = data[index].schedule_type + " (\(data[index].frequency))"
+            self.scheduleLabel.text = data.schedule_type + " (\(data.frequency))"
             
         }
-        self.dateLabel.text = data[index].scheduleDate
-        self.addressLabel.text = data[index].address
+        self.dateLabel.text = data.scheduleDate
+        self.addressLabel.text = data.address
     }
     
 }
