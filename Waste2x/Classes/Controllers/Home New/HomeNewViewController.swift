@@ -16,9 +16,13 @@ class HomeNewViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomConst: NSLayoutConstraint!
     
+    @IBOutlet weak var upcomingTab: UIView!
+    @IBOutlet weak var pendingTab: UIView!
+    @IBOutlet weak var declinedTab: UIView!
+    @IBOutlet weak var completedTab: UIView!
     
     //MARK: - Variables
-    
+    var tabs = [UIView]()
     var count = 2
 //    var confirm = true
     var pendingCollectionModel : [PendingCollectionResultResponce]?
@@ -43,13 +47,64 @@ class HomeNewViewController: BaseViewController {
         bottomConst.constant = self.tabbarViewHeight
         
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        tabs = [upcomingTab, pendingTab, declinedTab, completedTab]
+    }
 
     //MARK: - IBActions
     
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func tabPressed(_ sender: UIButton) {
+        for i in 0..<tabs.count {
+            selectionHandlingsOfViews(tabs[i], isSelection: i == sender.tag)
+        }
+    }
+    
+    // MARK: - Tabs Handling
+    func selectionHandlingsOfViews(_ holderView : UIView, isSelection : Bool)
+    {
+        let selectedImageColor = "007F97"
+        let unSelectedImageColor = "B9B7C1"
+        
+        let selectedTitleLabelTextColor = "444444"
+        let unSelectedTitleLabelTextColor = unSelectedImageColor
+        
+        let selectedBackground = "FFFFFF"
+        let unSelectedBackground = "EBEBEB"
+        
+        let selectedBorderColor = "E0E0E0"
+        let unSelectedBorderColor = unSelectedBackground
+        
+        
+        for view in holderView.subviews
+        {
+            if let textLabel = view as? UILabel
+            {
+                textLabel.textColor = isSelection ? UIColor(hexString: selectedTitleLabelTextColor) : UIColor(hexString: unSelectedTitleLabelTextColor)
+            }
+            else if let imageView = view as? UIImageView
+            {
+                imageView.tintColor = isSelection ? UIColor(hexString: selectedImageColor) : UIColor(hexString: unSelectedImageColor)
+            }
+               
+        }
+        
+        if isSelection{
+            holderView.borderWidth = 1
+            holderView.animateBorderColor(toColor: UIColor(hexString: selectedBorderColor), duration: 0.1)
+            holderView.backgroundColor = UIColor(hexString: selectedBackground)
+        }
+        else {
+            holderView.animateBorderColor(toColor: UIColor(hexString: unSelectedBorderColor), duration: 0.1)
+            holderView.borderWidth = 0
+            holderView.backgroundColor = UIColor(hexString: unSelectedBackground)
+        }
+        
+    }
+    
 
 }
 
