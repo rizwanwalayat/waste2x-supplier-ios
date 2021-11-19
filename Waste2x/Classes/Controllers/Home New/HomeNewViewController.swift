@@ -141,13 +141,16 @@ class HomeNewViewController: BaseViewController {
         
         if isSelection{
             holderView.borderWidth = 1
-            holderView.animateBorderColor(toColor: UIColor(hexString: selectedBorderColor), duration: 0.1)
+            holderView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05).cgColor
+            holderView.layer.shadowOpacity = 0.3
+            holderView.layer.shadowOffset = CGSize(width: 4, height: 4)
+            holderView.layer.shadowRadius = 5
             holderView.backgroundColor = UIColor(hexString: selectedBackground)
         }
         else {
             holderView.animateBorderColor(toColor: UIColor(hexString: unSelectedBorderColor), duration: 0.1)
             holderView.borderWidth = 0
-            holderView.backgroundColor = .clear// UIColor(hexString: unSelectedBackground)
+            holderView.backgroundColor = UIColor.clear
         }
         
     }
