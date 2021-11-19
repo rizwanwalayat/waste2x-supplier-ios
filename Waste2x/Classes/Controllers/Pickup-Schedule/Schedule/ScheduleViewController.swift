@@ -96,7 +96,7 @@ class ScheduleViewController: BaseViewController {
         
         sitesData = globalObjectHome?.fetchSitesData ?? [FetchSitesCustomModel]()
 //        globalObjectHome?.fetchSitesData[0].farmId
-        selectionType = .regular
+        selectionType = .onePickup
         pickupTypeHandlings(selectionType: selectionType)
         //googleMapCurrentLocation()
         self.view.layoutIfNeeded()
@@ -173,9 +173,9 @@ class ScheduleViewController: BaseViewController {
     
     @IBAction func onePickupButtonPressed(_ sender: Any) {
         
-//        (selectionType != .onePickup) ? (selectionType = .onePickup) : (selectionType = .none)
-//        pickupTypeHandlings(selectionType: selectionType)
-        self.showToast(message: "TBD")
+        (selectionType != .onePickup) ? (selectionType = .onePickup) : (selectionType = .none)
+        pickupTypeHandlings(selectionType: selectionType)
+//        self.showToast(message: "TBD")
      
     }
     
