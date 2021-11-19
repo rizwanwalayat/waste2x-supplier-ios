@@ -70,7 +70,7 @@ struct NetworkingConnection {
     }
     
     class func setupHomeAsRootAndNavigateToNotificationViewController() {
-        let slideMenuController = SlideMenuController(mainViewController: HomeViewController(), leftMenuViewController: SideMenuViewController())
+        let slideMenuController = SlideMenuController(mainViewController: HomeNewViewController(), leftMenuViewController: SideMenuViewController())
         let notificationViewController = NotificationsViewController()
         let navigationController = BaseNavigationViewController()
         navigationController.viewControllers = [slideMenuController, notificationViewController]
