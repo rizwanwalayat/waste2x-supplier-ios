@@ -146,6 +146,8 @@ class HomeNewViewController: BaseViewController {
             holderView.layer.shadowOpacity = 0.3
             holderView.layer.shadowOffset = CGSize(width: 4, height: 4)
             holderView.layer.shadowRadius = 5
+            holderView.layer.shadowPath = UIBezierPath(rect: holderView.bounds).cgPath
+
             holderView.backgroundColor = UIColor(hexString: selectedBackground)
         }
         else {
