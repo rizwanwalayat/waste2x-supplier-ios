@@ -56,6 +56,7 @@ class HomeNewViewController: BaseViewController {
         super.viewDidLoad()
         
         self.apiCall()
+        fetchFarmsFromServer()
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         tableView.addSubview(refreshControl)
         tabsHolderView.cornerRadius = 8
@@ -226,4 +227,34 @@ extension HomeNewViewController{
     }
 }
 
+extension HomeNewViewController: FetchSitesDataModelDelegate
+{
+    func sitesEmpty() {
+        
+        self.showPopupToCreateSite()
+    }
+    
+    func fetchFarmsFromServer()
+    {
+        FetchSitesDataModel.shared.reloadData()
+        FetchSitesDataModel.shared.delegate = self
+        
+    }
+    
+    
+    fileprivate func showPopupToCreateSite()
+    {
+        let custompopup = CreateSitePopupViewController(nibName: "CreateSitePopupViewController", bundle: nil)
+        custompopup.modalPresentationStyle   = .overFullScreen
+        custompopup.createSitePressed = {
+            
+            Global.shared.apiCurve = true
+            let vc = SupplyingTypeViewController(nibName: "SupplyingTypeViewController", bundle: nil)
+            self.navigationController?.setViewControllers([vc], animated: true)
+
+        }
+        self.present(custompopup, animated: false, completion: nil)
+    }
+    
+}
 

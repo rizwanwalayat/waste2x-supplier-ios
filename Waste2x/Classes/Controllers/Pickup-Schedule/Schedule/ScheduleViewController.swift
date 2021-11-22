@@ -96,7 +96,7 @@ class ScheduleViewController: BaseViewController {
         
         sitesData = FetchSitesDataModel.shared.sites()
 //        globalObjectHome?.fetchSitesData[0].farmId
-        selectionType = .onePickup
+        selectionType = .regular
         pickupTypeHandlings(selectionType: selectionType)
         //googleMapCurrentLocation()
         self.view.layoutIfNeeded()
@@ -167,15 +167,15 @@ class ScheduleViewController: BaseViewController {
     
     @IBAction func regularScheduleButtonPressed(_ sender: Any) {
         
-//        (selectionType != .regular) ? (selectionType = .regular) : (selectionType = .none)
-//        pickupTypeHandlings(selectionType: selectionType)
+        (selectionType != .regular) ? (selectionType = .regular) : (selectionType = .none)
+        pickupTypeHandlings(selectionType: selectionType)
     }
     
     @IBAction func onePickupButtonPressed(_ sender: Any) {
         
-        (selectionType != .onePickup) ? (selectionType = .onePickup) : (selectionType = .none)
-        pickupTypeHandlings(selectionType: selectionType)
-//        self.showToast(message: "TBD")
+//        (selectionType != .onePickup) ? (selectionType = .onePickup) : (selectionType = .none)
+//        pickupTypeHandlings(selectionType: selectionType)
+        self.showToast(message: "TBD")
      
     }
     
