@@ -1,6 +1,6 @@
 //
 //  TwillioChatDataModel.swift
-//  Waste2x
+//  EnMass
 //
 //  Created by MAC on 21/06/2021.
 //  Copyright © 2021 Haider Awan. All rights reserved.

@@ -1,5 +1,5 @@
-# Waste2x Supplier iOS App
-Repo for iOS Version of Waste2x Supplier App
+# EnMass Supplier iOS App
+Repo for iOS Version of EnMass Supplier App
 
 ## Setup
 ###  How to Clone?
