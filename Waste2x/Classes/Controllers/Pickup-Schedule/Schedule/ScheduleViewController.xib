@@ -613,7 +613,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.45882352939999999" green="0.58039215690000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" name="themeColor"/>
             <constraints>
                 <constraint firstItem="zFa-v8-XUZ" firstAttribute="top" secondItem="qlo-yE-fHa" secondAttribute="top" id="0by-b8-Rdj"/>
                 <constraint firstItem="zFa-v8-XUZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="26Z-QX-ajz"/>
@@ -640,7 +640,7 @@
         <image name="down Arrow gray" width="16" height="9"/>
         <image name="location-pin" width="20" height="24.5"/>
         <namedColor name="themeColor">
-            <color red="0.0" green="0.4392156862745098" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.019999999552965164" green="0.25499999523162842" blue="0.23499999940395355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
