@@ -111,11 +111,11 @@ class ContainerViewController: BaseViewController {
         faqHoverView.isHidden = true
         newsHoverView.isHidden = false
         homeHoverView.isHidden = true
-        buttonSelect(button: addButton)
-        buttonDeselect(button: messagesButton)
+        buttonSelect(button: newsButton)
+        buttonDeselect(button: addButton)
         buttonDeselect(button: homeButton)
         buttonDeselect(button: faqButton)
-        buttonDeselect(button: newsButton)
+        buttonDeselect(button: messagesButton)
     }
     
     

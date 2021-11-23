@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -64,7 +65,7 @@
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbU-7N-e8k">
                                                     <rect key="frame" x="35" y="75" width="6" height="6"/>
-                                                    <color key="backgroundColor" red="0.49019607843137253" green="0.61568627450980395" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" name="secondary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="6" id="8hV-ow-WLt"/>
                                                         <constraint firstAttribute="height" constant="6" id="DgL-Wa-tWZ"/>
@@ -105,7 +106,7 @@
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUO-ig-Wr6">
                                                     <rect key="frame" x="35" y="75" width="6" height="6"/>
-                                                    <color key="backgroundColor" red="0.49019607840000001" green="0.61568627450000002" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" name="secondary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="6" id="jyo-p5-5MH"/>
                                                         <constraint firstAttribute="width" constant="6" id="whr-Y1-x7f"/>
@@ -174,7 +175,7 @@
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqa-8y-hy7">
                                                     <rect key="frame" x="35.5" y="75" width="6" height="6"/>
-                                                    <color key="backgroundColor" red="0.49019607840000001" green="0.61568627450000002" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" name="secondary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="6" id="FVi-pI-CJ2"/>
                                                         <constraint firstAttribute="width" constant="6" id="evI-UH-icz"/>
@@ -208,7 +209,6 @@
                                                     <state key="normal" image="unews"/>
                                                     <state key="selected" image="snews">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="didTapNews:" destination="-1" eventType="touchUpInside" id="fBM-5D-pUO"/>
@@ -216,7 +216,7 @@
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YGo-yL-04r">
                                                     <rect key="frame" x="35.5" y="75" width="6" height="6"/>
-                                                    <color key="backgroundColor" red="0.49019607840000001" green="0.61568627450000002" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" name="secondary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="6" id="37r-Or-y4g"/>
                                                         <constraint firstAttribute="width" constant="6" id="GhJ-Ji-Cip"/>
@@ -294,14 +294,17 @@
     </objects>
     <resources>
         <image name="addsite" width="68" height="68"/>
-        <image name="sfaq" width="27" height="30"/>
-        <image name="shome" width="32" height="30"/>
+        <image name="sfaq" width="30" height="33"/>
+        <image name="shome" width="30" height="28"/>
         <image name="smessage" width="30" height="30"/>
         <image name="snews" width="30" height="30"/>
-        <image name="ufaq" width="27" height="30"/>
-        <image name="uhome" width="32" height="30"/>
+        <image name="ufaq" width="30" height="33"/>
+        <image name="uhome" width="30" height="28"/>
         <image name="umessage" width="30" height="30"/>
         <image name="unews" width="30" height="30"/>
+        <namedColor name="secondary">
+            <color red="0.98431372549019602" green="0.80784313725490198" blue="0.035294117647058823" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
