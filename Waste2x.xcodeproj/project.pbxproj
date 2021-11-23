@@ -76,6 +76,11 @@
 		048582C12667BEC70077B42E /* ScheduleOptionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */; };
 		048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C09E6265E2265003E301F /* ImagePickerVC.swift */; };
 		048C09F0265E5FDE003E301F /* CodeVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C7265BD9AE007C51EE /* CodeVerificationViewModel.swift */; };
+		04AF4DE2274CC57900D0074C /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04AF4DDB274CC57900D0074C /* ProfileViewController.xib */; };
+		04AF4DE3274CC57900D0074C /* PopupProfileEdit.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04AF4DDD274CC57900D0074C /* PopupProfileEdit.xib */; };
+		04AF4DE4274CC57900D0074C /* ProfileEditVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4DDF274CC57900D0074C /* ProfileEditVM.swift */; };
+		04AF4DE5274CC57900D0074C /* PopupProfileEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4DE0274CC57900D0074C /* PopupProfileEdit.swift */; };
+		04AF4DE6274CC57900D0074C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4DE1274CC57900D0074C /* ProfileViewController.swift */; };
 		04BD2801266A2589008FC8B4 /* SchedulePlannedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD27FF266A2589008FC8B4 /* SchedulePlannedViewController.swift */; };
 		04BD2802266A2589008FC8B4 /* SchedulePlannedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BD2800266A2589008FC8B4 /* SchedulePlannedViewController.xib */; };
 		04C2361C2669224600A27B78 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2361B2669224600A27B78 /* Array.swift */; };
@@ -316,6 +321,11 @@
 		048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleOptionsTableViewCell.xib; sourceTree = "<group>"; };
 		048C09E6265E2265003E301F /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
+		04AF4DDB274CC57900D0074C /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		04AF4DDD274CC57900D0074C /* PopupProfileEdit.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupProfileEdit.xib; sourceTree = "<group>"; };
+		04AF4DDF274CC57900D0074C /* ProfileEditVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditVM.swift; sourceTree = "<group>"; };
+		04AF4DE0274CC57900D0074C /* PopupProfileEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupProfileEdit.swift; sourceTree = "<group>"; };
+		04AF4DE1274CC57900D0074C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		04BD27FF266A2589008FC8B4 /* SchedulePlannedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePlannedViewController.swift; sourceTree = "<group>"; };
 		04BD2800266A2589008FC8B4 /* SchedulePlannedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchedulePlannedViewController.xib; sourceTree = "<group>"; };
 		04C2361B2669224600A27B78 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -555,6 +565,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				04AF4DDA274CC57900D0074C /* profile */,
 				962DAC5A274676E2004C40D1 /* Home New */,
 				18D1A363266A2B51009CAD26 /* Tracker */,
 				1849F5A1266FDFB90001B533 /* Contacts Fetch */,
@@ -897,6 +908,34 @@
 				18937542266127CB00D55A33 /* Notifications */,
 			);
 			path = "Messages & Notifications";
+			sourceTree = "<group>";
+		};
+		04AF4DDA274CC57900D0074C /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				04AF4DDC274CC57900D0074C /* PopupProfileEdit */,
+				04AF4DE1274CC57900D0074C /* ProfileViewController.swift */,
+				04AF4DDB274CC57900D0074C /* ProfileViewController.xib */,
+			);
+			path = profile;
+			sourceTree = "<group>";
+		};
+		04AF4DDC274CC57900D0074C /* PopupProfileEdit */ = {
+			isa = PBXGroup;
+			children = (
+				04AF4DDD274CC57900D0074C /* PopupProfileEdit.xib */,
+				04AF4DDE274CC57900D0074C /* ViewModel */,
+				04AF4DE0274CC57900D0074C /* PopupProfileEdit.swift */,
+			);
+			path = PopupProfileEdit;
+			sourceTree = "<group>";
+		};
+		04AF4DDE274CC57900D0074C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04AF4DDF274CC57900D0074C /* ProfileEditVM.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		04BD27FE266A2569008FC8B4 /* Schedule Planned */ = {
@@ -1599,6 +1638,7 @@
 				18397E252660FF54003DE30C /* Poppins-Thin.ttf in Resources */,
 				18896078266E1EB800061783 /* SupplyingCollectionViewCell.xib in Resources */,
 				18397E1D2660FF54003DE30C /* Poppins-SemiBoldItalic.ttf in Resources */,
+				04AF4DE2274CC57900D0074C /* ProfileViewController.xib in Resources */,
 				188B36D42668C95A0036B412 /* UnconfirmPendingCollectionTableViewCell.xib in Resources */,
 				1893756F266127F800D55A33 /* CurrentWasteViewController.xib in Resources */,
 				96774D97273177C100B513CB /* MessagePendingCollectionTableViewCell.xib in Resources */,
@@ -1645,6 +1685,7 @@
 				184F51712667AD9700F0328A /* ConfirmPendingTableViewCell.xib in Resources */,
 				18011273266774E5000C7102 /* FaqTableViewCell.xib in Resources */,
 				043BCBAB27340BB7003B66BB /* CreateSitePopupViewController.xib in Resources */,
+				04AF4DE3274CC57900D0074C /* PopupProfileEdit.xib in Resources */,
 				18397E222660FF54003DE30C /* Poppins-LightItalic.ttf in Resources */,
 				18397E1E2660FF54003DE30C /* Poppins-ExtraBold.ttf in Resources */,
 				18896080266E289800061783 /* SupplyDetailTableViewCell.xib in Resources */,
@@ -1763,6 +1804,7 @@
 				0067A31B252AFC9E00CECA8C /* TimeInterval.swift in Sources */,
 				18A849CD265E37A7008F77E8 /* WeatherCollectionViewCell.swift in Sources */,
 				18ACB7BE267A23110088307D /* PaymentModel.swift in Sources */,
+				04AF4DE6274CC57900D0074C /* ProfileViewController.swift in Sources */,
 				0067A318252AFC9E00CECA8C /* UIDevice.swift in Sources */,
 				043BCBAA27340BB7003B66BB /* CreateSitePopupViewController.swift in Sources */,
 				181025292657E36500DEBF7D /* GCD.swift in Sources */,
@@ -1841,6 +1883,7 @@
 				0463F2E5266E29F300E8924D /* ChatMessagesViewController.swift in Sources */,
 				18A849D7265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift in Sources */,
 				04C54DC2266F571500DE4F05 /* AmountWasteViewController.swift in Sources */,
+				04AF4DE4274CC57900D0074C /* ProfileEditVM.swift in Sources */,
 				1810253C2657E48500DEBF7D /* HomeViewController.swift in Sources */,
 				18BD8473267337E400B5F797 /* NewsModel.swift in Sources */,
 				18937566266127F800D55A33 /* NewWasteSizeViewController.swift in Sources */,
@@ -1880,6 +1923,7 @@
 				18C11A70265FA49C00BC022F /* ContactTableViewCell.swift in Sources */,
 				04BD2801266A2589008FC8B4 /* SchedulePlannedViewController.swift in Sources */,
 				18AC70F2267B5E3E00F398A1 /* NotificationResponceModel.swift in Sources */,
+				04AF4DE5274CC57900D0074C /* PopupProfileEdit.swift in Sources */,
 				047E76842679E8A90055292A /* PickupScheduleDataModel.swift in Sources */,
 				047E83D9268338DD006A0F18 /* LocationPickerViewController.swift in Sources */,
 				0067A322252AFC9E00CECA8C /* UIImage.swift in Sources */,
