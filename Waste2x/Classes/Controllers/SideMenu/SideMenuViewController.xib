@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,7 +30,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtQ-aR-c50">
                     <rect key="frame" x="0.0" y="-94" width="270" height="300"/>
-                    <color key="backgroundColor" red="0.43137254899999999" green="0.54901960780000003" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" name="themeColor"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="270" id="Ncc-Mt-z0j"/>
                         <constraint firstAttribute="height" constant="300" id="d1N-p4-cHf"/>
@@ -40,10 +41,10 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="W2X Logo" translatesAutoresizingMaskIntoConstraints="NO" id="dyo-yv-a5A">
-                    <rect key="frame" x="20" y="64" width="95" height="45"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo header new" translatesAutoresizingMaskIntoConstraints="NO" id="dyo-yv-a5A">
+                    <rect key="frame" x="34" y="64" width="200" height="45"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="95" id="2gx-x6-lMf"/>
+                        <constraint firstAttribute="width" constant="200" id="2gx-x6-lMf"/>
                         <constraint firstAttribute="height" constant="45" id="cch-bB-oZo"/>
                     </constraints>
                 </imageView>
@@ -129,7 +130,7 @@
                 <constraint firstItem="dyo-yv-a5A" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="cdG-hU-kId"/>
                 <constraint firstAttribute="bottom" secondItem="tYs-Up-Cd7" secondAttribute="bottom" constant="30" id="d6k-Yv-A3G"/>
                 <constraint firstItem="3Ek-To-Bnd" firstAttribute="top" secondItem="dyo-yv-a5A" secondAttribute="bottom" constant="15" id="dzF-oi-IaC"/>
-                <constraint firstItem="dyo-yv-a5A" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="er8-Yo-Ywu"/>
+                <constraint firstItem="dyo-yv-a5A" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="34" id="er8-Yo-Ywu"/>
                 <constraint firstItem="GtQ-aR-c50" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="h6s-HQ-RVb"/>
                 <constraint firstItem="LU0-xs-9dF" firstAttribute="centerY" secondItem="3Ek-To-Bnd" secondAttribute="centerY" constant="10" id="qMK-QH-4lk"/>
                 <constraint firstItem="qnB-Pz-USq" firstAttribute="top" secondItem="GtQ-aR-c50" secondAttribute="bottom" id="twe-2P-bJI"/>
@@ -140,9 +141,12 @@
     </objects>
     <resources>
         <image name="Logout" width="30" height="29"/>
-        <image name="W2X Logo" width="95" height="43"/>
+        <image name="logo header new" width="152" height="26"/>
         <image name="rectangle" width="280" height="62"/>
         <image name="username" width="13" height="13"/>
+        <namedColor name="themeColor">
+            <color red="0.0" green="0.4392156862745098" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
