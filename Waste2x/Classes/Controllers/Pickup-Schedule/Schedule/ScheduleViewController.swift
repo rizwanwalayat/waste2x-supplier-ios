@@ -9,15 +9,17 @@
 import UIKit
 import GoogleMaps
 
+enum SelectionType : String{
+    case none
+    case onePickup = "Only one pick-up"
+    case regular = "Regular schedule"
+}
+
+
 class ScheduleViewController: BaseViewController {
 
     // MARK: - Local Enums
     
-    enum SelectionType : String{
-        case none
-        case onePickup = "Only one pick-up"
-        case regular = "Regular schedule"
-    }
     
     enum PopupType {
         case none
@@ -96,7 +98,7 @@ class ScheduleViewController: BaseViewController {
         
         sitesData = FetchSitesDataModel.shared.sites()
 //        globalObjectHome?.fetchSitesData[0].farmId
-        selectionType = .regular
+        selectionType = .onePickup
         pickupTypeHandlings(selectionType: selectionType)
         //googleMapCurrentLocation()
         self.view.layoutIfNeeded()
@@ -126,6 +128,7 @@ class ScheduleViewController: BaseViewController {
             let vc = ScheduleRegularViewController(nibName: "ScheduleRegularViewController", bundle: nil)
             vc.selectedFrequency = selectFrequencyPriodicLabel.text ?? ""
             vc.postDict = postDictData
+            vc.selectionType = selectionType
             self.navigationController?.pushViewController(vc, animated: true)
 
             
@@ -173,9 +176,9 @@ class ScheduleViewController: BaseViewController {
     
     @IBAction func onePickupButtonPressed(_ sender: Any) {
         
-//        (selectionType != .onePickup) ? (selectionType = .onePickup) : (selectionType = .none)
-//        pickupTypeHandlings(selectionType: selectionType)
-        self.showToast(message: "TBD")
+        (selectionType != .onePickup) ? (selectionType = .onePickup) : (selectionType = .none)
+        pickupTypeHandlings(selectionType: selectionType)
+//        self.showToast(message: "TBD")
      
     }
     

@@ -297,32 +297,32 @@ extension ScheduleViewController :  ScheduleOptionsViewControllerDelegate, Calen
     func allFieldsAuth() -> Bool
     {
         
-        if selectFrequencyPriodicLabel.text != selectFrequencyPerodicPlaceholder && selectSiteLabel.text != selectSitePlaceholder && selectLocationLabel.text != selectLocationPlaceHolder
-        {
-            return true
-        }
-        Utility.showAlertController(self, "Please fill all fields")
-        return false
-        
-//        switch selectionType {
-//
-//        case .none:
-//            return false
-//        case .regular:
-//
-//            if selectFrequencyPriodicLabel.text != selectFrequencyPerodicPlaceholder && selectSiteLabel.text != selectSitePlaceholder && selectDateTimeLabel.text != selectDateTimePlaceholder && selectLocationLabel.text != selectLocationPlaceHolder
-//            {
-//                return true
-//            }
-//            return false
-//        case .onePickup:
-//
-//            if selectSiteLabel.text != selectSitePlaceholder && selectDateTimeLabel.text != selectDateTimePlaceholder && selectLocationLabel.text != selectLocationPlaceHolder
-//            {
-//                return true
-//            }
-//            return false
+//        if selectFrequencyPriodicLabel.text != selectFrequencyPerodicPlaceholder && selectSiteLabel.text != selectSitePlaceholder && selectLocationLabel.text != selectLocationPlaceHolder
+//        {
+//            return true
 //        }
+//        Utility.showAlertController(self, "Please fill all fields")
+//        return false
+        
+        switch selectionType {
+
+        case .none:
+            return false
+        case .regular:
+
+            if selectFrequencyPriodicLabel.text != selectFrequencyPerodicPlaceholder && selectSiteLabel.text != selectSitePlaceholder && selectDateTimeLabel.text != selectDateTimePlaceholder && selectLocationLabel.text != selectLocationPlaceHolder
+            {
+                return true
+            }
+            return false
+        case .onePickup:
+
+            if selectSiteLabel.text != selectSitePlaceholder && selectDateTimeLabel.text != selectDateTimePlaceholder && selectLocationLabel.text != selectLocationPlaceHolder
+            {
+                return true
+            }
+            return false
+        }
     }
     
     func googleMapCurrentLocation()

@@ -126,7 +126,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fk7-Y1-Jc4">
-                                                    <rect key="frame" x="28" y="34" width="46.5" height="17"/>
+                                                    <rect key="frame" x="25" y="34" width="53" height="17"/>
                                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -171,7 +171,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2I-B7-POz">
-                                                    <rect key="frame" x="33" y="34" width="37" height="17"/>
+                                                    <rect key="frame" x="30.5" y="34" width="42" height="17"/>
                                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="10"/>
                                                     <color key="textColor" name="inactive"/>
                                                     <nil key="highlightedColor"/>
@@ -216,7 +216,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Declined" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8C2-ye-8uk">
-                                                    <rect key="frame" x="-20" y="34" width="39.5" height="17"/>
+                                                    <rect key="frame" x="-22.5" y="34" width="44.5" height="17"/>
                                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="10"/>
                                                     <color key="textColor" name="inactive"/>
                                                     <nil key="highlightedColor"/>
@@ -261,7 +261,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3g-Zi-wbR">
-                                                    <rect key="frame" x="26.5" y="34" width="49.5" height="17"/>
+                                                    <rect key="frame" x="22.5" y="34" width="57.5" height="17"/>
                                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="10"/>
                                                     <color key="textColor" name="inactive"/>
                                                     <nil key="highlightedColor"/>
@@ -339,7 +339,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.0039215686274509803" green="0.25490196078431371" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.0022446436339999998" green="0.25577130910000001" blue="0.23603382710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="5AZ-B2-jks" firstAttribute="top" secondItem="cTQ-tA-Ohm" secondAttribute="bottom" id="Ahh-LL-Qdx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="hBI-hl-Jri" secondAttribute="top" constant="-20" id="Dyq-GV-jDC"/>
