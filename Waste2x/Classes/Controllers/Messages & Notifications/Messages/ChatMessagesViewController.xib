@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -69,7 +69,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.45882352939999999" green="0.58039215690000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" name="themeColor"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="G6I-Va-BeY" secondAttribute="bottom" id="1yP-1O-c2D"/>
                         <constraint firstAttribute="trailing" secondItem="G6I-Va-BeY" secondAttribute="trailing" id="8CK-xg-8bS"/>
@@ -92,6 +92,7 @@
                                         <constraint firstAttribute="height" constant="50" id="0wO-IZ-YM3"/>
                                         <constraint firstAttribute="width" secondItem="y21-us-C4N" secondAttribute="height" multiplier="1:1" id="Esh-cO-iEW"/>
                                     </constraints>
+                                    <color key="tintColor" name="primary"/>
                                     <state key="normal" image="Send"/>
                                     <connections>
                                         <action selector="sendButtonPressed:" destination="-1" eventType="touchUpInside" id="Glf-3A-Nlt"/>
@@ -151,7 +152,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.52725833649999998" green="0.64092010259999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="themeColor"/>
             <constraints>
                 <constraint firstItem="a2s-Pz-XU8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Swe-ka-V3S"/>
                 <constraint firstAttribute="bottom" secondItem="ZFD-7O-eVd" secondAttribute="bottom" id="Wfp-wS-T5x"/>
@@ -168,8 +169,11 @@
     <resources>
         <image name="Arrow Left" width="10" height="18"/>
         <image name="Send" width="56" height="56"/>
+        <namedColor name="primary">
+            <color red="0.0" green="0.49799999594688416" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="themeColor">
-            <color red="0.45899999141693115" green="0.57999998331069946" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.019607843137254902" green="0.25490196078431371" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,7 +32,7 @@
             <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header-Background" translatesAutoresizingMaskIntoConstraints="NO" id="wfa-FX-Zed">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header-Background-new" translatesAutoresizingMaskIntoConstraints="NO" id="wfa-FX-Zed">
                     <rect key="frame" x="0.0" y="0.0" width="428" height="206.66666666666666"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TvQ-Lx-hDw">
@@ -58,10 +59,12 @@ Suite 211 Durham, NC 27701</string>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Headquarters" translatesAutoresizingMaskIntoConstraints="NO" id="m2M-XW-5vJ">
                             <rect key="frame" x="223" y="92.333333333333343" width="225" height="299.66666666666663"/>
+                            <color key="tintColor" name="themeColor"/>
                         </imageView>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qIA-jE-ATP">
                             <rect key="frame" x="20" y="422" width="388" height="277.33333333333326"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" name="themeColor"/>
                             <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -97,8 +100,8 @@ Suite 211 Durham, NC 27701</string>
                     <color key="textColor" white="0.98833045180000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="W2X Logo" translatesAutoresizingMaskIntoConstraints="NO" id="LO7-QI-ps3">
-                    <rect key="frame" x="309.66666666666669" y="78.333333333333314" width="98.333333333333314" height="82.666666666666686"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo header new" translatesAutoresizingMaskIntoConstraints="NO" id="LO7-QI-ps3">
+                    <rect key="frame" x="224" y="42.333333333333343" width="184" height="155"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="LO7-QI-ps3" secondAttribute="height" multiplier="19:16" id="3M8-ej-GMW"/>
                     </constraints>
@@ -116,7 +119,7 @@ Suite 211 Durham, NC 27701</string>
                 <constraint firstAttribute="bottom" secondItem="TvQ-Lx-hDw" secondAttribute="bottom" id="aqa-Fn-jP1"/>
                 <constraint firstItem="6xZ-mj-uI7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="b7T-o9-pSI"/>
                 <constraint firstItem="TvQ-Lx-hDw" firstAttribute="top" secondItem="6xZ-mj-uI7" secondAttribute="bottom" constant="40" id="dCy-U6-YLZ"/>
-                <constraint firstItem="LO7-QI-ps3" firstAttribute="height" secondItem="wfa-FX-Zed" secondAttribute="height" multiplier="0.4" id="eCe-mT-3l9"/>
+                <constraint firstItem="LO7-QI-ps3" firstAttribute="height" secondItem="wfa-FX-Zed" secondAttribute="height" multiplier="0.75" id="eCe-mT-3l9"/>
                 <constraint firstItem="wfa-FX-Zed" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="fhv-Eh-0gt"/>
                 <constraint firstAttribute="trailing" secondItem="LO7-QI-ps3" secondAttribute="trailing" constant="20" id="lrh-LE-0Kv"/>
                 <constraint firstItem="wfa-FX-Zed" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xbj-Gd-hds"/>
@@ -125,9 +128,12 @@ Suite 211 Durham, NC 27701</string>
         </view>
     </objects>
     <resources>
-        <image name="Header-Background" width="375" height="355"/>
+        <image name="Header-Background-new" width="375" height="149"/>
         <image name="Headquarters" width="166" height="199"/>
-        <image name="W2X Logo" width="95" height="43"/>
+        <image name="logo header new" width="152" height="26"/>
+        <namedColor name="themeColor">
+            <color red="0.019607843137254902" green="0.25490196078431371" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Call Icon.png",
+      "filename" : "002-05169-EnMass Energy-Logos_Full 4C Yellow Green 1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Call Icon@2x.png",
+      "filename" : "002-05169-EnMass Energy-Logos_Full 4C Yellow Green 1@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Call Icon@3x.png",
+      "filename" : "002-05169-EnMass Energy-Logos_Full 4C Yellow Green 1@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
@@ -19,8 +19,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "template-rendering-intent" : "template"
   }
 }
