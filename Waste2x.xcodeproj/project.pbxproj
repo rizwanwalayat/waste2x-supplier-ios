@@ -913,6 +913,7 @@
 		04AF4DDA274CC57900D0074C /* profile */ = {
 			isa = PBXGroup;
 			children = (
+				04AF4DDE274CC57900D0074C /* ViewModel */,
 				04AF4DDC274CC57900D0074C /* PopupProfileEdit */,
 				04AF4DE1274CC57900D0074C /* ProfileViewController.swift */,
 				04AF4DDB274CC57900D0074C /* ProfileViewController.xib */,
@@ -924,7 +925,6 @@
 			isa = PBXGroup;
 			children = (
 				04AF4DDD274CC57900D0074C /* PopupProfileEdit.xib */,
-				04AF4DDE274CC57900D0074C /* ViewModel */,
 				04AF4DE0274CC57900D0074C /* PopupProfileEdit.swift */,
 			);
 			path = PopupProfileEdit;

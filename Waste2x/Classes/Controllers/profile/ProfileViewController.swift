@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileViewController: BaseViewController {
 
@@ -15,6 +16,7 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var userEmail: UITextField!
     @IBOutlet weak var userPhone: UITextField!
+    @IBOutlet weak var mainView: UIView!
     
     var viewModel: ProfileEditVM?
     // MARK: - Controller's lifecycle
@@ -25,6 +27,10 @@ class ProfileViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        mainView.layer.cornerRadius = 36
+        mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        mainView.layer.masksToBounds = true
+        
         viewModel = ProfileEditVM()
         populateUserData()
     }
@@ -42,8 +48,13 @@ class ProfileViewController: BaseViewController {
     }
     
     @IBAction func editPhotoPressed(_ sender: UIButton){
-        ImagePickerVC.shared.showImagePickerFromVC(fromVC: self, isGalleryOpen: nil)
+        ImagePickerVC.shared.showImagePickerFromVC(fromVC: self)
         
+    }
+    
+    @IBAction func menuButtonPressed(_ sender: UIButton){
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func imageSelectedFromGalleryOrCamera(selectedImage: UIImage) {
@@ -52,39 +63,39 @@ class ProfileViewController: BaseViewController {
     
     fileprivate func populateUserData(){
         
-        viewModel?.getUserData()
+        //viewModel?.getUserData()
         userName.text = viewModel?.userName
         userEmail.text = viewModel?.userEmail
         userPhone.text = viewModel?.userPhone
         
         
-        self.downloadImageFromServer(viewModel?.userImage ?? "") { image, error, success in
-            
-            self.userImage.stopAnimating()
-            if success ?? false && image != nil {
-                self.userImage.image = image
-            }
-        }
+//        self.downloadImageFromServer(viewModel?.userImage ?? "") { image, error, success in
+//
+//            self.userImage.stopAnimating()
+//            if success ?? false && image != nil {
+//                self.userImage.image = image
+//            }
+//        }
     }
     
     fileprivate func uploadImageToserver(_ imageToUplaod: UIImage )
     {
-        viewModel?.uploadImage(imageToUplaod, { response, error, success, message in
-            
-            if (success ?? false), error == nil {
-                
-                self.userImage.image = imageToUplaod
-                    
-                // to save record on userDefults
-                if let resultString = response?.result?.toJSONString() {
-                    
-                    DataManager.shared.saveUsersDetail(resultString)
-                }
-
-            } else {
-                
-                self.showToast(message: error?.localizedDescription ?? message)
-            }
-        })
+//        viewModel?.uploadImage(imageToUplaod, { response, error, success, message in
+//
+//            if (success ?? false), error == nil {
+//
+//                self.userImage.image = imageToUplaod
+//
+//                // to save record on userDefults
+//                if let resultString = response?.result?.toJSONString() {
+//
+//                    DataManager.shared.saveUsersDetail(resultString)
+//                }
+//
+//            } else {
+//
+//                self.showToast(message: error?.localizedDescription ?? message)
+//            }
+//        })
     }
 }
