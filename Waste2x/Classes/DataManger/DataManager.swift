@@ -19,31 +19,10 @@ class DataManager {
         UserDefaults.standard.set(value, forKey: "crop_type")
     }
     
-    
     func setUserEmail (value : String)
     {
         UserDefaults.standard.set(nil, forKey: "user_email")
         UserDefaults.standard.set(value, forKey: "user_email")
-    }
-    
-    func getUserEmail() -> String
-    {
-        if let email = UserDefaults.standard.string(forKey: "user_email"){
-            return email
-        }
-        else
-        {
-            return ""
-        }
-    }
-    
-    func getWasteType () -> String
-    {
-        var type = ""
-        if UserDefaults.standard.string(forKey: "crop_type") != nil {
-            type = UserDefaults.standard.string(forKey: "crop_type")!
-        }
-        return type
     }
     
     func setStringData (value: String, key: String) {
@@ -56,28 +35,11 @@ class DataManager {
     func setBoolData (value: Bool, key: String) {
         UserDefaults.standard.set(value, forKey: key)
     }
-    func getBoolData(key: String) -> Bool {
-        return UserDefaults.standard.bool(forKey: key)
-    }
     
     func setFinger (enable: Bool) {
         UserDefaults.standard.set(enable, forKey: "finger")
     }
     
-    func getFinger () -> Bool {
-        var enabled = false
-
-        if UserDefaults.standard.object(forKey: "finger") != nil {
-            enabled = UserDefaults.standard.bool(forKey: "finger")
-        }
-        return enabled
-    }
-    
-    func deleteFinger () {
-         UserDefaults.standard.set(nil, forKey: "finger")
-    }
-    
-    //MARK: - Users Data
     func setUser (user: String) {
         UserDefaults.standard.set(user, forKey: "user_data")
     }
@@ -92,75 +54,17 @@ class DataManager {
         UserDefaults.standard.set(false, forKey: "user_Loggedin")
     }
     
-    func isUserLoggedIn() -> Bool {
-        
-        let isUserLoggedIn = UserDefaults.standard.bool(forKey: "user_Loggedin")
-        return isUserLoggedIn
-    }
-    
-    func getUser() -> Registration? {
-        var user: Registration?
-
-        if UserDefaults.standard.object(forKey: "user_data") != nil {
-            user = Mapper<Registration>().map(JSONString:UserDefaults.standard.string(forKey: "user_data")!)
-        }
-        return user
-    }
-    func deleteUser () {
-         UserDefaults.standard.set(nil, forKey: "user_data")
-        
-    }
-    
-    //MARK: - ApiData
     func setFaq (user: String) {
         UserDefaults.standard.set(user, forKey: "faq")
-    }
-    
-    func getFaq() -> FaqModel? {
-        var faq: FaqModel?
-
-        if UserDefaults.standard.object(forKey: "faq") != nil {
-            faq = Mapper<FaqModel>().map(JSONString:UserDefaults.standard.string(forKey: "faq")!)
-        }
-        return faq
-    }
-    func deleteFaq () {
-         UserDefaults.standard.set(nil, forKey: "faq")
     }
     
     func setWeather (weather: String) {
         UserDefaults.standard.set(weather, forKey: "weather")
     }
     
-    func getWeather() -> WeatherAPI? {
-        var weather: WeatherAPI?
-
-        if UserDefaults.standard.object(forKey: "weather") != nil {
-            weather = Mapper<WeatherAPI>().map(JSONString:UserDefaults.standard.string(forKey: "weather")!)
-        }
-        return weather
-    }
-    
-    
-
-    
     func setAuthentication (auth: String) {
         UserDefaults.standard.set(auth, forKey: "auth_data")
     }
-    
-    func getAuthentication() -> String {
-        var token: String?
-
-        if UserDefaults.standard.string(forKey: "AccessToken") != nil {
-            token = UserDefaults.standard.string(forKey: "AccessToken")!
-        }
-        return token!
-    }
-    
-    func deleteAuthentication () {
-        UserDefaults.standard.set(nil, forKey: "auth_data")
-    }
-    
     
     func setFavoriteId (id: Int) {
         var newItem: [Int] = []
@@ -177,6 +81,17 @@ class DataManager {
         UserDefaults.standard.set(newItem, forKey: "fav_data")
     }
     
+    func saveUsersDetail(_ userDetailJsonString: String)
+    {
+        UserDefaults.standard.set(userDetailJsonString, forKey: "user_Detail")
+    }
+        
+}
+
+// MARK: - get Detials
+extension DataManager {
+    
+    
     func getFavoriteIds() -> [Int]? {
         var items: [Int]?
         
@@ -186,4 +101,116 @@ class DataManager {
         return items
     }
     
+    
+    func getAuthentication() -> String {
+        var token: String?
+
+        if UserDefaults.standard.string(forKey: "AccessToken") != nil {
+            token = UserDefaults.standard.string(forKey: "AccessToken")!
+        }
+        return token!
+    }
+    
+    func getWeather() -> WeatherAPI? {
+        var weather: WeatherAPI?
+
+        if UserDefaults.standard.object(forKey: "weather") != nil {
+            weather = Mapper<WeatherAPI>().map(JSONString:UserDefaults.standard.string(forKey: "weather")!)
+        }
+        return weather
+    }
+    
+    func getFaq() -> FaqModel? {
+        var faq: FaqModel?
+
+        if UserDefaults.standard.object(forKey: "faq") != nil {
+            faq = Mapper<FaqModel>().map(JSONString:UserDefaults.standard.string(forKey: "faq")!)
+        }
+        return faq
+    }
+    
+    func getUser() -> Registration? {
+        var user: Registration?
+
+        if UserDefaults.standard.object(forKey: "user_data") != nil {
+            user = Mapper<Registration>().map(JSONString:UserDefaults.standard.string(forKey: "user_data")!)
+        }
+        return user
+    }
+    
+    func isUserLoggedIn() -> Bool {
+        
+        let isUserLoggedIn = UserDefaults.standard.bool(forKey: "user_Loggedin")
+        return isUserLoggedIn
+    }
+    
+    func getFinger () -> Bool {
+        var enabled = false
+
+        if UserDefaults.standard.object(forKey: "finger") != nil {
+            enabled = UserDefaults.standard.bool(forKey: "finger")
+        }
+        return enabled
+    }
+    
+    func getBoolData(key: String) -> Bool {
+        return UserDefaults.standard.bool(forKey: key)
+    }
+    
+    func getWasteType () -> String
+    {
+        var type = ""
+        if UserDefaults.standard.string(forKey: "crop_type") != nil {
+            type = UserDefaults.standard.string(forKey: "crop_type")!
+        }
+        return type
+    }
+    
+    func getUserEmail() -> String
+    {
+        if let email = UserDefaults.standard.string(forKey: "user_email"){
+            return email
+        }
+        else
+        {
+            return ""
+        }
+    }
+    
+    func getUserDetail() -> UserDetailResult?
+    {
+        var user: UserDetailResult?
+
+        if UserDefaults.standard.object(forKey: "user_Detail") != nil {
+            user = Mapper<UserDetailResult>().map(JSONString:UserDefaults.standard.string(forKey: "user_Detail")!)
+        }
+        return user
+    }
+}
+
+
+// MARK: - Remove/ Delete
+extension DataManager {
+    
+    func deleteAuthentication () {
+        UserDefaults.standard.set(nil, forKey: "auth_data")
+    }
+    
+    func deleteFaq () {
+         UserDefaults.standard.set(nil, forKey: "faq")
+    }
+    
+    func deleteUser () {
+         UserDefaults.standard.set(nil, forKey: "user_data")
+        
+    }
+    
+    func deleteFinger () {
+         UserDefaults.standard.set(nil, forKey: "finger")
+    }
+    
+    func deleteUserDetial()
+    {
+        UserDefaults.standard.set(nil, forKey: "user_Detail")
+    }
 }

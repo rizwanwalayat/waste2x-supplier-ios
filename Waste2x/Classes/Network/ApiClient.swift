@@ -237,5 +237,22 @@ class APIClient: APIClientHandler {
         print("fetchTwillioAccessToken : \(headers)")
         _ = sendRequest("\(APIRoutes.fetchTwilioTokenUrl)\(identity)", parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
+    
+    func updateUserName(userName: String, _ completionBlock: @escaping APIClientCompletionHandler)
+    {
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        
+        let params = ["name": userName] as [String: AnyObject]
+        print("fetchTwillioAccessToken : \(headers)")
+        _ = sendRequest(APIRoutes.editProfile , parameters: params ,httpMethod: .post , headers: headers, completionBlock: completionBlock)
+    }
+    
+    func saveUserImage(image : UIImage,_ completionBlock: @escaping APIClientCompletionHandler) {
+        
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        let parameters = ["image": image] as [String: AnyObject]
+        let url = APIRoutes.baseUrl + APIRoutes.editProfile
+        sendRequestUsingMultipart(url, parameters: parameters, headers: headers, completionBlock: completionBlock)
+    }
 }
 

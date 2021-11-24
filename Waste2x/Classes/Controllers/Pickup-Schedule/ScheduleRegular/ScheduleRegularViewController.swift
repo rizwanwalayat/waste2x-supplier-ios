@@ -31,6 +31,7 @@ class ScheduleRegularViewController: BaseViewController {
     var selectedFrequency = ""
     var postDict = [String : Any]()
     var dateValuePlaceHolder = "Select Date"
+    var selectionType = SelectionType.regular
     
     // MARK: - Controller's Lifecycle
     
@@ -58,13 +59,18 @@ class ScheduleRegularViewController: BaseViewController {
         
         // weeksHandlings
         
-        if selectedFrequency == "Daily" {
+        if selectedFrequency == "Daily" || selectionType == .onePickup{
             availableDaysView.isHidden = true
             selectedWeeksArray = [0, 1, 2, 3, 4, 5]
         }
         
         // set dateValue placeHolder
         dateValueLabel.text = dateValuePlaceHolder
+        
+        if selectionType == .onePickup
+        {
+            availableDaysView.isHidden = true
+        }
     }
 
     
@@ -152,14 +158,29 @@ class ScheduleRegularViewController: BaseViewController {
     
     fileprivate func checkAllFieldsAuth() -> Bool
     {
-        if selectedWeeksArray.count <= 0 {
-            Utility.showAlertController(self, "Please Choose Day(s)")
+        switch selectionType {
+        case .onePickup:
+            
+            if dateValueLabel.text == dateValuePlaceHolder {
+                Utility.showAlertController(self, "Please Select Preferred Start Date")
+                return false
+            }
+            
+        case .regular:
+            
+            if selectedWeeksArray.count <= 0 {
+                Utility.showAlertController(self, "Please Choose Day(s)")
+                return false
+            }
+            
+            if dateValueLabel.text == dateValuePlaceHolder {
+                Utility.showAlertController(self, "Please Select Preferred Start Date")
+                return false
+            }
+        case .none:
+                
             return false
-        }
-        
-        if dateValueLabel.text == dateValuePlaceHolder {
-            Utility.showAlertController(self, "Please Select Preferred Start Date")
-            return false
+                
         }
         
         return true

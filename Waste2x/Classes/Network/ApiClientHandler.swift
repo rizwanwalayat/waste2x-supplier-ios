@@ -26,11 +26,11 @@ class APIClientHandler: TSAPIClient {
             
             for (key, value) in parameters ?? [:] {
                 
-                if key == "farm_image" {
+                if key == "farm_image" || key == "image" {
                     let image = value as! UIImage
                     let data = image.jpeg(.lowest)
-                    multipartFormData.append(data!, withName: "farm_image", fileName: "farm_image1.jpeg", mimeType: "image/jpeg")
-                    parameters?.removeValue(forKey: "farm_image")
+                    multipartFormData.append(data!, withName: key, fileName: "\(key)1.jpeg", mimeType: "image/jpeg")
+                    parameters?.removeValue(forKey: key)
                 } else {
                     multipartFormData.append(String(describing: value).data(using: .utf8)!, withName: key)
                 }
@@ -49,9 +49,11 @@ class APIClientHandler: TSAPIClient {
                     
                     switch response.result {
                     case .success(let resultData):
+                        self.showRequestDetailForSuccess(responseObject: response)
                         completionBlock(resultData as AnyObject, nil, self.status,self.message)
                         
                     case .failure(let error):
+                        self.showRequestDetailForFailure(responseObject: response)
                         completionBlock(error as AnyObject, error as NSError, self.status,self.message)
                     }
                     

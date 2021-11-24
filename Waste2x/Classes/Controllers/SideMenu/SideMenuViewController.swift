@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
+import SDWebImage
 
 class SideMenuViewController: BaseViewController {
     
     //MARK: - Outlets
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var phoneNoHolderView: UIView!
+    @IBOutlet weak var headerView: UIView!
+    
     //MARK: - Variables
 //    var img = [#imageLiteral(resourceName: "Payment Icons"),#imageLiteral(resourceName: "site-icon"),#imageLiteral(resourceName: "inviteSupplier-icon"),#imageLiteral(resourceName: "ufaq")]
 //    var textArray = ["Payments","Sites", "Invite Suppliers", "Privacy Policy"]
@@ -22,7 +29,8 @@ class SideMenuViewController: BaseViewController {
     var reload = -1
     var timerTest : Timer?
     var counter = 0
-    @IBOutlet weak var headerView: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,8 +40,10 @@ class SideMenuViewController: BaseViewController {
         headerView.layer.cornerRadius = 30
         headerView.layer.maskedCorners = [.layerMaxXMaxYCorner]
         headerView.layer.masksToBounds = true
-        self.phoneNumberLabel.text = self.userData?.phone
+        phoneNoHolderView.layer.cornerRadius = 20
+        phoneNoHolderView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMinYCorner]
         
+        populateUsersData()
     }
     //MARK: - Action Buttons
     
@@ -57,10 +67,13 @@ class SideMenuViewController: BaseViewController {
         self.present(alertVc, animated: true, completion: nil)
         
     }
-// Commented by Rizwan as this seemed like a duplicated IBAction
-//    @IBAction func logOutAction(_ sender: Any) {
-//
-//    }
+    
+    @IBAction func profileButtonPressed(_ sender: UIButton){
+        
+        
+        let vc = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     func startTimer ()
     {
@@ -92,6 +105,19 @@ class SideMenuViewController: BaseViewController {
             
             stopTimer()
             
+        }
+    }
+    
+    fileprivate func populateUsersData(){
+        
+        guard let user = DataManager.shared.getUserDetail() else {return}
+        self.phoneNumberLabel.text = user.phone
+        
+        self.downloadImageFromServer(user.image) { image, error, success in
+            
+            if success ?? false && image != nil {
+                self.userImage.image = image
+            }
         }
     }
     

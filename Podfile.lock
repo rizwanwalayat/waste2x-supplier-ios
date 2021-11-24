@@ -65,6 +65,7 @@ PODS:
     - GoogleUtilities/Logger
   - IQKeyboardManagerSwift (6.5.6)
   - leveldb-library (1.22.1)
+  - lottie-ios (3.2.3)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
     - nanopb/encode (= 2.30908.0)
@@ -92,6 +93,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - IQKeyboardManagerSwift
+  - lottie-ios
   - NVActivityIndicatorView
   - ObjectMapper (~> 3.4)
   - SDWebImage
@@ -117,6 +119,7 @@ SPEC REPOS:
     - GoogleUtilities
     - IQKeyboardManagerSwift
     - leveldb-library
+    - lottie-ios
     - nanopb
     - NVActivityIndicatorView
     - ObjectMapper
@@ -143,6 +146,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: 8de2a97a17e15b6b98e38e8770e2d129a57c0040
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
@@ -153,6 +157,6 @@ SPEC CHECKSUMS:
   TwilioChatClient: 23168c2df8e306da1cedcad1d60ba69862235358
   YoutubePlayer-in-WKWebView: cfbf46da51d7370662a695a8f351e5fa1d3e1008
 
-PODFILE CHECKSUM: 0478aabf1602a0895129ccaabafb3f44da567ede
+PODFILE CHECKSUM: 1b82ce8643ae0f1d164bf3bbcd74a1652e0211ed
 
-COCOAPODS: 1.11.0.rc.1
+COCOAPODS: 1.11.0.beta.2

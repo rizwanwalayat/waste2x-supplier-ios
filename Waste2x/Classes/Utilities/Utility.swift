@@ -188,35 +188,38 @@ struct NetworkingConnection {
         })
     }
     @objc class func showLoading(offSet: CGFloat = 0, isVisible: Bool = true) {
-        DispatchQueue.main.async {
-            if let _ = kApplicationWindow?.viewWithTag(9000) {
-                return
-            }
-
-            let superView = UIView(frame: CGRect(x: 0, y: 0 - offSet, width: kApplicationWindow?.frame.width ?? 0.0, height: kApplicationWindow?.frame.height ?? 0.0))
-            let iconImageView = UIImageView(frame: CGRect(x: superView.frame.width/2 - 32.5, y: superView.frame.height/2 - 32.5, width: 65, height: 65))
-            iconImageView.image = UIImage(named: "loading")
-            
-            if isVisible {
-                superView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
-            
-            } else {
-                superView.backgroundColor = .clear
-            }
-            
-            superView.tag = 9000
-            iconImageView.rotate()
-            superView.addSubview(iconImageView)
-            superView.bringSubviewToFront(iconImageView)
-            kApplicationWindow?.addSubview(superView)
-        }
-
-        }
+//        DispatchQueue.main.async {
+//            if let _ = kApplicationWindow?.viewWithTag(9000) {
+//                return
+//            }
+//
+//            let superView = UIView(frame: CGRect(x: 0, y: 0 - offSet, width: kApplicationWindow?.frame.width ?? 0.0, height: kApplicationWindow?.frame.height ?? 0.0))
+//            let iconImageView = UIImageView(frame: CGRect(x: superView.frame.width/2 - 32.5, y: superView.frame.height/2 - 32.5, width: 65, height: 65))
+//            iconImageView.image = UIImage(named: "loading")
+//
+//            if isVisible {
+//                superView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+//
+//            } else {
+//                superView.backgroundColor = .clear
+//            }
+//
+//            superView.tag = 9000
+//            iconImageView.rotate()
+//            superView.addSubview(iconImageView)
+//            superView.bringSubviewToFront(iconImageView)
+//            kApplicationWindow?.addSubview(superView)
+//        }
+        
+        LoaderAnimation.shared.playAnimation()
+        
+    }
     
     @objc class func hideLoading() {
-        if let activityView = kApplicationWindow?.viewWithTag(9000) {
-            activityView.removeFromSuperview()
-        }
+//        if let activityView = kApplicationWindow?.viewWithTag(9000) {
+//            activityView.removeFromSuperview()
+//        }
+        LoaderAnimation.shared.stopAnimation()
     }
     
     class func simpleDate (date : Date) -> String {

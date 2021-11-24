@@ -80,6 +80,8 @@ class RegistrationResult : Mappable {
     var percentage = Double()
     var email = ""
     var phone = ""
+    var name = ""
+    var image = ""
     
     required init?(map: Map) { }
 
@@ -96,6 +98,8 @@ class RegistrationResult : Mappable {
         percentage <- map["percentage"]
         email <- map["email"]
         phone <- map["phone"]
+        name <- map["name"]
+        image <- map["image"]
     }
 }
 
