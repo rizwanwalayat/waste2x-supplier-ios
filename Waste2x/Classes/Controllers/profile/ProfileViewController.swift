@@ -83,13 +83,13 @@ class ProfileViewController: BaseViewController {
 
             if (success ?? false), error == nil {
 
-                self.populateUserData()
-
                 // to save record on userDefults
                 if let resultString = response?.result?.toJSONString() {
-
+                    
                     DataManager.shared.saveUsersDetail(resultString)
                 }
+
+                self.populateUserData()
 
             } else {
 

@@ -19,4 +19,5 @@ target 'Waste2x' do
   pod 'TwilioChatClient', '~> 2.6.6'
   pod 'Firebase/Database'
   pod "Columbus"
+  pod 'lottie-ios'
 end

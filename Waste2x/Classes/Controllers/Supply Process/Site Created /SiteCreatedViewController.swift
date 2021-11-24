@@ -52,10 +52,6 @@ class SiteCreatedViewController: BaseViewController {
         
         // save user data 
         DataManager.shared.setIfUserLoggedInSuccessFully()
-        if let resultString = createSiteDataModel?.result?.toJSONString() {
-            
-            DataManager.shared.saveUsersDetail(resultString)
-        }
     }
 
 
