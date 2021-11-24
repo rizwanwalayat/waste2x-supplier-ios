@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,11 +26,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header-Background" translatesAutoresizingMaskIntoConstraints="NO" id="1yx-SP-e1g">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header-Background-new" translatesAutoresizingMaskIntoConstraints="NO" id="1yx-SP-e1g">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header-Background" translatesAutoresizingMaskIntoConstraints="NO" id="YJG-Yo-4cJ">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctp-Sl-OEe">
                     <rect key="frame" x="0.0" y="44" width="389" height="136"/>
@@ -80,11 +77,9 @@ Asked Questions</string>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="ctp-Sl-OEe" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.167411" id="5V3-N1-4hN"/>
-                <constraint firstItem="YJG-Yo-4cJ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="7W1-0x-Cwc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FpN-gt-qF7" secondAttribute="trailing" id="E9U-c5-5yZ"/>
                 <constraint firstItem="1yx-SP-e1g" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ebe-5c-t7O"/>
                 <constraint firstItem="1yx-SP-e1g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JFd-uh-ogQ"/>
-                <constraint firstAttribute="bottom" secondItem="YJG-Yo-4cJ" secondAttribute="bottom" id="QpF-ob-l8U"/>
                 <constraint firstItem="ctp-Sl-OEe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Xo4-27-3Y9"/>
                 <constraint firstItem="ADF-5s-9lS" firstAttribute="top" secondItem="1yx-SP-e1g" secondAttribute="bottom" constant="-110" id="YOZ-ir-CXK"/>
                 <constraint firstItem="FpN-gt-qF7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bfU-4Z-Jre"/>
@@ -94,16 +89,14 @@ Asked Questions</string>
                 <constraint firstItem="ctp-Sl-OEe" firstAttribute="leading" secondItem="1yx-SP-e1g" secondAttribute="leading" id="kaj-kp-7Ab"/>
                 <constraint firstItem="ctp-Sl-OEe" firstAttribute="bottom" secondItem="1yx-SP-e1g" secondAttribute="bottom" id="mFD-XH-Fuq"/>
                 <constraint firstAttribute="trailing" secondItem="ctp-Sl-OEe" secondAttribute="trailing" constant="-14" id="mbq-na-k8D"/>
-                <constraint firstItem="YJG-Yo-4cJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="nRU-Ai-9iB"/>
                 <constraint firstAttribute="bottom" secondItem="FpN-gt-qF7" secondAttribute="bottom" constant="60" id="nhW-PK-DcF"/>
-                <constraint firstItem="YJG-Yo-4cJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xnL-Nl-hxh"/>
             </constraints>
             <point key="canvasLocation" x="-84.057971014492765" y="103.79464285714285"/>
         </view>
     </objects>
     <resources>
         <image name="FAQ Women" width="101.66666412353516" height="167"/>
-        <image name="Header-Background" width="375" height="355"/>
+        <image name="Header-Background-new" width="375" height="149"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

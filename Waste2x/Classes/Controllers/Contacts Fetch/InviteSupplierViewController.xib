@@ -67,7 +67,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.45882352939999999" green="0.58039215690000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" name="themeColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Vg1-gK-9PD" secondAttribute="trailing" id="206-ft-ajB"/>
                         <constraint firstItem="Vg1-gK-9PD" firstAttribute="leading" secondItem="SrT-kJ-LMo" secondAttribute="leading" id="ffM-az-2aB"/>
@@ -149,7 +149,7 @@ and get 5$ on your payment</string>
         <image name="Arrow Left" width="10" height="18"/>
         <image name="invite" width="254" height="243.66667175292969"/>
         <namedColor name="themeColor">
-            <color red="0.0" green="0.4392156862745098" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.019607843137254902" green="0.25490196078431371" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

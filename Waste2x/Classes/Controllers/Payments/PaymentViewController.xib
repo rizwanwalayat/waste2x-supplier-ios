@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -63,7 +64,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.45882352939999999" green="0.58039215690000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" name="themeColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Wwp-Va-hG7" secondAttribute="trailing" id="C94-91-ehz"/>
                         <constraint firstAttribute="bottom" secondItem="Wwp-Va-hG7" secondAttribute="bottom" id="Jf4-Y1-qaR"/>
@@ -108,26 +109,29 @@
                             <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7T-lh-K6N">
-                            <rect key="frame" x="20" y="630.66666666666663" width="388" height="60"/>
+                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvw-oI-r5d">
+                            <rect key="frame" x="25" y="630.66666666666663" width="378" height="58"/>
+                            <color key="backgroundColor" name="themeColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="60" id="qO5-Wn-Kuz"/>
+                                <constraint firstAttribute="height" constant="58" id="BUy-gP-3LM"/>
                             </constraints>
-                            <state key="normal" image="Connect Button"/>
+                            <state key="normal" title="Connect with " image="stripe">
+                                <color key="titleColor" red="1" green="0.97647058819999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                     <real key="value" value="18"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="connectStripeAccount:" destination="-1" eventType="touchUpInside" id="jp8-cJ-DDr"/>
+                                <action selector="connectStripeAccount:" destination="-1" eventType="touchUpInside" id="Lnm-fC-Yys"/>
                             </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="lvw-oI-r5d" firstAttribute="leading" secondItem="T7f-08-cda" secondAttribute="leading" constant="25" id="217-PD-pH2"/>
                         <constraint firstItem="hcD-r3-sj2" firstAttribute="centerY" secondItem="T7f-08-cda" secondAttribute="centerY" constant="-60" id="3RY-Sy-cUa"/>
-                        <constraint firstItem="C7T-lh-K6N" firstAttribute="top" secondItem="rxr-sp-YsB" secondAttribute="bottom" constant="40" id="47R-V6-eFV"/>
                         <constraint firstItem="hcD-r3-sj2" firstAttribute="height" secondItem="T7f-08-cda" secondAttribute="height" multiplier="0.295784" id="AxH-Gx-c4G"/>
                         <constraint firstItem="rxr-sp-YsB" firstAttribute="top" secondItem="hcD-r3-sj2" secondAttribute="bottom" constant="77" id="Cz8-4L-Lct"/>
                         <constraint firstAttribute="trailing" secondItem="rxr-sp-YsB" secondAttribute="trailing" constant="20" id="Mcn-2S-GT6"/>
@@ -135,12 +139,12 @@
                         <constraint firstItem="hcD-r3-sj2" firstAttribute="centerX" secondItem="T7f-08-cda" secondAttribute="centerX" id="U9v-h2-vat"/>
                         <constraint firstItem="skq-qO-e2o" firstAttribute="leading" secondItem="T7f-08-cda" secondAttribute="leading" constant="20" id="UmR-Sh-CnS"/>
                         <constraint firstItem="rxr-sp-YsB" firstAttribute="leading" secondItem="T7f-08-cda" secondAttribute="leading" constant="20" id="WoO-zg-GnM"/>
-                        <constraint firstItem="C7T-lh-K6N" firstAttribute="leading" secondItem="T7f-08-cda" secondAttribute="leading" constant="20" id="g4C-oN-fIs"/>
                         <constraint firstItem="skq-qO-e2o" firstAttribute="centerX" secondItem="T7f-08-cda" secondAttribute="centerX" id="hL9-kP-YBK"/>
                         <constraint firstAttribute="trailing" secondItem="skq-qO-e2o" secondAttribute="trailing" constant="20" id="njz-p3-1IS"/>
+                        <constraint firstAttribute="trailing" secondItem="lvw-oI-r5d" secondAttribute="trailing" constant="25" id="oRM-f2-ykV"/>
                         <constraint firstItem="hcD-r3-sj2" firstAttribute="top" secondItem="skq-qO-e2o" secondAttribute="bottom" constant="30" id="rtQ-29-diz"/>
                         <constraint firstItem="rxr-sp-YsB" firstAttribute="centerX" secondItem="T7f-08-cda" secondAttribute="centerX" id="teA-65-2qL"/>
-                        <constraint firstAttribute="trailing" secondItem="C7T-lh-K6N" secondAttribute="trailing" constant="20" id="xDh-es-Ifu"/>
+                        <constraint firstItem="lvw-oI-r5d" firstAttribute="top" secondItem="rxr-sp-YsB" secondAttribute="bottom" constant="40" id="zNe-WQ-s6U"/>
                     </constraints>
                 </view>
             </subviews>
@@ -161,7 +165,10 @@
     </objects>
     <resources>
         <image name="Arrow Left" width="10" height="18"/>
-        <image name="Connect Button" width="327" height="58"/>
         <image name="paymentnotmade" width="207" height="235"/>
+        <image name="stripe" width="64" height="26.666666030883789"/>
+        <namedColor name="themeColor">
+            <color red="0.019999999552965164" green="0.25499999523162842" blue="0.23499999940395355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>
