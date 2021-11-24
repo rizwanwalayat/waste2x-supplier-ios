@@ -125,6 +125,9 @@ class ScheduleViewController: BaseViewController {
     {
         if allFieldsAuth() {
             
+            if selectionType == .onePickup {
+                postDictData["frequency"] = "Daily"
+            }
             let vc = ScheduleRegularViewController(nibName: "ScheduleRegularViewController", bundle: nil)
             vc.selectedFrequency = selectFrequencyPriodicLabel.text ?? ""
             vc.postDict = postDictData
@@ -176,8 +179,8 @@ class ScheduleViewController: BaseViewController {
     
     @IBAction func onePickupButtonPressed(_ sender: Any) {
         
-        (selectionType != .onePickup) ? (selectionType = .onePickup) : (selectionType = .none)
-        pickupTypeHandlings(selectionType: selectionType)
+//        (selectionType != .onePickup) ? (selectionType = .onePickup) : (selectionType = .none)
+//        pickupTypeHandlings(selectionType: selectionType)
 //        self.showToast(message: "TBD")
      
     }

@@ -59,7 +59,7 @@ class ScheduleRegularViewController: BaseViewController {
         
         // weeksHandlings
         
-        if selectedFrequency == "Daily" {
+        if selectedFrequency == "Daily" || selectionType == .onePickup{
             availableDaysView.isHidden = true
             selectedWeeksArray = [0, 1, 2, 3, 4, 5]
         }

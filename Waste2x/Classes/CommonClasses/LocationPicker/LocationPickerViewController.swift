@@ -372,8 +372,15 @@ extension LocationPickerViewController
             
         }))
         
-        alertController.addAction(UIAlertAction(title: "Go Home", style: .default, handler: { action in
-            Utility.CurrentSitesViewController()
+        var title = Global.shared.apiCurve ? "Go Home" : "Login"
+        alertController.addAction(UIAlertAction(title: title, style: .default, handler: { action in
+            if Global.shared.apiCurve {
+                
+                Utility.CurrentSitesViewController()
+            }
+            else {
+                Utility.loginRootViewController()
+            }
         }))
         
         self.present(alertController, animated: true, completion: nil)

@@ -83,18 +83,18 @@ class PopupProfileEdit: BaseViewController {
         
     }
     @IBAction func saveBtnPressed(_ sender: Any) {
-//        viewModel?.editUserName(newName: userName.text ?? viewModel?.userName ?? "", { result, error, status, message in
-//            if status ?? false, error == nil {
-//                self.showToast(message: message)
-//                self.hidePopup(.save)
-//                if let resultString = result?.result?.toJSONString() {
-//                    
-//                    DataManager.shared.saveUsersDetail(resultString)
-//                }
-//            } else {
-//                self.showToast(message: error?.localizedDescription ?? message)
-//            }
-//        })
+        viewModel?.editUserName(newName: userName.text ?? viewModel?.userName ?? "", { result, error, status, message in
+            if status ?? false, error == nil {
+                self.showToast(message: message)
+                if let resultString = result?.result?.toJSONString() {
+                    
+                    DataManager.shared.saveUsersDetail(resultString)
+                    self.hidePopup(.save)
+                }
+            } else {
+                self.showToast(message: error?.localizedDescription ?? message)
+            }
+        })
     }
 
 }

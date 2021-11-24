@@ -23,7 +23,6 @@ class ProfileViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = ProfileEditVM()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,39 +62,39 @@ class ProfileViewController: BaseViewController {
     
     fileprivate func populateUserData(){
         
-        //viewModel?.getUserData()
+        viewModel?.getUserData()
         userName.text = viewModel?.userName
         userEmail.text = viewModel?.userEmail
         userPhone.text = viewModel?.userPhone
         
         
-//        self.downloadImageFromServer(viewModel?.userImage ?? "") { image, error, success in
-//
-//            self.userImage.stopAnimating()
-//            if success ?? false && image != nil {
-//                self.userImage.image = image
-//            }
-//        }
+        self.downloadImageFromServer(viewModel?.userImage ?? "") { image, error, success in
+
+            self.userImage.stopAnimating()
+            if success ?? false && image != nil {
+                self.userImage.image = image
+            }
+        }
     }
     
     fileprivate func uploadImageToserver(_ imageToUplaod: UIImage )
     {
-//        viewModel?.uploadImage(imageToUplaod, { response, error, success, message in
-//
-//            if (success ?? false), error == nil {
-//
-//                self.userImage.image = imageToUplaod
-//
-//                // to save record on userDefults
-//                if let resultString = response?.result?.toJSONString() {
-//
-//                    DataManager.shared.saveUsersDetail(resultString)
-//                }
-//
-//            } else {
-//
-//                self.showToast(message: error?.localizedDescription ?? message)
-//            }
-//        })
+        viewModel?.uploadImage(imageToUplaod, { response, error, success, message in
+
+            if (success ?? false), error == nil {
+
+                self.populateUserData()
+
+                // to save record on userDefults
+                if let resultString = response?.result?.toJSONString() {
+
+                    DataManager.shared.saveUsersDetail(resultString)
+                }
+
+            } else {
+
+                self.showToast(message: error?.localizedDescription ?? message)
+            }
+        })
     }
 }

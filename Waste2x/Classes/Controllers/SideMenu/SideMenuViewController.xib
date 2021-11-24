@@ -24,6 +24,7 @@
                 <outlet property="phoneNoHolderView" destination="I9i-nJ-Y2A" id="NOM-YS-wNG"/>
                 <outlet property="phoneNumberLabel" destination="vaR-eF-oPy" id="dbR-9W-PcR"/>
                 <outlet property="tableView" destination="qnB-Pz-USq" id="9y4-j7-OY9"/>
+                <outlet property="userImage" destination="164-iM-pQL" id="1I4-Up-ECa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,7 +34,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVv-yh-XXx">
-                    <rect key="frame" x="0.0" y="0.0" width="270" height="198"/>
+                    <rect key="frame" x="0.0" y="0.0" width="270" height="202.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJE-Ps-Rti">
                             <rect key="frame" x="15" y="74" width="240" height="26"/>
@@ -50,7 +51,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9i-nJ-Y2A">
-                            <rect key="frame" x="15" y="120" width="240" height="62"/>
+                            <rect key="frame" x="15" y="120" width="240" height="66.5"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="username" translatesAutoresizingMaskIntoConstraints="NO" id="r19-Le-pcP">
                                     <rect key="frame" x="20" y="16" width="13" height="13"/>
@@ -60,19 +61,19 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3j-kV-6uF">
-                                    <rect key="frame" x="37" y="15" width="199" height="15.5"/>
+                                    <rect key="frame" x="37" y="13.5" width="199" height="18.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+923116166521" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaR-eF-oPy">
-                                    <rect key="frame" x="20" y="32.5" width="154" height="15.5"/>
+                                    <rect key="frame" x="20" y="34" width="154" height="18.5"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="13"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default User" translatesAutoresizingMaskIntoConstraints="NO" id="164-iM-pQL">
-                                    <rect key="frame" x="182" y="6" width="50" height="50"/>
+                                    <rect key="frame" x="182" y="8" width="50" height="50"/>
                                     <color key="backgroundColor" name="innerBorderColor"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="164-iM-pQL" secondAttribute="height" multiplier="1:1" id="EGh-ZJ-dxD"/>
@@ -89,7 +90,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="koC-oT-erO">
-                                    <rect key="frame" x="182" y="6" width="50" height="50"/>
+                                    <rect key="frame" x="182" y="8" width="50" height="50"/>
                                     <connections>
                                         <action selector="profileButtonPressed:" destination="-1" eventType="touchUpInside" id="MPc-C7-4Ez"/>
                                     </connections>
@@ -174,7 +175,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qnB-Pz-USq">
-                    <rect key="frame" x="0.0" y="198" width="270" height="588"/>
+                    <rect key="frame" x="0.0" y="202.5" width="270" height="583.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="270" id="M5m-Ru-SlN"/>

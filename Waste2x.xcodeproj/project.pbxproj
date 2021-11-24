@@ -65,6 +65,7 @@
 		046528032668F694005F3FB0 /* CalenderPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046528012668F694005F3FB0 /* CalenderPopupViewController.swift */; };
 		046528042668F694005F3FB0 /* CalenderPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046528022668F694005F3FB0 /* CalenderPopupViewController.xib */; };
 		046565C72746759D008BAE63 /* FetchSitesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046565C62746759D008BAE63 /* FetchSitesDataModel.swift */; };
+		047D7445274D23CA00D33FA3 /* UserDetailDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D7443274D23CA00D33FA3 /* UserDetailDataModel.swift */; };
 		047DA71B26809635009D0B02 /* TwillioChatDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DA71A26809635009D0B02 /* TwillioChatDataModel.swift */; };
 		047E76842679E8A90055292A /* PickupScheduleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E76832679E8A90055292A /* PickupScheduleDataModel.swift */; };
 		047E83D1268320FA006A0F18 /* WasteDetailLocationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E83D0268320FA006A0F18 /* WasteDetailLocationDataModel.swift */; };
@@ -311,6 +312,7 @@
 		046528012668F694005F3FB0 /* CalenderPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderPopupViewController.swift; sourceTree = "<group>"; };
 		046528022668F694005F3FB0 /* CalenderPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalenderPopupViewController.xib; sourceTree = "<group>"; };
 		046565C62746759D008BAE63 /* FetchSitesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSitesDataModel.swift; sourceTree = "<group>"; };
+		047D7443274D23CA00D33FA3 /* UserDetailDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailDataModel.swift; sourceTree = "<group>"; };
 		047DA71A26809635009D0B02 /* TwillioChatDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwillioChatDataModel.swift; sourceTree = "<group>"; };
 		047E76832679E8A90055292A /* PickupScheduleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupScheduleDataModel.swift; sourceTree = "<group>"; };
 		047E83D0268320FA006A0F18 /* WasteDetailLocationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDetailLocationDataModel.swift; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				047D743F274D1AD000D33FA3 /* UserDetail */,
 				186ACE812684F58200646E32 /* Contacts */,
 				0418C8F8267C7D34008A0F1F /* Messages */,
 				18A7148C2680780E00007ECB /* Tracking */,
@@ -843,6 +846,14 @@
 				046565C62746759D008BAE63 /* FetchSitesDataModel.swift */,
 			);
 			path = FetchSitesDataModel;
+			sourceTree = "<group>";
+		};
+		047D743F274D1AD000D33FA3 /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				047D7443274D23CA00D33FA3 /* UserDetailDataModel.swift */,
+			);
+			path = UserDetail;
 			sourceTree = "<group>";
 		};
 		047E76822679E8910055292A /* PickupSchedule */ = {
@@ -1803,6 +1814,7 @@
 				04340E96266E439900B5F87C /* MessagesTableViewCell.swift in Sources */,
 				0067A31B252AFC9E00CECA8C /* TimeInterval.swift in Sources */,
 				18A849CD265E37A7008F77E8 /* WeatherCollectionViewCell.swift in Sources */,
+				047D7445274D23CA00D33FA3 /* UserDetailDataModel.swift in Sources */,
 				18ACB7BE267A23110088307D /* PaymentModel.swift in Sources */,
 				04AF4DE6274CC57900D0074C /* ProfileViewController.swift in Sources */,
 				0067A318252AFC9E00CECA8C /* UIDevice.swift in Sources */,

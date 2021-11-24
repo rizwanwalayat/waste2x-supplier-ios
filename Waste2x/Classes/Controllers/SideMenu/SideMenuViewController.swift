@@ -8,6 +8,7 @@
 
 import UIKit
 import SlideMenuControllerSwift
+import SDWebImage
 
 class SideMenuViewController: BaseViewController {
     
@@ -15,6 +16,7 @@ class SideMenuViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var phoneNoHolderView: UIView!
     @IBOutlet weak var headerView: UIView!
     
@@ -41,8 +43,7 @@ class SideMenuViewController: BaseViewController {
         phoneNoHolderView.layer.cornerRadius = 20
         phoneNoHolderView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMinYCorner]
         
-        self.phoneNumberLabel.text = self.userData?.phone
-        
+        populateUsersData()
     }
     //MARK: - Action Buttons
     
@@ -104,6 +105,19 @@ class SideMenuViewController: BaseViewController {
             
             stopTimer()
             
+        }
+    }
+    
+    fileprivate func populateUsersData(){
+        
+        guard let user = DataManager.shared.getUserDetail() else {return}
+        self.phoneNumberLabel.text = user.phone
+        
+        self.downloadImageFromServer(user.image) { image, error, success in
+            
+            if success ?? false && image != nil {
+                self.userImage.image = image
+            }
         }
     }
     
