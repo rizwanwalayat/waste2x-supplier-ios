@@ -9,6 +9,9 @@ extension UIColor {
     static var appColor: UIColor {
         return UIColor(red: 5/255.0, green: 65/255.0, blue: 60/255.0, alpha: 1)
     }
+    static var primary: UIColor {
+        return UIColor(named: "primary") ?? UIColor(hexString: "007F97")
+    }
     convenience init(hexString:String, alpha:CGFloat = 1.0) {
         var cString:String = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         var rgbValue:UInt32 = 10066329 //color #999999 if string has wrong format

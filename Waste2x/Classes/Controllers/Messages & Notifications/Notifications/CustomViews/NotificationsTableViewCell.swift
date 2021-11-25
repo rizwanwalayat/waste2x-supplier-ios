@@ -44,6 +44,7 @@ class NotificationsTableViewCell: UITableViewCell {
         let acceptStatusColor = UIColor(hexString: "7D9D15", alpha: 0.15)
         let acceptLabelColor  = UIColor(hexString: "7D9D15")
         let acceptImage       = UIImage(named: "accept-icon")
+        let acceptImageColor  = UIColor(hexString: "7D9D15")
         
         let rejectStatusColor = UIColor(hexString: "FA5656", alpha: 0.15)
         let rejectLabelColor  = UIColor(hexString: "FA5656")
@@ -56,10 +57,12 @@ class NotificationsTableViewCell: UITableViewCell {
         let confirmStatusColor = UIColor(hexString: "7D9D15", alpha: 0.15)
         let confirmLabelColor  = UIColor(hexString: "7D9D15")
         let confirmImage       = UIImage(named: "Confirm-icon")
+        let confirmImageColor  = UIColor(hexString: "7D9D15")
         
         let otwStatusColor = UIColor(hexString: "7D9D15", alpha: 0.15)
         let otwLabelColor  = UIColor(hexString: "7D9D15")
         let otwImage       = UIImage(named: "Otw-Icon")
+        let otwImageColor  = UIColor(hexString: "7D9D15")
         
         self.statusholderView.isHidden = false
         
@@ -72,6 +75,7 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationStatusLabel.textColor = acceptLabelColor
             self.notificationStatusLabel.text      = "Accepted"
             self.notificationStatusImageView.image = acceptImage
+            self.notificationStatusImageView.tintColor = acceptImageColor
             self.stackViewButton.isHidden = true
             self.notificationQuestionLabel.isHidden = true
             self.notificationYesButton.setTitle("Yes", for: .normal)
@@ -110,6 +114,7 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationStatusLabel.textColor = confirmLabelColor
             self.notificationStatusLabel.text      = "Confrimed"
             self.notificationStatusImageView.image = confirmImage
+            self.notificationStatusImageView.tintColor = confirmImageColor
             self.stackViewButton.isHidden = false
             self.notificationYesButton.isHidden = false
             self.notificationNoButton.isHidden = true
@@ -125,6 +130,7 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationStatusLabel.textColor = otwLabelColor
             self.notificationStatusLabel.text      = "On Way"
             self.notificationStatusImageView.image = otwImage
+            self.notificationStatusImageView.tintColor = otwImageColor
             self.notificationYesButton.isHidden = false
             self.notificationNoButton.isHidden = true
             self.notificationQuestionLabel.isHidden = true
@@ -140,6 +146,7 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationStatusLabel.textColor = otwLabelColor
             self.notificationStatusLabel.text      = "Paid"
             self.notificationStatusImageView.image = otwImage
+            self.notificationStatusImageView.tintColor = otwImageColor
             self.statusholderView.isHidden = true
             self.notificationYesButton.isHidden = false
             self.notificationNoButton.isHidden = true
@@ -156,6 +163,7 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationStatusLabel.textColor = confirmLabelColor
             self.notificationStatusLabel.text      = "Completed"
             self.notificationStatusImageView.image = confirmImage
+            self.notificationStatusImageView.tintColor = confirmImageColor
             self.stackViewButton.isHidden = false
             self.notificationYesButton.isHidden = true
             self.notificationNoButton.isHidden = true
