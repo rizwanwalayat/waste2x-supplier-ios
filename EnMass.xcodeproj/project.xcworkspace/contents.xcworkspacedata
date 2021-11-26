@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Doro.xcodeproj">
+      location = "self:/Users/phaedrasolutions/Desktop/Projects/waste2x-supplier-iOS/EnMass.xcodeproj">
    </FileRef>
 </Workspace>

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0067A2B725274C0900CECA8C"
-               BuildableName = "Waste2x.app"
-               BlueprintName = "Waste2x"
-               ReferencedContainer = "container:Waste2x.xcodeproj">
+               BuildableName = "EnMass.app"
+               BlueprintName = "EnMass"
+               ReferencedContainer = "container:EnMass.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "96E8A8312705AD7700F03A34"
-               BuildableName = "Waste2xTests.xctest"
-               BlueprintName = "Waste2xTests"
-               ReferencedContainer = "container:Waste2x.xcodeproj">
+               BuildableName = "EnMassTests.xctest"
+               BlueprintName = "EnMassTests"
+               ReferencedContainer = "container:EnMass.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0067A2B725274C0900CECA8C"
-            BuildableName = "Waste2x.app"
-            BlueprintName = "Waste2x"
-            ReferencedContainer = "container:Waste2x.xcodeproj">
+            BuildableName = "EnMass.app"
+            BlueprintName = "EnMass"
+            ReferencedContainer = "container:EnMass.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0067A2B725274C0900CECA8C"
-            BuildableName = "Waste2x.app"
-            BlueprintName = "Waste2x"
-            ReferencedContainer = "container:Waste2x.xcodeproj">
+            BuildableName = "EnMass.app"
+            BlueprintName = "EnMass"
+            ReferencedContainer = "container:EnMass.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

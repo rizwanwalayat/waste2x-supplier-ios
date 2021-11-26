@@ -215,7 +215,6 @@
 		18A849D0265E411F008F77E8 /* WeatherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A849CF265E411F008F77E8 /* WeatherCollectionViewCell.xib */; };
 		18A849D7265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A849D5265E48A0008F77E8 /* WasteTypeCollectionViewCell.swift */; };
 		18A849D8265E48A0008F77E8 /* WasteTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A849D6265E48A0008F77E8 /* WasteTypeCollectionViewCell.xib */; };
-		18AC70ED267B554200F398A1 /* Pods_Waste2x.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207F74016C0058DAC6E355F9 /* Pods_Waste2x.framework */; };
 		18AC70F2267B5E3E00F398A1 /* NotificationResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC70F1267B5E3E00F398A1 /* NotificationResponceModel.swift */; };
 		18ACB7BB2679DE730088307D /* FaqModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ACB7BA2679DE730088307D /* FaqModel.swift */; };
 		18ACB7BE267A23110088307D /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ACB7BD267A23110088307D /* PaymentModel.swift */; };
@@ -240,6 +239,7 @@
 		96774D97273177C100B513CB /* MessagePendingCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96774D95273177C100B513CB /* MessagePendingCollectionTableViewCell.xib */; };
 		9694C16126E25C2A00159A1C /* CountryPickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694C16026E25C2900159A1C /* CountryPickerConfig.swift */; };
 		96E8A8352705AD7700F03A34 /* Waste2xOnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8A8342705AD7700F03A34 /* Waste2xOnboardingTests.swift */; };
+		D8C4D3DFD80E602F5234DF4F /* Pods_EnMass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2EEFE7F1A3E957E4D3B0669 /* Pods_EnMass.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -253,7 +253,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0067A2B825274C0900CECA8C /* Waste2x.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waste2x.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0067A2B825274C0900CECA8C /* EnMass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnMass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0067A2BB25274C0900CECA8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0067A2C725274C0B00CECA8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0067A2C925274C0B00CECA8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -480,9 +480,6 @@
 		18D1A364266A2B77009CAD26 /* TrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
 		18D1A365266A2B77009CAD26 /* TrackerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackerViewController.xib; sourceTree = "<group>"; };
 		18FB2B952694A1FE006C6AE1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		207F74016C0058DAC6E355F9 /* Pods_Waste2x.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Waste2x.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4403568D39555D92B00CB323 /* Pods-Waste2x.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waste2x.debug.xcconfig"; path = "Target Support Files/Pods-Waste2x/Pods-Waste2x.debug.xcconfig"; sourceTree = "<group>"; };
-		5D4D23AE5CF86CE8FCB2AEEB /* Pods-Waste2x.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waste2x.release.xcconfig"; path = "Target Support Files/Pods-Waste2x/Pods-Waste2x.release.xcconfig"; sourceTree = "<group>"; };
 		962DAC5B274676E2004C40D1 /* HomeNewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeNewViewController.xib; sourceTree = "<group>"; };
 		962DAC5E274676E2004C40D1 /* HomeNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNewViewController.swift; sourceTree = "<group>"; };
 		96726C862711C1EE00F071E8 /* Waste2xAfterSigninTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waste2xAfterSigninTests.swift; sourceTree = "<group>"; };
@@ -490,9 +487,12 @@
 		96774D95273177C100B513CB /* MessagePendingCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagePendingCollectionTableViewCell.xib; sourceTree = "<group>"; };
 		9694C16026E25C2900159A1C /* CountryPickerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerConfig.swift; sourceTree = "<group>"; };
 		96B24AD427061DB500DF6621 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		96E8A8322705AD7700F03A34 /* Waste2xTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Waste2xTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96E8A8322705AD7700F03A34 /* EnMassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnMassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E8A8342705AD7700F03A34 /* Waste2xOnboardingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waste2xOnboardingTests.swift; sourceTree = "<group>"; };
 		96E8A8362705AD7700F03A34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2EEFE7F1A3E957E4D3B0669 /* Pods_EnMass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnMass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F21FD0BB5F176CBADAB67CAF /* Pods-EnMass.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnMass.debug.xcconfig"; path = "Target Support Files/Pods-EnMass/Pods-EnMass.debug.xcconfig"; sourceTree = "<group>"; };
+		F4748B7FC0170BD09A353672 /* Pods-EnMass.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnMass.release.xcconfig"; path = "Target Support Files/Pods-EnMass/Pods-EnMass.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -500,7 +500,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18AC70ED267B554200F398A1 /* Pods_Waste2x.framework in Frameworks */,
+				D8C4D3DFD80E602F5234DF4F /* Pods_EnMass.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,25 +518,25 @@
 			isa = PBXGroup;
 			children = (
 				96B24AD427061DB500DF6621 /* README.md */,
-				0067A2BA25274C0900CECA8C /* Waste2x */,
+				0067A2BA25274C0900CECA8C /* EnMass */,
 				96E8A8332705AD7700F03A34 /* Waste2xTests */,
 				0067A2B925274C0900CECA8C /* Products */,
 				8492EB8B64134913AA029EFA /* Pods */,
 				18397DC32660FA73003DE30C /* Recovered References */,
-				9EDEABE62EF43A3B83192BB4 /* Frameworks */,
+				D24C557D983235B2030FD6D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		0067A2B925274C0900CECA8C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0067A2B825274C0900CECA8C /* Waste2x.app */,
-				96E8A8322705AD7700F03A34 /* Waste2xTests.xctest */,
+				0067A2B825274C0900CECA8C /* EnMass.app */,
+				96E8A8322705AD7700F03A34 /* EnMassTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0067A2BA25274C0900CECA8C /* Waste2x */ = {
+		0067A2BA25274C0900CECA8C /* EnMass */ = {
 			isa = PBXGroup;
 			children = (
 				0067A305252AF7FA00CECA8C /* Classes */,
@@ -545,7 +545,7 @@
 				0067A2C925274C0B00CECA8C /* Info.plist */,
 				18FB2B952694A1FE006C6AE1 /* GoogleService-Info.plist */,
 			);
-			path = Waste2x;
+			path = EnMass;
 			sourceTree = "<group>";
 		};
 		0067A2CF25274C4800CECA8C /* Models */ = {
@@ -1520,8 +1520,8 @@
 		8492EB8B64134913AA029EFA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4403568D39555D92B00CB323 /* Pods-Waste2x.debug.xcconfig */,
-				5D4D23AE5CF86CE8FCB2AEEB /* Pods-Waste2x.release.xcconfig */,
+				F21FD0BB5F176CBADAB67CAF /* Pods-EnMass.debug.xcconfig */,
+				F4748B7FC0170BD09A353672 /* Pods-EnMass.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1545,10 +1545,10 @@
 			path = Waste2xTests;
 			sourceTree = "<group>";
 		};
-		9EDEABE62EF43A3B83192BB4 /* Frameworks */ = {
+		D24C557D983235B2030FD6D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				207F74016C0058DAC6E355F9 /* Pods_Waste2x.framework */,
+				A2EEFE7F1A3E957E4D3B0669 /* Pods_EnMass.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1556,30 +1556,30 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0067A2B725274C0900CECA8C /* Waste2x */ = {
+		0067A2B725274C0900CECA8C /* EnMass */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0067A2CC25274C0B00CECA8C /* Build configuration list for PBXNativeTarget "Waste2x" */;
+			buildConfigurationList = 0067A2CC25274C0B00CECA8C /* Build configuration list for PBXNativeTarget "EnMass" */;
 			buildPhases = (
-				8EC84DD5E13FCEFA4A204C73 /* [CP] Check Pods Manifest.lock */,
+				D050ECB80B11A5123C28ED88 /* [CP] Check Pods Manifest.lock */,
 				0067A2B425274C0900CECA8C /* Sources */,
 				0067A2B525274C0900CECA8C /* Frameworks */,
 				0067A2B625274C0900CECA8C /* Resources */,
 				1163EE37254AAA2E00D47148 /* ShellScript */,
-				8FDD299B97C22457BDD6B87A /* [CP] Embed Pods Frameworks */,
-				518CF689A5DA2AAE4EE0EF45 /* [CP] Copy Pods Resources */,
+				973293BAE50F9C52FE4D617E /* [CP] Embed Pods Frameworks */,
+				534336591C8FB90A1479B8A6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Waste2x;
+			name = EnMass;
 			productName = Doro;
-			productReference = 0067A2B825274C0900CECA8C /* Waste2x.app */;
+			productReference = 0067A2B825274C0900CECA8C /* EnMass.app */;
 			productType = "com.apple.product-type.application";
 		};
-		96E8A8312705AD7700F03A34 /* Waste2xTests */ = {
+		96E8A8312705AD7700F03A34 /* EnMassTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 96E8A83B2705AD7700F03A34 /* Build configuration list for PBXNativeTarget "Waste2xTests" */;
+			buildConfigurationList = 96E8A83B2705AD7700F03A34 /* Build configuration list for PBXNativeTarget "EnMassTests" */;
 			buildPhases = (
 				96E8A82E2705AD7700F03A34 /* Sources */,
 				96E8A82F2705AD7700F03A34 /* Frameworks */,
@@ -1590,9 +1590,9 @@
 			dependencies = (
 				96E8A8382705AD7700F03A34 /* PBXTargetDependency */,
 			);
-			name = Waste2xTests;
+			name = EnMassTests;
 			productName = Waste2xTests;
-			productReference = 96E8A8322705AD7700F03A34 /* Waste2xTests.xctest */;
+			productReference = 96E8A8322705AD7700F03A34 /* EnMassTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -1614,7 +1614,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0067A2B325274C0900CECA8C /* Build configuration list for PBXProject "Waste2x" */;
+			buildConfigurationList = 0067A2B325274C0900CECA8C /* Build configuration list for PBXProject "EnMass" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -1627,8 +1627,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0067A2B725274C0900CECA8C /* Waste2x */,
-				96E8A8312705AD7700F03A34 /* Waste2xTests */,
+				0067A2B725274C0900CECA8C /* EnMass */,
+				96E8A8312705AD7700F03A34 /* EnMassTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1753,24 +1753,41 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
-		518CF689A5DA2AAE4EE0EF45 /* [CP] Copy Pods Resources */ = {
+		534336591C8FB90A1479B8A6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Waste2x/Pods-Waste2x-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EnMass/Pods-EnMass-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Waste2x/Pods-Waste2x-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EnMass/Pods-EnMass-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Waste2x/Pods-Waste2x-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnMass/Pods-EnMass-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8EC84DD5E13FCEFA4A204C73 /* [CP] Check Pods Manifest.lock */ = {
+		973293BAE50F9C52FE4D617E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnMass/Pods-EnMass-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnMass/Pods-EnMass-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnMass/Pods-EnMass-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D050ECB80B11A5123C28ED88 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1785,28 +1802,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Waste2x-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-EnMass-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8FDD299B97C22457BDD6B87A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Waste2x/Pods-Waste2x-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Waste2x/Pods-Waste2x-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Waste2x/Pods-Waste2x-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1979,7 +1979,7 @@
 /* Begin PBXTargetDependency section */
 		96E8A8382705AD7700F03A34 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0067A2B725274C0900CECA8C /* Waste2x */;
+			target = 0067A2B725274C0900CECA8C /* EnMass */;
 			targetProxy = 96E8A8372705AD7700F03A34 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -2112,15 +2112,15 @@
 		};
 		0067A2CD25274C0B00CECA8C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4403568D39555D92B00CB323 /* Pods-Waste2x.debug.xcconfig */;
+			baseConfigurationReference = F21FD0BB5F176CBADAB67CAF /* Pods-EnMass.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Waste2x/Waste2x.entitlements;
+				CODE_SIGN_ENTITLEMENTS = EnMass/EnMass.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = FUDLQH8LBU;
-				INFOPLIST_FILE = Waste2x/Info.plist;
+				INFOPLIST_FILE = EnMass/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2137,15 +2137,15 @@
 		};
 		0067A2CE25274C0B00CECA8C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D4D23AE5CF86CE8FCB2AEEB /* Pods-Waste2x.release.xcconfig */;
+			baseConfigurationReference = F4748B7FC0170BD09A353672 /* Pods-EnMass.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Waste2x/Waste2x.entitlements;
+				CODE_SIGN_ENTITLEMENTS = EnMass/EnMass.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = FUDLQH8LBU;
-				INFOPLIST_FILE = Waste2x/Info.plist;
+				INFOPLIST_FILE = EnMass/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2179,7 +2179,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Waste2x.app/Waste2x";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EnMass.app/EnMass";
 			};
 			name = Debug;
 		};
@@ -2202,14 +2202,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Waste2x.app/Waste2x";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EnMass.app/EnMass";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0067A2B325274C0900CECA8C /* Build configuration list for PBXProject "Waste2x" */ = {
+		0067A2B325274C0900CECA8C /* Build configuration list for PBXProject "EnMass" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0067A2CA25274C0B00CECA8C /* Debug */,
@@ -2218,7 +2218,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0067A2CC25274C0B00CECA8C /* Build configuration list for PBXNativeTarget "Waste2x" */ = {
+		0067A2CC25274C0B00CECA8C /* Build configuration list for PBXNativeTarget "EnMass" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0067A2CD25274C0B00CECA8C /* Debug */,
@@ -2227,7 +2227,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		96E8A83B2705AD7700F03A34 /* Build configuration list for PBXNativeTarget "Waste2xTests" */ = {
+		96E8A83B2705AD7700F03A34 /* Build configuration list for PBXNativeTarget "EnMassTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				96E8A8392705AD7700F03A34 /* Debug */,
