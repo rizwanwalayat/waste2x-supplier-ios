@@ -65,6 +65,7 @@
 		046528032668F694005F3FB0 /* CalenderPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046528012668F694005F3FB0 /* CalenderPopupViewController.swift */; };
 		046528042668F694005F3FB0 /* CalenderPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046528022668F694005F3FB0 /* CalenderPopupViewController.xib */; };
 		046565C72746759D008BAE63 /* FetchSitesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046565C62746759D008BAE63 /* FetchSitesDataModel.swift */; };
+		046AB1E6274F96D800D1F90E /* UImageViewAndUIimage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AB1E5274F96D800D1F90E /* UImageViewAndUIimage.swift */; };
 		047D7445274D23CA00D33FA3 /* UserDetailDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D7443274D23CA00D33FA3 /* UserDetailDataModel.swift */; };
 		047DA71B26809635009D0B02 /* TwillioChatDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DA71A26809635009D0B02 /* TwillioChatDataModel.swift */; };
 		047E76842679E8A90055292A /* PickupScheduleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E76832679E8A90055292A /* PickupScheduleDataModel.swift */; };
@@ -77,8 +78,8 @@
 		048582C12667BEC70077B42E /* ScheduleOptionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */; };
 		048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C09E6265E2265003E301F /* ImagePickerVC.swift */; };
 		048C09F0265E5FDE003E301F /* CodeVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C7265BD9AE007C51EE /* CodeVerificationViewModel.swift */; };
+		049669B22754B33500774863 /* spinner.json in Resources */ = {isa = PBXBuildFile; fileRef = 049669B12754B33500774863 /* spinner.json */; };
 		049F97F2274E7EF100644959 /* LoaderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F97F1274E7EF100644959 /* LoaderAnimation.swift */; };
-		049F97F4274E812100644959 /* Spinner Gif 7.gif in Resources */ = {isa = PBXBuildFile; fileRef = 049F97F3274E812100644959 /* Spinner Gif 7.gif */; };
 		04AF4DE2274CC57900D0074C /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04AF4DDB274CC57900D0074C /* ProfileViewController.xib */; };
 		04AF4DE3274CC57900D0074C /* PopupProfileEdit.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04AF4DDD274CC57900D0074C /* PopupProfileEdit.xib */; };
 		04AF4DE4274CC57900D0074C /* ProfileEditVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF4DDF274CC57900D0074C /* ProfileEditVM.swift */; };
@@ -314,6 +315,7 @@
 		046528012668F694005F3FB0 /* CalenderPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderPopupViewController.swift; sourceTree = "<group>"; };
 		046528022668F694005F3FB0 /* CalenderPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalenderPopupViewController.xib; sourceTree = "<group>"; };
 		046565C62746759D008BAE63 /* FetchSitesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSitesDataModel.swift; sourceTree = "<group>"; };
+		046AB1E5274F96D800D1F90E /* UImageViewAndUIimage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UImageViewAndUIimage.swift; sourceTree = "<group>"; };
 		047D7443274D23CA00D33FA3 /* UserDetailDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailDataModel.swift; sourceTree = "<group>"; };
 		047DA71A26809635009D0B02 /* TwillioChatDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwillioChatDataModel.swift; sourceTree = "<group>"; };
 		047E76832679E8A90055292A /* PickupScheduleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupScheduleDataModel.swift; sourceTree = "<group>"; };
@@ -325,8 +327,8 @@
 		048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleOptionsTableViewCell.xib; sourceTree = "<group>"; };
 		048C09E6265E2265003E301F /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
+		049669B12754B33500774863 /* spinner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spinner.json; sourceTree = "<group>"; };
 		049F97F1274E7EF100644959 /* LoaderAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderAnimation.swift; sourceTree = "<group>"; };
-		049F97F3274E812100644959 /* Spinner Gif 7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Spinner Gif 7.gif"; sourceTree = "<group>"; };
 		04AF4DDB274CC57900D0074C /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		04AF4DDD274CC57900D0074C /* PopupProfileEdit.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupProfileEdit.xib; sourceTree = "<group>"; };
 		04AF4DDF274CC57900D0074C /* ProfileEditVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditVM.swift; sourceTree = "<group>"; };
@@ -640,7 +642,7 @@
 		0067A306252AF82500CECA8C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				049F97F3274E812100644959 /* Spinner Gif 7.gif */,
+				049669B12754B33500774863 /* spinner.json */,
 				18397E032660FF47003DE30C /* Foonts */,
 				0067A33A252B91BA00CECA8C /* Assets.xcassets */,
 			);
@@ -668,6 +670,7 @@
 				0428F1C5265BC9EC007C51EE /* UINavigationController.swift */,
 				04C2361B2669224600A27B78 /* Array.swift */,
 				041242AA266A05AE00EB1A3F /* DateExtenstion.swift */,
+				046AB1E5274F96D800D1F90E /* UImageViewAndUIimage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1652,7 +1655,6 @@
 				18397E172660FF54003DE30C /* Poppins-ExtraLight.ttf in Resources */,
 				0428F1C0265B8EC5007C51EE /* LoginCodeVerificationViewController.xib in Resources */,
 				18397E1F2660FF54003DE30C /* Poppins-BlackItalic.ttf in Resources */,
-				049F97F4274E812100644959 /* Spinner Gif 7.gif in Resources */,
 				18397E252660FF54003DE30C /* Poppins-Thin.ttf in Resources */,
 				18896078266E1EB800061783 /* SupplyingCollectionViewCell.xib in Resources */,
 				18397E1D2660FF54003DE30C /* Poppins-SemiBoldItalic.ttf in Resources */,
@@ -1667,6 +1669,7 @@
 				18719142266667420050FAAA /* AudioTableViewCell.xib in Resources */,
 				04287967270DAF7800808FB4 /* ScheduleRegularViewController.xib in Resources */,
 				0428796C270DB69100808FB4 /* DaysNameCollectionViewCell.xib in Resources */,
+				049669B22754B33500774863 /* spinner.json in Resources */,
 				18397E262660FF54003DE30C /* Poppins-SemiBold.ttf in Resources */,
 				1850CEFA265E5491001F5E92 /* SupplierTableViewCell.xib in Resources */,
 				181025392657E48500DEBF7D /* MessagesViewController.xib in Resources */,
@@ -1881,6 +1884,7 @@
 				18C11A6C265F9D5F00BC022F /* ContactViewController.swift in Sources */,
 				18937564266127F800D55A33 /* WasteDetailLocationViewController.swift in Sources */,
 				04C82E182664BCCB00D52947 /* WasteDetailViewModel.swift in Sources */,
+				046AB1E6274F96D800D1F90E /* UImageViewAndUIimage.swift in Sources */,
 				184E8E48267C6AEA00EAD050 /* PendingCollectionModel.swift in Sources */,
 				0067A31E252AFC9E00CECA8C /* UIButton.swift in Sources */,
 				18719145266667550050FAAA /* DetailTableViewCell.swift in Sources */,

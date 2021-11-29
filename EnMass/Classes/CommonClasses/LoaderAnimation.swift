@@ -19,8 +19,8 @@ class LoaderAnimation: NSObject {
         
         superView = UIView(frame: CGRect(x: 0, y: 0, width: kApplicationWindow?.frame.width ?? 0.0, height: kApplicationWindow?.frame.height ?? 0.0))
         
-        animationView = .init(name: "Spinner Gif 7")
-        animationView!.frame = superView.bounds
+        animationView = .init(name: "spinner")
+        animationView!.frame = CGRect(x: 50, y: 30, width: kApplicationWindow?.frame.width ?? 0.0, height: kApplicationWindow?.frame.height ?? 0.0)
         animationView!.contentMode = .scaleAspectFit
         animationView!.loopMode = .loop
         

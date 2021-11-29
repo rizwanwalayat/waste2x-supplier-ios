@@ -81,6 +81,7 @@ class ProfileViewController: BaseViewController {
     {
         viewModel?.uploadImage(imageToUplaod, { response, error, success, message in
 
+            self.showToast(message: message)
             if (success ?? false), error == nil {
 
                 // to save record on userDefults
