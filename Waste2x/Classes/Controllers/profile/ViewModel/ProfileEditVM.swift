@@ -56,7 +56,6 @@ class ProfileEditVM: NSObject {
             Utility.hideLoading()
             
             if success, error == nil {
-
                 let newResult = ["result" : result]
                 if let data = Mapper<UserDetailDataModel>().map(JSON: newResult as [String : Any]) {
                     completionHandler(data, nil, success, message)
