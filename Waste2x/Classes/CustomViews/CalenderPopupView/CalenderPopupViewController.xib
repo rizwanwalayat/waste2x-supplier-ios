@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -61,10 +62,10 @@
                                             <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
-                                            <color key="value" red="0.49019607840000001" green="0.61568627450000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="value" name="primary"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="todaySelectionColor">
-                                            <color key="value" red="0.49019607840000001" green="0.61568627450000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="value" name="primary"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="number" keyPath="titleTextSize">
                                             <real key="value" value="14"/>
@@ -79,7 +80,7 @@
                                             <real key="value" value="16"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
-                                            <color key="value" red="0.49019607840000001" green="0.61568627450000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="value" name="primary"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
                                             <color key="value" red="0.16470588235294117" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -117,6 +118,7 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Time Icon" translatesAutoresizingMaskIntoConstraints="NO" id="g6m-8A-4rr">
                                                     <rect key="frame" x="12" y="14" width="16" height="16"/>
+                                                    <color key="tintColor" name="primary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="a1U-Nf-EcB"/>
                                                         <constraint firstAttribute="width" secondItem="g6m-8A-4rr" secondAttribute="height" multiplier="1:1" id="cLT-GL-2bR"/>
@@ -210,7 +212,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.49019607843137253" green="0.61568627450980395" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" name="themeColor"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="B8X-kW-weP" secondAttribute="bottom" constant="15" id="EGv-f9-RSN"/>
                                         <constraint firstItem="B8X-kW-weP" firstAttribute="centerX" secondItem="g5r-Vf-oWb" secondAttribute="centerX" id="LKQ-5B-zls"/>
@@ -279,6 +281,12 @@
         <image name="calender-left-arrow" width="4.5" height="8"/>
         <image name="down-Arrow-cal" width="7" height="4"/>
         <image name="up-Arrow" width="7" height="4"/>
+        <namedColor name="primary">
+            <color red="0.0" green="0.49799999594688416" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="themeColor">
+            <color red="0.019999999552965164" green="0.25499999523162842" blue="0.23499999940395355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

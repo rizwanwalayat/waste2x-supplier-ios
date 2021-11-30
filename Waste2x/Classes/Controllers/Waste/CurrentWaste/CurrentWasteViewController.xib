@@ -135,7 +135,7 @@
     <resources>
         <image name="Arrow Left" width="10" height="18"/>
         <namedColor name="themeColor">
-            <color red="0.0" green="0.4392156862745098" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.019607843137254902" green="0.25490196078431371" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

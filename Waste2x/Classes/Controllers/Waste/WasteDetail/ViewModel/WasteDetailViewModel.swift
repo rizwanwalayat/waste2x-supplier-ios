@@ -148,6 +148,12 @@ extension WasteDetailViewController {
         }) { (_) in
             self.blinderView.isHidden = true
         }
+        
+        var cropTypeName = wasteDeatil?.commodity.components(separatedBy: "-").last ?? ""
+        cropTypeName = cropTypeName.trimmingCharacters(in: .whitespaces)
+        wasteTitleLable.text = cropTypeName
+        
+        
         siteTitleLabel.text = wasteDeatil?.farm_name ?? ""
         siteDetailLabel.text = wasteDeatil?.commodity ?? ""
         sizeDetailLabel.text = wasteDeatil?.farm_size ?? "0"

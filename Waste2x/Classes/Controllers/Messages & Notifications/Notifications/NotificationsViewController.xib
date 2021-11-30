@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -65,7 +66,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.45882352939999999" green="0.58039215690000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" name="themeColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="ADS-S7-M9L" secondAttribute="trailing" id="erv-x6-F9m"/>
                         <constraint firstAttribute="bottom" secondItem="ADS-S7-M9L" secondAttribute="bottom" id="iq1-i4-MAY"/>
@@ -105,7 +106,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.45882352939999999" green="0.58039215690000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" name="themeColor"/>
             <constraints>
                 <constraint firstItem="dWG-nN-ocd" firstAttribute="top" secondItem="koi-GF-cd0" secondAttribute="bottom" id="0KT-jT-kW4"/>
                 <constraint firstItem="dWG-nN-ocd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9ec-2S-mCO"/>
@@ -121,5 +122,8 @@
     </objects>
     <resources>
         <image name="Arrow Left" width="10" height="18"/>
+        <namedColor name="themeColor">
+            <color red="0.019607843137254902" green="0.25490196078431371" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>

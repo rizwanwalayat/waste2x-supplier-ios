@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -68,7 +68,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.45882352939999999" green="0.58039215690000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" name="themeColor"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="2z0-DS-agO" secondAttribute="bottom" id="3Mo-eU-AAg"/>
                         <constraint firstAttribute="trailing" secondItem="2z0-DS-agO" secondAttribute="trailing" id="8CZ-ep-HDd"/>
@@ -84,6 +84,7 @@
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Search Icon" translatesAutoresizingMaskIntoConstraints="NO" id="20v-CA-C6f">
                             <rect key="frame" x="10" y="0.0" width="20" height="45"/>
+                            <color key="tintColor" name="primary"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="SxW-jZ-D8n"/>
                                 <constraint firstAttribute="width" constant="20" id="XHJ-xU-ntR"/>
@@ -221,8 +222,11 @@
     <resources>
         <image name="Arrow Left" width="10" height="18"/>
         <image name="Search Icon" width="20" height="20"/>
+        <namedColor name="primary">
+            <color red="0.0" green="0.49799999594688416" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="themeColor">
-            <color red="0.45899999141693115" green="0.57999998331069946" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.019999999552965164" green="0.25499999523162842" blue="0.23499999940395355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -1,13 +1,16 @@
 import UIKit
 
 enum UIColorHex: String {
-    case appColorCode = "#7D9D15"
+    case appColorCode = "#05413C"
     case controllerBgColor = "F4F7F4"
 }
 
 extension UIColor {
     static var appColor: UIColor {
-        return UIColor(red: 125/255.0, green: 157/255.0, blue: 21/255.0, alpha: 1)
+        return UIColor(red: 5/255.0, green: 65/255.0, blue: 60/255.0, alpha: 1)
+    }
+    static var primary: UIColor {
+        return UIColor(named: "primary") ?? UIColor(hexString: "007F97")
     }
     convenience init(hexString:String, alpha:CGFloat = 1.0) {
         var cString:String = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
