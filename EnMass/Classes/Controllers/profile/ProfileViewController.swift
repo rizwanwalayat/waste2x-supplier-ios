@@ -74,6 +74,7 @@ class ProfileViewController: BaseViewController {
             if success ?? false && image != nil {
                 self.userImage.image = image
             }
+            
         }
     }
     
@@ -81,10 +82,11 @@ class ProfileViewController: BaseViewController {
     {
         viewModel?.uploadImage(imageToUplaod, { response, error, success, message in
 
-            self.showToast(message: message)
+//            self.showToast(message: message)
             if (success ?? false), error == nil {
 
-                // to save record on userDefults
+                self.userImage.image = imageToUplaod
+                
                 if let resultString = response?.result?.toJSONString() {
                     
                     DataManager.shared.saveUsersDetail(resultString)
