@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Waste2x" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="EnMass" customModuleProvider="target">
             <connections>
                 <outlet property="mainView" destination="Jfh-Hm-RS6" id="Cxb-eF-YAA"/>
                 <outlet property="userEmail" destination="T0y-aM-57A" id="JaA-cZ-1pS"/>
