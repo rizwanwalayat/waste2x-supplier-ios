@@ -181,7 +181,8 @@ extension HomeNewViewController : UITableViewDelegate,UITableViewDataSource{
 //        else {
 //        }
         let cell = tableView.register(ConfirmPendingTableViewCell.self, indexPath: indexPath)
-        cell.confirmConfig(data: pendingCollectionModel!, index: indexPath.row)
+        let data = visiableCollectionsArray[indexPath.row]
+        cell.confirmConfig(data: data)
         return cell
         
     }

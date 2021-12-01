@@ -57,6 +57,7 @@
 		043F6BF8267776A2000E3C4F /* HomeResultDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F6BEF267776A1000E3C4F /* HomeResultDataModel.swift */; };
 		043F6BF9267776A2000E3C4F /* HomeWaste_types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F6BF0267776A1000E3C4F /* HomeWaste_types.swift */; };
 		043F6BFA267776A2000E3C4F /* Commodity_farms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F6BF1267776A2000E3C4F /* Commodity_farms.swift */; };
+		045BB21D2756356D00BB08B3 /* spinner.json in Resources */ = {isa = PBXBuildFile; fileRef = 045BB21C2756356C00BB08B3 /* spinner.json */; };
 		04629D2626664D86008A6A3A /* CustomProgressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04629D2526664D86008A6A3A /* CustomProgressbar.swift */; };
 		0463F2DE266E08CC00E8924D /* RewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463F2DC266E08CC00E8924D /* RewardViewController.swift */; };
 		0463F2DF266E08CC00E8924D /* RewardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0463F2DD266E08CC00E8924D /* RewardViewController.xib */; };
@@ -78,7 +79,6 @@
 		048582C12667BEC70077B42E /* ScheduleOptionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */; };
 		048C09E7265E2265003E301F /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C09E6265E2265003E301F /* ImagePickerVC.swift */; };
 		048C09F0265E5FDE003E301F /* CodeVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428F1C7265BD9AE007C51EE /* CodeVerificationViewModel.swift */; };
-		049669B22754B33500774863 /* spinner.json in Resources */ = {isa = PBXBuildFile; fileRef = 049669B12754B33500774863 /* spinner.json */; };
 		049F97F2274E7EF100644959 /* LoaderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F97F1274E7EF100644959 /* LoaderAnimation.swift */; };
 		04AF4DE2274CC57900D0074C /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04AF4DDB274CC57900D0074C /* ProfileViewController.xib */; };
 		04AF4DE3274CC57900D0074C /* PopupProfileEdit.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04AF4DDD274CC57900D0074C /* PopupProfileEdit.xib */; };
@@ -307,6 +307,7 @@
 		043F6BEF267776A1000E3C4F /* HomeResultDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeResultDataModel.swift; sourceTree = "<group>"; };
 		043F6BF0267776A1000E3C4F /* HomeWaste_types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeWaste_types.swift; sourceTree = "<group>"; };
 		043F6BF1267776A2000E3C4F /* Commodity_farms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commodity_farms.swift; sourceTree = "<group>"; };
+		045BB21C2756356C00BB08B3 /* spinner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spinner.json; sourceTree = "<group>"; };
 		04629D2526664D86008A6A3A /* CustomProgressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressbar.swift; sourceTree = "<group>"; };
 		0463F2DC266E08CC00E8924D /* RewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardViewController.swift; sourceTree = "<group>"; };
 		0463F2DD266E08CC00E8924D /* RewardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RewardViewController.xib; sourceTree = "<group>"; };
@@ -327,7 +328,6 @@
 		048582BE2667BEC70077B42E /* ScheduleOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		048582BF2667BEC70077B42E /* ScheduleOptionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleOptionsTableViewCell.xib; sourceTree = "<group>"; };
 		048C09E6265E2265003E301F /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
-		049669B12754B33500774863 /* spinner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spinner.json; sourceTree = "<group>"; };
 		049F97F1274E7EF100644959 /* LoaderAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderAnimation.swift; sourceTree = "<group>"; };
 		04AF4DDB274CC57900D0074C /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		04AF4DDD274CC57900D0074C /* PopupProfileEdit.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupProfileEdit.xib; sourceTree = "<group>"; };
@@ -642,7 +642,7 @@
 		0067A306252AF82500CECA8C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				049669B12754B33500774863 /* spinner.json */,
+				045BB21C2756356C00BB08B3 /* spinner.json */,
 				18397E032660FF47003DE30C /* Foonts */,
 				0067A33A252B91BA00CECA8C /* Assets.xcassets */,
 			);
@@ -1669,7 +1669,6 @@
 				18719142266667420050FAAA /* AudioTableViewCell.xib in Resources */,
 				04287967270DAF7800808FB4 /* ScheduleRegularViewController.xib in Resources */,
 				0428796C270DB69100808FB4 /* DaysNameCollectionViewCell.xib in Resources */,
-				049669B22754B33500774863 /* spinner.json in Resources */,
 				18397E262660FF54003DE30C /* Poppins-SemiBold.ttf in Resources */,
 				1850CEFA265E5491001F5E92 /* SupplierTableViewCell.xib in Resources */,
 				181025392657E48500DEBF7D /* MessagesViewController.xib in Resources */,
@@ -1702,6 +1701,7 @@
 				0067A33B252B91BA00CECA8C /* Assets.xcassets in Resources */,
 				0428F1CE265BECB5007C51EE /* LoginInputEmailViewController.xib in Resources */,
 				18397E202660FF54003DE30C /* OFL.txt in Resources */,
+				045BB21D2756356D00BB08B3 /* spinner.json in Resources */,
 				18506D81265D45EB00018707 /* SideMenuItemsTableViewCell.xib in Resources */,
 				184F51712667AD9700F0328A /* ConfirmPendingTableViewCell.xib in Resources */,
 				18011273266774E5000C7102 /* FaqTableViewCell.xib in Resources */,

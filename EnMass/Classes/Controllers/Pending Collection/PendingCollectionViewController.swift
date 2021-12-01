@@ -20,8 +20,9 @@ class PendingCollectionViewController: BaseViewController {
     //MARK: - Variables
     
     var count = 2
-//    var confirm = true
     var pendingCollectionModel : [PendingCollectionResultResponce]?
+    
+    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +73,8 @@ extension PendingCollectionViewController : UITableViewDelegate,UITableViewDataS
         else {
             
             let cell = tableView.register(ConfirmPendingTableViewCell.self, indexPath: indexPath)
-            cell.confirmConfig(data: pendingCollectionModel!, index: indexPath.row)
+            let data = pendingCollectionModel![indexPath.row]
+            cell.confirmConfig(data: data)
             return cell
             
         }

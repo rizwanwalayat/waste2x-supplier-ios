@@ -52,6 +52,24 @@ class AmountWasteViewController: BaseViewController {
         numberOfTonsTitleLabel.text = tempArray.last?.title
     }
 
+    fileprivate func checkIfArrayContainsNumericValue(_ array : [String]) -> [String]
+    {
+        var mutatedArray = array
+        for item in mutatedArray {
+            
+            if let numericNumber = Int(item) {
+                print("found \(numericNumber)")
+                
+                while mutatedArray.contains(item) {
+                    if let itemToRemoveIndex = mutatedArray.index(of: item) {
+                        mutatedArray.remove(at: itemToRemoveIndex)
+                    }
+                }
+            }
+        }
+                       
+        return mutatedArray
+    }
 
     // MARK: - Actions
     
@@ -62,6 +80,9 @@ class AmountWasteViewController: BaseViewController {
             var questionsArray = selectionData["question_responses"] as! [String]
             let numberOftones = numberOfTonsTextField.text ?? ""
             let numberOftonesPerMonth = tonsPerMonthTextField.text ?? ""
+            
+            // for handling if user backs to this screen and already this values in this array
+            questionsArray = checkIfArrayContainsNumericValue(questionsArray)
             questionsArray.append(numberOftones)
             questionsArray.append(numberOftonesPerMonth)
             selectionData["question_responses"] = questionsArray

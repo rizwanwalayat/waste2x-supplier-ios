@@ -38,43 +38,43 @@ class ConfirmPendingTableViewCell: UITableViewCell {
     
     
     //MARK: - Functions
-    func confirmConfig(data:[PendingCollectionResultResponce],index:Int){
-        if data[index].history.count > 0{
+    func confirmConfig(data:PendingCollectionResultResponce){
+        if data.history.count > 0{
             
         }
         
-        self.farmLabel.text = data[index].farm
-        if data[index].frequency == "" {
-            self.scheduleLabel.text = data[index].schedule_type
+        self.farmLabel.text = data.farm
+        if data.frequency == "" {
+            self.scheduleLabel.text = data.schedule_type
         }
         
         else{
-            self.scheduleLabel.text = data[index].schedule_type + " (\(data[index].frequency))"
+            self.scheduleLabel.text = data.schedule_type + " (\(data.frequency))"
             
         }
-        self.dateLabel.text = data[index].scheduleDate
-        self.addressLabel.text = data[index].address
+        self.dateLabel.text = data.scheduleDate
+        self.addressLabel.text = data.address
         //MARK: - Stepper
 
         
-        for (indexNew, _) in data[index].history.enumerated() {
+        for (indexNew, _) in data.history.enumerated() {
             
-            if data[index].history[indexNew].status == "Pending"{
+            if data.history[indexNew].status == "Pending"{
                 
-                self.activityDate1.text = data[index].history[indexNew].activityDate
+                self.activityDate1.text = data.history[indexNew].activityDate
                 self.stepperView.currentStep = 0
             }
             
-            else if data[index].history[indexNew].status == "Confirmed"{
-                self.activityDate2.text = data[index].history[indexNew].activityDate
+            else if data.history[indexNew].status == "Confirmed"{
+                self.activityDate2.text = data.history[indexNew].activityDate
                 self.stepperView.currentStep = 1
             }
-            else if data[index].history[indexNew].status == "Picked"{
-                self.activityDate3.text = data[index].history[indexNew].activityDate
+            else if data.history[indexNew].status == "Picked"{
+                self.activityDate3.text = data.history[indexNew].activityDate
                 self.stepperView.currentStep = 2
             }
             else {
-                self.activityDate4.text = data[index].history[indexNew].activityDate
+                self.activityDate4.text = data.history[indexNew].activityDate
                 self.stepperView.currentStep = 3
             }
         }
