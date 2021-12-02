@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalenderPopupViewController" customModule="Waste2x" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalenderPopupViewController" customModule="EnMass" customModuleProvider="target">
             <connections>
                 <outlet property="calenderview" destination="eSR-ht-at5" id="TLt-F2-V8V"/>
                 <outlet property="downButton" destination="iFb-SY-1EY" id="AMZ-FP-5de"/>
@@ -118,7 +118,7 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Time Icon" translatesAutoresizingMaskIntoConstraints="NO" id="g6m-8A-4rr">
                                                     <rect key="frame" x="12" y="14" width="16" height="16"/>
-                                                    <color key="tintColor" name="primary"/>
+                                                    <color key="tintColor" name="icons"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="a1U-Nf-EcB"/>
                                                         <constraint firstAttribute="width" secondItem="g6m-8A-4rr" secondAttribute="height" multiplier="1:1" id="cLT-GL-2bR"/>
@@ -281,11 +281,14 @@
         <image name="calender-left-arrow" width="4.5" height="8"/>
         <image name="down-Arrow-cal" width="7" height="4"/>
         <image name="up-Arrow" width="7" height="4"/>
+        <namedColor name="icons">
+            <color red="0.56862745098039214" green="0.74509803921568629" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="primary">
             <color red="0.0" green="0.49799999594688416" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="themeColor">
-            <color red="0.019999999552965164" green="0.25499999523162842" blue="0.23499999940395355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.0" green="0.29411764705882354" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

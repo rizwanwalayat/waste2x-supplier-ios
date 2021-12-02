@@ -114,16 +114,15 @@ class HomeNewViewController: BaseViewController {
     // MARK: - Tabs Handling
     fileprivate func selectionHandlingsOfViews(_ holderView : UIView, isSelection : Bool)
     {
-        let selectedImageColor = "007F97"
-        let unSelectedImageColor = "B9B7C1"
+        let selectedImageColor = UIColor.icons
+        let unSelectedImageColor = UIColor.inactive
         
-        let selectedTitleLabelTextColor = "444444"
+        let selectedTitleLabelTextColor = UIColor.tabText
         let unSelectedTitleLabelTextColor = unSelectedImageColor
         
-        let selectedBackground = "FFFFFF"
-        let unSelectedBackground = "EBEBEB"
+        let selectedBackground = UIColor.white
+        let unSelectedBackground = UIColor.tabUnselected
         
-        let selectedBorderColor = "E0E0E0"
         let unSelectedBorderColor = unSelectedBackground
         
         
@@ -131,11 +130,11 @@ class HomeNewViewController: BaseViewController {
         {
             if let textLabel = view as? UILabel
             {
-                textLabel.textColor = isSelection ? UIColor(hexString: selectedTitleLabelTextColor) : UIColor(hexString: unSelectedTitleLabelTextColor)
+                textLabel.textColor = isSelection ? selectedTitleLabelTextColor : unSelectedTitleLabelTextColor
             }
             else if let imageView = view as? UIImageView
             {
-                imageView.tintColor = isSelection ? UIColor(hexString: selectedImageColor) : UIColor(hexString: unSelectedImageColor)
+                imageView.tintColor = isSelection ?  selectedImageColor : unSelectedImageColor
             }
                
         }
@@ -148,10 +147,10 @@ class HomeNewViewController: BaseViewController {
             holderView.layer.shadowRadius = 5
             holderView.layer.shadowPath = UIBezierPath(rect: holderView.bounds).cgPath
 
-            holderView.backgroundColor = UIColor(hexString: selectedBackground)
+            holderView.backgroundColor = selectedBackground
         }
         else {
-            holderView.animateBorderColor(toColor: UIColor(hexString: unSelectedBorderColor), duration: 0.1)
+            holderView.animateBorderColor(toColor: unSelectedBorderColor, duration: 0.1)
             holderView.borderWidth = 0
             holderView.backgroundColor = UIColor.clear
         }

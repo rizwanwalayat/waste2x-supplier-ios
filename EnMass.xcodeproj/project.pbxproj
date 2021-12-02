@@ -238,7 +238,6 @@
 		96726C872711C1EE00F071E8 /* Waste2xAfterSigninTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96726C862711C1EE00F071E8 /* Waste2xAfterSigninTests.swift */; };
 		96774D96273177C100B513CB /* MessagePendingCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96774D94273177C100B513CB /* MessagePendingCollectionTableViewCell.swift */; };
 		96774D97273177C100B513CB /* MessagePendingCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96774D95273177C100B513CB /* MessagePendingCollectionTableViewCell.xib */; };
-		9685A407275506A300A1F5FA /* spinner.json in Resources */ = {isa = PBXBuildFile; fileRef = 9685A406275506A300A1F5FA /* spinner.json */; };
 		9694C16126E25C2A00159A1C /* CountryPickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9694C16026E25C2900159A1C /* CountryPickerConfig.swift */; };
 		96E8A8352705AD7700F03A34 /* Waste2xOnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8A8342705AD7700F03A34 /* Waste2xOnboardingTests.swift */; };
 		D8C4D3DFD80E602F5234DF4F /* Pods_EnMass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2EEFE7F1A3E957E4D3B0669 /* Pods_EnMass.framework */; };
@@ -488,7 +487,6 @@
 		96726C862711C1EE00F071E8 /* Waste2xAfterSigninTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waste2xAfterSigninTests.swift; sourceTree = "<group>"; };
 		96774D94273177C100B513CB /* MessagePendingCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePendingCollectionTableViewCell.swift; sourceTree = "<group>"; };
 		96774D95273177C100B513CB /* MessagePendingCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagePendingCollectionTableViewCell.xib; sourceTree = "<group>"; };
-		9685A406275506A300A1F5FA /* spinner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spinner.json; sourceTree = "<group>"; };
 		9694C16026E25C2900159A1C /* CountryPickerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerConfig.swift; sourceTree = "<group>"; };
 		96B24AD427061DB500DF6621 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		96E8A8322705AD7700F03A34 /* EnMassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnMassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1677,7 +1675,6 @@
 				04C82E192664BCCB00D52947 /* WasteImageDetailCollectionViewCell.xib in Resources */,
 				04C31D0A2667744400A1CF9C /* ScheduleViewController.xib in Resources */,
 				962DAC68274676E2004C40D1 /* HomeNewViewController.xib in Resources */,
-				9685A407275506A300A1F5FA /* spinner.json in Resources */,
 				18342C78266E436E00A678D3 /* FormOfWasteViewController.xib in Resources */,
 				18A849D0265E411F008F77E8 /* WeatherCollectionViewCell.xib in Resources */,
 				18666B2426666175005C1A78 /* VideoTableViewCell.xib in Resources */,

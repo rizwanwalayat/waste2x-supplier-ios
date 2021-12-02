@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Call Icon.png",
+      "filename" : "Call.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Call Icon@2x.png",
+      "filename" : "Call@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Call Icon@3x.png",
+      "filename" : "Call@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

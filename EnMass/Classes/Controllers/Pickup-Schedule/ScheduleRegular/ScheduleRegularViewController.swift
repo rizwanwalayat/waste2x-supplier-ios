@@ -124,17 +124,17 @@ class ScheduleRegularViewController: BaseViewController {
                     
                     if let imageView = subView as? UIImageView
                     {
-                        imageView.tintColor = isSelection ? UIColor.appColor : UIColor(hexString: unSelectedBodyLabelTextColor)
+                        imageView.tintColor = isSelection ? UIColor.icons : UIColor(hexString: unSelectedBodyLabelTextColor)
                     }
                 }
                 
                 if isSelection{
                     view.borderWidth = 1
-                    view.animateBorderColor(toColor: UIColor.appColor, duration: 0.1)
+                    view.animateBorderColor(toColor: UIColor.lineColor, duration: 0.1)
                     view.backgroundColor = UIColor(hexString: selectedBackground)
                 }
                 else {
-                    view.animateBorderColor(toColor: UIColor.appColor, duration: 0.1)
+                    view.animateBorderColor(toColor: UIColor.lineColor, duration: 0.1)
                     view.borderWidth = 0
                     view.backgroundColor = UIColor(hexString: unSelectedBackground)
                 }

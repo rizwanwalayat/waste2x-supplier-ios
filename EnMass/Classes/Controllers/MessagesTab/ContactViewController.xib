@@ -21,7 +21,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactViewController" customModule="Waste2x" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactViewController" customModule="EnMass" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="qIA-jE-ATP" id="0P8-vd-Y8y"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -59,7 +59,7 @@ Suite 211 Durham, NC 27701</string>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Headquarters" translatesAutoresizingMaskIntoConstraints="NO" id="m2M-XW-5vJ">
                             <rect key="frame" x="223" y="92.333333333333343" width="225" height="299.66666666666663"/>
-                            <color key="tintColor" name="themeColor"/>
+                            <color key="tintColor" name="icons"/>
                         </imageView>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qIA-jE-ATP">
                             <rect key="frame" x="20" y="422" width="388" height="277.33333333333326"/>
@@ -128,11 +128,14 @@ Suite 211 Durham, NC 27701</string>
         </view>
     </objects>
     <resources>
-        <image name="Header-Background-new" width="375" height="149"/>
+        <image name="Header-Background-new" width="375" height="158"/>
         <image name="Headquarters" width="166" height="199"/>
         <image name="logo header new" width="152" height="26"/>
+        <namedColor name="icons">
+            <color red="0.56862745098039214" green="0.74509803921568629" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="themeColor">
-            <color red="0.019607843137254902" green="0.25490196078431371" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.0" green="0.29411764705882354" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

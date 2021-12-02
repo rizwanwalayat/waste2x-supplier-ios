@@ -21,7 +21,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SchedulePlannedViewController" customModule="Waste2x" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SchedulePlannedViewController" customModule="EnMass" customModuleProvider="target">
             <connections>
                 <outlet property="detialLabel" destination="Vef-OP-yJb" id="sbo-Je-gqj"/>
                 <outlet property="mainBackgroundView" destination="w4B-pE-ANS" id="oSU-XI-phf"/>
@@ -69,7 +69,7 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxW-JL-mI2">
                             <rect key="frame" x="25" y="802" width="364" height="58"/>
-                            <color key="backgroundColor" name="themeColor"/>
+                            <color key="backgroundColor" name="primary"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="58" id="zkO-fm-UZZ"/>
                             </constraints>
@@ -119,8 +119,8 @@
     </objects>
     <resources>
         <image name="schedulePlanned" width="366" height="250"/>
-        <namedColor name="themeColor">
-            <color red="0.019607843137254902" green="0.25490196078431371" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="primary">
+            <color red="0.0" green="0.49799999594688416" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
