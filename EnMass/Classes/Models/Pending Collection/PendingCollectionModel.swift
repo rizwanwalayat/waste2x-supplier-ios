@@ -112,7 +112,6 @@ class PendingCollectionDataModel : Mappable {
         schedule_type <- map["schedule_type"]
         frequency <- map["frequency"]
         schedule_date <- map["schedule_date"]
-        poRequestStatus <- map["status"]
         po_amount <- map["amount"]
         commodity <- map["commodity"]
         customer_phone <- map["customer_phone"]
@@ -128,6 +127,10 @@ class PendingCollectionDataModel : Mappable {
             if requestResponse == status.rawValue {
                 poRequestStatusType = status
                 break
+            }
+            else
+            {
+                poRequestStatusType = .approved
             }
         }
         

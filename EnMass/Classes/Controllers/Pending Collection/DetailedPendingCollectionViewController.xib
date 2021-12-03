@@ -29,13 +29,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrk-sz-6SJ">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="101.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geW-8p-AGq">
-                            <rect key="frame" x="0.0" y="44" width="414" height="57.5"/>
+                            <rect key="frame" x="0.0" y="44" width="414" height="53"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cys-tG-j0y">
-                                    <rect key="frame" x="30" y="18" width="22" height="22"/>
+                                    <rect key="frame" x="30" y="15.5" width="22" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="22" id="BmL-G3-KK3"/>
                                         <constraint firstAttribute="width" secondItem="cys-tG-j0y" secondAttribute="height" multiplier="1:1" id="TBi-cz-ikm"/>
@@ -46,7 +46,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pending Shipments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksx-Tf-ily">
-                                    <rect key="frame" x="118" y="16" width="178.5" height="25.5"/>
+                                    <rect key="frame" x="128.5" y="16" width="157.5" height="21"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -70,10 +70,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35h-7u-orj">
-                    <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
+                    <rect key="frame" x="0.0" y="97" width="414" height="799"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Svb-kW-6aR">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="794.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="799"/>
                             <color key="backgroundColor" name="bgColor"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="qdo-CB-fU9"/>
@@ -91,7 +91,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.52725833649999998" green="0.64092010259999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="themeColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="35h-7u-orj" secondAttribute="trailing" id="DjK-we-197"/>
                 <constraint firstItem="hrk-sz-6SJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FDP-iQ-M38"/>
@@ -111,7 +111,7 @@
             <color red="0.94099998474121094" green="0.9570000171661377" blue="0.94499999284744263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="themeColor">
-            <color red="0.0" green="0.29411764705882354" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.0" green="0.29399999976158142" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
