@@ -20,7 +20,7 @@ class PendingCollectionViewController: BaseViewController {
     //MARK: - Variables
     
     var count = 2
-    var pendingCollectionModel : [PendingCollectionResultResponce]?
+    var pendingCollectionModel : [PendingCollectionDataModel]?
     
     
     //MARK: - LifeCycle
@@ -110,7 +110,7 @@ extension PendingCollectionViewController{
             
             if error == nil{
                 
-                self.pendingCollectionModel = result?.result
+                self.pendingCollectionModel = result?.result?.pendingCollections
                 self.tableView.reloadData()
             }
             

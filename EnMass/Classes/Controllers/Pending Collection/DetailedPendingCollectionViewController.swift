@@ -15,8 +15,9 @@ class DetailedPendingCollectionViewController: BaseViewController {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
-    var data : PendingCollectionResultResponce?
+    var data : PendingCollectionDataModel?
     var id = Int()
+    var isPoRequest = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +49,7 @@ class DetailedPendingCollectionViewController: BaseViewController {
     
     
 }
-//MARK: - TableView
+//MARK: - TableView -
 
 extension DetailedPendingCollectionViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,7 +61,8 @@ extension DetailedPendingCollectionViewController : UITableViewDelegate,UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
+        if indexPath.row == 0
+        {
             let cell = tableView.register(DetailPendingCollectionTableViewCell.self, indexPath: indexPath)
             if data != nil{
                 cell.confirmConfig(data: data!)
@@ -68,14 +70,19 @@ extension DetailedPendingCollectionViewController : UITableViewDelegate,UITableV
             
             cell.selectionStyle = .none
             return cell
-        } else {
-            
+        }
+        else
+        {
             let cell = tableView.register(MessagePendingCollectionTableViewCell.self, indexPath: indexPath)
             cell.messageCustomerBtn.addTarget(self, action: #selector(messageCustomerBtnPressed), for: .touchUpInside)
+            cell.acceptBtn.addTarget(self, action: #selector(acceptBtnPressed), for: .touchUpInside)
+            cell.declineBtn.addTarget(self, action: #selector(cancelBtnPressed), for: .touchUpInside)
+            if data != nil{
+                cell.statusViewHandlings(data!.poRequestStatusType)
+            }
             cell.selectionStyle = .none
 
             return cell
-            
         }
     }
     
@@ -89,7 +96,7 @@ extension DetailedPendingCollectionViewController : UITableViewDelegate,UITableV
     
 }
 
-// MARK: - Cell Actions
+// MARK: - Cell Actions -
 
 extension DetailedPendingCollectionViewController {
     @objc func messageCustomerBtnPressed(){
@@ -100,19 +107,63 @@ extension DetailedPendingCollectionViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
+    
+    @objc func acceptBtnPressed() {
+        
+        let notificationResponce = "Yes"
+        PendingCollectionDetailModel.acceptRejectShipment(notificationID: id, notificationResponce: notificationResponce) { result, error, status, message in
+            if error != nil {
+                Utility.showAlertController(self, error?.localizedDescription ?? message)
+                return
+            }
+            
+            if self.data != nil {
+                
+                self.data!.poRequestStatusType = .approved
+                self.tableView.reloadData()
+            }
+            
+            
+        }
+    }
+    
+    @objc func cancelBtnPressed() {
+        
+        let notificationResponceNo = "No"
+        PendingCollectionDetailModel.acceptRejectShipment(notificationID: id, notificationResponce: notificationResponceNo) { result, error, status, message in
+            if error != nil {
+                Utility.showAlertController(self, error?.localizedDescription ?? message)
+                return
+            }
+            
+            if self.data != nil {
+                
+                self.data!.poRequestStatusType = .denied
+                self.tableView.reloadData()
+            }
+            
+        }
+    }
 }
 
 
-//MARK: - API Call
+//MARK: - API Call -
 
 extension DetailedPendingCollectionViewController{
     func apiCall(){
         if self.id != 0{
-            PendingCollectionDetailModel.pendingCollectionApiCall(id: self.id) { result, error, status, message in
+            PendingCollectionDetailModel.pendingCollectionApiCall(id: self.id, poRequest: isPoRequest) { result, error, status, message in
                 if error == nil{
                     
                     if let resultData = result{
                         self.data = resultData.result
+                        
+                        // in case of when user comes from home screen than we assigned notification_id here 
+                        if resultData.result?.notificationId != -1 {
+                            
+                            self.id =  resultData.result?.notificationId ?? 0
+                        }
+                        
                         self.tableView.reloadData()
                     }
                     //                for item in result!.result{

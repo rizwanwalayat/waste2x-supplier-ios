@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PendingCollectionViewController" customModule="Waste2x" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PendingCollectionViewController" customModule="EnMass" customModuleProvider="target">
             <connections>
                 <outlet property="bottomConst" destination="yTU-fH-MX3" id="2fd-NF-1uq"/>
                 <outlet property="mainView" destination="5AZ-B2-jks" id="VLx-L7-H3g"/>
@@ -45,8 +45,8 @@
                                         <action selector="backAction:" destination="-1" eventType="touchUpInside" id="QaN-k3-ICZ"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pending Collections" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRt-W0-zlB">
-                                    <rect key="frame" x="126.5" y="16" width="161.5" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pending Shipments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRt-W0-zlB">
+                                    <rect key="frame" x="128.5" y="16" width="157.5" height="21"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -113,7 +113,7 @@
     <resources>
         <image name="Arrow Left" width="10" height="18"/>
         <namedColor name="bgColor">
-            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="0.92799997329711914" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94099998474121094" green="0.9570000171661377" blue="0.94499999284744263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

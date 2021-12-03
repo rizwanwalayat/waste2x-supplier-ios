@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +11,9 @@
     <customFonts key="customFonts">
         <array key="Poppins-Medium.ttf">
             <string>Poppins-Medium</string>
+        </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -24,8 +27,44 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="rTL-fh-8Qp">
-                        <rect key="frame" x="20" y="48" width="286" height="172"/>
+                        <rect key="frame" x="20" y="20" width="286" height="111"/>
                         <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22w-mS-ubf">
+                                <rect key="frame" x="0.0" y="-50" width="286" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tickCircleBorder" translatesAutoresizingMaskIntoConstraints="NO" id="XEC-Qw-1fP">
+                                        <rect key="frame" x="16" y="6" width="38" height="38"/>
+                                        <color key="tintColor" name="successMessageTextIcon"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="26y-4a-iMU"/>
+                                            <constraint firstAttribute="width" secondItem="XEC-Qw-1fP" secondAttribute="height" multiplier="1:1" id="yh4-GN-m4Z"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You’ve accepted this Shipment." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5G9-Xd-Kan">
+                                        <rect key="frame" x="66" y="16.5" width="208" height="17"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                        <color key="textColor" name="successMessageTextIcon"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="successMessage"/>
+                                <constraints>
+                                    <constraint firstItem="5G9-Xd-Kan" firstAttribute="centerY" secondItem="XEC-Qw-1fP" secondAttribute="centerY" id="78Z-1z-Cph"/>
+                                    <constraint firstItem="XEC-Qw-1fP" firstAttribute="leading" secondItem="22w-mS-ubf" secondAttribute="leading" constant="16" id="Bcn-aY-1Aq"/>
+                                    <constraint firstItem="XEC-Qw-1fP" firstAttribute="centerY" secondItem="22w-mS-ubf" secondAttribute="centerY" id="Rhm-jO-Knz"/>
+                                    <constraint firstItem="5G9-Xd-Kan" firstAttribute="leading" secondItem="XEC-Qw-1fP" secondAttribute="trailing" constant="12" id="ivt-43-F28"/>
+                                    <constraint firstAttribute="trailing" secondItem="5G9-Xd-Kan" secondAttribute="trailing" constant="12" id="sSc-Ca-6a2"/>
+                                    <constraint firstAttribute="height" constant="50" id="x0x-H6-TFN"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" name="successMessage"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="dEr-eb-hE9">
                                 <rect key="frame" x="0.0" y="0.0" width="286" height="50"/>
                                 <subviews>
@@ -80,7 +119,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Message Customer">
                                             <attributes>
-                                                <font key="NSFont" size="14" name="Poppins-Medium"/>
+                                                <font key="NSFont" metaFont="menu" size="14"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -91,8 +130,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYm-g3-HaK">
-                                <rect key="frame" x="0.0" y="122" width="286" height="50"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYm-g3-HaK">
+                                <rect key="frame" x="0.0" y="111" width="286" height="50"/>
                                 <color key="backgroundColor" name="highlight"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="R0O-GZ-N73"/>
@@ -116,6 +155,7 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="rTL-fh-8Qp" secondAttribute="trailing" constant="20" id="Leo-EA-fau"/>
+                    <constraint firstItem="rTL-fh-8Qp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="XUp-lm-gHV"/>
                     <constraint firstAttribute="bottom" secondItem="rTL-fh-8Qp" secondAttribute="bottom" constant="20" id="aMx-Oj-LUm"/>
                     <constraint firstItem="rTL-fh-8Qp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="zi1-Kc-9Ye"/>
                 </constraints>
@@ -123,15 +163,29 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="acceptBtn" destination="9fm-f2-Gxq" id="gnn-YF-jRh"/>
+                <outlet property="acceptDeclineButtons" destination="dEr-eb-hE9" id="qma-uZ-VxD"/>
+                <outlet property="cancelBtn" destination="iYm-g3-HaK" id="YEL-xP-ich"/>
+                <outlet property="declineBtn" destination="Dsn-uL-nV7" id="hhb-15-hLL"/>
                 <outlet property="messageCustomerBtn" destination="4mW-S0-Iy7" id="PG8-hN-RJt"/>
+                <outlet property="statusImageView" destination="XEC-Qw-1fP" id="Kwj-JL-auS"/>
+                <outlet property="statusLable" destination="5G9-Xd-Kan" id="gZL-Zk-8DD"/>
+                <outlet property="statusView" destination="22w-mS-ubf" id="7yz-vW-AdK"/>
             </connections>
             <point key="canvasLocation" x="142.02898550724638" y="93.75"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="Message" width="26" height="26"/>
+        <image name="tickCircleBorder" width="38" height="38"/>
         <namedColor name="highlight">
             <color red="0.85100001096725464" green="0.92500001192092896" blue="0.93699997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="successMessage">
+            <color red="0.71399998664855957" green="0.97299998998641968" blue="0.76899999380111694" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="successMessageTextIcon">
+            <color red="0.11400000005960464" green="0.53700000047683716" blue="0.20399999618530273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="themeColor">
             <color red="0.019999999552965164" green="0.25499999523162842" blue="0.23499999940395355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

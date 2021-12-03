@@ -102,9 +102,9 @@ class NotificationsTableViewCell: UITableViewCell {
             self.notificationStatusImageView.image = pendingImage
             self.stackViewButton.isHidden = false
             self.notificationQuestionLabel.isHidden = false
-            self.notificationYesButton.isHidden = false
-            self.notificationNoButton.isHidden = false
-            self.notificationYesButton.setTitle("Yes", for: .normal)
+            self.notificationNoButton.isHidden = true
+            self.notificationQuestionLabel.isHidden = true
+            self.notificationYesButton.setTitle("Check", for: .normal)
             
         case .confirmed:
             self.notificationTitle.text = notificationTitle

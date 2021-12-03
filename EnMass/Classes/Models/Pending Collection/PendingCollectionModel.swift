@@ -10,10 +10,19 @@ import Foundation
 import ObjectMapper
 typealias PendingCollectionCompletionHandler = (_ data: PendingCollectionModel?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
 typealias PendingCollectionDetailCompletionHandler = (_ data: PendingCollectionDetailModel?, _ error: Error?, _ status: Bool?, _ message:String) -> Void
+
+
+enum PoRequestStatus : String {
+    case notSent = "Not sent"
+    case pendingResponse = "Pending Response"
+    case denied = "Denied"
+    case approved = "Approved"
+}
+
 class PendingCollectionModel : Mappable {
     var success = Bool()
     var message = ""
-    var result = [PendingCollectionResultResponce]()
+    var result : PendingCollectionResultResponce?
     var statusCode = Int()
 
     required init?(map: Map) { }
@@ -45,69 +54,117 @@ class PendingCollectionModel : Mappable {
     }
 }
 
-class PendingCollectionResultResponce : Mappable {
+class PendingCollectionResultResponce : Mappable
+{
+    var pendingCollections = [PendingCollectionDataModel]()
+    var poRequests = [PendingCollectionDataModel]()
+    var deniedPoRequests = [PendingCollectionDataModel]()
 
-    var id = Int()
-    var supplierNumber = ""
-    var pendingCollection = ""
+    required init?(map: Map) {
+
+    }
+
+    func mapping(map: Map) {
+
+        pendingCollections <- map["pending_collection"]
+        poRequests <- map["po_requests"]
+        deniedPoRequests <- map["denied_po_requests"]
+    }
+
+}
+
+class PendingCollectionDataModel : Mappable {
+    
+    var history = [PendingCollectionHistory]()
+    var id = -1
+    var supplier = ""
     var farm = ""
-    var wasteAmount = Double()
-    var sellWaste = ""
-    var price = Double()
+    var address = ""
+    var waste_amount = ""
+    var sell_waste : Double = 0.0
+    var price : Double = 0.0
     var status = ""
     var schedule_type = ""
     var frequency = ""
-    var scheduleDate = ""
-    var address = ""
+    var schedule_date = ""
+    var po_amount = -1
+    var commodity = ""
     var customer_phone = ""
-    var history = [PendingCollectionResultHistory]()
+    var notificationId = -1
+    var poRequestStatus = ""
+    var poRequestStatusType = PoRequestStatus.notSent
 
-    required init?(map: Map) { }
+    required init?(map: Map) {
+
+    }
 
     func mapping(map: Map) {
+
+        history <- map["history"]
         id <- map["id"]
-        pendingCollection <- map["pending_collections"]
-        supplierNumber <-    map["supplier"]
+        supplier <- map["supplier"]
         farm <- map["farm"]
-        wasteAmount <- map["waste_amount"]
-        sellWaste <- map["sell_waste"]
+        address <- map["address"]
+        waste_amount <- map["waste_amount"]
+        sell_waste <- map["sell_waste"]
         price <- map["price"]
         status <- map["status"]
         schedule_type <- map["schedule_type"]
         frequency <- map["frequency"]
-        scheduleDate <- map["schedule_date"]
-        address <- map["address"]
+        schedule_date <- map["schedule_date"]
+        poRequestStatus <- map["status"]
+        po_amount <- map["amount"]
+        commodity <- map["commodity"]
         customer_phone <- map["customer_phone"]
-        history <- map["history"]
+        notificationId <- map["notification_id"]
+        enumHanldingsForStatus(poRequestStatus)
+    }
+    
+    func enumHanldingsForStatus(_ requestResponse : String) {
         
+        let statues = [PoRequestStatus.notSent, PoRequestStatus.pendingResponse, PoRequestStatus.denied, PoRequestStatus.approved]
+        
+        for status in statues {
+            if requestResponse == status.rawValue {
+                poRequestStatusType = status
+                break
+            }
+        }
         
     }
-}
-class PendingCollectionResultHistory : Mappable {
 
-    var id = Int()
-    var pendingCollectionId = Int()
+}
+
+class PendingCollectionHistory : Mappable {
+    var id = -1
+    var pending_collection_id = -1
+    var entity_type = ""
     var activityDate = ""
     var status = ""
 
-    required init?(map: Map) { }
+    required init?(map: Map) {
+
+    }
 
     func mapping(map: Map) {
+
         id <- map["id"]
-        pendingCollectionId <- map["pending_collection_id"]
-        activityDate <-    map["activityDate"]
+        pending_collection_id <- map["pending_collection_id"]
+        entity_type <- map["entity_type"]
+        activityDate <- map["activityDate"]
         status <- map["status"]
-        
-        
     }
+
 }
 
-//MARK: - Detailed Pending Collection
+
+
+//MARK: - Detailed Pending Collection -
 
 class PendingCollectionDetailModel : Mappable {
     var success = Bool()
     var message = ""
-    var result : PendingCollectionResultResponce?
+    var result : PendingCollectionDataModel?
     var statusCode = Int()
 
     required init?(map: Map) { }
@@ -120,9 +177,9 @@ class PendingCollectionDetailModel : Mappable {
         statusCode  <- map["status_code"]
     }
     
-    class func pendingCollectionApiCall(id: Int, _ completion: @escaping PendingCollectionDetailCompletionHandler) {
+    class func pendingCollectionApiCall(id: Int, poRequest: Bool, _ completion: @escaping PendingCollectionDetailCompletionHandler) {
         Utility.showLoading()
-        APIClient.shared.pendingResponceApiCall(id: id) { result, error, status, message in
+        APIClient.shared.pendingResponceApiCall(id: id, poRequest: poRequest) { result, error, status, message in
             Utility.hideLoading()
             if error == nil {
                 let newResult = ["result":result]
@@ -138,5 +195,27 @@ class PendingCollectionDetailModel : Mappable {
         }
         
         }
+    
+    
+    
+    class func acceptRejectShipment(notificationID:Int,notificationResponce:String, _ completion: @escaping NotificationResponceModelCompletionHandler)
+    {
+        Utility.showLoading()
+        APIClient.shared.notifiationResponceApiCall(id:notificationID,responce: notificationResponce) { result, error, status,message in
+            Utility.hideLoading()
+            
+            if error == nil {
+                let newResult = ["result" : result]
+                if let data = Mapper<NotificationResponceModel>().map(JSON: newResult as [String : AnyObject]) {
+                    completion(data, nil, status,message)
+                } else {
+                    completion(nil, nil, status,message)
+                }
+                
+            } else {
+                 completion(nil, error, status,message)
+            }
+        }
+    }
 
 }
