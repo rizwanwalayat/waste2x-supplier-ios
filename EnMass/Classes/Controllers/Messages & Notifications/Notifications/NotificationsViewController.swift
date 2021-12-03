@@ -54,43 +54,51 @@ class NotificationsViewController: BaseViewController {
     @IBAction func backButtonPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    @objc func yesButtonPress(sender:UIButton){
+    @objc func yesButtonPress(sender:UIButton)
+    {
         if NotificationModell?.result != nil{
-        if sender.title(for: .normal) == "Check" {
-
-            let vc = DetailedPendingCollectionViewController(nibName: "DetailedPendingCollectionViewController", bundle: nil)
-            vc.id = NotificationModell?.result?.notifications[sender.tag].pendingCollectionId ?? 0
-            self.navigationController?.pushTo(controller: vc)
+            if sender.title(for: .normal) == "Check" {
+                
+                let vc = DetailedPendingCollectionViewController(nibName: "DetailedPendingCollectionViewController", bundle: nil)
+                var pendingCollectionID = NotificationModell?.result?.notifications[sender.tag].pendingCollectionId ?? 0
+                if pendingCollectionID == 0{
+                    pendingCollectionID = NotificationModell?.result?.notifications[sender.tag].idd ?? 0
+                    vc.isPoRequest = true
+                }
+                vc.id = pendingCollectionID
+                self.navigationController?.pushTo(controller: vc)
             }
-        
-        else if sender.title(for: .normal) == "Track" {
             
-            let vc = TrackerViewController(nibName: "TrackerViewController", bundle: nil)
+            else if sender.title(for: .normal) == "Track" {
+                
+                let vc = TrackerViewController(nibName: "TrackerViewController", bundle: nil)
                 vc.trackID  = NotificationModell?.result?.notifications[sender.tag].dispatchId ?? 0
                 vc.endingLat =  NotificationModell?.result?.notifications[sender.tag].latitude ?? 0.0
                 vc.endingLng =  NotificationModell?.result?.notifications[sender.tag].longitude ?? 0.0
                 globalObjectContainer?.tabbarHiddenView.isHidden = true
-            self.navigationController?.pushViewController(vc, animated: true)
-            
-        }
-        
-        else if sender.title(for: .normal) == "Yes" {
-            let notifcationDaTag = NotificationModell?.result?.notifications[sender.tag]
-            let notificationID = notifcationDaTag?.idd
-            let notificationResponce = "Yes"
-            NotificationResponceModel.NotificationResponceModelApiFunction(notificationID: notificationID!, notificationResponce: notificationResponce) { result, error, status, message in
-                self.apiCall()
+                self.navigationController?.pushViewController(vc, animated: true)
                 
             }
-        }
-        else if sender.title(for: .normal) == "View Stripe Account" {
-            if let url = URL(string: "https://dashboard.stripe.com/login") {
-                UIApplication.shared.open(url)
+            
+            else if sender.title(for: .normal) == "Yes" {
+                let notifcationDaTag = NotificationModell?.result?.notifications[sender.tag]
+                let notificationID = notifcationDaTag?.idd
+                let notificationResponce = "Yes"
+                NotificationResponceModel.NotificationResponceModelApiFunction(notificationID: notificationID!, notificationResponce: notificationResponce) { result, error, status, message in
+                    self.apiCall()
+                    
+                }
             }
-        }
+            else if sender.title(for: .normal) == "View Stripe Account" {
+                if let url = URL(string: "https://dashboard.stripe.com/login") {
+                    UIApplication.shared.open(url)
+                }
+            }
             
         }
     }
+    
+    
     @objc func noButtonPress(sender:UIButton){
         if NotificationModell?.result != nil{
         let notifcationDaTag = NotificationModell?.result?.notifications[sender.tag]

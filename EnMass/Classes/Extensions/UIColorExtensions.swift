@@ -12,6 +12,23 @@ extension UIColor {
     static var primary: UIColor {
         return UIColor(named: "primary") ?? UIColor(hexString: "007F97")
     }
+    
+    static var successMessage: UIColor {
+        return UIColor(named: "successMessage") ?? UIColor(hexString: "007F97")
+    }
+    
+    static var successMessageTextIcon: UIColor {
+        return UIColor(named: "successMessageTextIcon") ?? UIColor(hexString: "007F97")
+    }
+    
+    static var failureMessageTextIcon: UIColor {
+        return UIColor(named: "failureMessageTextIcon") ?? UIColor(hexString: "007F97")
+    }
+    
+    static var failureMessage: UIColor {
+        return UIColor(named: "failureMessage") ?? UIColor(hexString: "007F97")
+    }
+    
     convenience init(hexString:String, alpha:CGFloat = 1.0) {
         var cString:String = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         var rgbValue:UInt32 = 10066329 //color #999999 if string has wrong format

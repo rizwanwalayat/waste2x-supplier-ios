@@ -35,7 +35,7 @@ class UnconfirmPendingCollectionTableViewCell: UITableViewCell {
                 print("Expand \(index)")
         })
     }
-    func pendingConfig(data:PendingCollectionResultResponce){
+    func pendingConfig(data:PendingCollectionDataModel){
 //        self.statusLabel.text = data[index].status
 //        self.statusLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 //        self.statusImage.image = UIImage(named: "Pending-Icon")
@@ -49,14 +49,14 @@ class UnconfirmPendingCollectionTableViewCell: UITableViewCell {
             self.scheduleLabel.text = data.schedule_type + " (\(data.frequency))"
             
         }
-        self.dateLabel.text = data.scheduleDate
+        self.dateLabel.text = data.schedule_date
         self.addressLabel.text = data.address
         
         
         
         
     }
-    func unConfirmedConfig(data:PendingCollectionResultResponce){
+    func unConfirmedConfig(data:PendingCollectionDataModel){
 //        self.statusLabel.text = data[index].status
 //        self.statusImage.image = UIImage(named: "Pending")
         
@@ -70,7 +70,7 @@ class UnconfirmPendingCollectionTableViewCell: UITableViewCell {
             self.scheduleLabel.text = data.schedule_type + " (\(data.frequency))"
             
         }
-        self.dateLabel.text = data.scheduleDate
+        self.dateLabel.text = data.schedule_date
         self.addressLabel.text = data.address
     }
     

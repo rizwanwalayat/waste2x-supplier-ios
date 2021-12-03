@@ -13,8 +13,10 @@ class HomeNewViewController: BaseViewController {
     // MARK: - Local Enum for statues
     
     enum PendingCollectionStatues : String {
+        case poReqests = "Po Requests"
         case pending = "Pending"
         case upcoming = "Upcoming"
+        case rejected = "rejected"
         case completed = "Completed"
         
         var backendValue : String {
@@ -25,6 +27,10 @@ class HomeNewViewController: BaseViewController {
                 return "In Transit"
             case .completed:
                 return "Completed"
+            case .poReqests:
+                return "poRequest"
+            case .rejected:
+                return "rejected"
             }
         }
     }
@@ -36,6 +42,7 @@ class HomeNewViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomConst: NSLayoutConstraint!
     @IBOutlet weak var tabsHolderView: UIView!
+    @IBOutlet weak var poRequestTab: UIView!
     @IBOutlet weak var upcomingTab: UIView!
     @IBOutlet weak var pendingTab: UIView!
     @IBOutlet weak var declinedTab: UIView!
@@ -45,10 +52,11 @@ class HomeNewViewController: BaseViewController {
     //MARK: - Variables
     
     var tabs = [UIView]()
-    var pendingCollectionModel : [PendingCollectionResultResponce]?
-    var visiableCollectionsArray = [PendingCollectionResultResponce]()
-    var allStatus : [PendingCollectionStatues] = [.upcoming, .pending, .completed]
-    var selectedTab = PendingCollectionStatues.upcoming
+    var resultData : PendingCollectionResultResponce?
+    var pendingCollectionModel = [PendingCollectionDataModel]()
+    var visiableCollectionsArray = [PendingCollectionDataModel]()
+    var allStatus : [PendingCollectionStatues] = [.poReqests, .upcoming, .pending, .rejected, .completed]
+    var selectedTab = PendingCollectionStatues.poReqests
     
     //MARK: - LifeCycle
     
@@ -77,9 +85,21 @@ class HomeNewViewController: BaseViewController {
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        tabs = [upcomingTab, pendingTab, completedTab]
+        tabs = [poRequestTab, upcomingTab, pendingTab, declinedTab ,completedTab]
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.pushToPaymentScreen(notification:)),
+            name: Notification.Name("NavigateToPayment"),
+            object: nil)
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     //MARK: - IBActions
     
     @IBAction func backAction(_ sender: Any) {
@@ -90,11 +110,26 @@ class HomeNewViewController: BaseViewController {
         for i in 0..<tabs.count {
             selectionHandlingsOfViews(tabs[i], isSelection: i == sender.tag)
         }
-        if pendingCollectionModel != nil {
-            selectedTab = allStatus[sender.tag]
+        
             
+        if resultData != nil {
+            
+            selectedTab = allStatus[sender.tag]
             visiableCollectionsArray.removeAll()
-            visiableCollectionsArray = pendingCollectionModel!.filter { $0.status == selectedTab.backendValue}
+            
+            if tabs[sender.tag] == poRequestTab {
+                
+                visiableCollectionsArray = resultData?.poRequests ?? [PendingCollectionDataModel]()
+            }
+            else if tabs[sender.tag] == declinedTab {
+                
+                visiableCollectionsArray = resultData?.deniedPoRequests ?? [PendingCollectionDataModel]()
+            }
+            else {
+                
+                visiableCollectionsArray = pendingCollectionModel.filter { $0.status == selectedTab.backendValue}
+            }
+            
             tableView.reloadData()
         }
     }
@@ -158,6 +193,34 @@ class HomeNewViewController: BaseViewController {
         
     }
     
+    @objc private func pushToPaymentScreen(notification: NSNotification){
+        
+        if let slideMenuController = self.slideMenuController() {
+            slideMenuController.closeLeft()
+        }
+        
+        if let object = notification.userInfo {
+            if let result = object["result"] as? PaymentModel
+            {
+                if result.result != nil{
+                    
+                    if result.result?.details_submitted == true {
+                        let vc = CreatePaymentViewController(nibName: "CreatePaymentViewController", bundle: nil)
+                        self.navigationController?.pushViewController(vc, animated: true)
+                        
+                    }
+                    else{
+                        let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
+                        self.navigationController?.pushViewController(vc, animated: false)
+                    }
+                }
+                else{
+                    let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
+                    self.navigationController?.pushViewController(vc, animated: false)
+                }
+            }
+        }
+    }
 
 }
 
@@ -170,16 +233,6 @@ extension HomeNewViewController : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-//        if self.pendingCollectionModel![indexPath.row].status == "Pending"
-//        {
-//            let cell = tableView.register(UnconfirmPendingCollectionTableViewCell.self, indexPath: indexPath)
-//            cell.selectionStyle = .none
-//            cell.unConfirmedConfig(data: pendingCollectionModel!, index: indexPath.row)
-//            return cell
-//
-//        }
-//        else {
-//        }
         let cell = tableView.register(ConfirmPendingTableViewCell.self, indexPath: indexPath)
         let data = visiableCollectionsArray[indexPath.row]
         cell.confirmConfig(data: data)
@@ -190,21 +243,10 @@ extension HomeNewViewController : UITableViewDelegate,UITableViewDataSource{
         return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        if let confirmCell = tableView.cellForRow(at: indexPath) as? ConfirmPendingTableViewCell
-//        {
-//            confirmCell.expandCollapseView(index: indexPath.row)
-//        }
-//        if let UnConfirmcell = tableView.cellForRow(at: indexPath) as? UnconfirmPendingCollectionTableViewCell
-//        {
-//            UnConfirmcell.expandCollapseView(index: indexPath.row)
-//        }
-//
-//        tableView.beginUpdates()
-//        tableView.endUpdates()
         
         let vc = DetailedPendingCollectionViewController(nibName: "DetailedPendingCollectionViewController", bundle: nil)
-        vc.data = visiableCollectionsArray[indexPath.row]
+        vc.id = visiableCollectionsArray[indexPath.row].id
+        vc.isPoRequest = (selectedTab == .poReqests || selectedTab == .rejected) ? true : false
         self.navigationController?.pushTo(controller: vc)
     }
     
@@ -218,15 +260,40 @@ extension HomeNewViewController{
         
         PendingCollectionModel.pendingCollectionApiCall { result, error, status, message in
             
-            if error == nil{
+            if error != nil {
                 
-                self.visiableCollectionsArray.removeAll()
-                self.pendingCollectionModel = result?.result
-                self.visiableCollectionsArray = self.pendingCollectionModel!.filter { $0.status == self.selectedTab.backendValue}
-                self.tableView.reloadData()
+                Utility.showAlertController(self, error?.localizedDescription ?? message)
+                return
             }
             
+            if let result = result{
+                
+                self.visiableCollectionsArray.removeAll()
+                self.resultData = result.result
+                
+                self.pendingCollectionModel = result.result?.pendingCollections ?? [PendingCollectionDataModel]()
+        
+                self.dataHandlingsAndPopulte()
+            }
         }
+    }
+    
+    fileprivate func dataHandlingsAndPopulte()
+    {
+        switch selectedTab {
+        case .poReqests:
+            self.visiableCollectionsArray = self.resultData?.poRequests ?? [PendingCollectionDataModel]()
+        case .pending:
+            self.visiableCollectionsArray = self.pendingCollectionModel.filter { $0.status == self.selectedTab.backendValue}
+        case .upcoming:
+            self.visiableCollectionsArray = self.pendingCollectionModel.filter { $0.status == self.selectedTab.backendValue}
+        case .rejected:
+            self.visiableCollectionsArray = self.resultData?.deniedPoRequests ?? [PendingCollectionDataModel]()
+        case .completed:
+            self.visiableCollectionsArray = self.pendingCollectionModel.filter { $0.status == self.selectedTab.backendValue}
+        }
+        
+        self.tableView.reloadData()
     }
 }
 

@@ -114,9 +114,9 @@ class APIClient: APIClientHandler {
         let params = ["notification_id": id,"response":responce] as [String:AnyObject]
         _ = sendRequest(APIRoutes.notificationResponceUrl , parameters: params as [String : AnyObject],httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
-    func pendingResponceApiCall(id: Int,_ completionBlock: @escaping APIClientCompletionHandler) {
+    func pendingResponceApiCall(id: Int, poRequest: Bool, _ completionBlock: @escaping APIClientCompletionHandler) {
         let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
-        let params = ["pending_collection_id": id] as [String:AnyObject]
+        let params = ["pending_collection_id": id, "po_request": poRequest] as [String:AnyObject]
         _ = sendRequest(APIRoutes.pendingDetailUrl , parameters: params as [String : AnyObject],httpMethod: .post , headers: headers, completionBlock: completionBlock)
     }
     

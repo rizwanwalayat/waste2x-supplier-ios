@@ -36,7 +36,7 @@ class DetailPendingCollectionTableViewCell: BaseTableViewCell {
         super.setSelected(selected, animated: animated)
         
     }
-    func confirmConfig(data:PendingCollectionResultResponce){
+    func confirmConfig(data:PendingCollectionDataModel){
         
         self.farmLabel.text = data.farm
         if data.frequency == "" {
@@ -47,7 +47,7 @@ class DetailPendingCollectionTableViewCell: BaseTableViewCell {
             self.scheduleLabel.text = data.schedule_type + " (\(data.frequency))"
             
         }
-        self.dateLabel.text = data.scheduleDate
+        self.dateLabel.text = data.schedule_date
         self.addressLabel.text = data.address
         
         //MARK: - Stepper

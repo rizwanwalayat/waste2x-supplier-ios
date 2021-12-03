@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailedPendingCollectionViewController" customModule="Waste2x" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailedPendingCollectionViewController" customModule="EnMass" customModuleProvider="target">
             <connections>
                 <outlet property="bottomConst" destination="Qvm-QK-6n4" id="t1s-9Y-Cad"/>
                 <outlet property="mainView" destination="35h-7u-orj" id="evG-ph-7ZA"/>
@@ -29,13 +29,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrk-sz-6SJ">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="101.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geW-8p-AGq">
-                            <rect key="frame" x="0.0" y="44" width="414" height="57.5"/>
+                            <rect key="frame" x="0.0" y="44" width="414" height="53"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cys-tG-j0y">
-                                    <rect key="frame" x="30" y="18" width="22" height="22"/>
+                                    <rect key="frame" x="30" y="15.5" width="22" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="22" id="BmL-G3-KK3"/>
                                         <constraint firstAttribute="width" secondItem="cys-tG-j0y" secondAttribute="height" multiplier="1:1" id="TBi-cz-ikm"/>
@@ -46,7 +46,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pending Collections" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksx-Tf-ily">
-                                    <rect key="frame" x="116" y="16" width="182" height="25.5"/>
+                                    <rect key="frame" x="126.5" y="16" width="161.5" height="21"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -70,10 +70,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35h-7u-orj">
-                    <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
+                    <rect key="frame" x="0.0" y="97" width="414" height="799"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Svb-kW-6aR">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="794.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="799"/>
                             <color key="backgroundColor" name="bgColor"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="qdo-CB-fU9"/>
@@ -108,7 +108,7 @@
     <resources>
         <image name="Arrow Left" width="10" height="18"/>
         <namedColor name="bgColor">
-            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="0.92799997329711914" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94099998474121094" green="0.9570000171661377" blue="0.94499999284744263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -38,7 +38,7 @@ class ConfirmPendingTableViewCell: UITableViewCell {
     
     
     //MARK: - Functions
-    func confirmConfig(data:PendingCollectionResultResponce){
+    func confirmConfig(data:PendingCollectionDataModel){
         if data.history.count > 0{
             
         }
@@ -52,7 +52,7 @@ class ConfirmPendingTableViewCell: UITableViewCell {
             self.scheduleLabel.text = data.schedule_type + " (\(data.frequency))"
             
         }
-        self.dateLabel.text = data.scheduleDate
+        self.dateLabel.text = data.schedule_date
         self.addressLabel.text = data.address
         //MARK: - Stepper
 
