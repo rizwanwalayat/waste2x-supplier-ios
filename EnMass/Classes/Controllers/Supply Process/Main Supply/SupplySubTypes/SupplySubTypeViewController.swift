@@ -209,7 +209,7 @@ extension SupplySubTypeViewController : UITableViewDelegate, UITableViewDataSour
         }
         
         if tabaleViewIndex == indexPath.row {
-            cell.mainView.borderColor = UIColor(named: "themeColor")
+            cell.mainView.borderColor = UIColor.lineColor
             cell.mainView.borderWidth = 2
         }
         else {

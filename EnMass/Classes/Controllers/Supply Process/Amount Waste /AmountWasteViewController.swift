@@ -174,7 +174,7 @@ extension AmountWasteViewController
         
         holderView.borderWidth = 1
         
-        let color = isSelection ? UIColor.appColor : UIColor(hexString: unSelectedBorder)
+        let color = isSelection ? UIColor.lineColor : UIColor(hexString: unSelectedBorder)
         holderView.animateBorderColor(toColor: color, duration: 0.1)
     }
 }

@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SupplySubTypeViewController" customModule="Waste2x" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SupplySubTypeViewController" customModule="EnMass" customModuleProvider="target">
             <connections>
                 <outlet property="constHeightMainHolderview" destination="NXS-wd-L2y" id="qjS-nA-KfS"/>
                 <outlet property="constHeightTableview" destination="vf5-m8-Tyn" id="VWt-SA-c1G"/>
@@ -46,7 +46,7 @@
                     <rect key="frame" x="0.0" y="896" width="414" height="510"/>
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfx-Vz-FhI">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="428"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="427"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5XK-jX-yhy">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="416"/>
@@ -91,10 +91,10 @@
                             </constraints>
                         </scrollView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyD-6i-Of7">
-                            <rect key="frame" x="25" y="443" width="364" height="51"/>
-                            <color key="backgroundColor" name="themeColor"/>
+                            <rect key="frame" x="25" y="442" width="364" height="52"/>
+                            <color key="backgroundColor" name="primary"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="51" id="STO-sA-BI8"/>
+                                <constraint firstAttribute="height" constant="52" id="STO-sA-BI8"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
                             <state key="normal" title="Next">
@@ -138,8 +138,8 @@
         </view>
     </objects>
     <resources>
-        <namedColor name="themeColor">
-            <color red="0.019999999552965164" green="0.25499999523162842" blue="0.23499999940395355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="primary">
+            <color red="0.0" green="0.49803921568627452" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

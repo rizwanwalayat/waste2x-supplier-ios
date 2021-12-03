@@ -104,7 +104,7 @@ extension SupplyingTypeViewController : UICollectionViewDelegate, UICollectionVi
         cell.configForSupplying(cellData.title, cellData.icon_url)
         
         if collectionViewIndex == indexPath.row {
-            cell.mainViewSelection.borderColor = UIColor(named: "themeColor")
+            cell.mainViewSelection.borderColor = UIColor.lineColor
             cell.mainViewSelection.borderWidth = 2
         }
         else {

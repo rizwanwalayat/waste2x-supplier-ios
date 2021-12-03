@@ -10,9 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Poppins-Medium.ttf">
-            <string>Poppins-Medium</string>
-        </array>
         <array key="Poppins-Regular.ttf">
             <string>Poppins-Regular</string>
         </array>
@@ -21,7 +18,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AmountWasteViewController" customModule="Waste2x" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AmountWasteViewController" customModule="EnMass" customModuleProvider="target">
             <connections>
                 <outlet property="NumberOfTonsFieldHolderView" destination="ezT-Gy-zas" id="vHA-iy-RUD"/>
                 <outlet property="amountLabel" destination="JPh-bc-nbp" id="EMj-Wi-tB7"/>
@@ -203,11 +200,11 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vc-ts-Hv6">
                             <rect key="frame" x="0.0" y="0.0" width="364" height="58"/>
-                            <color key="backgroundColor" name="themeColor"/>
+                            <color key="backgroundColor" name="primary"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="58" id="oSM-Tg-wjn"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
+                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
                             <state key="normal" title="Next">
                                 <color key="titleColor" red="1" green="0.97647058819999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -226,9 +223,9 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="52" id="32w-S1-T7I"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
+                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
                             <state key="normal" title="Cancel">
-                                <color key="titleColor" name="themeColor"/>
+                                <color key="titleColor" name="primary"/>
                             </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -339,8 +336,8 @@
         <namedColor name="highlight">
             <color red="0.85100001096725464" green="0.92500001192092896" blue="0.93699997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="themeColor">
-            <color red="0.019607843137254902" green="0.25490196078431371" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="primary">
+            <color red="0.0" green="0.49803921568627452" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

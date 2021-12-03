@@ -21,7 +21,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SupplyingTypeViewController" customModule="Waste2x" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SupplyingTypeViewController" customModule="EnMass" customModuleProvider="target">
             <connections>
                 <outlet property="blindersView" destination="LDe-m4-62I" id="2dE-Xa-38G"/>
                 <outlet property="collectionView" destination="XFa-v4-Cym" id="wa3-ID-9cb"/>
@@ -173,7 +173,7 @@ supplying?</string>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsp-1j-duO">
                     <rect key="frame" x="25" y="790" width="364" height="52"/>
-                    <color key="backgroundColor" name="themeColor"/>
+                    <color key="backgroundColor" name="primary"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="52" id="13X-2I-olW"/>
                     </constraints>
@@ -218,8 +218,8 @@ supplying?</string>
         </view>
     </objects>
     <resources>
-        <namedColor name="themeColor">
-            <color red="0.019999999552965164" green="0.25499999523162842" blue="0.23499999940395355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="primary">
+            <color red="0.0" green="0.49803921568627452" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

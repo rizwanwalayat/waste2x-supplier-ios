@@ -21,7 +21,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WasteDetailViewController" customModule="Waste2x" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WasteDetailViewController" customModule="EnMass" customModuleProvider="target">
             <connections>
                 <outlet property="addressLabel" destination="B1Q-Zb-CCt" id="JiG-jz-Tjf"/>
                 <outlet property="blinderView" destination="4he-rv-A5B" id="fvj-eS-H1W"/>
@@ -74,10 +74,10 @@
                                             </subviews>
                                             <color key="backgroundColor" name="highlight"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="5pj-tv-lcC" secondAttribute="trailing" constant="9" id="BvD-Pf-1NI"/>
+                                                <constraint firstItem="5pj-tv-lcC" firstAttribute="leading" secondItem="wsc-F6-JyT" secondAttribute="leading" constant="9" id="7CJ-TL-v9H"/>
+                                                <constraint firstAttribute="trailing" secondItem="5pj-tv-lcC" secondAttribute="trailing" constant="9" id="Hv8-KF-qah"/>
                                                 <constraint firstAttribute="bottom" secondItem="5pj-tv-lcC" secondAttribute="bottom" constant="3" id="hAr-72-yuY"/>
                                                 <constraint firstItem="5pj-tv-lcC" firstAttribute="centerY" secondItem="wsc-F6-JyT" secondAttribute="centerY" id="hv8-py-rka"/>
-                                                <constraint firstItem="5pj-tv-lcC" firstAttribute="leading" secondItem="wsc-F6-JyT" secondAttribute="leading" constant="9" id="sU5-SX-HdP"/>
                                                 <constraint firstItem="5pj-tv-lcC" firstAttribute="top" secondItem="wsc-F6-JyT" secondAttribute="top" constant="3" id="xs8-rC-MTS"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
@@ -134,7 +134,7 @@
                                                         <constraint firstAttribute="width" secondItem="e5d-rS-H7A" secondAttribute="height" multiplier="1:1" id="Lvp-PX-c2A"/>
                                                         <constraint firstAttribute="height" constant="22" id="cSS-pp-h6r"/>
                                                     </constraints>
-                                                    <color key="tintColor" name="primary"/>
+                                                    <color key="tintColor" name="icons"/>
                                                     <state key="normal" image="Edit Square"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -192,7 +192,7 @@ United States of America</string>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera Icon" translatesAutoresizingMaskIntoConstraints="NO" id="htO-09-yYf">
                                                     <rect key="frame" x="18" y="9.5" width="26" height="23"/>
-                                                    <color key="tintColor" name="primary"/>
+                                                    <color key="tintColor" name="icons"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="23" id="g0k-Gs-0Bt"/>
                                                         <constraint firstAttribute="width" constant="26" id="rWN-na-iez"/>
@@ -263,7 +263,6 @@ United States of America</string>
                                         <constraint firstItem="fJB-rA-4u6" firstAttribute="leading" secondItem="gvh-pg-42R" secondAttribute="trailing" constant="20" id="bno-MO-ede"/>
                                         <constraint firstItem="gvh-pg-42R" firstAttribute="top" secondItem="nYN-rU-6Ql" secondAttribute="top" constant="34" id="fmM-QH-sWT"/>
                                         <constraint firstItem="wsc-F6-JyT" firstAttribute="centerX" secondItem="gvh-pg-42R" secondAttribute="centerX" id="ksG-HO-Q1K"/>
-                                        <constraint firstItem="wsc-F6-JyT" firstAttribute="width" secondItem="gvh-pg-42R" secondAttribute="width" multiplier="1.16471" id="nVV-M7-uVN"/>
                                         <constraint firstItem="wUj-Dp-H01" firstAttribute="leading" secondItem="nYN-rU-6Ql" secondAttribute="leading" constant="7" id="piw-xR-t0n"/>
                                         <constraint firstItem="gvh-pg-42R" firstAttribute="leading" secondItem="nYN-rU-6Ql" secondAttribute="leading" constant="27" id="qAt-kR-5fb"/>
                                         <constraint firstItem="LFW-eF-iKD" firstAttribute="leading" secondItem="B1Q-Zb-CCt" secondAttribute="leading" id="snc-Rd-x4X"/>
@@ -293,7 +292,7 @@ United States of America</string>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNx-XS-bsc">
                                     <rect key="frame" x="30" y="428" width="315" height="58"/>
-                                    <color key="backgroundColor" name="themeColor"/>
+                                    <color key="backgroundColor" name="primary"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="58" id="88F-Vm-cVu"/>
                                     </constraints>
@@ -372,7 +371,7 @@ United States of America</string>
                         <constraint firstAttribute="trailing" secondItem="No9-J4-PL3" secondAttribute="trailing" id="t1x-vn-Mxv"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4he-rv-A5B">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4he-rv-A5B">
                     <rect key="frame" x="0.0" y="57.5" width="375" height="609.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
@@ -398,17 +397,20 @@ United States of America</string>
     </objects>
     <resources>
         <image name="Arrow Left" width="10" height="18"/>
-        <image name="Camera Icon" width="13" height="11.5"/>
+        <image name="Camera Icon" width="26" height="23"/>
         <image name="Edit Square" width="20" height="20"/>
         <image name="poultry" width="85" height="85"/>
         <namedColor name="highlight">
             <color red="0.85100001096725464" green="0.92500001192092896" blue="0.93699997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="icons">
+            <color red="0.5690000057220459" green="0.74500000476837158" blue="0.49799999594688416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="primary">
             <color red="0.0" green="0.49803921568627452" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="themeColor">
-            <color red="0.019607843137254902" green="0.25490196078431371" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.0" green="0.29399999976158142" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -205,7 +205,7 @@ enum SideMenuItems : String {
         case .inviteSupplier:
             return #imageLiteral(resourceName: "inviteSupplier-icon")
         case .privacyPolicy:
-            return #imageLiteral(resourceName: "sfaq")
+            return #imageLiteral(resourceName: "Privacy Policy Icon")
         }
     }
 }
