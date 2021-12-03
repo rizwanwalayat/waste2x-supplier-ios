@@ -73,14 +73,21 @@ class SiteCreatedViewController: BaseViewController {
 //        let vc = WasteDetailViewController(nibName: "WasteDetailViewController", bundle: nil)
 //        vc.farmID = createSiteDataModel?.result?.waste_id ?? 0
 //        self.navigationController?.pushViewController(vc, animated: true)
-        FetchSitesDataModel.shared.reloadData()
-        if createSiteDataModel?.result?.waste_id != -1 {
-            
-            Utility.SitesDetailViewController(createSiteDataModel?.result?.waste_id ?? 0)
+        
+        if !Global.shared.apiCurve {
+            Utility.homeViewController()
         }
         else {
-            Utility.CurrentSitesViewController()
-            //Utility.showAlertController(self, "Sites Id not fetched!")
+            
+            FetchSitesDataModel.shared.reloadData()
+            if createSiteDataModel?.result?.waste_id != -1 {
+                
+                Utility.SitesDetailViewController(createSiteDataModel?.result?.waste_id ?? 0)
+            }
+            else {
+                Utility.CurrentSitesViewController()
+                //Utility.showAlertController(self, "Sites Id not fetched!")
+            }
         }
         
     }

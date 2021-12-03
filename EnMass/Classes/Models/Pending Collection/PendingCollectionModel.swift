@@ -112,11 +112,11 @@ class PendingCollectionDataModel : Mappable {
         schedule_type <- map["schedule_type"]
         frequency <- map["frequency"]
         schedule_date <- map["schedule_date"]
+        poRequestStatus <- map["status"]
         po_amount <- map["amount"]
         commodity <- map["commodity"]
         customer_phone <- map["customer_phone"]
         notificationId <- map["notification_id"]
-        poRequestStatus <- map["status"]
         enumHanldingsForStatus(poRequestStatus)
     }
     
@@ -134,34 +134,6 @@ class PendingCollectionDataModel : Mappable {
     }
 
 }
-
-//class PoRequestsDataModel : Mappable {
-//    var history = [PendingCollectionHistory]()
-//    var id = -1
-//    var supplier = ""
-//    var farm = ""
-//    var address = ""
-//    var amount = -1
-//    var commodity = ""
-//    var schedule_date = ""
-//
-//    required init?(map: Map) {
-//
-//    }
-//
-//    func mapping(map: Map) {
-//
-//        history <- map["history"]
-//        id <- map["id"]
-//        supplier <- map["supplier"]
-//        farm <- map["farm"]
-//        address <- map["address"]
-//        amount <- map["amount"]
-//        commodity <- map["commodity"]
-//        schedule_date <- map["schedule_date"]
-//    }
-//
-//}
 
 class PendingCollectionHistory : Mappable {
     var id = -1
@@ -187,7 +159,7 @@ class PendingCollectionHistory : Mappable {
 
 
 
-//MARK: - Detailed Pending Collection
+//MARK: - Detailed Pending Collection -
 
 class PendingCollectionDetailModel : Mappable {
     var success = Bool()

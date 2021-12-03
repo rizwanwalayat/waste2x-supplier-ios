@@ -176,7 +176,7 @@ class HomeNewViewController: BaseViewController {
         }
         
         if isSelection{
-            holderView.borderWidth = 1
+            //holderView.borderWidth = 1
             holderView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05).cgColor
             holderView.layer.shadowOpacity = 0.3
             holderView.layer.shadowOffset = CGSize(width: 4, height: 4)

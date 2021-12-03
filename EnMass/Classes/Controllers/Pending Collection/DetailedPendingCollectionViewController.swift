@@ -49,7 +49,7 @@ class DetailedPendingCollectionViewController: BaseViewController {
     
     
 }
-//MARK: - TableView
+//MARK: - TableView -
 
 extension DetailedPendingCollectionViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -96,7 +96,7 @@ extension DetailedPendingCollectionViewController : UITableViewDelegate,UITableV
     
 }
 
-// MARK: - Cell Actions
+// MARK: - Cell Actions -
 
 extension DetailedPendingCollectionViewController {
     @objc func messageCustomerBtnPressed(){
@@ -147,7 +147,7 @@ extension DetailedPendingCollectionViewController {
 }
 
 
-//MARK: - API Call
+//MARK: - API Call -
 
 extension DetailedPendingCollectionViewController{
     func apiCall(){
