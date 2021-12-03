@@ -22,10 +22,9 @@
                 <outlet property="declinedTab" destination="cQ6-wF-j24" id="ybb-TP-0Z4"/>
                 <outlet property="mainView" destination="5AZ-B2-jks" id="VLx-L7-H3g"/>
                 <outlet property="pendingTab" destination="FuJ-BF-VZW" id="I0C-ya-07w"/>
-                <outlet property="poRequestTab" destination="YsX-hE-jBk" id="ddx-Bk-UnR"/>
                 <outlet property="tableView" destination="au2-E6-m96" id="d50-yX-hLy"/>
                 <outlet property="tabsHolderView" destination="yI1-RV-h45" id="8Aw-4w-zec"/>
-                <outlet property="upcomingTab" destination="Yga-zd-vpi" id="gZZ-sY-XIM"/>
+                <outlet property="upcomingTab" destination="YsX-hE-jBk" id="tt2-kE-I1K"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -112,28 +111,28 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yI1-RV-h45" userLabel="Tab View">
                             <rect key="frame" x="24" y="24" width="366" height="78"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zdN-NK-ljH">
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zdN-NK-ljH">
                                     <rect key="frame" x="9" y="9" width="348" height="60"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YsX-hE-jBk">
-                                            <rect key="frame" x="0.0" y="0.0" width="69.5" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="102.5" height="60"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab-upcoming" translatesAutoresizingMaskIntoConstraints="NO" id="6UV-wV-mfQ">
-                                                    <rect key="frame" x="26" y="12" width="18" height="18"/>
-                                                    <color key="tintColor" name="primary"/>
+                                                    <rect key="frame" x="42.5" y="12" width="18" height="18"/>
+                                                    <color key="tintColor" name="icons"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="7f3-Vs-QYG"/>
                                                         <constraint firstAttribute="width" secondItem="6UV-wV-mfQ" secondAttribute="height" multiplier="1:1" id="DWK-xw-mTY"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Requests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fk7-Y1-Jc4">
-                                                    <rect key="frame" x="13.5" y="34" width="42.5" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fk7-Y1-Jc4">
+                                                    <rect key="frame" x="25" y="34" width="53" height="17"/>
                                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8e6-WS-wqD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="69.5" height="60"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="102.5" height="60"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <connections>
                                                         <action selector="tabPressed:" destination="-1" eventType="touchUpInside" id="SOi-MD-4tH"/>
@@ -160,56 +159,11 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yga-zd-vpi">
-                                            <rect key="frame" x="69.5" y="0.0" width="69.5" height="60"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab-upcoming" translatesAutoresizingMaskIntoConstraints="NO" id="CCM-8v-QaI">
-                                                    <rect key="frame" x="26" y="12" width="18" height="18"/>
-                                                    <color key="tintColor" name="inactive"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="CCM-8v-QaI" secondAttribute="height" multiplier="1:1" id="eJR-qR-AIy"/>
-                                                        <constraint firstAttribute="height" constant="18" id="x5j-VD-iCP"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTM-4C-X3g">
-                                                    <rect key="frame" x="11.5" y="34" width="46.5" height="17"/>
-                                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="10"/>
-                                                    <color key="textColor" name="inactive"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8X-3x-dsE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="69.5" height="60"/>
-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <connections>
-                                                        <action selector="tabPressed:" destination="-1" eventType="touchUpInside" id="pow-ch-lmb"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstItem="KTM-4C-X3g" firstAttribute="centerX" secondItem="Yga-zd-vpi" secondAttribute="centerX" id="6HT-P8-1Gm"/>
-                                                <constraint firstItem="d8X-3x-dsE" firstAttribute="top" secondItem="Yga-zd-vpi" secondAttribute="top" id="6eM-pz-Ibv"/>
-                                                <constraint firstAttribute="bottom" secondItem="d8X-3x-dsE" secondAttribute="bottom" id="BYv-pc-0hp"/>
-                                                <constraint firstAttribute="trailing" secondItem="d8X-3x-dsE" secondAttribute="trailing" id="FHJ-kY-men"/>
-                                                <constraint firstAttribute="bottom" secondItem="KTM-4C-X3g" secondAttribute="bottom" constant="9" id="VZb-tZ-jbp"/>
-                                                <constraint firstItem="CCM-8v-QaI" firstAttribute="top" secondItem="Yga-zd-vpi" secondAttribute="top" constant="12" id="Yxt-xK-1WV"/>
-                                                <constraint firstItem="KTM-4C-X3g" firstAttribute="top" secondItem="CCM-8v-QaI" secondAttribute="bottom" constant="4" id="Z5g-80-utH"/>
-                                                <constraint firstItem="CCM-8v-QaI" firstAttribute="centerX" secondItem="Yga-zd-vpi" secondAttribute="centerX" id="Zpd-6P-3PS"/>
-                                                <constraint firstItem="d8X-3x-dsE" firstAttribute="leading" secondItem="Yga-zd-vpi" secondAttribute="leading" id="eUe-FC-fQJ"/>
-                                                <constraint firstItem="CCM-8v-QaI" firstAttribute="width" secondItem="CCM-8v-QaI" secondAttribute="height" multiplier="1:1" id="gFC-xf-SKC"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isCirculer" value="YES"/>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="8"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FuJ-BF-VZW">
-                                            <rect key="frame" x="139" y="0.0" width="70" height="60"/>
+                                            <rect key="frame" x="122.5" y="0.0" width="103" height="60"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab-pending" translatesAutoresizingMaskIntoConstraints="NO" id="ce4-Ec-rXW">
-                                                    <rect key="frame" x="26" y="12" width="18" height="18"/>
+                                                    <rect key="frame" x="42.5" y="12" width="18" height="18"/>
                                                     <color key="tintColor" name="inactive"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ce4-Ec-rXW" secondAttribute="height" multiplier="1:1" id="fgC-5O-i0m"/>
@@ -217,13 +171,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2I-B7-POz">
-                                                    <rect key="frame" x="16.5" y="34" width="37" height="17"/>
+                                                    <rect key="frame" x="30.5" y="34" width="42" height="17"/>
                                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="10"/>
                                                     <color key="textColor" name="inactive"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuE-6s-w4I">
-                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="60"/>
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuE-6s-w4I">
+                                                    <rect key="frame" x="0.0" y="0.0" width="103" height="60"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <connections>
                                                         <action selector="tabPressed:" destination="-1" eventType="touchUpInside" id="4ym-XK-YP7"/>
@@ -250,11 +204,11 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQ6-wF-j24">
-                                            <rect key="frame" x="209" y="0.0" width="69.5" height="60"/>
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQ6-wF-j24">
+                                            <rect key="frame" x="235.5" y="0.0" width="0.0" height="60"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab-closed" translatesAutoresizingMaskIntoConstraints="NO" id="sKd-1f-Nm7">
-                                                    <rect key="frame" x="25.5" y="12" width="18" height="18"/>
+                                                    <rect key="frame" x="-9" y="12" width="18" height="18"/>
                                                     <color key="tintColor" name="inactive"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="Goy-V8-L9d"/>
@@ -262,13 +216,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Declined" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8C2-ye-8uk">
-                                                    <rect key="frame" x="15" y="34" width="39.5" height="17"/>
+                                                    <rect key="frame" x="-22.5" y="34" width="44.5" height="17"/>
                                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="10"/>
                                                     <color key="textColor" name="inactive"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDV-xv-wch">
-                                                    <rect key="frame" x="0.0" y="0.0" width="69.5" height="60"/>
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDV-xv-wch">
+                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="60"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <connections>
                                                         <action selector="tabPressed:" destination="-1" eventType="touchUpInside" id="HPg-2l-vUi"/>
@@ -296,10 +250,10 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVQ-Px-KUh">
-                                            <rect key="frame" x="278.5" y="0.0" width="69.5" height="60"/>
+                                            <rect key="frame" x="245.5" y="0.0" width="102.5" height="60"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab-delivered" translatesAutoresizingMaskIntoConstraints="NO" id="Jwk-CV-qtp">
-                                                    <rect key="frame" x="25.5" y="12" width="18" height="18"/>
+                                                    <rect key="frame" x="42" y="12" width="18" height="18"/>
                                                     <color key="tintColor" name="inactive"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="EVy-4u-Ulj"/>
@@ -307,13 +261,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3g-Zi-wbR">
-                                                    <rect key="frame" x="10" y="34" width="49.5" height="17"/>
+                                                    <rect key="frame" x="22.5" y="34" width="57.5" height="17"/>
                                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="10"/>
                                                     <color key="textColor" name="inactive"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfo-xr-ths">
-                                                    <rect key="frame" x="0.0" y="0.0" width="69.5" height="60"/>
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfo-xr-ths">
+                                                    <rect key="frame" x="0.0" y="0.0" width="102.5" height="60"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <connections>
                                                         <action selector="tabPressed:" destination="-1" eventType="touchUpInside" id="T8t-d5-42N"/>

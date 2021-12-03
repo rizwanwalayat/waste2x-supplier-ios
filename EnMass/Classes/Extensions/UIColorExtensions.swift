@@ -25,7 +25,8 @@ extension UIColor {
         return UIColor(named: "tabUnselected") ?? UIColor(hexString: "EBEBEB")
     }
     static var lineColor: UIColor {
-        return UIColor(named: "lineColor") ?? UIColor(hexString: "007F97")
+        return UIColor(named: "lineColor") ?? UIColor(hexString: "91BE7F")
+    }
     static var successMessage: UIColor {
         return UIColor(named: "successMessage") ?? UIColor(hexString: "007F97")
     }
