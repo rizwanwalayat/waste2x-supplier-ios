@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TrackerViewController" customModule="Waste2x" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TrackerViewController" customModule="EnMass" customModuleProvider="target">
             <connections>
                 <outlet property="addressLabel" destination="drv-Jl-BiX" id="D4l-qA-8t7"/>
                 <outlet property="bottomConst" destination="t6P-z0-zf9" id="29C-3S-Y20"/>
@@ -185,7 +185,7 @@ California, United State</string>
         <image name="Union" width="7" height="10"/>
         <image name="time" width="10" height="10"/>
         <namedColor name="themeColor">
-            <color red="0.019607843137254902" green="0.25490196078431371" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.0" green="0.29411764705882354" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
