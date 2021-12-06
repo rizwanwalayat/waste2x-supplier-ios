@@ -116,7 +116,7 @@ class PendingCollectionDataModel : Mappable {
         commodity <- map["commodity"]
         customer_phone <- map["customer_phone"]
         notificationId <- map["notification_id"]
-        enumHanldingsForStatus(poRequestStatus)
+        enumHanldingsForStatus(status)
     }
     
     func enumHanldingsForStatus(_ requestResponse : String) {
