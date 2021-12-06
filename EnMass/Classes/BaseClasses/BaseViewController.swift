@@ -14,13 +14,17 @@ class BaseViewController: UIViewController {
     var tabbarViewHeight : CGFloat = 0.0
     var userData : RegistrationResult?
     let refreshControl = UIRefreshControl()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         userData = DataManager.shared.getUser()?.result
         tabbarViewHeight = (UIScreen.main.bounds.height * 0.0926339)+10
         print("Bottom Const : \(tabbarViewHeight)\nscreen height : \(UIScreen.main.bounds.height)")
+        
     }
+    
 
     /**************************************************/
     
