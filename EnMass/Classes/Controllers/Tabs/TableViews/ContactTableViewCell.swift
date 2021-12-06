@@ -28,7 +28,7 @@ class ContactTableViewCell: UITableViewCell {
     }
     func config(index: Int){
         self.imgView.image = img[index]
-        self.imgView.tintColor = UIColor(named: "primary")
+        self.imgView.tintColor = UIColor.icons
         self.titleLabel.text = text[index]
     }
     
