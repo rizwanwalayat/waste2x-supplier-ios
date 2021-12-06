@@ -91,7 +91,6 @@ class PendingCollectionDataModel : Mappable {
     var commodity = ""
     var customer_phone = ""
     var notificationId = -1
-    var poRequestStatus = ""
     var poRequestStatusType = PoRequestStatus.notSent
 
     required init?(map: Map) {
