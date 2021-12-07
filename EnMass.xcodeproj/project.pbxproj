@@ -66,6 +66,8 @@
 		046528032668F694005F3FB0 /* CalenderPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046528012668F694005F3FB0 /* CalenderPopupViewController.swift */; };
 		046528042668F694005F3FB0 /* CalenderPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046528022668F694005F3FB0 /* CalenderPopupViewController.xib */; };
 		046565C72746759D008BAE63 /* FetchSitesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046565C62746759D008BAE63 /* FetchSitesDataModel.swift */; };
+		046719DA275F6AB700E3A1D9 /* WebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046719D8275F6AB700E3A1D9 /* WebViewViewController.xib */; };
+		046719DB275F6AB700E3A1D9 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046719D9275F6AB700E3A1D9 /* WebViewViewController.swift */; };
 		046AB1E6274F96D800D1F90E /* UImageViewAndUIimage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AB1E5274F96D800D1F90E /* UImageViewAndUIimage.swift */; };
 		047D7445274D23CA00D33FA3 /* UserDetailDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D7443274D23CA00D33FA3 /* UserDetailDataModel.swift */; };
 		047DA71B26809635009D0B02 /* TwillioChatDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DA71A26809635009D0B02 /* TwillioChatDataModel.swift */; };
@@ -316,6 +318,8 @@
 		046528012668F694005F3FB0 /* CalenderPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderPopupViewController.swift; sourceTree = "<group>"; };
 		046528022668F694005F3FB0 /* CalenderPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalenderPopupViewController.xib; sourceTree = "<group>"; };
 		046565C62746759D008BAE63 /* FetchSitesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSitesDataModel.swift; sourceTree = "<group>"; };
+		046719D8275F6AB700E3A1D9 /* WebViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewViewController.xib; sourceTree = "<group>"; };
+		046719D9275F6AB700E3A1D9 /* WebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		046AB1E5274F96D800D1F90E /* UImageViewAndUIimage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UImageViewAndUIimage.swift; sourceTree = "<group>"; };
 		047D7443274D23CA00D33FA3 /* UserDetailDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailDataModel.swift; sourceTree = "<group>"; };
 		047DA71A26809635009D0B02 /* TwillioChatDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwillioChatDataModel.swift; sourceTree = "<group>"; };
@@ -856,6 +860,15 @@
 			path = FetchSitesDataModel;
 			sourceTree = "<group>";
 		};
+		046719D7275F6AB700E3A1D9 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				046719D8275F6AB700E3A1D9 /* WebViewViewController.xib */,
+				046719D9275F6AB700E3A1D9 /* WebViewViewController.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		047D743F274D1AD000D33FA3 /* UserDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -1129,6 +1142,7 @@
 				18ACB7C0267A2E2E0088307D /* PaymentViewController.swift */,
 				180CD1AE2665048D0092168B /* PaymentViewController.xib */,
 				186CD717266610C600A1F30F /* CreatePaymentViewController.xib */,
+				046719D7275F6AB700E3A1D9 /* WebView */,
 			);
 			path = Payments;
 			sourceTree = "<group>";
@@ -1709,6 +1723,7 @@
 				04AF4DE3274CC57900D0074C /* PopupProfileEdit.xib in Resources */,
 				18397E222660FF54003DE30C /* Poppins-LightItalic.ttf in Resources */,
 				18397E1E2660FF54003DE30C /* Poppins-ExtraBold.ttf in Resources */,
+				046719DA275F6AB700E3A1D9 /* WebViewViewController.xib in Resources */,
 				18896080266E289800061783 /* SupplyDetailTableViewCell.xib in Resources */,
 				18937565266127F800D55A33 /* NewWasteSizeViewController.xib in Resources */,
 				18C11A71265FA49C00BC022F /* ContactTableViewCell.xib in Resources */,
@@ -1913,6 +1928,7 @@
 				18937566266127F800D55A33 /* NewWasteSizeViewController.swift in Sources */,
 				043F6BFA267776A2000E3C4F /* Commodity_farms.swift in Sources */,
 				0067A323252AFC9E00CECA8C /* UILabel.swift in Sources */,
+				046719DB275F6AB700E3A1D9 /* WebViewViewController.swift in Sources */,
 				18ACB7C1267A2E2E0088307D /* CreatePaymentViewController.swift in Sources */,
 				183262792670C68A00F0CCBA /* InviteSupplierViewController.swift in Sources */,
 				1849F5A4266FDFD60001B533 /* ContactsFetchViewController.swift in Sources */,

@@ -79,6 +79,12 @@ struct NetworkingConnection {
         kApplicationWindow?.rootViewController = navigationController
         kApplicationWindow?.makeKeyAndVisible()
     }
+    
+    class func setupRoot(_ controller : [UIViewController], navgationController: UINavigationController?)
+    {
+        navgationController?.setViewControllers(controller, animated: true)
+        navgationController?.navigationBar.isHidden = true
+    }
 
     class func autoLogin() {
         

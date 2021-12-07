@@ -28,18 +28,28 @@ class PaymentViewController: BaseViewController {
         
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.navigationController?.navigationBar.topItem?.title = ""
+    }
+    
     @IBAction func backAction(_ sender: Any) {
         
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func connectStripeAccount(_ sender: Any) {
-        Utility.homeViewController()
+        //Utility.homeViewController()
         CreatePaymentModel.CreatePaymentApiFunction{ result, error, status,message in
-            if let url = URL(string: "\(result!.result)") {
-                UIApplication.shared.open(url)
-            }
+//            if let url = URL(string: "\(result!.result)") {
+//                UIApplication.shared.open(url)
+//            }
+        
+            let vcHome = HomeNewViewController(nibName: "HomeNewViewController", bundle: nil)
+            let vc = WebViewViewController(nibName: "WebViewViewController", bundle: nil)
+            vc.urlString = result!.result // "https://www.google.com/"
+            
+            self.navigationController?.setViewControllers([vcHome, vc], animated: true)
         }
     }
-    
-    
 }

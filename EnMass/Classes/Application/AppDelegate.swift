@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         GMSServices.provideAPIKey(googleAPIKey)
         GMSPlacesClient.provideAPIKey(googleAPIKey)
-        GMSAutocompleteViewControllerHandling()
+        //GMSAutocompleteViewControllerHandling()
         initializeLocationManager()
         return true
     }

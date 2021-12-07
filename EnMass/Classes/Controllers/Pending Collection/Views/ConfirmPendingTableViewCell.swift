@@ -44,10 +44,14 @@ class ConfirmPendingTableViewCell: UITableViewCell {
         }
         
         self.farmLabel.text = data.farm
-        if data.frequency == "" {
+        
+        if data.schedule_type == ""
+        {
+            self.scheduleLabel.text = "Regular Schedule (Daily)"
+        }
+        else if data.frequency == "" {
             self.scheduleLabel.text = data.schedule_type
         }
-        
         else{
             self.scheduleLabel.text = data.schedule_type + " (\(data.frequency))"
             
