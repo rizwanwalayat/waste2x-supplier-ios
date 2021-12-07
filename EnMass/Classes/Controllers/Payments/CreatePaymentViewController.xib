@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreatePaymentViewController" customModule="Waste2x" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreatePaymentViewController" customModule="EnMass" customModuleProvider="target">
             <connections>
                 <outlet property="bottomConst" destination="Uen-qD-yEh" id="UI5-Gv-xBa"/>
                 <outlet property="emailStackView" destination="OxH-Zm-Oxh" id="KKz-sa-eWL"/>
@@ -33,13 +34,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fD6-6R-fTx">
-                    <rect key="frame" x="0.0" y="44" width="390" height="57.333333333333343"/>
+                    <rect key="frame" x="0.0" y="44" width="390" height="53"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IiW-XJ-jhb">
-                            <rect key="frame" x="0.0" y="0.0" width="390" height="57.333333333333336"/>
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="53"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mJ-RN-QL3">
-                                    <rect key="frame" x="30" y="17.666666666666664" width="22" height="22"/>
+                                    <rect key="frame" x="30" y="15.666666666666664" width="22" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="6mJ-RN-QL3" secondAttribute="height" multiplier="1:1" id="As6-UA-lSA"/>
                                         <constraint firstAttribute="height" constant="22" id="XPK-uN-xza"/>
@@ -50,7 +51,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aff-vP-pvB">
-                                    <rect key="frame" x="20" y="15.999999999999998" width="350" height="25.333333333333329"/>
+                                    <rect key="frame" x="20" y="16" width="350" height="21"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -67,7 +68,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.45882352939999999" green="0.58039215690000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" name="themeColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="IiW-XJ-jhb" secondAttribute="trailing" id="7wI-TD-SZC"/>
                         <constraint firstAttribute="bottom" secondItem="IiW-XJ-jhb" secondAttribute="bottom" id="G2N-9B-0pR"/>
@@ -75,10 +76,10 @@
                     </constraints>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veq-BJ-fXd">
-                    <rect key="frame" x="0.0" y="101.33333333333331" width="390" height="742.66666666666674"/>
+                    <rect key="frame" x="0.0" y="97" width="390" height="747"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJC-SC-AeT">
-                            <rect key="frame" x="20" y="50.000000000000007" width="350" height="101.66666666666669"/>
+                            <rect key="frame" x="20" y="50" width="350" height="103"/>
                             <attributedString key="attributedText">
                                 <fragment>
                                     <string key="content">Your payment account is 
@@ -100,13 +101,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="paymentmade" translatesAutoresizingMaskIntoConstraints="NO" id="61L-JO-Qnq">
-                            <rect key="frame" x="98.333333333333329" y="181.66666666666669" width="193.33333333333337" height="219.66666666666669"/>
+                            <rect key="frame" x="97.666666666666671" y="183" width="194.66666666666663" height="221"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="61L-JO-Qnq" secondAttribute="height" multiplier="207:235" id="eQn-Fc-OMi"/>
                             </constraints>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="c9v-Nu-yGf">
-                            <rect key="frame" x="50" y="495.66666666666674" width="290" height="167"/>
+                            <rect key="frame" x="50" y="500" width="290" height="167"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nxh-Wm-yLe">
                                     <rect key="frame" x="0.0" y="0.0" width="290" height="75"/>
@@ -251,7 +252,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.45882352939999999" green="0.58039215690000001" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+            <color key="backgroundColor" name="themeColor"/>
             <constraints>
                 <constraint firstItem="IiW-XJ-jhb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="0PO-Zk-Hnb"/>
                 <constraint firstItem="veq-BJ-fXd" firstAttribute="top" secondItem="fD6-6R-fTx" secondAttribute="bottom" id="6QI-Rq-5aw"/>
@@ -271,5 +272,8 @@
         <image name="Message-2" width="16" height="14.666666984558105"/>
         <image name="Profile" width="12.666666984558105" height="16"/>
         <image name="paymentmade" width="207" height="235"/>
+        <namedColor name="themeColor">
+            <color red="0.0" green="0.29399999976158142" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>
