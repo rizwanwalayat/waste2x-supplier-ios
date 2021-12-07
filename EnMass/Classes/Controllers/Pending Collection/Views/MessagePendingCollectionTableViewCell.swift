@@ -62,6 +62,7 @@ class MessagePendingCollectionTableViewCell: UITableViewCell {
             
             statusView.backgroundColor = .failureMessage
             statusImageView.tintColor = .failureMessageTextIcon
+            statusLable.text = "You’ve declined this Shipment."
             statusLable.textColor = .failureMessageTextIcon
         }
         
@@ -69,6 +70,7 @@ class MessagePendingCollectionTableViewCell: UITableViewCell {
             
             statusView.backgroundColor = .successMessage
             statusImageView.tintColor = .successMessageTextIcon
+            statusLable.text = "You’ve accepted this Shipment."
             statusLable.textColor = .successMessageTextIcon
         }
     }
