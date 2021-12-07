@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactsFetchViewController" customModule="Waste2x" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactsFetchViewController" customModule="EnMass" customModuleProvider="target">
             <connections>
                 <outlet property="mainView" destination="puJ-RS-ZkW" id="UDh-re-lVc"/>
                 <outlet property="searchBar" destination="QVp-Y1-xNf" id="Jxf-DX-oZr"/>
@@ -97,7 +97,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="themeColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="puJ-RS-ZkW" secondAttribute="trailing" id="6nm-36-Axc"/>
                 <constraint firstItem="puJ-RS-ZkW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AWf-cR-KUr"/>
@@ -114,7 +114,7 @@
     <resources>
         <image name="Arrow Left" width="10" height="18"/>
         <namedColor name="themeColor">
-            <color red="0.019607843137254902" green="0.25490196078431371" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.0" green="0.29399999976158142" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
