@@ -12,6 +12,7 @@ import GoogleMaps
 class WasteDetailViewController: BaseViewController {
 
     // MARK: - Outlets
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var detailHolderview     : UIView!
     @IBOutlet weak var wasteTitleImageview  : UIImageView!
     @IBOutlet weak var wasteTitleLable      : UILabel!
@@ -52,10 +53,14 @@ class WasteDetailViewController: BaseViewController {
         setupviews()
         self.fetchDataFromServer()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         
-         bottomConstraints.constant = tabbarViewHeight+10
+        bottomConstraints.constant = tabbarViewHeight+10
+        mainView.layer.cornerRadius = 36
+        mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        mainView.layer.masksToBounds = true
     }
     
     
