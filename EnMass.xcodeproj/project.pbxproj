@@ -581,7 +581,7 @@
 				04AF4DDA274CC57900D0074C /* profile */,
 				962DAC5A274676E2004C40D1 /* Home New */,
 				18D1A363266A2B51009CAD26 /* Tracker */,
-				1849F5A1266FDFB90001B533 /* Contacts Fetch */,
+				1849F5A1266FDFB90001B533 /* Inviates Contacts Fetch */,
 				0463F2DB266E08A900E8924D /* Reward */,
 				187D756C266E07E9007811C4 /* Supply Process */,
 				04C31D062667731100A1CF9C /* Pickup-Schedule */,
@@ -1251,7 +1251,7 @@
 			path = Poppins;
 			sourceTree = "<group>";
 		};
-		1849F5A1266FDFB90001B533 /* Contacts Fetch */ = {
+		1849F5A1266FDFB90001B533 /* Inviates Contacts Fetch */ = {
 			isa = PBXGroup;
 			children = (
 				1849F5A6266FE31B0001B533 /* Views */,
@@ -1260,7 +1260,7 @@
 				183262772670C68A00F0CCBA /* InviteSupplierViewController.swift */,
 				183262782670C68A00F0CCBA /* InviteSupplierViewController.xib */,
 			);
-			path = "Contacts Fetch";
+			path = "Inviates Contacts Fetch";
 			sourceTree = "<group>";
 		};
 		1849F5A6266FE31B0001B533 /* Views */ = {

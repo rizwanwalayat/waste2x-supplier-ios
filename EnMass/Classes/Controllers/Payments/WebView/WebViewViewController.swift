@@ -105,6 +105,8 @@ extension WebViewViewController: WKUIDelegate, WKNavigationDelegate, UINavigatio
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("pageLoadingFinish")
         Utility.hideLoading()
+        let vc = HomeNewViewController(nibName: "HomeNewViewController", bundle: nil)
+        Utility.setupRoot([vc], navgationController: self.navigationController)
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
