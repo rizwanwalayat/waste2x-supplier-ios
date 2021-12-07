@@ -35,7 +35,7 @@ extension UIButton
     {
         self.isEnabled = value
         if value {
-            self.backgroundColor = UIColor.appColor
+            self.backgroundColor = UIColor.primary
             self.titleLabel?.textColor = UIColor.white
         } else {
             self.backgroundColor = UIColor(hexString: "DADADA")
