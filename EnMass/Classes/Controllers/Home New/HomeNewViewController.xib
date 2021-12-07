@@ -35,10 +35,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cTQ-tA-Ohm" userLabel="headerHolderView">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="150.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="186.5"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" image="Header-Background-new" translatesAutoresizingMaskIntoConstraints="NO" id="QY8-Y7-KGG">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="150.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="186.5"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBI-hl-Jri" userLabel="ButtonHeaderview">
                             <rect key="frame" x="0.0" y="74" width="414" height="36.5"/>
@@ -102,12 +102,12 @@
                         <constraint firstAttribute="bottom" secondItem="QY8-Y7-KGG" secondAttribute="bottom" id="ZlE-gu-VZ4"/>
                         <constraint firstItem="hBI-hl-Jri" firstAttribute="leading" secondItem="cTQ-tA-Ohm" secondAttribute="leading" id="h83-iw-W1F"/>
                         <constraint firstAttribute="trailing" secondItem="hBI-hl-Jri" secondAttribute="trailing" id="mo1-We-eif"/>
-                        <constraint firstAttribute="bottom" secondItem="hBI-hl-Jri" secondAttribute="bottom" constant="40" id="ocd-F3-0Rf"/>
+                        <constraint firstAttribute="bottom" secondItem="hBI-hl-Jri" secondAttribute="bottom" constant="76" id="ocd-F3-0Rf"/>
                         <constraint firstItem="QY8-Y7-KGG" firstAttribute="top" secondItem="cTQ-tA-Ohm" secondAttribute="top" id="wmL-7C-mxz"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5AZ-B2-jks">
-                    <rect key="frame" x="0.0" y="150.5" width="414" height="745.5"/>
+                    <rect key="frame" x="0.0" y="150.5" width="414" height="755.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yI1-RV-h45" userLabel="Tab View">
                             <rect key="frame" x="24" y="24" width="366" height="78"/>
@@ -375,7 +375,7 @@
                         <constraint firstItem="yI1-RV-h45" firstAttribute="top" secondItem="5AZ-B2-jks" secondAttribute="top" constant="24" id="P9T-kE-tYa"/>
                         <constraint firstItem="yI1-RV-h45" firstAttribute="leading" secondItem="5AZ-B2-jks" secondAttribute="leading" constant="24" id="qBg-GW-LVv"/>
                         <constraint firstItem="au2-E6-m96" firstAttribute="leading" secondItem="5AZ-B2-jks" secondAttribute="leading" id="uSt-J5-dLc"/>
-                        <constraint firstAttribute="bottom" secondItem="au2-E6-m96" secondAttribute="bottom" id="yTU-fH-MX3"/>
+                        <constraint firstAttribute="bottom" secondItem="au2-E6-m96" secondAttribute="bottom" constant="10" id="yTU-fH-MX3"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -385,16 +385,16 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" name="themeColor"/>
+            <color key="backgroundColor" name="bgColor"/>
             <constraints>
-                <constraint firstItem="5AZ-B2-jks" firstAttribute="top" secondItem="cTQ-tA-Ohm" secondAttribute="bottom" id="Ahh-LL-Qdx"/>
+                <constraint firstItem="5AZ-B2-jks" firstAttribute="top" secondItem="cTQ-tA-Ohm" secondAttribute="bottom" constant="-36" id="Ahh-LL-Qdx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="hBI-hl-Jri" secondAttribute="top" constant="-30" id="Dyq-GV-jDC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5AZ-B2-jks" secondAttribute="trailing" id="Dyv-cO-tOm"/>
                 <constraint firstItem="cTQ-tA-Ohm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FJz-Gk-ZtT"/>
                 <constraint firstItem="cTQ-tA-Ohm" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Jdx-yu-CrK"/>
                 <constraint firstItem="cTQ-tA-Ohm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Vab-jO-KFt"/>
                 <constraint firstItem="5AZ-B2-jks" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZlU-fr-59z"/>
-                <constraint firstAttribute="bottom" secondItem="5AZ-B2-jks" secondAttribute="bottom" id="vhG-GN-9lp"/>
+                <constraint firstAttribute="bottom" secondItem="5AZ-B2-jks" secondAttribute="bottom" constant="-10" id="vhG-GN-9lp"/>
             </constraints>
             <point key="canvasLocation" x="47.826086956521742" y="86.383928571428569"/>
         </view>
@@ -416,9 +416,6 @@
         </namedColor>
         <namedColor name="inactive">
             <color red="0.72500002384185791" green="0.71799999475479126" blue="0.75700002908706665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="themeColor">
-            <color red="0.0" green="0.29399999976158142" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

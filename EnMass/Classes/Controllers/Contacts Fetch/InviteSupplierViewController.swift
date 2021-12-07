@@ -24,7 +24,7 @@ class InviteSupplierViewController: BaseViewController {
         mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         mainView.layer.masksToBounds = true
         globalObjectContainer?.tabbarHiddenView.isHidden = false
-        bottomConstraints.constant = tabbarViewHeight
+        bottomConstraints.constant = 0
         
     }
     @IBAction func inviteAction(_ sender: Any) {

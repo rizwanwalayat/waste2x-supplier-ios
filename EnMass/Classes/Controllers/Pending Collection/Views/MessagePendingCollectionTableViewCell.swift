@@ -62,14 +62,14 @@ class MessagePendingCollectionTableViewCell: UITableViewCell {
             
             statusView.backgroundColor = .failureMessage
             statusImageView.tintColor = .failureMessageTextIcon
-            statusLable.tintColor = .failureMessageTextIcon
+            statusLable.textColor = .failureMessageTextIcon
         }
         
         else if status == .approved {
             
             statusView.backgroundColor = .successMessage
             statusImageView.tintColor = .successMessageTextIcon
-            statusLable.tintColor = .successMessageTextIcon
+            statusLable.textColor = .successMessageTextIcon
         }
     }
 }
