@@ -21,7 +21,7 @@ class ScheduleRegularViewController: BaseViewController {
     @IBOutlet weak var dateValueLabel: UILabel!
     @IBOutlet weak var notesHolderView: UIView!
     @IBOutlet weak var notesTextView: UITextView!
-    
+    @IBOutlet weak var mainRoundedView: UIView!
     
     // MARK: - Outlets
     
@@ -41,7 +41,12 @@ class ScheduleRegularViewController: BaseViewController {
         initialUiHandlings()
     }
 
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        mainRoundedView.layer.cornerRadius = 36
+        mainRoundedView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        mainRoundedView.layer.masksToBounds = true
+    }
     
     // MARK: - Custom Methods
     private func initialUiHandlings()
@@ -324,6 +329,7 @@ extension ScheduleRegularViewController: UITextViewDelegate
         if textView.textColor == UIColor.lightGray {
             textView.text = nil
             textView.textColor = UIColor(hexString: "2A2A2A")
+            selectionHandlingsOfViews(notesHolderView, isSelection: true)
         }
     }
     
