@@ -106,7 +106,7 @@ extension PendingCollectionViewController{
     
     func apiCall(){
         
-        PendingCollectionModel.pendingCollectionApiCall { result, error, status, message in
+        PendingCollectionModel.pendingCollectionApiCall(loadingEnabled: true) { result, error, status, message in
             
             if error == nil{
                 
