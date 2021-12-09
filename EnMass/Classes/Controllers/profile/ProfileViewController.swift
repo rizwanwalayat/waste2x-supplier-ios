@@ -65,7 +65,7 @@ class ProfileViewController: BaseViewController {
         viewModel?.getUserData()
         userName.text = viewModel?.userName
         userEmail.text = viewModel?.userEmail
-        userPhone.text = viewModel?.userPhone
+        userPhone.text = viewModel?.userPhone?.toPhoneNumber()
         
         
         self.downloadImageFromServer(viewModel?.userImage ?? "") { image, error, success in

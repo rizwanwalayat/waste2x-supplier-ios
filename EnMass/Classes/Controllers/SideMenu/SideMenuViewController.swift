@@ -111,7 +111,7 @@ class SideMenuViewController: BaseViewController {
     fileprivate func populateUsersData(){
         
         guard let user = DataManager.shared.getUserDetail() else {return}
-        self.phoneNumberLabel.text = user.phone
+        self.phoneNumberLabel.text = user.phone.toPhoneNumber()
         
         self.downloadImageFromServer(user.image) { image, error, success in
             
