@@ -74,7 +74,9 @@ class ScheduleViewController: BaseViewController {
     @IBOutlet weak var selectLocationLabel: UILabel!
     @IBOutlet weak var selectLocationButton: UIButton!
     @IBOutlet weak var locationImageview: UIImageView!
-    
+    @IBOutlet weak var notesTextView: UITextView!
+    @IBOutlet weak var notesHolderView: UIView!
+
     @IBOutlet weak var nextButton : UIButton!
     
     // MARK: - Declarations
@@ -91,6 +93,8 @@ class ScheduleViewController: BaseViewController {
     var postDictData = [String : Any]()
     var locationManager = CLLocationManager()
     var wasteDeatil : WasteDetialResult?
+    var placeHolderText = "Type some details about your pickup ... "
+
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -100,6 +104,9 @@ class ScheduleViewController: BaseViewController {
 //        globalObjectHome?.fetchSitesData[0].farmId
         selectionType = .onePickup
         pickupTypeHandlings(selectionType: selectionType)
+        
+        notesTextView.delegate = self
+        
         //googleMapCurrentLocation()
         self.view.layoutIfNeeded()
         
@@ -115,6 +122,13 @@ class ScheduleViewController: BaseViewController {
         
     }
     
+    fileprivate func returnSelectedDays() -> String
+    {
+        let selectedDaysCode = "MTWRF"
+    
+        return selectedDaysCode
+    }
+    
     // MARK: - Actions
     @IBAction func backButtonPressed(_ sender: Any) {
         
@@ -128,11 +142,20 @@ class ScheduleViewController: BaseViewController {
             if selectionType == .onePickup {
                 postDictData["frequency"] = "Daily"
             }
-            let vc = ScheduleRegularViewController(nibName: "ScheduleRegularViewController", bundle: nil)
-            vc.selectedFrequency = selectFrequencyPriodicLabel.text ?? ""
-            vc.postDict = postDictData
-            vc.selectionType = selectionType
-            self.navigationController?.pushViewController(vc, animated: true)
+            
+            postDictData["pick_up_note"] = notesTextView.text ?? ""
+            postDictData["preferred_days"] = returnSelectedDays()
+            postDictData["preferred_time"] = "Morning"
+            postDictData["pick_up_date"] = selectDateTimeLabel.text ?? ""
+            
+            postDataFromServer()
+            
+            
+//            let vc = ScheduleRegularViewController(nibName: "ScheduleRegularViewController", bundle: nil)
+//            vc.selectedFrequency = selectFrequencyPriodicLabel.text ?? ""
+//            vc.postDict = postDictData
+//            vc.selectionType = selectionType
+//            self.navigationController?.pushViewController(vc, animated: true)
 
             
 //            postDictData["schedule_type"] = selectionType.rawValue
@@ -177,6 +200,10 @@ class ScheduleViewController: BaseViewController {
         pickupTypeHandlings(selectionType: selectionType)
     }
     
+    @IBAction func cancelButtonPressed(_ sender: Any){
+        Utility.homeViewController()
+    }
+    
     @IBAction func onePickupButtonPressed(_ sender: Any) {
         
 //        (selectionType != .onePickup) ? (selectionType = .onePickup) : (selectionType = .none)
@@ -187,4 +214,31 @@ class ScheduleViewController: BaseViewController {
     
     
 
+}
+
+// MARK: - UITextViewDelegate
+extension ScheduleViewController: UITextViewDelegate
+{
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor(hexString: "2A2A2A")
+            selectionHandlingsOfViews(notesHolderView, isSelection: true)
+        }
+    }
+    
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = placeHolderText
+            textView.textColor = UIColor.lightGray
+            selectionHandlingsOfViews(notesHolderView, isSelection: false)
+        }
+        else {
+            
+            selectionHandlingsOfViews(notesHolderView, isSelection: true)
+        }
+        
+    }
 }
