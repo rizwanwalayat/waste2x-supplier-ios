@@ -15,7 +15,6 @@ class HomeNewViewController: BaseViewController {
     enum PendingCollectionStatues : String {
         case poReqests = "Po Requests"
         case pending = "Pending"
-        case upcoming = "Upcoming"
         case rejected = "rejected"
         case completed = "Completed"
         
@@ -23,8 +22,6 @@ class HomeNewViewController: BaseViewController {
             switch self {
             case .pending:
                 return "Draft"
-            case .upcoming:
-                return "In Transit"
             case .completed:
                 return "Completed"
             case .poReqests:
@@ -55,7 +52,7 @@ class HomeNewViewController: BaseViewController {
     var resultData : PendingCollectionResultResponce?
     var pendingCollectionModel = [PendingCollectionDataModel]()
     var visiableCollectionsArray = [PendingCollectionDataModel]()
-    var allStatus : [PendingCollectionStatues] = [.poReqests, .upcoming, .pending, .rejected, .completed]
+    var allStatus : [PendingCollectionStatues] = [.poReqests, .pending, .rejected, .completed]
     var selectedTab = PendingCollectionStatues.poReqests
     
     //MARK: - LifeCycle
@@ -85,7 +82,7 @@ class HomeNewViewController: BaseViewController {
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        tabs = [poRequestTab, upcomingTab, pendingTab, declinedTab ,completedTab]
+        tabs = [poRequestTab, pendingTab, declinedTab ,completedTab]
         
         NotificationCenter.default.addObserver(
             self,
@@ -117,20 +114,7 @@ class HomeNewViewController: BaseViewController {
             selectedTab = allStatus[sender.tag]
             visiableCollectionsArray.removeAll()
             
-            if tabs[sender.tag] == poRequestTab {
-                
-                visiableCollectionsArray = resultData?.poRequests ?? [PendingCollectionDataModel]()
-            }
-            else if tabs[sender.tag] == declinedTab {
-                
-                visiableCollectionsArray = resultData?.deniedPoRequests ?? [PendingCollectionDataModel]()
-            }
-            else {
-                
-                visiableCollectionsArray = pendingCollectionModel.filter { $0.status == selectedTab.backendValue}
-            }
-            
-            tableView.reloadData()
+            dataHandlingsAndPopulte()
         }
     }
     
@@ -267,7 +251,6 @@ extension HomeNewViewController{
             
             if let result = result{
                 
-                self.visiableCollectionsArray.removeAll()
                 self.resultData = result.result
                 
                 self.pendingCollectionModel = result.result?.pendingCollections ?? [PendingCollectionDataModel]()
@@ -279,17 +262,17 @@ extension HomeNewViewController{
     
     fileprivate func dataHandlingsAndPopulte()
     {
+        
+        self.visiableCollectionsArray.removeAll()
         switch selectedTab {
         case .poReqests:
             self.visiableCollectionsArray = self.resultData?.poRequests ?? [PendingCollectionDataModel]()
         case .pending:
-            self.visiableCollectionsArray = self.pendingCollectionModel.filter { $0.status == self.selectedTab.backendValue}
-        case .upcoming:
-            self.visiableCollectionsArray = self.pendingCollectionModel.filter { $0.status == self.selectedTab.backendValue}
+            self.visiableCollectionsArray = self.resultData?.pendingCollections ?? [PendingCollectionDataModel]()
         case .rejected:
             self.visiableCollectionsArray = self.resultData?.deniedPoRequests ?? [PendingCollectionDataModel]()
         case .completed:
-            self.visiableCollectionsArray = self.pendingCollectionModel.filter { $0.status == self.selectedTab.backendValue}
+            self.visiableCollectionsArray = self.resultData?.completed ?? [PendingCollectionDataModel]()
         }
         
         self.tableView.reloadData()

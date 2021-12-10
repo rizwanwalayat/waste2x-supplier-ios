@@ -57,6 +57,7 @@ class PendingCollectionModel : Mappable {
 class PendingCollectionResultResponce : Mappable
 {
     var pendingCollections = [PendingCollectionDataModel]()
+    var completed = [PendingCollectionDataModel]()
     var poRequests = [PendingCollectionDataModel]()
     var deniedPoRequests = [PendingCollectionDataModel]()
 
@@ -69,6 +70,7 @@ class PendingCollectionResultResponce : Mappable
         pendingCollections <- map["pending_collection"]
         poRequests <- map["po_requests"]
         deniedPoRequests <- map["denied_po_requests"]
+        completed <- map["completed_shipments"]
     }
 
 }
