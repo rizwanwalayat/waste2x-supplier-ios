@@ -14,18 +14,29 @@
          contextName = "CurrentWasteTableViewCell.setCellData(_:):CurrentWasteTableViewCell.swift">
       </ContextState>
       <ContextState
-         contextName = "TrackerViewController.viewWillAppear(_:):TrackerViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "trackID">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "WasteDetailViewController.dataPopulateInUI():WasteDetailViewModel.swift">
          <PersistentStrings>
             <PersistentString
                value = "wasteDeatil">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in TrackerViewController.viewWillAppear(_:):TrackerViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "trackID">
+            </PersistentString>
+            <PersistentString
+               value = "self.startingLocation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DetailPendingCollectionTableViewCell.confirmConfig(data:):DetailPendingCollectionTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "data.history.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -52,13 +63,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in TrackerViewController.viewWillAppear(_:):TrackerViewController.swift">
+         contextName = "TrackerViewController.viewWillAppear(_:):TrackerViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "trackID">
-            </PersistentString>
-            <PersistentString
-               value = "self.startingLocation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
