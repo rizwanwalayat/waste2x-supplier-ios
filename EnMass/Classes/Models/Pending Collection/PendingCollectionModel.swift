@@ -35,10 +35,11 @@ class PendingCollectionModel : Mappable {
         statusCode  <- map["status_code"]
     }
     
-    class func pendingCollectionApiCall(_ completion: @escaping PendingCollectionCompletionHandler) {
-        Utility.showLoading()
+    class func pendingCollectionApiCall(loadingEnabled: Bool, _ completion: @escaping PendingCollectionCompletionHandler) {
+        if loadingEnabled { Utility.showLoading() }
+        
         APIClient.shared.pendingCollectionApiFunctionCall{ result, error, status,message in
-            Utility.hideLoading()
+            if loadingEnabled { Utility.hideLoading() }
             if error == nil {
                 let newResult = ["result":result]
                 if let data = Mapper<PendingCollectionModel>().map(JSON: newResult as [String : AnyObject]) {

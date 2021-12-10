@@ -60,7 +60,7 @@ class HomeNewViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.apiCall()
+        self.apiCall(true)
         fetchFarmsFromServer()
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         tableView.addSubview(refreshControl)
@@ -68,7 +68,7 @@ class HomeNewViewController: BaseViewController {
     }
     
     @objc func refresh(_ sender: AnyObject) {
-        self.apiCall()
+        self.apiCall(false)
         refreshControl.endRefreshing()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -79,7 +79,7 @@ class HomeNewViewController: BaseViewController {
         globalObjectContainer?.tabbarHiddenView.isHidden = false
         bottomConst.constant = self.tabbarViewHeight
         self.navigationController?.navigationBar.isHidden = true
-        
+        self.apiCall(false)
     }
     override func viewDidAppear(_ animated: Bool) {
         tabs = [poRequestTab, pendingTab, declinedTab ,completedTab]
@@ -239,9 +239,9 @@ extension HomeNewViewController : UITableViewDelegate,UITableViewDataSource{
 //MARK: - API CALL
 extension HomeNewViewController{
     
-    func apiCall(){
+    func apiCall(_ loadingEnabled: Bool){
         
-        PendingCollectionModel.pendingCollectionApiCall { result, error, status, message in
+        PendingCollectionModel.pendingCollectionApiCall(loadingEnabled: loadingEnabled) { result, error, status, message in
             
             if error != nil {
                 
