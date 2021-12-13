@@ -112,8 +112,6 @@ class HomeNewViewController: BaseViewController {
         if resultData != nil {
             
             selectedTab = allStatus[sender.tag]
-            visiableCollectionsArray.removeAll()
-            
             dataHandlingsAndPopulte()
         }
     }
