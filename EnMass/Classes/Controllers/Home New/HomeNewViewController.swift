@@ -44,6 +44,7 @@ class HomeNewViewController: BaseViewController {
     @IBOutlet weak var pendingTab: UIView!
     @IBOutlet weak var declinedTab: UIView!
     @IBOutlet weak var completedTab: UIView!
+    @IBOutlet weak var notificationAlert: UIView!
     
     
     //MARK: - Variables

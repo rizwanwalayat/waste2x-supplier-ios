@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -21,6 +21,7 @@
                 <outlet property="completedTab" destination="GVQ-Px-KUh" id="kXe-mV-uib"/>
                 <outlet property="declinedTab" destination="cQ6-wF-j24" id="ybb-TP-0Z4"/>
                 <outlet property="mainView" destination="5AZ-B2-jks" id="VLx-L7-H3g"/>
+                <outlet property="notificationAlert" destination="k2X-bI-kSb" id="pQa-o9-v9M"/>
                 <outlet property="pendingTab" destination="FuJ-BF-VZW" id="I0C-ya-07w"/>
                 <outlet property="poRequestTab" destination="YsX-hE-jBk" id="vjw-Fb-3PO"/>
                 <outlet property="tableView" destination="au2-E6-m96" id="d50-yX-hLy"/>
