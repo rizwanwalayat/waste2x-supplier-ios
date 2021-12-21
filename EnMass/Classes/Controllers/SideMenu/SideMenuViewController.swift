@@ -21,8 +21,7 @@ class SideMenuViewController: BaseViewController {
     @IBOutlet weak var headerView: UIView!
     
     //MARK: - Variables
-//    var img = [#imageLiteral(resourceName: "Payment Icons"),#imageLiteral(resourceName: "site-icon"),#imageLiteral(resourceName: "inviteSupplier-icon"),#imageLiteral(resourceName: "ufaq")]
-//    var textArray = ["Payments","Sites", "Invite Suppliers", "Privacy Policy"]
+    
     var menuArray = [SideMenuItems.payment, SideMenuItems.sites, SideMenuItems.inviteSupplier, SideMenuItems.privacyPolicy]
     var selectionIndex = -1
     var paymentModel : PaymentModel?
@@ -33,8 +32,9 @@ class SideMenuViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         headerView.layer.cornerRadius = 30
@@ -45,6 +45,8 @@ class SideMenuViewController: BaseViewController {
         
         populateUsersData()
     }
+    
+    
     //MARK: - Action Buttons
     
     @IBAction func logoutButtonAction(_ sender: Any) {
@@ -97,7 +99,7 @@ class SideMenuViewController: BaseViewController {
         let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
         self.navigationController?.setViewControllers([vc], animated: true)
         Utility.hideLoading()
-
+        
     }
     @objc func updateTime(_ timer: Timer) {
         counter = counter+1
@@ -123,7 +125,9 @@ class SideMenuViewController: BaseViewController {
     
 }
 
+
 //MARK: - Extentions
+
 extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuArray.count
@@ -131,12 +135,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.register(SideMenuItemsTableViewCell.self, indexPath: indexPath)
-//        if selectionIndex == indexPath.row {
-//            cell.selectionView.isHidden = false
-//        }
-//        else {
-            cell.selectionView.isHidden = true
-//        }
+        cell.selectionView.isHidden = true
         cell.config(item: menuArray[indexPath.row])
         return cell
         
@@ -148,15 +147,12 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
         case 0:
             
             paymentApi()
-
+            
         case 1:
-//            let vc = ScheduleViewController(nibName: "ScheduleViewController", bundle: nil)
-//            navigationController?.pushViewController(vc, animated: true)
             let vc = CurrentWasteViewController(nibName: "CurrentWasteViewController", bundle: nil)
             self.navigationController?.pushTo(controller: vc)
-                        
+            
         case 2:
-
             let vc = InviteSupplierViewController(nibName: "InviteSupplierViewController", bundle: nil)
             self.navigationController?.pushTo(controller: vc)
             
@@ -164,6 +160,7 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
             guard let url = URL(string: "https://enmassenergy.com/waste2x-privacy/") else { return }
             UIApplication.shared.open(url)
         }
+        
         self.tableView.reloadData()
     }
     

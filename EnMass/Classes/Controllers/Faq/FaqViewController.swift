@@ -34,10 +34,12 @@ class FaqViewController: BaseViewController {
         mainView.backgroundColor = UIColor.init(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
         mainView.layer.masksToBounds = true
         globalObjectContainer?.tabbarHiddenView.isHidden = false
-        if Global.shared.faqApiCheck{
+        
+        if Global.shared.faqApiCheck {
             faqApiCall()
         }
-        else{
+        
+        else {
             self.faqModelobject = Global.shared.faqModel
             self.faqListModell = Global.shared.faqListModel
             self.tableView.reloadData()
@@ -137,7 +139,8 @@ extension FaqViewController{
     func faqApiCall(){
         FaqModel.FaqApiFunction{ result, error, status,message in
             Global.shared.faqApiCheck = false
-            if status == true{
+            
+            if status == true {
                     self.faqModelobject = result
                     self.faqListModell = result?.result?.faqs
                     Global.shared.faqModel = result

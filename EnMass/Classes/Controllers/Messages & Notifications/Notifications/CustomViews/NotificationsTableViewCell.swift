@@ -34,13 +34,10 @@ class NotificationsTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        
     }
     
     
-    func notificationStatusHandlings(_ status : NotificationStatus, notificationTitle : String, detailText : String, questionText : String)
-    {
+    func notificationStatusHandlings(_ status : NotificationStatus, notificationTitle : String, detailText : String, questionText : String) {
         let acceptStatusColor = UIColor(hexString: "7D9D15", alpha: 0.15)
         let acceptLabelColor  = UIColor(hexString: "7D9D15")
         let acceptImage       = UIImage(named: "accept-icon")
@@ -67,6 +64,7 @@ class NotificationsTableViewCell: UITableViewCell {
         self.statusholderView.isHidden = false
         
         switch status {
+            
         case .accepted:
             self.notificationTitle.text = notificationTitle
             self.notificationDetailLabel.text = detailText
@@ -174,8 +172,7 @@ class NotificationsTableViewCell: UITableViewCell {
     }
     
     
-    func expand()
-    {
+    func expand() {
         self.bodyView.isHidden = false
         print(index)
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
@@ -191,8 +188,7 @@ class NotificationsTableViewCell: UITableViewCell {
         })
     }
     
-    func collapse()
-    {
+    func collapse() {
         self.bodyView.isHidden = true
         print(index)
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
@@ -207,35 +203,40 @@ class NotificationsTableViewCell: UITableViewCell {
             }
         })
     }
-    func config(data:NotificationModel,index:Int){
-//        DispatchQueue.main.async {
+    
+    func config(data:NotificationModel,index:Int) {
+        
             self.notificationTitle.text = data.result?.notifications[index].title
             self.notificationDetailLabel.text = data.result?.notifications[index].message
             
-            if  data.result?.notifications[index].response == "Yes"{
+            if  data.result?.notifications[index].response == "Yes" {
                 self.notificationStatusHandlings(.accepted, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "Do you want to sell?")
                 
             }
-            else if data.result?.notifications[index].response == "No"{
+        
+            else if data.result?.notifications[index].response == "No" {
                 self.notificationStatusHandlings(.rejected, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "Do you want to sell?")
             }
-            else if data.result?.notifications[index].response == "Arriving"{
+        
+            else if data.result?.notifications[index].response == "Arriving" {
                 self.notificationStatusHandlings(.onway, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "Do you want to sell?")
             }
-            else if data.result?.notifications[index].response == "Confirmed"{
+        
+            else if data.result?.notifications[index].response == "Confirmed" {
                 self.notificationStatusHandlings(.confirmed, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "Do you want to sell?")
             }
+        
             else if data.result?.notifications[index].response == "Paid" {
                 self.notificationStatusHandlings(.paid, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "")
             }
+        
             else if data.result?.notifications[index].response == "Completed" {
                 self.notificationStatusHandlings(.completed, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "")
             }
+        
             else {
                 self.notificationStatusHandlings(.pending, notificationTitle: data.result!.notifications[index].title, detailText: data.result!.notifications[index].message, questionText: "Do you want to sell?")
             }
-//        }
-
         
     }
     

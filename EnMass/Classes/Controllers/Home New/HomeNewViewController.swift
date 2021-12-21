@@ -60,7 +60,7 @@ class HomeNewViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        notificationSetup()
         self.apiCall(true)
         fetchFarmsFromServer()
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
@@ -68,10 +68,6 @@ class HomeNewViewController: BaseViewController {
         tabsHolderView.cornerRadius = 8
     }
     
-    @objc func refresh(_ sender: AnyObject) {
-        self.apiCall(false)
-        refreshControl.endRefreshing()
-    }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         mainView.layer.cornerRadius = 36
@@ -82,6 +78,7 @@ class HomeNewViewController: BaseViewController {
         self.navigationController?.navigationBar.isHidden = true
         self.apiCall(false)
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         tabs = [poRequestTab, pendingTab, declinedTab ,completedTab]
         
@@ -91,12 +88,104 @@ class HomeNewViewController: BaseViewController {
             name: Notification.Name("NavigateToPayment"),
             object: nil)
     }
-
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
         NotificationCenter.default.removeObserver(self)
     }
+    
+    
+    //MARK: - Functions
+    
+    func notificationSetup() {
+        
+        //MARK: - Observers
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.notification(notification:)), name: Notification.Name("notification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.notificationIconGreen(notifications:)), name: Notification.Name("point"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.notificationIconWhite(notifications:)), name: Notification.Name("notpoint"), object: nil)
+        
+        
+        Global.shared.nootification = DataManager.shared.getBoolData(key: "globalNotification")
+        
+        if Global.shared.nootification {
+            notificationAlert.backgroundColor = UIColor.init(hexString: "FBCE09")
+        }
+        
+        else {
+            notificationAlert.backgroundColor = .clear
+        }
+        
+    }
+    
+    
+    //MARK: - OBJ C
+    
+    @objc func notification(notification : Notification) {
+        let notification = NotificationsViewController(nibName: "NotificationsViewController", bundle: nil)
+        self.navigationController?.pushViewController(notification, animated: true)
+    }
+    
+    @objc func notificationIconGreen(notifications : Notification) {
+        Global.shared.nootification = true
+        DataManager.shared.setBoolData(value: Global.shared.nootification, key: "globalNotification")
+        
+        if Global.shared.nootification {
+            notificationAlert.backgroundColor =  UIColor.init(hexString: "FBCE09")
+        }
+        
+        else {
+            notificationAlert.backgroundColor = .clear
+        }
+    }
+    
+    @objc func notificationIconWhite(notifications : Notification) {
+        Global.shared.nootification = false
+        DataManager.shared.setBoolData(value: Global.shared.nootification, key: "globalNotification")
+        if Global.shared.nootification {
+            notificationAlert.backgroundColor =  UIColor.init(hexString: "FBCE09")
+        }
+        else
+        {
+            notificationAlert.backgroundColor = .clear
+        }
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        self.apiCall(false)
+        refreshControl.endRefreshing()
+    }
+
+    @objc private func pushToPaymentScreen(notification: NSNotification) {
+        
+        if let slideMenuController = self.slideMenuController() {
+            slideMenuController.closeLeft()
+        }
+        
+        if let object = notification.userInfo {
+            if let result = object["result"] as? PaymentModel
+            {
+                if result.result != nil{
+                    
+                    if result.result?.details_submitted == true {
+                        let vc = CreatePaymentViewController(nibName: "CreatePaymentViewController", bundle: nil)
+                        self.navigationController?.pushViewController(vc, animated: true)
+                        
+                    }
+                    else{
+                        let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
+                        self.navigationController?.pushViewController(vc, animated: false)
+                    }
+                }
+                else{
+                    let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
+                    self.navigationController?.pushViewController(vc, animated: false)
+                }
+            }
+        }
+    }
+    
+
     
     //MARK: - IBActions
     
@@ -173,35 +262,6 @@ class HomeNewViewController: BaseViewController {
             holderView.backgroundColor = UIColor.clear
         }
         
-    }
-    
-    @objc private func pushToPaymentScreen(notification: NSNotification){
-        
-        if let slideMenuController = self.slideMenuController() {
-            slideMenuController.closeLeft()
-        }
-        
-        if let object = notification.userInfo {
-            if let result = object["result"] as? PaymentModel
-            {
-                if result.result != nil{
-                    
-                    if result.result?.details_submitted == true {
-                        let vc = CreatePaymentViewController(nibName: "CreatePaymentViewController", bundle: nil)
-                        self.navigationController?.pushViewController(vc, animated: true)
-                        
-                    }
-                    else{
-                        let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
-                        self.navigationController?.pushViewController(vc, animated: false)
-                    }
-                }
-                else{
-                    let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
-                    self.navigationController?.pushViewController(vc, animated: false)
-                }
-            }
-        }
     }
 
 }
