@@ -89,6 +89,11 @@ class HomeNewViewController: BaseViewController {
             object: nil)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     
     //MARK: - Functions
     
@@ -110,7 +115,11 @@ class HomeNewViewController: BaseViewController {
         else {
             notificationAlert.backgroundColor = .clear
         }
+        
     }
+    
+    
+    //MARK: - OBJ C
     
     @objc func notification(notification : Notification) {
         let notification = NotificationsViewController(nibName: "NotificationsViewController", bundle: nil)
@@ -124,12 +133,13 @@ class HomeNewViewController: BaseViewController {
         if Global.shared.nootification {
             notificationAlert.backgroundColor =  UIColor.init(hexString: "FBCE09")
         }
-        else
-        {
+        
+        else {
             notificationAlert.backgroundColor = .clear
         }
     }
-    @objc func notificationIconWhite(notifications : Notification){
+    
+    @objc func notificationIconWhite(notifications : Notification) {
         Global.shared.nootification = false
         DataManager.shared.setBoolData(value: Global.shared.nootification, key: "globalNotification")
         if Global.shared.nootification {
@@ -146,12 +156,36 @@ class HomeNewViewController: BaseViewController {
         refreshControl.endRefreshing()
     }
 
-
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    @objc private func pushToPaymentScreen(notification: NSNotification) {
         
-        NotificationCenter.default.removeObserver(self)
+        if let slideMenuController = self.slideMenuController() {
+            slideMenuController.closeLeft()
+        }
+        
+        if let object = notification.userInfo {
+            if let result = object["result"] as? PaymentModel
+            {
+                if result.result != nil{
+                    
+                    if result.result?.details_submitted == true {
+                        let vc = CreatePaymentViewController(nibName: "CreatePaymentViewController", bundle: nil)
+                        self.navigationController?.pushViewController(vc, animated: true)
+                        
+                    }
+                    else{
+                        let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
+                        self.navigationController?.pushViewController(vc, animated: false)
+                    }
+                }
+                else{
+                    let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
+                    self.navigationController?.pushViewController(vc, animated: false)
+                }
+            }
+        }
     }
+    
+
     
     //MARK: - IBActions
     
@@ -228,35 +262,6 @@ class HomeNewViewController: BaseViewController {
             holderView.backgroundColor = UIColor.clear
         }
         
-    }
-    
-    @objc private func pushToPaymentScreen(notification: NSNotification){
-        
-        if let slideMenuController = self.slideMenuController() {
-            slideMenuController.closeLeft()
-        }
-        
-        if let object = notification.userInfo {
-            if let result = object["result"] as? PaymentModel
-            {
-                if result.result != nil{
-                    
-                    if result.result?.details_submitted == true {
-                        let vc = CreatePaymentViewController(nibName: "CreatePaymentViewController", bundle: nil)
-                        self.navigationController?.pushViewController(vc, animated: true)
-                        
-                    }
-                    else{
-                        let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
-                        self.navigationController?.pushViewController(vc, animated: false)
-                    }
-                }
-                else{
-                    let vc = PaymentViewController(nibName: "PaymentViewController", bundle: nil)
-                    self.navigationController?.pushViewController(vc, animated: false)
-                }
-            }
-        }
     }
 
 }

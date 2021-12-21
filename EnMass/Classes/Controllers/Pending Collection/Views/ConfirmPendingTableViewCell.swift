@@ -38,17 +38,14 @@ class ConfirmPendingTableViewCell: UITableViewCell {
     
     
     //MARK: - Functions
-    func confirmConfig(data:PendingCollectionDataModel){
-        if data.history.count > 0{
-            
-        }
-        
+    
+    func confirmConfig(data:PendingCollectionDataModel) {
         self.farmLabel.text = data.farm
         
-        if data.schedule_type == ""
-        {
+        if data.schedule_type == "" {
             self.scheduleLabel.text = "Regular Schedule (Daily)"
         }
+        
         else if data.frequency == "" {
             self.scheduleLabel.text = data.schedule_type
         }
@@ -63,20 +60,22 @@ class ConfirmPendingTableViewCell: UITableViewCell {
         
         for (indexNew, _) in data.history.enumerated() {
             
-            if data.history[indexNew].status == "Pending"{
+            if data.history[indexNew].status == "Pending" {
                 
                 self.activityDate1.text = data.history[indexNew].activityDate
                 self.stepperView.currentStep = 0
             }
             
-            else if data.history[indexNew].status == "Confirmed"{
+            else if data.history[indexNew].status == "Confirmed" {
                 self.activityDate2.text = data.history[indexNew].activityDate
                 self.stepperView.currentStep = 1
             }
-            else if data.history[indexNew].status == "Picked"{
+            
+            else if data.history[indexNew].status == "Picked" {
                 self.activityDate3.text = data.history[indexNew].activityDate
                 self.stepperView.currentStep = 2
             }
+            
             else {
                 self.activityDate4.text = data.history[indexNew].activityDate
                 self.stepperView.currentStep = 3
@@ -84,6 +83,7 @@ class ConfirmPendingTableViewCell: UITableViewCell {
         }
         
     }
+    
     func expandCollapseView(index:Int) {
         self.hiddenView.isHidden = !self.hiddenView.isHidden
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
