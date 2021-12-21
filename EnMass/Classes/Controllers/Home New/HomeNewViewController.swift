@@ -102,11 +102,12 @@ class HomeNewViewController: BaseViewController {
         
         
         Global.shared.nootification = DataManager.shared.getBoolData(key: "globalNotification")
+        
         if Global.shared.nootification {
-            notificationAlert.backgroundColor =  UIColor.init(red: 251, green: 206, blue: 9, alpha: 1)
+            notificationAlert.backgroundColor = UIColor.init(hexString: "FBCE09")
         }
-        else
-        {
+        
+        else {
             notificationAlert.backgroundColor = .clear
         }
     }
@@ -121,7 +122,7 @@ class HomeNewViewController: BaseViewController {
         DataManager.shared.setBoolData(value: Global.shared.nootification, key: "globalNotification")
         
         if Global.shared.nootification {
-            notificationAlert.backgroundColor =  UIColor.init(red: 251, green: 206, blue: 9, alpha: 1)
+            notificationAlert.backgroundColor =  UIColor.init(hexString: "FBCE09")
         }
         else
         {
@@ -132,7 +133,7 @@ class HomeNewViewController: BaseViewController {
         Global.shared.nootification = false
         DataManager.shared.setBoolData(value: Global.shared.nootification, key: "globalNotification")
         if Global.shared.nootification {
-            notificationAlert.backgroundColor =  UIColor.init(red: 251, green: 206, blue: 9, alpha: 1)
+            notificationAlert.backgroundColor =  UIColor.init(hexString: "FBCE09")
         }
         else
         {
