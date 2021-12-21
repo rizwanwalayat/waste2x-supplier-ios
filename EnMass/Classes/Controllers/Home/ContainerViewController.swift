@@ -82,11 +82,6 @@ class ContainerViewController: BaseViewController {
         newsHoverView.isHidden = true
         homeHoverView.isHidden = true
         tabbarHiddenView.isHidden = true
-//        buttonSelect(button: addButton)
-//        buttonDeselect(button: messagesButton)
-//        buttonDeselect(button: homeButton)
-//        buttonDeselect(button: faqButton)
-//        buttonDeselect(button: newsButton)
     }
     
     @IBAction func didTapFaq(_ sender: Any) {
@@ -138,26 +133,10 @@ class ContainerViewController: BaseViewController {
     func buttonSelect(button:UIButton){
         button.isSelected = true
         self.tabbarHiddenView.isHidden = false
-//        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).cgColor
-//        button.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
-//        button.layer.shadowOpacity = 1.0
-//        button.layer.shadowRadius = 1
-//        button.layer.borderWidth = 1
-//        button.layer.borderColor = .init(red: 0, green: 0, blue: 0, alpha: 0.25)
-//        button.layer.masksToBounds = false
-//        button.layer.cornerRadius = 4.0
     }
     func buttonDeselect(button:UIButton){
         button.isSelected = false
         self.tabbarHiddenView.isHidden = false
-//        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0).cgColor
-//        button.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-//        button.layer.shadowOpacity = 0.0
-//        button.layer.shadowRadius = 0
-//        button.layer.borderWidth = 0
-//        button.layer.borderColor = .none
-//        button.layer.masksToBounds = true
-//        button.layer.cornerRadius = 0.0
     }
     
     //MARK: - Private Functions

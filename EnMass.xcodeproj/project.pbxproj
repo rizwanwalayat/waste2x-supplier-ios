@@ -629,9 +629,9 @@
 		0067A305252AF7FA00CECA8C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0067A2D225274C6E00CECA8C /* Application */,
 				18A579BC2693204A0067952F /* Network */,
 				18A579B526931F940067952F /* DataManger */,
-				0067A2D225274C6E00CECA8C /* Application */,
 				0067A2CF25274C4800CECA8C /* Models */,
 				0067A2D025274C5100CECA8C /* Controllers */,
 				0067A308252AFC5000CECA8C /* Extensions */,

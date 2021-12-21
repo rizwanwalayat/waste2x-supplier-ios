@@ -31,13 +31,13 @@ class NewsViewController: BaseViewController {
         var rawValue : String
         {
             switch self{
-                case .video:
-                    return "Video"
-                case .audio:
-                    return "Audio"
-                case .blog:
-                    return "Blog"
-                    
+            case .video:
+                return "Video"
+            case .audio:
+                return "Audio"
+            case .blog:
+                return "Blog"
+                
             }
             
         }
@@ -54,6 +54,7 @@ class NewsViewController: BaseViewController {
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         tableView.addSubview(refreshControl)
     }
+    
     @objc func refresh(_ sender: AnyObject) {
         self.newsApiCall()
         refreshControl.endRefreshing()
@@ -66,11 +67,13 @@ class NewsViewController: BaseViewController {
         tableView.backgroundColor = UIColor.init(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
         self.tableView.layer.masksToBounds = true
         globalObjectContainer?.tabbarHiddenView.isHidden = false
-        self.bottomConst.constant = self.tabbarViewHeight + 10
-        if Global.shared.newsApiCheck{
+        self.bottomConst.constant = self.tabbarViewHeight
+        
+        if Global.shared.newsApiCheck {
             newsApiCall()
         }
-        else{
+        
+        else {
             self.NewsModell = Global.shared.newsModel
             self.NewsListModell = Global.shared.NewsListModell
             self.tableView.reloadData()
@@ -91,9 +94,9 @@ class NewsViewController: BaseViewController {
         for item in isSongLoading {
             item.isSongLoading = false
         }
-
+        
     }
-
+    
     @objc func startPlayPause(_ sender:UIButton)
     {
         let urlString = NewsModell!.result[sender.tag].fileUrl
@@ -107,7 +110,7 @@ class NewsViewController: BaseViewController {
         
         NewsModell!.result[sender.tag].isSongPlaying = !NewsModell!.result[sender.tag].isSongPlaying
         let isPlaying = NewsModell!.result[sender.tag].isSongPlaying
-                
+        
         // for handlings last playing, if its playing then stop this and change icon
         if lastPlayingIndex != sender.tag && lastPlayingIndex != -1
         {
@@ -132,7 +135,7 @@ class NewsViewController: BaseViewController {
         {
             self.downloadFileFromURL(url: url, senderButton: sender)
         }
-
+        
         tableView.reloadData()
     }
     
@@ -158,14 +161,14 @@ class NewsViewController: BaseViewController {
         //progressbar?.value = Float(audioPlayer?.currentTime ?? 0.0)
         
         let objDict : [String : Any] = ["index" : lastPlayingIndex,
-                       "pValue": Float(audioPlayer?.currentTime ?? 0.0),
-                       "mValue" : Float(self.audioPlayer?.duration ?? 0.0)]
+                                        "pValue": Float(audioPlayer?.currentTime ?? 0.0),
+                                        "mValue" : Float(self.audioPlayer?.duration ?? 0.0)]
         NotificationCenter.default.post(name: Notification.Name("progressbarValue"), object: nil, userInfo: objDict as [AnyHashable : Any])
     }
     
     
     func downloadFileFromURL(url:URL, senderButton : UIButton){
-
+        
         // then lets create your document folder url
         let documentsDirectoryURL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         
@@ -203,7 +206,7 @@ class NewsViewController: BaseViewController {
                         self.NewsModell!.result[senderButton.tag].isSongLoading = false
                         self.handlePlayPause(destinationUrl, senderButton: senderButton)
                     }
-                   
+                    
                     
                 } catch let error as NSError {
                     print(error.localizedDescription)
@@ -233,17 +236,17 @@ class NewsViewController: BaseViewController {
     
     func startTimer ()
     {
-      timerTest =  Timer.scheduledTimer(
-          timeInterval: TimeInterval(1.0),
-          target      : self,
-          selector    : #selector(self.updateTime(_:)),
-          userInfo    : nil,
-          repeats     : true)
+        timerTest =  Timer.scheduledTimer(
+            timeInterval: TimeInterval(1.0),
+            target      : self,
+            selector    : #selector(self.updateTime(_:)),
+            userInfo    : nil,
+            repeats     : true)
     }
     
     func stopTimer() {
-      timerTest?.invalidate()
-      timerTest = nil
+        timerTest?.invalidate()
+        timerTest = nil
     }
 }
 
@@ -306,10 +309,10 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
             return cell
         }
         else {
-        let cell = tableView.register(DetailTableViewCell.self, indexPath: indexPath)
-        cell.selectionStyle = .none
-        cell.config(data: NewsModell!, index: indexPath.row)
-        cell.textLabel?.text = "Noting Found"
+            let cell = tableView.register(DetailTableViewCell.self, indexPath: indexPath)
+            cell.selectionStyle = .none
+            cell.config(data: NewsModell!, index: indexPath.row)
+            cell.textLabel?.text = "Noting Found"
             return cell
             
         }
@@ -330,11 +333,11 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if NewsListModell?[indexPath.row].type == cellType.audio.rawValue{
-//        if let cell = tableView.cellForRow(at: indexPath) as? AudioTableViewCell
-//        {
-////
-//        }
+        if NewsListModell?[indexPath.row].type == cellType.audio.rawValue {
+            
+            if let _ = tableView.cellForRow(at: indexPath) as? AudioTableViewCell {
+                
+            }
             
         }
     }
@@ -349,7 +352,7 @@ extension NewsViewController{
     func newsApiCall(){
         NewsModel.NewsApiCall { result, error, status,message in
             Global.shared.newsApiCheck = false
-            if status == true{
+            if status == true {
                 GCD.async(.Main) {
                     self.NewsModell = result
                     self.NewsListModell = result?.result
@@ -393,9 +396,9 @@ extension NewsViewController
                 print("file doesnt exist")
                 downloadFile(withUrl: url, andFilePath: filePath, completion: completion)
             }
-           
+            
         }else{
-                print("file doesnt exist")
+            print("file doesnt exist")
         }
     }
     
@@ -411,7 +414,7 @@ extension NewsViewController
             
             var downloadTask:URLSessionDownloadTask
             downloadTask = URLSession.shared.downloadTask(with: url, completionHandler: { downloadedUrl, response, error in
-
+                
                 if let urlDownloaded = downloadedUrl {
                     
                     do {

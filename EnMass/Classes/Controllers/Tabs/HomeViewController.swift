@@ -50,7 +50,6 @@ class HomeViewController: BaseViewController{
         NotificationCenter.default.addObserver(self, selector: #selector(self.notificationIconGreen(notifications:)), name: Notification.Name("point"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.notificationIconWhite(notifications:)), name: Notification.Name("notpoint"), object: nil)
         print(userData?.auth_token ?? "")
-//        DataManager.shared.setBoolData(value: Global.shared.nootification, key: "globalNotification")
         Global.shared.nootification = DataManager.shared.getBoolData(key: "globalNotification")
         if Global.shared.nootification {
             notificationMark.backgroundColor = UIColor.init(red: 196, green: 210, blue: 150, alpha: 1)
@@ -95,16 +94,17 @@ class HomeViewController: BaseViewController{
     
     //MARK: - OBJC Function
     
-    @objc func notification(notification : Notification){
+    @objc func notification(notification : Notification) {
         let notification = NotificationsViewController(nibName: "NotificationsViewController", bundle: nil)
         self.navigationController?.pushViewController(notification, animated: true)
     }
-    @objc func notificationIconGreen(notifications : Notification){
+    
+    @objc func notificationIconGreen(notifications : Notification) {
         Global.shared.nootification = true
         DataManager.shared.setBoolData(value: Global.shared.nootification, key: "globalNotification")
         
         if Global.shared.nootification {
-            notificationMark.backgroundColor = UIColor.init(red: 196, green: 210, blue: 150, alpha: 1)
+            notificationMark.backgroundColor = UIColor.init(red: 251, green: 206, blue: 9, alpha: 1)
         }
         else
         {
@@ -115,7 +115,7 @@ class HomeViewController: BaseViewController{
         Global.shared.nootification = false
         DataManager.shared.setBoolData(value: Global.shared.nootification, key: "globalNotification")
         if Global.shared.nootification {
-            notificationMark.backgroundColor = UIColor.init(red: 196, green: 210, blue: 150, alpha: 1)
+            notificationMark.backgroundColor = UIColor.init(red: 251, green: 206, blue: 9, alpha: 1)
         }
         else
         {
