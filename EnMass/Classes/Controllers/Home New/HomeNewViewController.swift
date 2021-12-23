@@ -60,7 +60,6 @@ class HomeNewViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        notificationSetup()
         self.apiCall(true)
         fetchFarmsFromServer()
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
@@ -70,6 +69,7 @@ class HomeNewViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
+        notificationSetup()
         mainView.layer.cornerRadius = 36
         mainView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         mainView.layer.masksToBounds = true

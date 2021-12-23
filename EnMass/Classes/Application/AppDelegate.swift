@@ -173,6 +173,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let userInfo = notification.request.content.userInfo
         
+        Global.shared.didRecievedNotiFication = true
         print("Notification found : \(userInfo)")
         if let messageID = userInfo[gcmMessageIDKey] {
             print("Message ID: \(messageID)")
