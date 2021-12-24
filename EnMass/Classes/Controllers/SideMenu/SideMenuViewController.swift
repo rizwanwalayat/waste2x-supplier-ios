@@ -19,6 +19,7 @@ class SideMenuViewController: BaseViewController {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var phoneNoHolderView: UIView!
     @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var logoutBtn: UIButton!
     
     //MARK: - Variables
     
@@ -60,8 +61,7 @@ class SideMenuViewController: BaseViewController {
         imageView.cornerRadius = 4
         imageView.clipsToBounds = true
         alertVc.view.addSubview(imageView)
-        
-        alertVc.setValue(image, forKey: "image")
+//        alertVc.setValue(image, forKey: "image")
         alertVc.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { action in
             self.startTimer()
         }))
@@ -122,6 +122,7 @@ class SideMenuViewController: BaseViewController {
             }
         }
     }
+    
     
 }
 
@@ -184,6 +185,8 @@ extension SideMenuViewController{
         }
     }
 }
+
+  
 
 enum SideMenuItems : String {
     
