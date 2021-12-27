@@ -179,14 +179,15 @@ extension NotificationsViewController : UITableViewDelegate, UITableViewDataSour
 
 //MARK: - API Extention
 
-extension NotificationsViewController{
-    func apiCall(){
+extension NotificationsViewController {
+    
+    func apiCall() {
         NotificationCenter.default.post(name: Notification.Name("notpoint"), object: nil)
         NotificationModel.notificationApiFunction { result, error, status, message in
             self.NotificationModell = result
             self.notificationsTableview.reloadData()
-            if (result?.result?.notifications.count ?? 0) > 0
-            {
+            if (result?.result?.notifications.count ?? 0) > 0 {
+                DataManager.shared.setnotificationCount(value: result?.result?.notifications.count ?? 0)
                 NotificationCenter.default.post(name: Notification.Name("notpoint"), object: nil)
                 self.noNotificationLabel.isHidden = true
                 
@@ -197,8 +198,8 @@ extension NotificationsViewController{
                     self.notificationsTableview.endUpdates()
                 }
             }
-            else
-            {
+            
+            else {
                 self.noNotificationLabel.isHidden = false
             }
         }
