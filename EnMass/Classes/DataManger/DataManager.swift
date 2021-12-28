@@ -29,9 +29,13 @@ class DataManager {
         UserDefaults.standard.set(value, forKey: key)
     }
 
-    func setIntData (value: Int, key: String) {
-        UserDefaults.standard.set(value, forKey: key)
+    func setnotificationCount (value: Int) {
+        UserDefaults.standard.set(value, forKey: "NotificaionCountPlusPlus")
     }
+    func getnotificationCount() -> Int? {
+        return UserDefaults.standard.integer(forKey: "NotificaionCountPlusPlus") ?? 0
+    }
+    
     func setBoolData (value: Bool, key: String) {
         UserDefaults.standard.set(value, forKey: key)
     }
@@ -209,8 +213,8 @@ extension DataManager {
          UserDefaults.standard.set(nil, forKey: "finger")
     }
     
-    func deleteUserDetial()
-    {
+    func deleteUserDetial() {
         UserDefaults.standard.set(nil, forKey: "user_Detail")
     }
+    
 }

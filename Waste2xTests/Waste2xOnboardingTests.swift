@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Waste2x
+@testable import EnMass
 
 class Waste2xOnboardingTests: XCTestCase {
 

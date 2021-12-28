@@ -77,6 +77,8 @@ class HomeNewViewController: BaseViewController {
         bottomConst.constant = self.tabbarViewHeight
         self.navigationController?.navigationBar.isHidden = true
         self.apiCall(false)
+        
+        notificationApiCall()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -262,6 +264,15 @@ class HomeNewViewController: BaseViewController {
             holderView.backgroundColor = UIColor.clear
         }
         
+    }
+    
+    func notificationApiCall() {
+        NotificationModel.notificationApiFunction { result, error, status, message in
+            if (result?.result?.notifications.count ?? 0) != DataManager.shared.getnotificationCount() {
+                NotificationCenter.default.post(name: Notification.Name("point"), object: nil)
+            }
+            DataManager.shared.setnotificationCount(value: result?.result?.notifications.count ?? 0)
+        }
     }
 
 }

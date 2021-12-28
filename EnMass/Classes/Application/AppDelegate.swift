@@ -19,7 +19,7 @@ import UserNotifications
 let gcmMessageIDKey = "gcm.message_id"
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var weaterCalldelegate:WeatherCallDelegate?
@@ -40,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             options: authOptions,
             completionHandler: {_, _ in })
         } else {
+        UNUserNotificationCenter.current().delegate = self
           let settings: UIUserNotificationSettings =
           UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
           application.registerUserNotificationSettings(settings)
@@ -108,6 +109,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
       Messaging.messaging().apnsToken = deviceToken
     }
+    @available(iOS 13.0, *)
+    func sceneDidBecomeActive(_ scene: UIScene) {
+        Global.shared.nootification = DataManager.shared.getBoolData(key: "globalNotification")
+    }
 
     
     
@@ -165,6 +170,7 @@ extension AppDelegate : MessagingDelegate {
 }
 // [START ios_10_message_handling]
 @available(iOS 10, *)
+
 extension AppDelegate : UNUserNotificationCenterDelegate {
 
   // Receive displayed notifications for iOS 10 devices.
@@ -172,7 +178,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let userInfo = notification.request.content.userInfo
-        
+        DataManager.shared.setBoolData(value: true, key: "globalNotification")
         Global.shared.didRecievedNotiFication = true
         print("Notification found : \(userInfo)")
         if let messageID = userInfo[gcmMessageIDKey] {
@@ -214,7 +220,7 @@ extension AppDelegate:CLLocationManagerDelegate {
             Global.shared.location = location
             Global.shared.current_lat = location.coordinate.latitude
             Global.shared.current_lng = location.coordinate.longitude
-            weatherAPI()
+//            weatherAPI()
             print(location,Global.shared.current_lat,Global.shared.current_lng)
             
             

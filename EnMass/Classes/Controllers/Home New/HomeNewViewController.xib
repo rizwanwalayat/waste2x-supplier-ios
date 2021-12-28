@@ -69,7 +69,7 @@
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2X-bI-kSb">
                                     <rect key="frame" x="376" y="8" width="7" height="7"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="secondary"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="7" id="M94-HI-sZb"/>
                                         <constraint firstAttribute="width" secondItem="k2X-bI-kSb" secondAttribute="height" multiplier="1:1" id="PNh-gF-byl"/>
@@ -417,6 +417,9 @@
         </namedColor>
         <namedColor name="inactive">
             <color red="0.72500002384185791" green="0.71799999475479126" blue="0.75700002908706665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondary">
+            <color red="0.98400002717971802" green="0.80800002813339233" blue="0.035000000149011612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
