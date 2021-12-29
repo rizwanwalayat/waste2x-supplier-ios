@@ -55,12 +55,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
 
         // [END register_for_notifications]
         if (DataManager.shared.isUserLoggedIn()) {
-            coordinator?.homeViewController()
+            Utility.homeViewController()
             
         }
         
         else {
-            coordinator?.loginRootViewController()
+            Utility.loginRootViewController()
         }
         
         GMSServices.provideAPIKey(googleAPIKey)

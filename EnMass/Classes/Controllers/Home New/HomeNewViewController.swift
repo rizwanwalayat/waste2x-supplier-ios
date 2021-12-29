@@ -271,6 +271,10 @@ class HomeNewViewController: BaseViewController {
             if (result?.result?.notifications.count ?? 0) != DataManager.shared.getnotificationCount() {
                 NotificationCenter.default.post(name: Notification.Name("point"), object: nil)
             }
+            else {
+                NotificationCenter.default.post(name: Notification.Name("notpoint"), object: nil)
+            }
+            
             DataManager.shared.setnotificationCount(value: result?.result?.notifications.count ?? 0)
         }
     }
