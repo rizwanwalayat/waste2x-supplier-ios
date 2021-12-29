@@ -119,6 +119,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Message Customer">
                                             <attributes>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <font key="NSFont" metaFont="menu" size="14"/>
                                             </attributes>
                                         </fragment>
