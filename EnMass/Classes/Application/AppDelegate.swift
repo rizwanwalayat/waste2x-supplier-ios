@@ -19,13 +19,18 @@ import UserNotifications
 let gcmMessageIDKey = "gcm.message_id"
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
 
+class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
+    
+    var coordinator: MainCoordinator?
     var window: UIWindow?
     var weaterCalldelegate:WeatherCallDelegate?
     var locationManager = CLLocationManager()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 //        NFX.sharedInstance().start()
+        let navController = UINavigationController()
+        coordinator = MainCoordinator(navigationController: navController)
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 30
@@ -49,14 +54,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
         application.registerForRemoteNotifications()
 
         // [END register_for_notifications]
-        if (DataManager.shared.isUserLoggedIn())
-        {
+        if (DataManager.shared.isUserLoggedIn()) {
             Utility.homeViewController()
+            
         }
-        else
-        {
+        
+        else {
             Utility.loginRootViewController()
         }
+        
         GMSServices.provideAPIKey(googleAPIKey)
         GMSPlacesClient.provideAPIKey(googleAPIKey)
         //GMSAutocompleteViewControllerHandling()

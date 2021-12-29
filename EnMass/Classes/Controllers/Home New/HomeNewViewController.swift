@@ -271,6 +271,10 @@ class HomeNewViewController: BaseViewController {
             if (result?.result?.notifications.count ?? 0) != DataManager.shared.getnotificationCount() {
                 NotificationCenter.default.post(name: Notification.Name("point"), object: nil)
             }
+            else {
+                NotificationCenter.default.post(name: Notification.Name("notpoint"), object: nil)
+            }
+            
             DataManager.shared.setnotificationCount(value: result?.result?.notifications.count ?? 0)
         }
     }
@@ -309,7 +313,7 @@ extension HomeNewViewController : UITableViewDelegate,UITableViewDataSource{
 //MARK: - API CALL
 extension HomeNewViewController{
     
-    func apiCall(_ loadingEnabled: Bool){
+    func apiCall(_ loadingEnabled: Bool) {
         
         PendingCollectionModel.pendingCollectionApiCall(loadingEnabled: loadingEnabled) { result, error, status, message in
             
@@ -330,42 +334,44 @@ extension HomeNewViewController{
         }
     }
     
-    fileprivate func dataHandlingsAndPopulte()
-    {
+    fileprivate func dataHandlingsAndPopulte() {
         
         self.visiableCollectionsArray.removeAll()
+        
         switch selectedTab {
+            
         case .poReqests:
             self.visiableCollectionsArray = self.resultData?.poRequests ?? [PendingCollectionDataModel]()
+            
         case .pending:
             self.visiableCollectionsArray = self.resultData?.pendingCollections ?? [PendingCollectionDataModel]()
+            
         case .rejected:
             self.visiableCollectionsArray = self.resultData?.deniedPoRequests ?? [PendingCollectionDataModel]()
+            
         case .completed:
             self.visiableCollectionsArray = self.resultData?.completed ?? [PendingCollectionDataModel]()
+            
         }
         
         self.tableView.reloadData()
     }
 }
 
-extension HomeNewViewController: FetchSitesDataModelDelegate
-{
+extension HomeNewViewController: FetchSitesDataModelDelegate {
+    
     func sitesEmpty() {
         
         self.showPopupToCreateSite()
     }
     
-    func fetchFarmsFromServer()
-    {
+    func fetchFarmsFromServer() {
         FetchSitesDataModel.shared.reloadData()
         FetchSitesDataModel.shared.delegate = self
-        
     }
     
     
-    fileprivate func showPopupToCreateSite()
-    {
+    fileprivate func showPopupToCreateSite() {
         let custompopup = CreateSitePopupViewController(nibName: "CreateSitePopupViewController", bundle: nil)
         custompopup.modalPresentationStyle   = .overFullScreen
         custompopup.createSitePressed = {

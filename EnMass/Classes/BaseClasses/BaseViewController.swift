@@ -14,7 +14,7 @@ class BaseViewController: UIViewController {
     var tabbarViewHeight : CGFloat = 0.0
     var userData : RegistrationResult?
     let refreshControl = UIRefreshControl()
-    
+    weak var coordinator: MainCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
