@@ -72,6 +72,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         Global.shared.nootification =  DataManager.shared.getBoolData(key: "globalNotification")
+        if let homeNew = globalhomeObj {
+            homeNew.notificationApiCall()
+        }
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {

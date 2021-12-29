@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+var globalhomeObj:HomeNewViewController?
 class HomeNewViewController: BaseViewController {
     
     // MARK: - Local Enum for statues
@@ -60,6 +60,7 @@ class HomeNewViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        globalhomeObj = self
         self.apiCall(true)
         fetchFarmsFromServer()
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
