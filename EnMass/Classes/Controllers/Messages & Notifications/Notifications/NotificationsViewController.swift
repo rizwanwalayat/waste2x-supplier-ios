@@ -61,6 +61,7 @@ class NotificationsViewController: BaseViewController {
                 
                 let vc = DetailedPendingCollectionViewController(nibName: "DetailedPendingCollectionViewController", bundle: nil)
                 var pendingCollectionID = NotificationModell?.result?.notifications[sender.tag].pendingCollectionId ?? 0
+//                vc.isPoRequest = true // For Testing
                 if pendingCollectionID == 0{
                     pendingCollectionID = NotificationModell?.result?.notifications[sender.tag].idd ?? 0
                     vc.isPoRequest = true
