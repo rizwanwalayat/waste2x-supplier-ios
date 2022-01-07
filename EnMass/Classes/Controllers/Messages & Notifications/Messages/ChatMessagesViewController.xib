@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -99,7 +100,7 @@
                                     </connections>
                                 </button>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bouncesZoom="NO" text="Write message" translatesAutoresizingMaskIntoConstraints="NO" id="wfi-v1-Owi">
-                                    <rect key="frame" x="12" y="12" width="300" height="34"/>
+                                    <rect key="frame" x="12" y="12" width="269" height="34"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="34" id="9l2-rT-nwr"/>
@@ -111,16 +112,33 @@
                                         <outlet property="delegate" destination="-1" id="keO-Yg-LVy"/>
                                     </connections>
                                 </textView>
+                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvD-va-Y8B" userLabel="Attachment Icon">
+                                    <rect key="frame" x="277" y="4" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="AvD-va-Y8B" secondAttribute="height" multiplier="1:1" id="WK0-2E-jvX"/>
+                                        <constraint firstAttribute="height" constant="50" id="wOA-7L-qw3"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <color key="tintColor" name="inactiveText"/>
+                                    <state key="normal">
+                                        <imageReference key="image" image="paperclip" catalog="system" symbolScale="large"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="selectAttachment:" destination="-1" eventType="touchUpInside" id="BmA-By-w8Y"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="y21-us-C4N" secondAttribute="trailing" constant="4" id="0da-ti-xAH"/>
-                                <constraint firstItem="y21-us-C4N" firstAttribute="leading" secondItem="wfi-v1-Owi" secondAttribute="trailing" constant="12" id="8fW-K4-2hD"/>
+                                <constraint firstItem="wfi-v1-Owi" firstAttribute="trailing" secondItem="AvD-va-Y8B" secondAttribute="leading" constant="4" id="7ua-31-Tv3"/>
                                 <constraint firstItem="wfi-v1-Owi" firstAttribute="top" secondItem="rMb-kr-q2u" secondAttribute="top" constant="12" id="9Of-Bz-JQg"/>
                                 <constraint firstAttribute="bottom" secondItem="wfi-v1-Owi" secondAttribute="bottom" constant="12" id="GYX-CZ-HRs"/>
+                                <constraint firstItem="AvD-va-Y8B" firstAttribute="centerY" secondItem="y21-us-C4N" secondAttribute="centerY" id="Gw6-cS-Eil"/>
                                 <constraint firstItem="lJv-mR-1ax" firstAttribute="centerY" secondItem="y21-us-C4N" secondAttribute="centerY" id="glc-kc-USV"/>
                                 <constraint firstAttribute="bottom" secondItem="y21-us-C4N" secondAttribute="bottom" constant="4" id="tpn-7b-Rwn"/>
                                 <constraint firstItem="wfi-v1-Owi" firstAttribute="leading" secondItem="rMb-kr-q2u" secondAttribute="leading" constant="12" id="vH2-x2-ebZ"/>
+                                <constraint firstItem="AvD-va-Y8B" firstAttribute="trailing" secondItem="y21-us-C4N" secondAttribute="leading" constant="3" id="wIJ-gB-2KA"/>
                                 <constraint firstItem="lJv-mR-1ax" firstAttribute="centerX" secondItem="y21-us-C4N" secondAttribute="centerX" id="wJz-oC-y3Q"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
@@ -169,6 +187,10 @@
     <resources>
         <image name="Arrow Left" width="10" height="18"/>
         <image name="Send" width="56" height="56"/>
+        <image name="paperclip" catalog="system" width="121" height="128"/>
+        <namedColor name="inactiveText">
+            <color red="0.62699997425079346" green="0.62400001287460327" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="primary">
             <color red="0.0" green="0.49799999594688416" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

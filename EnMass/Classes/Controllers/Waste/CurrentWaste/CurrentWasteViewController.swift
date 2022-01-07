@@ -112,7 +112,7 @@ extension CurrentWasteViewController : UITableViewDelegate, UITableViewDataSourc
             imageView.clipsToBounds = true
             alertVc.view.addSubview(imageView)
             
-            alertVc.setValue(image, forKey: "image")
+//            alertVc.setValue(image, forKey: "image")
             alertVc.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
                 Utility.showLoading()
                 APIClient.shared.deleteSiteApiFunctionCall(id: self.sitesData[indexPath.section].farmId, resone: "I don't Want This Site Any More") { result, error, status, message in

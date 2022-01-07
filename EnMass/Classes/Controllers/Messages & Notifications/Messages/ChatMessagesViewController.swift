@@ -9,6 +9,7 @@
 import UIKit
 import TwilioChatClient
 import IQKeyboardManagerSwift
+import UniformTypeIdentifiers
 
 class ChatMessagesViewController: BaseViewController {
 
@@ -79,6 +80,28 @@ class ChatMessagesViewController: BaseViewController {
         
         self.navigationController?.popViewController(animated: true)
         globalObjectContainer?.tabbarHiddenView.isHidden = false
+    }
+    
+    @IBAction func selectAttachment(_ sender: Any) {
+        let alert = UIAlertController(title: "Attachment Type", message: "", preferredStyle: .actionSheet)
+        let imageAction = UIAlertAction(title: "Image", style: .default)
+        alert.addAction(UIAlertAction(title: "Image", style: .default, handler: { action in
+            ImagePickerVC.shared.showImagePickerFromVC(fromVC: self)
+        }))
+        alert.addAction(UIAlertAction(title: "Document", style: .default, handler: { action in
+            if #available(iOS 14.0, *) {
+                let types = UTType.types(tag: "pdf", tagClass: UTTagClass.filenameExtension, conformingTo: nil)
+                let documentPickerController  = UIDocumentPickerViewController(forOpeningContentTypes: types)
+//                let documentPickerController = UIDocumentPickerViewController()
+                documentPickerController.delegate = self
+                self.present(documentPickerController, animated: true, completion: nil)
+            } else {
+                // Fallback on earlier versions
+            }        }))
+        self.present(alert, animated: true, completion: nil)
+        
+        
+      
     }
     
     @IBAction func sendButtonPressed(_ sender: UIButton) {
@@ -219,6 +242,12 @@ extension ChatMessagesViewController : UITableViewDelegate, UITableViewDataSourc
         
         return cell
     }
-    
-    
+}
+
+extension ChatMessagesViewController: UIDocumentPickerDelegate {
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        guard let myUrl = urls.first else {
+            return
+        }
+    }
 }
