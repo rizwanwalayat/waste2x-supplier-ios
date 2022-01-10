@@ -59,6 +59,7 @@ class TwillioChatDataModel: NSObject {
         guard let fileData =  image.pngData() else {
             return
         }
+        
         let stream = InputStream(data: fileData)
         if let messages = self.channel?.messages {
             let messageOptions = TCHMessageOptions().withMediaStream(stream, contentType: "image/jpeg", defaultFilename: "image.jpg") {

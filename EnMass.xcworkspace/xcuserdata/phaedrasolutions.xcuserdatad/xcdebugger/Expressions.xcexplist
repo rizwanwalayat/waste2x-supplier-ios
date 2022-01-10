@@ -30,10 +30,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "TrackerViewController.viewWillAppear(_:):TrackerViewController.swift">
+         contextName = "DetailedPendingCollectionViewController.viewDidLoad():DetailedPendingCollectionViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "trackID">
+               value = "id">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -52,10 +52,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "DetailedPendingCollectionViewController.viewDidLoad():DetailedPendingCollectionViewController.swift">
+         contextName = "closure #1 in TrackerViewController.viewWillAppear(_:):TrackerViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "id">
+               value = "trackID">
+            </PersistentString>
+            <PersistentString
+               value = "self.startingLocation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -68,13 +71,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in TrackerViewController.viewWillAppear(_:):TrackerViewController.swift">
+         contextName = "MessagesTableViewCell.messagesHandling(_:):MessagesTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "receiverMessageLabel.text">
+            </PersistentString>
+            <PersistentString
+               value = "cellData.mediaFilename">
+            </PersistentString>
+            <PersistentString
+               value = "cellData.body">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TrackerViewController.viewWillAppear(_:):TrackerViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "trackID">
-            </PersistentString>
-            <PersistentString
-               value = "self.startingLocation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

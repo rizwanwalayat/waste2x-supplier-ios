@@ -15,9 +15,11 @@ class MessagesTableViewCell: UITableViewCell {
     @IBOutlet weak var mainHolderview : UIView!
     @IBOutlet weak var messageLabel : UILabel!
     @IBOutlet weak var timeLabel : UILabel!
+    @IBOutlet weak var fileTextView: UITextView!
     @IBOutlet weak var receiverHolderView: UIView!
     @IBOutlet weak var receiverTimeLabel: UILabel!
     @IBOutlet weak var receiverMessageLabel: UILabel!
+    @IBOutlet weak var receiverFileTextView: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,6 +39,16 @@ class MessagesTableViewCell: UITableViewCell {
         mainHolderview.isHidden = true
         messageLabel.text = cellData.body
         timeLabel.text = cellData.timestampAsDate?.dateToString("HH:mm")
+        
+        if cellData.hasMedia() {
+            
+//
+//            cellData.getMediaWith(OutputStream, onStarted: <#T##TCHMediaOnStarted?##TCHMediaOnStarted?##() -> Void#>, onProgress: <#T##TCHMediaOnProgress?##TCHMediaOnProgress?##(UInt) -> Void#>, onCompleted: <#T##TCHMediaOnCompleted?##TCHMediaOnCompleted?##(String) -> Void#>, completion: <#T##TCHCompletion?##TCHCompletion?##(TCHResult) -> Void#>)
+            let attrStr = NSMutableAttributedString(string: cellData.mediaFilename ?? "File")
+            attrStr.addAttribute(.link, value: "", range: NSRange(location: 0, length: 1))
+            receiverFileTextView.attributedText = attrStr
+            fileTextView.attributedText = attrStr
+        }
         receiverMessageLabel.text = cellData.body
         receiverTimeLabel.text = cellData.timestampAsDate?.dateToString("HH:mm")
         self.transform  = CGAffineTransform(scaleX: 1, y: -1)
