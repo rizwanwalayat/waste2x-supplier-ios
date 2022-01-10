@@ -38,19 +38,17 @@ class MessagesTableViewCell: UITableViewCell {
         receiverHolderView.isHidden = true
         mainHolderview.isHidden = true
         messageLabel.text = cellData.body
-        timeLabel.text = cellData.timestampAsDate?.dateToString("HH:mm")
-        
+        timeLabel.text = cellData.dateCreatedAsDate?.dateToString("HH:mm")
         if cellData.hasMedia() {
             
-//
-//            cellData.getMediaWith(OutputStream, onStarted: <#T##TCHMediaOnStarted?##TCHMediaOnStarted?##() -> Void#>, onProgress: <#T##TCHMediaOnProgress?##TCHMediaOnProgress?##(UInt) -> Void#>, onCompleted: <#T##TCHMediaOnCompleted?##TCHMediaOnCompleted?##(String) -> Void#>, completion: <#T##TCHCompletion?##TCHCompletion?##(TCHResult) -> Void#>)
+//            TwillioChatDataModel.shared.recieveFile(message: cellData)
             let attrStr = NSMutableAttributedString(string: cellData.mediaFilename ?? "File")
             attrStr.addAttribute(.link, value: "", range: NSRange(location: 0, length: 1))
             receiverFileTextView.attributedText = attrStr
             fileTextView.attributedText = attrStr
         }
         receiverMessageLabel.text = cellData.body
-        receiverTimeLabel.text = cellData.timestampAsDate?.dateToString("HH:mm")
+        receiverTimeLabel.text = cellData.dateCreatedAsDate?.dateToString("HH:mm")
         self.transform  = CGAffineTransform(scaleX: 1, y: -1)
         if let author = cellData.author?.trimmingCharacters(in: .whitespaces).uppercased(), let phone = DataManager.shared.getUser()?.result?.phone.trimmingCharacters(in: .whitespaces).uppercased() {
             

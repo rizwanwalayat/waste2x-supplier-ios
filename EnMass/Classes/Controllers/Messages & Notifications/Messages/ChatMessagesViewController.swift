@@ -138,7 +138,7 @@ class ChatMessagesViewController: BaseViewController {
     
     override func imageSelectedFromGalleryOrCamera(selectedImage: UIImage) {
         
-        TwillioChatDataModel.shared.sendFile(image: selectedImage)
+        TwillioChatDataModel.shared.sendImage(image: selectedImage)
     }
     
     func tableViewsIntegrations()
@@ -254,5 +254,7 @@ extension ChatMessagesViewController: UIDocumentPickerDelegate {
         guard let myUrl = urls.first else {
             return
         }
+        
+        TwillioChatDataModel.shared.sendFile(url: myUrl)
     }
 }
