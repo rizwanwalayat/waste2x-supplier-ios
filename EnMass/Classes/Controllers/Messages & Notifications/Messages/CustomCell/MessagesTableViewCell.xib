@@ -27,47 +27,45 @@
                         <rect key="frame" x="87" y="6" width="427" height="171"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="08.31" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHZ-mq-gHV">
-                                <rect key="frame" x="15" y="152" width="396" height="14"/>
+                                <rect key="frame" x="15" y="75" width="396" height="91"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
                                 <color key="textColor" name="bgColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UF7-WN-wpC" userLabel="Image Text View">
-                                <rect key="frame" x="20" y="113" width="387" height="24"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="File">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.49803921568627452" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="14" name="Poppins-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3v-oZ-9LS">
-                                <rect key="frame" x="20" y="15" width="387" height="98"/>
-                                <string key="text">Can you show me benefit of 
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nB0-Uy-DHZ">
+                                <rect key="frame" x="20" y="15" width="387" height="56"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3v-oZ-9LS">
+                                        <rect key="frame" x="0.0" y="0.0" width="387" height="28"/>
+                                        <string key="text">Can you show me benefit of 
 supplying our waste into your apps?Can you show me benefit of supplying our waste into your apps?ssaashjfgsjkhfgjhsdgfhjsdagfjhgjhdsgfjhsgdsjhgfdshjgfjhsdgfjhgsdjhfsdjhafjhdsgfjhgsdjhfgjhsdgfjhsdgfgsdjhf</string>
-                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                <color key="textColor" systemColor="systemGroupedBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                        <color key="textColor" systemColor="systemGroupedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uf1-au-wph">
+                                        <rect key="frame" x="0.0" y="28" width="387" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="Xuj-b3-H2n"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="buttonClickedWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="C9c-R1-tnr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" name="themeColor"/>
                         <constraints>
-                            <constraint firstItem="a3v-oZ-9LS" firstAttribute="top" secondItem="g3K-gd-b9s" secondAttribute="top" constant="15" id="11j-NH-Dgy"/>
+                            <constraint firstAttribute="trailing" secondItem="nB0-Uy-DHZ" secondAttribute="trailing" constant="20" id="2yX-hd-Mra"/>
                             <constraint firstItem="fHZ-mq-gHV" firstAttribute="leading" secondItem="g3K-gd-b9s" secondAttribute="leading" constant="15" id="7dy-rE-fAC"/>
-                            <constraint firstItem="UF7-WN-wpC" firstAttribute="leading" secondItem="a3v-oZ-9LS" secondAttribute="leading" id="8gE-ab-k8N"/>
                             <constraint firstAttribute="bottom" secondItem="fHZ-mq-gHV" secondAttribute="bottom" constant="5" id="EfL-uL-Tyi"/>
-                            <constraint firstItem="fHZ-mq-gHV" firstAttribute="top" secondItem="UF7-WN-wpC" secondAttribute="bottom" constant="15" id="G1U-yJ-RJT"/>
                             <constraint firstAttribute="trailing" secondItem="fHZ-mq-gHV" secondAttribute="trailing" constant="16" id="HWp-Lg-6hP"/>
-                            <constraint firstItem="a3v-oZ-9LS" firstAttribute="leading" secondItem="g3K-gd-b9s" secondAttribute="leading" constant="20" id="VsV-Ky-zKb"/>
-                            <constraint firstItem="UF7-WN-wpC" firstAttribute="trailing" secondItem="a3v-oZ-9LS" secondAttribute="trailing" id="WkV-PV-3xW"/>
-                            <constraint firstAttribute="trailing" secondItem="a3v-oZ-9LS" secondAttribute="trailing" constant="20" id="ddV-pp-IFn"/>
-                            <constraint firstItem="UF7-WN-wpC" firstAttribute="top" secondItem="a3v-oZ-9LS" secondAttribute="bottom" id="fz5-ce-klL"/>
+                            <constraint firstItem="nB0-Uy-DHZ" firstAttribute="top" secondItem="g3K-gd-b9s" secondAttribute="top" constant="15" id="Ogs-Vt-hWY"/>
+                            <constraint firstItem="nB0-Uy-DHZ" firstAttribute="leading" secondItem="g3K-gd-b9s" secondAttribute="leading" constant="20" id="PXD-yc-lb6"/>
+                            <constraint firstItem="fHZ-mq-gHV" firstAttribute="top" secondItem="nB0-Uy-DHZ" secondAttribute="bottom" constant="4" id="sSq-eT-A1p"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -79,44 +77,42 @@ supplying our waste into your apps?Can you show me benefit of supplying our wast
                         <rect key="frame" x="20" y="6" width="427" height="171"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="08.31" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUA-LP-QTg">
-                                <rect key="frame" x="16" y="152" width="395" height="14"/>
+                                <rect key="frame" x="16" y="75" width="395" height="91"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
                                 <color key="textColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="34C-ku-dKi" userLabel="Receiver Image Text View">
-                                <rect key="frame" x="20" y="35" width="387" height="102"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="File">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.49803921568627452" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="14" name="Poppins-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Can you show " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iww-az-HJV">
-                                <rect key="frame" x="20" y="15" width="387" height="20"/>
-                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                <color key="textColor" red="0.0078431372549019607" green="0.015686274509803921" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="33P-ek-VAu">
+                                <rect key="frame" x="20" y="15" width="387" height="56"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Can you show " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iww-az-HJV">
+                                        <rect key="frame" x="0.0" y="0.0" width="387" height="28"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                        <color key="textColor" red="0.0078431372549019607" green="0.015686274509803921" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yE-tX-x9N">
+                                        <rect key="frame" x="0.0" y="28" width="387" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="ITh-AC-5rx"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="buttonClickedWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3kC-Eg-ySB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="IUA-LP-QTg" firstAttribute="top" secondItem="34C-ku-dKi" secondAttribute="bottom" constant="15" id="8qL-0s-2Q7"/>
-                            <constraint firstItem="34C-ku-dKi" firstAttribute="leading" secondItem="Iww-az-HJV" secondAttribute="leading" id="CNM-YW-znK"/>
+                            <constraint firstItem="33P-ek-VAu" firstAttribute="top" secondItem="5PO-it-m4B" secondAttribute="top" constant="15" id="2qk-mU-xsH"/>
+                            <constraint firstItem="IUA-LP-QTg" firstAttribute="top" secondItem="33P-ek-VAu" secondAttribute="bottom" constant="4" id="8ep-GC-mfO"/>
                             <constraint firstAttribute="trailing" secondItem="IUA-LP-QTg" secondAttribute="trailing" constant="16" id="MbU-vp-Kcd"/>
-                            <constraint firstItem="34C-ku-dKi" firstAttribute="trailing" secondItem="Iww-az-HJV" secondAttribute="trailing" id="Ux7-pt-btT"/>
+                            <constraint firstItem="33P-ek-VAu" firstAttribute="leading" secondItem="5PO-it-m4B" secondAttribute="leading" constant="20" id="ROF-ki-yUg"/>
                             <constraint firstAttribute="bottom" secondItem="IUA-LP-QTg" secondAttribute="bottom" constant="5" id="chi-Ob-Tfd"/>
-                            <constraint firstItem="Iww-az-HJV" firstAttribute="leading" secondItem="5PO-it-m4B" secondAttribute="leading" constant="20" id="cvS-Zj-lHY"/>
-                            <constraint firstItem="34C-ku-dKi" firstAttribute="top" secondItem="Iww-az-HJV" secondAttribute="bottom" id="e84-uO-WUr"/>
-                            <constraint firstAttribute="trailing" secondItem="Iww-az-HJV" secondAttribute="trailing" constant="20" id="ezF-Ba-UfJ"/>
-                            <constraint firstItem="Iww-az-HJV" firstAttribute="top" secondItem="5PO-it-m4B" secondAttribute="top" constant="15" id="qiG-tH-y4U"/>
+                            <constraint firstAttribute="trailing" secondItem="33P-ek-VAu" secondAttribute="trailing" constant="20" id="osa-15-IZ3"/>
                             <constraint firstItem="IUA-LP-QTg" firstAttribute="leading" secondItem="5PO-it-m4B" secondAttribute="leading" constant="16" id="vjY-NM-cd4"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -142,11 +138,11 @@ supplying our waste into your apps?Can you show me benefit of supplying our wast
                 <constraint firstItem="g3K-gd-b9s" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" multiplier="0.8" id="jrr-JW-XFa"/>
             </constraints>
             <connections>
-                <outlet property="fileTextView" destination="UF7-WN-wpC" id="J6h-ML-OWq"/>
+                <outlet property="linkClickableButton" destination="uf1-au-wph" id="t8a-XS-rt0"/>
                 <outlet property="mainHolderview" destination="g3K-gd-b9s" id="8PK-kz-wzE"/>
                 <outlet property="messageLabel" destination="a3v-oZ-9LS" id="5jB-Wg-gUv"/>
-                <outlet property="receiverFileTextView" destination="34C-ku-dKi" id="Mrg-sU-vcy"/>
                 <outlet property="receiverHolderView" destination="5PO-it-m4B" id="FPD-TC-TV8"/>
+                <outlet property="receiverLinkClickableButton" destination="9yE-tX-x9N" id="90w-hf-qmU"/>
                 <outlet property="receiverMessageLabel" destination="Iww-az-HJV" id="HYY-9L-B1L"/>
                 <outlet property="receiverTimeLabel" destination="IUA-LP-QTg" id="4Q9-b5-GZn"/>
                 <outlet property="timeLabel" destination="fHZ-mq-gHV" id="uC6-vT-gGL"/>

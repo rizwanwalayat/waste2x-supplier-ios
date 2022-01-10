@@ -46,6 +46,8 @@
 		04340E96266E439900B5F87C /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340E94266E439900B5F87C /* MessagesTableViewCell.swift */; };
 		04340E97266E439900B5F87C /* MessagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04340E95266E439900B5F87C /* MessagesTableViewCell.xib */; };
 		04361BD3267B5BFA008209D4 /* WasteDetailResultImageUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361BD2267B5BFA008209D4 /* WasteDetailResultImageUpload.swift */; };
+		04399A57278C918000BF37C3 /* FullScreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04399A53278C918000BF37C3 /* FullScreenImageViewController.swift */; };
+		04399A59278C918000BF37C3 /* FullScreenImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04399A55278C918000BF37C3 /* FullScreenImageViewController.xib */; };
 		043BCBAA27340BB7003B66BB /* CreateSitePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BCBA827340BB7003B66BB /* CreateSitePopupViewController.swift */; };
 		043BCBAB27340BB7003B66BB /* CreateSitePopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043BCBA927340BB7003B66BB /* CreateSitePopupViewController.xib */; };
 		043F6BE82677719F000E3C4F /* HomeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F6BE72677719F000E3C4F /* HomeDataModel.swift */; };
@@ -299,6 +301,8 @@
 		04340E94266E439900B5F87C /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
 		04340E95266E439900B5F87C /* MessagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesTableViewCell.xib; sourceTree = "<group>"; };
 		04361BD2267B5BFA008209D4 /* WasteDetailResultImageUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteDetailResultImageUpload.swift; sourceTree = "<group>"; };
+		04399A53278C918000BF37C3 /* FullScreenImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewController.swift; sourceTree = "<group>"; };
+		04399A55278C918000BF37C3 /* FullScreenImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullScreenImageViewController.xib; sourceTree = "<group>"; };
 		043BCBA827340BB7003B66BB /* CreateSitePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSitePopupViewController.swift; sourceTree = "<group>"; };
 		043BCBA927340BB7003B66BB /* CreateSitePopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateSitePopupViewController.xib; sourceTree = "<group>"; };
 		043F6BE72677719F000E3C4F /* HomeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataModel.swift; sourceTree = "<group>"; };
@@ -799,6 +803,15 @@
 			path = CustomCell;
 			sourceTree = "<group>";
 		};
+		04399A51278C918000BF37C3 /* PreviewImagesView  */ = {
+			isa = PBXGroup;
+			children = (
+				04399A53278C918000BF37C3 /* FullScreenImageViewController.swift */,
+				04399A55278C918000BF37C3 /* FullScreenImageViewController.xib */,
+			);
+			path = "PreviewImagesView ";
+			sourceTree = "<group>";
+		};
 		043BCBA727340B13003B66BB /* createSitePopup */ = {
 			isa = PBXGroup;
 			children = (
@@ -931,6 +944,7 @@
 				04629D2526664D86008A6A3A /* CustomProgressbar.swift */,
 				9694C16026E25C2900159A1C /* CountryPickerConfig.swift */,
 				049F97F1274E7EF100644959 /* LoaderAnimation.swift */,
+				04399A51278C918000BF37C3 /* PreviewImagesView  */,
 				047E83D2268338DC006A0F18 /* LocationPicker */,
 			);
 			path = CommonClasses;
@@ -1671,6 +1685,7 @@
 				1849F5AA266FE32F0001B533 /* ContactFetchTableViewCell.xib in Resources */,
 				18397E172660FF54003DE30C /* Poppins-ExtraLight.ttf in Resources */,
 				0428F1C0265B8EC5007C51EE /* LoginCodeVerificationViewController.xib in Resources */,
+				04399A59278C918000BF37C3 /* FullScreenImageViewController.xib in Resources */,
 				18397E1F2660FF54003DE30C /* Poppins-BlackItalic.ttf in Resources */,
 				18397E252660FF54003DE30C /* Poppins-Thin.ttf in Resources */,
 				18896078266E1EB800061783 /* SupplyingCollectionViewCell.xib in Resources */,
@@ -1854,6 +1869,7 @@
 				04E6104726725422001E6629 /* SupplyProcessDataModel.swift in Sources */,
 				043F6BF8267776A2000E3C4F /* HomeResultDataModel.swift in Sources */,
 				18A579B9269320070067952F /* DataManager.swift in Sources */,
+				04399A57278C918000BF37C3 /* FullScreenImageViewController.swift in Sources */,
 				046565C72746759D008BAE63 /* FetchSitesDataModel.swift in Sources */,
 				18A579C02693218F0067952F /* ApiClientHandler.swift in Sources */,
 				18ACB7C7267A36D70088307D /* CreatePayment.swift in Sources */,

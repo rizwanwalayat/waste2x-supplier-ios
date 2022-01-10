@@ -99,6 +99,7 @@ class ChatMessagesViewController: BaseViewController {
                 // Fallback on earlier versions
             }        }))
         
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
         
@@ -234,7 +235,8 @@ extension ChatMessagesViewController : UITableViewDelegate, UITableViewDataSourc
         
         let arrayIndex  = TwillioChatDataModel.shared.messages.count - indexPath.row
         let message = TwillioChatDataModel.shared.messages[arrayIndex - 1]
-        
+        cell.mainVC = self
+        cell.index = indexPath.row
         cell.messagesHandling(message)
         /// code for pagination
         if indexPath.row == TwillioChatDataModel.shared.messages.count - 1
@@ -251,8 +253,10 @@ extension ChatMessagesViewController : UITableViewDelegate, UITableViewDataSourc
 
 extension ChatMessagesViewController: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        guard let myUrl = urls.first else {
+        guard let myUrl = urls.last else {
             return
         }
+        TwillioChatDataModel.shared.sendDocument(docURl: myUrl)
+        
     }
 }

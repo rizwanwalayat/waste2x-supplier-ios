@@ -80,6 +80,29 @@ class TwillioChatDataModel: NSObject {
         }
     }
     
+    func sendDocument(docURl : URL) {
+        guard let fileData = try? Data(contentsOf: docURl) else {return }
+        
+        let stream = InputStream(data: fileData)
+        if let messages = self.channel?.messages {
+            let messageOptions = TCHMessageOptions().withMediaStream(stream, contentType: "application/pdf", defaultFilename: "\(docURl.lastPathComponent.components(separatedBy: ".")[0]).pdf") {
+                print("Media upload started")
+            } onProgress: { bytes in
+                print("Media upload progress: \(bytes)")
+            } onCompleted: { sid in
+                print("Media upload completed: \(sid)")
+            }
+            
+            messages.sendMessage(with: messageOptions) { result, message in
+                if !result.isSuccessful() {
+                    print("Creation failed: \(String(describing: result.error))")
+                } else {
+                    print("Creation successful")
+                }
+            }
+        }
+    }
+    
     
     
     private func checkChannelCreation(_ completion: @escaping(TCHResult?, TCHChannel?) -> Void) {
