@@ -8,6 +8,8 @@
 
 import Foundation
 import TwilioChatClient
+import UIKit
+import CoreMedia
 
 protocol TwillioChatDataModelDelegate: AnyObject {
     func reloadAllMessages()
@@ -52,6 +54,31 @@ class TwillioChatDataModel: NSObject {
             completion(nil, nil)
         }
     }
+    
+    func sendFile(image: UIImage) {
+        guard let fileData =  image.pngData() else {
+            return
+        }
+        let stream = InputStream(data: fileData)
+        if let messages = self.channel?.messages {
+            let messageOptions = TCHMessageOptions().withMediaStream(stream, contentType: "image/jpeg", defaultFilename: "image.jpg") {
+                print("Media upload started")
+            } onProgress: { bytes in
+                print("Media upload progress: \(bytes)")
+            } onCompleted: { sid in
+                print("Media upload completed: \(sid)")
+            }
+
+            messages.sendMessage(with: messageOptions) { result, message in
+                if !result.isSuccessful() {
+                            print("Creation failed: \(String(describing: result.error))")
+                        } else {
+                            print("Creation successful")
+                        }
+            }
+        }
+    }
+    
     
     
     private func checkChannelCreation(_ completion: @escaping(TCHResult?, TCHChannel?) -> Void) {
