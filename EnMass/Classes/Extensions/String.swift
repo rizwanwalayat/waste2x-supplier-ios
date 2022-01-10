@@ -53,7 +53,9 @@ extension String {
     }
     
     func toPhoneNumber() -> String {
-        return self.replacingOccurrences(of: "(\\d{3})(\\d{3})(\\d+)", with: "($1) $2-$3", options: .regularExpression, range: nil)
+        let phone = Utility.format(with: "+X(XXX)XXX-XXXX", phone: self)
+        return phone
+        //return self.replacingOccurrences(of: "(\\d{3})(\\d{3})(\\d+)", with: "($1) $2-$3", options: .regularExpression, range: nil)
     }
     
 }
