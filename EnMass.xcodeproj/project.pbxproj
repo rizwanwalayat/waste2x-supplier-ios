@@ -238,6 +238,8 @@
 		18FB2B962694A1FE006C6AE1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18FB2B952694A1FE006C6AE1 /* GoogleService-Info.plist */; };
 		962DAC68274676E2004C40D1 /* HomeNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962DAC5B274676E2004C40D1 /* HomeNewViewController.xib */; };
 		962DAC6B274676E2004C40D1 /* HomeNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962DAC5E274676E2004C40D1 /* HomeNewViewController.swift */; };
+		962FEB04278CB8F900E822E6 /* FullScreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962FEB02278CB8F900E822E6 /* FullScreenImageViewController.swift */; };
+		962FEB05278CB8F900E822E6 /* FullScreenImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962FEB03278CB8F900E822E6 /* FullScreenImageViewController.xib */; };
 		96726C872711C1EE00F071E8 /* Waste2xAfterSigninTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96726C862711C1EE00F071E8 /* Waste2xAfterSigninTests.swift */; };
 		96774D96273177C100B513CB /* MessagePendingCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96774D94273177C100B513CB /* MessagePendingCollectionTableViewCell.swift */; };
 		96774D97273177C100B513CB /* MessagePendingCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96774D95273177C100B513CB /* MessagePendingCollectionTableViewCell.xib */; };
@@ -490,6 +492,8 @@
 		18FB2B952694A1FE006C6AE1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		962DAC5B274676E2004C40D1 /* HomeNewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeNewViewController.xib; sourceTree = "<group>"; };
 		962DAC5E274676E2004C40D1 /* HomeNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNewViewController.swift; sourceTree = "<group>"; };
+		962FEB02278CB8F900E822E6 /* FullScreenImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewController.swift; sourceTree = "<group>"; };
+		962FEB03278CB8F900E822E6 /* FullScreenImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullScreenImageViewController.xib; sourceTree = "<group>"; };
 		96726C862711C1EE00F071E8 /* Waste2xAfterSigninTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waste2xAfterSigninTests.swift; sourceTree = "<group>"; };
 		96774D94273177C100B513CB /* MessagePendingCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePendingCollectionTableViewCell.swift; sourceTree = "<group>"; };
 		96774D95273177C100B513CB /* MessagePendingCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagePendingCollectionTableViewCell.xib; sourceTree = "<group>"; };
@@ -927,6 +931,7 @@
 		048C09E5265E223E003E301F /* CommonClasses */ = {
 			isa = PBXGroup;
 			children = (
+				962FEB01278CB8F900E822E6 /* PreviewImagesView  */,
 				048C09E6265E2265003E301F /* ImagePickerVC.swift */,
 				04629D2526664D86008A6A3A /* CustomProgressbar.swift */,
 				9694C16026E25C2900159A1C /* CountryPickerConfig.swift */,
@@ -1555,6 +1560,15 @@
 			path = "Home New";
 			sourceTree = "<group>";
 		};
+		962FEB01278CB8F900E822E6 /* PreviewImagesView  */ = {
+			isa = PBXGroup;
+			children = (
+				962FEB02278CB8F900E822E6 /* FullScreenImageViewController.swift */,
+				962FEB03278CB8F900E822E6 /* FullScreenImageViewController.xib */,
+			);
+			path = "PreviewImagesView ";
+			sourceTree = "<group>";
+		};
 		96E8A8332705AD7700F03A34 /* Waste2xTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1735,6 +1749,7 @@
 				18397E182660FF54003DE30C /* Poppins-ThinItalic.ttf in Resources */,
 				04D053602670858B005458F7 /* SupplySubTypeViewController.xib in Resources */,
 				047E83D8268338DD006A0F18 /* LocationPickerViewController.xib in Resources */,
+				962FEB05278CB8F900E822E6 /* FullScreenImageViewController.xib in Resources */,
 				1810253E2657E48500DEBF7D /* FaqViewController.xib in Resources */,
 				181025382657E48500DEBF7D /* NewsViewController.xib in Resources */,
 				18397E1B2660FF54003DE30C /* Poppins-Light.ttf in Resources */,
@@ -1854,6 +1869,7 @@
 				04E6104726725422001E6629 /* SupplyProcessDataModel.swift in Sources */,
 				043F6BF8267776A2000E3C4F /* HomeResultDataModel.swift in Sources */,
 				18A579B9269320070067952F /* DataManager.swift in Sources */,
+				962FEB04278CB8F900E822E6 /* FullScreenImageViewController.swift in Sources */,
 				046565C72746759D008BAE63 /* FetchSitesDataModel.swift in Sources */,
 				18A579C02693218F0067952F /* ApiClientHandler.swift in Sources */,
 				18ACB7C7267A36D70088307D /* CreatePayment.swift in Sources */,

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FullScreenImageViewController" customModule="EnMass" customModuleProvider="target">
+            <connections>
+                <outlet property="fullScreenImageView" destination="LFN-Fv-84q" id="Nhy-Dp-FoC"/>
+                <outlet property="indicatorHolderView" destination="BPl-fl-Ko0" id="Zet-es-TKL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LFN-Fv-84q">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BPl-fl-Ko0" userLabel="indicatorView">
+                    <rect key="frame" x="189" y="430" width="36" height="36"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ncI-t6-ZIN">
+                            <rect key="frame" x="8" y="8" width="20" height="20"/>
+                            <color key="color" red="0.84485781189999998" green="0.078567527230000003" blue="0.071337796750000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ncI-t6-ZIN" secondAttribute="trailing" constant="8" id="5vE-Uo-DfS"/>
+                        <constraint firstItem="ncI-t6-ZIN" firstAttribute="leading" secondItem="BPl-fl-Ko0" secondAttribute="leading" constant="8" id="TzN-pm-RT8"/>
+                        <constraint firstAttribute="bottom" secondItem="ncI-t6-ZIN" secondAttribute="bottom" constant="8" id="fRc-GX-7Mz"/>
+                        <constraint firstItem="ncI-t6-ZIN" firstAttribute="top" secondItem="BPl-fl-Ko0" secondAttribute="top" constant="8" id="mAg-fG-622"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <real key="value" value="12.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="SshadowOffsetWidth">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="SshadowOffsetHeight">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="SshadowOpacity">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHA-SM-uPd">
+                    <rect key="frame" x="373" y="52" width="25" height="25"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crossIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Uym-iR-uGs">
+                            <rect key="frame" x="5" y="5" width="15" height="15"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="2LU-SD-i55"/>
+                                <constraint firstAttribute="width" constant="15" id="ENU-x0-1cj"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrH-aS-OSG">
+                            <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                            <connections>
+                                <action selector="crossImageButtonTapped:" destination="-1" eventType="touchUpInside" id="7Gp-oA-gbe"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Uym-iR-uGs" firstAttribute="centerX" secondItem="mHA-SM-uPd" secondAttribute="centerX" id="5kz-ie-n5y"/>
+                        <constraint firstAttribute="bottom" secondItem="xrH-aS-OSG" secondAttribute="bottom" id="B2H-t5-pV3"/>
+                        <constraint firstItem="xrH-aS-OSG" firstAttribute="top" secondItem="mHA-SM-uPd" secondAttribute="top" id="GIl-Bz-KS3"/>
+                        <constraint firstAttribute="height" constant="25" id="H3Z-QX-F7J"/>
+                        <constraint firstItem="xrH-aS-OSG" firstAttribute="leading" secondItem="mHA-SM-uPd" secondAttribute="leading" id="Mhg-NW-5Jq"/>
+                        <constraint firstItem="Uym-iR-uGs" firstAttribute="centerY" secondItem="mHA-SM-uPd" secondAttribute="centerY" id="U7f-oF-J82"/>
+                        <constraint firstAttribute="trailing" secondItem="xrH-aS-OSG" secondAttribute="trailing" id="YA2-mK-Nta"/>
+                        <constraint firstAttribute="width" secondItem="mHA-SM-uPd" secondAttribute="height" multiplier="1:1" id="vbg-K7-psB"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <real key="value" value="12.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="BPl-fl-Ko0" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="5P7-VH-zQc"/>
+                <constraint firstItem="LFN-Fv-84q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Dq4-QZ-Cou"/>
+                <constraint firstItem="LFN-Fv-84q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OVn-pQ-3EC"/>
+                <constraint firstItem="mHA-SM-uPd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="Y1J-bh-6R5"/>
+                <constraint firstItem="BPl-fl-Ko0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="iur-CL-fAT"/>
+                <constraint firstItem="LFN-Fv-84q" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="jVh-yj-NXc"/>
+                <constraint firstAttribute="bottom" secondItem="LFN-Fv-84q" secondAttribute="bottom" id="t48-Hs-fKS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mHA-SM-uPd" secondAttribute="trailing" constant="16" id="vGE-It-ExG"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="150.66964285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="crossIcon" width="25" height="25"/>
+    </resources>
+</document>

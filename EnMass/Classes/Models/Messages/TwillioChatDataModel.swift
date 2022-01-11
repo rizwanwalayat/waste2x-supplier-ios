@@ -115,14 +115,7 @@ class TwillioChatDataModel: NSObject {
         }
        
     }
-    
 
-    
-    func retrieveFile(message: TCHMessage){
-        message.getMediaContentTemporaryUrl { result, url in
-            print("url: \(url)")
-        }
-    }
 
     
     private func checkChannelCreation(_ completion: @escaping(TCHResult?, TCHChannel?) -> Void) {

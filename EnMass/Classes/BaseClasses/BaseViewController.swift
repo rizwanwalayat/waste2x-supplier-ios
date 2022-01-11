@@ -8,12 +8,15 @@
 
 import UIKit
 import SDWebImage
+import PDFKit
 
 class BaseViewController: UIViewController {
 
     var tabbarViewHeight : CGFloat = 0.0
     var userData : RegistrationResult?
     let refreshControl = UIRefreshControl()
+    let pdfView = PDFView()
+
     weak var coordinator: MainCoordinator?
     
     override func viewDidLoad() {
@@ -22,6 +25,9 @@ class BaseViewController: UIViewController {
         userData = DataManager.shared.getUser()?.result
         tabbarViewHeight = (UIScreen.main.bounds.height * 0.0926339)+10
         print("Bottom Const : \(tabbarViewHeight)\nscreen height : \(UIScreen.main.bounds.height)")
+        
+
+        
         
     }
     
@@ -45,6 +51,26 @@ class BaseViewController: UIViewController {
         }
     }
     
+    func showImagePreview(fileString: String){
+        let vcImageShow = FullScreenImageViewController(nibName: "FullScreenImageViewController", bundle: nil)
+        vcImageShow.displayImageString = fileString
+        self.present(vcImageShow, animated: true, completion: nil)
+    }
+    
+    func pdfPreview(urlString:String){
+        pdfView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(pdfView)
+
+        pdfView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        pdfView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        pdfView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        pdfView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+        guard let pdfUrl = URL(string: urlString) else { return }
+        if let document = PDFDocument(url: pdfUrl) {
+            pdfView.document = document
+        }
+    }
     func showToast(message : String) {
 
        

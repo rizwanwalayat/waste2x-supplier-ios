@@ -15,11 +15,13 @@ class MessagesTableViewCell: UITableViewCell {
     @IBOutlet weak var mainHolderview : UIView!
     @IBOutlet weak var messageLabel : UILabel!
     @IBOutlet weak var timeLabel : UILabel!
-    @IBOutlet weak var fileTextView: UITextView!
+    @IBOutlet weak var linkClickableButton: UIButton!
+    
     @IBOutlet weak var receiverHolderView: UIView!
     @IBOutlet weak var receiverTimeLabel: UILabel!
     @IBOutlet weak var receiverMessageLabel: UILabel!
-    @IBOutlet weak var receiverFileTextView: UITextView!
+    @IBOutlet weak var receiverLinkClickableButton: UIButton!
+  
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,32 +39,56 @@ class MessagesTableViewCell: UITableViewCell {
     {
         receiverHolderView.isHidden = true
         mainHolderview.isHidden = true
-        messageLabel.text = cellData.body
-        timeLabel.text = cellData.dateCreatedAsDate?.dateToString("HH:mm")
         if cellData.hasMedia() {
-            
-//            TwillioChatDataModel.shared.recieveFile(message: cellData)
-            let attrStr = NSMutableAttributedString(string: cellData.mediaFilename ?? "File")
-            attrStr.addAttribute(.link, value: "", range: NSRange(location: 0, length: 1))
-            receiverFileTextView.attributedText = attrStr
-            fileTextView.attributedText = attrStr
+            messageLabel.text = cellData.mediaFilename
+            receiverMessageLabel.text = cellData.mediaFilename
+            messageLabel.textColor = UIColor(named: "primary") ?? .blue
+            receiverMessageLabel.textColor = UIColor(named: "primary") ?? .blue
+        } else {
+            messageLabel.text = cellData.body
+            receiverMessageLabel.text = cellData.body
+            messageLabel.textColor = .black
+            receiverMessageLabel.textColor = .white
         }
-        receiverMessageLabel.text = cellData.body
-        receiverTimeLabel.text = cellData.dateCreatedAsDate?.dateToString("HH:mm")
+      
+       
+        
         self.transform  = CGAffineTransform(scaleX: 1, y: -1)
         if let author = cellData.author?.trimmingCharacters(in: .whitespaces).uppercased(), let phone = DataManager.shared.getUser()?.result?.phone.trimmingCharacters(in: .whitespaces).uppercased() {
             
             let authorPhone = author.split(separator: "=").last ?? ""
-            if authorPhone.contains(phone)
-            {
+            if authorPhone.contains(phone){
+                
+                if cellData.hasMedia() {
+                    messageLabel.text = cellData.mediaFilename
+                    messageLabel.textColor = UIColor(named: "primary") ?? .blue
+                } else {
+                    messageLabel.text = cellData.body
+                    messageLabel.textColor = .white
+                }
+                timeLabel.text = cellData.dateCreatedAsDate?.dateToString("HH:mm")
                 mainHolderview.isHidden = false
             }
-            else
-            {
+            else{
+               
+                if cellData.hasMedia() {
+                    receiverMessageLabel.text = cellData.mediaFilename
+                    receiverMessageLabel.textColor = UIColor(named: "primary") ?? .blue
+                } else {
+                    receiverMessageLabel.text = cellData.body
+                    receiverMessageLabel.textColor = .black
+                }
+                
+                receiverTimeLabel.text = cellData.dateCreatedAsDate?.dateToString("HH:mm")
                 receiverHolderView.isHidden = false
             }
         }
     }
+    
+    @IBAction func buttonClicked(sender : UIButton) {
+  
+    }
+    
     
     func timeStampStringToTimeReturn(_ timeStamp : String) -> String?
     {

@@ -98,7 +98,7 @@ class ChatMessagesViewController: BaseViewController {
             } else {
                 // Fallback on earlier versions
             }        }))
-        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         self.present(alert, animated: true, completion: nil)
         
         
@@ -247,6 +247,29 @@ extension ChatMessagesViewController : UITableViewDelegate, UITableViewDataSourc
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+  
+        
+        let arrayIndex  = TwillioChatDataModel.shared.messages.count - indexPath.row
+        let message = TwillioChatDataModel.shared.messages[arrayIndex - 1]
+        if message.hasMedia() {
+            message.getMediaContentTemporaryUrl { result, url in
+                
+                guard let url = url else { return }
+                if let mediaType = message.mediaType {
+                    if (mediaType.contains("image")){
+                        self.showImagePreview(fileString: url)
+                    } else if (mediaType.contains("pdf")) {
+                        self.pdfPreview(urlString: url)
+                    }
+                }
+
+            }
+        }
+
+    }
+    
 }
 
 extension ChatMessagesViewController: UIDocumentPickerDelegate {
