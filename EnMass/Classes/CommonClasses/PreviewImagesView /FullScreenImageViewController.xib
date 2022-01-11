@@ -59,7 +59,7 @@
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHA-SM-uPd">
                     <rect key="frame" x="373" y="52" width="25" height="25"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uym-iR-uGs">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crossIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Uym-iR-uGs">
                             <rect key="frame" x="5" y="5" width="15" height="15"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -107,4 +107,7 @@
             <point key="canvasLocation" x="131.8840579710145" y="150.66964285714286"/>
         </view>
     </objects>
+    <resources>
+        <image name="crossIcon" width="25" height="25"/>
+    </resources>
 </document>

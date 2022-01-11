@@ -10,6 +10,8 @@ import Foundation
 import TwilioChatClient
 import UIKit
 import CoreMedia
+import UniformTypeIdentifiers
+
 
 protocol TwillioChatDataModelDelegate: AnyObject {
     func reloadAllMessages()
@@ -55,13 +57,14 @@ class TwillioChatDataModel: NSObject {
         }
     }
     
-    func sendFile(image: UIImage) {
+    func sendImage(image: UIImage) {
         guard let fileData =  image.pngData() else {
             return
         }
         
         let stream = InputStream(data: fileData)
         if let messages = self.channel?.messages {
+            
             let messageOptions = TCHMessageOptions().withMediaStream(stream, contentType: "image/jpeg", defaultFilename: "image.jpg") {
                 print("Media upload started")
             } onProgress: { bytes in
@@ -79,31 +82,41 @@ class TwillioChatDataModel: NSObject {
             }
         }
     }
-    
-    func sendDocument(docURl : URL) {
-        guard let fileData = try? Data(contentsOf: docURl) else {return }
-        
-        let stream = InputStream(data: fileData)
-        if let messages = self.channel?.messages {
-            let messageOptions = TCHMessageOptions().withMediaStream(stream, contentType: "application/pdf", defaultFilename: "\(docURl.lastPathComponent.components(separatedBy: ".")[0]).pdf") {
-                print("Media upload started")
-            } onProgress: { bytes in
-                print("Media upload progress: \(bytes)")
-            } onCompleted: { sid in
-                print("Media upload completed: \(sid)")
-            }
+   
+    func sendFile(url: URL) {
+        do {
+            _ = url.startAccessingSecurityScopedResource()
+            let fileData = try Data(contentsOf: url)
             
-            messages.sendMessage(with: messageOptions) { result, message in
-                if !result.isSuccessful() {
-                    print("Creation failed: \(String(describing: result.error))")
-                } else {
-                    print("Creation successful")
+            let stream = InputStream(data: fileData)
+            if let messages = self.channel?.messages {
+                
+                let messageOptions = TCHMessageOptions().withMediaStream(stream, contentType: "application/pdf", defaultFilename: "document.pdf") {
+                    print("Media upload started")
+                } onProgress: { bytes in
+                    print("Media upload progress: \(bytes)")
+                } onCompleted: { sid in
+                    print("Media upload completed: \(sid)")
+                }
+
+                messages.sendMessage(with: messageOptions) { result, message in
+                    if !result.isSuccessful() {
+                                print("Creation failed: \(String(describing: result.error))")
+                            } else {
+                                print("Creation successful")
+                            }
+                    
                 }
             }
+            url.stopAccessingSecurityScopedResource()
+            
+        } catch {
+            print("Unable to load data: \(error)")
         }
+       
     }
-    
-    
+
+
     
     private func checkChannelCreation(_ completion: @escaping(TCHResult?, TCHChannel?) -> Void) {
         guard let client = client, let channelsList = client.channelsList() else {

@@ -27,33 +27,22 @@
                         <rect key="frame" x="87" y="6" width="427" height="171"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="08.31" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHZ-mq-gHV">
-                                <rect key="frame" x="15" y="75" width="396" height="91"/>
+                                <rect key="frame" x="15" y="117" width="396" height="49"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
                                 <color key="textColor" name="bgColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nB0-Uy-DHZ">
-                                <rect key="frame" x="20" y="15" width="387" height="56"/>
+                                <rect key="frame" x="20" y="15" width="387" height="98"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3v-oZ-9LS">
-                                        <rect key="frame" x="0.0" y="0.0" width="387" height="28"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="387" height="98"/>
                                         <string key="text">Can you show me benefit of 
 supplying our waste into your apps?Can you show me benefit of supplying our waste into your apps?ssaashjfgsjkhfgjhsdgfhjsdagfjhgjhdsgfjhsgdsjhgfdshjgfjhsdgfjhgsdjhfsdjhafjhdsgfjhgsdjhfgjhsdgfjhsdgfgsdjhf</string>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                        <color key="textColor" systemColor="systemGroupedBackgroundColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uf1-au-wph">
-                                        <rect key="frame" x="0.0" y="28" width="387" height="28"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="28" id="Xuj-b3-H2n"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
-                                        <connections>
-                                            <action selector="buttonClickedWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="C9c-R1-tnr"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -77,31 +66,20 @@ supplying our waste into your apps?Can you show me benefit of supplying our wast
                         <rect key="frame" x="20" y="6" width="427" height="171"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="08.31" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUA-LP-QTg">
-                                <rect key="frame" x="16" y="75" width="395" height="91"/>
+                                <rect key="frame" x="16" y="39" width="395" height="127"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
                                 <color key="textColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="33P-ek-VAu">
-                                <rect key="frame" x="20" y="15" width="387" height="56"/>
+                                <rect key="frame" x="20" y="15" width="387" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Can you show " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iww-az-HJV">
-                                        <rect key="frame" x="0.0" y="0.0" width="387" height="28"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="387" height="20"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                        <color key="textColor" red="0.0078431372549019607" green="0.015686274509803921" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yE-tX-x9N">
-                                        <rect key="frame" x="0.0" y="28" width="387" height="28"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="28" id="ITh-AC-5rx"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
-                                        <connections>
-                                            <action selector="buttonClickedWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3kC-Eg-ySB"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -138,11 +116,9 @@ supplying our waste into your apps?Can you show me benefit of supplying our wast
                 <constraint firstItem="g3K-gd-b9s" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" multiplier="0.8" id="jrr-JW-XFa"/>
             </constraints>
             <connections>
-                <outlet property="linkClickableButton" destination="uf1-au-wph" id="t8a-XS-rt0"/>
                 <outlet property="mainHolderview" destination="g3K-gd-b9s" id="8PK-kz-wzE"/>
                 <outlet property="messageLabel" destination="a3v-oZ-9LS" id="5jB-Wg-gUv"/>
                 <outlet property="receiverHolderView" destination="5PO-it-m4B" id="FPD-TC-TV8"/>
-                <outlet property="receiverLinkClickableButton" destination="9yE-tX-x9N" id="90w-hf-qmU"/>
                 <outlet property="receiverMessageLabel" destination="Iww-az-HJV" id="HYY-9L-B1L"/>
                 <outlet property="receiverTimeLabel" destination="IUA-LP-QTg" id="4Q9-b5-GZn"/>
                 <outlet property="timeLabel" destination="fHZ-mq-gHV" id="uC6-vT-gGL"/>
@@ -159,9 +135,6 @@ supplying our waste into your apps?Can you show me benefit of supplying our wast
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

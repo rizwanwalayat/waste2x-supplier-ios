@@ -98,8 +98,7 @@ class ChatMessagesViewController: BaseViewController {
             } else {
                 // Fallback on earlier versions
             }        }))
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         self.present(alert, animated: true, completion: nil)
         
         
@@ -139,7 +138,7 @@ class ChatMessagesViewController: BaseViewController {
     
     override func imageSelectedFromGalleryOrCamera(selectedImage: UIImage) {
         
-        TwillioChatDataModel.shared.sendFile(image: selectedImage)
+        TwillioChatDataModel.shared.sendImage(image: selectedImage)
     }
     
     func tableViewsIntegrations()
@@ -235,8 +234,7 @@ extension ChatMessagesViewController : UITableViewDelegate, UITableViewDataSourc
         
         let arrayIndex  = TwillioChatDataModel.shared.messages.count - indexPath.row
         let message = TwillioChatDataModel.shared.messages[arrayIndex - 1]
-        cell.mainVC = self
-        cell.index = indexPath.row
+        
         cell.messagesHandling(message)
         /// code for pagination
         if indexPath.row == TwillioChatDataModel.shared.messages.count - 1
@@ -249,14 +247,37 @@ extension ChatMessagesViewController : UITableViewDelegate, UITableViewDataSourc
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+  
+        
+        let arrayIndex  = TwillioChatDataModel.shared.messages.count - indexPath.row
+        let message = TwillioChatDataModel.shared.messages[arrayIndex - 1]
+        if message.hasMedia() {
+            message.getMediaContentTemporaryUrl { result, url in
+                
+                guard let url = url else { return }
+                if let mediaType = message.mediaType {
+                    if (mediaType.contains("image")){
+                        self.showImagePreview(fileString: url)
+                    } else if (mediaType.contains("pdf")) {
+                        self.pdfPreview(urlString: url)
+                    }
+                }
+
+            }
+        }
+
+    }
+    
 }
 
 extension ChatMessagesViewController: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        guard let myUrl = urls.last else {
+        guard let myUrl = urls.first else {
             return
         }
-        TwillioChatDataModel.shared.sendDocument(docURl: myUrl)
         
+        TwillioChatDataModel.shared.sendFile(url: myUrl)
     }
 }

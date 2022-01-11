@@ -49,10 +49,10 @@ class FullScreenImageViewController: UIViewController, UIGestureRecognizerDelega
         
         if displayImageString != ""
         {
-            if displayImage == nil
-            {
-                indicatorHolderView.isHidden = false
-            }
+//            if displayImage == nil
+//            {
+//                indicatorHolderView.isHidden = false
+//            }
             
             let url = URL(string: displayImageString)
             

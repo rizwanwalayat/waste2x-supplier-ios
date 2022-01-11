@@ -81,7 +81,7 @@ PODS:
   - SDWebImage/Core (5.11.1)
   - SlideMenuControllerSwift (4.0.0)
   - StepIndicator (1.0.8)
-  - TwilioChatClient (2.6.6)
+  - TwilioChatClient (5.0.1)
   - YoutubePlayer-in-WKWebView (0.3.5)
 
 DEPENDENCIES:
@@ -99,7 +99,7 @@ DEPENDENCIES:
   - SDWebImage
   - SlideMenuControllerSwift
   - StepIndicator (~> 1.0.8)
-  - TwilioChatClient (~> 2.6.6)
+  - TwilioChatClient (~> 5.0.1)
   - YoutubePlayer-in-WKWebView
 
 SPEC REPOS:
@@ -154,9 +154,9 @@ SPEC CHECKSUMS:
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
   StepIndicator: 748b293f671355b021253f82031ac002f153dc81
-  TwilioChatClient: 23168c2df8e306da1cedcad1d60ba69862235358
+  TwilioChatClient: 2a915858c972075108da2fd5fc382f237b1490cc
   YoutubePlayer-in-WKWebView: cfbf46da51d7370662a695a8f351e5fa1d3e1008
 
-PODFILE CHECKSUM: b52e829178276ac452680ceaf200ab0778bda1fc
+PODFILE CHECKSUM: 883f9f0b2170868258db5a05fb16e18dc728cf0a
 
 COCOAPODS: 1.11.0.beta.2

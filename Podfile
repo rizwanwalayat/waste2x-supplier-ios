@@ -16,7 +16,7 @@ target 'EnMass' do
   pod 'StepIndicator', '~> 1.0.8'
   pod 'SDWebImage'
   pod "YoutubePlayer-in-WKWebView"
-  pod 'TwilioChatClient', '~> 2.6.6'
+  pod 'TwilioChatClient', '~> 5.0.1'
   pod 'Firebase/Database'
   pod "Columbus"
   pod 'lottie-ios'
