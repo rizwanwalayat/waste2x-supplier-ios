@@ -57,15 +57,17 @@ class TwillioChatDataModel: NSObject {
         }
     }
     
-    func sendImage(image: UIImage) {
+    func sendImage(image: UIImage, url: URL) {
         guard let fileData =  image.pngData() else {
             return
         }
         
         let stream = InputStream(data: fileData)
+        let fileName = url.lastPathComponent
+        let fileExt = fileName.split(separator: ".").last ?? "jpeg"
         if let messages = self.channel?.messages {
             
-            let messageOptions = TCHMessageOptions().withMediaStream(stream, contentType: "image/jpeg", defaultFilename: "image.jpg") {
+            let messageOptions = TCHMessageOptions().withMediaStream(stream, contentType: "image/\(fileExt)", defaultFilename: fileName) {
                 print("Media upload started")
             } onProgress: { bytes in
                 print("Media upload progress: \(bytes)")

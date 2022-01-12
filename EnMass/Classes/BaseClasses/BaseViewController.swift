@@ -59,7 +59,7 @@ class BaseViewController: UIViewController {
     
     func pdfPreview(urlString:String){
         pdfView.translatesAutoresizingMaskIntoConstraints = false
-        let button = UIButton(frame: CGRect(x: 10, y: 10, width: 100, height: 40))
+        let button = UIButton(frame: CGRect(x: view.frame.width - 50 - 20, y: 20, width: 50, height: 30))
         button.setTitle("Close", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor(named: "inactive") ?? .gray

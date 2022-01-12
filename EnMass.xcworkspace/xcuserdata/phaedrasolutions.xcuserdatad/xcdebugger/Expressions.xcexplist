@@ -85,6 +85,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ImagePickerVC.imagePickerController(_:didFinishPickingMediaWithInfo:):ImagePickerVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ImagePickerVC.shared.delegate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "WasteDetailViewController.dataPopulateInUI():WasteDetailViewModel.swift">
          <PersistentStrings>
             <PersistentString

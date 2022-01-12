@@ -9,11 +9,16 @@
 import UIKit
 import Photos
 
+protocol UIImagePickerDelegate {
+    func imagePicker(_ controller: UIViewController, image: UIImage, didPickImageAt url: URL)
+}
+
 class ImagePickerVC : NSObject , UIImagePickerControllerDelegate , UINavigationControllerDelegate{
 
     //Declarations
     var sourceVC = BaseViewController()
     
+    var delegate: UIImagePickerDelegate? = nil
     //Getting shared instance
     static let shared = ImagePickerVC()
 
@@ -154,10 +159,18 @@ class ImagePickerVC : NSObject , UIImagePickerControllerDelegate , UINavigationC
     
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])
     {
-        var image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        guard var image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {return}
+        var url = info[UIImagePickerController.InfoKey.imageURL] != nil ? info[UIImagePickerController.InfoKey.imageURL] as! URL : getDocumentsDirectory().appendingPathComponent(UUID().uuidString) as! URL
+       
+//        guard let url = info[UIImagePickerController.InfoKey.imageURL] as? URL else {return}
         
-        image = image?.fixedOrientation()
-    sourceVC.perform(#selector(BaseViewController.imageSelectedFromGalleryOrCamera(selectedImage:)), with: image, afterDelay: 0.3)
+        
+        image = image.fixedOrientation()!
+        
+        sourceVC.perform(#selector(BaseViewController.imageSelectedFromGalleryOrCamera(selectedImage:)), with: image, afterDelay: 0.3)
+        if ImagePickerVC.shared.delegate != nil {
+            ImagePickerVC.shared.delegate?.imagePicker(sourceVC, image: image, didPickImageAt: url )
+        }
         picker.dismiss(animated: true , completion: nil)
     }
     
@@ -175,6 +188,11 @@ class ImagePickerVC : NSObject , UIImagePickerControllerDelegate , UINavigationC
         let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return newImage
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
 }
 

@@ -87,6 +87,7 @@ class ChatMessagesViewController: BaseViewController {
         
         alert.addAction(UIAlertAction(title: "Image", style: .default, handler: { action in
             ImagePickerVC.shared.showImagePickerFromVC(fromVC: self)
+            ImagePickerVC.shared.delegate = self
         }))
         
         alert.addAction(UIAlertAction(title: "Document", style: .default, handler: { action in
@@ -136,10 +137,9 @@ class ChatMessagesViewController: BaseViewController {
         }
     }
     
-    override func imageSelectedFromGalleryOrCamera(selectedImage: UIImage) {
-        
-        TwillioChatDataModel.shared.sendImage(image: selectedImage)
-    }
+//    override func imageSelectedFromGalleryOrCamera(selectedImage: UIImage) {
+//        TwillioChatDataModel.shared.sendImage(image: image, url: url)
+//    }
     
     func tableViewsIntegrations()
     {
@@ -250,7 +250,6 @@ extension ChatMessagesViewController : UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
   
-        
         let arrayIndex  = TwillioChatDataModel.shared.messages.count - indexPath.row
         let message = TwillioChatDataModel.shared.messages[arrayIndex - 1]
         if message.hasMedia() {
@@ -264,12 +263,9 @@ extension ChatMessagesViewController : UITableViewDelegate, UITableViewDataSourc
                         self.pdfPreview(urlString: url)
                     }
                 }
-
             }
         }
-
     }
-    
 }
 
 extension ChatMessagesViewController: UIDocumentPickerDelegate {
@@ -280,4 +276,11 @@ extension ChatMessagesViewController: UIDocumentPickerDelegate {
         
         TwillioChatDataModel.shared.sendFile(url: myUrl)
     }
+}
+
+extension ChatMessagesViewController: UIImagePickerDelegate {
+    func imagePicker(_ controller: UIViewController, image: UIImage, didPickImageAt url: URL) {
+        TwillioChatDataModel.shared.sendImage(image: image, url: url)
+    }
+        
 }
