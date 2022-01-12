@@ -25,6 +25,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ChatMessagesViewController.imageSelectedFromGalleryOrCamera(selectedImage:):ChatMessagesViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DetailPendingCollectionTableViewCell.confirmConfig(data:):DetailPendingCollectionTableViewCell.swift">
          <PersistentStrings>
             <PersistentString
@@ -61,6 +69,9 @@
                value = "self.startingLocation">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChatMessagesViewController.documentPicker(_:didPickDocumentsAt:):ChatMessagesViewController.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in TrackerViewController.fetchGoogleMapData(Starting:Ending:):TrackerViewController.swift">

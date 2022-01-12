@@ -62,16 +62,16 @@ class DetailPendingCollectionTableViewCell: BaseTableViewCell {
             if  data.history.count > 0{
                 
                 self.activityDate1.text = data.history[0].activityDate
-                self.stepperView.currentStep = 0
+                self.stepperView.currentStep = 1
             }
             
             if data.history.count > 1 {
                 self.activityDate2.text = data.history[1].activityDate
-                self.stepperView.currentStep = 1
+                self.stepperView.currentStep = 2
             }
             if data.history.count > 2 {
                 self.activityDate3.text = data.history[2].activityDate
-                self.stepperView.currentStep = 2
+                self.stepperView.currentStep = 3
             }
             if data.history.count > 3 {
                 self.activityDate4.text = data.history[3].activityDate

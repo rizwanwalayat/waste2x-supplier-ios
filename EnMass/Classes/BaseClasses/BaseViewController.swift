@@ -59,6 +59,13 @@ class BaseViewController: UIViewController {
     
     func pdfPreview(urlString:String){
         pdfView.translatesAutoresizingMaskIntoConstraints = false
+        let button = UIButton(frame: CGRect(x: 10, y: 10, width: 100, height: 40))
+        button.setTitle("Close", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = UIColor(named: "inactive") ?? .gray
+        button.layer.cornerRadius = 4
+        button.addTarget(self, action: #selector(closePdfPreview), for: .touchUpInside)
+        pdfView.addSubview(button)
         view.addSubview(pdfView)
 
         pdfView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
@@ -71,6 +78,12 @@ class BaseViewController: UIViewController {
             pdfView.document = document
         }
     }
+    
+    @objc func closePdfPreview(){
+        pdfView.removeFromSuperview()
+        
+    }
+    
     func showToast(message : String) {
 
        

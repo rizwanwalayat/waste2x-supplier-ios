@@ -86,12 +86,12 @@ class TwillioChatDataModel: NSObject {
     func sendFile(url: URL) {
         do {
             _ = url.startAccessingSecurityScopedResource()
+            let fileName = url.lastPathComponent
             let fileData = try Data(contentsOf: url)
-            
             let stream = InputStream(data: fileData)
             if let messages = self.channel?.messages {
                 
-                let messageOptions = TCHMessageOptions().withMediaStream(stream, contentType: "application/pdf", defaultFilename: "document.pdf") {
+                let messageOptions = TCHMessageOptions().withMediaStream(stream, contentType: "application/pdf", defaultFilename: fileName) {
                     print("Media upload started")
                 } onProgress: { bytes in
                     print("Media upload progress: \(bytes)")
@@ -101,11 +101,10 @@ class TwillioChatDataModel: NSObject {
 
                 messages.sendMessage(with: messageOptions) { result, message in
                     if !result.isSuccessful() {
-                                print("Creation failed: \(String(describing: result.error))")
-                            } else {
-                                print("Creation successful")
-                            }
-                    
+                        print("Creation failed: \(String(describing: result.error))")
+                    } else {
+                        print("Creation successful")
+                    }
                 }
             }
             url.stopAccessingSecurityScopedResource()

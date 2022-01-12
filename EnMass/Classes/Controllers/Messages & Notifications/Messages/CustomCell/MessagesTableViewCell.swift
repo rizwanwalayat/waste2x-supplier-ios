@@ -15,12 +15,10 @@ class MessagesTableViewCell: UITableViewCell {
     @IBOutlet weak var mainHolderview : UIView!
     @IBOutlet weak var messageLabel : UILabel!
     @IBOutlet weak var timeLabel : UILabel!
-    @IBOutlet weak var linkClickableButton: UIButton!
     
     @IBOutlet weak var receiverHolderView: UIView!
     @IBOutlet weak var receiverTimeLabel: UILabel!
     @IBOutlet weak var receiverMessageLabel: UILabel!
-    @IBOutlet weak var receiverLinkClickableButton: UIButton!
   
     
     override func awakeFromNib() {
@@ -39,20 +37,7 @@ class MessagesTableViewCell: UITableViewCell {
     {
         receiverHolderView.isHidden = true
         mainHolderview.isHidden = true
-        if cellData.hasMedia() {
-            messageLabel.text = cellData.mediaFilename
-            receiverMessageLabel.text = cellData.mediaFilename
-            messageLabel.textColor = UIColor(named: "primary") ?? .blue
-            receiverMessageLabel.textColor = UIColor(named: "primary") ?? .blue
-        } else {
-            messageLabel.text = cellData.body
-            receiverMessageLabel.text = cellData.body
-            messageLabel.textColor = .black
-            receiverMessageLabel.textColor = .white
-        }
-      
        
-        
         self.transform  = CGAffineTransform(scaleX: 1, y: -1)
         if let author = cellData.author?.trimmingCharacters(in: .whitespaces).uppercased(), let phone = DataManager.shared.getUser()?.result?.phone.trimmingCharacters(in: .whitespaces).uppercased() {
             
