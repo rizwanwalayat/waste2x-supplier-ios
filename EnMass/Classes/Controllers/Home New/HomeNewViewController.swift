@@ -303,8 +303,16 @@ extension HomeNewViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let vc = DetailedPendingCollectionViewController(nibName: "DetailedPendingCollectionViewController", bundle: nil)
-        vc.id = visiableCollectionsArray[indexPath.row].id
-        vc.isPoRequest = (selectedTab == .poReqests || selectedTab == .rejected) ? true : false
+        if (selectedTab == .poReqests || selectedTab == .rejected) {
+            
+            vc.id = visiableCollectionsArray[indexPath.row].notificationId
+            vc.isPoRequest = true
+        }
+        else
+        {
+            vc.id = visiableCollectionsArray[indexPath.row].id
+            vc.isPoRequest = false//(selectedTab == .poReqests || selectedTab == .rejected) ? true : false
+        }
         self.navigationController?.pushTo(controller: vc)
     }
     
