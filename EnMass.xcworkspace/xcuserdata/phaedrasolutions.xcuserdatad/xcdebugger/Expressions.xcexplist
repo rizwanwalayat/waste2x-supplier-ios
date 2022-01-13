@@ -44,6 +44,14 @@
          contextName = "AmountWasteViewController.selectionHandlingsOfViews(_:isSelection:):AmountWasteViewController.swift">
       </ContextState>
       <ContextState
+         contextName = "ChatMessagesViewController.tableView(_:cellForRowAt:):ChatMessagesViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "TwillioChatDataModel.shared.messages.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "AppDelegate.application(_:didFinishLaunchingWithOptions:):AppDelegate.swift">
          <PersistentStrings>
             <PersistentString
@@ -74,6 +82,20 @@
          contextName = "ChatMessagesViewController.documentPicker(_:didPickDocumentsAt:):ChatMessagesViewController.swift">
       </ContextState>
       <ContextState
+         contextName = "ImagePickerVC.imagePickerController(_:didFinishPickingMediaWithInfo:):ImagePickerVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "info[UIImagePickerController.InfoKey.imageURL]">
+            </PersistentString>
+            <PersistentString
+               value = "ImagePickerVC.shared.delegate">
+            </PersistentString>
+            <PersistentString
+               value = "url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in TrackerViewController.fetchGoogleMapData(Starting:Ending:):TrackerViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -81,14 +103,6 @@
             </PersistentString>
             <PersistentString
                value = "Starting">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ImagePickerVC.imagePickerController(_:didFinishPickingMediaWithInfo:):ImagePickerVC.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "ImagePickerVC.shared.delegate">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

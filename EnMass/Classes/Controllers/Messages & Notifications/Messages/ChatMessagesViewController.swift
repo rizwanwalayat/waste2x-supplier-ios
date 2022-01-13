@@ -279,8 +279,8 @@ extension ChatMessagesViewController: UIDocumentPickerDelegate {
 }
 
 extension ChatMessagesViewController: UIImagePickerDelegate {
-    func imagePicker(_ controller: UIViewController, image: UIImage, didPickImageAt url: URL) {
-        TwillioChatDataModel.shared.sendImage(image: image, url: url)
+    func imagePicker(_ controller: UIViewController, image: UIImage, didPickImageAt fileName: String) {
+        TwillioChatDataModel.shared.sendImage(image: image, fileName: fileName)
     }
         
 }

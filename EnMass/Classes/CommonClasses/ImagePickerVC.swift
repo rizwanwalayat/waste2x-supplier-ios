@@ -10,7 +10,7 @@ import UIKit
 import Photos
 
 protocol UIImagePickerDelegate {
-    func imagePicker(_ controller: UIViewController, image: UIImage, didPickImageAt url: URL)
+    func imagePicker(_ controller: UIViewController, image: UIImage, didPickImageAt fileName: String)
 }
 
 class ImagePickerVC : NSObject , UIImagePickerControllerDelegate , UINavigationControllerDelegate{
@@ -29,7 +29,7 @@ class ImagePickerVC : NSObject , UIImagePickerControllerDelegate , UINavigationC
     func showImagePickerFromVC(fromVC:BaseViewController)
     {
         sourceVC = fromVC
-        let alertController = UIAlertController.init(title: "", message: "Select image From?", preferredStyle: .actionSheet)
+        let alertController = UIAlertController.init(title: "", message: "Select Image from", preferredStyle: .actionSheet)
         
         let galleryButton = UIAlertAction.init(title: "Gallery", style: .default) { (completed) in
            self.userClickedOnGallery()
@@ -160,16 +160,23 @@ class ImagePickerVC : NSObject , UIImagePickerControllerDelegate , UINavigationC
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])
     {
         guard var image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {return}
-        var url = info[UIImagePickerController.InfoKey.imageURL] != nil ? info[UIImagePickerController.InfoKey.imageURL] as! URL : getDocumentsDirectory().appendingPathComponent(UUID().uuidString) as! URL
+      
+        var fileName = ""
+        if info[UIImagePickerController.InfoKey.imageURL] != nil {
+            let url = info[UIImagePickerController.InfoKey.imageURL] as! URL
+            fileName = url.lastPathComponent
+        } else {
+            fileName = "\(UUID().uuidString).png"
+        }
+//        let fileName = info[UIImagePickerController.InfoKey.imageURL] != nil ? (info[UIImagePickerController.InfoKey.imageURL] as! URL).lastPathComponent : "\(UUID().uuidString).jpeg"
        
-//        guard let url = info[UIImagePickerController.InfoKey.imageURL] as? URL else {return}
         
         
         image = image.fixedOrientation()!
         
         sourceVC.perform(#selector(BaseViewController.imageSelectedFromGalleryOrCamera(selectedImage:)), with: image, afterDelay: 0.3)
         if ImagePickerVC.shared.delegate != nil {
-            ImagePickerVC.shared.delegate?.imagePicker(sourceVC, image: image, didPickImageAt: url )
+            ImagePickerVC.shared.delegate?.imagePicker(sourceVC, image: image, didPickImageAt: fileName)
         }
         picker.dismiss(animated: true , completion: nil)
     }
