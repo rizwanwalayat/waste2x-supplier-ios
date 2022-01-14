@@ -44,12 +44,15 @@
          contextName = "AmountWasteViewController.selectionHandlingsOfViews(_:isSelection:):AmountWasteViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "ChatMessagesViewController.tableView(_:cellForRowAt:):ChatMessagesViewController.swift">
+         contextName = "closure #1 in ChatMessagesViewController.tableView(_:didSelectRowAt:):ChatMessagesViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "TwillioChatDataModel.shared.messages.count">
+               value = "message.mediaType">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SideMenuViewController.populateUsersData():SideMenuViewController.swift">
       </ContextState>
       <ContextState
          contextName = "AppDelegate.application(_:didFinishLaunchingWithOptions:):AppDelegate.swift">
@@ -88,10 +91,13 @@
                value = "info[UIImagePickerController.InfoKey.imageURL]">
             </PersistentString>
             <PersistentString
+               value = "imagePath">
+            </PersistentString>
+            <PersistentString
                value = "ImagePickerVC.shared.delegate">
             </PersistentString>
             <PersistentString
-               value = "url">
+               value = "sourceVC">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -118,18 +124,21 @@
          contextName = "CurrentWasteTableViewCell.setCellData(_:):CurrentWasteTableViewCell.swift">
       </ContextState>
       <ContextState
-         contextName = "TrackerViewController.viewWillAppear(_:):TrackerViewController.swift">
+         contextName = "ChatMessagesViewController.tableView(_:cellForRowAt:):ChatMessagesViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "trackID">
+               value = "TwillioChatDataModel.shared.messages.count">
+            </PersistentString>
+            <PersistentString
+               value = "TwillioChatDataModel.shared.messages">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in ChatMessagesViewController.tableView(_:didSelectRowAt:):ChatMessagesViewController.swift">
+         contextName = "TrackerViewController.viewWillAppear(_:):TrackerViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "message.mediaType">
+               value = "trackID">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

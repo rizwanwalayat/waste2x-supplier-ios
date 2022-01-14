@@ -58,12 +58,12 @@ class TwillioChatDataModel: NSObject {
     }
     
     func sendImage(image: UIImage, fileName: String) {
-        guard let fileData =  image.pngData() else {
+        guard let fileData =  image.jpegData(compressionQuality: 0.8) else {
             return
         }
         
         let stream = InputStream(data: fileData)
-        let fileExt = fileName.split(separator: ".").last ?? "png"
+        let fileExt = fileName.split(separator: ".").last ?? "jpeg"
         if let messages = self.channel?.messages {
             
             let messageOptions = TCHMessageOptions().withMediaStream(stream, contentType: "image/\(fileExt)", defaultFilename: fileName) {

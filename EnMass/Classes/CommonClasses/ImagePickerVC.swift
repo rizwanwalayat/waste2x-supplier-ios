@@ -159,29 +159,56 @@ class ImagePickerVC : NSObject , UIImagePickerControllerDelegate , UINavigationC
     
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])
     {
-        guard var image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {return}
+        guard var image = info[.originalImage] as? UIImage else {return}
       
         var fileName = ""
-        if info[UIImagePickerController.InfoKey.imageURL] != nil {
-            let url = info[UIImagePickerController.InfoKey.imageURL] as! URL
+        if info[.imageURL] != nil {
+            let url = info[.imageURL] as! URL
             fileName = url.lastPathComponent
         } else {
-            fileName = "\(UUID().uuidString).png"
+            let imageName = UUID().uuidString
+            fileName = "\(imageName).jpeg"
+
+            let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
+            if let jpegData = image.jpegData(compressionQuality: 0.8) {
+                do {
+                    try jpegData.write(to: imagePath)
+                    
+                image = getSavedImage(named: fileName) ?? UIImage()
+                }
+                catch {
+                    print("Error Writing Image: \(error)")
+                }
+            }
+            
+            
+//            image = UIImage(contentsOfFile: imagePath.absoluteString) ?? image
         }
-//        let fileName = info[UIImagePickerController.InfoKey.imageURL] != nil ? (info[UIImagePickerController.InfoKey.imageURL] as! URL).lastPathComponent : "\(UUID().uuidString).jpeg"
-       
-        
         
         image = image.fixedOrientation()!
         
-        sourceVC.perform(#selector(BaseViewController.imageSelectedFromGalleryOrCamera(selectedImage:)), with: image, afterDelay: 0.3)
-        if ImagePickerVC.shared.delegate != nil {
+        if sourceVC is ChatMessagesViewController, ImagePickerVC.shared.delegate != nil {
             ImagePickerVC.shared.delegate?.imagePicker(sourceVC, image: image, didPickImageAt: fileName)
+        } else {
+            sourceVC.perform(#selector(BaseViewController.imageSelectedFromGalleryOrCamera(selectedImage:)), with: image, afterDelay: 0.3)
         }
         picker.dismiss(animated: true , completion: nil)
     }
     
+    func getSavedImage(named: String) -> UIImage? {
+        if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
+            return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(named).path)
+        }
+        return nil
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
     /*****************************************/
+    
     
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
         picker.dismiss(animated: true , completion: nil)
@@ -197,10 +224,6 @@ class ImagePickerVC : NSObject , UIImagePickerControllerDelegate , UINavigationC
         return newImage
     }
     
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
-    }
 }
 
 /*****************************************/

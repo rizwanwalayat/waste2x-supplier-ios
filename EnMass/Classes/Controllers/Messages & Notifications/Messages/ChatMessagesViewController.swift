@@ -86,8 +86,10 @@ class ChatMessagesViewController: BaseViewController {
         let alert = UIAlertController(title: "Attachment Type", message: "", preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Image", style: .default, handler: { action in
-            ImagePickerVC.shared.showImagePickerFromVC(fromVC: self)
+            ImagePickerVC.shared.sourceVC = self
             ImagePickerVC.shared.delegate = self
+            ImagePickerVC.shared.proceedWithGallery()
+
         }))
         
         alert.addAction(UIAlertAction(title: "Document", style: .default, handler: { action in
@@ -229,23 +231,28 @@ extension ChatMessagesViewController : UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MessagesTableViewCell", for: indexPath) as! MessagesTableViewCell
-        
-        let arrayIndex  = TwillioChatDataModel.shared.messages.count - indexPath.row
-        let message = TwillioChatDataModel.shared.messages[arrayIndex - 1]
-        
-        cell.messagesHandling(message)
-        /// code for pagination
-        if indexPath.row == TwillioChatDataModel.shared.messages.count - 1
-        {
-            if TwillioChatDataModel.shared.messages.count >= TwillioChatDataModel.shared.messagesPageCount
+        if !TwillioChatDataModel.shared.messages.isEmpty {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MessagesTableViewCell", for: indexPath) as! MessagesTableViewCell
+            
+           
+            let arrayIndex  = TwillioChatDataModel.shared.messages.count - indexPath.row
+            let message = TwillioChatDataModel.shared.messages[arrayIndex - 1]
+            
+            cell.messagesHandling(message)
+           
+            /// code for pagination
+            if indexPath.row == TwillioChatDataModel.shared.messages.count - 1
             {
-                TwillioChatDataModel.shared.fetchMoreMesseges()
+                if TwillioChatDataModel.shared.messages.count >= TwillioChatDataModel.shared.messagesPageCount
+                {
+                    TwillioChatDataModel.shared.fetchMoreMesseges()
+                }
             }
+           
+            return cell
+        } else {
+            return UITableViewCell()
         }
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

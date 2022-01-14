@@ -114,14 +114,17 @@ class SideMenuViewController: BaseViewController {
         
         guard let user = DataManager.shared.getUserDetail() else {return}
         self.phoneNumberLabel.text = user.phone.toPhoneNumber()
-        
-        self.downloadImageFromServer(user.image) { image, error, success in
+        if !user.image.isEmpty {
             
-            if success ?? false && image != nil {
-                self.userImage.image = image
+            self.downloadImageFromServer(user.image) { image, error, success in
+                
+                if success ?? false && image != nil {
+                    self.userImage.image = image
+                }
             }
         }
     }
+        
     
     
 }
