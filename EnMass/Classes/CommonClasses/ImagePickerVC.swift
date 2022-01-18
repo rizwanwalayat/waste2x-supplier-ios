@@ -169,17 +169,17 @@ class ImagePickerVC : NSObject , UIImagePickerControllerDelegate , UINavigationC
             let imageName = UUID().uuidString
             fileName = "\(imageName).jpeg"
 
-            let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
-            if let jpegData = image.jpegData(compressionQuality: 0.8) {
-                do {
-                    try jpegData.write(to: imagePath)
-                    
-                image = getSavedImage(named: fileName) ?? UIImage()
-                }
-                catch {
-                    print("Error Writing Image: \(error)")
-                }
-            }
+//            let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
+//            if let jpegData = image.jpegData(compressionQuality: 0.1) {
+//                do {
+//                    try jpegData.write(to: imagePath)
+//                    
+//                image = getSavedImage(named: fileName) ?? UIImage()
+//                }
+//                catch {
+//                    print("Error Writing Image: \(error)")
+//                }
+//            }
             
             
 //            image = UIImage(contentsOfFile: imagePath.absoluteString) ?? image

@@ -12,6 +12,12 @@ extension UIColor {
     static var primary: UIColor {
         return UIColor(named: "primary") ?? UIColor(hexString: "007F97")
     }
+    static var secondary: UIColor {
+        return UIColor(named: "secondary") ?? UIColor(hexString: "FBCE09")
+    }
+    static var highlight: UIColor {
+        return UIColor(named: "highlight") ?? UIColor(hexString: "D9ECEF")
+    }
     static var icons: UIColor {
         return UIColor(named: "icons") ?? UIColor(hexString: "91BE7F")
     }

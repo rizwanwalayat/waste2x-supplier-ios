@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -56,30 +57,31 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHA-SM-uPd">
-                    <rect key="frame" x="373" y="52" width="25" height="25"/>
+                <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHA-SM-uPd">
+                    <rect key="frame" x="363" y="60" width="35" height="35"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crossIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Uym-iR-uGs">
-                            <rect key="frame" x="5" y="5" width="15" height="15"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cross" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uym-iR-uGs">
+                            <rect key="frame" x="10.5" y="10.5" width="14" height="14"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="15" id="2LU-SD-i55"/>
-                                <constraint firstAttribute="width" constant="15" id="ENU-x0-1cj"/>
+                                <constraint firstAttribute="height" constant="14" id="2LU-SD-i55"/>
+                                <constraint firstAttribute="width" constant="14" id="ENU-x0-1cj"/>
                             </constraints>
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrH-aS-OSG">
-                            <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                            <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                             <connections>
                                 <action selector="crossImageButtonTapped:" destination="-1" eventType="touchUpInside" id="7Gp-oA-gbe"/>
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" name="tabText"/>
                     <constraints>
                         <constraint firstItem="Uym-iR-uGs" firstAttribute="centerX" secondItem="mHA-SM-uPd" secondAttribute="centerX" id="5kz-ie-n5y"/>
                         <constraint firstAttribute="bottom" secondItem="xrH-aS-OSG" secondAttribute="bottom" id="B2H-t5-pV3"/>
                         <constraint firstItem="xrH-aS-OSG" firstAttribute="top" secondItem="mHA-SM-uPd" secondAttribute="top" id="GIl-Bz-KS3"/>
-                        <constraint firstAttribute="height" constant="25" id="H3Z-QX-F7J"/>
+                        <constraint firstAttribute="height" constant="35" id="H3Z-QX-F7J"/>
                         <constraint firstItem="xrH-aS-OSG" firstAttribute="leading" secondItem="mHA-SM-uPd" secondAttribute="leading" id="Mhg-NW-5Jq"/>
                         <constraint firstItem="Uym-iR-uGs" firstAttribute="centerY" secondItem="mHA-SM-uPd" secondAttribute="centerY" id="U7f-oF-J82"/>
                         <constraint firstAttribute="trailing" secondItem="xrH-aS-OSG" secondAttribute="trailing" id="YA2-mK-Nta"/>
@@ -89,6 +91,7 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <real key="value" value="12.5"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isCirculer" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
@@ -98,7 +101,7 @@
                 <constraint firstItem="BPl-fl-Ko0" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="5P7-VH-zQc"/>
                 <constraint firstItem="LFN-Fv-84q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Dq4-QZ-Cou"/>
                 <constraint firstItem="LFN-Fv-84q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OVn-pQ-3EC"/>
-                <constraint firstItem="mHA-SM-uPd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="Y1J-bh-6R5"/>
+                <constraint firstItem="mHA-SM-uPd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="Y1J-bh-6R5"/>
                 <constraint firstItem="BPl-fl-Ko0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="iur-CL-fAT"/>
                 <constraint firstItem="LFN-Fv-84q" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="jVh-yj-NXc"/>
                 <constraint firstAttribute="bottom" secondItem="LFN-Fv-84q" secondAttribute="bottom" id="t48-Hs-fKS"/>
@@ -108,6 +111,9 @@
         </view>
     </objects>
     <resources>
-        <image name="crossIcon" width="25" height="25"/>
+        <image name="Cross" width="8" height="8"/>
+        <namedColor name="tabText">
+            <color red="0.2669999897480011" green="0.2669999897480011" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

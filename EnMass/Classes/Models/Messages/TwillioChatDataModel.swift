@@ -58,7 +58,7 @@ class TwillioChatDataModel: NSObject {
     }
     
     func sendImage(image: UIImage, fileName: String) {
-        guard let fileData =  image.jpegData(compressionQuality: 0.8) else {
+        guard let fileData =  image.jpegData(compressionQuality: 0.7) else {
             return
         }
         

@@ -59,10 +59,10 @@ class BaseViewController: UIViewController {
     
     func pdfPreview(urlString:String){
         pdfView.translatesAutoresizingMaskIntoConstraints = false
-        let button = UIButton(frame: CGRect(x: view.frame.width - 50 - 20, y: 20, width: 50, height: 30))
+        let button = UIButton(frame: CGRect(x: view.frame.width - 75 - 20, y: 20, width: 75, height: 35))
         button.setTitle("Close", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor(named: "inactive") ?? .gray
+        button.setTitleColor(UIColor.primary, for: .normal)
+        button.backgroundColor = UIColor.highlight
         button.layer.cornerRadius = 4
         button.addTarget(self, action: #selector(closePdfPreview), for: .touchUpInside)
         pdfView.addSubview(button)

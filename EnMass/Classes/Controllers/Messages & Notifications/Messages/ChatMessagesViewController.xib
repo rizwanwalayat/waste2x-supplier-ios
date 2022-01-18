@@ -20,6 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatMessagesViewController" customModule="EnMass" customModuleProvider="target">
             <connections>
+                <outlet property="attachmentButton" destination="AvD-va-Y8B" id="7c9-xE-mrp"/>
                 <outlet property="bottomConstOfView" destination="Wfp-wS-T5x" id="c2p-uf-v9x"/>
                 <outlet property="constHeightMessagesTextView" destination="9l2-rT-nwr" id="tpG-vt-0JX"/>
                 <outlet property="enterMessageTextView" destination="wfi-v1-Owi" id="MpZ-Wu-CWO"/>
@@ -43,10 +44,10 @@
                             <rect key="frame" x="0.0" y="44" width="414" height="57.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuV-3x-VKW">
-                                    <rect key="frame" x="30" y="18" width="22" height="22"/>
+                                    <rect key="frame" x="21" y="9" width="40" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="IuV-3x-VKW" secondAttribute="height" multiplier="1:1" id="LB6-Yb-Y8V"/>
-                                        <constraint firstAttribute="height" constant="22" id="xSg-X5-lQP"/>
+                                        <constraint firstAttribute="height" constant="40" id="xSg-X5-lQP"/>
                                     </constraints>
                                     <state key="normal" image="Arrow Left"/>
                                     <connections>
@@ -62,7 +63,7 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="IuV-3x-VKW" firstAttribute="leading" secondItem="G6I-Va-BeY" secondAttribute="leading" constant="30" id="1IJ-5k-d2j"/>
+                                <constraint firstItem="IuV-3x-VKW" firstAttribute="leading" secondItem="G6I-Va-BeY" secondAttribute="leading" constant="21" id="1IJ-5k-d2j"/>
                                 <constraint firstItem="IuV-3x-VKW" firstAttribute="centerY" secondItem="myO-oj-yNZ" secondAttribute="centerY" id="4LC-Ki-s1C"/>
                                 <constraint firstAttribute="bottom" secondItem="myO-oj-yNZ" secondAttribute="bottom" constant="16" id="daN-99-qEh"/>
                                 <constraint firstItem="myO-oj-yNZ" firstAttribute="centerX" secondItem="G6I-Va-BeY" secondAttribute="centerX" id="fhq-mz-nlN"/>
@@ -100,7 +101,7 @@
                                     </connections>
                                 </button>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bouncesZoom="NO" text="Write message" translatesAutoresizingMaskIntoConstraints="NO" id="wfi-v1-Owi">
-                                    <rect key="frame" x="12" y="12" width="269" height="34"/>
+                                    <rect key="frame" x="12" y="12" width="282" height="34"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="34" id="9l2-rT-nwr"/>
@@ -112,16 +113,17 @@
                                         <outlet property="delegate" destination="-1" id="keO-Yg-LVy"/>
                                     </connections>
                                 </textView>
-                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvD-va-Y8B" userLabel="Attachment Icon">
-                                    <rect key="frame" x="277" y="4" width="50" height="50"/>
+                                <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvD-va-Y8B" userLabel="Attachment Icon">
+                                    <rect key="frame" x="290" y="17.5" width="23" height="23"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="AvD-va-Y8B" secondAttribute="height" multiplier="1:1" id="WK0-2E-jvX"/>
-                                        <constraint firstAttribute="height" constant="50" id="wOA-7L-qw3"/>
+                                        <constraint firstAttribute="height" constant="23" id="wOA-7L-qw3"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                    <color key="tintColor" name="inactiveText"/>
+                                    <color key="tintColor" name="inactive"/>
                                     <state key="normal">
-                                        <imageReference key="image" image="paperclip" catalog="system" symbolScale="large"/>
+                                        <imageReference key="image" image="Attachment Paper Clip" symbolScale="large"/>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="ultraLight"/>
                                     </state>
                                     <connections>
                                         <action selector="selectAttachment:" destination="-1" eventType="touchUpInside" id="BmA-By-w8Y"/>
@@ -138,7 +140,7 @@
                                 <constraint firstItem="lJv-mR-1ax" firstAttribute="centerY" secondItem="y21-us-C4N" secondAttribute="centerY" id="glc-kc-USV"/>
                                 <constraint firstAttribute="bottom" secondItem="y21-us-C4N" secondAttribute="bottom" constant="4" id="tpn-7b-Rwn"/>
                                 <constraint firstItem="wfi-v1-Owi" firstAttribute="leading" secondItem="rMb-kr-q2u" secondAttribute="leading" constant="12" id="vH2-x2-ebZ"/>
-                                <constraint firstItem="AvD-va-Y8B" firstAttribute="trailing" secondItem="y21-us-C4N" secondAttribute="leading" constant="3" id="wIJ-gB-2KA"/>
+                                <constraint firstItem="AvD-va-Y8B" firstAttribute="trailing" secondItem="y21-us-C4N" secondAttribute="leading" constant="-11" id="wIJ-gB-2KA"/>
                                 <constraint firstItem="lJv-mR-1ax" firstAttribute="centerX" secondItem="y21-us-C4N" secondAttribute="centerX" id="wJz-oC-y3Q"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
@@ -186,10 +188,10 @@
     </objects>
     <resources>
         <image name="Arrow Left" width="10" height="18"/>
+        <image name="Attachment Paper Clip" width="256" height="256"/>
         <image name="Send" width="56" height="56"/>
-        <image name="paperclip" catalog="system" width="121" height="128"/>
-        <namedColor name="inactiveText">
-            <color red="0.62699997425079346" green="0.62400001287460327" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="inactive">
+            <color red="0.72500002384185791" green="0.71799999475479126" blue="0.75700002908706665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primary">
             <color red="0.0" green="0.49799999594688416" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -34,7 +34,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tickCircleBorder" translatesAutoresizingMaskIntoConstraints="NO" id="XEC-Qw-1fP">
                                         <rect key="frame" x="16" y="6" width="38" height="38"/>
-                                        <color key="tintColor" name="successMessageTextIcon"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="26y-4a-iMU"/>
                                             <constraint firstAttribute="width" secondItem="XEC-Qw-1fP" secondAttribute="height" multiplier="1:1" id="yh4-GN-m4Z"/>
@@ -43,11 +43,11 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You’ve accepted this Shipment." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5G9-Xd-Kan">
                                         <rect key="frame" x="66" y="16.5" width="208" height="17"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
-                                        <color key="textColor" name="successMessageTextIcon"/>
+                                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" name="successMessage"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="5G9-Xd-Kan" firstAttribute="centerY" secondItem="XEC-Qw-1fP" secondAttribute="centerY" id="78Z-1z-Cph"/>
                                     <constraint firstItem="XEC-Qw-1fP" firstAttribute="leading" secondItem="22w-mS-ubf" secondAttribute="leading" constant="16" id="Bcn-aY-1Aq"/>
@@ -187,9 +187,6 @@
         </namedColor>
         <namedColor name="successMessage">
             <color red="0.71399998664855957" green="0.97299998998641968" blue="0.76899999380111694" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="successMessageTextIcon">
-            <color red="0.11400000005960464" green="0.53700000047683716" blue="0.20399999618530273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

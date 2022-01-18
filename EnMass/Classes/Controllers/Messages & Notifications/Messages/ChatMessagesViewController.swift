@@ -24,10 +24,11 @@ class ChatMessagesViewController: BaseViewController {
     @IBOutlet weak var sendbutton: UIButton!
     @IBOutlet weak var sendIndicator: UIActivityIndicatorView!
     @IBOutlet weak var bottomConstOfView: NSLayoutConstraint!
+    @IBOutlet weak var attachmentButton: UIButton!
     
     
     //MARK: - Declarations
-    
+    var isAttachmentEnabled: Bool = true
     var textFildPlaceholder = UIColor(hexString: "9F9F9F")
     var placeHolderText = "Write message"
     var identity: String = ""
@@ -38,6 +39,7 @@ class ChatMessagesViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        attachmentButton.isHidden = !isAttachmentEnabled
         
         enterMessageTextView.text       = placeHolderText
         enterMessageTextView.textColor  = textFildPlaceholder
@@ -83,11 +85,14 @@ class ChatMessagesViewController: BaseViewController {
     }
     
     @IBAction func selectAttachment(_ sender: Any) {
-        let alert = UIAlertController(title: "Attachment Type", message: "", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Send", message: "", preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Image", style: .default, handler: { action in
-            ImagePickerVC.shared.sourceVC = self
+//            ImagePickerVC.shared.showImagePickerFromVC(fromVC: self)
+
             ImagePickerVC.shared.delegate = self
+            ImagePickerVC.shared.sourceVC = self
+
             ImagePickerVC.shared.proceedWithGallery()
 
         }))

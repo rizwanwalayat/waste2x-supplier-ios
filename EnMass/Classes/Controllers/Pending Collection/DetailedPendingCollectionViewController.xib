@@ -35,9 +35,9 @@
                             <rect key="frame" x="0.0" y="44" width="414" height="57.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cys-tG-j0y">
-                                    <rect key="frame" x="30" y="18" width="22" height="22"/>
+                                    <rect key="frame" x="21" y="9" width="40" height="40"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="22" id="BmL-G3-KK3"/>
+                                        <constraint firstAttribute="height" constant="40" id="BmL-G3-KK3"/>
                                         <constraint firstAttribute="width" secondItem="cys-tG-j0y" secondAttribute="height" multiplier="1:1" id="TBi-cz-ikm"/>
                                     </constraints>
                                     <state key="normal" image="Arrow Left"/>
@@ -58,7 +58,7 @@
                                 <constraint firstItem="ksx-Tf-ily" firstAttribute="centerX" secondItem="geW-8p-AGq" secondAttribute="centerX" id="Aec-Au-p5S"/>
                                 <constraint firstItem="ksx-Tf-ily" firstAttribute="top" secondItem="geW-8p-AGq" secondAttribute="top" constant="16" id="Dx7-Xx-dvp"/>
                                 <constraint firstItem="cys-tG-j0y" firstAttribute="centerY" secondItem="ksx-Tf-ily" secondAttribute="centerY" id="UNK-Js-6dw"/>
-                                <constraint firstItem="cys-tG-j0y" firstAttribute="leading" secondItem="geW-8p-AGq" secondAttribute="leading" constant="30" id="VL4-kq-xM5"/>
+                                <constraint firstItem="cys-tG-j0y" firstAttribute="leading" secondItem="geW-8p-AGq" secondAttribute="leading" constant="21" id="VL4-kq-xM5"/>
                             </constraints>
                         </view>
                     </subviews>
