@@ -20,7 +20,7 @@ struct APIRoutes {
 //    static var baseUrl = "https://app.enmassenergy.com/" //Live
 //    static var baseUrl = "https://cache-admin-panel-production.appspot.com/" //Production
     static var baseUrl = "https://enmass-cache-programme.appspot.com/" //Staging
-//    static var baseUrl = "https://4a0e5566723457.localhost.run/" //Local
+//    static var baseUrl = "https://ef6f31d6a8fdc8.lhr.life/" //Local
     
 
     

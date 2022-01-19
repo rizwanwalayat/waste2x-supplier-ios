@@ -97,11 +97,29 @@ extension ChatMessagesViewController{
                                            section: 0)
         tableViewMessages.scrollToRow(at: bottomMessageIndex, at: .top, animated: true)
     }
+    
+    private func twilioFileUploadStarted(){
+//        self.tableViewMessages.
+        
+    }
 }
 
 
 extension ChatMessagesViewController : TwillioChatDataModelDelegate
 {
+    func fileUploadStarted() {
+        self.twilioFileUploadStarted()
+    }
+    
+    func fileUploadProgress(bytes: Int) {
+        
+    }
+    
+    func fileUploadCompleted() {
+        
+    }
+    
+   
     func failedToConnect() {
     }
     

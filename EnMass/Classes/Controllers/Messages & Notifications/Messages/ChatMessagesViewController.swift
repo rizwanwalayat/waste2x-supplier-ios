@@ -10,6 +10,7 @@ import UIKit
 import TwilioChatClient
 import IQKeyboardManagerSwift
 import UniformTypeIdentifiers
+import MobileCoreServices
 
 class ChatMessagesViewController: BaseViewController {
 
@@ -85,16 +86,13 @@ class ChatMessagesViewController: BaseViewController {
     }
     
     @IBAction func selectAttachment(_ sender: Any) {
-        let alert = UIAlertController(title: "Send", message: "", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Select Attachment", message: "", preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Image", style: .default, handler: { action in
 //            ImagePickerVC.shared.showImagePickerFromVC(fromVC: self)
-
             ImagePickerVC.shared.delegate = self
             ImagePickerVC.shared.sourceVC = self
-
             ImagePickerVC.shared.proceedWithGallery()
-
         }))
         
         alert.addAction(UIAlertAction(title: "Document", style: .default, handler: { action in
@@ -104,8 +102,11 @@ class ChatMessagesViewController: BaseViewController {
                 documentPickerController.delegate = self
                 self.present(documentPickerController, animated: true, completion: nil)
             } else {
-                // Fallback on earlier versions
-            }        }))
+                let documentPickerController = UIDocumentPickerViewController(documentTypes: [String(kUTTypePDF)], in: .import)
+                documentPickerController.delegate = self
+                self.present(documentPickerController, animated: true, completion: nil)
+            }
+        }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         self.present(alert, animated: true, completion: nil)
         

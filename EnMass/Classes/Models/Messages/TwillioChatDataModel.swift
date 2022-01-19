@@ -19,6 +19,12 @@ protocol TwillioChatDataModelDelegate: AnyObject {
     func tokeExpired()
     func failedToConnect()
     func connectCompleted()
+    func fileUploadStarted()
+    func fileUploadProgress(bytes:Int)
+    func fileUploadCompleted()
+}
+
+protocol TwilioImageUploadDelegate: AnyObject {
 }
 
 class TwillioChatDataModel: NSObject {

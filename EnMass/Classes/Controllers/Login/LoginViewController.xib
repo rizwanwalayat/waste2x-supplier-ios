@@ -10,9 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Inter-Medium.ttf">
-            <string>Inter-Medium</string>
-        </array>
         <array key="Poppins-Regular.ttf">
             <string>Poppins-Regular</string>
         </array>
@@ -71,11 +68,10 @@ phone number</string>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEo-I0-gDL" userLabel="Phone Field">
                                     <rect key="frame" x="124.5" y="240.5" width="264.5" height="58"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="2812 345 678" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jft-uV-ElE">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="(281) 234 - 5678" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jft-uV-ElE">
                                             <rect key="frame" x="10" y="14" width="244.5" height="30"/>
-                                            <color key="textColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="18"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                            <attributedString key="attributedText"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                             <connections>
                                                 <action selector="phoneTextFieldValueCanged:" destination="-1" eventType="editingChanged" id="7su-Sa-esf"/>
                                                 <outlet property="delegate" destination="-1" id="J0y-rv-OyJ"/>
@@ -220,7 +216,7 @@ phone number</string>
         <image name="US Flag Local" width="256" height="134.5"/>
         <image name="arrow-right" width="10" height="18"/>
         <namedColor name="lineColor">
-            <color red="0.79600000381469727" green="0.79600000381469727" blue="0.79600000381469727" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.5690000057220459" green="0.74500000476837158" blue="0.49799999594688416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primary">
             <color red="0.0" green="0.49799999594688416" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
