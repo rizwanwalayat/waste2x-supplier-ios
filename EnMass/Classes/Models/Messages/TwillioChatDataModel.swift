@@ -20,12 +20,10 @@ protocol TwillioChatDataModelDelegate: AnyObject {
     func failedToConnect()
     func connectCompleted()
     func fileUploadStarted()
-    func fileUploadProgress(bytes:Int)
+    func fileUploadProgress(totalBytes: Int, sentBytes: Int)
     func fileUploadCompleted()
 }
 
-protocol TwilioImageUploadDelegate: AnyObject {
-}
 
 class TwillioChatDataModel: NSObject {
     
@@ -67,24 +65,30 @@ class TwillioChatDataModel: NSObject {
         guard let fileData =  image.jpegData(compressionQuality: 0.7) else {
             return
         }
-        
+        let fileSize = fileData.count
+        print("Total bytes \(fileSize)")
+
         let stream = InputStream(data: fileData)
         let fileExt = fileName.split(separator: ".").last ?? "jpeg"
         if let messages = self.channel?.messages {
-            
             let messageOptions = TCHMessageOptions().withMediaStream(stream, contentType: "image/\(fileExt)", defaultFilename: fileName) {
+                self.delegate?.fileUploadStarted()
                 print("Media upload started")
             } onProgress: { bytes in
+                self.delegate?.fileUploadProgress(totalBytes: fileSize, sentBytes: Int(bytes))
                 print("Media upload progress: \(bytes)")
             } onCompleted: { sid in
+                self.delegate?.fileUploadCompleted()
                 print("Media upload completed: \(sid)")
             }
 
             messages.sendMessage(with: messageOptions) { result, message in
                 if !result.isSuccessful() {
                             print("Creation failed: \(String(describing: result.error))")
+                    
                         } else {
                             print("Creation successful")
+                            
                         }
             }
         }
@@ -95,14 +99,18 @@ class TwillioChatDataModel: NSObject {
             _ = url.startAccessingSecurityScopedResource()
             let fileName = url.lastPathComponent
             let fileData = try Data(contentsOf: url)
+            let fileSize = fileData.count
             let stream = InputStream(data: fileData)
             if let messages = self.channel?.messages {
                 
                 let messageOptions = TCHMessageOptions().withMediaStream(stream, contentType: "application/pdf", defaultFilename: fileName) {
+                    self.delegate?.fileUploadStarted()
                     print("Media upload started")
                 } onProgress: { bytes in
+                    self.delegate?.fileUploadProgress(totalBytes: fileSize, sentBytes: Int(bytes))
                     print("Media upload progress: \(bytes)")
                 } onCompleted: { sid in
+                    self.delegate?.fileUploadCompleted()
                     print("Media upload completed: \(sid)")
                 }
 

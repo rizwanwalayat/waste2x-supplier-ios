@@ -8,6 +8,7 @@
 
 import Foundation
 import TwilioChatClient
+import UIKit
 
 
 // MARK: - Twillio Chat Messages Handlings
@@ -98,9 +99,14 @@ extension ChatMessagesViewController{
         tableViewMessages.scrollToRow(at: bottomMessageIndex, at: .top, animated: true)
     }
     
-    private func twilioFileUploadStarted(){
-//        self.tableViewMessages.
-        
+    func showFileProgressLoader(_ flag: Bool) {
+        UIView.animate(withDuration: 0.3) {
+            self.fileProgressView.isHidden = !flag
+            self.fileProgressViewHeight.constant = flag ? 50 : 0
+            self.view.layoutIfNeeded()
+        }
+       
+
     }
 }
 
@@ -108,15 +114,18 @@ extension ChatMessagesViewController{
 extension ChatMessagesViewController : TwillioChatDataModelDelegate
 {
     func fileUploadStarted() {
-        self.twilioFileUploadStarted()
+        fileProgressBar.setProgress(0.1, animated: false)
+        showFileProgressLoader(true)
     }
     
-    func fileUploadProgress(bytes: Int) {
-        
+    func fileUploadProgress(totalBytes: Int, sentBytes: Int) {
+        let progress: Float = Float(sentBytes) / Float(totalBytes)
+        fileProgressBar.setProgress(progress, animated: true)
     }
     
     func fileUploadCompleted() {
-        
+        fileProgressBar.setProgress(1.0, animated: true)
+        showFileProgressLoader(false)
     }
     
    

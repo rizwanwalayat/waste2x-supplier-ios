@@ -26,7 +26,9 @@ class ChatMessagesViewController: BaseViewController {
     @IBOutlet weak var sendIndicator: UIActivityIndicatorView!
     @IBOutlet weak var bottomConstOfView: NSLayoutConstraint!
     @IBOutlet weak var attachmentButton: UIButton!
-    
+    @IBOutlet weak var fileProgressView: UIView!
+    @IBOutlet weak var fileProgressBar: UIProgressView!
+    @IBOutlet weak var fileProgressViewHeight: NSLayoutConstraint!
     
     //MARK: - Declarations
     var isAttachmentEnabled: Bool = true
@@ -157,6 +159,7 @@ class ChatMessagesViewController: BaseViewController {
         tableViewMessages.transform = CGAffineTransform(scaleX: 1, y: -1)
         tableViewMessages.keyboardDismissMode = .interactive
         self.constHeightMessagesTextView.constant = 34
+        self.fileProgressViewHeight.constant = 0
         self.view.layoutIfNeeded()
     }
     

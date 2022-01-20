@@ -24,6 +24,9 @@
                 <outlet property="bottomConstOfView" destination="Wfp-wS-T5x" id="c2p-uf-v9x"/>
                 <outlet property="constHeightMessagesTextView" destination="9l2-rT-nwr" id="tpG-vt-0JX"/>
                 <outlet property="enterMessageTextView" destination="wfi-v1-Owi" id="MpZ-Wu-CWO"/>
+                <outlet property="fileProgressBar" destination="c5w-JG-c8U" id="Xur-y0-YtU"/>
+                <outlet property="fileProgressView" destination="uak-dN-H31" id="Foh-bL-T5M"/>
+                <outlet property="fileProgressViewHeight" destination="VBm-y5-BHE" id="b9N-1d-quB"/>
                 <outlet property="mainView" destination="ZFD-7O-eVd" id="c7M-Jb-muF"/>
                 <outlet property="sendIndicator" destination="lJv-mR-1ax" id="Nmx-LG-8TK"/>
                 <outlet property="sendbutton" destination="y21-us-C4N" id="2kR-wC-5gn"/>
@@ -81,7 +84,7 @@
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFD-7O-eVd">
                     <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMb-kr-q2u">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMb-kr-q2u" userLabel="Controls View">
                             <rect key="frame" x="18" y="716.5" width="378" height="58"/>
                             <subviews>
                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="lJv-mR-1ax">
@@ -150,7 +153,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Va-3t-tbD">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="696.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="645.5"/>
                             <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <color key="sectionIndexBackgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -158,16 +161,39 @@
                                 <outlet property="delegate" destination="-1" id="H5N-sJ-uEQ"/>
                             </connections>
                         </tableView>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uak-dN-H31" userLabel="Loader View">
+                            <rect key="frame" x="65.5" y="651.5" width="333.5" height="50"/>
+                            <subviews>
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.01" translatesAutoresizingMaskIntoConstraints="NO" id="c5w-JG-c8U">
+                                    <rect key="frame" x="33.5" y="20.5" width="266.5" height="4"/>
+                                </progressView>
+                            </subviews>
+                            <color key="backgroundColor" name="themeColor"/>
+                            <constraints>
+                                <constraint firstItem="c5w-JG-c8U" firstAttribute="centerX" secondItem="uak-dN-H31" secondAttribute="centerX" id="N8C-pz-vk4"/>
+                                <constraint firstAttribute="height" constant="50" id="VBm-y5-BHE"/>
+                                <constraint firstItem="c5w-JG-c8U" firstAttribute="centerY" secondItem="uak-dN-H31" secondAttribute="centerY" multiplier="0.9" id="dou-5s-7fc"/>
+                                <constraint firstItem="c5w-JG-c8U" firstAttribute="width" secondItem="uak-dN-H31" secondAttribute="width" multiplier="0.8" id="r0C-6B-0DN"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="rMb-kr-q2u" firstAttribute="top" secondItem="uak-dN-H31" secondAttribute="bottom" constant="15" id="GPm-rJ-G7W"/>
+                        <constraint firstAttribute="trailing" secondItem="uak-dN-H31" secondAttribute="trailing" constant="15" id="POb-lJ-6Qa"/>
+                        <constraint firstItem="uak-dN-H31" firstAttribute="top" secondItem="3Va-3t-tbD" secondAttribute="bottom" constant="6" id="PhK-Ee-ywY"/>
+                        <constraint firstItem="uak-dN-H31" firstAttribute="width" secondItem="ZFD-7O-eVd" secondAttribute="width" multiplier="0.805" id="TCQ-dA-yDP"/>
                         <constraint firstItem="rMb-kr-q2u" firstAttribute="leading" secondItem="ZFD-7O-eVd" secondAttribute="leading" constant="18" id="VsJ-gr-Mtu"/>
                         <constraint firstAttribute="bottom" secondItem="rMb-kr-q2u" secondAttribute="bottom" constant="20" id="Yke-X5-iWK"/>
                         <constraint firstItem="3Va-3t-tbD" firstAttribute="top" secondItem="ZFD-7O-eVd" secondAttribute="top" id="ZzC-D2-ZAl"/>
                         <constraint firstAttribute="trailing" secondItem="3Va-3t-tbD" secondAttribute="trailing" id="hAm-yP-nVv"/>
                         <constraint firstItem="3Va-3t-tbD" firstAttribute="leading" secondItem="ZFD-7O-eVd" secondAttribute="leading" id="o7k-Wz-wtv"/>
                         <constraint firstAttribute="trailing" secondItem="rMb-kr-q2u" secondAttribute="trailing" constant="18" id="o8K-ZF-jMp"/>
-                        <constraint firstItem="rMb-kr-q2u" firstAttribute="top" secondItem="3Va-3t-tbD" secondAttribute="bottom" constant="20" id="oUT-3f-2vU"/>
                     </constraints>
                 </view>
             </subviews>
