@@ -23,7 +23,7 @@ class SideMenuViewController: BaseViewController {
     
     //MARK: - Variables
     
-    var menuArray = [SideMenuItems.payment, SideMenuItems.sites, SideMenuItems.inviteSupplier, SideMenuItems.privacyPolicy]
+    var menuArray = [SideMenuItems.payment, SideMenuItems.sites, SideMenuItems.invoices, SideMenuItems.inviteSupplier, SideMenuItems.privacyPolicy]
     var selectionIndex = -1
     var paymentModel : PaymentModel?
     var reload = -1
@@ -155,8 +155,12 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
         case 1:
             let vc = CurrentWasteViewController(nibName: "CurrentWasteViewController", bundle: nil)
             self.navigationController?.pushTo(controller: vc)
-            
+       
         case 2:
+            let vc = InvoicesViewController(nibName: "InvoicesViewController", bundle: nil)
+            self.navigationController?.pushTo(controller: vc)
+            
+        case 3:
             let vc = InviteSupplierViewController(nibName: "InviteSupplierViewController", bundle: nil)
             self.navigationController?.pushTo(controller: vc)
             
@@ -195,6 +199,7 @@ enum SideMenuItems : String {
     
     case payment = "Payments"
     case sites =  "Sites"
+    case invoices = "Invoices"
     case inviteSupplier =  "Invite Suppliers"
     case privacyPolicy =  "Privacy Policy"
     
@@ -205,6 +210,8 @@ enum SideMenuItems : String {
             return #imageLiteral(resourceName: "Payment Icons")
         case .sites:
             return #imageLiteral(resourceName: "site-icon")
+        case .invoices:
+            return #imageLiteral(resourceName: "invoice")
         case .inviteSupplier:
             return #imageLiteral(resourceName: "inviteSupplier-icon")
         case .privacyPolicy:

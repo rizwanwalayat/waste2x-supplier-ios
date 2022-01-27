@@ -254,5 +254,12 @@ class APIClient: APIClientHandler {
         let url = APIRoutes.baseUrl + APIRoutes.editProfile
         sendRequestUsingMultipart(url, parameters: parameters, headers: headers, completionBlock: completionBlock)
     }
+    
+    func fetchInvoicesApi(_ completionBlock: @escaping APIClientCompletionHandler)
+    {
+        let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
+        print("fetchInvoices : \(headers)")
+//        _ = sendRequest(APIRoutes , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+    }
 }
 

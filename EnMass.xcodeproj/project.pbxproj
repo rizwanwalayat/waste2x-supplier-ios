@@ -240,6 +240,12 @@
 		962DAC6B274676E2004C40D1 /* HomeNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962DAC5E274676E2004C40D1 /* HomeNewViewController.swift */; };
 		962FEB04278CB8F900E822E6 /* FullScreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962FEB02278CB8F900E822E6 /* FullScreenImageViewController.swift */; };
 		962FEB05278CB8F900E822E6 /* FullScreenImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962FEB03278CB8F900E822E6 /* FullScreenImageViewController.xib */; };
+		96313F0927A036BE00A82CFF /* InvoicesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96313F0327A036BE00A82CFF /* InvoicesVM.swift */; };
+		96313F0A27A036BE00A82CFF /* InvoicesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96313F0527A036BE00A82CFF /* InvoicesTableViewCell.xib */; };
+		96313F0B27A036BE00A82CFF /* InvoicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96313F0627A036BE00A82CFF /* InvoicesTableViewCell.swift */; };
+		96313F0C27A036BE00A82CFF /* InvoicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96313F0727A036BE00A82CFF /* InvoicesViewController.swift */; };
+		96313F0D27A036BE00A82CFF /* InvoicesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96313F0827A036BE00A82CFF /* InvoicesViewController.xib */; };
+		96313F1327A036E200A82CFF /* InvoicesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96313F1027A036E200A82CFF /* InvoicesModel.swift */; };
 		96726C872711C1EE00F071E8 /* Waste2xAfterSigninTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96726C862711C1EE00F071E8 /* Waste2xAfterSigninTests.swift */; };
 		96774D96273177C100B513CB /* MessagePendingCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96774D94273177C100B513CB /* MessagePendingCollectionTableViewCell.swift */; };
 		96774D97273177C100B513CB /* MessagePendingCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96774D95273177C100B513CB /* MessagePendingCollectionTableViewCell.xib */; };
@@ -494,6 +500,12 @@
 		962DAC5E274676E2004C40D1 /* HomeNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNewViewController.swift; sourceTree = "<group>"; };
 		962FEB02278CB8F900E822E6 /* FullScreenImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewController.swift; sourceTree = "<group>"; };
 		962FEB03278CB8F900E822E6 /* FullScreenImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullScreenImageViewController.xib; sourceTree = "<group>"; };
+		96313F0327A036BE00A82CFF /* InvoicesVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoicesVM.swift; sourceTree = "<group>"; };
+		96313F0527A036BE00A82CFF /* InvoicesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InvoicesTableViewCell.xib; sourceTree = "<group>"; };
+		96313F0627A036BE00A82CFF /* InvoicesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoicesTableViewCell.swift; sourceTree = "<group>"; };
+		96313F0727A036BE00A82CFF /* InvoicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoicesViewController.swift; sourceTree = "<group>"; };
+		96313F0827A036BE00A82CFF /* InvoicesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InvoicesViewController.xib; sourceTree = "<group>"; };
+		96313F1027A036E200A82CFF /* InvoicesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoicesModel.swift; sourceTree = "<group>"; };
 		96726C862711C1EE00F071E8 /* Waste2xAfterSigninTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waste2xAfterSigninTests.swift; sourceTree = "<group>"; };
 		96774D94273177C100B513CB /* MessagePendingCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePendingCollectionTableViewCell.swift; sourceTree = "<group>"; };
 		96774D95273177C100B513CB /* MessagePendingCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagePendingCollectionTableViewCell.xib; sourceTree = "<group>"; };
@@ -563,6 +575,7 @@
 		0067A2CF25274C4800CECA8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				96313F0E27A036E200A82CFF /* Invoice */,
 				047D743F274D1AD000D33FA3 /* UserDetail */,
 				186ACE812684F58200646E32 /* Contacts */,
 				0418C8F8267C7D34008A0F1F /* Messages */,
@@ -584,6 +597,7 @@
 		0067A2D025274C5100CECA8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				96313F0127A036BE00A82CFF /* Invoices */,
 				04AF4DDA274CC57900D0074C /* profile */,
 				962DAC5A274676E2004C40D1 /* Home New */,
 				18D1A363266A2B51009CAD26 /* Tracker */,
@@ -1569,6 +1583,42 @@
 			path = "PreviewImagesView ";
 			sourceTree = "<group>";
 		};
+		96313F0127A036BE00A82CFF /* Invoices */ = {
+			isa = PBXGroup;
+			children = (
+				96313F0227A036BE00A82CFF /* ViewModel */,
+				96313F0427A036BE00A82CFF /* Cells */,
+				96313F0727A036BE00A82CFF /* InvoicesViewController.swift */,
+				96313F0827A036BE00A82CFF /* InvoicesViewController.xib */,
+			);
+			path = Invoices;
+			sourceTree = "<group>";
+		};
+		96313F0227A036BE00A82CFF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				96313F0327A036BE00A82CFF /* InvoicesVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		96313F0427A036BE00A82CFF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				96313F0527A036BE00A82CFF /* InvoicesTableViewCell.xib */,
+				96313F0627A036BE00A82CFF /* InvoicesTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		96313F0E27A036E200A82CFF /* Invoice */ = {
+			isa = PBXGroup;
+			children = (
+				96313F1027A036E200A82CFF /* InvoicesModel.swift */,
+			);
+			path = Invoice;
+			sourceTree = "<group>";
+		};
 		96E8A8332705AD7700F03A34 /* Waste2xTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1723,6 +1773,7 @@
 				18397E192660FF54003DE30C /* Poppins-ExtraLightItalic.ttf in Resources */,
 				181025242657E33A00DEBF7D /* ContainerViewController.xib in Resources */,
 				18C11A6D265F9D5F00BC022F /* ContactViewController.xib in Resources */,
+				96313F0D27A036BE00A82CFF /* InvoicesViewController.xib in Resources */,
 				180CD1B02665048D0092168B /* PaymentViewController.xib in Resources */,
 				0067A2C825274C0B00CECA8C /* LaunchScreen.storyboard in Resources */,
 				18397E242660FF54003DE30C /* Poppins-Black.ttf in Resources */,
@@ -1741,6 +1792,7 @@
 				18397E222660FF54003DE30C /* Poppins-LightItalic.ttf in Resources */,
 				18397E1E2660FF54003DE30C /* Poppins-ExtraBold.ttf in Resources */,
 				046719DA275F6AB700E3A1D9 /* WebViewViewController.xib in Resources */,
+				96313F0A27A036BE00A82CFF /* InvoicesTableViewCell.xib in Resources */,
 				18896080266E289800061783 /* SupplyDetailTableViewCell.xib in Resources */,
 				18937565266127F800D55A33 /* NewWasteSizeViewController.xib in Resources */,
 				18C11A71265FA49C00BC022F /* ContactTableViewCell.xib in Resources */,
@@ -1870,6 +1922,7 @@
 				043F6BF8267776A2000E3C4F /* HomeResultDataModel.swift in Sources */,
 				18A579B9269320070067952F /* DataManager.swift in Sources */,
 				962FEB04278CB8F900E822E6 /* FullScreenImageViewController.swift in Sources */,
+				96313F0927A036BE00A82CFF /* InvoicesVM.swift in Sources */,
 				046565C72746759D008BAE63 /* FetchSitesDataModel.swift in Sources */,
 				18A579C02693218F0067952F /* ApiClientHandler.swift in Sources */,
 				18ACB7C7267A36D70088307D /* CreatePayment.swift in Sources */,
@@ -1902,6 +1955,7 @@
 				047E83DA268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.swift in Sources */,
 				0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */,
 				041D40D126772A65003A0039 /* CreateSite.swift in Sources */,
+				96313F0C27A036BE00A82CFF /* InvoicesViewController.swift in Sources */,
 				04E6104626725422001E6629 /* Questions.swift in Sources */,
 				047E83D1268320FA006A0F18 /* WasteDetailLocationDataModel.swift in Sources */,
 				18ACB7C5267A34CD0088307D /* NotificationModel.swift in Sources */,
@@ -1962,8 +2016,10 @@
 				0067A31A252AFC9E00CECA8C /* UICollectionView.swift in Sources */,
 				0067A320252AFC9E00CECA8C /* UIView.swift in Sources */,
 				1832D25026832DC20032F755 /* DetailPendingCollectionTableViewCell.swift in Sources */,
+				96313F1327A036E200A82CFF /* InvoicesModel.swift in Sources */,
 				18937549266127CB00D55A33 /* NotificationsTableViewCell.swift in Sources */,
 				1810253B2657E48500DEBF7D /* MessagesViewController.swift in Sources */,
+				96313F0B27A036BE00A82CFF /* InvoicesTableViewCell.swift in Sources */,
 				0067A31D252AFC9E00CECA8C /* UISlider.swift in Sources */,
 				04C82E1A2664BCCB00D52947 /* WasteImageDetailCollectionViewCell.swift in Sources */,
 				043F6BF9267776A2000E3C4F /* HomeWaste_types.swift in Sources */,
