@@ -13,10 +13,9 @@ class InvoicesModel: Mappable {
     var success = false
     var status_code = -1
     var message = ""
-    var result: InvoicesResult?
+    var result = [InvoicesResult]()
     
     required init?(map: Map) {
-    
     }
     
     func mapping(map: Map) {
@@ -29,61 +28,37 @@ class InvoicesModel: Mappable {
 }
 
 class InvoicesResult: Mappable {
-    var array: [[InvoicesResultItem]] = []
-    var scheduled = [InvoicesResultItem]()
-    var in_transit = [InvoicesResultItem]()
-    var delivered = [InvoicesResultItem]()
-    
-    
-    required init?(map: Map) {
-        
-    }
-    
-    func mapping(map: Map) {
-        scheduled <- map["scheduled"]
-        in_transit <- map["in_transit"]
-        delivered <- map["delivered"]
-        postMapping()
-    }
-    
-    func postMapping(){
-        array.insert(scheduled, at: 0)
-        array.insert(in_transit, at: 1)
-        array.insert(delivered, at: 2)
-    }
-}
+    var id = 0
+    var status = ""
+    var total = 0.0
+    var unit = ""
+    var shipments = [InvoicesShipment]()
 
-class InvoicesResultItem: Mappable {
-    
-    var id: Int
-    var date_created: String
-    var pick_up: String
-    var drop_off: String
-    var dispatch_rep: String
-    var commodity : String
-    var deliveryDate : String
-    var weight : String
-    
     required init?(map: Map) {
-        id = 0
-        date_created = ""
-        pick_up = ""
-        drop_off = ""
-        dispatch_rep = ""
-        commodity = ""
-        deliveryDate = ""
-        weight = ""
     }
     
     func mapping(map: Map) {
         id <- map["id"]
-        date_created <- map["date_created"]
-        pick_up <- map["pick_up"]
-        drop_off <- map["drop_off"]
-        dispatch_rep <- map["dispatch_rep"]
-        commodity <- map["commodity"]
-        deliveryDate <- map["delivery_date"]
-        weight <- map["weight"]
+        status <- map["status"]
+        total <- map["total"]
+        unit <- map["unit"]
+        shipments <- map["shipments"]
+    }
+    
+   
+}
+
+class InvoicesShipment: Mappable {
+    var date = ""
+    var subtotal = 0.0
+    
+    required init?(map: Map) {
+    }
+    
+    func mapping(map: Map) {
+        date <- map["date"]
+        subtotal <- map["subtotal"]
+        
     }
     
 }

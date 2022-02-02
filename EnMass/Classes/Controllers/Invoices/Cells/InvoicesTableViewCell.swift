@@ -10,14 +10,9 @@ import UIKit
 
 class InvoicesTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var bottomBorder: UIView!
-    @IBOutlet weak var dispatchButton: UIButton!
-    @IBOutlet weak var deliveryDateLabel: UILabel!
-    @IBOutlet weak var commodityLabel: UILabel!
-    @IBOutlet weak var pickUpLabel: UILabel!
-    @IBOutlet weak var deliveryLabel: UILabel!
-    @IBOutlet weak var dispatchIDLabel: UILabel!
-    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var invoiceID: UILabel!
+    @IBOutlet weak var invoiceTotal: UILabel!
+    @IBOutlet weak var paidStatusText: UILabel!
     @IBOutlet weak var expandView: UIStackView!
     @IBOutlet weak var expandArrow: UIImageView!
     
@@ -51,16 +46,24 @@ class InvoicesTableViewCell: UITableViewCell {
     
     
     
-    func configCell(data: InvoicesResultItem, status: DispatchesStatus) {
+    func configCell(data: InvoicesResult, status: DispatchesStatus) {
+        
         // ExpandView Collapsed Initially with Arrow Down
         self.expandView.isHidden = true
         self.expandArrow.image = UIImage(named: "Arrow Down")
         
         // Populating Data
-        commodityLabel.text = data.commodity
-        deliveryLabel.text = data.drop_off
-        dispatchIDLabel.text = "\(data.id)"
-        weightLabel.text = data.weight
+        invoiceID.text = "\(data.id)"
+        invoiceTotal.text = "$\(data.total)"
+        
+        for shipment in data.shipments {
+            
+            let shipmentStackView = InvoicesShipmentView()
+            shipmentStackView.config(shipment: shipment)
+            expandView.addArrangedSubview(shipmentStackView)
+        }
+        
+
         
         var statusColor: UIColor
         
@@ -76,20 +79,19 @@ class InvoicesTableViewCell: UITableViewCell {
             
             
         }
-        bottomBorder.backgroundColor = statusColor
-        
-        if data.pick_up.isEmpty {
-            pickUpLabel.text = "--"
-            deliveryDateLabel.text = "--"
-            dispatchButton.isEnabled = false
-            dispatchButton.backgroundColor = UIColor(named: "innerBorderColor") ?? UIColor.lightGray
-            dispatchButton.setTitleColor(UIColor(named: "tabUnselectedGrey") ?? UIColor.gray, for: .disabled)
-        } else {
-            pickUpLabel.text = data.pick_up
-            deliveryDateLabel.text = data.deliveryDate
-            dispatchButton.isEnabled = true
-            dispatchButton.backgroundColor = statusColor
-            dispatchButton.titleLabel?.textColor = UIColor.white
-        }
+//
+//        if data.pick_up.isEmpty {
+//            pickUpLabel.text = "--"
+//            deliveryDateLabel.text = "--"
+//            dispatchButton.isEnabled = false
+//            dispatchButton.backgroundColor = UIColor(named: "innerBorderColor") ?? UIColor.lightGray
+//            dispatchButton.setTitleColor(UIColor(named: "tabUnselectedGrey") ?? UIColor.gray, for: .disabled)
+//        } else {
+//            pickUpLabel.text = data.pick_up
+//            deliveryDateLabel.text = data.deliveryDate
+//            dispatchButton.isEnabled = true
+//            dispatchButton.backgroundColor = statusColor
+//            dispatchButton.titleLabel?.textColor = UIColor.white
+//        }
     }
 }

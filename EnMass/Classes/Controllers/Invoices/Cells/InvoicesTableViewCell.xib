@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="342" height="162"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="y7y-1v-SQZ" userLabel="Main Stack View">
-                                <rect key="frame" x="16" y="8" width="310" height="144.5"/>
+                                <rect key="frame" x="16" y="8" width="310" height="157.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dDI-P1-Qjp" userLabel="Top Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="97.5"/>
@@ -112,55 +112,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Q5m-Ls-fhg">
-                                        <rect key="frame" x="0.0" y="107.5" width="310" height="37"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCp-4h-CeI" userLabel="Bottom Border View">
-                                                <rect key="frame" x="0.0" y="0.0" width="310" height="3"/>
-                                                <color key="tintColor" name="labelText"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="3" id="pSr-04-X7k"/>
-                                                </constraints>
-                                            </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DZi-eF-RjP" userLabel="Bottom Stack View">
-                                                <rect key="frame" x="0.0" y="3" width="310" height="34"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Je-Ec-hf9" userLabel="Commodity Stack View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="34"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shipment Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoC-VV-3Pg">
-                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="14"/>
-                                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
-                                                                <color key="textColor" name="cardLabel"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/25/2021" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DhM-BV-fjc">
-                                                                <rect key="frame" x="0.0" y="14" width="150" height="20"/>
-                                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                                                <color key="textColor" name="cardText"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TXo-7b-QBb" userLabel="Weight Stack View">
-                                                        <rect key="frame" x="160" y="0.0" width="150" height="34"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shipment Subtotal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3a-C9-DV7">
-                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="14"/>
-                                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
-                                                                <color key="textColor" name="cardLabel"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$800" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qxB-Pe-eZc">
-                                                                <rect key="frame" x="0.0" y="14" width="150" height="20"/>
-                                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                                                <color key="textColor" name="cardText"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
+                                        <rect key="frame" x="0.0" y="107.5" width="310" height="50"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -169,7 +121,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow Down" translatesAutoresizingMaskIntoConstraints="NO" id="bLH-Ct-z9Z">
-                                <rect key="frame" x="312" y="136.5" width="14" height="16"/>
+                                <rect key="frame" x="312" y="149.5" width="14" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="LMm-GA-8yT"/>
                                     <constraint firstAttribute="width" constant="14" id="yg6-rc-QSz"/>
@@ -203,12 +155,11 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="commodityLabel" destination="DhM-BV-fjc" id="gaN-Ad-LAR"/>
-                <outlet property="deliveryDateLabel" destination="KeT-kp-lEm" id="LR3-ym-d6s"/>
                 <outlet property="expandArrow" destination="bLH-Ct-z9Z" id="PFj-Kd-Ltc"/>
-                <outlet property="expandView" destination="DZi-eF-RjP" id="R2d-92-seO"/>
-                <outlet property="pickUpLabel" destination="u4j-W8-fnH" id="oYh-NN-wiO"/>
-                <outlet property="weightLabel" destination="qxB-Pe-eZc" id="G1E-hW-Ise"/>
+                <outlet property="expandView" destination="Q5m-Ls-fhg" id="Vtl-SD-t0a"/>
+                <outlet property="invoiceID" destination="KeT-kp-lEm" id="LR3-ym-d6s"/>
+                <outlet property="invoiceTotal" destination="u4j-W8-fnH" id="oYh-NN-wiO"/>
+                <outlet property="paidStatusText" destination="XBm-6T-O48" id="pfP-Ov-vOJ"/>
             </connections>
             <point key="canvasLocation" x="123.18840579710145" y="100.44642857142857"/>
         </tableViewCell>
@@ -224,9 +175,6 @@
         </namedColor>
         <namedColor name="cardText">
             <color red="0.16500000655651093" green="0.16500000655651093" blue="0.16500000655651093" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="labelText">
-            <color red="0.45100000500679016" green="0.45100000500679016" blue="0.45100000500679016" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

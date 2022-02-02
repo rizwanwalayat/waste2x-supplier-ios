@@ -57,7 +57,7 @@ class InvoicesViewController: BaseViewController {
     
     func checkData(){
         
-        if let count = viewModel?.data?.result?.array.count, count > 0 {
+        if let count = viewModel?.data?.result.count, count > 0 {
             showTable(true)
         } else {
             showTable(false)
@@ -94,8 +94,8 @@ extension InvoicesViewController : UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "InvoicesTableViewCell", for: indexPath) as! InvoicesTableViewCell
 //        cell.dispatchButton.tag = indexPath.row
  
-//        let cellData = viewModel?.data?.result?.array[0][indexPath.row]
-//        cell.configCell(data: cellData!, status: dispatchesStatusArray[0])
+        let cellData = viewModel?.data?.result[indexPath.row]
+        cell.configCell(data: cellData!, status: dispatchesStatusArray[0])
         return cell
     }
     
