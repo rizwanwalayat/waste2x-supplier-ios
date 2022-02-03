@@ -36,17 +36,26 @@ extension UIColor {
     static var successMessage: UIColor {
         return UIColor(named: "successMessage") ?? UIColor(hexString: "007F97")
     }
-    
     static var successMessageTextIcon: UIColor {
         return UIColor(named: "successMessageTextIcon") ?? UIColor(hexString: "007F97")
     }
-    
     static var failureMessageTextIcon: UIColor {
         return UIColor(named: "failureMessageTextIcon") ?? UIColor(hexString: "007F97")
     }
-    
     static var failureMessage: UIColor {
         return UIColor(named: "failureMessage") ?? UIColor(hexString: "007F97")
+    }
+    static var badgeGreen: UIColor {
+        return UIColor(named: "badgeGreen") ?? UIColor(hexString: "7D9D15")
+    }
+    static var badgeGreenBg: UIColor {
+        return UIColor(named: "badgeGreenBg") ?? UIColor(hexString: "7D9D15", alpha: 0.15)
+    }
+    static var badgeYellow: UIColor {
+        return UIColor(named: "badgeYellow") ?? UIColor(hexString: "F9C64A")
+    }
+    static var badgeYellowBg: UIColor {
+        return UIColor(named: "badgeYellowBg") ?? UIColor(hexString: "FFD367", alpha: 0.15)
     }
     
     convenience init(hexString:String, alpha:CGFloat = 1.0) {

@@ -259,7 +259,7 @@ class APIClient: APIClientHandler {
     {
         let headers = ["Authorization": "token " + (DataManager.shared.getUser()?.result?.auth_token ?? "")]
         print("fetchInvoices : \(headers)")
-//        _ = sendRequest(APIRoutes , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
+        _ = sendRequest(APIRoutes.fetchInvoices , parameters: nil ,httpMethod: .get , headers: headers, completionBlock: completionBlock)
     }
 }
 

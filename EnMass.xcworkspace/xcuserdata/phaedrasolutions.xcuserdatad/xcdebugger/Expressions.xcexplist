@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "ChatMessagesViewController.imageSelectedFromGalleryOrCamera(selectedImage:):ChatMessagesViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DetailedPendingCollectionViewController.viewDidLoad():DetailedPendingCollectionViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -25,14 +33,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ChatMessagesViewController.imageSelectedFromGalleryOrCamera(selectedImage:):ChatMessagesViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "DetailPendingCollectionTableViewCell.confirmConfig(data:):DetailPendingCollectionTableViewCell.swift">
          <PersistentStrings>
             <PersistentString
@@ -44,10 +44,10 @@
          contextName = "AmountWasteViewController.selectionHandlingsOfViews(_:isSelection:):AmountWasteViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "closure #1 in ChatMessagesViewController.tableView(_:didSelectRowAt:):ChatMessagesViewController.swift">
+         contextName = "TrackerViewController.viewWillAppear(_:):TrackerViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "message.mediaType">
+               value = "trackID">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -59,6 +59,22 @@
          <PersistentStrings>
             <PersistentString
                value = "DataManager.shared.isUserLoggedIn()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "InvoicesViewController.tableView(_:cellForRowAt:):InvoicesViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tableView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "InvoicesViewController.tableviewHandlings():InvoicesViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tableView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -135,10 +151,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "TrackerViewController.viewWillAppear(_:):TrackerViewController.swift">
+         contextName = "closure #1 in ChatMessagesViewController.tableView(_:didSelectRowAt:):ChatMessagesViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "trackID">
+               value = "message.mediaType">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

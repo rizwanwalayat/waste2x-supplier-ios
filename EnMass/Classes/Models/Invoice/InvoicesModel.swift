@@ -23,8 +23,6 @@ class InvoicesModel: Mappable {
         message <- map["message"]
         result <- map["result"]
     }
-    
-
 }
 
 class InvoicesResult: Mappable {

@@ -8,27 +8,23 @@
 
 import UIKit
 
-enum DispatchesStatus:String {
+enum PaidStatus:String {
     case paid = "Paid"
-    case in_transit = "In Transit"
-    case delivered = "Delivered"
+    case unpaid = "Unpaid"
 }
 
 class InvoicesViewController: BaseViewController {
     
     // MARK: - Variables
-    var dispatchesStatusArray = [DispatchesStatus.paid, DispatchesStatus.in_transit, DispatchesStatus.delivered]
     var viewModel: InvoicesVM?
-    var selectedIndex : IndexPath?
    
     
     // MARK: - Outlets
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var noDataLabel: UILabel!
-    @IBOutlet weak var scheduledTab: UIButton!
-    @IBOutlet weak var inTransitTab: UIButton!
-    @IBOutlet weak var deliveredTab: UIButton!
+    @IBOutlet weak var backgroundHolderview: UIView!
+    
     
     // MARK: - Controller's LifeCycle
     override func viewDidLoad() {
@@ -37,7 +33,11 @@ class InvoicesViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        viewModel = InvoicesVM()
+        
+        roundTopHeader()
+
+        
+//        viewModel = InvoicesVM()
 //        viewModel?.fetchInvoicesData({ result, error, status, message in
 //
 //            if status ?? false, error == nil {
@@ -47,7 +47,11 @@ class InvoicesViewController: BaseViewController {
 //            }
 //        })
     }
-    
+    func roundTopHeader(){
+        backgroundHolderview.layer.cornerRadius = 36
+        backgroundHolderview.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        backgroundHolderview.layer.masksToBounds = true
+    }
     func tableviewHandlings(){
         
         tableView.register(UINib(nibName: "InvoicesTableViewCell", bundle: nil), forCellReuseIdentifier: "InvoicesTableViewCell")
@@ -78,6 +82,9 @@ class InvoicesViewController: BaseViewController {
     
     // MARK: - IBOutlets
 
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 extension InvoicesViewController : UITableViewDelegate, UITableViewDataSource
@@ -87,15 +94,14 @@ extension InvoicesViewController : UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  1 //viewModel?.data?.result?.array.count ??
+        return  3 //viewModel?.data?.result?.array.count ??
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InvoicesTableViewCell", for: indexPath) as! InvoicesTableViewCell
-//        cell.dispatchButton.tag = indexPath.row
  
-        let cellData = viewModel?.data?.result[indexPath.row]
-        cell.configCell(data: cellData!, status: dispatchesStatusArray[0])
+//        let cellData = viewModel?.data?.result[indexPath.row]
+//        cell.configCell(data: cellData!)
         return cell
     }
     

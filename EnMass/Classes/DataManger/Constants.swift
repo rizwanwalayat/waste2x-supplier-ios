@@ -61,6 +61,8 @@ struct APIRoutes {
     static var siteDeleteSendUrl = "paudapay_us/delete_site/"
     static var fetchTwilioTokenUrl = "paudapay_us/fetch_twilio_access_token/"
     static var editProfile = "paudapay_us/edit_profile"
+    static var fetchInvoices = "paudapay_us/fetch_invoices/"
+
 }
 struct FireBaseVariables {
     static var fireBaseToken = ""

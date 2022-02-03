@@ -9,10 +9,12 @@
 import UIKit
 
 class InvoicesTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var invoiceID: UILabel!
     @IBOutlet weak var invoiceTotal: UILabel!
     @IBOutlet weak var paidStatusText: UILabel!
+    @IBOutlet weak var paidStatusImage: UIImageView!
+    @IBOutlet weak var paidStatusView: UIView!
     @IBOutlet weak var expandView: UIStackView!
     @IBOutlet weak var expandArrow: UIImageView!
     
@@ -21,10 +23,10 @@ class InvoicesTableViewCell: UITableViewCell {
         super.awakeFromNib()
         expandView.isHidden = true
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -32,21 +34,21 @@ class InvoicesTableViewCell: UITableViewCell {
     {
         self.expandView.isHidden = !flag
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
-                        self.layoutIfNeeded()}, completion: { finished in
-                            if self.expandArrow.image == UIImage(named: "Arrow Up")
-                            {
-                                self.expandArrow.image = UIImage(named: "Arrow Down")
-                            }
-                            else
-                            {
-                                self.expandArrow.image = UIImage(named: "Arrow Up")
-                            }
-                        })
+            self.layoutIfNeeded()}, completion: { finished in
+                if self.expandArrow.image == UIImage(named: "Arrow Up")
+                {
+                    self.expandArrow.image = UIImage(named: "Arrow Down")
+                }
+                else
+                {
+                    self.expandArrow.image = UIImage(named: "Arrow Up")
+                }
+            })
     }
     
     
     
-    func configCell(data: InvoicesResult, status: DispatchesStatus) {
+    func configCell(data: InvoicesResult) {
         
         // ExpandView Collapsed Initially with Arrow Down
         self.expandView.isHidden = true
@@ -63,35 +65,21 @@ class InvoicesTableViewCell: UITableViewCell {
             expandView.addArrangedSubview(shipmentStackView)
         }
         
-
         
-        var statusColor: UIColor
+        paidStatusText.text = data.status
         
+        guard let status = PaidStatus(rawValue: data.status) else { return }
         switch status {
         case .paid:
-            statusColor = UIColor(named: "redScheduled") ??  UIColor.red
-          
-        case .in_transit:
-            statusColor = UIColor(named: "yellowTransit") ??  UIColor.yellow
+            paidStatusText.textColor = UIColor.badgeGreen
+            paidStatusImage.image = UIImage(named: "accept-icon")
+            paidStatusView.backgroundColor = UIColor.badgeGreenBg
             
-        case .delivered:
-            statusColor = UIColor(named: "greenDelivered") ??  UIColor.green
-            
+        case .unpaid:
+            paidStatusText.textColor = UIColor.badgeYellow
+            paidStatusImage.image = UIImage(named: "Pending-Icon")
+            paidStatusView.backgroundColor = UIColor.badgeGreenBg
             
         }
-//
-//        if data.pick_up.isEmpty {
-//            pickUpLabel.text = "--"
-//            deliveryDateLabel.text = "--"
-//            dispatchButton.isEnabled = false
-//            dispatchButton.backgroundColor = UIColor(named: "innerBorderColor") ?? UIColor.lightGray
-//            dispatchButton.setTitleColor(UIColor(named: "tabUnselectedGrey") ?? UIColor.gray, for: .disabled)
-//        } else {
-//            pickUpLabel.text = data.pick_up
-//            deliveryDateLabel.text = data.deliveryDate
-//            dispatchButton.isEnabled = true
-//            dispatchButton.backgroundColor = statusColor
-//            dispatchButton.titleLabel?.textColor = UIColor.white
-//        }
     }
 }

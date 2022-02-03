@@ -20,8 +20,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InvoicesViewController" customModule="EnMass" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundHolderview" destination="IMZ-lg-8QU" id="Nch-cx-iqd"/>
                 <outlet property="noDataLabel" destination="MNZ-S4-Boj" id="Fue-ug-5Yj"/>
-                <outlet property="tableView" destination="m1T-JN-NcH" id="iaL-Fx-Zqd"/>
+                <outlet property="tableView" destination="h3o-Mo-FVw" id="08b-HY-Wt0"/>
                 <outlet property="titleLabel" destination="6iR-Mv-qzE" id="pX7-J4-8jd"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xfd-B3-bjY"/>
             </connections>
@@ -44,6 +45,9 @@
                                         <constraint firstAttribute="height" constant="32" id="o7R-5i-hAa"/>
                                     </constraints>
                                     <state key="normal" image="Arrow Left"/>
+                                    <connections>
+                                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="9qS-fn-1jq"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invoices" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iR-Mv-qzE">
                                     <rect key="frame" x="169" y="20" width="76" height="25.5"/>
@@ -68,9 +72,6 @@
                         <constraint firstAttribute="bottom" secondItem="MCZ-mD-bhU" secondAttribute="bottom" id="7wV-r8-bWH"/>
                         <constraint firstAttribute="trailing" secondItem="MCZ-mD-bhU" secondAttribute="trailing" id="g6A-pu-p33"/>
                     </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isMenuShow" value="NO"/>
-                    </userDefinedRuntimeAttributes>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMZ-lg-8QU">
                     <rect key="frame" x="0.0" y="101.5" width="414" height="794.5"/>
@@ -82,24 +83,23 @@
                             <color key="textColor" name="secondaryText"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m1T-JN-NcH">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h3o-Mo-FVw">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="794.5"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <connections>
-                                <outlet property="dataSource" destination="-1" id="0Lp-4k-EAB"/>
-                                <outlet property="delegate" destination="-1" id="Vev-G8-0wp"/>
+                                <outlet property="dataSource" destination="-1" id="mqT-IX-9YJ"/>
+                                <outlet property="delegate" destination="-1" id="OMI-cm-rte"/>
                             </connections>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="m1T-JN-NcH" firstAttribute="top" secondItem="IMZ-lg-8QU" secondAttribute="top" id="51C-Jo-EMQ"/>
-                        <constraint firstAttribute="trailing" secondItem="m1T-JN-NcH" secondAttribute="trailing" id="Ii4-3s-xgd"/>
-                        <constraint firstAttribute="bottom" secondItem="m1T-JN-NcH" secondAttribute="bottom" id="TND-rv-aZb"/>
+                        <constraint firstAttribute="trailing" secondItem="h3o-Mo-FVw" secondAttribute="trailing" id="VQ0-JA-9Q2"/>
+                        <constraint firstItem="h3o-Mo-FVw" firstAttribute="leading" secondItem="IMZ-lg-8QU" secondAttribute="leading" id="W6I-mj-sdd"/>
                         <constraint firstItem="MNZ-S4-Boj" firstAttribute="centerX" secondItem="IMZ-lg-8QU" secondAttribute="centerX" id="acQ-li-Xad"/>
-                        <constraint firstItem="m1T-JN-NcH" firstAttribute="leading" secondItem="IMZ-lg-8QU" secondAttribute="leading" id="chB-6O-VUR"/>
+                        <constraint firstItem="h3o-Mo-FVw" firstAttribute="top" secondItem="IMZ-lg-8QU" secondAttribute="top" id="vbW-8E-v4b"/>
                         <constraint firstItem="MNZ-S4-Boj" firstAttribute="centerY" secondItem="IMZ-lg-8QU" secondAttribute="centerY" id="xt5-nT-x1B"/>
+                        <constraint firstAttribute="bottom" secondItem="h3o-Mo-FVw" secondAttribute="bottom" id="ytO-6d-cEc"/>
                     </constraints>
                 </view>
             </subviews>
