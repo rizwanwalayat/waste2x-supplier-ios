@@ -21,7 +21,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="4kj-EW-HPt">
+        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="4kj-EW-HPt" customClass="InvoicesShipmentView" customModule="EnMass" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="310" height="37"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>

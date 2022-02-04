@@ -346,4 +346,13 @@ struct NetworkingConnection {
         return result
     }
     
+    class func getCurrency(amount:Double) -> String{
+        
+        let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "en_US")
+        formatter.numberStyle = .currency
+        guard let currencyAmount = formatter.string(from: amount as NSNumber) else { return "" }
+        return currencyAmount
+    }
+    
 }

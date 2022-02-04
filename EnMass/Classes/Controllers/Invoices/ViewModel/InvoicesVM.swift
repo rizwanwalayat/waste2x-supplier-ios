@@ -22,9 +22,9 @@ class InvoicesVM: NSObject {
         APIClient.shared.fetchInvoicesApi { result, error, status, message in
             Utility.hideLoading()
             
-            let newResult = ["result": result]
+            let newResult = ["result": result, "error": error, "status": status, "message": message ] as [String : Any]
             
-            if status, error == nil, let data = Mapper<InvoicesModel>().map(JSON: newResult as [String: Any]) {
+            if status, error == nil, let data = Mapper<InvoicesModel>().map(JSON: newResult) {
                 self.data = data
                 completionhandler(data, error, status, message)
             } else {
