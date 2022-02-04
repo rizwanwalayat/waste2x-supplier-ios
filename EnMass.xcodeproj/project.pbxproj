@@ -236,16 +236,12 @@
 		18D1A366266A2B77009CAD26 /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1A364266A2B77009CAD26 /* TrackerViewController.swift */; };
 		18D1A367266A2B77009CAD26 /* TrackerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D1A365266A2B77009CAD26 /* TrackerViewController.xib */; };
 		18FB2B962694A1FE006C6AE1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18FB2B952694A1FE006C6AE1 /* GoogleService-Info.plist */; };
-		960E4ADE27A9928900593A42 /* InvoicesShipmentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960E4ADD27A9928900593A42 /* InvoicesShipmentView.xib */; };
-		960E4AE027A994DB00593A42 /* InvoicesShipmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960E4ADF27A994DB00593A42 /* InvoicesShipmentView.swift */; };
 		962DAC68274676E2004C40D1 /* HomeNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962DAC5B274676E2004C40D1 /* HomeNewViewController.xib */; };
 		962DAC6B274676E2004C40D1 /* HomeNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962DAC5E274676E2004C40D1 /* HomeNewViewController.swift */; };
 		962FEB04278CB8F900E822E6 /* FullScreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962FEB02278CB8F900E822E6 /* FullScreenImageViewController.swift */; };
 		962FEB05278CB8F900E822E6 /* FullScreenImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962FEB03278CB8F900E822E6 /* FullScreenImageViewController.xib */; };
 		96313F0927A036BE00A82CFF /* InvoicesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96313F0327A036BE00A82CFF /* InvoicesVM.swift */; };
 		96313F0B27A036BE00A82CFF /* InvoicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96313F0627A036BE00A82CFF /* InvoicesTableViewCell.swift */; };
-		96313F0C27A036BE00A82CFF /* InvoicesViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96313F0727A036BE00A82CFF /* InvoicesViewController2.swift */; };
-		96313F0D27A036BE00A82CFF /* InvoicesViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96313F0827A036BE00A82CFF /* InvoicesViewController2.xib */; };
 		96313F1327A036E200A82CFF /* InvoicesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96313F1027A036E200A82CFF /* InvoicesModel.swift */; };
 		96726C872711C1EE00F071E8 /* Waste2xAfterSigninTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96726C862711C1EE00F071E8 /* Waste2xAfterSigninTests.swift */; };
 		96774D96273177C100B513CB /* MessagePendingCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96774D94273177C100B513CB /* MessagePendingCollectionTableViewCell.swift */; };
@@ -502,16 +498,12 @@
 		18D1A364266A2B77009CAD26 /* TrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
 		18D1A365266A2B77009CAD26 /* TrackerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackerViewController.xib; sourceTree = "<group>"; };
 		18FB2B952694A1FE006C6AE1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		960E4ADD27A9928900593A42 /* InvoicesShipmentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvoicesShipmentView.xib; sourceTree = "<group>"; };
-		960E4ADF27A994DB00593A42 /* InvoicesShipmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicesShipmentView.swift; sourceTree = "<group>"; };
 		962DAC5B274676E2004C40D1 /* HomeNewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeNewViewController.xib; sourceTree = "<group>"; };
 		962DAC5E274676E2004C40D1 /* HomeNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNewViewController.swift; sourceTree = "<group>"; };
 		962FEB02278CB8F900E822E6 /* FullScreenImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewController.swift; sourceTree = "<group>"; };
 		962FEB03278CB8F900E822E6 /* FullScreenImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullScreenImageViewController.xib; sourceTree = "<group>"; };
 		96313F0327A036BE00A82CFF /* InvoicesVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoicesVM.swift; sourceTree = "<group>"; };
 		96313F0627A036BE00A82CFF /* InvoicesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoicesTableViewCell.swift; sourceTree = "<group>"; };
-		96313F0727A036BE00A82CFF /* InvoicesViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoicesViewController2.swift; sourceTree = "<group>"; };
-		96313F0827A036BE00A82CFF /* InvoicesViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InvoicesViewController2.xib; sourceTree = "<group>"; };
 		96313F1027A036E200A82CFF /* InvoicesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoicesModel.swift; sourceTree = "<group>"; };
 		96726C862711C1EE00F071E8 /* Waste2xAfterSigninTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waste2xAfterSigninTests.swift; sourceTree = "<group>"; };
 		96774D94273177C100B513CB /* MessagePendingCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePendingCollectionTableViewCell.swift; sourceTree = "<group>"; };
@@ -1600,8 +1592,6 @@
 			children = (
 				96313F0227A036BE00A82CFF /* ViewModel */,
 				96313F0427A036BE00A82CFF /* Cells */,
-				96313F0727A036BE00A82CFF /* InvoicesViewController2.swift */,
-				96313F0827A036BE00A82CFF /* InvoicesViewController2.xib */,
 				96CFBF7B27ABBA2100715569 /* InvoicesViewController.swift */,
 				96CFBF7C27ABBA2100715569 /* InvoicesViewController.xib */,
 			);
@@ -1619,8 +1609,6 @@
 		96313F0427A036BE00A82CFF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				960E4ADD27A9928900593A42 /* InvoicesShipmentView.xib */,
-				960E4ADF27A994DB00593A42 /* InvoicesShipmentView.swift */,
 				9686593427ABDF8700A01F81 /* InvoicesTableViewCell.xib */,
 				96313F0627A036BE00A82CFF /* InvoicesTableViewCell.swift */,
 				969C0B1C27AD294D008FECA7 /* InvoicesShipmentsTableViewCell.swift */,
@@ -1793,8 +1781,6 @@
 				18397E192660FF54003DE30C /* Poppins-ExtraLightItalic.ttf in Resources */,
 				181025242657E33A00DEBF7D /* ContainerViewController.xib in Resources */,
 				18C11A6D265F9D5F00BC022F /* ContactViewController.xib in Resources */,
-				96313F0D27A036BE00A82CFF /* InvoicesViewController2.xib in Resources */,
-				960E4ADE27A9928900593A42 /* InvoicesShipmentView.xib in Resources */,
 				180CD1B02665048D0092168B /* PaymentViewController.xib in Resources */,
 				0067A2C825274C0B00CECA8C /* LaunchScreen.storyboard in Resources */,
 				18397E242660FF54003DE30C /* Poppins-Black.ttf in Resources */,
@@ -1977,7 +1963,6 @@
 				047E83DA268338DD006A0F18 /* GoogleLocationAutoCompleteTableViewCell.swift in Sources */,
 				0428F1C2265BC124007C51EE /* UIColorExtensions.swift in Sources */,
 				041D40D126772A65003A0039 /* CreateSite.swift in Sources */,
-				96313F0C27A036BE00A82CFF /* InvoicesViewController2.swift in Sources */,
 				04E6104626725422001E6629 /* Questions.swift in Sources */,
 				047E83D1268320FA006A0F18 /* WasteDetailLocationDataModel.swift in Sources */,
 				96CFBF7D27ABBA2100715569 /* InvoicesViewController.swift in Sources */,
@@ -1992,7 +1977,6 @@
 				18A579C2269321A60067952F /* ApiResponseHandler.swift in Sources */,
 				1893756C266127F800D55A33 /* CurrentWasteViewController.swift in Sources */,
 				1875BC86265688EB00147EB8 /* BaseViewController.swift in Sources */,
-				960E4AE027A994DB00593A42 /* InvoicesShipmentView.swift in Sources */,
 				18C11A6C265F9D5F00BC022F /* ContactViewController.swift in Sources */,
 				18937564266127F800D55A33 /* WasteDetailLocationViewController.swift in Sources */,
 				04C82E182664BCCB00D52947 /* WasteDetailViewModel.swift in Sources */,
