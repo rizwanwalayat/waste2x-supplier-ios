@@ -84,11 +84,7 @@ class InvoicesViewController: BaseViewController {
 extension InvoicesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-//        if tableView == invoicesTableView {
             return viewModel?.data?.result.count ?? 0
-//        } else {
-//            return 1
-//        }
        
     }
     
@@ -100,8 +96,6 @@ extension InvoicesViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InvoicesTableViewCell", for: indexPath) as! InvoicesTableViewCell
         let cellData = viewModel?.data?.result[indexPath.section]
         cell.configCell(data: cellData!)
-//        cell.shipmentsTableView.delegate = self
-//        cell.shipmentsTableView.dataSource = self
         return cell
     }
     

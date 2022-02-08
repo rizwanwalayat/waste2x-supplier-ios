@@ -113,6 +113,25 @@ class Waste2xAfterSigninTests: XCTestCase {
     }
     
 
+    func testInvoicesAPI() throws {
+        
+        let promise = expectation(description: "Status Code: 200")
+        let viewModel = InvoicesVM()
+        
+        viewModel.fetchInvoicesData({ result, error, status, message in
+            XCTAssert(status == true, "API Response Status False")
+            XCTAssertNil(error, "API Response with Error: "+message)
+            
+            promise.fulfill()
+        })
+        
+        waitForExpectations(timeout: 10) { error in
+            if let _ = error {
+                XCTFail("Timeout after 10sec")
+            }
+        }
+    }
+    
     
 //    func testMessagestAPIToFetchAccessToken() throws {
 //        
